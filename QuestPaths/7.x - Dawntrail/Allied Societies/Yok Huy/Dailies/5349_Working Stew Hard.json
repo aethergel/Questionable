@@ -1,6 +1,10 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-  "Author": "alydev,stoat33",
+  "Author": "stoat33,alydev",
+  "LastChecked": {
+    "Username": "alydev",
+    "Date": "2025-10-10"
+  },
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -48,6 +52,9 @@
           "Fly": true,
           "AetheryteShortcut": "Urqopacha - Worlar's Echo",
           "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "InSameTerritory": true
+            },
             "StepIf": {
               "NearPosition": {
                 "Position": {

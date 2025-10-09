@@ -10,11 +10,11 @@
       "Sequence": 0,
       "Steps": [
         {
-          "DataId": 1054635,
+          "DataId": 1054636,
           "Position": {
-            "X": 493.2173,
+            "X": 506.70618,
             "Y": 142.24991,
-            "Z": 783.0471
+            "Z": 800.2289
           },
           "TerritoryId": 1187,
           "InteractionType": "AcceptQuest",
@@ -24,9 +24,9 @@
             "AetheryteShortcutIf": {
               "NearPosition": {
                 "Position": {
-                  "X": 493.2173,
+                  "X": 506.70618,
                   "Y": 142.24991,
-                  "Z": 783.0471
+                  "Z": 800.2289
                 },
                 "TerritoryId": 1187,
                 "MaximumDistance": 200
@@ -93,38 +93,16 @@
           }
         },
         {
-          "$": "Road",
+          "DataId": 1054650,
           "Position": {
-            "X": 16.57459,
-            "Y": 0.29999995,
-            "Z": 62.71482
+            "X": 16.983276,
+            "Y": 0.4,
+            "Z": 145.09802
           },
           "TerritoryId": 1297,
-          "InteractionType": "WalkTo",
+          "InteractionType": "Interact",
           "Mount": true,
           "DisableNavmesh": true
-        },
-        {
-          "$": "Doorway",
-          "Position": {
-            "X": 85.997314,
-            "Y": 3.3723085,
-            "Z": 66.514145
-          },
-          "TerritoryId": 1297,
-          "InteractionType": "WalkTo",
-          "Mount": true,
-          "DisableNavmesh": true
-        },
-        {
-          "DataId": 1055821,
-          "Position": {
-            "X": 88.97534,
-            "Y": 3.3723087,
-            "Z": 75.791504
-          },
-          "TerritoryId": 1297,
-          "InteractionType": "Interact"
         }
       ]
     },
@@ -185,11 +163,12 @@
           }
         },
         {
-          "$": "Road",
+          "$": "Recovery",
+          "DataId": 1054650,
           "Position": {
-            "X": 16.57459,
-            "Y": 0.29999995,
-            "Z": 62.71482
+            "X": 16.983276,
+            "Y": 0.4,
+            "Z": 145.09802
           },
           "TerritoryId": 1297,
           "InteractionType": "WalkTo",
@@ -199,46 +178,109 @@
             "StepIf": {
               "NearPosition": {
                 "Position": {
-                  "X": 88.97534,
-                  "Y": 3.3723087,
-                  "Z": 75.791504
+                  "X": 16.983276,
+                  "Y": 0.4,
+                  "Z": 145.09802
                 },
                 "TerritoryId": 1297,
-                "MaximumDistance": 10
+                "MaximumDistance": 20
               }
             }
           }
         },
         {
-          "$": "Doorway",
+          "DataId": 1054651,
           "Position": {
-            "X": 85.997314,
-            "Y": 3.3723085,
-            "Z": 66.514145
+            "X": 22.537537,
+            "Y": 0.4,
+            "Z": 146.68494
           },
           "TerritoryId": 1297,
+          "InteractionType": "Emote",
+          "Emote": "soothe"
+        }
+      ]
+    },
+    {
+      "Sequence": 3,
+      "Steps": [
+        {
+          "$": "Recovery",
+          "Position": {
+            "X": 403.79956,
+            "Y": 122.535,
+            "Z": 590.0206
+          },
+          "TerritoryId": 1187,
           "InteractionType": "WalkTo",
-          "Mount": true,
-          "DisableNavmesh": true,
+          "Fly": true,
+          "AetheryteShortcut": "Urqopacha - Worlar's Echo",
           "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "InSameTerritory": true
+            },
             "StepIf": {
               "NearPosition": {
                 "Position": {
-                  "X": 88.97534,
-                  "Y": 3.3723087,
-                  "Z": 75.791504
+                  "X": 403.79956,
+                  "Y": 122.535,
+                  "Z": 590.0206
                 },
-                "TerritoryId": 1297,
-                "MaximumDistance": 10
+                "TerritoryId": 1187,
+                "MaximumDistance": 200
               }
             }
           }
         },
         {
-          "TerritoryId": 1297,
+          "DataId": 1054652,
+          "Position": {
+            "X": 403.79956,
+            "Y": 122.535,
+            "Z": 590.0206
+          },
+          "TerritoryId": 1187,
+          "InteractionType": "Interact",
+          "Fly": true
+        }
+      ]
+    },
+    {
+      "Sequence": 4,
+      "Steps": [
+        {
+          "$": "Recovery",
+          "Position": {
+            "X": 403.79956,
+            "Y": 122.535,
+            "Z": 590.0206
+          },
+          "TerritoryId": 1187,
+          "InteractionType": "WalkTo",
+          "Fly": true,
+          "AetheryteShortcut": "Urqopacha - Worlar's Echo",
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "InSameTerritory": true
+            },
+            "StepIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": 403.79956,
+                  "Y": 122.535,
+                  "Z": 590.0206
+                },
+                "TerritoryId": 1187,
+                "MaximumDistance": 200
+              }
+            }
+          }
+        },
+        {
+          "TerritoryId": 1187,
           "InteractionType": "Craft",
-          "ItemId": 46216,
-          "ItemCount": 3,
+          "ItemId": 46200,
+          "ItemCount": 1,
           "SkipConditions": {
             "StepIf": {
               "Item": {
@@ -248,13 +290,13 @@
           }
         },
         {
-          "DataId": 1055821,
+          "DataId": 1054652,
           "Position": {
-            "X": 88.97534,
-            "Y": 3.3723087,
-            "Z": 75.791504
+            "X": 403.79956,
+            "Y": 122.535,
+            "Z": 590.0206
           },
-          "TerritoryId": 1297,
+          "TerritoryId": 1187,
           "InteractionType": "Interact"
         }
       ]
@@ -263,11 +305,11 @@
       "Sequence": 255,
       "Steps": [
         {
-          "DataId": 1054635,
+          "DataId": 1054636,
           "Position": {
-            "X": 493.2173,
+            "X": 506.70618,
             "Y": 142.24991,
-            "Z": 783.0471
+            "Z": 800.2289
           },
           "TerritoryId": 1187,
           "InteractionType": "CompleteQuest",
@@ -277,12 +319,12 @@
             "AetheryteShortcutIf": {
               "NearPosition": {
                 "Position": {
-                  "X": 493.2173,
+                  "X": 506.70618,
                   "Y": 142.24991,
-                  "Z": 783.0471
+                  "Z": 800.2289
                 },
                 "TerritoryId": 1187,
-                "MaximumDistance": 200
+                "MaximumDistance": 250
               }
             }
           }

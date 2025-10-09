@@ -1,6 +1,10 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-  "Author": "alydev,stoat33",
+  "Author": "stoat33,alydev",
+  "LastChecked": {
+    "Username": "alydev",
+    "Date": "2025-10-10"
+  },
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -71,7 +75,33 @@
             "Z": 782.22314
           },
           "TerritoryId": 1187,
-          "InteractionType": "Interact"
+          "InteractionType": "WalkTo",
+          "StopDistance": 4,
+          "Fly": true,
+          "SkipConditions": {
+            "StepIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": 500.93835,
+                  "Y": 142.24991,
+                  "Z": 782.22314
+                },
+                "TerritoryId": 1187,
+                "MaximumDistance": 20
+              }
+            }
+          }
+        },
+        {
+          "DataId": 1054676,
+          "Position": {
+            "X": 500.93835,
+            "Y": 142.24991,
+            "Z": 782.22314
+          },
+          "TerritoryId": 1187,
+          "InteractionType": "Interact",
+          "StopDistance": 4
         }
       ]
     },
@@ -134,7 +164,8 @@
             "Z": 783.0471
           },
           "TerritoryId": 1187,
-          "InteractionType": "CompleteQuest"
+          "InteractionType": "CompleteQuest",
+          "StopDistance": 4
         }
       ]
     }

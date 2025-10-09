@@ -38,9 +38,9 @@
         {
           "$": "Recovery",
           "Position": {
-            "X": 500.93835,
-            "Y": 142.24991,
-            "Z": 782.22314
+            "X": 583.276,
+            "Y": 120.7841,
+            "Z": 382.55884
           },
           "TerritoryId": 1187,
           "InteractionType": "WalkTo",
@@ -53,9 +53,9 @@
             "StepIf": {
               "NearPosition": {
                 "Position": {
-                  "X": 500.93835,
-                  "Y": 142.24991,
-                  "Z": 782.22314
+                  "X": 583.276,
+                  "Y": 120.7841,
+                  "Z": 382.55884
                 },
                 "TerritoryId": 1187,
                 "MaximumDistance": 200
@@ -71,6 +71,7 @@
             "Z": 382.55884
           },
           "TerritoryId": 1187,
+          "Fly": true,
           "InteractionType": "Interact"
         }
       ]
