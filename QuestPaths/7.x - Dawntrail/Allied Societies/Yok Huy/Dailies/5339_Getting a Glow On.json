@@ -1,6 +1,6 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-  "Author": "alydev,Kiarra",
+  "Author": "alydev,Kiarra,mrguffels",
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -25,7 +25,7 @@
                   "Z": 783.0471
                 },
                 "TerritoryId": 1187,
-                "MaximumDistance": 200
+                "MaximumDistance": 300
               }
             }
           }
@@ -38,9 +38,9 @@
         {
           "$": "Recovery",
           "Position": {
-            "X": 583.276,
-            "Y": 120.7841,
-            "Z": 382.55884
+            "X": 493.2173,
+            "Y": 142.24991,
+            "Z": 783.0471
           },
           "TerritoryId": 1187,
           "InteractionType": "WalkTo",
@@ -53,15 +53,38 @@
             "StepIf": {
               "NearPosition": {
                 "Position": {
-                  "X": 583.276,
-                  "Y": 120.7841,
-                  "Z": 382.55884
+                  "X": 493.2173,
+                  "Y": 142.24991,
+                  "Z": 783.0471
                 },
                 "TerritoryId": 1187,
-                "MaximumDistance": 200
+                "MaximumDistance": 300
               }
             }
           }
+        },
+        {
+          "DataId": 1055819,
+          "Position": {
+            "X": 442.31323,
+            "Y": 101.649635,
+            "Z": 363.21045
+          },
+          "TerritoryId": 1187,
+          "InteractionType": "Interact",
+          "Fly": true,
+          "RequiredQuestVariables": [
+            null,
+            [
+              {
+                "Low": 1
+              }
+            ],
+            null,
+            null,
+            null,
+            null
+          ]
         },
         {
           "DataId": 1055818,
@@ -72,7 +95,9 @@
           },
           "TerritoryId": 1187,
           "Fly": true,
-          "InteractionType": "Interact"
+          "InteractionType": "Interact",
+          "Disabled": true,
+          "$": "TODO confirm qw"
         }
       ]
     },
