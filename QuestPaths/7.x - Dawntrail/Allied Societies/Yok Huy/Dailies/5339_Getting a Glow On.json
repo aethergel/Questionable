@@ -1,6 +1,6 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-  "Author": "alydev,Kiarra,mrguffels",
+  "Author": "alydev,Kiarra,mrguffels,erdelf",
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -64,6 +64,29 @@
           }
         },
         {
+          "DataId": 1055818,
+          "Position": {
+            "X": 583.276,
+            "Y": 120.7841,
+            "Z": 382.55884
+          },
+          "TerritoryId": 1187,
+          "InteractionType": "Interact",
+          "Fly": true,
+          "RequiredQuestVariables": [
+            null,
+            [
+              {
+                "Low": 3
+              }
+            ],
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
           "DataId": 1055819,
           "Position": {
             "X": 442.31323,
@@ -87,17 +110,27 @@
           ]
         },
         {
-          "DataId": 1055818,
+          "DataId": 1055820,
           "Position": {
-            "X": 583.276,
-            "Y": 120.7841,
-            "Z": 382.55884
+            "X": 379.50696,
+            "Y": 78.73412,
+            "Z": 440.63464
           },
           "TerritoryId": 1187,
-          "Fly": true,
           "InteractionType": "Interact",
-          "Disabled": true,
-          "$": "TODO confirm qw"
+          "Fly": true,
+          "RequiredQuestVariables": [
+            null,
+            [
+              {
+                "Low": 2
+              }
+            ],
+            null,
+            null,
+            null,
+            null
+          ]
         }
       ]
     },
