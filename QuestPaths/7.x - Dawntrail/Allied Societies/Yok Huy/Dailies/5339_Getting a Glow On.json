@@ -1,6 +1,6 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-  "Author": "alydev,Kiarra",
+  "Author": "alydev,Kiarra,mrguffels,erdelf",
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -25,7 +25,7 @@
                   "Z": 783.0471
                 },
                 "TerritoryId": 1187,
-                "MaximumDistance": 200
+                "MaximumDistance": 300
               }
             }
           }
@@ -38,9 +38,9 @@
         {
           "$": "Recovery",
           "Position": {
-            "X": 583.276,
-            "Y": 120.7841,
-            "Z": 382.55884
+            "X": 493.2173,
+            "Y": 142.24991,
+            "Z": 783.0471
           },
           "TerritoryId": 1187,
           "InteractionType": "WalkTo",
@@ -53,12 +53,12 @@
             "StepIf": {
               "NearPosition": {
                 "Position": {
-                  "X": 583.276,
-                  "Y": 120.7841,
-                  "Z": 382.55884
+                  "X": 493.2173,
+                  "Y": 142.24991,
+                  "Z": 783.0471
                 },
                 "TerritoryId": 1187,
-                "MaximumDistance": 200
+                "MaximumDistance": 300
               }
             }
           }
@@ -71,8 +71,66 @@
             "Z": 382.55884
           },
           "TerritoryId": 1187,
+          "InteractionType": "Interact",
           "Fly": true,
-          "InteractionType": "Interact"
+          "RequiredQuestVariables": [
+            null,
+            [
+              {
+                "Low": 3
+              }
+            ],
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "DataId": 1055819,
+          "Position": {
+            "X": 442.31323,
+            "Y": 101.649635,
+            "Z": 363.21045
+          },
+          "TerritoryId": 1187,
+          "InteractionType": "Interact",
+          "Fly": true,
+          "RequiredQuestVariables": [
+            null,
+            [
+              {
+                "Low": 1
+              }
+            ],
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "DataId": 1055820,
+          "Position": {
+            "X": 379.50696,
+            "Y": 78.73412,
+            "Z": 440.63464
+          },
+          "TerritoryId": 1187,
+          "InteractionType": "Interact",
+          "Fly": true,
+          "RequiredQuestVariables": [
+            null,
+            [
+              {
+                "Low": 2
+              }
+            ],
+            null,
+            null,
+            null,
+            null
+          ]
         }
       ]
     },
