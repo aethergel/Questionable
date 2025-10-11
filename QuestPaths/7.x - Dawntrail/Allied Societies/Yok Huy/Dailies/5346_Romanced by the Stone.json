@@ -1,6 +1,10 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
   "Author": "Kiarra,alydev",
+  "LastChecked": {
+    "Username": "alydev",
+    "Date": "2025-10-12"
+  },
   "QuestSequence": [
     {
       "Sequence": 0,
