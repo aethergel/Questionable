@@ -101,7 +101,20 @@
           "TerritoryId": 1297,
           "InteractionType": "WalkTo",
           "Mount": true,
-          "DisableNavmesh": true
+          "DisableNavmesh": true,
+          "SkipConditions": {
+            "StepIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": 74.75391,
+                  "Y": 1.8866259,
+                  "Z": 50.369995
+                },
+                "TerritoryId": 1297,
+                "MaximumDistance": 20
+              }
+            }
+          }
         },
         {
           "$": "Ledge",
@@ -113,7 +126,20 @@
           "TerritoryId": 1297,
           "InteractionType": "WalkTo",
           "Mount": true,
-          "DisableNavmesh": true
+          "DisableNavmesh": true,
+          "SkipConditions": {
+            "StepIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": 74.75391,
+                  "Y": 1.8866259,
+                  "Z": 50.369995
+                },
+                "TerritoryId": 1297,
+                "MaximumDistance": 20
+              }
+            }
+          }
         },
         {
           "$": "Xarhorkur",
@@ -195,7 +221,20 @@
           "TerritoryId": 1297,
           "InteractionType": "WalkTo",
           "Mount": true,
-          "DisableNavmesh": true
+          "DisableNavmesh": true,
+          "SkipConditions": {
+            "StepIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": 74.75391,
+                  "Y": 1.8866259,
+                  "Z": 50.369995
+                },
+                "TerritoryId": 1297,
+                "MaximumDistance": 20
+              }
+            }
+          }
         },
         {
           "$": "Ledge",

@@ -3,7 +3,7 @@
   "Author": "alydev",
   "LastChecked": {
     "Username": "alydev",
-    "Date": "2025-10-10"
+    "Date": "2025-10-12"
   },
   "QuestSequence": [
     {
@@ -74,7 +74,6 @@
           }
         },
         {
-          "$": "Recovery",
           "DataId": 1054640,
           "Position": {
             "X": 496.11658,
@@ -107,9 +106,9 @@
             "StepIf": {
               "NearPosition": {
                 "Position": {
-                  "X": 88.97534,
-                  "Y": 3.3723087,
-                  "Z": 75.791504
+                  "X": 97.8866,
+                  "Y": 4.942851,
+                  "Z": 160.66211
                 },
                 "TerritoryId": 1297,
                 "MaximumDistance": 20
@@ -118,26 +117,41 @@
           }
         },
         {
-          "$": "Doorway",
+          "$": "base of steps",
           "Position": {
-            "X": 85.997314,
-            "Y": 3.3723085,
-            "Z": 66.514145
+            "X": 68.85583,
+            "Y": 0,
+            "Z": 147.82959
           },
           "TerritoryId": 1297,
           "InteractionType": "WalkTo",
+          "StopDistance": 1,
           "Mount": true,
-          "DisableNavmesh": true
+          "DisableNavmesh": true,
+          "SkipConditions": {
+            "StepIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": 97.8866,
+                  "Y": 4.942851,
+                  "Z": 160.66211
+                },
+                "TerritoryId": 1297,
+                "MaximumDistance": 20
+              }
+            }
+          }
         },
         {
-          "DataId": 1055821,
+          "DataId": 1055788,
           "Position": {
-            "X": 88.97534,
-            "Y": 3.3723087,
-            "Z": 75.791504
+            "X": 97.8866,
+            "Y": 4.942851,
+            "Z": 160.66211
           },
           "TerritoryId": 1297,
-          "InteractionType": "Interact"
+          "InteractionType": "Interact",
+          "DisableNavmesh": true
         }
       ]
     },
@@ -212,46 +226,48 @@
             "StepIf": {
               "NearPosition": {
                 "Position": {
-                  "X": 88.97534,
-                  "Y": 3.3723087,
-                  "Z": 75.791504
+                  "X": 97.8866,
+                  "Y": 4.942851,
+                  "Z": 160.66211
                 },
                 "TerritoryId": 1297,
-                "MaximumDistance": 10
+                "MaximumDistance": 20
               }
             }
           }
         },
         {
-          "$": "Doorway",
+          "$": "base of steps",
           "Position": {
-            "X": 85.997314,
-            "Y": 3.3723085,
-            "Z": 66.514145
+            "X": 68.85583,
+            "Y": 0,
+            "Z": 147.82959
           },
           "TerritoryId": 1297,
           "InteractionType": "WalkTo",
+          "StopDistance": 1,
           "Mount": true,
           "DisableNavmesh": true,
           "SkipConditions": {
             "StepIf": {
               "NearPosition": {
                 "Position": {
-                  "X": 88.97534,
-                  "Y": 3.3723087,
-                  "Z": 75.791504
+                  "X": 97.8866,
+                  "Y": 4.942851,
+                  "Z": 160.66211
                 },
                 "TerritoryId": 1297,
-                "MaximumDistance": 10
+                "MaximumDistance": 20
               }
             }
           }
         },
         {
+          "$": "Craft",
           "TerritoryId": 1297,
           "InteractionType": "Craft",
-          "ItemId": 46216,
-          "ItemCount": 3,
+          "ItemId": 46222,
+          "ItemCount": 4,
           "SkipConditions": {
             "StepIf": {
               "Item": {
@@ -261,14 +277,15 @@
           }
         },
         {
-          "DataId": 1055821,
+          "DataId": 1055788,
           "Position": {
-            "X": 88.97534,
-            "Y": 3.3723087,
-            "Z": 75.791504
+            "X": 97.8866,
+            "Y": 4.942851,
+            "Z": 160.66211
           },
           "TerritoryId": 1297,
-          "InteractionType": "Interact"
+          "InteractionType": "Interact",
+          "DisableNavmesh": true
         }
       ]
     },
