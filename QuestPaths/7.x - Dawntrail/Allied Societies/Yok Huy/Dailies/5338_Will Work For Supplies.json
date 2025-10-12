@@ -1,6 +1,10 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
   "Author": "alydev,Kiarra",
+  "LastChecked": {
+    "Username": "alydev",
+    "Date": "2025-10-13"
+  },
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -37,28 +41,25 @@
       "Steps": [
         {
           "$": "Recovery",
+          "DataId": 1055817,
           "Position": {
-            "X": 500.93835,
-            "Y": 142.24991,
-            "Z": 782.22314
+            "X": 458.15198,
+            "Y": 114.935,
+            "Z": 657.3739
           },
           "TerritoryId": 1187,
           "InteractionType": "WalkTo",
-          "Fly": true,
           "AetheryteShortcut": "Urqopacha - Worlar's Echo",
           "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            },
             "StepIf": {
               "NearPosition": {
                 "Position": {
-                  "X": 500.93835,
-                  "Y": 142.24991,
-                  "Z": 782.22314
+                  "X": 458.15198,
+                  "Y": 114.935,
+                  "Z": 657.3739
                 },
                 "TerritoryId": 1187,
-                "MaximumDistance": 200
+                "MaximumDistance": 20
               }
             }
           }
@@ -111,7 +112,7 @@
                   "Z": 657.3739
                 },
                 "TerritoryId": 1187,
-                "MaximumDistance": 200
+                "MaximumDistance": 20
               }
             }
           }

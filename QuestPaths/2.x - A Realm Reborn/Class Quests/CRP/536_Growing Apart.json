@@ -1,15 +1,10 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-  "Author": "liza",
+  "Author": "Gezah",
   "QuestSequence": [
     {
       "Sequence": 0,
       "Steps": [
-        {
-          "TerritoryId": 132,
-          "InteractionType": "EquipItem",
-          "ItemId": 2314
-        },
         {
           "DataId": 1000153,
           "Position": {
@@ -18,23 +13,26 @@
             "Z": 56.839844
           },
           "TerritoryId": 132,
-          "InteractionType": "AcceptQuest",
           "AetheryteShortcut": "Gridania",
+          "InteractionType": "AcceptQuest",
           "SkipConditions": {
             "AetheryteShortcutIf": {
-              "InSameTerritory": true
+              "InSameTerritory": true,
+              "InTerritory": [
+                132
+              ]
             }
           }
         }
       ]
     },
     {
-      "Sequence": 255,
+      "Sequence": 1,
       "Steps": [
         {
           "InteractionType": "Craft",
           "TerritoryId": 132,
-          "ItemId": 5361,
+          "ItemId": 1917,
           "ItemCount": 1,
           "SkipConditions": {
             "StepIf": {
@@ -52,13 +50,37 @@
             "Z": 56.839844
           },
           "TerritoryId": 132,
-          "InteractionType": "CompleteQuest",
-          "AetheryteShortcut": "Gridania",
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            }
-          }
+          "InteractionType": "Interact"
+        }
+      ]
+    },
+    {
+      "Sequence": 2,
+      "Steps": [
+        {
+          "DataId": 1000125,
+          "Position": {
+            "X": -56.26001,
+            "Y": -0.50339824,
+            "Z": -0.16790771
+          },
+          "TerritoryId": 132,
+          "InteractionType": "Interact"
+        }
+      ]
+    },
+    {
+      "Sequence": 255,
+      "Steps": [
+        {
+          "DataId": 1000153,
+          "Position": {
+            "X": -44.87683,
+            "Y": -1.2500024,
+            "Z": 56.839844
+          },
+          "TerritoryId": 132,
+          "InteractionType": "CompleteQuest"
         }
       ]
     }
