@@ -1,15 +1,10 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-  "Author": "liza",
+  "Author": "Gezah",
   "QuestSequence": [
     {
       "Sequence": 0,
       "Steps": [
-        {
-          "TerritoryId": 132,
-          "InteractionType": "EquipItem",
-          "ItemId": 2314
-        },
         {
           "DataId": 1000153,
           "Position": {
@@ -18,11 +13,14 @@
             "Z": 56.839844
           },
           "TerritoryId": 132,
-          "InteractionType": "AcceptQuest",
           "AetheryteShortcut": "Gridania",
+          "InteractionType": "AcceptQuest",
           "SkipConditions": {
             "AetheryteShortcutIf": {
-              "InSameTerritory": true
+              "InSameTerritory": true,
+              "InTerritory": [
+                132
+              ]
             }
           }
         }
@@ -34,8 +32,8 @@
         {
           "InteractionType": "Craft",
           "TerritoryId": 132,
-          "ItemId": 5361,
-          "ItemCount": 1,
+          "ItemId": 5364,
+          "ItemCount": 12,
           "SkipConditions": {
             "StepIf": {
               "Item": {
@@ -52,13 +50,7 @@
             "Z": 56.839844
           },
           "TerritoryId": 132,
-          "InteractionType": "CompleteQuest",
-          "AetheryteShortcut": "Gridania",
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            }
-          }
+          "InteractionType": "CompleteQuest"
         }
       ]
     }

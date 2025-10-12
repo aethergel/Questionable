@@ -1,15 +1,11 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-  "Author": "liza",
+  "Author": "Gezah",
+  "Comment": "Meld any materia to the Iron Lance before turn in",
   "QuestSequence": [
     {
       "Sequence": 0,
       "Steps": [
-        {
-          "TerritoryId": 132,
-          "InteractionType": "EquipItem",
-          "ItemId": 2314
-        },
         {
           "DataId": 1000153,
           "Position": {
@@ -18,11 +14,14 @@
             "Z": 56.839844
           },
           "TerritoryId": 132,
-          "InteractionType": "AcceptQuest",
           "AetheryteShortcut": "Gridania",
+          "InteractionType": "AcceptQuest",
           "SkipConditions": {
             "AetheryteShortcutIf": {
-              "InSameTerritory": true
+              "InSameTerritory": true,
+              "InTerritory": [
+                132
+              ]
             }
           }
         }
@@ -34,7 +33,7 @@
         {
           "InteractionType": "Craft",
           "TerritoryId": 132,
-          "ItemId": 5361,
+          "ItemId": 1827,
           "ItemCount": 1,
           "SkipConditions": {
             "StepIf": {
@@ -52,13 +51,7 @@
             "Z": 56.839844
           },
           "TerritoryId": 132,
-          "InteractionType": "CompleteQuest",
-          "AetheryteShortcut": "Gridania",
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            }
-          }
+          "InteractionType": "CompleteQuest"
         }
       ]
     }
