@@ -102,8 +102,61 @@
       ]
     },
     {
-      "Sequence": 255,
+      "Sequence": 2,
       "Steps": [
+        {
+          "$": "Recovery",
+          "Position": {
+            "X": 500.93835,
+            "Y": 142.24991,
+            "Z": 782.22314
+          },
+          "TerritoryId": 1187,
+          "InteractionType": "WalkTo",
+          "Fly": true,
+          "AetheryteShortcut": "Urqopacha - Worlar's Echo",
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "InSameTerritory": true
+            },
+            "StepIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": 500.93835,
+                  "Y": 142.24991,
+                  "Z": 782.22314
+                },
+                "TerritoryId": 1187,
+                "MaximumDistance": 200
+              }
+            }
+          }
+        },
+        {
+          "DataId": 1055787,
+          "Position": {
+            "X": 521.8126,
+            "Y": 111.135,
+            "Z": 713.4049
+          },
+          "TerritoryId": 1187,
+          "InteractionType": "WalkTo",
+          "StopDistance": 4,
+          "Fly": true,
+          "SkipConditions": {
+            "StepIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": 521.8126,
+                  "Y": 111.135,
+                  "Z": 713.4049
+                },
+                "TerritoryId": 1187,
+                "MaximumDistance": 20
+              }
+            }
+          }
+        },
         {
           "InteractionType": "Craft",
           "TerritoryId": 1187,
@@ -117,6 +170,22 @@
             }
           }
         },
+        {
+          "DataId": 1055787,
+          "Position": {
+            "X": 521.8126,
+            "Y": 111.135,
+            "Z": 713.4049
+          },
+          "TerritoryId": 1187,
+          "InteractionType": "Interact",
+          "StopDistance": 4
+        }
+      ]
+    },
+    {
+      "Sequence": 255,
+      "Steps": [
         {
           "DataId": 1054635,
           "Position": {
