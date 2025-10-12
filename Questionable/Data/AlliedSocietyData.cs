@@ -34,7 +34,7 @@ internal sealed class AlliedSocietyData
                 >= 2290 and <= 2319 => EAlliedSociety.Moogles,
                 >= 5199 and <= 5226 => EAlliedSociety.Pelupelu,
                 >= 5261 and <= 5288 => EAlliedSociety.MamoolJa,
-                >= 5343 and <= 5363 => EAlliedSociety.YokHuy,
+                >= 5336 and <= 5363 => EAlliedSociety.YokHuy,
                 _ => EAlliedSociety.None,
             };
         }
