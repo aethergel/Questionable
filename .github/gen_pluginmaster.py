@@ -17,7 +17,9 @@ def get_dalamud_api_level(release):
     return head.split('<Project Sdk="Dalamud.NET.Sdk/')[1].split(".")[0]
 
 def get_changelog(release):
-    return release["body"].replace("\r","").split("\n### Changes in this release\n")[1].split("\n### Installation Files")[0].strip()
+    for line in release["body"].replace("\r","").split("\n### Changes in this release\n")[1].split("\n### Installation Files")[0].strip().split("\n"):
+        if "Version bump" not in line or "Merge" not in line:
+            yield line
 
 def get_releases():
     data = get(f"https://api.github.com/repos/{REPO}/releases").json()
@@ -27,11 +29,11 @@ def get_releases():
         if not testing and r["prerelease"] is True:
             testing = r
             testing["_dalamud"] = get_dalamud_api_level(testing)
-            testing["_changelog"] = get_changelog(testing)
+            testing["_changelog"] = "\n".join(list(get_changelog(testing)))
         elif not latest and r["prerelease"] is False:
             latest = r
             latest["_dalamud"] = get_dalamud_api_level(latest)
-            latest["_changelog"] = get_changelog(latest)
+            latest["_changelog"] = "\n".join(list(get_changelog(latest)))
         for a in r["assets"]:
             downloads += a["download_count"]
     return testing,latest,downloads
@@ -41,7 +43,7 @@ def main():
     pluginmaster[0].update({
         "DownloadCount": downloads,
         "LastUpdate": int(time()),
-        "Changelog": "{}:\n{}\n\n{}:\n{}".format(
+        "Changelog": "Latest: {}:\n{}\n\nTesting:{}:\n{}".format(
             latest["tag_name"],
             latest["_changelog"],
             testing["tag_name"],
@@ -53,7 +55,8 @@ def main():
         "DownloadLinkUpdate": latest["assets"][0]["browser_download_url"],
         "DownloadLinkTesting": testing["assets"][0]["browser_download_url"],
         "DalamudApiLevel": latest["_dalamud"],
-        "TestingDalamudApiLevel": testing["_dalamud"]
+        "TestingDalamudApiLevel": testing["_dalamud"],
+        "IconUrl": "https://s3.aly.pet/qsttest.png"
         })
     with open(f"{ROOT}/pluginmaster.json","w") as f:
         dump(pluginmaster,f,indent=2)
