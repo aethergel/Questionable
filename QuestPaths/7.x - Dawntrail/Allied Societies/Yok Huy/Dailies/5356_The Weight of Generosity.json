@@ -1,0 +1,118 @@
+{
+    "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+    "Author": "Censored",
+    "QuestSequence": [
+        {
+            "Sequence": 0,
+            "Steps": [
+                {
+                    "DataId": 1054635,
+                    "Position": {
+                        "X": 493.2173,
+                        "Y": 142.24991,
+                        "Z": 783.0471
+                    },
+                    "TerritoryId": 1187,
+                    "InteractionType": "AcceptQuest",
+                    "Fly": true,
+                    "AetheryteShortcut": "Urqopacha - Worlar's Echo",
+                    "SkipConditions": {
+                        "AetheryteShortcutIf": {
+                            "NearPosition": {
+                                "Position": {
+                                    "X": 506.70618,
+                                    "Y": 142.24991,
+                                    "Z": 800.2289
+                                },
+                                "TerritoryId": 1187,
+                                "MaximumDistance": 200
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "Sequence": 1,
+            "Steps": [
+                {
+                    "DataId": 1055810,
+                    "Position": {
+                        "X": 530.44934,
+                        "Y": 107.13501,
+                        "Z": 539.0554
+                    },
+                    "TerritoryId": 1187,
+                    "InteractionType": "Interact",
+                    "Fly": true
+                }
+            ]
+        },
+        {
+            "Sequence": 2,
+            "Steps": [
+                {
+                    "DataId": 1054676,
+                    "Position": {
+                        "X": 500.93835,
+                        "Y": 142.24991,
+                        "Z": 782.22314
+                    },
+                    "TerritoryId": 1187,
+                    "InteractionType": "Interact"
+                }
+            ]
+        },
+        {
+            "Sequence": 255,
+            "Steps": [
+                {
+                    "Position": {
+                        "X": 493.2173,
+                        "Y": 142.24991,
+                        "Z": 783.0471
+                    },
+                    "TerritoryId": 1187,
+                    "InteractionType": "WalkTo",
+                    "AetheryteShortcut": "Urqopacha - Worlar's Echo",
+                    "Fly": true,
+                    "SkipConditions": {
+                        "AetheryteShortcutIf": {
+                            "NearPosition": {
+                                "Position": {
+                                    "X": 493.2173,
+                                    "Y": 142.24991,
+                                    "Z": 783.0471
+                                },
+                                "TerritoryId": 1187,
+                                "MaximumDistance": 200
+                            }
+                        },
+                        "StepIf": {
+                            "NearPosition": {
+                                "Position": {
+                                    "X": 493.2173,
+                                    "Y": 142.24991,
+                                    "Z": 783.0471
+                                },
+                                "TerritoryId": 1187,
+                                "MaximumDistance": 50
+                            }
+                        }
+                    }
+                },
+                {
+                    "DataId": 1054635,
+                    "Position": {
+                        "X": 493.2173,
+                        "Y": 142.24991,
+                        "Z": 783.0471
+                    },
+                    "TerritoryId": 1187,
+                    "InteractionType": "CompleteQuest",
+                    "StopDistance": 4
+                }
+            ]
+        }
+    ]
+}
