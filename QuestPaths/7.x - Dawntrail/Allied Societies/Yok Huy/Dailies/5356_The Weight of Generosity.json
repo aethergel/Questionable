@@ -1,0 +1,243 @@
+{
+  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+  "Author": "alydev,stoat33,Censored",
+  "LastChecked": {
+    "Username": "alydev",
+    "Date": "2025-10-14"
+  },
+  "QuestSequence": [
+    {
+      "Sequence": 0,
+      "Steps": [
+        {
+          "DataId": 1054635,
+          "Position": {
+            "X": 493.2173,
+            "Y": 142.24991,
+            "Z": 783.0471
+          },
+          "TerritoryId": 1187,
+          "InteractionType": "AcceptQuest",
+          "Fly": true,
+          "AetheryteShortcut": "Urqopacha - Worlar's Echo",
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": 493.2173,
+                  "Y": 142.24991,
+                  "Z": 783.0471
+                },
+                "TerritoryId": 1187,
+                "MaximumDistance": 200
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Sequence": 1,
+      "Steps": [
+        {
+          "DataId": 1055810,
+          "Position": {
+            "X": 530.44934,
+            "Y": 107.13501,
+            "Z": 539.0554
+          },
+          "TerritoryId": 1187,
+          "InteractionType": "WalkTo",
+          "Fly": true,
+          "AetheryteShortcut": "Urqopacha - Worlar's Echo",
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "InSameTerritory": true
+            },
+            "StepIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": 530.44934,
+                  "Y": 107.13501,
+                  "Z": 539.0554
+                },
+                "TerritoryId": 1187,
+                "MaximumDistance": 20
+              }
+            }
+          }
+        },
+        {
+          "DataId": 1055810,
+          "Position": {
+            "X": 530.44934,
+            "Y": 107.13501,
+            "Z": 539.0554
+          },
+          "TerritoryId": 1187,
+          "InteractionType": "Interact",
+          "StopDistance": 4
+        }
+      ]
+    },
+    {
+      "Sequence": 2,
+      "Steps": [
+        {
+          "$": "Recovery",
+          "DataId": 1055810,
+          "Position": {
+            "X": 530.44934,
+            "Y": 107.13501,
+            "Z": 539.0554
+          },
+          "TerritoryId": 1187,
+          "InteractionType": "WalkTo",
+          "Fly": true,
+          "AetheryteShortcut": "Urqopacha - Worlar's Echo",
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "InSameTerritory": true
+            },
+            "StepIf": {
+              "NotNamePlateIconId": [
+                71226
+              ],
+              "NearPosition": {
+                "Position": {
+                  "X": 530.44934,
+                  "Y": 107.13501,
+                  "Z": 539.0554
+                },
+                "TerritoryId": 1187,
+                "MaximumDistance": 100
+              }
+            }
+          }
+        },
+        {
+          "DataId": 1055810,
+          "Position": {
+            "X": 530.44934,
+            "Y": 107.13501,
+            "Z": 539.0554
+          },
+          "TerritoryId": 1187,
+          "InteractionType": "Interact",
+          "StopDistance": 4,
+          "SkipConditions": {
+            "StepIf": {
+              "NotNamePlateIconId": [
+                71226
+              ]
+            }
+          }
+        },
+        {
+          "Position": {
+            "X": 551.8443,
+            "Y": 108.58475,
+            "Z": 726.33057
+          },
+          "TerritoryId": 1187,
+          "InteractionType": "WalkTo",
+          "StopDistance": 4,
+          "Fly": true,
+          "SkipConditions": {
+            "StepIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": 551.8443,
+                  "Y": 108.58475,
+                  "Z": 726.33057
+                },
+                "TerritoryId": 1187,
+                "MaximumDistance": 20
+              }
+            }
+          }
+        },
+        {
+          "Position": {
+            "X": 547.225,
+            "Y": 119.49903,
+            "Z": 758.51587
+          },
+          "TerritoryId": 1187,
+          "InteractionType": "WalkTo",
+          "DisableNavmesh": true
+        },
+        {
+          "Position": {
+            "X": 549.5645,
+            "Y": 119.49904,
+            "Z": 765.71906
+          },
+          "TerritoryId": 1187,
+          "InteractionType": "WalkTo",
+          "DisableNavmesh": true
+        },
+        {
+          "Position": {
+            "X": 539.4746,
+            "Y": 135.31715,
+            "Z": 799.5778
+          },
+          "TerritoryId": 1187,
+          "InteractionType": "WalkTo",
+          "DisableNavmesh": true
+        },
+        {
+          "Position": {
+            "X": 517.63855,
+            "Y": 142.24991,
+            "Z": 793.3129
+          },
+          "TerritoryId": 1187,
+          "InteractionType": "WalkTo",
+          "DisableNavmesh": true
+        },
+        {
+          "DataId": 1054676,
+          "Position": {
+            "X": 500.93835,
+            "Y": 142.24991,
+            "Z": 782.22314
+          },
+          "TerritoryId": 1187,
+          "InteractionType": "Interact"
+        }
+      ]
+    },
+    {
+      "Sequence": 255,
+      "Steps": [
+        {
+          "DataId": 1054635,
+          "Position": {
+            "X": 493.2173,
+            "Y": 142.24991,
+            "Z": 783.0471
+          },
+          "TerritoryId": 1187,
+          "InteractionType": "CompleteQuest",
+          "Fly": true,
+          "AetheryteShortcut": "Urqopacha - Worlar's Echo",
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": 493.2173,
+                  "Y": 142.24991,
+                  "Z": 783.0471
+                },
+                "TerritoryId": 1187,
+                "MaximumDistance": 200
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
