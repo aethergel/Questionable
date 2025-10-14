@@ -11,6 +11,10 @@ using Dalamud.Interface;
 using Dalamud.Interface.Colors;
 using Dalamud.Interface.Components;
 using Dalamud.Plugin.Services;
+#if DEBUG
+using FFXIVClientStructs.FFXIV.Client.Game;
+using FFXIVClientStructs.FFXIV.Client.Game.UI;
+#endif
 using FFXIVClientStructs.FFXIV.Client.Game.Control;
 using FFXIVClientStructs.FFXIV.Client.Game.Object;
 using Microsoft.Extensions.Logging;
@@ -20,12 +24,13 @@ using Questionable.Functions;
 using Questionable.Model;
 using Questionable.Model.Common;
 using ObjectKind = Dalamud.Game.ClientState.Objects.Enums.ObjectKind;
+using Questionable.Model.Questing;
 
 namespace Questionable.Windows.QuestComponents;
 
 internal sealed class CreationUtilsComponent
 {
-#if false
+#if DEBUG
     private readonly QuestController _questController;
 #endif
     private readonly MovementController _movementController;
@@ -42,7 +47,7 @@ internal sealed class CreationUtilsComponent
     private readonly ILogger<CreationUtilsComponent> _logger;
 
     public CreationUtilsComponent(
-#if false
+#if DEBUG
         QuestController questController,
 #endif
         MovementController movementController,
@@ -58,7 +63,7 @@ internal sealed class CreationUtilsComponent
         Configuration configuration,
         ILogger<CreationUtilsComponent> logger)
     {
-#if false
+#if DEBUG
         _questController = questController;
 #endif
         _movementController = movementController;
@@ -94,8 +99,9 @@ internal sealed class CreationUtilsComponent
             ImGui.Text($"Current Quest: {q.CurrentQuest} → {q.Sequence}");
         }
 
-#if false
-        unsafe {
+#if DEBUG
+        unsafe
+        {
             var questManager = QuestManager.Instance();
             if (questManager != null)
             {
@@ -123,7 +129,7 @@ internal sealed class CreationUtilsComponent
         }
 #endif
 
-#if false
+#if DEBUG
         unsafe
         {
             var questManager = QuestManager.Instance();
@@ -138,7 +144,7 @@ internal sealed class CreationUtilsComponent
         }
 #endif
 
-#if false
+#if DEBUG
         unsafe
         {
             var director = UIState.Instance()->DirectorTodo.Director;
@@ -158,7 +164,7 @@ internal sealed class CreationUtilsComponent
         }
 #endif
 
-#if false
+#if DEBUG
         if (_configuration.Advanced.AdditionalStatusInformation)
         {
             unsafe
@@ -268,6 +274,22 @@ internal sealed class CreationUtilsComponent
         ImGui.EndDisabled();
     }
 
+    private string GetCurrentQuestInfoAsString()
+    {
+        var q = _questFunctions.GetCurrentQuest();
+        string qw = "QW: -";
+        if (q.CurrentQuest is QuestId)
+        {
+            var progressInfo = _questFunctions.GetQuestProgressInfo(q.CurrentQuest);
+            qw = progressInfo != null ? progressInfo.ToString() : "QW: -";
+        }
+        else
+        {
+            return "No active quest";
+        }
+        return $"{q.CurrentQuest} → {q.Sequence} - {qw}";
+    }
+
     private unsafe void DrawCopyButton(IGameObject target)
     {
         GameObject* gameObject = (GameObject*)target.Address;
@@ -280,6 +302,7 @@ internal sealed class CreationUtilsComponent
             if (target.ObjectKind == ObjectKind.GatheringPoint)
             {
                 ImGui.SetClipboardText($$"""
+                                         "$": "{{GetCurrentQuestInfoAsString()}}",
                                          "DataId": {{target.DataId}},
                                          "Position": {
                                              "X": {{target.Position.X.ToString(CultureInfo.InvariantCulture)}},
@@ -298,6 +321,7 @@ internal sealed class CreationUtilsComponent
                     _ => "Interact",
                 };
                 ImGui.SetClipboardText($$"""
+                                         "$": "{{GetCurrentQuestInfoAsString()}}",
                                          "DataId": {{target.DataId}},
                                          "Position": {
                                              "X": {{target.Position.X.ToString(CultureInfo.InvariantCulture)}},
@@ -335,6 +359,7 @@ internal sealed class CreationUtilsComponent
         if (copy)
         {
             ImGui.SetClipboardText($$"""
+                                     "$": "{{GetCurrentQuestInfoAsString()}}",
                                      "Position": {
                                          "X": {{_clientState.LocalPlayer.Position.X.ToString(CultureInfo.InvariantCulture)}},
                                          "Y": {{_clientState.LocalPlayer.Position.Y.ToString(CultureInfo.InvariantCulture)}},

@@ -2,11 +2,13 @@
 using Dalamud.Bindings.ImGui;
 using Dalamud.Interface;
 using Dalamud.Interface.Colors;
+using Dalamud.Interface.Components;
 using Dalamud.Interface.Utility.Raii;
 using Dalamud.Plugin;
 using FFXIVClientStructs.FFXIV.Common.Math;
 using LLib.ImGui;
 using Questionable.Data;
+using Questionable.Model;
 using Questionable.Validation;
 
 namespace Questionable.Windows;
@@ -54,7 +56,22 @@ internal sealed class QuestValidationWindow : LWindow
             ImGui.TableNextRow();
 
             if (ImGui.TableNextColumn())
+            {
                 ImGui.TextUnformatted(validationIssue.ElementId?.ToString() ?? string.Empty);
+
+                if (validationIssue.ElementId != null)
+                {
+                    IQuestInfo quest = _questData.GetQuestInfo(validationIssue.ElementId);
+                    bool copy = ImGuiComponents.IconButton(FontAwesomeIcon.Copy);
+                    if (ImGui.IsItemHovered())
+                        ImGui.SetTooltip("Copy as file name");
+                    if (copy)
+                    {
+                        string fileName = $"{quest.QuestId}_{quest.SimplifiedName}.json";
+                        ImGui.SetClipboardText(fileName);
+                    }
+                }
+            }
 
             if (ImGui.TableNextColumn())
                 ImGui.TextUnformatted(validationIssue.ElementId != null
