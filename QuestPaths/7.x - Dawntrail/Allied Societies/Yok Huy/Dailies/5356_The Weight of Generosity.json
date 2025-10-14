@@ -3,7 +3,7 @@
   "Author": "alydev,stoat33,Censored",
   "LastChecked": {
     "Username": "alydev",
-    "Date": "2025-10-14"
+    "Date": "2025-10-15"
   },
   "QuestSequence": [
     {
@@ -135,33 +135,39 @@
         },
         {
           "Position": {
-            "X": 551.8443,
-            "Y": 108.58475,
-            "Z": 726.33057
+            "X": 521.158,
+            "Y": 107.134964,
+            "Z": 559.1027
           },
           "TerritoryId": 1187,
           "InteractionType": "WalkTo",
-          "StopDistance": 4,
-          "Fly": true,
-          "SkipConditions": {
-            "StepIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": 551.8443,
-                  "Y": 108.58475,
-                  "Z": 726.33057
-                },
-                "TerritoryId": 1187,
-                "MaximumDistance": 20
-              }
-            }
-          }
+          "DisableNavmesh": true
         },
         {
           "Position": {
-            "X": 547.225,
-            "Y": 119.49903,
-            "Z": 758.51587
+            "X": 539.80023,
+            "Y": 107.13393,
+            "Z": 605.5298
+          },
+          "TerritoryId": 1187,
+          "InteractionType": "WalkTo",
+          "DisableNavmesh": true
+        },
+        {
+          "Position": {
+            "X": 555.5777,
+            "Y": 103.64586,
+            "Z": 701.73474
+          },
+          "TerritoryId": 1187,
+          "InteractionType": "WalkTo",
+          "DisableNavmesh": true
+        },
+        {
+          "Position": {
+            "X": 546.4509,
+            "Y": 119.49904,
+            "Z": 758.46045
           },
           "TerritoryId": 1187,
           "InteractionType": "WalkTo",
