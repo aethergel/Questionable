@@ -25,7 +25,7 @@ internal sealed class QuestProgressInfo
         for (int i = 0; i < qw.Length; ++i)
         {
             byte thisbyte = qw[i];
-            Tooltip += $"{Convert.ToString(thisbyte, 2).PadLeft(8).Replace(" ", "0")}\n";
+            Tooltip += $"{Convert.ToString(thisbyte, 2).PadLeft(8).Replace(" ", "0", StringComparison.InvariantCulture)}\n";
             int little = thisbyte & 0xF;
             repr += thisbyte;
             if (little != 0) repr += $"({little})";

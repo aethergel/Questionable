@@ -84,8 +84,8 @@ internal sealed class ItemUseModule : ICombatModule
             return;
         }
 
-        if (_combatData.KillEnemyDataIds.Contains(nextTarget.DataId) ||
-            _combatData.ComplexCombatDatas.Any(x => x.DataId == nextTarget.DataId &&
+        if (_combatData.KillEnemyDataIds.Contains(nextTarget.BaseId) ||
+            _combatData.ComplexCombatDatas.Any(x => x.DataId == nextTarget.BaseId &&
                                                     (x.NameId == null || (nextTarget is ICharacter character && x.NameId == character.NameId))))
         {
             if (_isDoingRotation)

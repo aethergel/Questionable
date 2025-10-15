@@ -66,7 +66,7 @@ internal sealed class EditorCommands : IDisposable
         if (target == null || target.ObjectKind != ObjectKind.GatheringPoint)
             throw new Exception("No valid target");
 
-        var gatheringPoint = _dataManager.GetExcelSheet<GatheringPoint>().GetRowOrDefault(target.DataId);
+        var gatheringPoint = _dataManager.GetExcelSheet<GatheringPoint>().GetRowOrDefault(target.BaseId);
         if (gatheringPoint == null)
             throw new Exception("Invalid gathering point");
 
@@ -80,7 +80,7 @@ internal sealed class EditorCommands : IDisposable
             root = location.Root;
 
             // if this is an existing node, ignore it
-            var existingNode = root.Groups.SelectMany(x => x.Nodes.Where(y => y.DataId == target.DataId))
+            var existingNode = root.Groups.SelectMany(x => x.Nodes.Where(y => y.DataId == target.BaseId))
                 .Any(x => x.Locations.Any(y => Vector3.Distance(y.Position, target.Position) < 0.1f));
             if (existingNode)
                 throw new Exception("Node already exists");
@@ -107,7 +107,7 @@ internal sealed class EditorCommands : IDisposable
             [
                 new GatheringNode
                 {
-                    DataId = target.DataId,
+                    DataId = target.BaseId,
                     Locations =
                     [
                         new GatheringLocation
@@ -125,14 +125,14 @@ internal sealed class EditorCommands : IDisposable
     {
         // find the same data id
         var node = root.Groups.SelectMany(x => x.Nodes)
-            .SingleOrDefault(x => x.DataId == target.DataId);
+            .SingleOrDefault(x => x.DataId == target.BaseId);
         if (node != null)
         {
             node.Locations.Add(new GatheringLocation
             {
                 Position = target.Position,
             });
-            _chatGui.Print($"Added location to existing node {target.DataId}.", "qG");
+            _chatGui.Print($"Added location to existing node {target.BaseId}.", "qG");
         }
         else
         {
@@ -150,7 +150,7 @@ internal sealed class EditorCommands : IDisposable
 
             closestGroup.Group.Nodes.Add(new GatheringNode
             {
-                DataId = target.DataId,
+                DataId = target.BaseId,
                 Locations =
                 [
                     new GatheringLocation
@@ -159,7 +159,7 @@ internal sealed class EditorCommands : IDisposable
                     }
                 ]
             });
-            _chatGui.Print($"Added new node {target.DataId}.", "qG");
+            _chatGui.Print($"Added new node {target.BaseId}.", "qG");
         }
     }
 
@@ -199,7 +199,7 @@ internal sealed class EditorCommands : IDisposable
                     [
                         new GatheringNode
                         {
-                            DataId = target.DataId,
+                            DataId = target.BaseId,
                             Locations =
                             [
                                 new GatheringLocation

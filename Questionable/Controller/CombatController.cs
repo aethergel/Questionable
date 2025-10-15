@@ -331,7 +331,7 @@ internal sealed class CombatController : IDisposable
                         gameObjectStruct->NamePlateIconId == 0)
                         continue;
 
-                    if (complexCombatData[i].DataId == battleNpc.DataId &&
+                    if (complexCombatData[i].DataId == battleNpc.BaseId &&
                         (complexCombatData[i].NameId == null || complexCombatData[i].NameId == battleNpc.NameId))
                         return (100, "CCD");
                 }
@@ -339,7 +339,7 @@ internal sealed class CombatController : IDisposable
             else
             {
                 if ((!expectQuestMarker || gameObjectStruct->NamePlateIconId != 0) &&
-                    _currentFight.Data.KillEnemyDataIds.Contains(battleNpc.DataId))
+                    _currentFight.Data.KillEnemyDataIds.Contains(battleNpc.BaseId))
                     return (90, "KED");
             }
 
@@ -422,14 +422,14 @@ internal sealed class CombatController : IDisposable
             if (!useNavmesh)
             {
                 _logger.LogInformation("Moving to {TargetName} ({DataId}) to attack", gameObject.Name,
-                    gameObject.DataId);
+                    gameObject.BaseId);
                 _movementController.NavigateTo(EMovementType.Combat, null, [gameObject.Position], false, false,
                     maxDistance + hitboxOffset - 0.25f, verticalStopDistance: float.MaxValue);
             }
             else
             {
                 _logger.LogInformation("Moving to {TargetName} ({DataId}) to attack (with navmesh)", gameObject.Name,
-                    gameObject.DataId);
+                    gameObject.BaseId);
                 _movementController.NavigateTo(EMovementType.Combat, null, gameObject.Position, false, false,
                     maxDistance + hitboxOffset - 0.25f, verticalStopDistance: float.MaxValue);
             }

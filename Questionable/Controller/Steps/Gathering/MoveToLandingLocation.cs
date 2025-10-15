@@ -37,7 +37,7 @@ internal static class MoveToLandingLocation
             if (Task.GatheringNode.Locations.Count > 1)
             {
                 var gameObject = objectTable.SingleOrDefault(x =>
-                    x.ObjectKind == ObjectKind.GatheringPoint && x.DataId == Task.GatheringNode.DataId &&
+                    x.ObjectKind == ObjectKind.GatheringPoint && x.BaseId == Task.GatheringNode.DataId &&
                     x.IsTargetable);
                 if (gameObject == null)
                     return false;

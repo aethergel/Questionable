@@ -150,7 +150,7 @@ internal sealed class DebugOverlay : Window
 
             var (priority, reason) = _combatController.GetKillPriority(x);
             ImGui.GetWindowDrawList().AddText(screenPos + new Vector2(10, -8), priority > 0 ? 0xFF00FF00 : 0xFFFFFFFF,
-                $"{x.Name}/{x.GameObjectId:X}, {x.DataId}, {priority} - {reason}, {Vector3.Distance(x.Position, _clientState.LocalPlayer!.Position):N2}, {x.IsTargetable}");
+                $"{x.Name}/{x.GameObjectId:X}, {x.BaseId}, {priority} - {reason}, {Vector3.Distance(x.Position, _clientState.LocalPlayer!.Position):N2}, {x.IsTargetable}");
         }
     }
 
