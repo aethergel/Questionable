@@ -317,17 +317,17 @@ internal static class SkipCondition
 
         private bool CheckAetherCurrentCondition(QuestStep step)
         {
-            if (step is { DataId: not null, InteractionType: EInteractionType.AttuneAetherCurrent } &&
-                gameFunctions.IsAetherCurrentUnlocked(step.DataId.Value))
-            {
-                logger.LogInformation("Skipping step, as current is unlocked");
-                return true;
-            }
-
             if (step is { InteractionType: EInteractionType.AttuneAetherCurrent } &&
                 configuration.Advanced.SkipAetherCurrents)
             {
                 logger.LogInformation("Skipping step, as aether currents should be skipped");
+                return true;
+            }
+
+            if (step is { DataId: not null, InteractionType: EInteractionType.AttuneAetherCurrent } &&
+                gameFunctions.IsAetherCurrentUnlocked(step.DataId.Value))
+            {
+                logger.LogInformation("Skipping step, as current is unlocked");
                 return true;
             }
 
