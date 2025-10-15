@@ -212,10 +212,10 @@ internal static class SinglePlayerDuty
 
         public override ETaskResult Update()
         {
-            if (targetManager.Target?.DataId == Task.DataId)
+            if (targetManager.Target?.BaseId == Task.DataId)
                 return ETaskResult.TaskComplete;
 
-            IGameObject? gameObject = objectTable.FirstOrDefault(x => x.DataId == Task.DataId);
+            IGameObject? gameObject = objectTable.FirstOrDefault(x => x.BaseId == Task.DataId);
             if (gameObject == null)
                 return ETaskResult.StillRunning;
 

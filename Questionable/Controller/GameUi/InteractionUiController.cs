@@ -440,7 +440,7 @@ internal sealed class InteractionUiController : IDisposable
         var target = _targetManager.Target;
         if (target != null)
         {
-            foreach (var questInfo in _questData.GetAllByIssuerDataId(target.DataId).Where(x => x.QuestId is QuestId))
+            foreach (var questInfo in _questData.GetAllByIssuerDataId(target.BaseId).Where(x => x.QuestId is QuestId))
             {
                 if (_questFunctions.IsReadyToAcceptQuest(questInfo.QuestId) &&
                     _questRegistry.TryGetQuest(questInfo.QuestId, out Quest? knownQuest))
@@ -496,11 +496,11 @@ internal sealed class InteractionUiController : IDisposable
                 continue;
             }
 
-            if (dialogueChoice.DataId != null && dialogueChoice.DataId != _targetManager.Target?.DataId)
+            if (dialogueChoice.DataId != null && dialogueChoice.DataId != _targetManager.Target?.BaseId)
             {
                 _logger.LogDebug(
                     "Skipping entry in DialogueChoice expecting target dataId {ExpectedDataId}, actual target is {ActualTargetId}",
-                    dialogueChoice.DataId, _targetManager.Target?.DataId);
+                    dialogueChoice.DataId, _targetManager.Target?.BaseId);
                 continue;
             }
 
@@ -680,11 +680,11 @@ internal sealed class InteractionUiController : IDisposable
             if (dialogueChoice.Type != EDialogChoiceType.YesNo)
                 continue;
 
-            if (dialogueChoice.DataId != null && dialogueChoice.DataId != _targetManager.Target?.DataId)
+            if (dialogueChoice.DataId != null && dialogueChoice.DataId != _targetManager.Target?.BaseId)
             {
                 _logger.LogDebug(
                     "Skipping entry in DialogueChoice expecting target dataId {ExpectedDataId}, actual target is {ActualTargetId}",
-                    dialogueChoice.DataId, _targetManager.Target?.DataId);
+                    dialogueChoice.DataId, _targetManager.Target?.BaseId);
                 continue;
             }
 

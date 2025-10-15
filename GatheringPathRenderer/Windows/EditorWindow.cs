@@ -109,7 +109,7 @@ internal sealed class EditorWindow : Window
         }
 
         _target ??= _objectTable
-            .Where(x => x.ObjectKind == ObjectKind.GatheringPoint && x.DataId == location.Node.DataId)
+            .Where(x => x.ObjectKind == ObjectKind.GatheringPoint && x.BaseId == location.Node.DataId)
             .Select(x => new
             {
                 Object = x,
@@ -140,7 +140,7 @@ internal sealed class EditorWindow : Window
             ImGui.Text(context.File.Name);
             ImGui.Unindent();
             ImGui.Text(
-                $"{_target.DataId} +{node.Locations.Count - 1} / {location.InternalId.ToString().Substring(0, 4)}");
+                $"{_target.BaseId} +{node.Locations.Count - 1} / {location.InternalId.ToString().Substring(0, 4)}");
             ImGui.Text(string.Create(CultureInfo.InvariantCulture, $"{location.Position:G}"));
 
             if (!_changes.TryGetValue(location.InternalId, out LocationOverride? locationOverride))
@@ -199,7 +199,7 @@ internal sealed class EditorWindow : Window
 
 
             List<IGameObject> nodesInObjectTable = _objectTable
-                .Where(x => x.ObjectKind == ObjectKind.GatheringPoint && x.DataId == _target.DataId)
+                .Where(x => x.ObjectKind == ObjectKind.GatheringPoint && x.BaseId == _target.BaseId)
                 .ToList();
             List<IGameObject> missingLocations = nodesInObjectTable
                 .Where(x => !node.Locations.Any(y => Vector3.Distance(x.Position, y.Position) < 0.1f))
@@ -217,7 +217,7 @@ internal sealed class EditorWindow : Window
         }
         else if (_target != null)
         {
-            var gatheringPoint = _dataManager.GetExcelSheet<GatheringPoint>().GetRowOrDefault(_target.DataId);
+            var gatheringPoint = _dataManager.GetExcelSheet<GatheringPoint>().GetRowOrDefault(_target.BaseId);
             if (gatheringPoint == null)
                 return;
 
@@ -234,7 +234,7 @@ internal sealed class EditorWindow : Window
                     _plugin.Save(targetFile, root);
                 }
 
-                ImGui.BeginDisabled(root.Groups.Any(group => group.Nodes.Any(node => node.DataId == _target.DataId)));
+                ImGui.BeginDisabled(root.Groups.Any(group => group.Nodes.Any(node => node.DataId == _target.BaseId)));
                 ImGui.SameLine();
                 if (ImGui.Button("Add as new group"))
                 {

@@ -131,7 +131,7 @@ internal sealed unsafe class GameFunctions
             if (gameObject is { ObjectKind: ObjectKind.GatheringPoint, IsTargetable: false })
                 continue;
 
-            if (gameObject.DataId == dataId && (kind == null || kind.Value == gameObject.ObjectKind))
+            if (gameObject.BaseId == dataId && (kind == null || kind.Value == gameObject.ObjectKind))
             {
                 return gameObject;
             }
@@ -153,7 +153,7 @@ internal sealed unsafe class GameFunctions
 
     public bool InteractWith(IGameObject gameObject)
     {
-        _logger.LogInformation("Setting target with {DataId} to {ObjectId}", gameObject.DataId, gameObject.EntityId);
+        _logger.LogInformation("Setting target with {DataId} to {ObjectId}", gameObject.BaseId, gameObject.EntityId);
         _targetManager.Target = null;
         _targetManager.Target = gameObject;
 
@@ -469,7 +469,7 @@ internal sealed unsafe class GameFunctions
         if (currentQuest is not { Info: SatisfactionSupplyInfo })
             return false;
 
-        if (_targetManager.Target == null || _targetManager.Target.DataId != currentQuest.Info.IssuerDataId)
+        if (_targetManager.Target == null || _targetManager.Target.BaseId != currentQuest.Info.IssuerDataId)
             return false;
 
         if (!AgentSatisfactionSupply.Instance()->IsAgentActive())
