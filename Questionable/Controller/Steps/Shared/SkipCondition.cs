@@ -464,11 +464,14 @@ internal static class SkipCondition
         private unsafe bool CheckTaxiStandUnlocked(QuestStep step)
         {
             UIState* uiState = UIState.Instance();
-            if (step.TaxiStandId is { } taxiStandId &&
-                uiState->IsChocoboTaxiStandUnlocked(taxiStandId))
-            {
-                logger.LogInformation("Skipping step, as taxi stand {TaxiStandId} is unlocked", taxiStandId);
-                return true;
+            if (step.TaxiStandId is not null) {
+                uint taxiStandId = (uint)step.TaxiStandId;
+                if ((int)taxiStandId < 0)
+                    taxiStandId += 0x120000u;
+                if (uiState->IsChocoboTaxiStandUnlocked(taxiStandId)) {
+                    logger.LogInformation("Skipping step, as taxi stand {TaxiStandId} is unlocked", taxiStandId);
+                    return true;
+                }
             }
 
             return false;
