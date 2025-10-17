@@ -26,6 +26,13 @@ internal static class QuestCleanUp
                 alliedSocietyData.Mounts.TryGetValue(mountId, out var mountConfiguration))
             {
                 logger.LogInformation("We are on a known allied society mount with id = {MountId}", mountId);
+                
+                // oh boy we love one-off hacky fixes don't we folks
+                if (quest.Id.Value == 4349) {
+                    logger.LogInformation("However, this UT sidequest happens to reuse this Moogle society mount.");
+                    logger.LogInformation("We do not question the almighty wisdom of game devs. Let's continue with this sidequest.");
+                    return null;
+                }
 
                 // it doesn't particularly matter if we teleport to the same aetheryte twice in the same quest step, as
                 // the second (normal) teleport instance should detect that we're within range and not do anything
