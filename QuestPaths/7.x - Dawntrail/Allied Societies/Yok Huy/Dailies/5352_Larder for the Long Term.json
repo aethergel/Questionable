@@ -1,6 +1,10 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-  "Author": "stoat33",
+  "Author": "alydev",
+  "LastChecked": {
+    "Username": "alydev",
+    "Date": "2025-10-17"
+  },
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -20,9 +24,9 @@
             "AetheryteShortcutIf": {
               "NearPosition": {
                 "Position": {
-                  "X": 506.70618,
+                  "X": 493.2173,
                   "Y": 142.24991,
-                  "Z": 800.2289
+                  "Z": 783.0471
                 },
                 "TerritoryId": 1187,
                 "MaximumDistance": 200
@@ -163,24 +167,7 @@
           }
         },
         {
-          "DataId": 1054640,
-          "Position": {
-            "X": 496.11658,
-            "Y": 142.24991,
-            "Z": 801.6022
-          },
-          "TerritoryId": 1187,
-          "TargetTerritoryId": 1297,
-          "InteractionType": "Interact",
-          "SkipConditions": {
-            "StepIf": {
-              "NotInTerritory": [
-                1187
-              ]
-            }
-          }
-        },
-        {
+          "$": "Xarhorkur",
           "DataId": 1055802,
           "Position": {
             "X": 74.75391,
@@ -189,7 +176,6 @@
           },
           "TerritoryId": 1297,
           "InteractionType": "Interact",
-          "Mount": true,
           "DisableNavmesh": true
         }
       ]
@@ -232,6 +218,7 @@
           }
         },
         {
+          "$": "Recovery",
           "DataId": 1054640,
           "Position": {
             "X": 496.11658,
@@ -250,11 +237,11 @@
           }
         },
         {
-          "$": "Road",
+          "$": "Recovery",
           "Position": {
-            "X": -14.502395,
-            "Y": 0.29999995,
-            "Z": 54.881023
+            "X": 14.214312,
+            "Y": 5.428712,
+            "Z": -3.7248642
           },
           "TerritoryId": 1297,
           "InteractionType": "WalkTo",
@@ -264,9 +251,58 @@
             "StepIf": {
               "NearPosition": {
                 "Position": {
-                  "X": -76.46301,
-                  "Y": 6.180734,
-                  "Z": 35.75183
+                  "X": 74.75391,
+                  "Y": 1.8866259,
+                  "Z": 50.369995
+                },
+                "TerritoryId": 1297,
+                "MaximumDistance": 20
+              }
+            }
+          }
+        },
+        {
+          "$": "Road",
+          "Position": {
+            "X": 16.57459,
+            "Y": 0.29999995,
+            "Z": 62.71482
+          },
+          "TerritoryId": 1297,
+          "InteractionType": "WalkTo",
+          "Mount": true,
+          "DisableNavmesh": true,
+          "SkipConditions": {
+            "StepIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": -105.760315,
+                  "Y": 6.3924823,
+                  "Z": 60.349365
+                },
+                "TerritoryId": 1297,
+                "MaximumDistance": 20
+              }
+            }
+          }
+        },
+        {
+          "Position": {
+            "X": -84.34263,
+            "Y": 5.9020233,
+            "Z": 47.626167
+          },
+          "TerritoryId": 1297,
+          "InteractionType": "WalkTo",
+          "Mount": true,
+          "DisableNavmesh": true,
+          "SkipConditions": {
+            "StepIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": -105.760315,
+                  "Y": 6.3924823,
+                  "Z": 60.349365
                 },
                 "TerritoryId": 1297,
                 "MaximumDistance": 20
@@ -278,8 +314,8 @@
           "$": "Craft",
           "TerritoryId": 1297,
           "InteractionType": "Craft",
-          "ItemId": 46232,
-          "ItemCount": 4,
+          "ItemId": 46230,
+          "ItemCount": 3,
           "SkipConditions": {
             "StepIf": {
               "Item": {
@@ -289,25 +325,17 @@
           }
         },
         {
-          "DataId": 1055807,
+          "$": "Quest NPC",
+          "DataId": 1055806,
           "Position": {
-            "X": -76.46301,
-            "Y": 6.180734,
-            "Z": 35.75183
+            "X": -105.760315,
+            "Y": 6.3924823,
+            "Z": 60.349365
           },
           "TerritoryId": 1297,
           "InteractionType": "Interact",
           "Mount": true,
-          "DisableNavmesh": true,
-          "AetheryteShortcut": "Urqopacha - Worlar's Echo",
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InTerritory": [
-                1187,
-                1297
-              ]
-            }
-          }
+          "DisableNavmesh": true
         }
       ]
     },
@@ -315,15 +343,16 @@
       "Sequence": 255,
       "Steps": [
         {
+          "DataId": 1054635,
           "Position": {
             "X": 493.2173,
             "Y": 142.24991,
             "Z": 783.0471
           },
           "TerritoryId": 1187,
-          "InteractionType": "WalkTo",
-          "AetheryteShortcut": "Urqopacha - Worlar's Echo",
+          "InteractionType": "CompleteQuest",
           "Fly": true,
+          "AetheryteShortcut": "Urqopacha - Worlar's Echo",
           "SkipConditions": {
             "AetheryteShortcutIf": {
               "NearPosition": {
@@ -335,30 +364,8 @@
                 "TerritoryId": 1187,
                 "MaximumDistance": 200
               }
-            },
-            "StepIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": 493.2173,
-                  "Y": 142.24991,
-                  "Z": 783.0471
-                },
-                "TerritoryId": 1187,
-                "MaximumDistance": 50
-              }
             }
           }
-        },
-        {
-          "DataId": 1054635,
-          "Position": {
-            "X": 493.2173,
-            "Y": 142.24991,
-            "Z": 783.0471
-          },
-          "TerritoryId": 1187,
-          "InteractionType": "CompleteQuest",
-          "StopDistance": 4
         }
       ]
     }

@@ -92,6 +92,31 @@
           }
         },
         {
+          "$": "Recovery",
+          "Position": {
+            "X": 14.214312,
+            "Y": 5.428712,
+            "Z": -3.7248642
+          },
+          "TerritoryId": 1297,
+          "InteractionType": "WalkTo",
+          "Mount": true,
+          "DisableNavmesh": true,
+          "SkipConditions": {
+            "StepIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": 97.8866,
+                  "Y": 4.942851,
+                  "Z": 160.66211
+                },
+                "TerritoryId": 1297,
+                "MaximumDistance": 20
+              }
+            }
+          }
+        },
+        {
           "$": "Road",
           "Position": {
             "X": 16.57459,
