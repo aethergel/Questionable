@@ -12,4 +12,5 @@ public enum EStatus : uint
     Hidden = 614,
     Eukrasia = 2606,
     Jog = 4209,
+    Transfiguration = 2727,
 }

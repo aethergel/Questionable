@@ -8,5 +8,6 @@ public sealed class StatusConverter() : EnumConverter<EStatus>(Values)
     private static readonly Dictionary<EStatus, string> Values = new()
     {
         { EStatus.Hidden, "Hidden" },
+        { EStatus.Transfiguration, "Transfiguration" },
     };
 }
