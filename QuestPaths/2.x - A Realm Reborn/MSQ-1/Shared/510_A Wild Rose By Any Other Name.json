@@ -80,7 +80,7 @@
           },
           "TerritoryId": 141,
           "InteractionType": "UnlockTaxiStand",
-          "TaxiStandId": 14
+          "TaxiStandId": 1179662
         },
         {
           "Position": {
@@ -111,7 +111,7 @@
           },
           "TerritoryId": 145,
           "InteractionType": "UnlockTaxiStand",
-          "TaxiStandId": 15
+          "TaxiStandId": 1179663
         },
         {
           "TerritoryId": 145,
