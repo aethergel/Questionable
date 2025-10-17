@@ -86,7 +86,7 @@ internal static class Interact
         EInteractionType InteractionType,
         bool SkipMarkerCheck = false,
         uint? PickUpItemId = null,
-        byte? TaxiStandId = null,
+        uint? TaxiStandId = null,
         SkipStepConditions? SkipConditions = null,
         List<QuestWorkValue?>? CompletionQuestVariablesFlags = null) : ITask
     {

@@ -465,10 +465,10 @@ internal static class SkipCondition
         {
             UIState* uiState = UIState.Instance();
             if (step.TaxiStandId is not null) {
-                uint taxiStandId = (uint)step.TaxiStandId;
+                uint? taxiStandId = step.TaxiStandId;
                 if ((int)taxiStandId < 0)
                     taxiStandId += 0x120000u;
-                if (uiState->IsChocoboTaxiStandUnlocked(taxiStandId)) {
+                if (uiState->IsChocoboTaxiStandUnlocked(taxiStandId.Value)) {
                     logger.LogInformation("Skipping step, as taxi stand {TaxiStandId} is unlocked", taxiStandId);
                     return true;
                 }

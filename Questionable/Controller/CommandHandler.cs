@@ -242,7 +242,7 @@ internal sealed class CommandHandler : IDisposable
                     List<string> taxiStands = [];
                     var taxiStandNames = _dataManager.GetExcelSheet<ChocoboTaxiStand>();
                     var uiState = UIState.Instance();
-                    for (byte i = 0; i < uiState->UnlockedChocoboTaxiStandsBitmask.Length * 8; ++i)
+                    for (byte i = 0; i < uiState->UnlockedChocoboTaxiStands.Length * 8; ++i)
                     {
                         if (!(uiState->IsChocoboTaxiStandUnlocked(i)) && taxiStandNames.HasRow(i + 0x120000u))
                         {
