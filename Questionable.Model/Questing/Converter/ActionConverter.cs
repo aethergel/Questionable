@@ -52,6 +52,8 @@ public sealed class ActionConverter() : EnumConverter<EAction>(Values)
         { EAction.WaterCannon, "Water Cannon" },
         { EAction.Wasshoi, "Wasshoi" },
         { EAction.ShroudedLuminescence, "Shrouded Luminescence" },
-        { EAction.BigSneeze, "Big Sneeze" }
+        { EAction.BigSneeze, "Big Sneeze" },
+        { EAction.TrickstersTreat, "Trickster's Treat" },
+        { EAction.TreatersTrick, "Treater's Trick" }
     };
 }

@@ -60,6 +60,8 @@ public enum EAction
     Wasshoi = 11499,
     ShroudedLuminescence = 39505,
     BigSneeze = 1765,
+    TrickstersTreat = 44517,
+    TreatersTrick = 44518,
 
     Prospect = 227,
     CollectMiner = 240,
@@ -107,6 +109,8 @@ public static class EActionExtensions
             or EAction.BosomBrook
             or EAction.Wasshoi
             or EAction.ShroudedLuminescence
-            or EAction.BigSneeze;
+            or EAction.BigSneeze
+            or EAction.TrickstersTreat
+            or EAction.TreatersTrick;
     }
 }
