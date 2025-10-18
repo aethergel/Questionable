@@ -51,6 +51,13 @@
             "[Gridania] Aetheryte Plaza",
             "[Gridania] Mih Khetto's Amphitheatre"
           ],
+          "DialogueChoices": [
+            {
+              "Prompt": "TEXT_FESHLX101_05375_EVENTAREA_WARP_000_031",
+              "Yes": true,
+              "Type": "YesNo"
+            }
+          ],
           "SkipConditions": {
             "AetheryteShortcutIf": {
               "InTerritory": [
@@ -84,6 +91,13 @@
             "[Gridania] Aetheryte Plaza",
             "[Gridania] Mih Khetto's Amphitheatre"
           ],
+          "DialogueChoices": [
+            {
+              "Prompt": "TEXT_FESHLX101_05375_EVENTAREA_WARP_000_031",
+              "Yes": true,
+              "Type": "YesNo"
+            }
+          ],
           "SkipConditions": {
             "AetheryteShortcutIf": {
               "InTerritory": [
@@ -110,7 +124,14 @@
             "Z": -0.045776367
           },
           "TerritoryId": 1305,
-          "InteractionType": "Interact"
+          "InteractionType": "Interact",
+          "DialogueChoices": [
+            {
+              "Prompt": "TEXT_FESHLX101_05375_Q1_000_044",
+              "Type": "List",
+              "Answer": "TEXT_FESHLX101_05375_A1_000_002"
+            }
+          ]
         }
       ]
     },
@@ -131,6 +152,13 @@
           "AethernetShortcut": [
             "[Gridania] Aetheryte Plaza",
             "[Gridania] Mih Khetto's Amphitheatre"
+          ],
+          "DialogueChoices": [
+            {
+              "Prompt": "TEXT_FESHLX101_05375_EVENTAREA_WARP_000_031",
+              "Yes": true,
+              "Type": "YesNo"
+            }
           ],
           "SkipConditions": {
             "AetheryteShortcutIf": {
@@ -211,6 +239,13 @@
           "AethernetShortcut": [
             "[Gridania] Aetheryte Plaza",
             "[Gridania] Mih Khetto's Amphitheatre"
+          ],
+          "DialogueChoices": [
+            {
+              "Prompt": "TEXT_FESHLX101_05375_EVENTAREA_WARP_000_031",
+              "Yes": true,
+              "Type": "YesNo"
+            }
           ],
           "SkipConditions": {
             "AetheryteShortcutIf": {
@@ -312,6 +347,13 @@
           "AethernetShortcut": [
             "[Gridania] Aetheryte Plaza",
             "[Gridania] Mih Khetto's Amphitheatre"
+          ],
+          "DialogueChoices": [
+            {
+              "Prompt": "TEXT_FESHLX101_05375_EVENTAREA_WARP_000_031",
+              "Yes": true,
+              "Type": "YesNo"
+            }
           ],
           "SkipConditions": {
             "AetheryteShortcutIf": {
