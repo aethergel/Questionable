@@ -1,0 +1,47 @@
+{
+	"New Quest": {
+		"scope": "json",
+		"prefix": "new",
+		"body": [
+			"{",
+			"  \"\\$schema\": \"https://qstxiv.github.io/schema/quest-v1.json\",",
+			"  \"Author\": \"alydev\",",
+			"  \"QuestSequence\": [",
+			"    $0",
+			"  ]",
+			"}"
+		],
+		"description": "template for new quest"
+	},
+	"Sequence": {
+		"scope": "json",
+		"prefix": "seq",
+		"body": "{\"Sequence\":${1:0},\"Steps\":[{$0}]}",
+		"description": "new sequence"
+	},
+// 	"skipcon": {
+// 		"scope": "json",
+// 		"prefix": "skip",
+// 		"body": [
+// "\"Fly\": true,",
+// "\"AetheryteShortcut\": \"${1}\",",
+// "\"SkipConditions\": {",
+// "  \"AetheryteShortcutIf\": {",
+// "    \"NearPosition\": {${2}\"MaximumDistance\": 100",
+// "    }",
+// "  }",
+// "}"
+// 		],
+// 		"description": "skip boilerplate"
+// 	},
+	"null": {
+		"scope": "json",
+		"prefix": "null",
+		"body": "[null,null,null,null,null,null]"
+	},
+	"LastChecked": {
+		"scope": "json",
+		"prefix": "LastChecked",
+		"body": "\"LastChecked\":{\"Username\": \"alydev\", \"Date\": \"${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}\"},"
+	}
+}
