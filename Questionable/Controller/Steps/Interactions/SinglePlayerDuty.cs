@@ -5,6 +5,7 @@ using Dalamud.Plugin.Services;
 using FFXIVClientStructs.FFXIV.Client.Game;
 using FFXIVClientStructs.FFXIV.Client.Game.Event;
 using FFXIVClientStructs.FFXIV.Client.Game.InstanceContent;
+using FFXIVClientStructs.FFXIV.Client.UI.Misc;
 using Questionable.Controller.Steps.Common;
 using Questionable.Controller.Steps.Shared;
 using Questionable.Data;
@@ -90,8 +91,7 @@ internal static class SinglePlayerDuty
 
         private unsafe bool DutyActionsAvailable()
         {
-            ContentDirector* contentDirector = EventFramework.Instance()->GetContentDirector();
-            return contentDirector != null && contentDirector->DutyActionManager.ActionsPresent;
+            return RaptureHotbarModule.Instance()->DutyActionsPresent;
         }
     }
 
