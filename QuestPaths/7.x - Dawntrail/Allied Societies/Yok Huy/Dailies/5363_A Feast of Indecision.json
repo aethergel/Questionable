@@ -1,9 +1,9 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-  "Author": "stoat33,alydev",
+  "Author": "alydev",
   "LastChecked": {
     "Username": "alydev",
-    "Date": "2025-10-10"
+    "Date": "2025-10-21"
   },
   "QuestSequence": [
     {
@@ -22,7 +22,15 @@
           "AetheryteShortcut": "Urqopacha - Worlar's Echo",
           "SkipConditions": {
             "AetheryteShortcutIf": {
-              "InSameTerritory": true
+              "NearPosition": {
+                "Position": {
+                  "X": 493.2173,
+                  "Y": 142.24991,
+                  "Z": 783.0471
+                },
+                "TerritoryId": 1187,
+                "MaximumDistance": 200
+              }
             },
             "StepIf": {
               "NearPosition": {
@@ -53,60 +61,37 @@
       "Sequence": 1,
       "Steps": [
         {
-          "$": "Recovery",
+          "DataId": 1055812,
           "Position": {
-            "X": 254.56616,
-            "Y": 34.20388,
-            "Z": 156.60327
+            "X": 429.80078,
+            "Y": -107.349785,
+            "Z": -188.28113
           },
           "TerritoryId": 1187,
-          "InteractionType": "WalkTo",
-          "StopDistance": 2,
+          "StopDistance": 4,
+          "InteractionType": "Interact",
           "Fly": true,
-          "AetheryteShortcut": "Urqopacha - Worlar's Echo",
+          "Land": true,
+          "AetheryteShortcut": "Urqopacha - Wachunpelo",
+          "DialogueChoices": [
+            {
+              "Prompt": "TEXT_BANYOK128_05363_Q1_000_000",
+              "Type": "List",
+              "Answer": "TEXT_BANYOK128_05363_A1_000_001"
+            }
+          ],
           "SkipConditions": {
             "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            },
-            "StepIf": {
               "NearPosition": {
                 "Position": {
-                  "X": 254.56616,
-                  "Y": 34.20388,
-                  "Z": 156.60327
+                  "X": 429.80078,
+                  "Y": -107.349785,
+                  "Z": -188.28113
                 },
                 "TerritoryId": 1187,
-                "MaximumDistance": 20
+                "MaximumDistance": 200
               }
             }
-          }
-        },
-        {
-          "DataId": 1055825,
-          "Position": {
-            "X": 254.56616,
-            "Y": 34.20388,
-            "Z": 156.60327
-          },
-          "TerritoryId": 1187,
-          "InteractionType": "Say",
-          "Fly": true,
-          "ChatMessage": {
-            "Key": "TEXT_BANYOK114_05349_SAYTODO_000_010"
-          }
-        },
-        {
-          "DataId": 1055826,
-          "Position": {
-            "X": 145.76941,
-            "Y": 34.203403,
-            "Z": 101.548706
-          },
-          "TerritoryId": 1187,
-          "InteractionType": "Say",
-          "Fly": true,
-          "ChatMessage": {
-            "Key": "TEXT_BANYOK114_05349_SAYTODO_000_010"
           }
         }
       ]
@@ -127,7 +112,15 @@
           "AetheryteShortcut": "Urqopacha - Worlar's Echo",
           "SkipConditions": {
             "AetheryteShortcutIf": {
-              "InSameTerritory": true
+              "NearPosition": {
+                "Position": {
+                  "X": 493.2173,
+                  "Y": 142.24991,
+                  "Z": 783.0471
+                },
+                "TerritoryId": 1187,
+                "MaximumDistance": 200
+              }
             },
             "StepIf": {
               "NearPosition": {

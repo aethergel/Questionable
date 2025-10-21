@@ -17,11 +17,14 @@
             "Z": 783.0471
           },
           "TerritoryId": 1187,
-          "InteractionType": "AcceptQuest",
+          "InteractionType": "WalkTo",
           "Fly": true,
           "AetheryteShortcut": "Urqopacha - Worlar's Echo",
           "SkipConditions": {
             "AetheryteShortcutIf": {
+              "InSameTerritory": true
+            },
+            "StepIf": {
               "NearPosition": {
                 "Position": {
                   "X": 493.2173,
@@ -29,10 +32,20 @@
                   "Z": 783.0471
                 },
                 "TerritoryId": 1187,
-                "MaximumDistance": 200
+                "MaximumDistance": 20
               }
             }
           }
+        },
+        {
+          "DataId": 1054635,
+          "Position": {
+            "X": 493.2173,
+            "Y": 142.24991,
+            "Z": 783.0471
+          },
+          "TerritoryId": 1187,
+          "InteractionType": "AcceptQuest"
         }
       ]
     },
@@ -122,6 +135,7 @@
           }
         },
         {
+          "DataId": 1054635,
           "Position": {
             "X": 493.2173,
             "Y": 142.24991,
@@ -129,19 +143,11 @@
           },
           "TerritoryId": 1187,
           "InteractionType": "WalkTo",
-          "AetheryteShortcut": "Urqopacha - Worlar's Echo",
           "Fly": true,
+          "AetheryteShortcut": "Urqopacha - Worlar's Echo",
           "SkipConditions": {
             "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": 493.2173,
-                  "Y": 142.24991,
-                  "Z": 783.0471
-                },
-                "TerritoryId": 1187,
-                "MaximumDistance": 200
-              }
+              "InSameTerritory": true
             },
             "StepIf": {
               "NearPosition": {
@@ -151,7 +157,7 @@
                   "Z": 783.0471
                 },
                 "TerritoryId": 1187,
-                "MaximumDistance": 50
+                "MaximumDistance": 20
               }
             }
           }
@@ -164,8 +170,7 @@
             "Z": 783.0471
           },
           "TerritoryId": 1187,
-          "InteractionType": "CompleteQuest",
-          "StopDistance": 4
+          "InteractionType": "CompleteQuest"
         }
       ]
     }

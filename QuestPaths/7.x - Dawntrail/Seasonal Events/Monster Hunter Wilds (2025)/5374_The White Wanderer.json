@@ -367,6 +367,17 @@
             "ContentFinderConditionId": 1043,
             "Enabled": false
           }
+        },
+        {
+          "TerritoryId": 1301,
+          "InteractionType": "None",
+          "DialogueChoices": [
+            {
+              "Prompt": "TEXT_KINGYX901_05374_Q4_000_000",
+              "Type": "List",
+              "Answer": "TEXT_KINGYX901_05374_A4_000_001"
+            }
+          ]
         }
       ]
     },

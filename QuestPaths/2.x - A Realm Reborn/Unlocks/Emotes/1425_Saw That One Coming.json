@@ -1,42 +1,14 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
   "Author": "kaiser",
+  "LastChecked": {
+    "Username": "alydev",
+    "Date": "2025-10-19"
+  },
   "QuestSequence": [
     {
       "Sequence": 0,
       "Steps": [
-        {
-          "Position": {
-            "X": 54.415092,
-            "Y": -8.047034,
-            "Z": 104.69259
-          },
-          "TerritoryId": 132,
-          "InteractionType": "WalkTo",
-          "AetheryteShortcut": "Gridania",
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            }
-          },
-          "$": "We have get here first just to make sure we don't run into walls."
-        },
-        {
-          "Position": {
-            "X": 37.72773,
-            "Y": -8,
-            "Z": 104.152405
-          },
-          "TerritoryId": 132,
-          "InteractionType": "WalkTo",
-          "AetheryteShortcut": "Gridania",
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            }
-          },
-          "$": "Cool now go inside"
-        },
         {
           "DataId": 1000375,
           "Position": {
@@ -60,32 +32,6 @@
       "Sequence": 1,
       "Steps": [
         {
-          "Position": {
-            "X": 40.8096,
-            "Y": -8,
-            "Z": 104.92199
-          },
-          "TerritoryId": 132,
-          "InteractionType": "WalkTo",
-          "AetheryteShortcut": "Gridania",
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            },
-            "StepIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": -87.84625,
-                  "Y": -3.3081923,
-                  "Z": 41.70288
-                },
-                "TerritoryId": 132,
-                "MaximumDistance": 5
-              }
-            }
-          }
-        },
-        {
           "DataId": 1007792,
           "Position": {
             "X": -87.84625,
@@ -100,8 +46,7 @@
             "AetheryteShortcutIf": {
               "InSameTerritory": true
             }
-          },
-          "$": "Interact with the gal now!"
+          }
         }
       ]
     },
@@ -123,14 +68,30 @@
             "AetheryteShortcutIf": {
               "InSameTerritory": true
             }
-          },
-          "$": "Speak with the man now!"
+          }
         }
       ]
     },
     {
       "Sequence": 3,
       "Steps": [
+        {
+          "Position": {
+            "X": 11.455882,
+            "Y": 1.2660143,
+            "Z": -15.3947525
+          },
+          "TerritoryId": 132,
+          "TargetTerritoryId": 133,
+          "InteractionType": "WalkTo",
+          "SkipConditions": {
+            "StepIf": {
+              "NotInTerritory": [
+                132
+              ]
+            }
+          }
+        },
         {
           "DataId": 1007795,
           "Position": {
@@ -142,16 +103,14 @@
           "InteractionType": "Interact",
           "StopDistance": 5,
           "AetheryteShortcut": "Gridania",
-          "AethernetShortcut": [
-            "[Gridania] Aetheryte Plaza",
-            "[Gridania] Leatherworkers' Guild & Shaded Bower"
-          ],
           "SkipConditions": {
             "AetheryteShortcutIf": {
-              "InSameTerritory": true
+              "InTerritory": [
+                132,
+                133
+              ]
             }
           },
-          "$": "Give the First kid his present",
           "CompletionQuestVariablesFlags": [
             null,
             null,
@@ -171,11 +130,6 @@
           "TerritoryId": 133,
           "InteractionType": "Interact",
           "StopDistance": 5,
-          "AethernetShortcut": [
-            "[Gridania] Leatherworkers' Guild & Shaded Bower",
-            "[Gridania] Mih Khetto's Amphitheatre"
-          ],
-          "$": "Give the second kid his present.",
           "CompletionQuestVariablesFlags": [
             null,
             null,
@@ -195,11 +149,6 @@
           "TerritoryId": 133,
           "InteractionType": "Interact",
           "StopDistance": 5,
-          "AethernetShortcut": [
-            "[Gridania] Mih Khetto's Amphitheatre",
-            "[Gridania] Conjurers' Guild"
-          ],
-          "$": "Give the third kid his present.",
           "CompletionQuestVariablesFlags": [
             null,
             null,
@@ -214,15 +163,6 @@
     {
       "Sequence": 255,
       "Steps": [
-        {
-          "Position": {
-            "X": -128.09769,
-            "Y": 5.6480865,
-            "Z": -36.499104
-          },
-          "TerritoryId": 133,
-          "InteractionType": "WalkTo"
-        },
         {
           "DataId": 1007792,
           "Position": {
@@ -239,6 +179,12 @@
           ],
           "SkipConditions": {
             "AetheryteShortcutIf": {
+              "InTerritory": [
+                132,
+                133
+              ]
+            },
+            "AethernetShortcutIf": {
               "InSameTerritory": true
             }
           }

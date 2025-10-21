@@ -3,7 +3,7 @@
   "Author": "alydev,Kiarra",
   "LastChecked": {
     "Username": "alydev",
-    "Date": "2025-10-13"
+    "Date": "2025-10-19"
   },
   "QuestSequence": [
     {
@@ -17,11 +17,14 @@
             "Z": 783.0471
           },
           "TerritoryId": 1187,
-          "InteractionType": "AcceptQuest",
+          "InteractionType": "WalkTo",
           "Fly": true,
           "AetheryteShortcut": "Urqopacha - Worlar's Echo",
           "SkipConditions": {
             "AetheryteShortcutIf": {
+              "InSameTerritory": true
+            },
+            "StepIf": {
               "NearPosition": {
                 "Position": {
                   "X": 493.2173,
@@ -29,10 +32,20 @@
                   "Z": 783.0471
                 },
                 "TerritoryId": 1187,
-                "MaximumDistance": 200
+                "MaximumDistance": 20
               }
             }
           }
+        },
+        {
+          "DataId": 1054635,
+          "Position": {
+            "X": 493.2173,
+            "Y": 142.24991,
+            "Z": 783.0471
+          },
+          "TerritoryId": 1187,
+          "InteractionType": "AcceptQuest"
         }
       ]
     },
@@ -130,11 +143,14 @@
             "Z": 783.0471
           },
           "TerritoryId": 1187,
-          "InteractionType": "CompleteQuest",
+          "InteractionType": "WalkTo",
           "Fly": true,
           "AetheryteShortcut": "Urqopacha - Worlar's Echo",
           "SkipConditions": {
             "AetheryteShortcutIf": {
+              "InSameTerritory": true
+            },
+            "StepIf": {
               "NearPosition": {
                 "Position": {
                   "X": 493.2173,
@@ -142,10 +158,20 @@
                   "Z": 783.0471
                 },
                 "TerritoryId": 1187,
-                "MaximumDistance": 200
+                "MaximumDistance": 20
               }
             }
           }
+        },
+        {
+          "DataId": 1054635,
+          "Position": {
+            "X": 493.2173,
+            "Y": 142.24991,
+            "Z": 783.0471
+          },
+          "TerritoryId": 1187,
+          "InteractionType": "CompleteQuest"
         }
       ]
     }

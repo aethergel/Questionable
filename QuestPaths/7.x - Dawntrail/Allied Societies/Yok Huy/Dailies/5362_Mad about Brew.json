@@ -3,7 +3,7 @@
   "Author": "alydev",
   "LastChecked": {
     "Username": "alydev",
-    "Date": "2025-10-10"
+    "Date": "2025-10-21"
   },
   "QuestSequence": [
     {
@@ -87,7 +87,6 @@
           }
         },
         {
-          "$": "Recovery",
           "DataId": 1054640,
           "Position": {
             "X": 496.11658,
@@ -120,9 +119,9 @@
             "StepIf": {
               "NearPosition": {
                 "Position": {
-                  "X": 88.97534,
-                  "Y": 3.3723087,
-                  "Z": 75.791504
+                  "X": 74.75391,
+                  "Y": 1.8866259,
+                  "Z": 50.369995
                 },
                 "TerritoryId": 1297,
                 "MaximumDistance": 20
@@ -145,9 +144,9 @@
             "StepIf": {
               "NearPosition": {
                 "Position": {
-                  "X": 88.97534,
-                  "Y": 3.3723087,
-                  "Z": 75.791504
+                  "X": 74.75391,
+                  "Y": 1.8866259,
+                  "Z": 50.369995
                 },
                 "TerritoryId": 1297,
                 "MaximumDistance": 20
@@ -156,26 +155,41 @@
           }
         },
         {
-          "$": "Doorway",
+          "$": "Ledge",
           "Position": {
-            "X": 85.997314,
-            "Y": 3.3723085,
-            "Z": 66.514145
+            "X": 68.103134,
+            "Y": 1.8905401,
+            "Z": 64.664055
           },
           "TerritoryId": 1297,
           "InteractionType": "WalkTo",
           "Mount": true,
-          "DisableNavmesh": true
+          "DisableNavmesh": true,
+          "SkipConditions": {
+            "StepIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": 74.75391,
+                  "Y": 1.8866259,
+                  "Z": 50.369995
+                },
+                "TerritoryId": 1297,
+                "MaximumDistance": 20
+              }
+            }
+          }
         },
         {
-          "DataId": 1055821,
+          "$": "Xarhorkur",
+          "DataId": 1055802,
           "Position": {
-            "X": 88.97534,
-            "Y": 3.3723087,
-            "Z": 75.791504
+            "X": 74.75391,
+            "Y": 1.8866259,
+            "Z": 50.369995
           },
           "TerritoryId": 1297,
-          "InteractionType": "Interact"
+          "InteractionType": "Interact",
+          "DisableNavmesh": true
         }
       ]
     },
@@ -250,22 +264,21 @@
             "StepIf": {
               "NearPosition": {
                 "Position": {
-                  "X": 88.97534,
-                  "Y": 3.3723087,
-                  "Z": 75.791504
+                  "X": -94.5907,
+                  "Y": 4.071177,
+                  "Z": 155.68774
                 },
                 "TerritoryId": 1297,
-                "MaximumDistance": 10
+                "MaximumDistance": 20
               }
             }
           }
         },
         {
-          "$": "Doorway",
           "Position": {
-            "X": 85.997314,
-            "Y": 3.3723085,
-            "Z": 66.514145
+            "X": -57.445847,
+            "Y": 1.9946611,
+            "Z": 157.04832
           },
           "TerritoryId": 1297,
           "InteractionType": "WalkTo",
@@ -275,21 +288,46 @@
             "StepIf": {
               "NearPosition": {
                 "Position": {
-                  "X": 88.97534,
-                  "Y": 3.3723087,
-                  "Z": 75.791504
+                  "X": -94.5907,
+                  "Y": 4.071177,
+                  "Z": 155.68774
                 },
                 "TerritoryId": 1297,
-                "MaximumDistance": 10
+                "MaximumDistance": 20
               }
             }
           }
         },
         {
+          "Position": {
+            "X": -93.967674,
+            "Y": 4.0711765,
+            "Z": 157.95325
+          },
+          "TerritoryId": 1297,
+          "InteractionType": "WalkTo",
+          "Mount": true,
+          "DisableNavmesh": true,
+          "SkipConditions": {
+            "StepIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": -94.5907,
+                  "Y": 4.071177,
+                  "Z": 155.68774
+                },
+                "TerritoryId": 1297,
+                "MaximumDistance": 20
+              }
+            }
+          }
+        },
+        {
+          "$": "Craft",
           "TerritoryId": 1297,
           "InteractionType": "Craft",
-          "ItemId": 46216,
-          "ItemCount": 3,
+          "ItemId": 46242,
+          "ItemCount": 1,
           "SkipConditions": {
             "StepIf": {
               "Item": {
@@ -299,14 +337,15 @@
           }
         },
         {
-          "DataId": 1055821,
+          "DataId": 1055811,
           "Position": {
-            "X": 88.97534,
-            "Y": 3.3723087,
-            "Z": 75.791504
+            "X": -94.5907,
+            "Y": 4.071177,
+            "Z": 155.68774
           },
           "TerritoryId": 1297,
-          "InteractionType": "Interact"
+          "InteractionType": "Interact",
+          "DisableNavmesh": true
         }
       ]
     },
