@@ -53,11 +53,11 @@
       "Sequence": 1,
       "Steps": [
         {
-          "$": "Recovery",
+          "DataId": 1054635,
           "Position": {
-            "X": 496.11658,
+            "X": 493.2173,
             "Y": 142.24991,
-            "Z": 801.6022
+            "Z": 783.0471
           },
           "TerritoryId": 1187,
           "InteractionType": "WalkTo",
@@ -76,12 +76,12 @@
               ],
               "NearPosition": {
                 "Position": {
-                  "X": 496.11658,
+                  "X": 493.2173,
                   "Y": 142.24991,
-                  "Z": 801.6022
+                  "Z": 783.0471
                 },
                 "TerritoryId": 1187,
-                "MaximumDistance": 200
+                "MaximumDistance": 20
               }
             }
           }
@@ -247,11 +247,11 @@
       "Sequence": 2,
       "Steps": [
         {
-          "$": "Recovery",
+          "DataId": 1054635,
           "Position": {
-            "X": 496.11658,
+            "X": 493.2173,
             "Y": 142.24991,
-            "Z": 801.6022
+            "Z": 783.0471
           },
           "TerritoryId": 1187,
           "InteractionType": "WalkTo",
@@ -270,12 +270,12 @@
               ],
               "NearPosition": {
                 "Position": {
-                  "X": 496.11658,
+                  "X": 493.2173,
                   "Y": 142.24991,
-                  "Z": 801.6022
+                  "Z": 783.0471
                 },
                 "TerritoryId": 1187,
-                "MaximumDistance": 200
+                "MaximumDistance": 20
               }
             }
           }

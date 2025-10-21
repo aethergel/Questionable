@@ -1,0 +1,49 @@
+{
+  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+  "Author": "Kiarra",
+  "QuestSequence": [
+    {
+      "Sequence": 0,
+      "Steps": [
+        {
+          "$": "4523 → 1 - QW: 0 0    0 0    0 0",
+          "DataId": 1044156,
+          "Position": {
+            "X": -276.3562,
+            "Y": 39.993896,
+            "Z": 224.26172
+          },
+          "TerritoryId": 1055,
+          "Mount": true,
+          "InteractionType": "AcceptQuest"
+        }
+      ]
+    },
+    {
+      "Sequence": 1,
+      "Steps": [
+        {
+          "$": "4523 → 1 - QW: 0 0    0 0    0 0",
+          "DataId": 2013035,
+          "Position": {
+            "X": -389.85278,
+            "Y": 3.250122,
+            "Z": 238.36108
+          },
+          "TerritoryId": 1055,
+          "Mount": true,
+          "InteractionType": "Interact"
+        }
+      ]
+    },
+    {
+      "Sequence": 255,
+      "Steps": [
+        {
+          "TerritoryId": 1055,
+          "InteractionType": "CompleteQuest"
+        }
+      ]
+    }
+  ]
+}
