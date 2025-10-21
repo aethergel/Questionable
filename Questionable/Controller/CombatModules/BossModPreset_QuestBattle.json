@@ -2,20 +2,6 @@
   "Name": "Questionable - Quest Battles",
   "Modules": {
     "BossMod.Autorotation.MiscAI.AutoFarm": [],
-    "BossMod.Autorotation.MiscAI.AutoPull": [
-      {
-        "Track": "Automatically attack hunt marks once they are below 95% HP",
-        "Option": "Disabled"
-      },
-      {
-        "Track": "Automatically attack deep dungeon bosses when solo",
-        "Option": "Disabled"
-      },
-      {
-        "Track": "Automatically attack all targets if the Epic Echo status is present (i.e. when unsynced)",
-        "Option": "Disabled"
-      }
-    ],
     "BossMod.Autorotation.xan.DNC": [
       {
         "Track": "Buffs",
