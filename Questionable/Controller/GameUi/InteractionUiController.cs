@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Text.RegularExpressions;
-using Dalamud.Game.Addon.Lifecycle;
+﻿using Dalamud.Game.Addon.Lifecycle;
 using Dalamud.Game.Addon.Lifecycle.AddonArgTypes;
 using Dalamud.Game.ClientState.Objects;
 using Dalamud.Plugin.Services;
 using FFXIVClientStructs.FFXIV.Client.Game.Event;
 using FFXIVClientStructs.FFXIV.Client.Game.InstanceContent;
 using FFXIVClientStructs.FFXIV.Client.UI;
+using FFXIVClientStructs.FFXIV.Client.UI.Misc;
 using FFXIVClientStructs.FFXIV.Component.GUI;
 using LLib;
 using LLib.GameData;
@@ -23,6 +19,11 @@ using Questionable.Model;
 using Questionable.Model.Common;
 using Questionable.Model.Gathering;
 using Questionable.Model.Questing;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
+using System.Linq;
+using System.Text.RegularExpressions;
 using Quest = Questionable.Model.Quest;
 using ValueType = FFXIVClientStructs.FFXIV.Component.GUI.ValueType;
 
@@ -475,8 +476,7 @@ internal sealed class InteractionUiController : IDisposable
                 {
                     unsafe
                     {
-                        ContentDirector* contentDirector = EventFramework.Instance()->GetContentDirector();
-                        if (contentDirector != null && contentDirector->DutyActionManager.ActionsPresent)
+                        if (RaptureHotbarModule.Instance()->DutyActionsPresent)
                         {
                             _logger.LogInformation("NoDutyActions: actions present, skipping dialogue choice");
                             continue;
