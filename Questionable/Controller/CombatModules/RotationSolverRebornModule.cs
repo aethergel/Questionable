@@ -87,6 +87,7 @@ internal sealed class RotationSolverRebornModule : ICombatModule, IDisposable
     {
         Off,
         Auto,
+        TargetOnly,
         Manual,
     }
 }
