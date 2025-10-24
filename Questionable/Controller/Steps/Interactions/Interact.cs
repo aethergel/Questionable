@@ -155,6 +155,11 @@ internal static class Interact
                 return true;
             }
 
+            if (gameObject.IsTargetable && HasAnyMarker(gameObject))
+            {
+                TriggerInteraction(gameObject);
+            }
+
             return true;
         }
 
@@ -220,7 +225,7 @@ internal static class Interact
             }
 
             IGameObject? gameObject = gameFunctions.FindObjectByDataId(Task.DataId);
-
+            //if (gameObject == null || !gameObject.IsTargetable || !HasAnyMarker(gameObject))
             if (gameObject == null)
                 return ETaskResult.StillRunning;
 
