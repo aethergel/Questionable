@@ -1,14 +1,12 @@
 ﻿﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using Dalamud.IoC;
 using Dalamud.Plugin.Services;
 using FFXIVClientStructs.FFXIV.Client.Game.Object;
 using Microsoft.Extensions.Logging;
-using static Dalamud.Interface.Utility.Raii.ImRaii;
 using GameObject = FFXIVClientStructs.FFXIV.Client.Game.Object.GameObject;
 
 namespace Questionable.Controller.Utils;
+// Adapted from https://github.com/electr0sheep/ItemVendorLocation/blob/main/ItemVendorLocation/HighlightObject.cs
 internal class HighlightObject : IDisposable
 {
     private uint[] _targetNpcDataId = [];
