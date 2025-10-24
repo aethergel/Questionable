@@ -106,10 +106,12 @@ internal static class Interact
     internal sealed class DoInteract(
         GameFunctions gameFunctions,
         QuestFunctions questFunctions,
+        CameraFunctions cameraFunctions,
         ICondition condition,
         ILogger<DoInteract> logger)
         : TaskExecutor<Task>, IConditionChangeAware
     {
+        private bool _needsFacing;
         private bool _needsUnmount;
         private EInteractionState _interactionState = EInteractionState.None;
         private DateTime _continueAt = DateTime.MinValue;
@@ -127,6 +129,7 @@ internal static class Interact
         {
             InteractionType = Task.InteractionType;
 
+            this._needsFacing = true;
             IGameObject? gameObject = gameFunctions.FindObjectByDataId(Task.DataId);
             if (gameObject == null)
             {
@@ -149,12 +152,6 @@ internal static class Interact
                 _needsUnmount = true;
                 gameFunctions.Unmount();
                 _continueAt = DateTime.Now.AddSeconds(1);
-                return true;
-            }
-
-            if (gameObject.IsTargetable && HasAnyMarker(gameObject))
-            {
-                TriggerInteraction(gameObject);
                 return true;
             }
 
@@ -223,7 +220,19 @@ internal static class Interact
             }
 
             IGameObject? gameObject = gameFunctions.FindObjectByDataId(Task.DataId);
-            if (gameObject == null || !gameObject.IsTargetable || !HasAnyMarker(gameObject))
+
+            if (gameObject == null)
+                return ETaskResult.StillRunning;
+
+            if (_needsFacing)
+            {
+                cameraFunctions.Face(gameObject.Position);
+                _continueAt = DateTime.Now.AddSeconds(0.2);
+                _needsFacing = false;
+                return ETaskResult.StillRunning;
+            }
+
+            if (!gameObject.IsTargetable || !HasAnyMarker(gameObject))
                 return ETaskResult.StillRunning;
 
             TriggerInteraction(gameObject);

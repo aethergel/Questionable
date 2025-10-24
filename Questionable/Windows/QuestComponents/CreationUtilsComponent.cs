@@ -36,6 +36,7 @@ internal sealed class CreationUtilsComponent
     private readonly MovementController _movementController;
     private readonly GameFunctions _gameFunctions;
     private readonly QuestFunctions _questFunctions;
+    private readonly CameraFunctions _cameraFunctions;
     private readonly TerritoryData _territoryData;
     private readonly QuestData _questData;
     private readonly QuestSelectionWindow _questSelectionWindow;
@@ -53,6 +54,7 @@ internal sealed class CreationUtilsComponent
         MovementController movementController,
         GameFunctions gameFunctions,
         QuestFunctions questFunctions,
+        CameraFunctions cameraFunctions,
         TerritoryData territoryData,
         QuestData questData,
         QuestSelectionWindow questSelectionWindow,
@@ -71,6 +73,7 @@ internal sealed class CreationUtilsComponent
         _questFunctions = questFunctions;
         _territoryData = territoryData;
         _questData = questData;
+        _cameraFunctions = cameraFunctions;
         _questSelectionWindow = questSelectionWindow;
         _clientState = clientState;
         _targetManager = targetManager;
@@ -266,6 +269,7 @@ internal sealed class CreationUtilsComponent
             ImGui.SetTooltip("Interact with your current target.");
         if (interact)
         {
+            _cameraFunctions.Face(target.Position);
             ulong result = TargetSystem.Instance()->InteractWithObject(
                 (GameObject*)target.Address, false);
             _logger.LogInformation("XXXXX Interaction Result: {Result}", result);
