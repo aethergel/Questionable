@@ -8,6 +8,7 @@ using Dalamud.Game.ClientState.Objects.Types;
 using Dalamud.Interface.Windowing;
 using Dalamud.Plugin.Services;
 using Questionable.Controller;
+using Questionable.Controller.Utils;
 using Questionable.Data;
 using Questionable.Model.Questing;
 
@@ -24,10 +25,11 @@ internal sealed class DebugOverlay : Window
     private readonly IObjectTable _objectTable;
     private readonly CombatController _combatController;
     private readonly Configuration _configuration;
+    private readonly HighlightObject _highlightObject;
 
     public DebugOverlay(QuestController questController, QuestRegistry questRegistry, IGameGui gameGui,
         IClientState clientState, ICondition condition, AetheryteData aetheryteData, IObjectTable objectTable,
-        CombatController combatController, Configuration configuration)
+        CombatController combatController, Configuration configuration, HighlightObject highlightObject)
         : base("Questionable Debug Overlay###QuestionableDebugOverlay",
             ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoBackground |
             ImGuiWindowFlags.NoInputs | ImGuiWindowFlags.NoSavedSettings, true)
@@ -41,6 +43,7 @@ internal sealed class DebugOverlay : Window
         _objectTable = objectTable;
         _combatController = combatController;
         _configuration = configuration;
+        _highlightObject = highlightObject;
 
         Position = Vector2.Zero;
         PositionCondition = ImGuiCond.Always;
@@ -53,7 +56,7 @@ internal sealed class DebugOverlay : Window
 
     public ElementId? HighlightedQuest { get; set; }
 
-    public override bool DrawConditions() => _configuration.Advanced.DebugOverlay;
+    public override bool DrawConditions() => _configuration.Advanced.DebugOverlay || _configuration.Advanced.HighlightSelectedNpc;
 
     public override void PreDraw()
     {
@@ -123,6 +126,12 @@ internal sealed class DebugOverlay : Window
     private void DrawStep(string counter, QuestStep step, Vector3 position, uint color)
     {
         if (step.Disabled || step.TerritoryId != _clientState.TerritoryType)
+            return;
+
+        if (_configuration.Advanced.HighlightSelectedNpc && step.DataId != null)
+            _highlightObject.AddHighlight(step.DataId.Value);
+
+        if (!_configuration.Advanced.DebugOverlay)
             return;
 
         bool visible = _gameGui.WorldToScreen(position, out Vector2 screenPos);

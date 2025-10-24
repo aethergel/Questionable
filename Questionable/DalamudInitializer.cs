@@ -23,6 +23,7 @@ internal sealed class DalamudInitializer : IDisposable
     private readonly ConfigWindow _configWindow;
     private readonly IToastGui _toastGui;
     private readonly Configuration _configuration;
+    private readonly HighlightObject _highlightObject;
     private readonly PartyWatchDog _partyWatchDog;
     private readonly ILogger<DalamudInitializer> _logger;
 
@@ -42,6 +43,7 @@ internal sealed class DalamudInitializer : IDisposable
         PriorityWindow priorityWindow,
         IToastGui toastGui,
         Configuration configuration,
+        HighlightObject highlightObject,
         PartyWatchDog partyWatchDog,
         ILogger<DalamudInitializer> logger)
     {
@@ -55,6 +57,7 @@ internal sealed class DalamudInitializer : IDisposable
         _configWindow = configWindow;
         _toastGui = toastGui;
         _configuration = configuration;
+        _highlightObject = highlightObject;
         _partyWatchDog = partyWatchDog;
         _logger = logger;
 

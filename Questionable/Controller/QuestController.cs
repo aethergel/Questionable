@@ -13,6 +13,7 @@ using Microsoft.Extensions.Logging;
 using Questionable.Controller.Steps;
 using Questionable.Controller.Steps.Interactions;
 using Questionable.Controller.Steps.Shared;
+using Questionable.Controller.Utils;
 using Questionable.Data;
 using Questionable.Functions;
 using Questionable.Model;
@@ -39,6 +40,7 @@ internal sealed class QuestController : MiniTaskController<QuestController>
     private readonly TaskCreator _taskCreator;
     private readonly SinglePlayerDutyConfigComponent _singlePlayerDutyConfigComponent;
     private readonly ILogger<QuestController> _logger;
+    private readonly HighlightObject _highlightObject;
 
     private readonly object _progressLock = new();
 
@@ -79,6 +81,7 @@ internal sealed class QuestController : MiniTaskController<QuestController>
         CombatController combatController,
         GatheringController gatheringController,
         ILogger<QuestController> logger,
+        HighlightObject highlightObject,
         QuestRegistry questRegistry,
         IKeyState keyState,
         IChatGui chatGui,
@@ -107,6 +110,7 @@ internal sealed class QuestController : MiniTaskController<QuestController>
         _taskCreator = taskCreator;
         _singlePlayerDutyConfigComponent = singlePlayerDutyConfigComponent;
         _logger = logger;
+        _highlightObject = highlightObject;
 
         _condition.ConditionChange += OnConditionChange;
         _toastGui.Toast += OnNormalToast;
@@ -490,6 +494,7 @@ internal sealed class QuestController : MiniTaskController<QuestController>
                     }
                     else if (_questRegistry.TryGetQuest(currentQuestId, out var quest))
                     {
+                        _highlightObject.SetHighlight([]);
                         _logger.LogInformation("New quest: {QuestName}", quest.Info.Name);
                         _startedQuest = new QuestProgress(quest, currentSequence);
 
@@ -558,6 +563,7 @@ internal sealed class QuestController : MiniTaskController<QuestController>
 
             if (questToRun.Sequence != currentSequence)
             {
+                _highlightObject.SetHighlight([]);
                 questToRun.SetSequence(currentSequence);
                 CheckNextTasks(
                     $"New sequence {questToRun == _startedQuest}/{_questFunctions.GetCurrentQuestInternal(true)}");
@@ -664,6 +670,7 @@ internal sealed class QuestController : MiniTaskController<QuestController>
 
     public override void Stop(string label)
     {
+        _highlightObject.SetHighlight([]);
         using var scope = _logger.BeginScope($"Stop/{label}");
         if (IsRunning || AutomationType != EAutomationType.Manual)
         {
@@ -709,6 +716,7 @@ internal sealed class QuestController : MiniTaskController<QuestController>
 
     public void SimulateQuest(Quest? quest, byte sequence, int step)
     {
+        _highlightObject.SetHighlight([]);
         _logger.LogInformation("SimulateQuest: {QuestId}", quest?.Id);
         if (quest != null)
             _simulatedQuest = new QuestProgress(quest, sequence, step);
@@ -718,6 +726,7 @@ internal sealed class QuestController : MiniTaskController<QuestController>
 
     public void SetNextQuest(Quest? quest)
     {
+        _highlightObject.SetHighlight([]);
         _logger.LogInformation("NextQuest: {QuestId}", quest?.Id);
         if (quest != null)
             _nextQuest = new QuestProgress(quest);
@@ -727,6 +736,7 @@ internal sealed class QuestController : MiniTaskController<QuestController>
 
     public void SetGatheringQuest(Quest? quest)
     {
+        _highlightObject.SetHighlight([]);
         _logger.LogInformation("GatheringQuest: {QuestId}", quest?.Id);
         if (quest != null)
             _gatheringQuest = new QuestProgress(quest);
@@ -736,6 +746,7 @@ internal sealed class QuestController : MiniTaskController<QuestController>
 
     public void SetPendingQuest(QuestProgress? quest)
     {
+        _highlightObject.SetHighlight([]);
         _logger.LogInformation("PendingQuest: {QuestId}", quest?.Quest.Id);
         _pendingQuest = quest;
     }
