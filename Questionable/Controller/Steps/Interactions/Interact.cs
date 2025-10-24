@@ -155,11 +155,6 @@ internal static class Interact
                 return true;
             }
 
-            if (gameObject.IsTargetable && HasAnyMarker(gameObject))
-            {
-                TriggerInteraction(gameObject);
-            }
-
             return true;
         }
 
@@ -203,10 +198,9 @@ internal static class Interact
             else if (Quest != null && Task.HasCompletionQuestVariablesFlags)
             {
                 var questWork = questFunctions.GetQuestProgressInfo(Quest.Id);
-                return questWork != null &&
-                       QuestWorkUtils.MatchesQuestWork(Task.CompletionQuestVariablesFlags, questWork)
-                    ? ETaskResult.TaskComplete
-                    : ETaskResult.StillRunning;
+
+                if (questWork != null && QuestWorkUtils.MatchesQuestWork(Task.CompletionQuestVariablesFlags, questWork))
+                    return ETaskResult.TaskComplete;
             }
             else if (ProgressContext != null)
             {
