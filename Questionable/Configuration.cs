@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using Dalamud.Configuration;
 using Dalamud.Game.Text;
+using FFXIVClientStructs.FFXIV.Client.Game.Object;
 using FFXIVClientStructs.FFXIV.Client.UI.Agent;
 using LLib.GameData;
 using LLib.ImGui;
@@ -88,6 +89,8 @@ internal sealed class Configuration : IPluginConfiguration
     {
         public bool DebugOverlay { get; set; }
         public bool CombatDataOverlay { get; set; }
+        public bool HighlightSelectedNpc { get; set; } = true;
+        public ObjectHighlightColor HighlightColor { get; set; } = ObjectHighlightColor.Yellow;
         public bool NeverFly { get; set; }
         public bool AdditionalStatusInformation { get; set; }
         public bool DisableAutoDutyBareMode { get; set; }

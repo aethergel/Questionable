@@ -66,9 +66,17 @@
           "SkipConditions": {
             "AetheryteShortcutIf": {
               "InTerritory": [
-                1187,
                 1297
-              ]
+              ],
+              "NearPosition": {
+                "Position": {
+                  "X": 496.11658,
+                  "Y": 142.24991,
+                  "Z": 801.6022
+                },
+                "TerritoryId": 1187,
+                "MaximumDistance": 150
+              }
             },
             "StepIf": {
               "InTerritory": [
@@ -81,7 +89,7 @@
                   "Z": 801.6022
                 },
                 "TerritoryId": 1187,
-                "MaximumDistance": 200
+                "MaximumDistance": 150
               }
             }
           }

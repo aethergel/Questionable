@@ -1,8 +1,10 @@
+using System;
 using Dalamud.Bindings.ImGui;
 using Dalamud.Interface.Colors;
 using Dalamud.Interface.Components;
 using Dalamud.Interface.Utility.Raii;
 using Dalamud.Plugin;
+using FFXIVClientStructs.FFXIV.Client.Game.Object;
 
 namespace Questionable.Windows.ConfigComponents;
 
@@ -39,6 +41,29 @@ internal sealed class DebugConfigComponent : ConfigComponent
                 if (ImGui.Checkbox("Enable combat data overlay", ref combatDataOverlay))
                 {
                     Configuration.Advanced.CombatDataOverlay = combatDataOverlay;
+                    Save();
+                }
+            }
+        }
+
+        bool highlightNpc = Configuration.Advanced.HighlightSelectedNpc;
+        if (ImGui.Checkbox("Highlight NPCs related to the current quest sequence", ref highlightNpc))
+        {
+            Configuration.Advanced.HighlightSelectedNpc = highlightNpc;
+            Save();
+        }
+
+        using (ImRaii.Disabled(!highlightNpc))
+        {
+            using (ImRaii.PushIndent())
+            {
+                var highlightColorNames = Enum.GetNames<ObjectHighlightColor>();
+                var highlightColorValues = Enum.GetValues<ObjectHighlightColor>();
+                var selectedHighlightColor = Array.IndexOf(highlightColorValues, Configuration.Advanced.HighlightColor);
+                ImGui.SetNextItemWidth(150f);
+                if (ImGui.Combo("Highlight Color", ref selectedHighlightColor, highlightColorNames, highlightColorNames.Length))
+                {
+                    Configuration.Advanced.HighlightColor = (ObjectHighlightColor)selectedHighlightColor;
                     Save();
                 }
             }
@@ -119,7 +144,7 @@ internal sealed class DebugConfigComponent : ConfigComponent
 
             ImGui.SameLine();
             ImGuiComponents.HelpMarker("Crystal Tower raids are required for the Patch 2.55 quest 'A Time to Every Purpose' and to start Heavensward.");
-            
+
             bool preventQuestCompletion = Configuration.Advanced.PreventQuestCompletion;
             if (ImGui.Checkbox("Prevent quest completion", ref preventQuestCompletion))
             {

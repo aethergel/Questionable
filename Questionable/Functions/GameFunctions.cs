@@ -18,6 +18,7 @@ using LLib.GameUI;
 using Lumina.Excel.Sheets;
 using Microsoft.Extensions.Logging;
 using Questionable.Controller.Steps.Interactions;
+using Questionable.Controller.Utils;
 using Questionable.Model;
 using Questionable.Model.Questing;
 using Action = Lumina.Excel.Sheets.Action;
@@ -41,6 +42,7 @@ internal sealed unsafe class GameFunctions
     private readonly IGameGui _gameGui;
     private readonly Configuration _configuration;
     private readonly ILogger<GameFunctions> _logger;
+    private readonly HighlightObject _highlightObject;
     private readonly AbandonDutyDelegate _abandonDuty;
 
     private readonly ReadOnlyDictionary<ushort, uint> _territoryToAetherCurrentCompFlgSet;
@@ -56,7 +58,8 @@ internal sealed unsafe class GameFunctions
         IGameGui gameGui,
         Configuration configuration,
         ISigScanner sigScanner,
-        ILogger<GameFunctions> logger)
+        ILogger<GameFunctions> logger,
+        HighlightObject highlightObject)
     {
         _questFunctions = questFunctions;
         _dataManager = dataManager;
@@ -67,6 +70,7 @@ internal sealed unsafe class GameFunctions
         _gameGui = gameGui;
         _configuration = configuration;
         _logger = logger;
+        _highlightObject = highlightObject;
         _abandonDuty =
             Marshal.GetDelegateForFunctionPointer<AbandonDutyDelegate>(sigScanner.ScanText(Signatures.AbandonDuty));
 
@@ -133,6 +137,7 @@ internal sealed unsafe class GameFunctions
 
             if (gameObject.BaseId == dataId && (kind == null || kind.Value == gameObject.ObjectKind))
             {
+                _highlightObject.AddHighlight(gameObject.BaseId);
                 return gameObject;
             }
         }
