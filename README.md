@@ -64,8 +64,6 @@
 
 </section><br>
 
------
-
 <!-- Companion Plugins -->
 <section id="deps"><br>
 
