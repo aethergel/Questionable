@@ -66,6 +66,7 @@ internal unsafe class CameraFunctions : IDisposable
         return degrees * ((float)Math.PI / 180f);
     }
 
+    // from https://github.com/NightmareXIV/ECommons/blob/master/ECommons/MathHelpers/Angle.cs
     private float Normalized(float r)
     {
         while (r < -MathF.PI)
