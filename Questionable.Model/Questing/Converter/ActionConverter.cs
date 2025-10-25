@@ -55,7 +55,7 @@ public sealed class ActionConverter() : EnumConverter<EAction>(Values)
         { EAction.BigSneeze, "Big Sneeze" },
         { EAction.TrickstersTreat, "Trickster's Treat" },
         { EAction.TreatersTrick, "Treater's Trick" },
-        { EAction.Cast, "Cast" },
-        { EAction.Quit, "Quit" }
+        { EAction.FSHCast, "FSHCast" },
+        { EAction.FSHQuit, "FSHQuit" }
     };
 }

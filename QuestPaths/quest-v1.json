@@ -32,7 +32,10 @@
     "SeasonalQuestExpiry": {
       "description": "If this is an seasonal (event) quest, the date and time (in UTC) when this quest should no longer be available",
       "format": "date-time",
-      "type": [ "string", "null" ]
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "Comment": {
       "type": "string"
@@ -557,7 +560,10 @@
               "SeasonalQuestExpiry": {
                 "description": "If this is an seasonal (event) quest, the date and time (in UTC) when this quest should no longer be available",
                 "format": "date-time",
-                "type": [ "string", "null" ]
+                "type": [
+                  "string",
+                  "null"
+                ]
               }
             }
           },
@@ -1357,8 +1363,8 @@
                   "Treater's Trick",
                   "Duty Action I",
                   "Duty Action II",
-                  "Cast",
-                  "Quit"
+                  "FSHCast",
+                  "FSHQuit"
                 ]
               }
             },

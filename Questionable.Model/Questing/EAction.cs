@@ -84,8 +84,8 @@ public enum EAction
     FieldMastery2 = 220,
     FieldMastery3 = 294,
 
-    Cast = 289,
-    Quit = 299,
+    FSHCast = 289,
+    FSHQuit = 299,
 }
 
 public static class EActionExtensions
