@@ -14,13 +14,39 @@
           },
           "StopDistance": 7,
           "TerritoryId": 962,
-          "InteractionType": "AcceptQuest",
+          "InteractionType": "WalkTo",
           "AetheryteShortcut": "Old Sharlayan",
+          "AethernetShortcut": [
+            "[Old Sharlayan] Aetheryte Plaza",
+            "[Old Sharlayan] The Baldesion Annex"
+          ],
           "SkipConditions": {
             "AetheryteShortcutIf": {
               "InSameTerritory": true
+            },
+            "StepIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": -101.76245,
+                  "Y": 4.357494,
+                  "Z": 0.7476196
+                },
+                "TerritoryId": 962,
+                "MaximumDistance": 20
+              }
             }
           }
+        },
+        {
+          "DataId": 1046835,
+          "Position": {
+            "X": -101.76245,
+            "Y": 4.357494,
+            "Z": 0.7476196
+          },
+          "StopDistance": 7,
+          "TerritoryId": 962,
+          "InteractionType": "AcceptQuest"
         }
       ]
     },

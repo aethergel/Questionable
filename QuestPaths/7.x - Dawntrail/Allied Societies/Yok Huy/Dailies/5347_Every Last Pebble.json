@@ -81,7 +81,7 @@
                   "Z": 801.6022
                 },
                 "TerritoryId": 1187,
-                "MaximumDistance": 200
+                "MaximumDistance": 20
               }
             }
           }
@@ -275,7 +275,7 @@
                   "Z": 801.6022
                 },
                 "TerritoryId": 1187,
-                "MaximumDistance": 200
+                "MaximumDistance": 20
               }
             }
           }
