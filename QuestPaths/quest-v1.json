@@ -1356,7 +1356,9 @@
                   "Trickster's Treat",
                   "Treater's Trick",
                   "Duty Action I",
-                  "Duty Action II"
+                  "Duty Action II",
+                  "Cast",
+                  "Quit"
                 ]
               }
             },
