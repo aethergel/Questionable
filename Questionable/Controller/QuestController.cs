@@ -1053,6 +1053,13 @@ internal sealed class QuestController : MiniTaskController<QuestController>
         return true;
     }
 
+    public bool RemoveQuestPriority(ElementId elementId)
+    {
+        if (_questRegistry.TryGetQuest(elementId, out Quest? quest) && ManualPriorityQuests.Contains(quest))
+            ManualPriorityQuests.Remove(quest);
+        return true;
+    }
+
     public bool InsertQuestPriority(int index, ElementId elementId)
     {
         try

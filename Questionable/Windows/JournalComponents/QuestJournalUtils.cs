@@ -1,8 +1,10 @@
-﻿using Dalamud.Bindings.ImGui;
+﻿using System.Collections.Generic;
+using Dalamud.Bindings.ImGui;
 using Dalamud.Interface.Components;
 using Dalamud.Interface.Utility.Raii;
 using Dalamud.Plugin.Services;
 using Questionable.Controller;
+using Questionable.Data;
 using Questionable.Functions;
 using Questionable.Model;
 using Questionable.Model.Questing;
@@ -31,6 +33,14 @@ internal sealed class QuestJournalUtils
         using var popup = ImRaii.Popup($"##QuestPopup{questInfo.QuestId}");
         if (!popup)
             return;
+
+        using (ImRaii.Disabled(quest == null))
+        {
+            if (ImGui.MenuItem("Add to Priority Quests") && quest != null)
+            {
+                _questController.AddQuestPriority(quest.Id);
+            }
+        }
 
         using (ImRaii.Disabled(!_questFunctions.IsReadyToAcceptQuest(questInfo.QuestId)))
         {
@@ -63,5 +73,31 @@ internal sealed class QuestJournalUtils
         if (ImGui.Checkbox("Show only Available Quests", ref journalUi.Filter.AvailableOnly) ||
             ImGui.Checkbox("Hide Quests Without Path", ref journalUi.Filter.HideNoPaths))
             journalUi.UpdateFilter();
+    }
+
+    public void ShowGenreContextMenu(JournalData.Genre genre, List<IQuestInfo> quests)
+    {
+        if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
+            ImGui.OpenPopup($"##QuestGenrePopup{genre.Id}");
+
+        using var popup = ImRaii.Popup($"##QuestGenrePopup{genre.Id}");
+        if (!popup)
+            return;
+
+        if (ImGui.MenuItem("Add all to Priority Quests"))
+        {
+            foreach(var quest in quests)
+            {
+                _questController.AddQuestPriority(quest.QuestId);
+            }
+        }
+
+        if (ImGui.MenuItem("Remove all from Priority Quests"))
+        {
+            foreach(var quest in quests)
+            {
+                _questController.RemoveQuestPriority(quest.QuestId);
+            }
+        }
     }
 }

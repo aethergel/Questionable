@@ -156,6 +156,8 @@ internal sealed class QuestJournalComponent
 
         bool open = ImGui.TreeNodeEx(filter.Genre.Name, ImGuiTreeNodeFlags.SpanFullWidth);
 
+        _questJournalUtils.ShowGenreContextMenu(filter.Genre, filter.Quests);
+
         ImGui.TableNextColumn();
         DrawCount(supported, total);
         ImGui.TableNextColumn();
