@@ -21,7 +21,7 @@ internal sealed class PandorasBoxIpc : IDisposable
         "Auto-Mount after Combat",
         "Auto-Mount after Gathering",
         "Auto-Peleton",
-        "Auto-Spring in Sanctuaries",
+        "Auto-Sprint in Sanctuaries",
         "Auto-select Turn-ins",
         "Auto-Sync FATEs",
 
