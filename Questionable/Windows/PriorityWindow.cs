@@ -67,6 +67,21 @@ internal sealed class PriorityWindow : LWindow
 
     public override void DrawContent()
     {
+
+        if (ImGui.CollapsingHeader("Explanation", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            ImGui.TextWrapped(
+                "Questionable will generally try to do:");
+            ImGui.BulletText("Priority quests added below, in order");
+            ImGui.BulletText("'Priority' quests: class quests, ARR primals, ARR raids");
+            ImGui.BulletText(
+                "Supported quests in your 'To-Do list'\n(quests from your Quest Journal that are always on-screen)");
+            ImGui.BulletText("MSQ quest (if available, unless it is marked as 'ignored'\nin your Journal)");
+            ImGui.TextWrapped(
+                "If you don't have any active MSQ quest and there is no Priority Quest added here, it will always try to pick up the next quest in the MSQ first.");
+        }
+        ImGui.Separator();
+        ImGui.Spacing();
         ImGui.Text("Quests to do first:");
         _questSelector.DrawSelection();
         DrawQuestList();
@@ -94,19 +109,6 @@ internal sealed class PriorityWindow : LWindow
             ImGui.SetTooltip("Hold CTRL to enable this button.");
 
         ImGui.EndDisabled();
-
-        ImGui.Spacing();
-
-        ImGui.Separator();
-        ImGui.Spacing();
-        ImGui.TextWrapped(
-            "If you have an active MSQ quest, Questionable will generally try to do:");
-        ImGui.BulletText("'Priority' quests: class quests, ARR primals, ARR raids");
-        ImGui.BulletText(
-            "Supported quests in your 'To-Do list'\n(quests from your Journal that are always on-screen)");
-        ImGui.BulletText("MSQ quest (if available, unless it is marked as 'ignored'\nin your Journal)");
-        ImGui.TextWrapped(
-            "If you don't have any active MSQ quest, it will always try to pick up the next quest in the MSQ first.");
     }
 
     private void DrawQuestList()

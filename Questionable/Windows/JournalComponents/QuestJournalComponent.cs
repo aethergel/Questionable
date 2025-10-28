@@ -62,6 +62,7 @@ internal sealed class QuestJournalComponent
             ImGui.BulletText("'Completed' lists quests your current character has completed.");
             ImGui.BulletText(
                 "Not all quests can be completed even if they're listed as available, e.g. starting city quest chains.");
+            ImGui.TextWrapped("Quests can be added to Priority Quests, either individually or by group, with the right click menu.");
 
             ImGui.Spacing();
             ImGui.Separator();
