@@ -60,8 +60,8 @@ internal sealed class PriorityWindow : LWindow
         SizeCondition = ImGuiCond.Once;
         SizeConstraints = new WindowSizeConstraints
         {
-            MinimumSize = new Vector2(400, 400),
-            MaximumSize = new Vector2(400, 999)
+            MinimumSize = new Vector2(400, 30),
+            MaximumSize = default
         };
     }
 

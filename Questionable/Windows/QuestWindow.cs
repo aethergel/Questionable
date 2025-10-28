@@ -63,9 +63,6 @@ internal sealed class QuestWindow : LWindow, IPersistableWindowConfig
         _framework = framework;
         _interactionUiController = interactionUiController;
 
-#if DEBUG
-        IsOpenAndUncollapsed = true;
-#endif
         SizeConstraints = new WindowSizeConstraints
         {
             MinimumSize = new Vector2(240, 30),
