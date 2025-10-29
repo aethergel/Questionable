@@ -150,6 +150,7 @@
             "Combat",
             "UseItem",
             "EquipItem",
+            "UnequipItem",
             "PurchaseItem",
             "EquipRecommended",
             "Say",
@@ -892,6 +893,20 @@
             "properties": {
               "InteractionType": {
                 "const": "EquipItem"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "ItemId"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "InteractionType": {
+                "const": "UnequipItem"
               }
             }
           },

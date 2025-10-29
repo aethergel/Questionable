@@ -16,6 +16,7 @@ public enum EInteractionType
     Combat,
     UseItem,
     EquipItem,
+    UnequipItem,
     PurchaseItem,
     EquipRecommended,
     Say,

@@ -1,0 +1,94 @@
+{
+  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+  "Author": "alydev",
+  "Disabled": true,
+  "QuestSequence": [
+    {
+      "Sequence": 0,
+      "Comment": "Unequip Soul of the White Mage to complete this quest",
+      "Steps": [
+        {
+          "InteractionType": "None",
+          "TerritoryId": 133,
+          "AetheryteShortcut": "Gridania",
+          "AethernetShortcut": [
+            "[Gridania] Aetheryte Plaza",
+            "[Gridania] Conjurers' Guild"
+          ],
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "InTerritory": [
+                132,
+                133
+              ]
+            },
+            "StepIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": -243.15253,
+                  "Y": -4.000101,
+                  "Z": -7.950012
+                },
+                "TerritoryId": 133,
+                "MaximumDistance": 100
+              }
+            }
+          }
+        },
+        {
+          "DataId": 1000705,
+          "Position": {
+            "X": -243.15253,
+            "Y": -4.000101,
+            "Z": -7.950012
+          },
+          "TerritoryId": 133,
+          "InteractionType": "AcceptQuest"
+        }
+      ]
+    },
+    {
+      "Sequence": 255,
+      "Steps": [
+        {
+          "InteractionType": "None",
+          "TerritoryId": 133,
+          "AetheryteShortcut": "Gridania",
+          "AethernetShortcut": [
+            "[Gridania] Aetheryte Plaza",
+            "[Gridania] Conjurers' Guild"
+          ],
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "InTerritory": [
+                132,
+                133
+              ]
+            },
+            "StepIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": -243.15253,
+                  "Y": -4.000101,
+                  "Z": -7.950012
+                },
+                "TerritoryId": 133,
+                "MaximumDistance": 100
+              }
+            }
+          }
+        },
+        {
+          "DataId": 1000705,
+          "Position": {
+            "X": -243.15253,
+            "Y": -4.000101,
+            "Z": -7.950012
+          },
+          "TerritoryId": 133,
+          "InteractionType": "CompleteQuest"
+        }
+      ]
+    }
+  ]
+}
