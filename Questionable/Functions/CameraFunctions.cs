@@ -61,13 +61,13 @@ internal unsafe class CameraFunctions : IDisposable
         _rmiCameraHook.Dispose();
     }
 
-    private float Deg2Rad(int degrees)
+    private static float Deg2Rad(int degrees)
     {
         return degrees * ((float)Math.PI / 180f);
     }
 
     // from https://github.com/NightmareXIV/ECommons/blob/master/ECommons/MathHelpers/Angle.cs
-    private float Normalized(float r)
+    private static float Normalized(float r)
     {
         while (r < -MathF.PI)
             r += 2 * MathF.PI;
@@ -81,6 +81,11 @@ internal unsafe class CameraFunctions : IDisposable
     {
         _logger.LogWarning("Facing " + pos);
         Enabled         = true;
+        if (this._clientState.LocalPlayer == null)
+        {
+            _logger.LogWarning("LocalPlayer was null");
+            return;
+        }
         Vector3 diff = pos - this._clientState.LocalPlayer.Position;
         DesiredAzimuth  = MathF.Atan2(diff.X, diff.Z) + Deg2Rad(180);
         DesiredAltitude = Deg2Rad(-30);

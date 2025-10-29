@@ -7,7 +7,7 @@ using GameObject = FFXIVClientStructs.FFXIV.Client.Game.Object.GameObject;
 
 namespace Questionable.Controller.Utils;
 // Adapted from https://github.com/electr0sheep/ItemVendorLocation/blob/main/ItemVendorLocation/HighlightObject.cs
-internal class HighlightObject : IDisposable
+internal sealed class HighlightObject : IDisposable
 {
     private uint[] _targetNpcDataId = [];
     private DateTime _lastUpdateTime = DateTime.Now;

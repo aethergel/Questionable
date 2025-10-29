@@ -39,28 +39,28 @@ internal static class UnequipItem
     {
         private const int MaxAttempts = 3;
 
-        private static readonly IReadOnlyList<InventoryType> SourceInventoryTypes =
-        [
-            InventoryType.ArmoryMainHand,
-            InventoryType.ArmoryOffHand,
-            InventoryType.ArmoryHead,
-            InventoryType.ArmoryBody,
-            InventoryType.ArmoryHands,
-            InventoryType.ArmoryLegs,
-            InventoryType.ArmoryFeets,
+        //private static readonly IReadOnlyList<InventoryType> SourceInventoryTypes =
+        //[
+        //    InventoryType.ArmoryMainHand,
+        //    InventoryType.ArmoryOffHand,
+        //    InventoryType.ArmoryHead,
+        //    InventoryType.ArmoryBody,
+        //    InventoryType.ArmoryHands,
+        //    InventoryType.ArmoryLegs,
+        //    InventoryType.ArmoryFeets,
 
-            InventoryType.ArmoryEar,
-            InventoryType.ArmoryNeck,
-            InventoryType.ArmoryWrist,
-            InventoryType.ArmoryRings,
+        //    InventoryType.ArmoryEar,
+        //    InventoryType.ArmoryNeck,
+        //    InventoryType.ArmoryWrist,
+        //    InventoryType.ArmoryRings,
 
-            InventoryType.ArmorySoulCrystal,
+        //    InventoryType.ArmorySoulCrystal,
 
-            InventoryType.Inventory1,
-            InventoryType.Inventory2,
-            InventoryType.Inventory3,
-            InventoryType.Inventory4,
-        ];
+        //    InventoryType.Inventory1,
+        //    InventoryType.Inventory2,
+        //    InventoryType.Inventory3,
+        //    InventoryType.Inventory4,
+        //];
 
         private int _attempts;
         private Item? _item;
