@@ -1,0 +1,145 @@
+{
+  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+  "Author": "Kiarra",
+  "QuestSequence": [
+    {
+      "Sequence": 0,
+      "Steps": [
+        {
+          "DataId": 1043789,
+          "Position": {
+            "X": 36.27063,
+            "Y": 2.3729992,
+            "Z": -9.079163
+          },
+          "TerritoryId": 962,
+          "InteractionType": "AcceptQuest",
+          "Fly": true,
+          "AetheryteShortcut": "Old Sharlayan",
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": 36.27063,
+                  "Y": 2.3729992,
+                  "Z": -9.079163
+                },
+                "TerritoryId": 962,
+                "MaximumDistance": 200
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Sequence": 1,
+      "Steps": [
+        {
+          "DataId": 1043621,
+          "Position": {
+            "X": 174.12073,
+            "Y": 14.095924,
+            "Z": 667.5669
+          },
+          "TerritoryId": 135,
+          "InteractionType": "Interact",
+          "AetheryteShortcut": "Lower La Noscea - Moraby Drydocks",
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": 174.12073,
+                  "Y": 14.095924,
+                  "Z": 667.5669
+                },
+                "TerritoryId": 135,
+                "MaximumDistance": 200
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Sequence": 2,
+      "Steps": [
+        {
+          "DataId": 1043621,
+          "Position": {
+            "X": 174.12073,
+            "Y": 14.095924,
+            "Z": 667.5669
+          },
+          "TerritoryId": 135,
+          "InteractionType": "Interact",
+          "DialogueChoices": [
+            {
+              "Type": "List",
+              "ExcelSheet": "custom/007/CtsMjiEntrance_00798",
+              "Prompt": "TEXT_CTSMJIENTRANCE_00798_SYSTEM_000_000",
+              "Answer": "TEXT_CTSMJIENTRANCE_00798_Q1_000_000"
+            },
+            {
+              "Type": "YesNo",
+              "ExcelSheet": "custom/007/CtsMjiEntrance_00798",
+              "Prompt": "TEXT_CTSMJIENTRANCE_00798_SYSTEM_000_005",
+              "Yes": true
+            }
+          ],
+          "AetheryteShortcut": "Lower La Noscea - Moraby Drydocks",
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": 174.12073,
+                  "Y": 14.095924,
+                  "Z": 667.5669
+                },
+                "TerritoryId": 135,
+                "MaximumDistance": 200
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Sequence": 3,
+      "Steps": [
+        {
+          "DataId": 1043622,
+          "Position": {
+            "X": -389.85278,
+            "Y": 3.250122,
+            "Z": 238.36108
+          },
+          "TerritoryId": 1055,
+          "InteractionType": "Interact",
+          "DialogueChoices": [
+            {
+              "Type": "List",
+              "Prompt": "TEXT_AKTKUA101_04643_Q2_000_000",
+              "Answer": "TEXT_AKTKUA101_04643_A2_000_001"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Sequence": 255,
+      "Steps": [
+        {
+          "DataId": 1043904,
+          "Position": {
+            "X": -323.5066,
+            "Y": 32.547485,
+            "Z": 253.86426
+          },
+          "TerritoryId": 1055,
+          "InteractionType": "CompleteQuest"
+        }
+      ]
+    }
+  ]
+}

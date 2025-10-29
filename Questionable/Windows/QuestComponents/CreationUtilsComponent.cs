@@ -11,10 +11,8 @@ using Dalamud.Interface;
 using Dalamud.Interface.Colors;
 using Dalamud.Interface.Components;
 using Dalamud.Plugin.Services;
-#if DEBUG
 using FFXIVClientStructs.FFXIV.Client.Game;
 using FFXIVClientStructs.FFXIV.Client.Game.UI;
-#endif
 using FFXIVClientStructs.FFXIV.Client.Game.Control;
 using FFXIVClientStructs.FFXIV.Client.Game.Object;
 using Microsoft.Extensions.Logging;
@@ -35,6 +33,7 @@ internal sealed class CreationUtilsComponent
 #endif
     private readonly MovementController _movementController;
     private readonly GameFunctions _gameFunctions;
+    private readonly QuestRegistry _questRegistry;
     private readonly QuestFunctions _questFunctions;
     private readonly CameraFunctions _cameraFunctions;
     private readonly TerritoryData _territoryData;
@@ -44,6 +43,7 @@ internal sealed class CreationUtilsComponent
     private readonly ITargetManager _targetManager;
     private readonly ICondition _condition;
     private readonly IGameGui _gameGui;
+    private readonly IChatGui _chatGui;
     private readonly Configuration _configuration;
     private readonly ILogger<CreationUtilsComponent> _logger;
 
@@ -53,6 +53,7 @@ internal sealed class CreationUtilsComponent
 #endif
         MovementController movementController,
         GameFunctions gameFunctions,
+        QuestRegistry questRegistry,
         QuestFunctions questFunctions,
         CameraFunctions cameraFunctions,
         TerritoryData territoryData,
@@ -62,6 +63,7 @@ internal sealed class CreationUtilsComponent
         ITargetManager targetManager,
         ICondition condition,
         IGameGui gameGui,
+        IChatGui chatGui,
         Configuration configuration,
         ILogger<CreationUtilsComponent> logger)
     {
@@ -70,6 +72,7 @@ internal sealed class CreationUtilsComponent
 #endif
         _movementController = movementController;
         _gameFunctions = gameFunctions;
+        _questRegistry = questRegistry;
         _questFunctions = questFunctions;
         _territoryData = territoryData;
         _questData = questData;
@@ -79,6 +82,7 @@ internal sealed class CreationUtilsComponent
         _targetManager = targetManager;
         _condition = condition;
         _gameGui = gameGui;
+        _chatGui = chatGui;
         _configuration = configuration;
         _logger = logger;
     }
@@ -99,79 +103,66 @@ internal sealed class CreationUtilsComponent
         if (_configuration.Advanced.AdditionalStatusInformation)
         {
             var q = _questFunctions.GetCurrentQuest();
-            ImGui.Text($"Current Quest: {q.CurrentQuest} → {q.Sequence}");
-        }
-
-#if DEBUG
-        unsafe
-        {
-            var questManager = QuestManager.Instance();
-            if (questManager != null)
-            {
-                for (int i = questManager->TrackedQuests.Length - 1; i >= 0; --i)
-                {
-                    var trackedQuest = questManager->TrackedQuests[i];
-                    switch (trackedQuest.QuestType)
-                    {
-                        default:
-                            ImGui.Text($"Tracked quest {i}: {trackedQuest.QuestType}, {trackedQuest.Index}");
-                            break;
-
-                        case 1:
-                            //_questRegistry.TryGetQuest(questManager->NormalQuests[trackedQuest.Index].QuestId,
-                            //    out var quest);
-                            ImGui.Text(
-                                $"Quest: {questManager->NormalQuests[trackedQuest.Index].QuestId}, {trackedQuest.Index}");
-                            break;
-
-                        case 2:
-                            break;
-                    }
-                }
-            }
-        }
-#endif
-
-#if DEBUG
-        unsafe
-        {
-            var questManager = QuestManager.Instance();
-            if (questManager != null)
-            {
-                for (int i = 0; i < questManager->DailyQuests.Length; ++i)
-                {
-                    var dailyQuest = questManager->DailyQuests[i];
-                    ImGui.Text($"Daily Quest {i}: {dailyQuest.QuestId}, {dailyQuest.IsCompleted}");
-                }
-            }
-        }
-#endif
-
-#if DEBUG
-        unsafe
-        {
-            var director = UIState.Instance()->DirectorTodo.Director;
-            if (director != null)
-            {
-                ImGui.Text($"Director: {director->ContentId}");
-                ImGui.Text($"Seq: {director->Sequence}");
-                ImGui.Text($"Ico: {director->IconId}");
-                if (director->EventHandlerInfo != null)
-                {
-                    ImGui.Text($"  EHI CI: {director->Info.EventId.ContentId}");
-                    ImGui.Text($"  EHI EI: {director->Info.EventId.Id}");
-                    ImGui.Text($"  EHI EEI: {director->Info.EventId.EntryId}");
-                    ImGui.Text($"  EHI F: {director->Info.Flags}");
-                }
-            }
-        }
-#endif
-
-#if DEBUG
-        if (_configuration.Advanced.AdditionalStatusInformation)
-        {
+            ImGui.Text($"QST prio: {q.CurrentQuest} → {q.Sequence}");
             unsafe
             {
+                var questManager = QuestManager.Instance();
+                if (questManager != null)
+                {
+                    for (int i = questManager->TrackedQuests.Length - 1; i >= 0; --i)
+                    {
+                        var trackedQuest = questManager->TrackedQuests[i];
+                        switch (trackedQuest.QuestType)
+                        {
+                            default:
+                                if (trackedQuest.QuestType != 0 || trackedQuest.Index != 0)
+                                    ImGui.Text($"Tracked Quest {i}: {trackedQuest.QuestType}, {trackedQuest.Index}");
+                                break;
+
+                            case 1:
+                                //_questRegistry.TryGetQuest(questManager->NormalQuests[trackedQuest.Index].QuestId,
+                                //    out var quest);
+                                ImGui.Text(
+                                    $"Tracked Quest: {questManager->NormalQuests[trackedQuest.Index].QuestId} → {questManager->NormalQuests[trackedQuest.Index].Sequence}");
+                                break;
+
+                            case 2:
+                                break;
+                        }
+                    }
+                    for (int i = 0; i < questManager->DailyQuests.Length; ++i)
+                    {
+                        var dailyQuest = questManager->DailyQuests[i];
+                        if (dailyQuest.QuestId != 0)
+                        {
+                            ImGui.Text($"Daily Quest {i}: {dailyQuest.QuestId}, C:{dailyQuest.IsCompleted}");
+                            if (_questRegistry.TryGetQuest(new QuestId(dailyQuest.QuestId), out var quest))
+                            {
+                                if (ImGui.IsItemHovered())
+                                    ImGui.SetTooltip($"{quest.Info.Name} ({quest.Info.AlliedSociety})");
+
+                                if (ImGui.IsItemClicked())
+                                {
+                                    _questController.AddQuestPriority(quest.Id);
+                                }
+                            }
+                        }
+                    }
+                }
+                var director = UIState.Instance()->DirectorTodo.Director;
+                if (director != null)
+                {
+                    ImGui.Text($"Director: {director->ContentId}");
+                    ImGui.Text($"Seq: {director->Sequence}");
+                    ImGui.Text($"Ico: {director->IconId}");
+                    if (director->EventHandlerInfo != null)
+                    {
+                        ImGui.Text($"  EHI CI: {director->Info.EventId.ContentId}");
+                        ImGui.Text($"  EHI EI: {director->Info.EventId.Id}");
+                        ImGui.Text($"  EHI EEI: {director->Info.EventId.EntryId}");
+                        ImGui.Text($"  EHI F: {director->Info.Flags}");
+                    }
+                }
                 var actionManager = ActionManager.Instance();
                 ImGui.Text(
                     $"A1: {actionManager->CastActionId} ({actionManager->LastUsedActionSequence} → {actionManager->LastHandledActionSequence})");
@@ -179,7 +170,6 @@ internal sealed class CreationUtilsComponent
                 ImGui.Text($"{_questController.TaskQueue.CurrentTaskExecutor?.ProgressContext}");
             }
         }
-#endif
 
         if (_targetManager.Target != null)
         {
