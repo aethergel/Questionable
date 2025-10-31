@@ -1,9 +1,10 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-  "Author": "alydev,stoat33",
+  "Author": ["alydev","stoat33"],
+  "Comment": "vnavmesh v0.5.5.0",
   "LastChecked": {
     "Username": "alydev",
-    "Date": "2025-10-14"
+    "Date": "2025-10-31"
   },
   "QuestSequence": [
     {
@@ -105,132 +106,6 @@
           }
         },
         {
-          "$": "Recovery",
-          "Position": {
-            "X": 14.214312,
-            "Y": 5.428712,
-            "Z": -3.7248642
-          },
-          "TerritoryId": 1297,
-          "InteractionType": "WalkTo",
-          "Mount": true,
-          "DisableNavmesh": true,
-          "SkipConditions": {
-            "StepIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": 97.24573,
-                  "Y": 4.942853,
-                  "Z": 198.19934
-                },
-                "TerritoryId": 1297,
-                "MaximumDistance": 20
-              }
-            }
-          }
-        },
-        {
-          "$": "Road",
-          "Position": {
-            "X": 16.57459,
-            "Y": 0.29999995,
-            "Z": 62.71482
-          },
-          "TerritoryId": 1297,
-          "InteractionType": "WalkTo",
-          "Mount": true,
-          "DisableNavmesh": true,
-          "SkipConditions": {
-            "StepIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": 97.24573,
-                  "Y": 4.942853,
-                  "Z": 198.19934
-                },
-                "TerritoryId": 1297,
-                "MaximumDistance": 10
-              }
-            }
-          }
-        },
-        {
-          "$": "base of steps",
-          "Position": {
-            "X": 68.85583,
-            "Y": 0,
-            "Z": 147.82959
-          },
-          "TerritoryId": 1297,
-          "InteractionType": "WalkTo",
-          "StopDistance": 1,
-          "Mount": true,
-          "DisableNavmesh": true,
-          "SkipConditions": {
-            "StepIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": 97.24573,
-                  "Y": 4.942853,
-                  "Z": 198.19934
-                },
-                "TerritoryId": 1297,
-                "MaximumDistance": 10
-              }
-            }
-          }
-        },
-        {
-          "Position": {
-            "X": 86.35623,
-            "Y": 4.942852,
-            "Z": 175.1561
-          },
-          "TerritoryId": 1297,
-          "InteractionType": "WalkTo",
-          "StopDistance": 1,
-          "Mount": true,
-          "DisableNavmesh": true,
-          "SkipConditions": {
-            "StepIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": 97.24573,
-                  "Y": 4.942853,
-                  "Z": 198.19934
-                },
-                "TerritoryId": 1297,
-                "MaximumDistance": 10
-              }
-            }
-          }
-        },
-        {
-          "Position": {
-            "X": 99.25126,
-            "Y": 4.942852,
-            "Z": 183.20845
-          },
-          "TerritoryId": 1297,
-          "InteractionType": "WalkTo",
-          "StopDistance": 1,
-          "Mount": true,
-          "DisableNavmesh": true,
-          "SkipConditions": {
-            "StepIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": 97.24573,
-                  "Y": 4.942853,
-                  "Z": 198.19934
-                },
-                "TerritoryId": 1297,
-                "MaximumDistance": 10
-              }
-            }
-          }
-        },
-        {
           "DataId": 1055786,
           "Position": {
             "X": 97.24573,
@@ -239,7 +114,7 @@
           },
           "TerritoryId": 1297,
           "InteractionType": "Interact",
-          "DisableNavmesh": true
+          "Mount": true
         }
       ]
     },
@@ -300,155 +175,6 @@
           }
         },
         {
-          "$": "Road",
-          "Position": {
-            "X": 16.57459,
-            "Y": 0.29999995,
-            "Z": 62.71482
-          },
-          "TerritoryId": 1297,
-          "InteractionType": "WalkTo",
-          "Mount": true,
-          "DisableNavmesh": true,
-          "SkipConditions": {
-            "StepIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": 97.24573,
-                  "Y": 4.942853,
-                  "Z": 198.19934
-                },
-                "TerritoryId": 1297,
-                "MaximumDistance": 10
-              }
-            }
-          }
-        },
-        {
-          "$": "Ledge",
-          "Position": {
-            "X": 68.103134,
-            "Y": 1.8905401,
-            "Z": 64.664055
-          },
-          "TerritoryId": 1297,
-          "InteractionType": "WalkTo",
-          "Mount": true,
-          "DisableNavmesh": true,
-          "SkipConditions": {
-            "StepIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": 97.24573,
-                  "Y": 4.942853,
-                  "Z": 198.19934
-                },
-                "TerritoryId": 1297,
-                "MaximumDistance": 10
-              }
-            }
-          }
-        },
-        {
-          "Position": {
-            "X": 93.43054,
-            "Y": 4.942852,
-            "Z": 179.67484
-          },
-          "TerritoryId": 1297,
-          "InteractionType": "WalkTo",
-          "Mount": true,
-          "DisableNavmesh": true,
-          "SkipConditions": {
-            "StepIf": {
-              "NotNearPosition": {
-                "Position": {
-                  "X": 97.24573,
-                  "Y": 4.942853,
-                  "Z": 198.19934
-                },
-                "TerritoryId": 1297,
-                "MaximumDistance": 5
-              }
-            }
-          }
-        },
-        {
-          "Position": {
-            "X": 82.23974,
-            "Y": 3.9428918,
-            "Z": 171.08218
-          },
-          "TerritoryId": 1297,
-          "InteractionType": "WalkTo",
-          "Mount": true,
-          "DisableNavmesh": true,
-          "StopDistance": 1,
-          "SkipConditions": {
-            "StepIf": {
-              "NotNearPosition": {
-                "Position": {
-                  "X": 93.43054,
-                  "Y": 4.942852,
-                  "Z": 179.67484
-                },
-                "TerritoryId": 1297,
-                "MaximumDistance": 5
-              }
-            }
-          }
-        },
-        {
-          "Position": {
-            "X": 86.40615,
-            "Y": 3.9971411,
-            "Z": 117.89886
-          },
-          "TerritoryId": 1297,
-          "InteractionType": "WalkTo",
-          "Mount": true,
-          "DisableNavmesh": true,
-          "StopDistance": 1,
-          "SkipConditions": {
-            "StepIf": {
-              "NotNearPosition": {
-                "Position": {
-                  "X": 82.23974,
-                  "Y": 3.9428918,
-                  "Z": 171.08218
-                },
-                "TerritoryId": 1297,
-                "MaximumDistance": 5
-              }
-            }
-          }
-        },
-        {
-          "Position": {
-            "X": 65.6729,
-            "Y": 1.8902633,
-            "Z": 89.97969
-          },
-          "TerritoryId": 1297,
-          "InteractionType": "WalkTo",
-          "Mount": true,
-          "DisableNavmesh": true,
-          "StopDistance": 1,
-          "SkipConditions": {
-            "StepIf": {
-              "NotNearPosition": {
-                "Position": {
-                  "X": 86.40615,
-                  "Y": 3.9971411,
-                  "Z": 117.89886
-                },
-                "TerritoryId": 1297,
-                "MaximumDistance": 5
-              }
-            }
-          }
-        },
-        {
           "DataId": 2014945,
           "Position": {
             "X": 73.22275,
@@ -458,7 +184,6 @@
           "TerritoryId": 1297,
           "InteractionType": "UseItem",
           "Mount": true,
-          "DisableNavmesh": true,
           "ItemId": 2003777,
           "StopDistance": 1,
           "$": "QW 0 48 0  0 0 0",
@@ -474,30 +199,6 @@
           ]
         },
         {
-          "Position": {
-            "X": 78.08928,
-            "Y": 3.871,
-            "Z": 17.269547
-          },
-          "TerritoryId": 1297,
-          "InteractionType": "WalkTo",
-          "Mount": true,
-          "DisableNavmesh": true,
-          "StopDistance": 1
-        },
-        {
-          "Position": {
-            "X": 97.065704,
-            "Y": 5.8219147,
-            "Z": 16.351015
-          },
-          "TerritoryId": 1297,
-          "InteractionType": "WalkTo",
-          "Mount": true,
-          "DisableNavmesh": true,
-          "StopDistance": 1
-        },
-        {
           "DataId": 2014946,
           "Position": {
             "X": 99.3091,
@@ -507,7 +208,6 @@
           "TerritoryId": 1297,
           "InteractionType": "UseItem",
           "Mount": true,
-          "DisableNavmesh": true,
           "ItemId": 2003777,
           "StopDistance": 1,
           "CompletionQuestVariablesFlags": [
@@ -522,42 +222,6 @@
           ]
         },
         {
-          "Position": {
-            "X": 102.0534,
-            "Y": 5.8219748,
-            "Z": 25.554665
-          },
-          "TerritoryId": 1297,
-          "InteractionType": "WalkTo",
-          "Mount": true,
-          "DisableNavmesh": true,
-          "StopDistance": 1
-        },
-        {
-          "Position": {
-            "X": 150.65337,
-            "Y": 5.894373,
-            "Z": 27.82553
-          },
-          "TerritoryId": 1297,
-          "InteractionType": "WalkTo",
-          "Mount": true,
-          "DisableNavmesh": true,
-          "StopDistance": 1
-        },
-        {
-          "Position": {
-            "X": 153.30302,
-            "Y": 3.905,
-            "Z": 86.19149
-          },
-          "TerritoryId": 1297,
-          "InteractionType": "WalkTo",
-          "Mount": true,
-          "DisableNavmesh": true,
-          "StopDistance": 1
-        },
-        {
           "DataId": 2014944,
           "Position": {
             "X": 162.2566,
@@ -567,7 +231,6 @@
           "TerritoryId": 1297,
           "InteractionType": "UseItem",
           "Mount": true,
-          "DisableNavmesh": true,
           "ItemId": 2003777
         }
       ]

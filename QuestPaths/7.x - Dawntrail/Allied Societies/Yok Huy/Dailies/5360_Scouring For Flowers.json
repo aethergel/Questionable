@@ -159,56 +159,6 @@
           }
         },
         {
-          "$": "Recovery",
-          "Position": {
-            "X": 14.214312,
-            "Y": 5.428712,
-            "Z": -3.7248642
-          },
-          "TerritoryId": 1297,
-          "InteractionType": "WalkTo",
-          "Mount": true,
-          "DisableNavmesh": true,
-          "SkipConditions": {
-            "StepIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": 74.75391,
-                  "Y": 1.8866259,
-                  "Z": 50.369995
-                },
-                "TerritoryId": 1297,
-                "MaximumDistance": 20
-              }
-            }
-          }
-        },
-        {
-          "$": "Road",
-          "Position": {
-            "X": 16.57459,
-            "Y": 0.29999995,
-            "Z": 62.71482
-          },
-          "TerritoryId": 1297,
-          "InteractionType": "WalkTo",
-          "Mount": true,
-          "DisableNavmesh": true,
-          "SkipConditions": {
-            "StepIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": 74.75391,
-                  "Y": 1.8866259,
-                  "Z": 50.369995
-                },
-                "TerritoryId": 1297,
-                "MaximumDistance": 20
-              }
-            }
-          }
-        },
-        {
           "$": "5360 → 2 - QW: 0 48    0 0    0 0",
           "DataId": 1055794,
           "Position": {
@@ -217,7 +167,8 @@
             "Z": 172.07593
           },
           "TerritoryId": 1297,
-          "InteractionType": "Interact"
+          "InteractionType": "Interact",
+          "Mount": true
         }
       ]
     },

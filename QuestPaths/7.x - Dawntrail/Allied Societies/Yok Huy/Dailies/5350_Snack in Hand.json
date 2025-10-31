@@ -1,6 +1,9 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-  "Author": "alydev,stoat33",
+  "Author": [
+    "alydev",
+    "stoat33"
+  ],
   "LastChecked": {
     "Username": "alydev",
     "Date": "2025-10-14"

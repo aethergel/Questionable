@@ -1,9 +1,14 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-  "Author": "alydev,stoat33,Censored",
+  "Author": [
+    "alydev",
+    "stoat33",
+    "Censored"
+  ],
+  "Comment": "vnavmesh v0.5.5.0",
   "LastChecked": {
     "Username": "alydev",
-    "Date": "2025-10-15"
+    "Date": "2025-10-31"
   },
   "QuestSequence": [
     {
@@ -145,76 +150,6 @@
               ]
             }
           }
-        },
-        {
-          "Position": {
-            "X": 521.158,
-            "Y": 107.134964,
-            "Z": 559.1027
-          },
-          "TerritoryId": 1187,
-          "InteractionType": "WalkTo",
-          "DisableNavmesh": true
-        },
-        {
-          "Position": {
-            "X": 539.80023,
-            "Y": 107.13393,
-            "Z": 605.5298
-          },
-          "TerritoryId": 1187,
-          "InteractionType": "WalkTo",
-          "DisableNavmesh": true
-        },
-        {
-          "Position": {
-            "X": 555.5777,
-            "Y": 103.64586,
-            "Z": 701.73474
-          },
-          "TerritoryId": 1187,
-          "InteractionType": "WalkTo",
-          "DisableNavmesh": true
-        },
-        {
-          "Position": {
-            "X": 546.4509,
-            "Y": 119.49904,
-            "Z": 758.46045
-          },
-          "TerritoryId": 1187,
-          "InteractionType": "WalkTo",
-          "DisableNavmesh": true
-        },
-        {
-          "Position": {
-            "X": 549.5645,
-            "Y": 119.49904,
-            "Z": 765.71906
-          },
-          "TerritoryId": 1187,
-          "InteractionType": "WalkTo",
-          "DisableNavmesh": true
-        },
-        {
-          "Position": {
-            "X": 539.4746,
-            "Y": 135.31715,
-            "Z": 799.5778
-          },
-          "TerritoryId": 1187,
-          "InteractionType": "WalkTo",
-          "DisableNavmesh": true
-        },
-        {
-          "Position": {
-            "X": 517.63855,
-            "Y": 142.24991,
-            "Z": 793.3129
-          },
-          "TerritoryId": 1187,
-          "InteractionType": "WalkTo",
-          "DisableNavmesh": true
         },
         {
           "DataId": 1054676,
