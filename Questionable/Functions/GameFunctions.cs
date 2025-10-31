@@ -135,9 +135,9 @@ internal sealed unsafe class GameFunctions
             if (gameObject is { ObjectKind: ObjectKind.GatheringPoint, IsTargetable: false })
                 continue;
 
-            if (gameObject.BaseId == dataId && (kind == null || kind.Value == gameObject.ObjectKind))
+            if (GameFunctions.GetBaseID(gameObject) == dataId && (kind == null || kind.Value == gameObject.ObjectKind))
             {
-                _highlightObject.AddHighlight(gameObject.BaseId);
+                _highlightObject.AddHighlight(GameFunctions.GetBaseID(gameObject));
                 return gameObject;
             }
         }
@@ -158,7 +158,7 @@ internal sealed unsafe class GameFunctions
 
     public bool InteractWith(IGameObject gameObject)
     {
-        _logger.LogInformation("Setting target with {DataId} to {ObjectId}", gameObject.BaseId, gameObject.EntityId);
+        _logger.LogInformation("Setting target with {DataId} to {ObjectId}", GameFunctions.GetBaseID(gameObject), gameObject.EntityId);
         _targetManager.Target = null;
         _targetManager.Target = gameObject;
 
@@ -474,7 +474,7 @@ internal sealed unsafe class GameFunctions
         if (currentQuest is not { Info: SatisfactionSupplyInfo })
             return false;
 
-        if (_targetManager.Target == null || _targetManager.Target.BaseId != currentQuest.Info.IssuerDataId)
+        if (_targetManager.Target == null || GameFunctions.GetBaseID(_targetManager.Target) != currentQuest.Info.IssuerDataId)
             return false;
 
         if (!AgentSatisfactionSupply.Instance()->IsAgentActive())
@@ -526,6 +526,18 @@ internal sealed unsafe class GameFunctions
         }
 
         return slots;
+    }
+
+    public static uint GetBaseID(IGameObject? obj)
+    {
+        if (obj == null) return 0;
+        if (obj.GetType().GetProperty("BaseId") is { } baseIdProp)
+            return (uint)baseIdProp.GetValue(obj)!;
+
+        if (obj.GetType().GetProperty("DataId") is { } dataIdProp)
+            return (uint)dataIdProp.GetValue(obj)!;
+
+        return 0;
     }
 
     /// <summary>

@@ -35,5 +35,5 @@ internal sealed class Mount147Module : ICombatModule
         }
     }
 
-    public bool CanAttack(IBattleNpc target) => target.BaseId is 8593;
+    public bool CanAttack(IBattleNpc target) => GameFunctions.GetBaseID(target) is 8593;
 }

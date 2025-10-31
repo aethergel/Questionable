@@ -34,5 +34,5 @@ internal sealed class Mount128Module : ICombatModule
         }
     }
 
-    public bool CanAttack(IBattleNpc target) => target.BaseId is 7504 or 7505 or 14107;
+    public bool CanAttack(IBattleNpc target) => GameFunctions.GetBaseID(target) is 7504 or 7505 or 14107;
 }

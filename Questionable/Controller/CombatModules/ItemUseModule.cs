@@ -9,6 +9,7 @@ using FFXIVClientStructs.FFXIV.Client.Game.Character;
 using FFXIVClientStructs.FFXIV.Client.UI.Agent;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Questionable.Functions;
 using Questionable.Model.Questing;
 
 namespace Questionable.Controller.CombatModules;
@@ -84,8 +85,8 @@ internal sealed class ItemUseModule : ICombatModule
             return;
         }
 
-        if (_combatData.KillEnemyDataIds.Contains(nextTarget.BaseId) ||
-            _combatData.ComplexCombatDatas.Any(x => x.DataId == nextTarget.BaseId &&
+        if (_combatData.KillEnemyDataIds.Contains(GameFunctions.GetBaseID(nextTarget)) ||
+            _combatData.ComplexCombatDatas.Any(x => x.DataId == GameFunctions.GetBaseID(nextTarget) &&
                                                     (x.NameId == null || (nextTarget is ICharacter character && x.NameId == character.NameId))))
         {
             if (_isDoingRotation)

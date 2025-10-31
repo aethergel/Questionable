@@ -193,7 +193,7 @@ internal sealed class CreationUtilsComponent
 
         ImGui.Separator();
         ImGui.Text(string.Create(CultureInfo.InvariantCulture,
-            $"Target: {target.Name}  ({target.ObjectKind}; {target.BaseId}{nameId})"));
+            $"Target: {target.Name}  ({target.ObjectKind}; {GameFunctions.GetBaseID(target)}{nameId})"));
 
         if (_clientState.LocalPlayer != null)
         {
@@ -222,7 +222,7 @@ internal sealed class CreationUtilsComponent
         {
             if (ImGuiComponents.IconButtonWithText(FontAwesomeIcon.Bullseye, "To Target"))
             {
-                _movementController.NavigateTo(EMovementType.DebugWindow, target.BaseId,
+                _movementController.NavigateTo(EMovementType.DebugWindow, GameFunctions.GetBaseID(target),
                     target.Position,
                     fly: _condition[ConditionFlag.Mounted] && _gameFunctions.IsFlyingUnlockedInCurrentZone(),
                     sprint: true);
@@ -237,7 +237,7 @@ internal sealed class CreationUtilsComponent
         ImGui.EndDisabled();
 
         ImGui.SameLine();
-        ImGui.BeginDisabled(!_questData.IsIssuerOfAnyQuest(target.BaseId));
+        ImGui.BeginDisabled(!_questData.IsIssuerOfAnyQuest(GameFunctions.GetBaseID(target)));
         bool showQuests = ImGuiComponents.IconButton(FontAwesomeIcon.MapMarkerAlt);
         if (ImGui.IsItemHovered())
             ImGui.SetTooltip("Show all Quests starting with your current target.");
@@ -291,7 +291,7 @@ internal sealed class CreationUtilsComponent
             {
                 ImGui.SetClipboardText($$"""
                                          "$": "{{GetCurrentQuestInfoAsString()}}",
-                                         "DataId": {{target.BaseId}},
+                                         "DataId": {{GameFunctions.GetBaseID(target)}},
                                          "Position": {
                                              "X": {{target.Position.X.ToString(CultureInfo.InvariantCulture)}},
                                              "Y": {{target.Position.Y.ToString(CultureInfo.InvariantCulture)}},
@@ -310,7 +310,7 @@ internal sealed class CreationUtilsComponent
                 };
                 ImGui.SetClipboardText($$"""
                                          "$": "{{GetCurrentQuestInfoAsString()}}",
-                                         "DataId": {{target.BaseId}},
+                                         "DataId": {{GameFunctions.GetBaseID(target)}},
                                          "Position": {
                                              "X": {{target.Position.X.ToString(CultureInfo.InvariantCulture)}},
                                              "Y": {{target.Position.Y.ToString(CultureInfo.InvariantCulture)}},
@@ -325,7 +325,7 @@ internal sealed class CreationUtilsComponent
         {
             if (target.ObjectKind == ObjectKind.Aetheryte)
             {
-                EAetheryteLocation location = (EAetheryteLocation)target.BaseId;
+                EAetheryteLocation location = (EAetheryteLocation)GameFunctions.GetBaseID(target);
                 ImGui.SetClipboardText(string.Create(CultureInfo.InvariantCulture,
                     $"{{EAetheryteLocation.{location}, new({target.Position.X}f, {target.Position.Y}f, {target.Position.Z}f)}},"));
             }

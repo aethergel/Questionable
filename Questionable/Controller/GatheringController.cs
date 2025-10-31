@@ -194,7 +194,7 @@ internal sealed unsafe class GatheringController : MiniTaskController<GatheringC
     public bool HasNodeDisappeared(GatheringNode node)
     {
         return !_objectTable.Any(x =>
-            x.ObjectKind == ObjectKind.GatheringPoint && x.IsTargetable && x.BaseId == node.DataId);
+            x.ObjectKind == ObjectKind.GatheringPoint && x.IsTargetable && GameFunctions.GetBaseID(x) == node.DataId);
     }
 
     /// <summary>
@@ -209,7 +209,7 @@ internal sealed unsafe class GatheringController : MiniTaskController<GatheringC
             var currentNode = currentRequest.Nodes[currentIndex];
             var locationsAsObjects = currentNode.Locations.Select(x =>
                     _objectTable.FirstOrDefault(y =>
-                        currentNode.DataId == y.BaseId && Vector3.Distance(x.Position, y.Position) < 0.1f))
+                        currentNode.DataId == GameFunctions.GetBaseID(y) && Vector3.Distance(x.Position, y.Position) < 0.1f))
                 .ToList();
 
             // Are any of the nodes too far away to be found? This is likely around ~100 yalms. All closer gathering

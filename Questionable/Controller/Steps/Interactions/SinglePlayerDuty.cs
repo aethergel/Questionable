@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Numerics;
 using Dalamud.Game.ClientState.Conditions;
 using Dalamud.Game.ClientState.Objects;
 using Dalamud.Game.ClientState.Objects.Types;
@@ -10,12 +14,9 @@ using Questionable.Controller.Steps.Common;
 using Questionable.Controller.Steps.Shared;
 using Questionable.Data;
 using Questionable.External;
+using Questionable.Functions;
 using Questionable.Model;
 using Questionable.Model.Questing;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
 
 namespace Questionable.Controller.Steps.Interactions;
 
@@ -212,10 +213,10 @@ internal static class SinglePlayerDuty
 
         public override ETaskResult Update()
         {
-            if (targetManager.Target?.BaseId == Task.DataId)
+            if (GameFunctions.GetBaseID(targetManager.Target) == Task.DataId)
                 return ETaskResult.TaskComplete;
 
-            IGameObject? gameObject = objectTable.FirstOrDefault(x => x.BaseId == Task.DataId);
+            IGameObject? gameObject = objectTable.FirstOrDefault(x => GameFunctions.GetBaseID(x) == Task.DataId);
             if (gameObject == null)
                 return ETaskResult.StillRunning;
 
