@@ -834,8 +834,17 @@ internal sealed class QuestController : MiniTaskController<QuestController>
 
         try
         {
-            foreach (var task in _taskCreator.CreateTasks(CurrentQuest.Quest, CurrentQuest.Sequence, seq, step))
+            foreach (var task in _taskCreator.CreateTasks(CurrentQuest.Quest, CurrentQuest.Sequence, seq, step)) {
+                if (_simulatedQuest != null) { 
+                    string repr = task.ToString() ?? "";
+                    string[] SimSkip = {"Interact","Action","Emote","Craft","Unmount"};
+                    if (repr.Contains('(') && SimSkip.Contains(repr[..repr.IndexOf('(')])) { 
+                        _logger.LogInformation($"Skipping {repr} due to simulation");
+                        continue;
+                    }
+                }
                 _taskQueue.Enqueue(task);
+            }
 
             ResetAutoRefreshState();
         }

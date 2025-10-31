@@ -38,7 +38,7 @@ internal static class Craft
         uint ItemId,
         int ItemCount) : ITask
     {
-        public override string ToString() => $"Craft {ItemCount}x {ItemId} (with Artisan)";
+        public override string ToString() => $"Craft({ItemCount}x {ItemId})";
     }
 
     internal sealed class DoCraft(
