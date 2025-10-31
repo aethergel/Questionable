@@ -1,6 +1,11 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
   "Author": "Kiarra",
+  "Comment": "vnavmesh v0.5.5.0",
+  "LastChecked": {
+    "Username": "alydev",
+    "Date": "2025-10-31"
+  },
   "QuestSequence": [
     {
       "Sequence": 0,
