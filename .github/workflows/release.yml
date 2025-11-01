@@ -158,15 +158,8 @@ jobs:
       - name: Generate changelog
         id: changelog
         run: |
-          PREVIOUS_TAG=$(git describe --tags --abbrev=0 new-main 2>/dev/null || echo "")
-          CHANGELOG=$(git log --pretty=format:"- %s (%h) by %an" ${PREVIOUS_TAG}..HEAD --no-merges | grep -v "Version bump" | grep -v "Merge branch")
-
-          if [ -z "$CHANGELOG" ]; then
-            CHANGELOG="- Version bump to ${VERSION}"
-          fi
-
           echo "changelog<<EOF" >> $GITHUB_OUTPUT
-          echo "$CHANGELOG" >> $GITHUB_OUTPUT
+          cat CHANGELOG.md >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
 
       - name: Create and push tag
