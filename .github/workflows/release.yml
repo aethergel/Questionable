@@ -158,9 +158,7 @@ jobs:
       - name: Generate changelog
         id: changelog
         run: |
-          echo "changelog<<EOF" >> $GITHUB_OUTPUT
-          cat CHANGELOG.md >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
+          echo -e "changelog<<EOF\n$(cat CHANGELOG.md)\nEOF" >> $GITHUB_OUTPUT
 
       - name: Create and push tag
         run: |
