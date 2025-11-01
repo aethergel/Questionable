@@ -37,6 +37,7 @@ internal sealed class CreationUtilsComponent
     private readonly TerritoryData _territoryData;
     private readonly QuestData _questData;
     private readonly QuestSelectionWindow _questSelectionWindow;
+    private readonly PriorityWindow _priorityWindow;
     private readonly IClientState _clientState;
     private readonly ITargetManager _targetManager;
     private readonly ICondition _condition;
@@ -55,6 +56,7 @@ internal sealed class CreationUtilsComponent
         TerritoryData territoryData,
         QuestData questData,
         QuestSelectionWindow questSelectionWindow,
+        PriorityWindow priorityWindow,
         IClientState clientState,
         ITargetManager targetManager,
         ICondition condition,
@@ -72,6 +74,7 @@ internal sealed class CreationUtilsComponent
         _questData = questData;
         _cameraFunctions = cameraFunctions;
         _questSelectionWindow = questSelectionWindow;
+        _priorityWindow = priorityWindow;
         _clientState = clientState;
         _targetManager = targetManager;
         _condition = condition;
@@ -96,6 +99,7 @@ internal sealed class CreationUtilsComponent
 
         if (_configuration.Advanced.AdditionalStatusInformation)
         {
+            ImGui.Separator();
             var q = _questFunctions.GetCurrentQuest();
             ImGui.Text($"QST prio: {q.CurrentQuest} → {q.Sequence}");
             unsafe
@@ -127,7 +131,7 @@ internal sealed class CreationUtilsComponent
                     for (int i = 0; i < questManager->DailyQuests.Length; ++i)
                     {
                         var dailyQuest = questManager->DailyQuests[i];
-                        if (dailyQuest.QuestId != 0)
+                        if (dailyQuest.QuestId != 0 && !dailyQuest.IsCompleted)
                         {
                             ImGui.Text($"Daily Quest {i}: {dailyQuest.QuestId}, C:{dailyQuest.IsCompleted}");
                             if (_questRegistry.TryGetQuest(new QuestId(dailyQuest.QuestId), out var quest))
@@ -138,6 +142,9 @@ internal sealed class CreationUtilsComponent
                                 if (ImGui.IsItemClicked())
                                 {
                                     _questController.AddQuestPriority(quest.Id);
+                                    if (!_priorityWindow.IsOpen)
+                                        _priorityWindow.ToggleOrUncollapse();
+                                    _priorityWindow.BringToFront();
                                 }
                             }
                         }
@@ -146,6 +153,7 @@ internal sealed class CreationUtilsComponent
                 var director = UIState.Instance()->DirectorTodo.Director;
                 if (director != null)
                 {
+                    ImGui.Separator();
                     ImGui.Text($"Director: {director->ContentId}");
                     ImGui.Text($"Seq: {director->Sequence}");
                     ImGui.Text($"Ico: {director->IconId}");
@@ -157,13 +165,15 @@ internal sealed class CreationUtilsComponent
                         ImGui.Text($"  EHI F: {director->Info.Flags}");
                     }
                 }
+                ImGui.Separator();
                 var actionManager = ActionManager.Instance();
                 ImGui.Text(
                     $"A1: {actionManager->CastActionId} ({actionManager->LastUsedActionSequence} → {actionManager->LastHandledActionSequence})");
                 ImGui.Text($"A2: {actionManager->CastTimeElapsed} / {actionManager->CastTimeTotal}");
-                ImGui.Text($"{_questController.TaskQueue.CurrentTaskExecutor?.ProgressContext}");
+                ImGui.Text($"PC: {_questController.TaskQueue.CurrentTaskExecutor?.ProgressContext}");
             }
         }
+        ImGui.Separator();
 
         if (_targetManager.Target != null)
         {
@@ -290,7 +300,6 @@ internal sealed class CreationUtilsComponent
             if (target.ObjectKind == ObjectKind.GatheringPoint)
             {
                 ImGui.SetClipboardText($$"""
-                                         "$": "{{GetCurrentQuestInfoAsString()}}",
                                          "DataId": {{GameFunctions.GetBaseID(target)}},
                                          "Position": {
                                              "X": {{target.Position.X.ToString(CultureInfo.InvariantCulture)}},
@@ -309,7 +318,6 @@ internal sealed class CreationUtilsComponent
                     _ => "Interact",
                 };
                 ImGui.SetClipboardText($$"""
-                                         "$": "{{GetCurrentQuestInfoAsString()}}",
                                          "DataId": {{GameFunctions.GetBaseID(target)}},
                                          "Position": {
                                              "X": {{target.Position.X.ToString(CultureInfo.InvariantCulture)}},
@@ -347,7 +355,6 @@ internal sealed class CreationUtilsComponent
         if (copy)
         {
             ImGui.SetClipboardText($$"""
-                                     "$": "{{GetCurrentQuestInfoAsString()}}",
                                      "Position": {
                                          "X": {{_clientState.LocalPlayer.Position.X.ToString(CultureInfo.InvariantCulture)}},
                                          "Y": {{_clientState.LocalPlayer.Position.Y.ToString(CultureInfo.InvariantCulture)}},
