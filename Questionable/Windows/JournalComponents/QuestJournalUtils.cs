@@ -75,12 +75,12 @@ internal sealed class QuestJournalUtils
             journalUi.UpdateFilter();
     }
 
-    public void ShowGenreContextMenu(JournalData.Genre genre, List<IQuestInfo> quests)
+    public void ShowQuestGroupContextMenu(string note, List<IQuestInfo> quests)
     {
         if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
-            ImGui.OpenPopup($"##QuestGenrePopup{genre.Id}");
+            ImGui.OpenPopup($"##QuestGroupPopup{note}");
 
-        using var popup = ImRaii.Popup($"##QuestGenrePopup{genre.Id}");
+        using var popup = ImRaii.Popup($"##QuestGroupPopup{note}");
         if (!popup)
             return;
 

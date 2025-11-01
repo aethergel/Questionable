@@ -57,8 +57,8 @@ internal sealed class AlliedSocietyJournalComponent
 
         foreach (EAlliedSociety alliedSociety in Enum.GetValues<EAlliedSociety>().Where(x => x != EAlliedSociety.None))
         {
-            List<QuestInfo> quests = _alliedSocietyQuestFunctions.GetAvailableAlliedSocietyQuests(alliedSociety)
-                .Select(x => (QuestInfo)_questData.GetQuestInfo(x))
+            List<IQuestInfo> quests = _alliedSocietyQuestFunctions.GetAvailableAlliedSocietyQuests(alliedSociety)
+                .Select(x => _questData.GetQuestInfo(x))
                 .ToList();
             if (quests.Count == 0)
                 continue;
@@ -82,6 +82,8 @@ internal sealed class AlliedSocietyJournalComponent
             bool isOpen = ImGui.CollapsingHeader(label);
 #endif
 
+            _questJournalUtils.ShowQuestGroupContextMenu($"DrawAlliedSocietyQuests{alliedSociety}",quests);
+
             if (!isOpen)
                 continue;
 
@@ -89,7 +91,7 @@ internal sealed class AlliedSocietyJournalComponent
             {
                 for (byte i = 1; i <= 8; ++i)
                 {
-                    var questsByRank = quests.Where(x => x.AlliedSocietyRank == i).ToList();
+                    var questsByRank = quests.Where(x => ((QuestInfo)x).AlliedSocietyRank == i).ToList();
                     if (questsByRank.Count == 0)
                         continue;
 
@@ -104,6 +106,11 @@ internal sealed class AlliedSocietyJournalComponent
                     DrawQuest(quest);
             }
         }
+    }
+
+    private void DrawQuest(IQuestInfo questInfo)
+    {
+        DrawQuest((QuestInfo)questInfo);
     }
 
     private void DrawQuest(QuestInfo questInfo)
