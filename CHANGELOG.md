@@ -1,3 +1,4 @@
+- Forgot to add the changelog. Hi testing users, thank you!
 - Add automatic releases (a3a0fb6e) by alydev
 - 5360 add flying (0dda36ca) by alydev
 - Fix creationutils separator placement (0db9e3ba) by alydev

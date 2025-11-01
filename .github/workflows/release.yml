@@ -104,6 +104,11 @@ jobs:
         with:
           dotnet-version: 9.0.x
 
+      - name: Generate changelog
+        id: changelog
+        run: |
+          echo -e "changelog<<EOF\n$(cat CHANGELOG.md)\nEOF" >> $GITHUB_OUTPUT
+
       - name: Cache NuGet packages
         uses: actions/cache@v4
         with:
@@ -155,11 +160,6 @@ jobs:
             fi
           done
 
-      - name: Generate changelog
-        id: changelog
-        run: |
-          echo -e "changelog<<EOF\n$(cat CHANGELOG.md)\nEOF" >> $GITHUB_OUTPUT
-
       - name: Create and push tag
         run: |
           TAG="v${VERSION}"
@@ -208,6 +208,7 @@ jobs:
           path: 'release/latest.zip'
           type: ${{ needs.detect-version-change.outputs.branch }}
           dalamud_version: '13'
+          changelog: ${{ steps.changelog.outputs.changelog }}
         env:
           PUBLISHER_KEY: ${{ secrets.PUBLISHER_KEY }}
 
