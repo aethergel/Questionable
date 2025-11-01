@@ -173,7 +173,6 @@ internal sealed class CreationUtilsComponent
                 ImGui.Text($"PC: {_questController.TaskQueue.CurrentTaskExecutor?.ProgressContext}");
             }
         }
-        ImGui.Separator();
 
         if (_targetManager.Target != null)
         {
@@ -184,6 +183,7 @@ internal sealed class CreationUtilsComponent
         }
         else
         {
+            ImGui.Separator();
             DrawCopyButton();
         }
 
