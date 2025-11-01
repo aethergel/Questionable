@@ -1,11 +1,10 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-  "Author": "Kiarra",
+  "Author": [
+    "Kiarra",
+    "alydev"
+  ],
   "Comment": "vnavmesh v0.5.5.0",
-  "LastChecked": {
-    "Username": "alydev",
-    "Date": "2025-10-31"
-  },
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -54,7 +53,6 @@
       "Sequence": 1,
       "Steps": [
         {
-          "$": "5360 → 1 - QW: 0 0    0 0    0 0",
           "DataId": 2014947,
           "Position": {
             "X": -503.3189,
@@ -63,6 +61,13 @@
           },
           "TerritoryId": 1187,
           "InteractionType": "Interact",
+          "Fly": true,
+          "AetheryteShortcut": "Urqopacha - Worlar's Echo",
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "InSameTerritory": true
+            }
+          },
           "CompletionQuestVariablesFlags": [
             null,
             null,
@@ -84,6 +89,7 @@
           },
           "TerritoryId": 1187,
           "InteractionType": "Interact",
+          "Fly": true,
           "CompletionQuestVariablesFlags": [
             null,
             null,
@@ -104,7 +110,8 @@
             "Z": -305.9056
           },
           "TerritoryId": 1187,
-          "InteractionType": "Interact"
+          "InteractionType": "Interact",
+          "Fly": true
         }
       ]
     },
