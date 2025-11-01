@@ -159,14 +159,7 @@ jobs:
         id: changelog
         run: |
           PREVIOUS_TAG=$(git describe --tags --abbrev=0 new-main 2>/dev/null || echo "")
-          if [ -n "$PREVIOUS_TAG" ]; then
-            CHANGELOG=$(git log --pretty=format:"- %s (%h) by %an" ${PREVIOUS_TAG}..HEAD --no-merges | grep -v "Version bump" | grep -v "Merge branch")
-            COMMIT_COUNT=$(git rev-list --count ${PREVIOUS_TAG}..HEAD --no-merges)
-            echo "Found $COMMIT_COUNT commits since $PREVIOUS_TAG"
-          else
-            CHANGELOG=$(git log --pretty=format:"- %s (%h) by %an" -10 --no-merges)
-            COMMIT_COUNT=$(git rev-list --count HEAD --no-merges | head -10)
-          fi
+          CHANGELOG=$(git log --pretty=format:"- %s (%h) by %an" ${PREVIOUS_TAG}..HEAD --no-merges | grep -v "Version bump" | grep -v "Merge branch")
 
           if [ -z "$CHANGELOG" ]; then
             CHANGELOG="- Version bump to ${VERSION}"
@@ -209,14 +202,10 @@ jobs:
             - `latest.zip` - **Plugin archive for installation**
             - `Questionable.json` - Plugin manifest
             - `*.sha256` - Checksums for verification
-            
-            ---
-            *Detailed changes and pull requests are listed below in the auto-generated release notes.*
           files: |
             release/*
           draft: false
           prerelease: ${{ needs.detect-version-change.outputs.testing }}
-          generate_release_notes: true
 
       - name: Publish Version
         uses: PunishXIV/dynamis-action@v1
