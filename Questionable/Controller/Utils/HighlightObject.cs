@@ -77,7 +77,7 @@ internal sealed class HighlightObject : IDisposable
             ToggleHighlight(false);
             if (_targetNpcDataId.Length == 0 && Ids.Length == 0)
                 return;
-            _logger.LogDebug($"Setting highlight to {Ids}");
+            _logger.LogDebug($"Setting highlight to {String.Join(',',Ids)}");
             _targetNpcDataId = Ids;
             ToggleHighlight(true);
         });
