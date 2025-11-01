@@ -1,6 +1,10 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
   "Author": "liza",
+  "LastChecked": {
+    "Username": "alydev",
+    "Date": "2025-11-02"
+  },
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -12,7 +16,22 @@
             "Z": -260.59436
           },
           "TerritoryId": 1188,
-          "InteractionType": "WalkTo"
+          "InteractionType": "WalkTo",
+          "AetheryteShortcut": "Kozama'uka - Dock Poga",
+          "Fly": true,
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": 770.70636,
+                  "Y": 12.846572,
+                  "Z": -260.59436
+                },
+                "TerritoryId": 1188,
+                "MaximumDistance": 100
+              }
+            }
+          }
         },
         {
           "DataId": 1051711,
@@ -132,7 +151,20 @@
           },
           "TerritoryId": 1188,
           "InteractionType": "WalkTo",
-          "AetheryteShortcut": "Kozama'uka - Dock Poga"
+          "Fly": true,
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": 770.70636,
+                  "Y": 12.846572,
+                  "Z": -260.59436
+                },
+                "TerritoryId": 1188,
+                "MaximumDistance": 100
+              }
+            }
+          }
         },
         {
           "DataId": 1051711,

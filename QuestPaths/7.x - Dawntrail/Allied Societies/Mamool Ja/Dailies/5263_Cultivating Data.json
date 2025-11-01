@@ -1,6 +1,10 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
   "Author": "liza",
+  "LastChecked": {
+    "Username": "alydev",
+    "Date": "2025-11-02"
+  },
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -13,7 +17,22 @@
             "Z": 729.4575
           },
           "TerritoryId": 1189,
-          "InteractionType": "AcceptQuest"
+          "InteractionType": "AcceptQuest",
+          "Fly": true,
+          "AetheryteShortcut": "Yak T'el - Mamook",
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": 589.3186,
+                  "Y": -142.89168,
+                  "Z": 729.4575
+                },
+                "TerritoryId": 1189,
+                "MaximumDistance": 100
+              }
+            }
+          }
         }
       ]
     },
@@ -31,7 +50,14 @@
               "ItemId": 48027,
               "ItemCount": 3
             }
-          ]
+          ],
+          "Fly": true,
+          "AetheryteShortcut": "Yak T'el - Mamook",
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "InSameTerritory": true
+            }
+          }
         },
         {
           "TerritoryId": 1189,
