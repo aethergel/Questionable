@@ -23,6 +23,12 @@
         "resolved": "1.2.25",
         "contentHash": "xCXiw7BCxHJ8pF6wPepRUddlh2dlQlbr81gXA72hdk4FLHkKXas7EH/n+fk5UCA/YfMqG1Z6XaPiUjDbUNBUzg=="
       },
+      "ECommons": {
+        "type": "Direct",
+        "requested": "[3.0.1.23, )",
+        "resolved": "3.0.1.23",
+        "contentHash": "U3H/XCdSHlKWubXPeenZNDteZQ6nS7vitkFP9hMUkACb456PUwp7ryjhmujhytlFlXHKoCNnvbgQGyFThynf/g=="
+      },
       "JetBrains.Annotations": {
         "type": "Direct",
         "requested": "[2024.3.0, )",
@@ -132,7 +138,7 @@
       "gatheringpaths": {
         "type": "Project",
         "dependencies": {
-          "Questionable.Model": "[6.8.0, )"
+          "Questionable.Model": "[6.17.1, )"
         }
       },
       "llib": {
@@ -154,7 +160,7 @@
       "questpaths": {
         "type": "Project",
         "dependencies": {
-          "Questionable.Model": "[6.8.0, )"
+          "Questionable.Model": "[6.17.1, )"
         }
       }
     }
