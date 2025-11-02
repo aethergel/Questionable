@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using Dalamud.Plugin;
 using Dalamud.Plugin.Ipc;
 using Dalamud.Plugin.Ipc.Exceptions;
@@ -28,8 +28,7 @@ internal sealed class YesAlreadyIpc : IDisposable
         QuestController questController,
         TerritoryData territoryData,
         IClientState clientState,
-        ILogger<YesAlreadyIpc> logger,
-        bool wasEnabled)
+        ILogger<YesAlreadyIpc> logger)
     {
         _framework = framework;
         _questController = questController;

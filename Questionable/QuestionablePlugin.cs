@@ -6,7 +6,8 @@ using Dalamud.Game.ClientState.Objects;
 using Dalamud.Interface.Windowing;
 using Dalamud.Plugin;
 using Dalamud.Plugin.Services;
-//using ECommons;
+using ECommons;
+using ECommons.DalamudServices;
 using LLib;
 using LLib.Gear;
 using Microsoft.Extensions.DependencyInjection;
@@ -62,7 +63,7 @@ public sealed class QuestionablePlugin : IDalamudPlugin
     {
         ArgumentNullException.ThrowIfNull(pluginInterface);
         ArgumentNullException.ThrowIfNull(chatGui);
-        //ECommonsMain.Init(pluginInterface, this, Module.DalamudReflector);
+        ECommonsMain.Init(pluginInterface, this, Module.DalamudReflector);
 
         try
         {
@@ -140,7 +141,7 @@ public sealed class QuestionablePlugin : IDalamudPlugin
         serviceCollection.AddSingleton<AutoDutyIpc>();
         serviceCollection.AddSingleton<BossModIpc>();
         serviceCollection.AddSingleton<PandorasBoxIpc>();
-        //serviceCollection.AddSingleton<YesAlreadyIpc>();
+        serviceCollection.AddSingleton<YesAlreadyIpc>();
 
         serviceCollection.AddSingleton<GearStatsCalculator>();
     }
@@ -354,12 +355,12 @@ public sealed class QuestionablePlugin : IDalamudPlugin
         serviceProvider.GetRequiredService<QuestionableIpc>();
         serviceProvider.GetRequiredService<DalamudInitializer>();
         serviceProvider.GetRequiredService<TextAdvanceIpc>();
-        //serviceProvider.GetRequiredService<YesAlreadyIpc>();
+        serviceProvider.GetRequiredService<YesAlreadyIpc>();
     }
 
     public void Dispose()
     {
         _serviceProvider?.Dispose();
-        //ECommonsMain.Dispose();
+        ECommonsMain.Dispose();
     }
 }
