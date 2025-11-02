@@ -1,4 +1,3 @@
-- Forgot to add the changelog. Hi testing users, thank you!
 - Add YesAlready IPC (10302ac) by alydev
 - Add automatic releases (a3a0fb6e) by alydev
 - 5360 add flying (0dda36ca) by alydev
