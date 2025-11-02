@@ -39,8 +39,4 @@
     <ItemGroup>
       <PackageReference Update="DalamudPackager" Version="13.1.0" />
     </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Properties\" />
-    </ItemGroup>
 </Project>

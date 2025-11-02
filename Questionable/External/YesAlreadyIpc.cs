@@ -6,19 +6,20 @@ using Dalamud.Plugin.Services;
 using Microsoft.Extensions.Logging;
 using Questionable.Controller;
 using Questionable.Data;
-using ECommons.EzIpcManager;
 
 namespace Questionable.External;
 
 internal sealed class YesAlreadyIpc : IDisposable
 {
+
     private readonly IFramework _framework;
     private readonly QuestController _questController;
     private readonly TerritoryData _territoryData;
     private readonly IClientState _clientState;
     private readonly ILogger<YesAlreadyIpc> _logger;
 
-    [EzIPC] private readonly Func<bool> IsPluginEnabled;
+    private readonly ICallGateSubscriber<bool> _isPluginEnabled;
+    private readonly ICallGateSubscriber<bool, object> _setPluginEnabled;
 
     private bool _wasEnabled;
 
@@ -35,7 +36,8 @@ internal sealed class YesAlreadyIpc : IDisposable
         _territoryData = territoryData;
         _clientState = clientState;
         _logger = logger;
-        EzIPC.Init(this, "YesAlready");
+        _isPluginEnabled = pluginInterface.GetIpcSubscriber<bool>("YesAlready.IsPluginEnabled");
+        _setPluginEnabled = pluginInterface.GetIpcSubscriber<bool, object>("YesAlready.SetPluginEnabled");
         _wasEnabled = IsPluginEnabled();
         _logger.LogInformation($"Enabled:{_wasEnabled}");
 
@@ -48,16 +50,44 @@ internal sealed class YesAlreadyIpc : IDisposable
                               _questController.AutomationType != QuestController.EAutomationType.Manual;
         if (hasActiveQuest && !_territoryData.IsDutyInstance(_clientState.TerritoryType))
         {
-            //SetPluginEnabled(false);
+            SetPluginEnabled(false);
         }
         else
         {
-            //SetPluginEnabled(true);
+            SetPluginEnabled(true);
         }
     }
 
     public void Dispose()
     {
         _framework.Update -= OnUpdate;
+        SetPluginEnabled(true);
+    }
+
+    private bool IsPluginEnabled()
+    {
+        try
+        {
+            return _isPluginEnabled.InvokeFunc();
+        }
+        catch (IpcError e)
+        {
+            _logger.LogWarning(e, "YesAlready failed IsPluginEnabled");
+            return false;
+        }
+    }
+
+    private void SetPluginEnabled(bool value)
+    {
+        try
+        {
+            _wasEnabled = IsPluginEnabled();
+            if (value != _wasEnabled)
+                _setPluginEnabled.InvokeFunc(value);
+        }
+        catch(IpcError e)
+        {
+            _logger.LogWarning(e, $"YesAlready failed SetPluginEnabled:{value}");
+        }
     }
 }
