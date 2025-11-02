@@ -1,8 +1,1 @@
-- Add YesAlready IPC (10302ac) by alydev
-- Add automatic releases (a3a0fb6e) by alydev
-- 5360 add flying (0dda36ca) by alydev
-- Fix creationutils separator placement (0db9e3ba) by alydev
-- Daily quests checked (c0fa4893) by alydev
-- Less verbose creationutils daily q list (6bf84696) by alydev
-- Generalise priority quests context menu (268f65f9) by alydev
-- Fix debug log formatting (522b5938) by alydev
+- Fixed log spam bug (c6dd66b) by alydev
