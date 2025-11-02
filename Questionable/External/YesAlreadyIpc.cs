@@ -22,10 +22,8 @@ internal sealed class YesAlreadyIpc : IDisposable
     private readonly ILogger<YesAlreadyIpc> _logger;
 
     private static EzIPCDisposalToken[] _disposalTokens = EzIPC.Init(typeof(YesAlreadyIpc), "YesAlready", SafeWrapper.IPCException);
-#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
     [EzIPC("IsPluginEnabled")] public static readonly Func<bool> IsPluginEnabled;
     [EzIPC("SetPluginEnabled")] private static readonly Action<bool> SetPluginEnabled;
-#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
 
     private bool _wasEnabled;
 
@@ -51,21 +49,28 @@ internal sealed class YesAlreadyIpc : IDisposable
     {
         if (IPCSubscriber_Common.IsReady("YesAlready"))
         {
-            bool hasActiveQuest = _questController.IsRunning ||
-                                  _questController.AutomationType != QuestController.EAutomationType.Manual;
-            if (hasActiveQuest && !_territoryData.IsDutyInstance(_clientState.TerritoryType))
+            bool hasActiveQuest = (_questController.IsRunning ||
+                                  _questController.AutomationType != QuestController.EAutomationType.Manual) &&
+                                  !_territoryData.IsDutyInstance(_clientState.TerritoryType);
+            if (hasActiveQuest)
             {
-                if (IsPluginEnabled())
+                if (IsPluginEnabled() && !_wasEnabled)
+                {
                     _logger.LogDebug("it's *on*, that means i turn it *off*");
-                SetPluginEnabled(false);
-                _logger.LogDebug("and just walk away!");
+                    SetPluginEnabled(false);
+                    _wasEnabled = true;
+                    _logger.LogDebug("and just walk away!");
+                }
             }
             else
             {
-                if (!IsPluginEnabled())
+                if (!IsPluginEnabled() && _wasEnabled)
+                {
                     _logger.LogDebug("it's *off*, that means i turn it *on*");
-                SetPluginEnabled(true);
-                _logger.LogDebug("and just walk away!");
+                    SetPluginEnabled(true);
+                    _wasEnabled = false;
+                    _logger.LogDebug("and just walk away!");
+                }
             }
         }
     }
