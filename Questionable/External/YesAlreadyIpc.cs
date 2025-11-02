@@ -1,8 +1,11 @@
-﻿﻿using System;
+﻿using System;
 using Dalamud.Plugin;
 using Dalamud.Plugin.Ipc;
 using Dalamud.Plugin.Ipc.Exceptions;
 using Dalamud.Plugin.Services;
+using ECommons.DalamudServices;
+using ECommons.EzIpcManager;
+using ECommons.Reflection;
 using Microsoft.Extensions.Logging;
 using Questionable.Controller;
 using Questionable.Data;
@@ -18,8 +21,11 @@ internal sealed class YesAlreadyIpc : IDisposable
     private readonly IClientState _clientState;
     private readonly ILogger<YesAlreadyIpc> _logger;
 
-    private readonly ICallGateSubscriber<bool> _isPluginEnabled;
-    private readonly ICallGateSubscriber<bool, object> _setPluginEnabled;
+    private static EzIPCDisposalToken[] _disposalTokens = EzIPC.Init(typeof(YesAlreadyIpc), "YesAlready", SafeWrapper.IPCException);
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
+    [EzIPC("IsPluginEnabled")] public static readonly Func<bool> IsPluginEnabled;
+    [EzIPC("SetPluginEnabled")] private static readonly Action<bool> SetPluginEnabled;
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
 
     private bool _wasEnabled;
 
@@ -35,8 +41,6 @@ internal sealed class YesAlreadyIpc : IDisposable
         _territoryData = territoryData;
         _clientState = clientState;
         _logger = logger;
-        _isPluginEnabled = pluginInterface.GetIpcSubscriber<bool>("YesAlready.IsPluginEnabled");
-        _setPluginEnabled = pluginInterface.GetIpcSubscriber<bool, object>("YesAlready.SetPluginEnabled");
         _wasEnabled = IsPluginEnabled();
         _logger.LogInformation($"Enabled:{_wasEnabled}");
 
@@ -45,48 +49,52 @@ internal sealed class YesAlreadyIpc : IDisposable
 
     private void OnUpdate(IFramework framework)
     {
-        bool hasActiveQuest = _questController.IsRunning ||
-                              _questController.AutomationType != QuestController.EAutomationType.Manual;
-        if (hasActiveQuest && !_territoryData.IsDutyInstance(_clientState.TerritoryType))
+        if (IPCSubscriber_Common.IsReady("YesAlready"))
         {
-            SetPluginEnabled(false);
-        }
-        else
-        {
-            SetPluginEnabled(true);
+            bool hasActiveQuest = _questController.IsRunning ||
+                                  _questController.AutomationType != QuestController.EAutomationType.Manual;
+            if (hasActiveQuest && !_territoryData.IsDutyInstance(_clientState.TerritoryType))
+            {
+                if (IsPluginEnabled())
+                    _logger.LogDebug("it's *on*, that means i turn it *off*");
+                SetPluginEnabled(false);
+                _logger.LogDebug("and just walk away!");
+            }
+            else
+            {
+                if (!IsPluginEnabled())
+                    _logger.LogDebug("it's *off*, that means i turn it *on*");
+                SetPluginEnabled(true);
+                _logger.LogDebug("and just walk away!");
+            }
         }
     }
 
     public void Dispose()
     {
         _framework.Update -= OnUpdate;
-        SetPluginEnabled(true);
+        IPCSubscriber_Common.DisposeAll(_disposalTokens);
     }
 
-    private bool IsPluginEnabled()
+    internal class IPCSubscriber_Common
     {
-        try
-        {
-            return _isPluginEnabled.InvokeFunc();
-        }
-        catch (IpcError e)
-        {
-            _logger.LogWarning(e, "YesAlready failed IsPluginEnabled");
-            return false;
-        }
-    }
+        internal static bool IsReady(string pluginName) => DalamudReflector.TryGetDalamudPlugin(pluginName, out _, false, true);
 
-    private void SetPluginEnabled(bool value)
-    {
-        try
+        internal static Version Version(string pluginName) => DalamudReflector.TryGetDalamudPlugin(pluginName, out var dalamudPlugin, false, true) ? dalamudPlugin.GetType().Assembly.GetName().Version : new Version(0, 0, 0, 0);
+
+        internal static void DisposeAll(EzIPCDisposalToken[] _disposalTokens)
         {
-            _wasEnabled = IsPluginEnabled();
-            if (value != _wasEnabled)
-                _setPluginEnabled.InvokeFunc(value);
-        }
-        catch(IpcError e)
-        {
-            _logger.LogWarning(e, $"YesAlready failed SetPluginEnabled:{value}");
+            foreach (var token in _disposalTokens)
+            {
+                try
+                {
+                    token.Dispose();
+                }
+                catch (Exception ex)
+                {
+                    Svc.Log.Error($"Error while unregistering IPC: {ex}");
+                }
+            }
         }
     }
 }
