@@ -6,6 +6,43 @@
       "Sequence": 0,
       "Steps": [
         {
+          "DataId": 2013072,
+          "Position": {
+            "X": 456.65674,
+            "Y": 438.04077,
+            "Z": 310.2312
+          },
+          "TerritoryId": 960,
+          "TargetTerritoryId": 960,
+          "InteractionType": "Interact",
+          "Mount": true,
+          "AetheryteShortcut": "Ultima Thule - Base Omicron",
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": 314.9004,
+                  "Y": 481.99442,
+                  "Z": 148.11926
+                },
+                "TerritoryId": 960,
+                "MaximumDistance": 300
+              }
+            },
+            "StepIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": 314.9004,
+                  "Y": 481.99442,
+                  "Z": 148.11926
+                },
+                "TerritoryId": 960,
+                "MaximumDistance": 200
+              }
+            }
+          }
+        },
+        {
           "DataId": 1043515,
           "Position": {
             "X": 303.39502,
@@ -28,6 +65,44 @@
       "Sequence": 1,
       "Steps": [
         {
+          "DataId": 2013249,
+          "Position": {
+            "X": -26.34522,
+            "Y": -132.0332,
+            "Z": -445.35086
+          },
+          "TerritoryId": 959,
+          "TargetTerritoryId": 959,
+          "InteractionType": "Interact",
+          "Fly": true,
+          "Land": true,
+          "AetheryteShortcut": "Mare Lamentorum - Bestways Burrow",
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": -26.34522,
+                  "Y": -132.0332,
+                  "Z": -445.35086
+                },
+                "TerritoryId": 959,
+                "MaximumDistance": 300
+              }
+            },
+            "StepIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": -201.89743,
+                  "Y": -49.149708,
+                  "Z": -273.6312
+                },
+                "TerritoryId": 959,
+                "MaximumDistance": 100
+              }
+            }
+          }
+        },
+        {
           "DataId": 1045899,
           "Position": {
             "X": -164.99585,
@@ -36,14 +111,57 @@
           },
           "TerritoryId": 959,
           "InteractionType": "Interact",
-          "AetheryteShortcut": "Mare Lamentorum - Bestways Burrow",
-          "Fly": true
+          "DialogueChoices": [
+            {
+              "Prompt": "TEXT_BANALL310_04787_Q2_000_029",
+              "Answer": "TEXT_BANALL310_04787_A2_000_001",
+              "Type": "List"
+            }
+          ]
         }
       ]
     },
     {
       "Sequence": 2,
       "Steps": [
+        {
+          "DataId": 2013249,
+          "Position": {
+            "X": -26.34522,
+            "Y": -132.0332,
+            "Z": -445.35086
+          },
+          "TerritoryId": 959,
+          "TargetTerritoryId": 959,
+          "InteractionType": "Interact",
+          "Fly": true,
+          "Land": true,
+          "AetheryteShortcut": "Mare Lamentorum - Bestways Burrow",
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": -26.34522,
+                  "Y": -132.0332,
+                  "Z": -445.35086
+                },
+                "TerritoryId": 959,
+                "MaximumDistance": 300
+              }
+            },
+            "StepIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": -201.89743,
+                  "Y": -49.149708,
+                  "Z": -273.6312
+                },
+                "TerritoryId": 959,
+                "MaximumDistance": 100
+              }
+            }
+          }
+        },
         {
           "DataId": 1044402,
           "Position": {
@@ -52,7 +170,8 @@
             "Z": -262.13477
           },
           "TerritoryId": 959,
-          "InteractionType": "Interact"
+          "InteractionType": "Interact",
+          "Mount": true
         }
       ]
     },
@@ -69,7 +188,20 @@
           "TerritoryId": 957,
           "InteractionType": "Interact",
           "AetheryteShortcut": "Thavnair - Yedlihmad",
-          "Fly": true
+          "Fly": true,
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": -76.82922,
+                  "Y": 39.977543,
+                  "Z": 309.98706
+                },
+                "TerritoryId": 957,
+                "MaximumDistance": 400
+              }
+            }
+          }
         }
       ]
     },
@@ -85,7 +217,22 @@
           },
           "StopDistance": 5,
           "TerritoryId": 957,
-          "InteractionType": "Interact"
+          "InteractionType": "Interact",
+          "AetheryteShortcut": "Thavnair - Yedlihmad",
+          "Fly": true,
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": -79.6369,
+                  "Y": 39.981316,
+                  "Z": 311.78748
+                },
+                "TerritoryId": 957,
+                "MaximumDistance": 400
+              }
+            }
+          }
         }
       ]
     },
@@ -122,7 +269,22 @@
               "Prompt": "TEXT_BANALL310_04787_Q6_000_124",
               "Answer": "TEXT_BANALL310_04787_A6_000_003"
             }
-          ]
+          ],
+          "AetheryteShortcut": "Thavnair - Yedlihmad",
+          "Fly": true,
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": -76.82922,
+                  "Y": 39.977543,
+                  "Z": 309.98706
+                },
+                "TerritoryId": 957,
+                "MaximumDistance": 400
+              }
+            }
+          }
         }
       ]
     },
@@ -138,7 +300,23 @@
           },
           "StopDistance": 5,
           "TerritoryId": 957,
-          "InteractionType": "CompleteQuest"
+          "InteractionType": "CompleteQuest",
+          "NextQuestId": 4788,
+          "AetheryteShortcut": "Thavnair - Yedlihmad",
+          "Fly": true,
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": -79.6369,
+                  "Y": 39.981316,
+                  "Z": 311.78748
+                },
+                "TerritoryId": 957,
+                "MaximumDistance": 400
+              }
+            }
+          }
         }
       ]
     }

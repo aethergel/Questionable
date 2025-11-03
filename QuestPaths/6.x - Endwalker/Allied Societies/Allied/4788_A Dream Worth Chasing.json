@@ -16,9 +16,18 @@
           "TerritoryId": 957,
           "InteractionType": "AcceptQuest",
           "AetheryteShortcut": "Thavnair - Yedlihmad",
+          "Fly": true,
           "SkipConditions": {
             "AetheryteShortcutIf": {
-              "InSameTerritory": true
+              "NearPosition": {
+                "Position": {
+                  "X": -79.6369,
+                  "Y": 39.981316,
+                  "Z": 311.78748
+                },
+                "TerritoryId": 957,
+                "MaximumDistance": 400
+              }
             }
           }
         }
@@ -35,9 +44,34 @@
             "Z": 310.2312
           },
           "TerritoryId": 960,
+          "TargetTerritoryId": 960,
           "InteractionType": "Interact",
+          "Mount": true,
           "AetheryteShortcut": "Ultima Thule - Base Omicron",
-          "TargetTerritoryId": 960
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": 314.9004,
+                  "Y": 481.99442,
+                  "Z": 148.11926
+                },
+                "TerritoryId": 960,
+                "MaximumDistance": 300
+              }
+            },
+            "StepIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": 201.46484,
+                  "Y": 567.4998,
+                  "Z": 241.32141
+                },
+                "TerritoryId": 960,
+                "MaximumDistance": 50
+              }
+            }
+          }
         },
         {
           "DataId": 1043865,
@@ -48,7 +82,21 @@
           },
           "TerritoryId": 960,
           "InteractionType": "Interact",
-          "TargetTerritoryId": 960
+          "Mount": true,
+          "TargetTerritoryId": 960,
+          "SkipConditions": {
+            "StepIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": 201.46484,
+                  "Y": 567.4998,
+                  "Z": 241.32141
+                },
+                "TerritoryId": 960,
+                "MaximumDistance": 50
+              }
+            }
+          }
         },
         {
           "DataId": 1045904,
@@ -58,7 +106,8 @@
             "Z": 241.32141
           },
           "TerritoryId": 960,
-          "InteractionType": "Interact"
+          "InteractionType": "Interact",
+          "Fly": true
         }
       ]
     },
@@ -75,6 +124,19 @@
           "TerritoryId": 960,
           "InteractionType": "Interact",
           "AetheryteShortcut": "Ultima Thule - Base Omicron",
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": 491.6609,
+                  "Y": 436.9997,
+                  "Z": 301.22827
+                },
+                "TerritoryId": 960,
+                "MaximumDistance": 100
+              }
+            }
+          },
           "DialogueChoices": [
             {
               "Type": "List",
@@ -96,8 +158,34 @@
             "Z": 310.2312
           },
           "TerritoryId": 960,
+          "TargetTerritoryId": 960,
           "InteractionType": "Interact",
-          "TargetTerritoryId": 960
+          "Mount": true,
+          "AetheryteShortcut": "Ultima Thule - Base Omicron",
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": 314.9004,
+                  "Y": 481.99442,
+                  "Z": 148.11926
+                },
+                "TerritoryId": 960,
+                "MaximumDistance": 300
+              }
+            },
+            "StepIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": 303.8529,
+                  "Y": 481.99442,
+                  "Z": 154.83325
+                },
+                "TerritoryId": 960,
+                "MaximumDistance": 50
+              }
+            }
+          }
         },
         {
           "DataId": 1043951,
@@ -125,6 +213,19 @@
           "InteractionType": "Interact",
           "AetheryteShortcut": "Ultima Thule - Reah Tahra",
           "Fly": true,
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": -386.83148,
+                  "Y": 80.85742,
+                  "Z": 603.6621
+                },
+                "TerritoryId": 960,
+                "MaximumDistance": 300
+              }
+            }
+          },
           "DialogueChoices": [
             {
               "Type": "YesNo",
@@ -143,6 +244,68 @@
     {
       "Sequence": 255,
       "Steps": [
+        {
+          "DataId": 2013072,
+          "Position": {
+            "X": 456.65674,
+            "Y": 438.04077,
+            "Z": 310.2312
+          },
+          "TerritoryId": 960,
+          "TargetTerritoryId": 960,
+          "InteractionType": "Interact",
+          "Mount": true,
+          "AetheryteShortcut": "Ultima Thule - Base Omicron",
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": 314.9004,
+                  "Y": 481.99442,
+                  "Z": 148.11926
+                },
+                "TerritoryId": 960,
+                "MaximumDistance": 300
+              }
+            },
+            "StepIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": 201.46484,
+                  "Y": 567.4998,
+                  "Z": 241.32141
+                },
+                "TerritoryId": 960,
+                "MaximumDistance": 50
+              }
+            }
+          }
+        },
+        {
+          "DataId": 1043865,
+          "Position": {
+            "X": 301.8081,
+            "Y": 482.13644,
+            "Z": 165.02625
+          },
+          "TerritoryId": 960,
+          "InteractionType": "Interact",
+          "Mount": true,
+          "TargetTerritoryId": 960,
+          "SkipConditions": {
+            "StepIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": 201.46484,
+                  "Y": 567.4998,
+                  "Z": 241.32141
+                },
+                "TerritoryId": 960,
+                "MaximumDistance": 50
+              }
+            }
+          }
+        },
         {
           "DataId": 1045914,
           "Position": {
