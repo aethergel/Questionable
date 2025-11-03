@@ -1,5 +1,6 @@
 ﻿﻿using System;
 using System.Linq;
+using Dalamud.Game.ClientState.Conditions;
 using Dalamud.Plugin.Services;
 using FFXIVClientStructs.FFXIV.Client.Game.Object;
 using Microsoft.Extensions.Logging;
@@ -14,18 +15,21 @@ internal sealed class HighlightObject : IDisposable
     private DateTime _lastUpdateTime = DateTime.Now;
     private readonly IFramework _framework;
     private readonly Configuration _configuration;
+    private readonly ICondition _condition;
     private readonly ILogger<HighlightObject> _logger;
     private readonly IObjectTable _objectTable;
 
     public HighlightObject(
         IFramework framework,
         Configuration configuration,
+        ICondition condition,
         ILogger<HighlightObject> logger,
         IObjectTable objectTable)
     {
         
         _framework = framework;
         _configuration = configuration;
+        _condition = condition;
         _logger = logger;
         _objectTable = objectTable;
         _framework.Update += Framework_OnUpdate;
@@ -46,7 +50,16 @@ internal sealed class HighlightObject : IDisposable
             return;
         }
 
-        ToggleHighlight(true);
+        if (_condition[ConditionFlag.WatchingCutscene] ||
+            _condition[ConditionFlag.WatchingCutscene78])
+        {
+            ToggleHighlight(false);
+        }
+        else
+        {
+            ToggleHighlight(true);
+        }
+
     }
 
     public void AddHighlight(uint Id)
