@@ -66,6 +66,7 @@ internal sealed class AlliedSocietyJournalComponent
             string label = $"{alliedSociety}###AlliedSociety{(int)alliedSociety}";
 #if DEBUG
             bool isOpen;
+            //if (quests.Any(x => !_questRegistry.TryGetQuest(x.QuestId, out var quest) || quest.Root.LastChecked.Date))
             if (quests.Any(x => !_questRegistry.TryGetQuest(x.QuestId, out var quest) || quest.Root.Disabled))
             {
                 using (ImRaii.PushColor(ImGuiCol.Text, ImGuiColors.DalamudOrange))

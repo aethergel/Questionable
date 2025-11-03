@@ -18,4 +18,5 @@ public sealed class QuestRoot
     public bool Interruptible { get; set; } = true;
     public string? Comment { get; set; }
     public List<QuestSequence> QuestSequence { get; set; } = new();
+    public LastChecked LastChecked { get; set; } = new();
 }
