@@ -1,6 +1,13 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-  "Author": "liza",
+  "Author": [
+    "liza",
+    "alydev"
+  ],
+  "LastChecked": {
+    "Username": "alydev",
+    "Date": "2025-11-03"
+  },
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -13,13 +20,63 @@
             "Z": 729.4575
           },
           "TerritoryId": 1189,
-          "InteractionType": "AcceptQuest"
+          "InteractionType": "AcceptQuest",
+          "Fly": true,
+          "AetheryteShortcut": "Yak T'el - Mamook",
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": 589.3186,
+                  "Y": -142.89168,
+                  "Z": 729.4575
+                },
+                "TerritoryId": 1189,
+                "MaximumDistance": 100
+              }
+            }
+          }
         }
       ]
     },
     {
       "Sequence": 255,
       "Steps": [
+        {
+          "Position": {
+            "X": -669.549,
+            "Y": -165.500,
+            "Z": 374.399
+          },
+          "TerritoryId": 1189,
+          "InteractionType": "WalkTo",
+          "AetheryteShortcut": "Yak T'el - Iq Br'aax",
+          "Fly": true,
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": -669.549,
+                  "Y": -165.500,
+                  "Z": 374.399
+                },
+                "TerritoryId": 1189,
+                "MaximumDistance": 900
+              }
+            },
+            "StepIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": -669.549,
+                  "Y": -165.500,
+                  "Z": 374.399
+                },
+                "TerritoryId": 1189,
+                "MaximumDistance": 100
+              }
+            }
+          }
+        },
         {
           "TerritoryId": 1189,
           "InteractionType": "Gather",
@@ -31,7 +88,14 @@
               "ItemId": 48066,
               "ItemCount": 3
             }
-          ]
+          ],
+          "SkipConditions": {
+            "StepIf": {
+              "Item": {
+                "NotInInventory": false
+              }
+            }
+          }
         },
         {
           "TerritoryId": 1189,
@@ -44,7 +108,14 @@
               "ItemId": 48067,
               "ItemCount": 3
             }
-          ]
+          ],
+          "SkipConditions": {
+            "StepIf": {
+              "Item": {
+                "NotInInventory": false
+              }
+            }
+          }
         },
         {
           "DataId": 1052560,
@@ -55,8 +126,8 @@
           },
           "TerritoryId": 1189,
           "InteractionType": "CompleteQuest",
-          "AetheryteShortcut": "Yak T'el - Mamook",
           "Fly": true,
+          "AetheryteShortcut": "Yak T'el - Mamook",
           "SkipConditions": {
             "AetheryteShortcutIf": {
               "NearPosition": {
@@ -66,7 +137,7 @@
                   "Z": 729.4575
                 },
                 "TerritoryId": 1189,
-                "MaximumDistance": 200
+                "MaximumDistance": 100
               }
             }
           }
