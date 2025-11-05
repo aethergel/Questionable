@@ -35,6 +35,7 @@ internal sealed class QuestionableIpc : IDisposable
     private const string IpcExportQuestPriority = "Questionable.ExportQuestPriority";
     private const string IpcStartGathering = "Questionable.StartGathering";
     private const string IpcStartGatheringComplex = "Questionable.StartGatheringComplex";
+    private const string IpcStop = "Questionable.Stop";
 
     private readonly QuestController _questController;
     private readonly QuestRegistry _questRegistry;
@@ -58,6 +59,7 @@ internal sealed class QuestionableIpc : IDisposable
     private readonly ICallGateProvider<string> _exportQuestPriority;
     private readonly ICallGateProvider<uint, uint, byte, int, bool> _startGathering;
     private readonly ICallGateProvider<uint, uint, byte, int, ushort, bool> _startGatheringComplex;
+    private readonly ICallGateProvider<string, bool> _stop;
 
     public QuestionableIpc(
         QuestController questController,
@@ -127,6 +129,9 @@ internal sealed class QuestionableIpc : IDisposable
 
         _startGatheringComplex = pluginInterface.GetIpcProvider<uint, uint, byte, int, ushort, bool>(IpcStartGatheringComplex);
         _startGatheringComplex.RegisterFunc(StartGatheringComplex);
+
+        _stop = pluginInterface.GetIpcProvider<string, bool>(IpcStop);
+        _stop.RegisterFunc(Stop);
     }
 
     private bool StartQuest(string questId, bool single)
@@ -260,6 +265,12 @@ internal sealed class QuestionableIpc : IDisposable
     private bool StartGatheringComplex(uint npcId, uint itemId, byte classJob = ((byte)Job.MIN), int quantity = 1, ushort collectability = 0)
     {
         return _questController.StartGathering(npcId, itemId, (Job)classJob, quantity, collectability);
+    }
+
+    private bool Stop(string label)
+    {
+        _questController.StopAllDueToConditionFailed($"IPC: {label}");
+        return true;
     }
 
     public void Dispose()

@@ -689,7 +689,7 @@ internal sealed class QuestController : MiniTaskController<QuestController>
         }
     }
 
-    private void StopAllDueToConditionFailed(string label)
+    public void StopAllDueToConditionFailed(string label)
     {
         Stop(label);
         _movementController.Stop();

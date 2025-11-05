@@ -1,3 +1,4 @@
+- Add IPC: Stop(label)
 - Add last Yok Huy story quest, sylph quest (eb785e3) by alydev
 - Add missing Ixal quest, check Ixal and Sylph (a7d88eb a83431a) by alydev
 - Add missing Yok Huy daily by stoat33
