@@ -8,6 +8,7 @@ using Dalamud.Game.ClientState.Keys;
 using Dalamud.Game.Gui.Toast;
 using Dalamud.Game.Text.SeStringHandling;
 using Dalamud.Plugin.Services;
+using ECommons.ExcelServices;
 using FFXIVClientStructs.FFXIV.Client.Game;
 using Microsoft.Extensions.Logging;
 using Questionable.Controller.Steps;
@@ -32,6 +33,7 @@ internal sealed class QuestController : MiniTaskController<QuestController>
     private readonly CombatController _combatController;
     private readonly GatheringController _gatheringController;
     private readonly QuestRegistry _questRegistry;
+    private readonly QuestData _questData;
     private readonly IKeyState _keyState;
     private readonly IChatGui _chatGui;
     private readonly ICondition _condition;
@@ -83,6 +85,7 @@ internal sealed class QuestController : MiniTaskController<QuestController>
         ILogger<QuestController> logger,
         HighlightObject highlightObject,
         QuestRegistry questRegistry,
+        QuestData questData,
         IKeyState keyState,
         IChatGui chatGui,
         ICondition condition,
@@ -102,6 +105,7 @@ internal sealed class QuestController : MiniTaskController<QuestController>
         _combatController = combatController;
         _gatheringController = gatheringController;
         _questRegistry = questRegistry;
+        _questData = questData;
         _keyState = keyState;
         _chatGui = chatGui;
         _condition = condition;
@@ -1114,6 +1118,49 @@ internal sealed class QuestController : MiniTaskController<QuestController>
             return;
 
         base.HandleInterruption(sender, e);
+    }
+
+    public bool StartGathering(uint npcId, uint itemId, Job classJob, int quantity = 1, ushort collectability = 0)
+    {
+        if (itemId > 1_000_000)
+            itemId -= 1_000_000;
+
+        if (itemId >= 500_000)
+            itemId -= 500_000;
+            
+        var info = (SatisfactionSupplyInfo)_questData.GetAllByIssuerDataId(npcId)
+            .Single(x => x is SatisfactionSupplyInfo);
+        if (_questRegistry.TryGetQuest(info.QuestId, out Quest? quest))
+        {
+            var sequence = quest.FindSequence(0)!;
+
+            var switchClassStep = sequence.Steps.Single(x => x.InteractionType == EInteractionType.SwitchClass);
+            switchClassStep.TargetClass = classJob switch
+            {
+                Job.MIN => EExtendedClassJob.Miner,
+                Job.BTN => EExtendedClassJob.Botanist,
+                _ => throw new ArgumentOutOfRangeException(nameof(classJob), classJob, null),
+            };
+
+            var gatherStep = sequence.Steps.Single(x => x.InteractionType == EInteractionType.Gather);
+            gatherStep.ItemsToGather =
+            [
+                new GatheredItem
+                {
+                    ItemId = itemId,
+                    ItemCount = quantity,
+                    Collectability = collectability,
+                }
+            ];
+            SetGatheringQuest(quest);
+            StartGatheringQuest("SatisfactionSupply prepare gathering");
+            return true;
+        }
+        else
+        {
+            _chatGui.PrintError($"No associated quest ({info.QuestId}).", "Questionable");
+            return false;
+        }
     }
 
     public override void Dispose()
