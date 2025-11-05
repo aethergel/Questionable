@@ -5,15 +5,21 @@ using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Numerics;
+using System.Reflection;
+using System.Reflection.Metadata.Ecma335;
 using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 using System.Text.Json.Serialization.Metadata;
 using Dalamud.Game.ClientState.Objects;
+using Dalamud.Game.Command;
 using Dalamud.Interface.Windowing;
 using Dalamud.Plugin;
+using Dalamud.Plugin.Ipc;
 using Dalamud.Plugin.Services;
+using ECommons.Automation;
+using ECommons.EzIpcManager;
 using GatheringPathRenderer.Windows;
 using LLib.GameData;
 using Pictomancy;
@@ -30,6 +36,7 @@ public sealed class RendererPlugin : IDalamudPlugin
     private readonly IDalamudPluginInterface _pluginInterface;
     private readonly IClientState _clientState;
     private readonly IPluginLog _pluginLog;
+    private readonly IChatGui _chatGui;
 
     private readonly EditorCommands _editorCommands;
     private readonly EditorWindow _editorWindow;
@@ -44,6 +51,7 @@ public sealed class RendererPlugin : IDalamudPlugin
         _pluginInterface = pluginInterface;
         _clientState = clientState;
         _pluginLog = pluginLog;
+        _chatGui = chatGui;
 
         Configuration? configuration = (Configuration?)pluginInterface.GetPluginConfig();
         if (configuration == null)
@@ -75,6 +83,52 @@ public sealed class RendererPlugin : IDalamudPlugin
         _pluginInterface.UiBuilder.Draw += _windowSystem.Draw;
         _pluginInterface.UiBuilder.Draw += Draw;
         _clientState.ClassJobChanged += ClassJobChanged;
+        
+        commandManager.AddHandler("/qipc", new CommandInfo(CallIPC));
+    }
+
+    private void CallIPC(string command, string argument)
+    {
+        string[] parts = argument.Split(' ');
+        string function = parts[0];
+        List<string> args = parts.Skip(1).ToList();
+        //List<string> arguments = parts.Skip(1).ToList();
+        //foreach (string part in parts.Skip(1).ToArray()) {
+        //    if (!part.Contains('%')) continue;
+        //    var _ = part.Split(':', 1);
+        //    var t = _[0];
+        //    var v = _[1];
+        //    switch (t) {
+        //        case "s":
+        //            arguments.Append((string)v);
+        //            break;
+        //        case "i":
+        //            arguments.Append(int.Parse(v));
+        //            break;
+        //        case "b":
+        //            arguments.Append(bool.Parse(v));
+        //            break;
+        //        case "u":
+        //            arguments.Append(uint.Parse(v));
+        //            break;
+        //        case "us":
+        //            arguments.Append(ushort.Parse(v));
+        //            break;
+        //        default:
+        //            continue;
+        //    }
+        //}
+        EzIPCDisposalToken[] _disposalTokens = EzIPC.Init(_pluginInterface, function.Split('.')[0], SafeWrapper.IPCException);
+        ICallGateSubscriber<string,bool> callGateSubscriber = _pluginInterface.GetIpcSubscriber<string,bool>(function);
+        _pluginLog.Debug($"Calling {function}({args[0]})");
+        _chatGui.Print(callGateSubscriber.InvokeFunc(args[0]).ToString(), "qipc");
+        foreach (var token in _disposalTokens) token.Dispose();
+        //else if (parts.Length == 2)
+        //{
+        //    MethodInfo method0 = typeof(arguments[0].GetType());
+        //    ICallGateProvider<type,bool> callGateSubscriber = _pluginInterface.GetIpcSubscriber<T,bool>(function);
+        //}
+
     }
 
     internal DirectoryInfo PathsDirectory

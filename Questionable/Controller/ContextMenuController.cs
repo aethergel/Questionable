@@ -136,6 +136,7 @@ internal sealed class ContextMenuController : IDisposable
         }
 
         string lockedReasonn = string.Empty;
+        #if !DEBUG
         if (!_questFunctions.IsClassJobUnlocked(classJob))
             lockedReasonn = $"{classJob} not unlocked";
         else if (quantityToGather == 0)
@@ -144,6 +145,7 @@ internal sealed class ContextMenuController : IDisposable
             lockedReasonn = "Inventory full";
         else if (_gameFunctions.IsOccupied())
             lockedReasonn = "Can't be used while interacting";
+        #endif
 
         string name = $"{verb} with Questionable";
         if (!string.IsNullOrEmpty(lockedReasonn))
