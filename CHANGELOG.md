@@ -1,4 +1,4 @@
-- Add missing Ixal quest, check other Ixal (a7d88eb) by alydev
+- Add missing Ixal quest, check Ixal and Sylph (a7d88eb a83431a) by alydev
 - Add missing Yok Huy daily by stoat33
 - Add IPC: StartGathering(npc,item,job,quantity) / StartGatheringComplex(npc,item,job,quantity,collectability)
 - Tribe accept/complete recovery (f040566 b5d887a 1a91b65) by alydev
