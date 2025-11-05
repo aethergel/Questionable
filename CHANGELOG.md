@@ -1,3 +1,4 @@
+- Add missing Yok Huy daily by stoat33
 - Add IPC: StartGathering(npc,item,job,quantity) / StartGatheringComplex(npc,item,job,quantity,collectability)
 - Tribe accept/complete recovery (f040566 b5d887a 1a91b65) by alydev
 - Disable highlight during CS (f7b7098) by alydev
