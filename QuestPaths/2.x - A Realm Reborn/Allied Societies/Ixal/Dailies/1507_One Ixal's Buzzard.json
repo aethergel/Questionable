@@ -75,13 +75,15 @@
         {
           "DataId": 1009218,
           "Position": {
-            "X": -4.1047363,
-            "Y": -40.949986,
-            "Z": 176.83679
+            "X": -4.264094,
+            "Y": -40.94998,
+            "Z": 178.43575
           },
           "TerritoryId": 154,
-          "InteractionType": "Interact",
-          "AetheryteShortcut": "North Shroud - Fallgourd Float"
+          "StopDistance": 1,
+          "Fly": true,
+          "AetheryteShortcut": "North Shroud - Fallgourd Float",
+          "InteractionType": "Interact"
         }
       ]
     },

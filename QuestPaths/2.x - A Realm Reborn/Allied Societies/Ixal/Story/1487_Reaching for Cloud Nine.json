@@ -44,23 +44,16 @@
       "Sequence": 2,
       "Steps": [
         {
-          "Position": {
-            "X": -4.085219,
-            "Y": -40.94998,
-            "Z": 179.05669
-          },
-          "TerritoryId": 154,
-          "InteractionType": "WalkTo",
-          "Fly": true
-        },
-        {
           "DataId": 1009218,
           "Position": {
-            "X": -4.1047363,
-            "Y": -40.949986,
-            "Z": 176.83679
+            "X": -4.264094,
+            "Y": -40.94998,
+            "Z": 178.43575
           },
           "TerritoryId": 154,
+          "StopDistance": 1,
+          "Fly": true,
+          "AetheryteShortcut": "North Shroud - Fallgourd Float",
           "InteractionType": "Interact"
         }
       ]
