@@ -53,16 +53,6 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.8"
         }
       },
-      "Microsoft.SourceLink.Gitea": {
-        "type": "Direct",
-        "requested": "[8.0.0, )",
-        "resolved": "8.0.0",
-        "contentHash": "KOBodmDnlWGIqZt2hT47Q69TIoGhIApDVLCyyj9TT5ct8ju16AbHYcB4XeknoHX562wO1pMS/1DfBIZK+V+sxg==",
-        "dependencies": {
-          "Microsoft.Build.Tasks.Git": "8.0.0",
-          "Microsoft.SourceLink.Common": "8.0.0"
-        }
-      },
       "System.Text.Json": {
         "type": "Direct",
         "requested": "[9.0.3, )",
@@ -87,11 +77,6 @@
           "Humanizer.Core": "2.14.1",
           "Json.More.Net": "2.1.1"
         }
-      },
-      "Microsoft.Build.Tasks.Git": {
-        "type": "Transitive",
-        "resolved": "8.0.0",
-        "contentHash": "bZKfSIKJRXLTuSzLudMFte/8CempWjVamNUR5eHJizsy+iuOuO/k2gnh7W0dHJmYY0tBf+gUErfluCv5mySAOQ=="
       },
       "Microsoft.Extensions.DependencyInjection.Abstractions": {
         "type": "Transitive",
@@ -130,21 +115,17 @@
         "resolved": "8.0.0",
         "contentHash": "bXJEZrW9ny8vjMF1JV253WeLhpEVzFo1lyaZu1vQ4ZxWUlVvknZ/+ftFgVheLubb4eZPSwwxBeqS1JkCOjxd8g=="
       },
-      "Microsoft.SourceLink.Common": {
-        "type": "Transitive",
-        "resolved": "8.0.0",
-        "contentHash": "dk9JPxTCIevS75HyEQ0E4OVAFhB2N+V9ShCXf8Q6FkUQZDkgLI12y679Nym1YqsiSysuQskT7Z+6nUf3yab6Vw=="
-      },
       "gatheringpaths": {
         "type": "Project",
         "dependencies": {
-          "Questionable.Model": "[6.17.1, )"
+          "Questionable.Model": "[6.18.3, )"
         }
       },
       "llib": {
         "type": "Project",
         "dependencies": {
           "DalamudPackager": "[13.1.0, )",
+          "ECommons": "[3.0.1.23, )",
           "JetBrains.Annotations": "[2024.3.0, )"
         }
       },
@@ -160,7 +141,7 @@
       "questpaths": {
         "type": "Project",
         "dependencies": {
-          "Questionable.Model": "[6.17.1, )"
+          "Questionable.Model": "[6.18.3, )"
         }
       }
     }

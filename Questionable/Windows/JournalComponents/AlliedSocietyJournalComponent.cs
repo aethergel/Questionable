@@ -67,7 +67,8 @@ internal sealed class AlliedSocietyJournalComponent
 #if DEBUG
             bool isOpen;
             //if (quests.Any(x => !_questRegistry.TryGetQuest(x.QuestId, out var quest) || quest.Root.LastChecked.Date))
-            if (quests.Any(x => !_questRegistry.TryGetQuest(x.QuestId, out var quest) || quest.Root.Disabled))
+            if (quests.Any(x => !x.QuestId.Value.Equals(1569) && // Ixal "Deliverance"
+                                (!_questRegistry.TryGetQuest(x.QuestId, out var quest) || quest.Root.Disabled)))
             {
                 using (ImRaii.PushColor(ImGuiCol.Text, ImGuiColors.DalamudOrange))
                     isOpen = ImGui.CollapsingHeader(label);
@@ -98,7 +99,10 @@ internal sealed class AlliedSocietyJournalComponent
 
                     ImGui.Text(RankNames[i - 1]);
                     foreach (var quest in questsByRank)
-                        DrawQuest(quest);
+                    {
+                        if (!quest.QuestId.Value.Equals(1569))
+                            DrawQuest(quest);
+                    }
                 }
             }
             else
