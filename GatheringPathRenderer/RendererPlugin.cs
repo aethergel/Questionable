@@ -104,7 +104,6 @@ public sealed class RendererPlugin : IDalamudPlugin
                 v = part;
             } else {
                 var _ = part.Split(':', 2);
-                _pluginLog.Debug(_[0]);
                 t = char.Parse(_[0]);
                 v = _[1];
             }
@@ -112,27 +111,33 @@ public sealed class RendererPlugin : IDalamudPlugin
             {
                 case 'i':
                     types.Add(typeof(int));
-                    arguments.Add(int.Parse(v));
+                    if (v.Length != 0)
+                        arguments.Add(int.Parse(v));
                     break;
                 case 'b':
                     types.Add(typeof(bool));
-                    arguments.Add(bool.Parse(v));
+                    if (v.Length != 0)
+                        arguments.Add(bool.Parse(v));
                     break;
                 case 'u':
                     types.Add(typeof(uint));
-                    arguments.Add(uint.Parse(v));
+                    if (v.Length != 0)
+                        arguments.Add(uint.Parse(v));
                     break;
                 case 'h':
                     types.Add(typeof(ushort));
-                    arguments.Add(ushort.Parse(v));
+                    if (v.Length != 0)
+                        arguments.Add(ushort.Parse(v));
                     break;
                 case 'y':
                     types.Add(typeof(byte));
-                    arguments.Add(byte.Parse(v));
+                    if (v.Length != 0)
+                        arguments.Add(byte.Parse(v));
                     break;
                 default:
                     types.Add(typeof(string));
-                    arguments.Add((string)v);
+                    if (v.Length != 0)
+                        arguments.Add((string)v);
                     break;
             }
         }
@@ -141,10 +146,11 @@ public sealed class RendererPlugin : IDalamudPlugin
         _pluginLog.Debug(_types.Print(","));
         _pluginLog.Debug(_arguments.Print(","));
         _pluginLog.Debug($"{_types.Length},{_arguments.Length}");
+        _pluginLog.Debug($"Attempting to call {function}({_arguments.Print()})");
         EzIPCDisposalToken[] _disposalTokens = EzIPC.Init(_pluginInterface, function.Split('.')[0], SafeWrapper.IPCException);
 
-        MethodInfo? method1 = typeof(IDalamudPluginInterface).GetMethod("GetIpcSubscriber", 1, [typeof(string)]);
-        MethodInfo? func1 = method1?.MakeGenericMethod([typeof(string)]);
+        MethodInfo? method1 = typeof(IDalamudPluginInterface).GetMethod("GetIpcSubscriber", _types.Length, _types);
+        MethodInfo? func1 = method1?.MakeGenericMethod(_types);
         object? callGateSubscriber = func1?.Invoke(_pluginInterface, [function]);
         MethodInfo? method2 = typeof(ICallGateSubscriber).GetMethod("InvokeFunc", _types.Length, _types);
         MethodInfo? func2 = method2?.MakeGenericMethod(_types);
