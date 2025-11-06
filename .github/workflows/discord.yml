@@ -1,0 +1,18 @@
+on:
+  release:
+    types: [published]
+
+jobs:
+  gh-releases-to-discord:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Github Releases To Discord
+        uses: SethCohen/github-releases-to-discord@v1.15.0
+        with:
+          webhook_url: ${{ secrets.WEBHOOK_URL }}
+          color: "5856984"
+          username: "Release Changelog"
+          avatar_url: "https://qstxiv.github.io/icons/Questionable.png"
+          footer_title: "Changelog"
+          footer_icon_url: "https://qstxiv.github.io/icons/Questionable.png"
+          footer_timestamp: true
