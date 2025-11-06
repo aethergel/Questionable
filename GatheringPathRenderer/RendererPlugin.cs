@@ -94,6 +94,7 @@ public sealed class RendererPlugin : IDalamudPlugin
         string function = parts[0];
         List<Type> types = [];
         List<object> arguments = [];
+        char delim = ':';
         foreach (string part in parts.Skip(1).ToArray())
         {
             char t;
@@ -141,13 +142,13 @@ public sealed class RendererPlugin : IDalamudPlugin
         _pluginLog.Debug(_arguments.Print(","));
         _pluginLog.Debug($"{_types.Length},{_arguments.Length}");
         EzIPCDisposalToken[] _disposalTokens = EzIPC.Init(_pluginInterface, function.Split('.')[0], SafeWrapper.IPCException);
-        MethodInfo? method = typeof(IDalamudPluginInterface).GetMethod("GetIpcSubscriber", _types.Length, _types);
-        MethodInfo? func = method?.MakeGenericMethod(_types);
-        if (func != null)
-        {
-            var _ = func.Invoke(function, _arguments);
-            if (_ != null) _chatGui.Print(_.ToString(), "qipc");
-        }
+
+        MethodInfo? method1 = typeof(IDalamudPluginInterface).GetMethod("GetIpcSubscriber", 1, [typeof(string)]);
+        MethodInfo? func1 = method1?.MakeGenericMethod([typeof(string)]);
+        object? callGateSubscriber = func1?.Invoke(_pluginInterface, [function]);
+        MethodInfo? method2 = typeof(ICallGateSubscriber).GetMethod("InvokeFunc", _types.Length, _types);
+        MethodInfo? func2 = method2?.MakeGenericMethod(_types);
+        func2?.Invoke(callGateSubscriber, _arguments);
         //ICallGateSubscriber<string,bool> callGateSubscriber = _pluginInterface.GetIpcSubscriber<string,bool>(function);
         //_chatGui.Print(callGateSubscriber.InvokeFunc(args[0]).ToString(), "qipc");
         foreach (var token in _disposalTokens) token.Dispose();
