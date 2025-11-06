@@ -1,5 +1,6 @@
-- Add IPC: Stop(label)
-- Add last Yok Huy story quest, sylph quest (eb785e3) by alydev
+- Add 3017 If I Had A Glamour by Kiarra
+- IPC: Stop(label)
+- Last Yok Huy story quest, sylph quest (eb785e3) by alydev
 - Add missing Ixal quest, check Ixal and Sylph (a7d88eb a83431a) by alydev
 - Add missing Yok Huy daily by stoat33
 - Add IPC: StartGathering(npc,item,job,quantity) / StartGatheringComplex(npc,item,job,quantity,collectability)
@@ -12,5 +13,3 @@
 - Fix creationutils separator placement (0db9e3ba) by alydev
 - Daily quests checked (c0fa4893) by alydev
 - Less verbose creationutils daily q list (6bf84696) by alydev
-- Generalise priority quests context menu (268f65f9) by alydev
-- Fix debug log formatting (522b5938) by alydev
