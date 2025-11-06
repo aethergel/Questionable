@@ -1,1 +1,16 @@
+- Add Discord announcements of new releases
 - Sylph 1270 fixes, better default handling of aetheryte shortcuts (8396b5c 301992d) by alydev
+- Add 3017 If I Had A Glamour by Kiarra
+- IPC: Stop(label)
+- Last Yok Huy story quest, sylph quest (eb785e3) by alydev
+- Add missing Ixal quest, check Ixal and Sylph (a7d88eb a83431a) by alydev
+- Add missing Yok Huy daily by stoat33
+- Add IPC: StartGathering(npc,item,job,quantity) / StartGatheringComplex(npc,item,job,quantity,collectability)
+- Tribe accept/complete recovery (f040566 b5d887a 1a91b65) by alydev
+- Disable highlight during CS (f7b7098) by alydev
+- Fixed log spam bug (c6dd66b) by alydev
+- Add YesAlready IPC (10302ac) by alydev
+- Add automatic releases (a3a0fb6e) by alydev
+- 5360 add flying (0dda36ca) by alydev
+- Fix creationutils separator placement (0db9e3ba) by alydev
+- Daily quests checked (c0fa4893) by alydev
