@@ -18,6 +18,7 @@ using Dalamud.Interface.Windowing;
 using Dalamud.Plugin;
 using Dalamud.Plugin.Ipc;
 using Dalamud.Plugin.Services;
+using ECommons;
 using ECommons.Automation;
 using ECommons.EzIpcManager;
 using GatheringPathRenderer.Windows;
@@ -91,37 +92,64 @@ public sealed class RendererPlugin : IDalamudPlugin
     {
         string[] parts = argument.Split(' ');
         string function = parts[0];
-        List<string> args = parts.Skip(1).ToList();
-        //List<string> arguments = parts.Skip(1).ToList();
-        //foreach (string part in parts.Skip(1).ToArray()) {
-        //    if (!part.Contains('%')) continue;
-        //    var _ = part.Split(':', 1);
-        //    var t = _[0];
-        //    var v = _[1];
-        //    switch (t) {
-        //        case "s":
-        //            arguments.Append((string)v);
-        //            break;
-        //        case "i":
-        //            arguments.Append(int.Parse(v));
-        //            break;
-        //        case "b":
-        //            arguments.Append(bool.Parse(v));
-        //            break;
-        //        case "u":
-        //            arguments.Append(uint.Parse(v));
-        //            break;
-        //        case "us":
-        //            arguments.Append(ushort.Parse(v));
-        //            break;
-        //        default:
-        //            continue;
-        //    }
-        //}
+        List<Type> types = [];
+        List<object> arguments = [];
+        foreach (string part in parts.Skip(1).ToArray())
+        {
+            char t;
+            string v;
+            if (!part.Contains(':')) {
+                t = 's';
+                v = part;
+            } else {
+                var _ = part.Split(':', 2);
+                _pluginLog.Debug(_[0]);
+                t = char.Parse(_[0]);
+                v = _[1];
+            }
+            switch (t)
+            {
+                case 'i':
+                    types.Add(typeof(int));
+                    arguments.Add(int.Parse(v));
+                    break;
+                case 'b':
+                    types.Add(typeof(bool));
+                    arguments.Add(bool.Parse(v));
+                    break;
+                case 'u':
+                    types.Add(typeof(uint));
+                    arguments.Add(uint.Parse(v));
+                    break;
+                case 'h':
+                    types.Add(typeof(ushort));
+                    arguments.Add(ushort.Parse(v));
+                    break;
+                case 'y':
+                    types.Add(typeof(byte));
+                    arguments.Add(byte.Parse(v));
+                    break;
+                default:
+                    types.Add(typeof(string));
+                    arguments.Add((string)v);
+                    break;
+            }
+        }
+        var _types = types.ToArray();
+        var _arguments = arguments.ToArray();
+        _pluginLog.Debug(_types.Print(","));
+        _pluginLog.Debug(_arguments.Print(","));
+        _pluginLog.Debug($"{_types.Length},{_arguments.Length}");
         EzIPCDisposalToken[] _disposalTokens = EzIPC.Init(_pluginInterface, function.Split('.')[0], SafeWrapper.IPCException);
-        ICallGateSubscriber<string,bool> callGateSubscriber = _pluginInterface.GetIpcSubscriber<string,bool>(function);
-        _pluginLog.Debug($"Calling {function}({args[0]})");
-        _chatGui.Print(callGateSubscriber.InvokeFunc(args[0]).ToString(), "qipc");
+        MethodInfo? method = typeof(IDalamudPluginInterface).GetMethod("GetIpcSubscriber", _types.Length, _types);
+        MethodInfo? func = method?.MakeGenericMethod(_types);
+        if (func != null)
+        {
+            var _ = func.Invoke(function, _arguments);
+            if (_ != null) _chatGui.Print(_.ToString(), "qipc");
+        }
+        //ICallGateSubscriber<string,bool> callGateSubscriber = _pluginInterface.GetIpcSubscriber<string,bool>(function);
+        //_chatGui.Print(callGateSubscriber.InvokeFunc(args[0]).ToString(), "qipc");
         foreach (var token in _disposalTokens) token.Dispose();
         //else if (parts.Length == 2)
         //{
