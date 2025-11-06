@@ -1,7 +1,6 @@
 on:
-  workflow_dispatch:
   release:
-    types: [published]
+    types: [released,prereleased]
 
 jobs:
   gh-releases-to-discord:
