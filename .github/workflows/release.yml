@@ -217,7 +217,7 @@ jobs:
         env:
           APPRISE_URL: "${{ secrets.APPRISE_URL }}&url=https://github.com/PunishXIV/Questionable/releases/tag/${{ env.VERSION }}"
         with:
-          title: Questionable
+          title: Questionable v${{ env.VERSION }}
           message: ${{ steps.changelog.outputs.changelog }}
 
   update-pluginmaster:
