@@ -275,6 +275,9 @@
                 "Item": {
                   "type": "object",
                   "properties": {
+                    "InInventory": {
+                      "type": "boolean"
+                    },
                     "NotInInventory": {
                       "type": "boolean"
                     }
