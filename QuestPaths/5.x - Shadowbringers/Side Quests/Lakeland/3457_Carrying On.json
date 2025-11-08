@@ -1,0 +1,92 @@
+{
+  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+  "Author": "Clockwise Starr",
+  "QuestSequence": [
+    {
+      "Sequence": 0,
+      "Steps": [
+        {
+          "DataId": 1030709,
+          "Position": {
+            "X": -137.3465,
+            "Y": 5.7616596,
+            "Z": -79.54535
+          },
+          "TerritoryId": 813,
+          "InteractionType": "AcceptQuest",
+          "Fly": true,
+          "AetheryteShortcut": "Lakeland - Ostall Imperative",
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": -137.3465,
+                  "Y": 5.7616596,
+                  "Z": -79.54535
+                },
+                "TerritoryId": 813,
+                "MaximumDistance": 600
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Sequence": 1,
+      "Steps": [
+        {
+          "AetheryteShortcut": "Lakeland - Fort Jobb",
+          "DataId": 1030710,
+          "Position": {
+            "X": 791.1345,
+            "Y": 21.38111,
+            "Z": -29.800903
+          },
+          "TerritoryId": 813,
+          "InteractionType": "Interact",
+          "Fly": true
+        }
+      ]
+    },
+    {
+      "Sequence": 2,
+      "Steps": [
+        {
+          "AetheryteShortcut": "Crystarium",
+          "AethernetShortcut": [
+            "[Crystarium] Aetheryte Plaza", 
+            "[Crystarium] Musica Universalis Markets"
+          ],
+          "DataId": 1027985,
+          "Position": {
+            "X": 86.41174,
+            "Y": 0.7401628,
+            "Z": 143.75525
+          },
+          "TerritoryId": 819,
+          "InteractionType": "Interact",
+          "Fly": true
+        }
+      ]
+    },
+    {
+      "Sequence": 255,
+      "Steps": [
+        {
+          "AetheryteShortcut": "Lakeland - Fort Jobb",
+          "DataId": 1030711,
+          "Position": {
+            "X": 778.2252,
+            "Y": 23.037851,
+            "Z": -67.0329
+          },
+          "TerritoryId": 813,
+          "InteractionType": "CompleteQuest",
+          "Fly": true,
+          "NextQuestId": 3458
+        }
+      ]
+    }
+  ]
+}

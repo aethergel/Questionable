@@ -1,0 +1,68 @@
+{
+  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+  "Author": "Clockwise Starr",
+  "QuestSequence": [
+    {
+      "Sequence": 0,
+      "Steps": [
+        {
+          "DataId": 1028302,
+          "Position": {
+            "X": -115.86182,
+            "Y": 14.145081,
+            "Z": 745.9983
+          },
+          "TerritoryId": 813,
+          "InteractionType": "AcceptQuest",
+          "Fly": true,
+          "AetheryteShortcut": "Lakeland - Ostall Imperative",
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": -115.86182,
+                  "Y": 14.145081,
+                  "Z": 745.9983
+                },
+                "TerritoryId": 813,
+                "MaximumDistance": 1150
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Sequence": 1,
+      "Steps": [
+        {
+          "DataId": 1031116,
+          "Position": {
+            "X": 594.5067,
+            "Y": 8.893748,
+            "Z": 591.8517
+          },
+          "TerritoryId": 813,
+          "InteractionType": "Interact",
+          "Fly": true
+        }
+      ]
+    },
+    {
+      "Sequence": 255,
+      "Steps": [
+        {
+          "DataId": 1028302,
+          "Position": {
+            "X": -115.86182,
+            "Y": 14.145081,
+            "Z": 745.9983
+          },
+          "TerritoryId": 813,
+          "InteractionType": "CompleteQuest",
+          "Fly": true
+        }
+      ]
+    }
+  ]
+}
