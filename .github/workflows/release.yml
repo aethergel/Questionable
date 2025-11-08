@@ -215,7 +215,7 @@ jobs:
       - name: Github Releases To Discord
         uses: cstuder/apprise-ga@master
         env:
-          APPRISE_URL: "${{ secrets.APPRISE_URL }}&url=https://github.com/PunishXIV/Questionable/releases/tag/${{ env.VERSION }}"
+          APPRISE_URL: "${{ secrets.APPRISE_URL }}&url=https://github.com/PunishXIV/Questionable/releases/tag/v${{ env.VERSION }}"
         with:
           title: Questionable v${{ env.VERSION }}
           message: ${{ steps.changelog.outputs.changelog }}
