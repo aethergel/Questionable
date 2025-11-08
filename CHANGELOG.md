@@ -1,3 +1,4 @@
+- Blunderville unlock by alydev
 - Ixal fishing quests (0ccb17c) by alydev
 - Sylph 1270 fixes, better default handling of aetheryte shortcuts (8396b5c 301992d) by alydev
 - Add 3017 If I Had A Glamour by Kiarra
