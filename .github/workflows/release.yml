@@ -212,6 +212,14 @@ jobs:
         env:
           PUBLISHER_KEY: ${{ secrets.PUBLISHER_KEY }}
 
+      - name: Github Releases To Discord
+        uses: cstuder/apprise-ga@master
+        env:
+          APPRISE_URL: "${{ secrets.APPRISE_URL }}&url=https://github.com/PunishXIV/Questionable/releases/tag/${{ env.VERSION }}"
+        with:
+          title: Release
+          message: ${{ steps.changelog.outputs.changelog }}
+
   update-pluginmaster:
     needs: build-and-release
     runs-on: ubuntu-latest
@@ -243,14 +251,3 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-      - name: Github Releases To Discord
-        uses: SethCohen/github-releases-to-discord@v1.15.0
-        with:
-          webhook_url: ${{ secrets.WEBHOOK_URL }}
-          color: "5856984"
-          username: "Release Changelog"
-          avatar_url: "https://qstxiv.github.io/icons/Questionable.png"
-          footer_title: "Changelog"
-          footer_icon_url: "https://qstxiv.github.io/icons/Questionable.png"
-          footer_timestamp: true
-          reduce_headings: true
