@@ -217,7 +217,7 @@ jobs:
         env:
           APPRISE_URL: "${{ secrets.APPRISE_URL }}&url=https://github.com/PunishXIV/Questionable/releases/tag/${{ env.VERSION }}"
         with:
-          title: Release
+          title: Questionable
           message: ${{ steps.changelog.outputs.changelog }}
 
   update-pluginmaster:
@@ -244,10 +244,3 @@ jobs:
           git add pluginmaster.json
           git commit -a -m "Update pluginmaster"
           git push origin dlmd
-
-  discord:
-    needs: build-and-release
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
