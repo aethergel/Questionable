@@ -1,0 +1,99 @@
+{
+  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+  "Author": "Clockwise Starr",
+  "LastChecked": {
+    "Username": "Clockwise Starr",
+    "Date": "2025-11-09"
+  },
+  "QuestSequence": [
+    {
+      "Sequence": 0,
+      "Steps": [
+        {
+          "DataId": 1027403,
+          "Position": {
+            "X": -40.878906,
+            "Y": 1.3483406,
+            "Z": 676.63074
+          },
+          "TerritoryId": 813,
+          "InteractionType": "AcceptQuest",
+          "Fly": true,
+          "AetheryteShortcut": "Lakeland - Fort Jobb",
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": -40.878906,
+                  "Y": 1.3483406,
+                  "Z": 676.63074
+                },
+                "TerritoryId": 813,
+                "MaximumDistance": 600
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Sequence": 1,
+      "Steps": [
+        {
+          "DataId": 1027423,
+          "Position": {
+            "X": -8.743469,
+            "Y": 1.3487628,
+            "Z": 674.464
+          },
+          "TerritoryId": 813,
+          "InteractionType": "Interact",
+          "Fly": true,
+          "StopDistance": 0.25,
+          "$": "QW: 0 0 48 0 0 0 -> QW: 17(1) 0 32 0 0 32",
+          "CompletionQuestVariablesFlags": [null, null, null, null, null, 32]
+        },
+        {
+          "DataId": 1027408,
+          "Position": {
+            "X": 70.66455,
+            "Y": 0.44237545,
+            "Z": 631.9523
+          },
+          "TerritoryId": 813,
+          "InteractionType": "Interact",
+          "Fly": true,
+          "$": "QW: 17(1) 0 32 0 0 32 -> QW: 33(1) 16 16 0 0 96",
+          "CompletionQuestVariablesFlags": [null, null, null, null, null, 64]
+        },
+        {
+          "DataId": 1027409,
+          "Position": {
+            "X": -125.597046,
+            "Y": 9.572956,
+            "Z": 689.906
+          },
+          "TerritoryId": 813,
+          "InteractionType": "Interact",
+          "Fly": true
+        }
+      ]
+    },
+    {
+      "Sequence": 255,
+      "Steps": [
+        {
+          "DataId": 1027403,
+          "Position": {
+            "X": -40.878906,
+            "Y": 1.3483406,
+            "Z": 676.63074
+          },
+          "TerritoryId": 813,
+          "InteractionType": "CompleteQuest",
+          "Fly": true
+        }
+      ]
+    }
+  ]
+}

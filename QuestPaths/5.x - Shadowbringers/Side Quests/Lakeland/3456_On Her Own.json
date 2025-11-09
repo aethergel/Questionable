@@ -1,0 +1,89 @@
+{
+  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+  "Author": "Clockwise Starr",
+  "LastChecked": {
+    "Username": "Clockwise Starr",
+    "Date": "2025-11-09"
+  },
+  "QuestSequence": [
+    {
+      "Sequence": 0,
+      "Steps": [
+        {
+          "DataId": 1030707,
+          "Position": {
+            "X": 792.874,
+            "Y": 23.037853,
+            "Z": -68.13159
+          },
+          "TerritoryId": 813,
+          "InteractionType": "AcceptQuest",
+          "Fly": true,
+          "AetheryteShortcut": "Lakeland - Fort Jobb",
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": 792.874,
+                  "Y": 23.037853,
+                  "Z": -68.13159
+                },
+                "TerritoryId": 813,
+                "MaximumDistance": 200
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Sequence": 1,
+      "Steps": [
+        {
+          "DataId": 1030708,
+          "Position": {
+            "X": -132.1889,
+            "Y": 5.779211,
+            "Z": -96.84906
+          },
+          "TerritoryId": 813,
+          "InteractionType": "Interact",
+          "Fly": true
+        }
+      ]
+    },
+    {
+      "Sequence": 2,
+      "Steps": [
+        {
+          "DataId": 1027353,
+          "Position": {
+            "X": -146.31879,
+            "Y": 28.47206,
+            "Z": -128.83197
+          },
+          "TerritoryId": 813,
+          "InteractionType": "Interact",
+          "Fly": true
+        }
+      ]
+    },
+    {
+      "Sequence": 255,
+      "Steps": [
+        {
+          "DataId": 1030709,
+          "Position": {
+            "X": -137.3465,
+            "Y": 5.7616596,
+            "Z": -79.54535
+          },
+          "TerritoryId": 813,
+          "InteractionType": "CompleteQuest",
+          "Fly": true,
+          "NextQuestId": 3457
+        }
+      ]
+    }
+  ]
+}

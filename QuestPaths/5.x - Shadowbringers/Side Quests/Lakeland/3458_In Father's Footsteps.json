@@ -1,0 +1,91 @@
+{
+  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+  "Author": "Clockwise Starr",
+  "LastChecked": {
+    "Username": "Clockwise Starr",
+    "Date": "2025-11-09"
+  },
+  "QuestSequence": [
+    {
+      "Sequence": 0,
+      "Steps": [
+        {
+          "DataId": 1030711,
+          "Position": {
+            "X": 778.2252,
+            "Y": 23.037851,
+            "Z": -67.0329
+          },
+          "TerritoryId": 813,
+          "InteractionType": "AcceptQuest",
+          "Fly": true,
+          "AetheryteShortcut": "Lakeland - Fort Jobb",
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": 778.2252,
+                  "Y": 23.037851,
+                  "Z": -67.0329
+                },
+                "TerritoryId": 813,
+                "MaximumDistance": 200
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Sequence": 1,
+      "Steps": [
+        {
+          "DataId": 1030713,
+          "Position": {
+            "X": 324.5747,
+            "Y": 15.679742,
+            "Z": -47.348755
+          },
+          "TerritoryId": 813,
+          "InteractionType": "Interact",
+          "Fly": true
+        }
+      ]
+    },
+    {
+      "Sequence": 2,
+      "Steps": [
+        {
+          "Position": {
+            "X": 316.6554,
+            "Y": 9.71209,
+            "Z": -7.782411
+          },
+          "TerritoryId": 813,
+          "InteractionType": "Combat",
+          "EnemySpawnType": "OverworldEnemies",
+          "KillEnemyDataIds": [10367],
+          "Fly": true
+        }
+      ]
+    },
+    {
+      "Sequence": 255,
+      "Steps": [
+        {
+          "DataId": 1030713,
+          "Position": {
+            "X": 324.5747,
+            "Y": 15.679742,
+            "Z": -47.348755
+          },
+          "TerritoryId": 813,
+          "StopDistance": 0.25,
+          "InteractionType": "CompleteQuest",
+          "Fly": true,
+          "NextQuestId": 3459
+        }
+      ]
+    }
+  ]
+}
