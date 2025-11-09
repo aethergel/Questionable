@@ -1,5 +1,1 @@
-- Fix: Aetheryte shortcut optimisation by alydev
-- Blunderville unlock (d148c4d) by alydev
-- Ixal fishing quests (0ccb17c) by alydev
-- Sylph 1270 fixes, better default handling of aetheryte shortcuts (8396b5c 301992d) by alydev
-- Add 3017 If I Had A Glamour by Kiarra
+- Add Lakeland side quests (a4e9276) by ClockwiseStarr
