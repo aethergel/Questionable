@@ -6,6 +6,14 @@
       "Sequence": 0,
       "Steps": [
         {
+          "TerritoryId": 132,
+          "TargetTerritoryId": 148,
+          "InteractionType": "None",
+          "AethernetShortcut": ["[Gridania] Aetheryte Plaza","[Gridania] Blue Badger Gate (Central Shroud)"],
+          "AetheryteShortcut": "Gridania",
+          "SkipConditions": {"StepIf": {"InTerritory": [148]}}
+        },
+        {
           "DataId": 1000685,
           "Position": {
             "X": 287.92236,
@@ -21,6 +29,14 @@
       "Sequence": 1,
       "Comment": "Avoid AOEs/turn on VBM if you have it",
       "Steps": [
+        {
+          "TerritoryId": 132,
+          "TargetTerritoryId": 148,
+          "InteractionType": "None",
+          "AethernetShortcut": ["[Gridania] Aetheryte Plaza","[Gridania] Blue Badger Gate (Central Shroud)"],
+          "AetheryteShortcut": "Gridania",
+          "SkipConditions": {"StepIf": {"InTerritory": [148]}}
+        },
         {
           "DataId": 2000010,
           "Position": {
@@ -68,6 +84,14 @@
       "Sequence": 2,
       "Steps": [
         {
+          "TerritoryId": 132,
+          "TargetTerritoryId": 148,
+          "InteractionType": "None",
+          "AethernetShortcut": ["[Gridania] Aetheryte Plaza","[Gridania] Blue Badger Gate (Central Shroud)"],
+          "AetheryteShortcut": "Gridania",
+          "SkipConditions": {"StepIf": {"InTerritory": [148]}}
+        },
+        {
           "DataId": 1000685,
           "Position": {
             "X": 287.92236,
@@ -82,6 +106,14 @@
     {
       "Sequence": 255,
       "Steps": [
+        {
+          "TerritoryId": 132,
+          "TargetTerritoryId": 148,
+          "InteractionType": "None",
+          "AethernetShortcut": ["[Gridania] Aetheryte Plaza","[Gridania] Blue Badger Gate (Central Shroud)"],
+          "AetheryteShortcut": "Gridania",
+          "SkipConditions": {"StepIf": {"InTerritory": [148]}}
+        },
         {
           "DataId": 1000408,
           "Position": {
