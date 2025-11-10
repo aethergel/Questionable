@@ -187,7 +187,6 @@ internal static class AetheryteShortcut
 
                         Vector3 pos = clientState.LocalPlayer!.Position;
                         float distance_target = (pos - Task.Step.Position.Value).Length();
-                        float distance_pos_to_aetheryte = aetheryteData.CalculateDistance(pos, territoryType, Task.TargetAetheryte);
                         float distance_aetheryte_to_target = aetheryteData.CalculateDistance(Task.Step.Position.Value, territoryType, Task.TargetAetheryte);
                         if (distance_target < Task.Step.CalculateActualStopDistance())
                         {
@@ -200,13 +199,13 @@ internal static class AetheryteShortcut
                         if (Task.Step.AethernetShortcut != null)
                         {
                             distance_aethernet_from = aetheryteData.CalculateDistance(pos, territoryType, Task.Step.AethernetShortcut.From);
-                            distance_aethernet_to = aetheryteData.CalculateDistance(pos, territoryType, Task.Step.AethernetShortcut.To);
+                            distance_aethernet_to = aetheryteData.CalculateDistance(Task.Step.Position.Value, territoryType, Task.Step.AethernetShortcut.To);
                         }
                         // if aetheryte route is further from the destination than just walking there, skip it
-                        logger.LogDebug($"target direct: {distance_target}. target if tp: {distance_target - distance_pos_to_aetheryte + distance_aetheryte_to_target} " +
-                                        (Task.Step.AethernetShortcut != null ? "target if aethernet: distance_target - distance_aethernet_from + distance_aethernet_to" : ""));
-                        if (distance_target < (distance_target - distance_pos_to_aetheryte + distance_aetheryte_to_target) ||
-                            (Task.Step.AethernetShortcut != null && distance_target < (distance_target - distance_aethernet_from + distance_aethernet_to)))
+                        logger.LogDebug($"target direct: {distance_target}. target if tp: {30 + distance_aetheryte_to_target}" +
+                                        (Task.Step.AethernetShortcut != null ? $", target if aethernet: {distance_aethernet_from + distance_aethernet_to + 30}" : ""));
+                        if (distance_target < (30 + distance_aetheryte_to_target) ||
+                            (Task.Step.AethernetShortcut != null && distance_target < (distance_aethernet_from + distance_aethernet_to + 30)))
                         {
                             logger.LogInformation("Skipping aetheryte teleport, it's a shorter distance to walk there");
                             return true;
