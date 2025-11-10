@@ -22,15 +22,23 @@
       "Steps": [
         {
           "Position": {
-            "X": -422.68066,
-            "Y": -2.5542965,
-            "Z": 150.50304
+            "X": -421.19717,
+            "Y": -2.5932822,
+            "Z": 150.81766
           },
           "TerritoryId": 139,
           "InteractionType": "WalkTo",
-          "DisableNavmesh": true,
-          "Mount": true,
-          "Comment": "Avoids swimming"
+          "Mount": true
+        },
+        {
+          "Position": {
+            "X": -523.5316,
+            "Y": 6.5687256,
+            "Z": 49.144527
+          },
+          "TerritoryId": 139,
+          "InteractionType": "WalkTo",
+          "Mount": true
         },
         {
           "Position": {
@@ -57,13 +65,23 @@
       "Steps": [
         {
           "Position": {
-            "X": -422.68066,
-            "Y": -2.5542965,
-            "Z": 150.50304
+            "X": -523.5316,
+            "Y": 6.5687256,
+            "Z": 49.144527
           },
           "TerritoryId": 139,
           "InteractionType": "WalkTo",
-          "Comment": "Avoids swimming"
+          "Mount": true
+        },
+        {
+          "Position": {
+            "X": -421.19717,
+            "Y": -2.5932822,
+            "Z": 150.81766
+          },
+          "TerritoryId": 139,
+          "InteractionType": "WalkTo",
+          "Mount": true
         },
         {
           "DataId": 1006193,
