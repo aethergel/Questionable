@@ -288,6 +288,22 @@
       "Sequence": 4,
       "Steps": [
         {
+          "InteractionType": "None",
+          "TerritoryId": 132,
+          "TargetTerritoryId": 133,
+          "AethernetShortcut": [
+            "[Gridania] Archers' Guild",
+            "[Gridania] Lancers' Guild"
+          ],
+          "SkipConditions": {
+            "StepIf": {
+              "NotInTerritory": [
+                132
+              ]
+            }
+          }
+        },
+        {
           "DataId": 1001263,
           "Position": {
             "X": 181.41443,
@@ -297,20 +313,19 @@
           "TerritoryId": 133,
           "InteractionType": "Interact",
           "TargetTerritoryId": 152,
-          "AethernetShortcut": [
-            "[Gridania] Archers' Guild",
-            "[Gridania] Lancers' Guild"
-          ],
           "SkipConditions": {
             "StepIf": {
-              "AetheryteUnlocked": "East Shroud - Hawthorne Hut"
+              "NotInTerritory": [
+                133
+              ]
             }
           }
         },
         {
           "TerritoryId": 152,
           "InteractionType": "AttuneAetheryte",
-          "Aetheryte": "East Shroud - Hawthorne Hut"
+          "Aetheryte": "East Shroud - Hawthorne Hut",
+          "Fly": true
         },
         {
           "Position": {
