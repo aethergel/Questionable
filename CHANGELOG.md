@@ -1,2 +1,1 @@
-- 449: add EquipRec to restore normal hat
-- 1051: Fix aetheryte shortcut issue
+- 67_School of Hard Nocks: Fix aetheryte teleport loop
