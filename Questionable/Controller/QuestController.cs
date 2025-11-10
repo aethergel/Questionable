@@ -290,7 +290,7 @@ internal sealed class QuestController : MiniTaskController<QuestController>
             return;
         }
 
-        CheckAutoRefreshCondition();
+        //CheckAutoRefreshCondition();
 
         UpdateCurrentTask();
     }
