@@ -1,1 +1,4 @@
-- Add Lakeland side quests (a4e9276) by ClockwiseStarr
+- Fix AetheryteShortcut auto skip, again (b8d4975) by alydev
+- Added UseTickets config, deprecated/removed Auto Refresh feature (bff7fe5) by alydev
+- Tested some Gridania starting quests (d8a787d) by alydev
+- 3861 pathing fix by alydev
