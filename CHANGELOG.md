@@ -1,1 +1,1 @@
-- 67_School of Hard Nocks: Fix aetheryte teleport loop
+- 1368_Fulminating Furnaces: kobold quest
