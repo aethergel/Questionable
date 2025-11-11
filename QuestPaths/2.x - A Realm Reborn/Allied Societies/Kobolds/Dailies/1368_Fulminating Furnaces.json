@@ -1,7 +1,6 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
   "Author": "liza",
-  "Disabled": true,
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -14,7 +13,129 @@
             "Z": -176.5622
           },
           "TerritoryId": 180,
-          "InteractionType": "AcceptQuest"
+          "InteractionType": "AcceptQuest",
+          "Fly": true,
+          "AetheryteShortcut": "Outer La Noscea - Camp Overlook",
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": 21.560913,
+                  "Y": 16.342407,
+                  "Z": -183.76447
+                },
+                "TerritoryId": 180,
+                "MaximumDistance": 50
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Sequence": 1,
+      "Steps": [
+        {
+          "DataId": 1005932,
+          "Position": {
+            "X": -1.236023,
+            "Y": 33.38838,
+            "Z": -244.19019
+          },
+          "TerritoryId": 180,
+          "InteractionType": "Interact",
+          "Fly": true
+        }
+      ]
+    },
+    {
+      "Sequence": 2,
+      "Steps": [
+        {
+          "Position": {
+            "X": 127.826195,
+            "Y": 23.37386,
+            "Z": -719.1604
+          },
+          "TerritoryId": 180,
+          "InteractionType": "WalkTo",
+          "Comment": "Walk from here, gets stuck in ceilings if flying",
+          "Fly": true
+        },
+        {
+          "Position": {
+            "X": 274.8046,
+            "Y": 21.542015,
+            "Z": -805.19055
+          },
+          "TerritoryId": 180,
+          "InteractionType": "Combat",
+          "EnemySpawnType": "OverworldEnemies",
+          "KillEnemyDataIds": [
+            2834
+          ]
+        }
+      ]
+    },
+    {
+      "Sequence": 3,
+      "Steps": [
+        {
+          "DataId": 2003708,
+          "Position": {
+            "X": 275.74573,
+            "Y": 21.530457,
+            "Z": -817.7157
+          },
+          "TerritoryId": 180,
+          "InteractionType": "Combat",
+          "EnemySpawnType": "AfterInteraction",
+          "KillEnemyDataIds": [
+            2707
+          ],
+          "CompletionQuestVariablesFlags": [
+            {
+              "Low": 1
+            },
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "DataId": 2003707,
+          "Position": {
+            "X": 275.41003,
+            "Y": 21.591492,
+            "Z": -809.35376
+          },
+          "TerritoryId": 180,
+          "InteractionType": "Combat",
+          "EnemySpawnType": "AfterInteraction",
+          "KillEnemyDataIds": [
+            2707
+          ]
+        }
+      ]
+    },
+    {
+      "Sequence": 4,
+      "Steps": [
+        {
+          "DataId": 2003704,
+          "Position": {
+            "X": 281.5747,
+            "Y": 22.11029,
+            "Z": -812.0699
+          },
+          "TerritoryId": 180,
+          "InteractionType": "Combat",
+          "EnemySpawnType": "AfterInteraction",
+          "KillEnemyDataIds": [
+            2882
+          ]
         }
       ]
     },
@@ -30,7 +151,21 @@
           },
           "TerritoryId": 180,
           "InteractionType": "CompleteQuest",
-          "Fly": true
+          "Fly": true,
+          "AetheryteShortcut": "Outer La Noscea - Camp Overlook",
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": 21.560913,
+                  "Y": 16.342407,
+                  "Z": -183.76447
+                },
+                "TerritoryId": 180,
+                "MaximumDistance": 50
+              }
+            }
+          }
         }
       ]
     }
