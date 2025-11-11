@@ -42,8 +42,9 @@ internal sealed class Configuration : IPluginConfiguration
         public bool ShowIncompleteSeasonalEvents { get; set; } = true;
         public bool SkipLowPriorityDuties { get; set; }
         public bool ConfigureTextAdvance { get; set; } = true;
-        public bool AutoStepRefreshEnabled { get; set; } = true;
+        public bool AutoStepRefreshEnabled { get; set; } = false;
         public int AutoStepRefreshDelaySeconds { get; set; } = 30;
+        public bool UseTickets { get; set; }
     }
 
     internal sealed class StopConfiguration

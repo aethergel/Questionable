@@ -1,0 +1,74 @@
+{
+  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+  "Author": "Clockwise Starr",
+  "LastChecked": {
+    "Username": "Clockwise Starr",
+    "Date": "2025-11-09"
+  },
+  "QuestSequence": [
+    {
+      "Sequence": 0,
+      "Steps": [
+        {
+          "DataId": 1031227,
+          "Position": {
+            "X": 733.3943,
+            "Y": 21.146881,
+            "Z": -88.09039
+          },
+          "TerritoryId": 813,
+          "InteractionType": "AcceptQuest",
+          "Fly": true,
+          "AetheryteShortcut": "Lakeland - Fort Jobb",
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": 733.3943,
+                  "Y": 21.146881,
+                  "Z": -88.09039
+                },
+                "TerritoryId": 813,
+                "MaximumDistance": 200
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Sequence": 1,
+      "Steps": [
+        {
+          "Position": {
+            "X": 437.83417,
+            "Y": 98.48991,
+            "Z": -188.5972
+          },
+          "TerritoryId": 813,
+          "InteractionType": "Combat",
+          "EnemySpawnType": "OverworldEnemies",
+          "KillEnemyDataIds": [10380],
+          "Fly": true
+        }
+      ]
+    },
+    {
+      "Sequence": 255,
+      "Steps": [
+        {
+          "DataId": 1031227,
+          "Position": {
+            "X": 733.3943,
+            "Y": 21.146881,
+            "Z": -88.09039
+          },
+          "TerritoryId": 813,
+          "InteractionType": "CompleteQuest",
+          "AetheryteShortcut": "Lakeland - Fort Jobb",
+          "Fly": true
+        }
+      ]
+    }
+  ]
+}

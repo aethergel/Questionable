@@ -1,10 +1,20 @@
 ﻿{
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
   "Author": "liza",
+  "LastChecked":{"Username": "alydev", "Date": "2025-11-10"},
+  "$": "Seemed to run fine auto -alydev",
   "QuestSequence": [
     {
       "Sequence": 0,
       "Steps": [
+        {
+          "TerritoryId": 132,
+          "TargetTerritoryId": 148,
+          "InteractionType": "None",
+          "AethernetShortcut": ["[Gridania] Aetheryte Plaza","[Gridania] Blue Badger Gate (Central Shroud)"],
+          "AetheryteShortcut": "Gridania",
+          "SkipConditions": {"StepIf": {"InTerritory": [148]}}
+        },
         {
           "DataId": 1000449,
           "Position": {
@@ -21,6 +31,14 @@
       "Sequence": 1,
       "Comment": "Very likely this needs manual combat and/or manual continues",
       "Steps": [
+        {
+          "TerritoryId": 132,
+          "TargetTerritoryId": 148,
+          "InteractionType": "None",
+          "AethernetShortcut": ["[Gridania] Aetheryte Plaza","[Gridania] Blue Badger Gate (Central Shroud)"],
+          "AetheryteShortcut": "Gridania",
+          "SkipConditions": {"StepIf": {"InTerritory": [148]}}
+        },
         {
           "Position": {
             "X": 192.07129,
@@ -121,6 +139,14 @@
     {
       "Sequence": 255,
       "Steps": [
+        {
+          "TerritoryId": 132,
+          "TargetTerritoryId": 148,
+          "InteractionType": "None",
+          "AethernetShortcut": ["[Gridania] Aetheryte Plaza","[Gridania] Blue Badger Gate (Central Shroud)"],
+          "AetheryteShortcut": "Gridania",
+          "SkipConditions": {"StepIf": {"InTerritory": [148]}}
+        },
         {
           "DataId": 1000685,
           "Position": {

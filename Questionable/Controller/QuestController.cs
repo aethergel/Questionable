@@ -290,7 +290,7 @@ internal sealed class QuestController : MiniTaskController<QuestController>
             return;
         }
 
-        CheckAutoRefreshCondition();
+        //CheckAutoRefreshCondition();
 
         UpdateCurrentTask();
     }
@@ -842,7 +842,7 @@ internal sealed class QuestController : MiniTaskController<QuestController>
                 if (_simulatedQuest != null) { 
                     string repr = task.ToString() ?? "";
                     string[] SimSkip = {"Interact","Action","Emote","Craft","Unmount"};
-                    if (repr.Contains('(') && SimSkip.Contains(repr[..repr.IndexOf('(')])) { 
+                    if (repr.Contains('(') && SimSkip.Contains(repr[..repr.IndexOf('(')]) && step.TargetTerritoryId.Equals(step.TerritoryId)) { 
                         _logger.LogInformation($"Skipping {repr} due to simulation");
                         continue;
                     }

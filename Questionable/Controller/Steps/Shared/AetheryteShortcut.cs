@@ -179,28 +179,42 @@ internal static class AetheryteShortcut
                             return true;
                         }
 
+                        if (Task.Step.Position == null)
+                        {
+                            logger.LogInformation("No step position, teleporting to aetheryte");
+                            return false;
+                        }
+
                         Vector3 pos = clientState.LocalPlayer!.Position;
-                        if (Task.Step.Position != null &&
-                            (pos - Task.Step.Position.Value).Length() < Task.Step.CalculateActualStopDistance())
+                        float distance_target = (pos - Task.Step.Position.Value).Length();
+                        float distance_aetheryte_to_target = aetheryteData.CalculateDistance(Task.Step.Position.Value, territoryType, Task.TargetAetheryte);
+                        if (distance_target < Task.Step.CalculateActualStopDistance())
                         {
                             logger.LogInformation("Skipping aetheryte teleport, we're near the target");
                             return true;
                         }
 
-                        if (aetheryteData.CalculateDistance(pos, territoryType, Task.TargetAetheryte) < 20 ||
-                            (Task.Step.AethernetShortcut != null &&
-                             (aetheryteData.CalculateDistance(pos, territoryType, Task.Step.AethernetShortcut.From) <
-                              20 ||
-                              aetheryteData.CalculateDistance(pos, territoryType, Task.Step.AethernetShortcut.To) <
-                              20)))
+                        float distance_aethernet_from = 99999;
+                        float distance_aethernet_to = 99999;
+                        if (Task.Step.AethernetShortcut != null)
                         {
-                            logger.LogInformation("Skipping aetheryte teleport");
+                            distance_aethernet_from = aetheryteData.CalculateDistance(pos, territoryType, Task.Step.AethernetShortcut.From);
+                            distance_aethernet_to = aetheryteData.CalculateDistance(Task.Step.Position.Value, territoryType, Task.Step.AethernetShortcut.To);
+                        }
+                        // if aetheryte route is further from the destination than just walking there, skip it
+                        logger.LogDebug($"target direct: {distance_target}. target if tp: {30 + distance_aetheryte_to_target}" +
+                                        (Task.Step.AethernetShortcut != null ? $", target if aethernet: {distance_aethernet_from + distance_aethernet_to + 30}" : ""));
+                        if (distance_target < (30 + distance_aetheryte_to_target) ||
+                            (Task.Step.AethernetShortcut != null && distance_target < (distance_aethernet_from + distance_aethernet_to + 30)))
+                        {
+                            logger.LogInformation("Skipping aetheryte teleport, it's a shorter distance to walk there");
                             return true;
                         }
                     }
                 }
             }
 
+            logger.LogInformation("Not skipping aetheryte teleport");
             return false;
         }
 

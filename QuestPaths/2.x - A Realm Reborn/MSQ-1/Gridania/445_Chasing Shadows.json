@@ -1,10 +1,22 @@
 ﻿{
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
   "Author": "liza",
+  "LastChecked": {
+    "Username": "alydev",
+    "Date": "2025-11-10"
+  },
   "QuestSequence": [
     {
       "Sequence": 0,
       "Steps": [
+        {
+          "TerritoryId": 132,
+          "TargetTerritoryId": 148,
+          "InteractionType": "None",
+          "AethernetShortcut": ["[Gridania] Aetheryte Plaza","[Gridania] Blue Badger Gate (Central Shroud)"],
+          "AetheryteShortcut": "Gridania",
+          "SkipConditions": {"StepIf": {"InTerritory": [148]}}
+        },
         {
           "DataId": 1000421,
           "Position": {
@@ -21,6 +33,14 @@
       "Sequence": 1,
       "Steps": [
         {
+          "TerritoryId": 132,
+          "TargetTerritoryId": 148,
+          "InteractionType": "None",
+          "AethernetShortcut": ["[Gridania] Aetheryte Plaza","[Gridania] Blue Badger Gate (Central Shroud)"],
+          "AetheryteShortcut": "Gridania",
+          "SkipConditions": {"StepIf": {"InTerritory": [148]}}
+        },
+        {
           "DataId": 2000953,
           "Position": {
             "X": 323.5979,
@@ -30,11 +50,8 @@
           "TerritoryId": 148,
           "InteractionType": "SinglePlayerDuty",
           "SinglePlayerDutyOptions": {
-            "Enabled": false,
-            "TestedBossModVersion": "0.0.0.292",
-            "Notes": [
-              "AI doesn't automatically target newly spawning adds until after the boss died, and dies (tested on CNJ)"
-            ]
+            "Enabled": true,
+            "TestedBossModVersion": "0.4.5.3"
           }
         }
       ]
@@ -45,6 +62,14 @@
     {
       "Sequence": 3,
       "Steps": [
+        {
+          "TerritoryId": 132,
+          "TargetTerritoryId": 148,
+          "InteractionType": "None",
+          "AethernetShortcut": ["[Gridania] Aetheryte Plaza","[Gridania] Blue Badger Gate (Central Shroud)"],
+          "AetheryteShortcut": "Gridania",
+          "SkipConditions": {"StepIf": {"InTerritory": [148]}}
+        },
         {
           "DataId": 2001194,
           "Position": {
@@ -60,6 +85,14 @@
     {
       "Sequence": 255,
       "Steps": [
+        {
+          "TerritoryId": 132,
+          "TargetTerritoryId": 148,
+          "InteractionType": "None",
+          "AethernetShortcut": ["[Gridania] Aetheryte Plaza","[Gridania] Blue Badger Gate (Central Shroud)"],
+          "AetheryteShortcut": "Gridania",
+          "SkipConditions": {"StepIf": {"InTerritory": [148]}}
+        },
         {
           "DataId": 1000421,
           "Position": {

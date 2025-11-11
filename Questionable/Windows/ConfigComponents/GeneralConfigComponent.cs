@@ -188,6 +188,22 @@ internal sealed class GeneralConfigComponent : ConfigComponent
                 }
             }
 
+            bool useTickets = Configuration.General.UseTickets;
+            if (ImGui.Checkbox("Use aetheryte tickets where available", ref useTickets))
+            {
+                Configuration.General.UseTickets = useTickets;
+                Save();
+            }
+
+            if (ImGui.IsItemHovered())
+            {
+                using (ImRaii.Tooltip())
+                {
+                    ImGui.Text("Ideally this should be set in the in-game Teleport settings, but is provided here for convenience.");
+                }
+            }
+
+            #if false
             ImGui.Spacing();
             bool autoStepRefreshEnabled = Configuration.General.AutoStepRefreshEnabled;
             if (ImGui.Checkbox("Automatically refresh quest steps when stuck (WIP see tooltip)", ref autoStepRefreshEnabled))
@@ -227,6 +243,7 @@ internal sealed class GeneralConfigComponent : ConfigComponent
                     $"Quest steps will refresh automatically after {autoStepRefreshDelay} seconds if no progress is made.");
                 ImGui.Unindent();
             }
+            #endif
         }
     }
 }

@@ -50,6 +50,7 @@ internal sealed class InteractionUiController : IDisposable
     private readonly ILogger<InteractionUiController> _logger;
     private readonly Regex _returnRegex;
     private readonly Regex _purchaseItemRegex;
+    private readonly Regex _ticketRegex;
 
     private bool _isInitialCheck;
 
@@ -93,6 +94,7 @@ internal sealed class InteractionUiController : IDisposable
 
         _returnRegex = _dataManager.GetExcelSheet<Addon>().GetRow(196).GetRegex(addon => addon.Text, pluginLog)!;
         _purchaseItemRegex = _dataManager.GetRegex<Addon>(3406, addon => addon.Text, pluginLog)!;
+        _ticketRegex = _dataManager.GetRegex<Addon>(102686, addon => addon.Text, pluginLog)!;
 
         _questController.AutomationTypeChanged += HandleCurrentDialogueChoices;
         _addonLifecycle.RegisterListener(AddonEvent.PostSetup, "SelectString", SelectStringPostSetup);
@@ -737,6 +739,12 @@ internal sealed class InteractionUiController : IDisposable
         {
             _logger.LogInformation("Automatically confirming return...");
             addonSelectYesno->AtkUnitBase.FireCallbackInt(0);
+            return true;
+        }
+        if (_ticketRegex.IsMatch(actualPrompt))
+        {
+            _logger.LogInformation($"Check UseTickets: {_configuration.General.UseTickets}");
+            addonSelectYesno->AtkUnitBase.FireCallbackInt(_configuration.General.UseTickets ? 0 : 1);
             return true;
         }
 

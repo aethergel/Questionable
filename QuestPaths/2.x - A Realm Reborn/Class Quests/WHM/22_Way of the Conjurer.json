@@ -1,6 +1,10 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
   "Author": "Cacahuetes",
+  "LastChecked": {
+    "Username": "alydev",
+    "Date": "2025-11-10"
+  },
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -67,16 +71,6 @@
           "ComplexCombatData": [
             {
               "DataId": 37,
-              "CompletionQuestVariablesFlags": [
-                {
-                  "Low": 3
-                },
-                null,
-                null,
-                null,
-                null,
-                null
-              ],
               "MinimumKillCount": 3
             }
           ],
@@ -108,16 +102,6 @@
           "ComplexCombatData": [
             {
               "DataId": 49,
-              "CompletionQuestVariablesFlags": [
-                null,
-                {
-                  "High": 3
-                },
-                null,
-                null,
-                null,
-                null
-              ],
               "MinimumKillCount": 3
             }
           ],
@@ -145,16 +129,6 @@
           "ComplexCombatData": [
             {
               "DataId": 47,
-              "CompletionQuestVariablesFlags": [
-                null,
-                {
-                  "Low": 3
-                },
-                null,
-                null,
-                null,
-                null
-              ],
               "MinimumKillCount": 3
             }
           ],
@@ -167,8 +141,7 @@
             null,
             null,
             null
-          ],
-          "$": "35 48  0 0  0 0 -> 35 51  0 0  0 0 // This one automatically went to 0 0 0 0 0 0 so I am not sure about the 51 part"
+          ]
         }
       ]
     },

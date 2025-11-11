@@ -212,6 +212,14 @@ jobs:
         env:
           PUBLISHER_KEY: ${{ secrets.PUBLISHER_KEY }}
 
+      - name: Github Releases To Discord
+        uses: cstuder/apprise-ga@master
+        env:
+          APPRISE_URL: "${{ secrets.APPRISE_URL }}&url=https://github.com/PunishXIV/Questionable/releases/tag/v${{ env.VERSION }}"
+        with:
+          title: Questionable v${{ env.VERSION }}
+          message: ${{ steps.changelog.outputs.changelog }}
+
   update-pluginmaster:
     needs: build-and-release
     runs-on: ubuntu-latest
