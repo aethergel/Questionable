@@ -1,6 +1,6 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-  "Author": "JerryWester",
+  "Author": ["JerryWester", "Oblituarius"],
   "QuestSequence": [
     {
       "Sequence": 0,
