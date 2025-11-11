@@ -1,4 +1,5 @@
 - Auto sync before pull fate mobs by alydev
+- 1368_Fulminating Furnaces: kobold quest by Vicyorus
 
 Thank you for testing Questionable!
 This update has a change to how mob targeting works, particularly with regard to FATEs.
