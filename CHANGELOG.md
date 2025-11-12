@@ -1,2 +1,1 @@
-- Auto sync before pull fate mobs by alydev
-- Revert grd early recovery by alydev
+- Fix unclosed brace in IPC log format string
