@@ -6,14 +6,6 @@
       "Sequence": 0,
       "Steps": [
         {
-          "TerritoryId": 132,
-          "TargetTerritoryId": 148,
-          "InteractionType": "None",
-          "AethernetShortcut": ["[Gridania] Aetheryte Plaza","[Gridania] Blue Badger Gate (Central Shroud)"],
-          "AetheryteShortcut": "Gridania",
-          "SkipConditions": {"StepIf": {"InTerritory": [148]}}
-        },
-        {
           "DataId": 1000421,
           "Position": {
             "X": 98.25281,
@@ -28,14 +20,6 @@
     {
       "Sequence": 255,
       "Steps": [
-        {
-          "TerritoryId": 132,
-          "TargetTerritoryId": 148,
-          "InteractionType": "None",
-          "AethernetShortcut": ["[Gridania] Aetheryte Plaza","[Gridania] Blue Badger Gate (Central Shroud)"],
-          "AetheryteShortcut": "Gridania",
-          "SkipConditions": {"StepIf": {"InTerritory": [148]}}
-        },
         {
           "TerritoryId": 148,
           "InteractionType": "EquipRecommended"

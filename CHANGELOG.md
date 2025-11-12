@@ -1,1 +1,1 @@
-- 1368_Fulminating Furnaces: kobold quest
+- Fix unclosed brace in IPC log format string
