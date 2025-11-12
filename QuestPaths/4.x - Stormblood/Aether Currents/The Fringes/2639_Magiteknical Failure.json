@@ -1,6 +1,6 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-  "Author": "JerryWester",
+  "Author": ["JerryWester", "Oblituarius"],
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -80,6 +80,15 @@
       "Sequence": 255,
       "Steps": [
         {
+          "Position": {
+            "X": -653.0099,
+            "Y": 129.91537,
+            "Z": -510.67374
+          },
+          "TerritoryId": 612,
+          "InteractionType": "WalkTo"
+        },
+        {
           "DataId": 1019517,
           "Position": {
             "X": -653.0099,
@@ -87,6 +96,7 @@
             "Z": -510.67374
           },
           "TerritoryId": 612,
+          "Mount": false,
           "InteractionType": "CompleteQuest",
           "AetheryteShortcut": "Fringes - Castrum Oriens"
         }
