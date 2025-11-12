@@ -1,1 +1,1 @@
-- Fix unclosed brace in IPC log format string
+- 2639: Added dismount on last sequence step (181b376) by Oblituarius
