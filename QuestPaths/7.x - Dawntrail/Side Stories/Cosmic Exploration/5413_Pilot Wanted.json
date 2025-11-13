@@ -1,0 +1,70 @@
+{
+  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+  "Author": "alydev",
+  "LastChecked": {
+    "Username": "alydev",
+    "Date": "2025-11-13"
+  },
+  "QuestSequence": [
+    {
+      "Sequence": 0,
+      "Steps": [
+        {
+          "DataId": 1053337,
+          "Position": {
+            "X": 234.97363,
+            "Y": 59.500084,
+            "Z": -448.78314
+          },
+          "TerritoryId": 1291,
+          "InteractionType": "AcceptQuest"
+        }
+      ]
+    },
+    {
+      "Sequence": 1,
+      "Steps": [
+        {
+          "DataId": 1053337,
+          "Position": {
+            "X": 234.97363,
+            "Y": 59.500084,
+            "Z": -448.78314
+          },
+          "TerritoryId": 1291,
+          "InteractionType": "Interact",
+          "Comment": "Go get some water and a snack, it'll be a minute or two.",
+          "DialogueChoices": [
+            {
+              "Prompt": "TEXT_KINGWZ203_05413_Q2_000_000",
+              "Type": "YesNo",
+              "Yes": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Sequence": 255,
+      "Steps": [
+        {
+          "DataId": 1053337,
+          "Position": {
+            "X": 234.97363,
+            "Y": 59.500084,
+            "Z": -448.78314
+          },
+          "TerritoryId": 1291,
+          "InteractionType": "CompleteQuest",
+          "DialogueChoices": [
+            {
+              "Prompt": "TEXT_KINGWZ203_05413_Q1_000_000",
+              "Type": "List",
+              "Answer": "TEXT_KINGWZ203_05413_A1_000_001"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

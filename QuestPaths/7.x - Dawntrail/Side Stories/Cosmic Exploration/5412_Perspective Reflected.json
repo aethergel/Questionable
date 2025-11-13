@@ -1,0 +1,148 @@
+{
+  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+  "Author": "alydev",
+  "LastChecked": {
+    "Username": "alydev",
+    "Date": "2025-11-13"
+  },
+  "QuestSequence": [
+    {
+      "Sequence": 0,
+      "Steps": [
+        {
+          "DataId": 1053335,
+          "Position": {
+            "X": 383.65747,
+            "Y": 52.5,
+            "Z": -389.79175
+          },
+          "TerritoryId": 1291,
+          "InteractionType": "AcceptQuest"
+        }
+      ]
+    },
+    {
+      "Sequence": 1,
+      "Steps": [
+        {
+          "DataId": 1053336,
+          "Position": {
+            "X": -28.366577,
+            "Y": -10.3759985,
+            "Z": -113.206726
+          },
+          "TerritoryId": 1291,
+          "InteractionType": "Interact"
+        }
+      ]
+    },
+    {
+      "Sequence": 2,
+      "Steps": [
+        {
+          "DataId": 2014925,
+          "Position": {
+            "X": -110.2011,
+            "Y": -8.69405,
+            "Z": -156.9028
+          },
+          "TerritoryId": 1291,
+          "InteractionType": "Interact",
+          "CompletionQuestVariablesFlags": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "High": 2
+            }
+          ]
+        },
+        {
+          "DataId": 2014924,
+          "Position": {
+            "X": -218.8908,
+            "Y": -8.711901,
+            "Z": -128.8406
+          },
+          "TerritoryId": 1291,
+          "InteractionType": "Interact",
+          "CompletionQuestVariablesFlags": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "High": 4
+            }
+          ]
+        },
+        {
+          "DataId": 2014923,
+          "Position": {
+            "X": -168.958,
+            "Y": -9.766992,
+            "Z": -66.88347
+          },
+          "TerritoryId": 1291,
+          "InteractionType": "Interact",
+          "CompletionQuestVariablesFlags": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "High": 8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Sequence": 3,
+      "Steps": [
+        {
+          "DataId": 1053336,
+          "Position": {
+            "X": -28.366577,
+            "Y": -10.3759985,
+            "Z": -113.206726
+          },
+          "TerritoryId": 1291,
+          "InteractionType": "Interact",
+          "DialogueChoices": [
+            {
+              "Prompt": "TEXT_KINGWZ202_05412_Q1_000_000",
+              "Type": "List",
+              "Answer": "TEXT_KINGWZ202_05412_A1_000_001"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Sequence": 255,
+      "Steps": [
+        {
+          "TerritoryId": 1291,
+          "InteractionType": "Action",
+          "Action": "Duty Action I",
+          "$": "Stellar Return"
+        },
+        {
+          "DataId": 1053335,
+          "Position": {
+            "X": 383.65747,
+            "Y": 52.5,
+            "Z": -389.79175
+          },
+          "TerritoryId": 1291,
+          "InteractionType": "CompleteQuest"
+        }
+      ]
+    }
+  ]
+}

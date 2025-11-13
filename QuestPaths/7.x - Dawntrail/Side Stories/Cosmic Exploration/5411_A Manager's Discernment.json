@@ -1,0 +1,69 @@
+{
+  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+  "Author": "alydev",
+  "LastChecked": {
+    "Username": "alydev",
+    "Date": "2025-11-13"
+  },
+  "QuestSequence": [
+    {
+      "Sequence": 0,
+      "Steps": [
+        {
+          "DataId": 1053331,
+          "Position": {
+            "X": 350.5454,
+            "Y": 52.612267,
+            "Z": -438.40698
+          },
+          "TerritoryId": 1291,
+          "InteractionType": "AcceptQuest",
+          "DialogueChoices": [
+            {
+              "Prompt": "TEXT_KINGWZ201_05411_Q1_000_000",
+              "Type": "List",
+              "Answer": "TEXT_KINGWZ201_05411_A1_000_001"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Sequence": 1,
+      "Steps": [
+        {
+          "DataId": 1053332,
+          "Position": {
+            "X": 446.98242,
+            "Y": 59.965904,
+            "Z": -479.81995
+          },
+          "TerritoryId": 1291,
+          "InteractionType": "Interact",
+          "DialogueChoices": [
+            {
+              "Prompt": "TEXT_KINGWZ201_05411_Q3_000_000",
+              "Type": "List",
+              "Answer": "TEXT_KINGWZ201_05411_A3_000_001"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Sequence": 255,
+      "Steps": [
+        {
+          "DataId": 1053331,
+          "Position": {
+            "X": 350.5454,
+            "Y": 52.612267,
+            "Z": -438.40698
+          },
+          "TerritoryId": 1291,
+          "InteractionType": "CompleteQuest"
+        }
+      ]
+    }
+  ]
+}
