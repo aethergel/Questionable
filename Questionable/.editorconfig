@@ -392,7 +392,7 @@ dotnet_diagnostic.CA1846.severity = warning
 dotnet_diagnostic.CA1847.severity = warning
 
 # CA1848: Use the LoggerMessage delegates
-dotnet_diagnostic.CA1848.severity = suggestion
+dotnet_diagnostic.CA1848.severity = none
 
 # CA1849: Call async methods when in an async method
 dotnet_diagnostic.CA1849.severity = warning
@@ -621,7 +621,7 @@ dotnet_diagnostic.CA2252.severity = warning
 dotnet_diagnostic.CA2253.severity = warning
 
 # CA2254: Template should be a static expression
-dotnet_diagnostic.CA2254.severity = warning
+dotnet_diagnostic.CA2254.severity = none
 
 # CA2255: The 'ModuleInitializer' attribute should not be used in libraries
 dotnet_diagnostic.CA2255.severity = warning
@@ -1021,3 +1021,6 @@ resharper_arrange_trailing_comma_in_multiline_lists_highlighting = none
 resharper_redundant_if_else_block_highlighting = none
 resharper_convert_to_primary_constructor_highlighting = hint
 resharper_redundant_using_directive_highlighting = warning
+
+# IDE0320: Make anonymous function static
+dotnet_diagnostic.IDE0320.severity = none
