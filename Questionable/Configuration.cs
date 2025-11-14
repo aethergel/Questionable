@@ -94,6 +94,11 @@ internal sealed class Configuration : IPluginConfiguration
         public ObjectHighlightColor HighlightColor { get; set; } = ObjectHighlightColor.Yellow;
         public bool NeverFly { get; set; }
         public bool AdditionalStatusInformation { get; set; }
+        public bool ShowTracked { get; set; }
+        public bool ShowDailies { get; set; }
+        public bool ShowDirector { get; set; }
+        public bool ShowActionManager { get; set; }
+        public bool ShowNewGamePlus { get; set; }
         public bool DisableAutoDutyBareMode { get; set; }
         public bool SkipAetherCurrents { get; set; }
         public bool SkipClassJobQuests { get; set; }

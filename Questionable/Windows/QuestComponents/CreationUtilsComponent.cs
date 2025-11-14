@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
+using System.Linq;
 using System.Numerics;
 using Dalamud.Bindings.ImGui;
 using Dalamud.Game.ClientState.Conditions;
@@ -11,18 +13,24 @@ using Dalamud.Interface;
 using Dalamud.Interface.Colors;
 using Dalamud.Interface.Components;
 using Dalamud.Plugin.Services;
+using ECommons;
 using FFXIVClientStructs.FFXIV.Client.Game;
-using FFXIVClientStructs.FFXIV.Client.Game.UI;
 using FFXIVClientStructs.FFXIV.Client.Game.Control;
 using FFXIVClientStructs.FFXIV.Client.Game.Object;
+using FFXIVClientStructs.FFXIV.Client.Game.UI;
+using Lumina.Excel;
+using Lumina.Excel.Sheets;
+using Lumina.Text.ReadOnly;
 using Microsoft.Extensions.Logging;
 using Questionable.Controller;
 using Questionable.Data;
 using Questionable.Functions;
 using Questionable.Model;
 using Questionable.Model.Common;
-using ObjectKind = Dalamud.Game.ClientState.Objects.Enums.ObjectKind;
 using Questionable.Model.Questing;
+using Questionable.Windows.Utils;
+using static Questionable.Controller.QuestController;
+using ObjectKind = Dalamud.Game.ClientState.Objects.Enums.ObjectKind;
 
 namespace Questionable.Windows.QuestComponents;
 
@@ -45,6 +53,7 @@ internal sealed class CreationUtilsComponent
     private readonly IChatGui _chatGui;
     private readonly Configuration _configuration;
     private readonly ILogger<CreationUtilsComponent> _logger;
+    private readonly RedoUtil _redoUtil;
 
     public CreationUtilsComponent(
         QuestController questController,
@@ -82,6 +91,8 @@ internal sealed class CreationUtilsComponent
         _chatGui = chatGui;
         _configuration = configuration;
         _logger = logger;
+        _redoUtil = new RedoUtil();
+        //_logger.LogDebug("{" + string.Join(",   ", _redoUtil.Dict.Select(kv => kv.Key + ": " + string.Join(",", kv.Value)).ToArray()) + "}");
     }
 
     public void Draw()
@@ -100,77 +111,107 @@ internal sealed class CreationUtilsComponent
         if (_configuration.Advanced.AdditionalStatusInformation)
         {
             ImGui.Separator();
-            var q = _questFunctions.GetCurrentQuest();
+            QuestReference q = _questFunctions.GetCurrentQuest();
             ImGui.Text($"QST prio: {q.CurrentQuest} → {q.Sequence}");
+            var simQ = _questController.SimulatedQuest?.Quest;
+            if (simQ != null)
+            {
+                ImGui.Text($"Sim: {simQ.Id} → {_questController.SimulatedQuest?.Sequence}");
+            }
             unsafe
             {
-                var questManager = QuestManager.Instance();
-                if (questManager != null)
+                if (_configuration.Advanced.ShowNewGamePlus)
                 {
-                    for (int i = questManager->TrackedQuests.Length - 1; i >= 0; --i)
+                    var qid = (uint)(q.CurrentQuest?.Value ?? 0) + 65536;
+                    if (simQ != null)
+                        qid = (uint)simQ.Id.Value + 65536;
+                    ReadOnlySeString chapter = _redoUtil.GetChapter(qid);
+                    string isSim = simQ != null ? " (sim)" : "";
+                    if (!chapter.IsEmpty)
+                        ImGui.Text($"NG+{isSim}: {chapter}");
+                }
+                if (_configuration.Advanced.ShowDailies || _configuration.Advanced.ShowTracked)
+                {
+                    var questManager = QuestManager.Instance();
+                    if (questManager != null)
                     {
-                        var trackedQuest = questManager->TrackedQuests[i];
-                        switch (trackedQuest.QuestType)
+                        if (_configuration.Advanced.ShowTracked)
                         {
-                            default:
-                                if (trackedQuest.QuestType != 0 || trackedQuest.Index != 0)
-                                    ImGui.Text($"Tracked Quest {i}: {trackedQuest.QuestType}, {trackedQuest.Index}");
-                                break;
-
-                            case 1:
-                                //_questRegistry.TryGetQuest(questManager->NormalQuests[trackedQuest.Index].QuestId,
-                                //    out var quest);
-                                ImGui.Text(
-                                    $"Tracked Quest: {questManager->NormalQuests[trackedQuest.Index].QuestId} → {questManager->NormalQuests[trackedQuest.Index].Sequence}");
-                                break;
-
-                            case 2:
-                                break;
-                        }
-                    }
-                    for (int i = 0; i < questManager->DailyQuests.Length; ++i)
-                    {
-                        var dailyQuest = questManager->DailyQuests[i];
-                        if (dailyQuest.QuestId != 0 && !dailyQuest.IsCompleted)
-                        {
-                            ImGui.Text($"Daily Quest {i}: {dailyQuest.QuestId}, C:{dailyQuest.IsCompleted}");
-                            if (_questRegistry.TryGetQuest(new QuestId(dailyQuest.QuestId), out var quest))
+                            for (int i = questManager->TrackedQuests.Length - 1; i >= 0; --i)
                             {
-                                if (ImGui.IsItemHovered())
-                                    ImGui.SetTooltip($"{quest.Info.Name} ({quest.Info.AlliedSociety})");
-
-                                if (ImGui.IsItemClicked())
+                                var trackedQuest = questManager->TrackedQuests[i];
+                                switch (trackedQuest.QuestType)
                                 {
-                                    _questController.AddQuestPriority(quest.Id);
-                                    if (!_priorityWindow.IsOpen)
-                                        _priorityWindow.ToggleOrUncollapse();
-                                    _priorityWindow.BringToFront();
+                                    default:
+                                        if (trackedQuest.QuestType != 0 || trackedQuest.Index != 0)
+                                            ImGui.Text($"Tracked Quest {i}: {trackedQuest.QuestType}, {trackedQuest.Index}");
+                                        break;
+
+                                    case 1:
+                                        //_questRegistry.TryGetQuest(questManager->NormalQuests[trackedQuest.Index].QuestId,
+                                        //    out var quest);
+                                        ImGui.Text(
+                                            $"Tracked Quest: {questManager->NormalQuests[trackedQuest.Index].QuestId} → {questManager->NormalQuests[trackedQuest.Index].Sequence}");
+                                        break;
+
+                                    case 2:
+                                        break;
+                                }
+                            }
+                        }
+                        if (_configuration.Advanced.ShowDailies)
+                        {
+                            for (int i = 0; i < questManager->DailyQuests.Length; ++i)
+                            {
+                                var dailyQuest = questManager->DailyQuests[i];
+                                if (dailyQuest.QuestId != 0 && !dailyQuest.IsCompleted)
+                                {
+                                    ImGui.Text($"Daily Quest {i}: {dailyQuest.QuestId}, C:{dailyQuest.IsCompleted}");
+                                    if (_questRegistry.TryGetQuest(new QuestId(dailyQuest.QuestId), out var quest))
+                                    {
+                                        if (ImGui.IsItemHovered())
+                                            ImGui.SetTooltip($"{quest.Info.Name} ({quest.Info.AlliedSociety})");
+
+                                        if (ImGui.IsItemClicked())
+                                        {
+                                            _questController.AddQuestPriority(quest.Id);
+                                            if (!_priorityWindow.IsOpen)
+                                                _priorityWindow.ToggleOrUncollapse();
+                                            _priorityWindow.BringToFront();
+                                        }
+                                    }
                                 }
                             }
                         }
                     }
                 }
-                var director = UIState.Instance()->DirectorTodo.Director;
-                if (director != null)
+                if (_configuration.Advanced.ShowDirector)
                 {
-                    ImGui.Separator();
-                    ImGui.Text($"Director: {director->ContentId}");
-                    ImGui.Text($"Seq: {director->Sequence}");
-                    ImGui.Text($"Ico: {director->IconId}");
-                    if (director->EventHandlerInfo != null)
+                    var director = UIState.Instance()->DirectorTodo.Director;
+                    if (director != null)
                     {
-                        ImGui.Text($"  EHI CI: {director->Info.EventId.ContentId}");
-                        ImGui.Text($"  EHI EI: {director->Info.EventId.Id}");
-                        ImGui.Text($"  EHI EEI: {director->Info.EventId.EntryId}");
-                        ImGui.Text($"  EHI F: {director->Info.Flags}");
+                        ImGui.Separator();
+                        ImGui.Text($"Director: {director->ContentId}");
+                        ImGui.Text($"Seq: {director->Sequence}");
+                        ImGui.Text($"Ico: {director->IconId}");
+                        if (director->EventHandlerInfo != null)
+                        {
+                            ImGui.Text($"  EHI CI: {director->Info.EventId.ContentId}");
+                            ImGui.Text($"  EHI EI: {director->Info.EventId.Id}");
+                            ImGui.Text($"  EHI EEI: {director->Info.EventId.EntryId}");
+                            ImGui.Text($"  EHI F: {director->Info.Flags}");
+                        }
                     }
                 }
-                ImGui.Separator();
-                var actionManager = ActionManager.Instance();
-                ImGui.Text(
-                    $"A1: {actionManager->CastActionId} ({actionManager->LastUsedActionSequence} → {actionManager->LastHandledActionSequence})");
-                ImGui.Text($"A2: {actionManager->CastTimeElapsed} / {actionManager->CastTimeTotal}");
-                ImGui.Text($"PC: {_questController.TaskQueue.CurrentTaskExecutor?.ProgressContext}");
+                if (_configuration.Advanced.ShowActionManager)
+                {
+                    ImGui.Separator();
+                    var actionManager = ActionManager.Instance();
+                    ImGui.Text(
+                        $"A1: {actionManager->CastActionId} ({actionManager->LastUsedActionSequence} → {actionManager->LastHandledActionSequence})");
+                    ImGui.Text($"A2: {actionManager->CastTimeElapsed} / {actionManager->CastTimeTotal}");
+                    ImGui.Text($"PC: {_questController.TaskQueue.CurrentTaskExecutor?.ProgressContext}");
+                }
             }
         }
 

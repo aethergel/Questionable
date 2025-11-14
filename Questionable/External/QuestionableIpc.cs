@@ -4,6 +4,7 @@ using System.Linq;
 using System.Numerics;
 using Dalamud.Plugin;
 using Dalamud.Plugin.Ipc;
+using Dalamud.Utility;
 using ECommons.ExcelServices;
 using JetBrains.Annotations;
 using LLib.GameData;
@@ -14,6 +15,7 @@ using Questionable.Functions;
 using Questionable.Model.Questing;
 using Questionable.Windows;
 using Questionable.Windows.QuestComponents;
+using Questionable.Windows.Utils;
 
 namespace Questionable.External;
 
@@ -38,11 +40,13 @@ internal sealed class QuestionableIpc : IDisposable
     private const string IpcStartGathering = "Questionable.StartGathering";
     private const string IpcStartGatheringComplex = "Questionable.StartGatheringComplex";
     private const string IpcStop = "Questionable.Stop";
+    private const string IpcRedoLookup = "Questionable.RedoLookup";
 
     private readonly QuestController _questController;
     private readonly QuestRegistry _questRegistry;
     private readonly QuestFunctions _questFunctions;
     private readonly ILogger<QuestionableIpc> _logger;
+    private readonly RedoUtil _redoUtil;
 
     private readonly ICallGateProvider<bool> _isRunning;
     private readonly ICallGateProvider<string?> _getCurrentQuestId;
@@ -63,6 +67,7 @@ internal sealed class QuestionableIpc : IDisposable
     private readonly ICallGateProvider<uint, uint, byte, int, bool> _startGathering;
     private readonly ICallGateProvider<uint, uint, byte, int, ushort, bool> _startGatheringComplex;
     private readonly ICallGateProvider<string, bool> _stop;
+    private readonly ICallGateProvider<uint, string> _redoLookup;
 
     public QuestionableIpc(
         QuestController questController,
@@ -137,6 +142,9 @@ internal sealed class QuestionableIpc : IDisposable
 
         _stop = pluginInterface.GetIpcProvider<string, bool>(IpcStop);
         _stop.RegisterFunc(Stop);
+
+        _redoLookup = pluginInterface.GetIpcProvider<uint, string>(IpcRedoLookup);
+        _redoLookup.RegisterFunc(RedoLookup);
     }
 
     private bool StartQuest(string questId, bool single)
@@ -291,24 +299,37 @@ internal sealed class QuestionableIpc : IDisposable
         return true;
     }
 
+    private string RedoLookup(uint questId)
+    {
+        if (questId >= 131072)
+            return "";
+        if (questId >= 65536)
+            questId -= 65536;
+        return _redoUtil.GetChapter(questId).ToString();
+    }
+
     public void Dispose()
     {
-        _exportQuestPriority.UnregisterFunc();
-        _insertQuestPriority.UnregisterFunc();
-        _clearQuestPriority.UnregisterFunc();
-        _addQuestPriority.UnregisterFunc();
-        _importQuestPriority.UnregisterFunc();
+        _isRunning.UnregisterFunc();
+        _getCurrentQuestId.UnregisterFunc();
+        _getCurrentStepData.UnregisterFunc();
+        _getCurrentlyActiveEventQuests.UnregisterFunc();
+        _startQuest.UnregisterFunc();
+        _startSingleQuest.UnregisterFunc();
         _isQuestLocked.UnregisterFunc();
         _isQuestComplete.UnregisterFunc();
         _isReadyToAcceptQuest.UnregisterFunc();
         _isQuestAccepted.UnregisterFunc();
         _isQuestUnobtainable.UnregisterFunc();
-        _startSingleQuest.UnregisterFunc();
-        _startQuest.UnregisterFunc();
-        _getCurrentlyActiveEventQuests.UnregisterFunc();
-        _getCurrentStepData.UnregisterFunc();
-        _getCurrentQuestId.UnregisterFunc();
-        _isRunning.UnregisterFunc();
+        _importQuestPriority.UnregisterFunc();
+        _addQuestPriority.UnregisterFunc();
+        _clearQuestPriority.UnregisterFunc();
+        _insertQuestPriority.UnregisterFunc();
+        _exportQuestPriority.UnregisterFunc();
+        _startGathering.UnregisterFunc();
+        _startGatheringComplex.UnregisterFunc();
+        _stop.UnregisterFunc();
+        _redoLookup.UnregisterFunc();
     }
 
     [UsedImplicitly(ImplicitUseKindFlags.Access, ImplicitUseTargetFlags.WithMembers)]
