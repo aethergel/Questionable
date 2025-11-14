@@ -1,3 +1,1 @@
-- Additional Status Info is now customisable
-- New Game+ chapter shown in Additional Status Info
-- IPC: .RedoLookup(questId) > string chapter name
+- Add support for Great Hunt normal quest
