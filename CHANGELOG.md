@@ -1,2 +1,3 @@
-- Cosmic quests 5410-5414
-- Amaljaa 1250,1251 drafts
+- Additional Status Info is now customisable
+- New Game+ chapter shown in Additional Status Info
+- IPC: .RedoLookup(questId) > string chapter name
