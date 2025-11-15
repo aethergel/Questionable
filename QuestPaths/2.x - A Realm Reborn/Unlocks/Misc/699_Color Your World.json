@@ -1,0 +1,91 @@
+{
+  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+  "Author": "Kiarra",
+  "QuestSequence": [
+    {
+      "Sequence": 0,
+      "Steps": [
+        {
+          "DataId": 1004990,
+          "Position": {
+            "X": -441.6419,
+            "Y": 23.669865,
+            "Z": -358.9685
+          },
+          "TerritoryId": 140,
+          "InteractionType": "AcceptQuest",
+          "AetheryteShortcut": "Western Thanalan - Horizon",
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": -441.6419,
+                  "Y": 23.669865,
+                  "Z": -358.9685
+                },
+                "TerritoryId": 140,
+                "MaximumDistance": 200
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Sequence": 1,
+      "Steps": [
+        {
+          "DataId": 1004096,
+          "Position": {
+            "X": -444.75476,
+            "Y": 25,
+            "Z": -324.26947
+          },
+          "TerritoryId": 140,
+          "Mount": false,
+          "InteractionType": "Interact"
+        }
+      ]
+    },
+    {
+      "Sequence": 255,
+      "Steps": [
+        {
+          "DataId": 1004038,
+          "Position": {
+              "X": -466.42255,
+              "Y": 23.47034,
+              "Z": -379.87335
+          },
+          "TerritoryId": 140,
+          "InteractionType": "PurchaseItem",
+          "PurchaseMenu": {
+            "ExcelSheet": "GilShop",
+            "Key": 262807
+          },
+          "ItemId": 4745,
+          "ItemCount": 1,
+          "SkipConditions": {
+            "StepIf": {
+              "Item": {
+                "NotInInventory": false
+              }
+            }
+          }
+
+        },
+        {
+          "DataId": 1004990,
+          "Position": {
+            "X": -441.6419,
+            "Y": 23.669865,
+            "Z": -358.9685
+          },
+          "TerritoryId": 140,
+          "Mount": false,
+          "InteractionType": "CompleteQuest"
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,1 @@
-- Disable incompatible BossMod config, clear Highlight during cutscenes/occupied
+- 699 Color Your World by Kiarra
