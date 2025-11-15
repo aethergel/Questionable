@@ -1,2 +1,1 @@
-- Add missing FL unlock quests
-- Remove broken Waking Sands TargetTerritoryId, fixes teleport loop bug
+- 3651 The Illuminated Land: fix likely character death to avoidable fall damage/mob encounter
