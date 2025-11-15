@@ -1,1 +1,2 @@
-- Add support for Great Hunt normal quest
+- Add missing FL unlock quests
+- Remove broken Waking Sands TargetTerritoryId, fixes teleport loop bug
