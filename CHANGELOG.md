@@ -1,1 +1,1 @@
-- 3651 The Illuminated Land: fix likely character death to avoidable fall damage/mob encounter
+- Disable incompatible BossMod config, clear Highlight during cutscenes/occupied
