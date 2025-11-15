@@ -58,7 +58,8 @@
             "Z": -300.7331
           },
           "TerritoryId": 818,
-          "InteractionType": "WalkTo"
+          "InteractionType": "WalkTo",
+          "StopDistance": 1
         },
         {
           "Position": {
@@ -68,6 +69,7 @@
           },
           "TerritoryId": 818,
           "InteractionType": "WalkTo",
+          "StopDistance": 1,
           "DisableNavmesh": true
         },
         {
@@ -98,9 +100,30 @@
         },
         {
           "Position": {
-            "X": 318.75064,
-            "Y": 235.3896,
-            "Z": -277.77203
+            "X": 291.3423,
+            "Y": 268.31516,
+            "Z": -346.18488
+          },
+          "TerritoryId": 818,
+          "InteractionType": "WalkTo"
+        },
+        {
+          "Position": {
+            "X": 277.46622,
+            "Y": 262.43375,
+            "Z": -328.6956
+          },
+          "TerritoryId": 818,
+          "InteractionType": "WalkTo",
+          "StopDistance": 1,
+          "DisableNavmesh": true,
+          "Mount": false
+        },
+        {
+          "Position": {
+            "X": 286.40463,
+            "Y": 235.09933,
+            "Z": -321.0536
           },
           "TerritoryId": 818,
           "InteractionType": "WalkTo",

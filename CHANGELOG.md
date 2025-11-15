@@ -1,1 +1,1 @@
-- Add support for Great Hunt normal quest
+- Disable incompatible BossMod config, clear Highlight during cutscenes/occupied
