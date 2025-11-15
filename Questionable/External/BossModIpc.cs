@@ -76,6 +76,7 @@ internal sealed class BossModIpc
     {
         _commandManager.ProcessCommand("/vbmai on");
         _commandManager.ProcessCommand("/vbm cfg ZoneModuleConfig EnableQuestBattles true");
+        _commandManager.ProcessCommand("/vbm cfg Autorotation ClearPresetOnCombatEnd false");
         SetPreset(passive ? EPreset.Overworld : EPreset.QuestBattle);
     }
 

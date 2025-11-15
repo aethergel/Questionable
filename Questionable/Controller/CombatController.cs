@@ -309,10 +309,10 @@ internal sealed class CombatController : IDisposable
 
             var complexCombatData = _currentFight.Data.ComplexCombatDatas;
             var gameObjectStruct = (GameObject*)gameObject.Address;
-            bool fateMob = false;
-            if (gameObjectStruct->FateId != 0 && gameObject.TargetObjectId != _clientState.LocalPlayer?.GameObjectId)
-                //return (null, "FATE mob");
-                fateMob = true;
+            if (gameObjectStruct->FateId != 0 &&
+                gameObject.TargetObjectId != _clientState.LocalPlayer?.GameObjectId &&
+                _currentFight.Data.SpawnType != EEnemySpawnType.FateEnemies)
+                return (null, "FATE mob");
 
             var ownPosition = _clientState.LocalPlayer?.Position ?? Vector3.Zero;
             bool expectQuestMarker;
