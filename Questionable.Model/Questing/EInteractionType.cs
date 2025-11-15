@@ -32,6 +32,8 @@ public enum EInteractionType
     Craft,
     Gather,
     Snipe,
+    CreateGearset,
+    UpdateGearset,
     SwitchClass,
     UnlockTaxiStand,
 

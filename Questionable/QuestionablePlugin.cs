@@ -159,6 +159,10 @@ public sealed class QuestionablePlugin : IDalamudPlugin
         serviceCollection.AddTaskExecutor<DoGatherCollectable.Task, DoGatherCollectable.GatherCollectableExecutor>();
         serviceCollection.AddTaskFactoryAndExecutor<SwitchClassJob.Task, SwitchClassJob.Factory,
             SwitchClassJob.SwitchClassJobExecutor>();
+        serviceCollection.AddTaskFactoryAndExecutor<CreateGearset.Task, CreateGearset.Factory,
+            CreateGearset.CreateGearsetExecutor>();
+        serviceCollection.AddTaskFactoryAndExecutor<UpdateGearset.Task, UpdateGearset.Factory,
+            UpdateGearset.UpdateGearsetExecutor>();
         serviceCollection.AddTaskExecutor<Mount.MountTask, Mount.MountExecutor>();
         serviceCollection.AddTaskExecutor<Mount.UnmountTask, Mount.UnmountExecutor>();
 
