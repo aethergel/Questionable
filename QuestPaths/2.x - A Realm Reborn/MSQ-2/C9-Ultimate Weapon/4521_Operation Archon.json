@@ -63,6 +63,7 @@
           },
           "TerritoryId": 212,
           "InteractionType": "Interact",
+          "TargetTerritoryId": 212,
           "SkipConditions": {
             "StepIf": {
               "ExtraCondition": "WakingSandsSolar"
@@ -93,6 +94,7 @@
           },
           "TerritoryId": 212,
           "InteractionType": "Interact",
+          "TargetTerritoryId": 212,
           "SkipConditions": {
             "StepIf": {
               "InTerritory": [

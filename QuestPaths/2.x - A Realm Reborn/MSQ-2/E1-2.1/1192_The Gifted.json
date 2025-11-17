@@ -28,7 +28,8 @@
             "Z": -0.015319824
           },
           "TerritoryId": 212,
-          "InteractionType": "Interact"
+          "InteractionType": "Interact",
+          "TargetTerritoryId": 212
         },
         {
           "DataId": 1007478,
@@ -53,7 +54,8 @@
             "Z": -0.015319824
           },
           "TerritoryId": 212,
-          "InteractionType": "Interact"
+          "InteractionType": "Interact",
+          "TargetTerritoryId": 212
         },
         {
           "DataId": 2001716,
@@ -210,7 +212,8 @@
             "Z": -0.015319824
           },
           "TerritoryId": 212,
-          "InteractionType": "Interact"
+          "InteractionType": "Interact",
+          "TargetTerritoryId": 212
         },
         {
           "DataId": 1006693,
