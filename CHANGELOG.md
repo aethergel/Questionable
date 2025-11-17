@@ -1,1 +1,1 @@
-- 699 Color Your World by Kiarra
+- Revert "Remove superfluous/broken TargetTerritoryId from waking sands interacts"
