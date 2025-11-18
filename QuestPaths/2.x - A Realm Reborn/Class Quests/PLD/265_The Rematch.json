@@ -181,7 +181,10 @@
           },
           "TerritoryId": 145,
           "InteractionType": "SinglePlayerDuty",
-          "AetheryteShortcut": "Eastern Thanalan - Camp Drybone"
+          "AetheryteShortcut": "Eastern Thanalan - Camp Drybone",
+          "SinglePlayerDutyOptions": {
+            "Enabled": true
+          }
         }
       ]
     },
