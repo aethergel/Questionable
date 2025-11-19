@@ -32,6 +32,11 @@
           "PickUpQuestId": 802,
           "AetheryteShortcut": "Gridania",
           "SkipConditions": {
+            "StepIf": {
+              "QuestsCompleted": [
+                802
+              ]
+            },
             "AetheryteShortcutIf": {
               "InSameTerritory": true
             }
@@ -46,6 +51,7 @@
           },
           "TerritoryId": 132,
           "InteractionType": "Interact",
+          "AetheryteShortcut": "Gridania",
           "TargetTerritoryId": 148
         },
         {

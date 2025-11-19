@@ -13,7 +13,8 @@
             "Z": 21.683044
           },
           "TerritoryId": 132,
-          "InteractionType": "AcceptQuest"
+          "InteractionType": "AcceptQuest",
+          "AetheryteShortcut": "Gridania"
         }
       ]
     },

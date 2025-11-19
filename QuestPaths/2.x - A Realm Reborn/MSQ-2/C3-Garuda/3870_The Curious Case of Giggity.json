@@ -47,6 +47,24 @@
       "Sequence": 2,
       "Steps": [
         {
+          "DataId": 1000171,
+          "Position": {
+            "X": -114.366455,
+            "Y": -7.351947,
+            "Z": 94.52954
+          },
+          "TerritoryId": 132,
+          "InteractionType": "Interact",
+          "TargetTerritoryId": 148,
+          "SkipConditions": {
+            "StepIf": {
+              "NotInTerritory": [
+                132
+              ]
+            }
+          }
+        },
+        {
           "DataId": 2002195,
           "Position": {
             "X": -528.0995,

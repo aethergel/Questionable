@@ -37,6 +37,7 @@ internal sealed unsafe class QuestFunctions
     private readonly IClientState _clientState;
     private readonly IGameGui _gameGui;
     private readonly IAetheryteList _aetheryteList;
+    internal static readonly int[] questsThatUseWhiteWolfGate = new[] { 439, 1080, 3870, 33 };
 
     public QuestFunctions(
         QuestRegistry questRegistry,
@@ -106,12 +107,12 @@ internal sealed unsafe class QuestFunctions
             if (chocoboQuest != 0 && !QuestManager.IsQuestComplete(chocoboQuest))
                 return new(new QuestId(chocoboQuest), QuestManager.GetQuestSequence(chocoboQuest), questState);
         }
-        else if (currentQuest.Value == 801)
+        else if (questsThatUseWhiteWolfGate.Contains(currentQuest.Value) &&
+                 !_aetheryteFunctions.IsAetheryteUnlocked(EAetheryteLocation.GridaniaWhiteWolfGate))
         {
-            // skeletons in her closet, finish 'broadening horizons' to unlock the white wolf gate
+            // quests that use white wolf gate, finish 'broadening horizons' to unlock it
             QuestId broadeningHorizons = new QuestId(802);
-            if (IsQuestAccepted(broadeningHorizons))
-                return new(broadeningHorizons, QuestManager.GetQuestSequence(broadeningHorizons.Value), questState);
+            return new(broadeningHorizons, QuestManager.GetQuestSequence(broadeningHorizons.Value), questState);
         }
 
         return internalQuest;
@@ -453,7 +454,8 @@ internal sealed unsafe class QuestFunctions
                         return (EAetheryteLocation?)null;
                     })
                     .FirstOrDefault(y => y != null);
-                if (firstLockedAetheryte != null)
+                // if quest requires white wolf gate, and unlock quest is available, don't report locked
+                if (firstLockedAetheryte != null && (firstLockedAetheryte == EAetheryteLocation.GridaniaWhiteWolfGate && !IsReadyToAcceptQuest(new QuestId(802))))
                     return new PriorityQuestInfo(x, $"Aetheryte locked: {firstLockedAetheryte}");
 
                 return new PriorityQuestInfo(x);
