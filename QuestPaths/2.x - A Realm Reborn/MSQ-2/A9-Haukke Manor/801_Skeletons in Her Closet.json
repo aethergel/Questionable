@@ -104,9 +104,9 @@
           "InteractionType": "Duty",
           "DutyOptions": {
             "ContentFinderConditionId": 6,
-            "Enabled": false,
+            "Enabled": true,
             "Notes": [
-              "(after boss 2) Will not pick up the bloody parchment, and instead run off to open a random unrelated chest that it can't reach"
+              "(outdated) (after boss 2) Will not pick up the bloody parchment, and instead run off to open a random unrelated chest that it can't reach"
             ]
           }
         }

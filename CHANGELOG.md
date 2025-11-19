@@ -1,1 +1,1 @@
-- Logic fixes for 801 haukke manor msq by alydev
+- Enable haukke manor and brayflox for msq by alydev
