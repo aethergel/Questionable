@@ -1,1 +1,1 @@
-- Enable haukke manor and brayflox for msq by alydev
+- Enable stone vigil for msq by alydev
