@@ -1,6 +1,7 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-  "Author": "JerryWester",
+  "Author": "alydev",
+  "$": "On a preferred world, this is probably where a character would have done their lvl 50 job quest, so open the gear coffer and equip",
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -26,6 +27,130 @@
     {
       "Sequence": 255,
       "Steps": [
+        {
+          "TerritoryId": 145,
+          "InteractionType": "UseItem",
+          "ItemId": 20642,
+          "SkipConditions": {
+            "StepIf": {
+              "Item": {
+                "NotInInventory": true
+              }
+            }
+          }
+        },
+        {
+          "TerritoryId": 145,
+          "InteractionType": "UseItem",
+          "ItemId": 20643,
+          "SkipConditions": {
+            "StepIf": {
+              "Item": {
+                "NotInInventory": true
+              }
+            }
+          }
+        },
+        {
+          "TerritoryId": 145,
+          "InteractionType": "UseItem",
+          "ItemId": 20644,
+          "SkipConditions": {
+            "StepIf": {
+              "Item": {
+                "NotInInventory": true
+              }
+            }
+          }
+        },
+        {
+          "TerritoryId": 145,
+          "InteractionType": "UseItem",
+          "ItemId": 20645,
+          "SkipConditions": {
+            "StepIf": {
+              "Item": {
+                "NotInInventory": true
+              }
+            }
+          }
+        },
+        {
+          "TerritoryId": 145,
+          "InteractionType": "UseItem",
+          "ItemId": 20646,
+          "SkipConditions": {
+            "StepIf": {
+              "Item": {
+                "NotInInventory": true
+              }
+            }
+          }
+        },
+        {
+          "TerritoryId": 145,
+          "InteractionType": "UseItem",
+          "ItemId": 20647,
+          "SkipConditions": {
+            "StepIf": {
+              "Item": {
+                "NotInInventory": true
+              }
+            }
+          }
+        },
+        {
+          "TerritoryId": 145,
+          "InteractionType": "UseItem",
+          "ItemId": 20648,
+          "SkipConditions": {
+            "StepIf": {
+              "Item": {
+                "NotInInventory": true
+              }
+            }
+          }
+        },
+        {
+          "TerritoryId": 145,
+          "InteractionType": "UseItem",
+          "ItemId": 20649,
+          "SkipConditions": {
+            "StepIf": {
+              "Item": {
+                "NotInInventory": true
+              }
+            }
+          }
+        },
+        {
+          "TerritoryId": 145,
+          "InteractionType": "UseItem",
+          "ItemId": 20650,
+          "SkipConditions": {
+            "StepIf": {
+              "Item": {
+                "NotInInventory": true
+              }
+            }
+          }
+        },
+        {
+          "TerritoryId": 145,
+          "InteractionType": "UseItem",
+          "ItemId": 20651,
+          "SkipConditions": {
+            "StepIf": {
+              "Item": {
+                "NotInInventory": true
+              }
+            }
+          }
+        },
+        {
+          "TerritoryId": 145,
+          "InteractionType": "EquipRecommended"
+        },
         {
           "DataId": 1006495,
           "Position": {

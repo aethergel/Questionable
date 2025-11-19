@@ -1,1 +1,1 @@
-- Enable stone vigil for msq by alydev
+- 955 open lv50 job gear coffer if available by alydev
