@@ -18,16 +18,9 @@
           "TerritoryId": 132,
           "InteractionType": "AcceptQuest",
           "AetheryteShortcut": "Gridania",
-          "AethernetShortcut":[
-            "[Gridania] Aetheryte Plaza",
-            "[Gridania] Lancers' Guild"
-          ],
-          "SkipConditions":{
-            "AetheryteShortcutIf":{
-              "InTerritory":[
-                132,
-                133
-              ]
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "InSameTerritory": true
             }
           }
         }

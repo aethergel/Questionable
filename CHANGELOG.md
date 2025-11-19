@@ -1,1 +1,2 @@
+- 3856 We Come in Peace bug fix by alydev
 - CT/GS/IS quest fixes by Kiarra
