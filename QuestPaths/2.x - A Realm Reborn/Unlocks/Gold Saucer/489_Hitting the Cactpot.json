@@ -1,0 +1,38 @@
+{
+  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+  "Author": "Kiarra",
+  "QuestSequence": [
+    {
+      "Sequence": 0,
+      "Steps": [
+        {
+          "DataId": 1010446,
+          "Position": {
+              "X": 122.85034,
+              "Y": 13.001344,
+              "Z": -9.384338
+          },
+          "TerritoryId": 144,
+          "InteractionType": "AcceptQuest",
+          "AetheryteShortcut": "Gold Saucer",
+          "AethernetShortcut": [
+            "[Gold Saucer] Aetheryte Plaza",
+            "[Gold Saucer] Cactpot Board"
+          ],
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "InSameTerritory": true
+            }
+          },
+          "DialogueChoices": [
+            {
+              "Type": "YesNo",
+              "Yes": true,
+              "Prompt": "TEXT_SUBGSC104_00489_Q1_000_000"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

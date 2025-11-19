@@ -1,0 +1,38 @@
+{
+  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+  "Author": "Kiarra",
+  "QuestSequence": [
+    {
+      "Sequence": 0,
+      "Steps": [
+      {
+        "Position": {
+          "X": -45.694633,
+          "Y": 1.5999892,
+          "Z": 21.212555
+        },
+      "TerritoryId": 144,
+      "InteractionType": "WalkTo",
+      "AetheryteShortcut": "Gold Saucer",
+      "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "InSameTerritory": true
+            }
+        }
+    },
+        {
+          "DataId": 1010445,
+          "TerritoryId": 144,
+          "InteractionType": "AcceptQuest",        
+          "DialogueChoices": [
+            {
+              "Type": "YesNo",
+              "Yes": true,
+              "Prompt": "TEXT_SUBGSC103_00488_Q1_000_000"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
