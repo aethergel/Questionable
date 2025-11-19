@@ -455,8 +455,13 @@ internal sealed unsafe class QuestFunctions
                     })
                     .FirstOrDefault(y => y != null);
                 // if quest requires white wolf gate, and unlock quest is available, don't report locked
-                if (firstLockedAetheryte != null && (firstLockedAetheryte == EAetheryteLocation.GridaniaWhiteWolfGate && !IsReadyToAcceptQuest(new QuestId(802))))
+                if (firstLockedAetheryte != null) 
+                {
+                    QuestId whiteWolfGateQuest = new QuestId(802);
+                    if (firstLockedAetheryte == EAetheryteLocation.GridaniaWhiteWolfGate && IsReadyToAcceptQuest(whiteWolfGateQuest))
+                        return new PriorityQuestInfo(x);
                     return new PriorityQuestInfo(x, $"Aetheryte locked: {firstLockedAetheryte}");
+                    }
 
                 return new PriorityQuestInfo(x);
             })

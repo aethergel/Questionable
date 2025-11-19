@@ -1,1 +1,2 @@
+- Bug fix for below feature by alydev
 - Unlock White Wolf Gate automatically when required by quest by alydev
