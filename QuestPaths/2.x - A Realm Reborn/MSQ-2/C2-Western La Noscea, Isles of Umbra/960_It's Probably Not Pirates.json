@@ -48,28 +48,6 @@
           }
         },
         {
-          "Position": {
-            "X": 318.4823,
-            "Y": -15.19004,
-            "Z": 253.61394
-          },
-          "TerritoryId": 138,
-          "InteractionType": "WalkTo",
-          "DisableNavmesh": true,
-          "SkipConditions": {
-            "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                32
-              ]
-            }
-          }
-        },
-        {
           "DataId": 1006500,
           "Position": {
             "X": 321.1565,
@@ -87,6 +65,22 @@
             null,
             32
           ]
+        },
+                {
+          "Position": {
+            "X": 317.62387,
+            "Y": -15.190073,
+            "Z": 252.21808
+          },
+          "TerritoryId": 138,
+          "InteractionType": "Jump",
+          "JumpDestination": {
+          "Position": {
+              "X": 313.6114,
+              "Y": -24.333132,
+              "Z": 252.43187
+            }
+          }
         },
         {
           "DataId": 1006499,
