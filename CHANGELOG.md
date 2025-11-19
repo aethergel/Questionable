@@ -1,2 +1,1 @@
-- Bug fix for below feature by alydev
-- Unlock White Wolf Gate automatically when required by quest by alydev
+- Logic fixes for 801 haukke manor msq by alydev

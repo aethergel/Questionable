@@ -32,13 +32,10 @@
           "PickUpQuestId": 802,
           "AetheryteShortcut": "Gridania",
           "SkipConditions": {
-            "StepIf": {
+            "AetheryteShortcutIf": {
               "QuestsCompleted": [
                 802
               ]
-            },
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
             }
           }
         },
@@ -51,8 +48,36 @@
           },
           "TerritoryId": 132,
           "InteractionType": "Interact",
+          "TargetTerritoryId": 148,
           "AetheryteShortcut": "Gridania",
-          "TargetTerritoryId": 148
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "InTerritory": [
+                133
+              ]
+            },
+            "StepIf": {
+              "InTerritory": [
+                133,
+                148
+              ]
+            }
+          }
+        },
+        {
+          "TerritoryId": 133,
+          "InteractionType": "None",
+          "AethernetShortcut": [
+            "[Gridania] Lancers' Guild",
+            "[Gridania] White Wolf Gate (Central Shroud)"
+          ],
+          "SkipConditions": {
+            "StepIf": {
+              "NotInTerritory": [
+                133
+              ]
+            }
+          }
         },
         {
           "DataId": 2001999,
@@ -62,7 +87,12 @@
             "Z": 69.41321
           },
           "TerritoryId": 148,
-          "InteractionType": "Interact"
+          "InteractionType": "Interact",
+          "SkipConditions": {
+            "AethernetShortcutIf": {
+              "InSameTerritory": true
+            }
+          }
         }
       ]
     },
