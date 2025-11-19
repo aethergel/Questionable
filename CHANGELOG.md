@@ -1,2 +1,3 @@
+- LNC 438 fix bug no aetheryteshortcut by alydev
 - 3856 We Come in Peace bug fix by alydev
 - CT/GS/IS quest fixes by Kiarra

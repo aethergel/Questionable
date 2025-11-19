@@ -112,6 +112,7 @@
           "TerritoryId": 153,
           "InteractionType": "WalkTo",
           "Fly": true,
+          "AetheryteShortcut": "South Shroud - Quarrymill",
           "SkipConditions": {
             "StepIf": {
               "Flying": "Locked"
@@ -127,6 +128,7 @@
             "Z": -81.34589
           },
           "TerritoryId": 153,
+          "AetheryteShortcut": "South Shroud - Quarrymill",
           "InteractionType": "Interact"
         }
       ]
