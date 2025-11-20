@@ -34,7 +34,12 @@
           "AethernetShortcut": [
             "[Ul'dah] Aetheryte Plaza",
             "[Ul'dah] The Chamber of Rule"
-          ]
+          ],
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "Never": true
+            }
+          }
         }
       ]
     },
