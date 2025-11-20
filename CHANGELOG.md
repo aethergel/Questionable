@@ -1,1 +1,2 @@
-- 955 open lv50 job gear coffer if available by alydev
+- 1162 aetheryte shortcut
+- 960 fix pathing bug by alydev
