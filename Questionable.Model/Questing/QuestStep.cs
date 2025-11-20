@@ -39,6 +39,7 @@ public sealed class QuestStep
     public bool? IgnoreDistanceToObject { get; set; }
     public bool? RestartNavigationIfCancelled { get; set; }
     public bool? AllowHighQuality { get; set; }
+    public EItemQuality ItemQuality { get; set; } = EItemQuality.Any;
     public string? Comment { get; set; }
 
     /// <summary>

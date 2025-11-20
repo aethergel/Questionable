@@ -277,11 +277,9 @@
                 "Item": {
                   "type": "object",
                   "properties": {
-                    "InInventory": {
-                      "type": "boolean"
-                    },
                     "NotInInventory": {
-                      "type": "boolean"
+                      "type": "boolean",
+                      "description": "Skip this step if the item is NOT in inventory."
                     }
                   }
                 },
@@ -1816,6 +1814,15 @@
             "properties": {
               "ItemCount": {
                 "type": "number"
+              },
+              "ItemQuality": {
+                "type": "string",
+                "description": "Specify which quality of item to count towards ItemCount (Any, NQ or HQ). Default: Any (counts both NQ and HQ).",
+                "enum": [
+                  "Any",
+                  "NQ",
+                  "HQ"
+                ]
               }
             },
             "required": [
