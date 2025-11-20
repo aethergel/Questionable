@@ -51,6 +51,7 @@ internal sealed class InteractionUiController : IDisposable
     private readonly Regex _returnRegex;
     private readonly Regex _purchaseItemRegex;
     private readonly Regex _ticketRegex;
+    private readonly Regex _hqTradeRegex;
 
     private bool _isInitialCheck;
 
@@ -95,6 +96,7 @@ internal sealed class InteractionUiController : IDisposable
         _returnRegex = _dataManager.GetExcelSheet<Addon>().GetRow(196).GetRegex(addon => addon.Text, pluginLog)!;
         _purchaseItemRegex = _dataManager.GetRegex<Addon>(3406, addon => addon.Text, pluginLog)!;
         _ticketRegex = _dataManager.GetRegex<Addon>(102686, addon => addon.Text, pluginLog)!;
+        _hqTradeRegex = _dataManager.GetRegex<Addon>(102434, addon => addon.Text, pluginLog)!;
 
         _questController.AutomationTypeChanged += HandleCurrentDialogueChoices;
         _addonLifecycle.RegisterListener(AddonEvent.PostSetup, "SelectString", SelectStringPostSetup);
@@ -748,6 +750,22 @@ internal sealed class InteractionUiController : IDisposable
             return true;
         }
 
+        if (_questController.IsRunning && _hqTradeRegex != null && _hqTradeRegex.IsMatch(actualPrompt))
+        {
+            if (IsHqTradeAllowedInSequence(currentQuest))
+            {
+                _logger.LogInformation("Automatically confirming HQ item trade");
+                addonSelectYesno->AtkUnitBase.FireCallbackInt(0);
+                return true;
+            }
+            else
+            {
+                _logger.LogInformation("HQ item trade not allowed for current step, clicking No");
+                addonSelectYesno->AtkUnitBase.FireCallbackInt(1);
+                return true;
+            }
+        }
+
         if (_questController.IsRunning && _gameGui.TryGetAddonByName("HousingSelectBlock", out AtkUnitBase* _))
         {
             _logger.LogInformation("Automatically confirming ward selection");
@@ -864,6 +882,35 @@ internal sealed class InteractionUiController : IDisposable
 
         _logger.LogDebug("Target territory for quest step: {TargetTerritory}", step.TargetTerritoryId);
         return step.TargetTerritoryId;
+    }
+
+    private bool IsHqTradeAllowed(QuestController.QuestProgress currentQuest)
+    {
+        if (currentQuest?.Quest == null)
+            return false;
+
+        var sequence = currentQuest.Quest.FindSequence(currentQuest.Sequence);
+        if (sequence == null)
+            return false;
+
+        QuestStep? step = sequence.FindStep(currentQuest.Step);
+        if (step == null)
+            return false;
+
+        return step.AllowHighQuality == true;
+    }
+
+    private bool IsHqTradeAllowedInSequence(QuestController.QuestProgress currentQuest)
+    {
+        if (currentQuest?.Quest == null)
+            return false;
+
+        var sequence = currentQuest.Quest.FindSequence(currentQuest.Sequence);
+        if (sequence == null)
+            return false;
+
+        // Check all steps in the sequence for AllowHighQuality = true
+        return sequence.Steps.Any(step => step.AllowHighQuality == true);
     }
 
     private bool TryFindWarp(ushort targetTerritoryId, string actualPrompt, [NotNullWhen(true)] out uint? warpId,

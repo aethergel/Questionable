@@ -38,6 +38,7 @@ public sealed class QuestStep
     public bool? Sprint { get; set; }
     public bool? IgnoreDistanceToObject { get; set; }
     public bool? RestartNavigationIfCancelled { get; set; }
+    public bool? AllowHighQuality { get; set; }
     public string? Comment { get; set; }
 
     /// <summary>
