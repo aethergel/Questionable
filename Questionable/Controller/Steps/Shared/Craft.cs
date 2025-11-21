@@ -45,15 +45,26 @@ internal static class Craft
         IDataManager dataManager,
         IClientState clientState,
         ArtisanIpc artisanIpc,
-        ILogger<DoCraft> logger) : TaskExecutor<CraftTask>
+        ILogger<DoCraft> logger,
+        QuestController questController) : TaskExecutor<CraftTask>
     {
+        private int _startingItemCount = 0;
+        private EItemQuality _itemQuality = EItemQuality.Any;
+        private int _previousCount = 0;
         protected override bool Start()
         {
-            if (HasRequestedItems())
+            // Get the item quality requirement from the quest step (NQ, HQ, or Any)
+            _itemQuality = GetItemQuality();
+            int ownedCount = GetOwnedItemCount();
+            
+            if (ownedCount >= Task.ItemCount)
             {
                 logger.LogInformation("Already own {ItemCount}x {ItemId}", Task.ItemCount, Task.ItemId);
                 return false;
             }
+            
+            _startingItemCount = ownedCount;
+            _previousCount = ownedCount;
 
             RecipeLookup? recipeLookup = dataManager.GetExcelSheet<RecipeLookup>().GetRowOrDefault(Task.ItemId);
             if (recipeLookup == null)
@@ -91,10 +102,10 @@ internal static class Craft
             if (recipeId == 0)
                 throw new TaskException($"Unable to determine recipe for item {Task.ItemId}");
 
-            int remainingItemCount = Task.ItemCount - GetOwnedItemCount();
+            int remainingItemCount = Task.ItemCount - _startingItemCount;
             logger.LogInformation(
-                "Starting craft for item {ItemId} with recipe {RecipeId} for {RemainingItemCount} items",
-                Task.ItemId, recipeId, remainingItemCount);
+                "Starting craft for item {ItemId} with recipe {RecipeId} for {RemainingItemCount} items (quality: {Quality}, owned: {OwnedCount})",
+                Task.ItemId, recipeId, remainingItemCount, _itemQuality, _startingItemCount);
             if (!artisanIpc.CraftItem((ushort)recipeId, remainingItemCount))
                 throw new TaskException($"Failed to start Artisan craft for recipe {recipeId}");
 
@@ -103,8 +114,21 @@ internal static class Craft
 
         public override unsafe ETaskResult Update()
         {
-            if (HasRequestedItems() && !artisanIpc.IsCrafting())
+            int currentCount = GetOwnedItemCount();
+            
+            // Log only when item count changes
+            if (currentCount != _previousCount)
             {
+                int craftedCount = currentCount - _startingItemCount;
+                logger.LogInformation("Craft progress: {Current}/{Target} items (crafted: {Crafted}, quality: {Quality})", 
+                    currentCount, Task.ItemCount, craftedCount, _itemQuality);
+                _previousCount = currentCount;
+            }
+            
+            // Check if we've reached the target count and crafting has stopped
+            if (currentCount >= Task.ItemCount && !artisanIpc.IsCrafting())
+            {
+                logger.LogInformation("Item count reached ({Count}x {ItemId}), closing crafting window", Task.ItemCount, Task.ItemId);
                 AgentRecipeNote* agentRecipeNote = AgentRecipeNote.Instance();
                 if (agentRecipeNote != null && agentRecipeNote->IsAgentActive())
                 {
@@ -115,23 +139,41 @@ internal static class Craft
                     AtkUnitBase* addon = AtkStage.Instance()->RaptureAtkUnitManager->GetAddonById((ushort)addonId);
                     if (addon != null)
                     {
-                        logger.LogInformation("Closing crafting window");
                         addon->FireCallbackInt(-1);
                         return ETaskResult.TaskComplete;
                     }
                 }
             }
-
+            
             return ETaskResult.StillRunning;
         }
 
-        private bool HasRequestedItems() => GetOwnedItemCount() >= Task.ItemCount;
+        private EItemQuality GetItemQuality()
+        {
+            // Retrieve ItemQuality from the current quest step, defaults to Any if not specified
+            if (questController.CurrentQuest is { } currentQuest)
+            {
+                var sequence = currentQuest.Quest.FindSequence(currentQuest.Sequence);
+                if (sequence?.Steps.Count > currentQuest.Step)
+                {
+                    return sequence.Steps[currentQuest.Step].ItemQuality;
+                }
+            }
+            return EItemQuality.Any;
+        }
 
         private unsafe int GetOwnedItemCount()
         {
+            // Count items in inventory based on quality requirement: NQ, HQ, or both (Any)
             InventoryManager* inventoryManager = InventoryManager.Instance();
-            return inventoryManager->GetInventoryItemCount(Task.ItemId, isHq: false, checkEquipped: false)
-                   + inventoryManager->GetInventoryItemCount(Task.ItemId, isHq: true, checkEquipped: false);
+            return _itemQuality switch
+            {
+                EItemQuality.NQ => inventoryManager->GetInventoryItemCount(Task.ItemId, isHq: false, checkEquipped: false),
+                EItemQuality.HQ => inventoryManager->GetInventoryItemCount(Task.ItemId, isHq: true, checkEquipped: false),
+                EItemQuality.Any => inventoryManager->GetInventoryItemCount(Task.ItemId, isHq: false, checkEquipped: false)
+                                    + inventoryManager->GetInventoryItemCount(Task.ItemId, isHq: true, checkEquipped: false),
+                _ => 0
+            };
         }
 
         // we're on a crafting class, so combat doesn't make much sense (we also can't change classes in combat...)

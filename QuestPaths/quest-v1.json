@@ -277,11 +277,9 @@
                 "Item": {
                   "type": "object",
                   "properties": {
-                    "InInventory": {
-                      "type": "boolean"
-                    },
                     "NotInInventory": {
-                      "type": "boolean"
+                      "type": "boolean",
+                      "description": "Skip this step if the item is NOT in inventory."
                     }
                   }
                 },
@@ -593,6 +591,10 @@
             "properties": {
               "PickUpItemId": {
                 "type": "number"
+              },
+              "AllowHighQuality": {
+                "type": "boolean",
+                "description": "If set to true, allows HQ items to be traded/delivered to this NPC. If false or not set, will not auto-confirm the HQ trade prompt."
               }
             },
             "required": [
@@ -1792,6 +1794,10 @@
                   "string"
                 ],
                 "description": "For quest chains (e.g. DT healer role quests) Which quest to do next, given that you meet the required level."
+              },
+              "AllowHighQuality": {
+                "type": "boolean",
+                "description": "If set to true, allows HQ items to be traded/delivered during quest completion. If false or not set, will not auto-confirm the HQ trade prompt."
               }
             }
           }
@@ -1808,6 +1814,15 @@
             "properties": {
               "ItemCount": {
                 "type": "number"
+              },
+              "ItemQuality": {
+                "type": "string",
+                "description": "Specify which quality of item to count towards ItemCount (Any, NQ or HQ). Default: Any (counts both NQ and HQ).",
+                "enum": [
+                  "Any",
+                  "NQ",
+                  "HQ"
+                ]
               }
             },
             "required": [

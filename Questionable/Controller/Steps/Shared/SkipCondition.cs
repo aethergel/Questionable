@@ -257,16 +257,19 @@ internal static class SkipCondition
 
         private unsafe bool CheckItemCondition(QuestStep step, SkipStepConditions skipConditions)
         {
-            if (skipConditions.Item is { NotInInventory: true } && step is { ItemId: not null })
+            // Skip step if specified item is not in inventory (checks both NQ and HQ)
+            if (step is not { ItemId: not null } || skipConditions.Item is not { NotInInventory: true })
+                return false;
+
+            InventoryManager* inventoryManager = InventoryManager.Instance();
+            int itemCount = inventoryManager->GetInventoryItemCount(step.ItemId.Value, isHq: false, checkEquipped: false)
+                          + inventoryManager->GetInventoryItemCount(step.ItemId.Value, isHq: true, checkEquipped: false);
+
+            if (itemCount == 0)
             {
-                InventoryManager* inventoryManager = InventoryManager.Instance();
-                if (inventoryManager->GetInventoryItemCount(step.ItemId.Value) == 0 &&
-                    inventoryManager->GetInventoryItemCount(step.ItemId.Value, true) == 0)
-                {
-                    logger.LogInformation("Skipping step, no item with itemId {ItemId} in inventory",
-                        step.ItemId.Value);
-                    return true;
-                }
+                logger.LogInformation("Skipping step, no item with itemId {ItemId} in inventory",
+                    step.ItemId.Value);
+                return true;
             }
 
             return false;
