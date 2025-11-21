@@ -97,30 +97,6 @@
       "Steps": [
         {
           "Position": {
-            "X": 40.15438,
-            "Y": 20.294998,
-            "Z": -675.9192
-          },
-          "TerritoryId": 156,
-          "InteractionType": "WalkTo",
-          "Fly": false,
-          "AetheryteShortcut": "Mor Dhona",
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": 40.15438,
-                  "Y": 20.294998,
-                  "Z": -675.9192
-                },
-                "TerritoryId": 156,
-                "MaximumDistance": 10
-              }
-            }
-          }
-        },
-        {
-          "Position": {
             "X": 445.96164,
             "Y": -5.3604937,
             "Z": -466.67636
@@ -128,7 +104,12 @@
           "TerritoryId": 156,
           "InteractionType": "WalkTo",
           "Fly": true,
-          "AetheryteShortcut": "Mor Dhona"
+          "AetheryteShortcut": "Mor Dhona",
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "Never": true
+            }
+          }
         },
         {
           "DataId": 1006725,
