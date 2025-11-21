@@ -1,2 +1,2 @@
-- 1162 aetheryte shortcut
-- 960 fix pathing bug by alydev
+- Better fix for CT quests by Kiarra
+- Add: Allow Trade HQ items + ItemQuality property under Craft by Oblituarius
