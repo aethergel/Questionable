@@ -1,6 +1,6 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-  "Author": "liza",
+  "Author": ["liza", "Oblituarius"],
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -85,6 +85,66 @@
         },
         {
           "Position": {
+          "X": -195.88503,
+          "Y": 4.1472216,
+          "Z": -216.97708
+          },
+          "StopDistance": 0.5,
+          "TerritoryId": 146,
+          "InteractionType": "WalkTo",
+          "SkipConditions": {
+            "StepIf": {
+              "Flying": "Unlocked"
+            }
+          }
+        },
+        {
+          "Position": {
+          "X": -89.94699,
+          "Y": -4.7999415,
+          "Z": -104.621376
+          },
+          "StopDistance": 0.5,
+          "TerritoryId": 146,
+          "InteractionType": "WalkTo",
+          "SkipConditions": {
+            "StepIf": {
+              "Flying": "Unlocked"
+            }
+          }
+        },
+        {
+          "Position": {
+          "X": -58.741863,
+          "Y": -16.84673,
+          "Z": -170.08568
+          },
+          "StopDistance": 0.5,
+          "TerritoryId": 146,
+          "InteractionType": "WalkTo",
+          "SkipConditions": {
+            "StepIf": {
+              "Flying": "Unlocked"
+            }
+          }
+        },
+        {
+          "Position": {
+          "X": -80.41123,
+          "Y": -14.578715,
+          "Z": -170.62582
+          },
+          "StopDistance": 0.5,
+          "TerritoryId": 146,
+          "InteractionType": "WalkTo",
+          "SkipConditions": {
+            "StepIf": {
+              "Flying": "Unlocked"
+            }
+          }
+        },
+        {
+          "Position": {
             "X": -97.35628,
             "Y": -14.397484,
             "Z": -176.70825
@@ -128,6 +188,36 @@
             null,
             128
           ]
+        },
+        {
+          "Position": {
+          "X": -58.741863,
+          "Y": -16.84673,
+          "Z": -170.08568
+          },
+          "StopDistance": 0.5,
+          "TerritoryId": 146,
+          "InteractionType": "WalkTo",
+          "SkipConditions": {
+            "StepIf": {
+              "Flying": "Unlocked"
+            }
+          }
+        },
+        {
+          "Position": {
+          "X": -75.59294,
+          "Y": -1.9464281,
+          "Z": -102.63653
+          },
+          "StopDistance": 0.5,
+          "TerritoryId": 146,
+          "InteractionType": "WalkTo",
+          "SkipConditions": {
+            "StepIf": {
+              "Flying": "Unlocked"
+            }
+          }
         },
         {
           "Position": {
@@ -237,6 +327,14 @@
     {
       "Sequence": 255,
       "Steps": [
+        {
+          "TerritoryId":146,
+          "InteractionType":"EquipRecommended"
+        },
+        {
+          "TerritoryId":146,
+          "InteractionType":"UpdateGearset"
+        },
         {
           "DataId": 1006747,
           "Position": {
