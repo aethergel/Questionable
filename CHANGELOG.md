@@ -1,2 +1,1 @@
-- Better fix for CT quests by Kiarra
-- Add: Allow Trade HQ items + ItemQuality property under Craft by Oblituarius
+- Added Rokkon/Aloalo unlocks by alydev
