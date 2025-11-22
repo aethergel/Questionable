@@ -1,0 +1,110 @@
+{
+  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+  "Author": "alydev",
+  "QuestSequence": [
+    {
+      "Sequence": 0,
+      "Steps": [
+        {
+          "DataId": 1043624,
+          "Position": {
+            "X": 41.031494,
+            "Y": -15.646993,
+            "Z": 107.80493
+          },
+          "TerritoryId": 962,
+          "InteractionType": "AcceptQuest",
+          "AetheryteShortcut": "Old Sharlayan",
+          "AethernetShortcut": [
+            "[Old Sharlayan] Aetheryte Plaza",
+            "[Old Sharlayan] Scholar's Harbor"
+          ]
+        }
+      ]
+    },
+    {
+      "Sequence": 1,
+      "Steps": [
+        {
+          "DataId": 2013312,
+          "Position": {
+            "X": -91.14221,
+            "Y": 17.990356,
+            "Z": -174.6701
+          },
+          "TerritoryId": 628,
+          "InteractionType": "Interact",
+          "AetheryteShortcut": "Kugane",
+          "AethernetShortcut": [
+            "[Kugane] Aetheryte Plaza",
+            "[Kugane] Bokairo Inn"
+          ]
+        }
+      ]
+    },
+    {
+      "Sequence": 2,
+      "Steps": [
+        {
+          "DataId": 1045249,
+          "Position": {
+            "X": -114.15277,
+            "Y": 11.800039,
+            "Z": -121.049866
+          },
+          "TerritoryId": 628,
+          "InteractionType": "Interact",
+          "StopDistance": 4
+        }
+      ]
+    },
+    {
+      "Sequence": 3,
+      "Steps": [
+        {
+          "TerritoryId": 628,
+          "InteractionType": "Duty",
+          "DutyOptions": {
+            "ContentFinderConditionId": 945,
+            "Enabled": false
+          }
+        }
+      ]
+    },
+    {
+      "Sequence": 4,
+      "Steps": [
+        {
+          "DataId": 1045249,
+          "Position": {
+            "X": -114.15277,
+            "Y": 11.800039,
+            "Z": -121.049866
+          },
+          "TerritoryId": 628,
+          "InteractionType": "Interact"
+        }
+      ]
+    },
+    {
+      "Sequence": 255,
+      "Steps": [
+        {
+          "DataId": 1043624,
+          "Position": {
+            "X": 41.031494,
+            "Y": -15.646993,
+            "Z": 107.80493
+          },
+          "TerritoryId": 962,
+          "InteractionType": "CompleteQuest",
+          "AetheryteShortcut": "Old Sharlayan",
+          "AethernetShortcut": [
+            "[Old Sharlayan] Aetheryte Plaza",
+            "[Old Sharlayan] Scholar's Harbor"
+          ]
+        }
+      ]
+    }
+  ]
+}

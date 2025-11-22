@@ -1,0 +1,111 @@
+{
+  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+  "Author": "alydev",
+  "QuestSequence": [
+    {
+      "Sequence": 0,
+      "Steps": [
+        {
+          "DataId": 1043624,
+          "Position": {
+            "X": 41.031494,
+            "Y": -15.646993,
+            "Z": 107.80493
+          },
+          "TerritoryId": 962,
+          "InteractionType": "AcceptQuest",
+          "AetheryteShortcut": "Old Sharlayan",
+          "AethernetShortcut": [
+            "[Old Sharlayan] Aetheryte Plaza",
+            "[Old Sharlayan] Scholar's Harbor"
+          ]
+        }
+      ]
+    },
+    {
+      "Sequence": 1,
+      "Steps": [
+        {
+          "DataId": 1045254,
+          "Position": {
+            "X": -550.042,
+            "Y": 11.402609,
+            "Z": 116.746704
+          },
+          "TerritoryId": 957,
+          "InteractionType": "Interact",
+          "AetheryteShortcut": "Thavnair - Great Work",
+          "Fly": true
+        }
+      ]
+    },
+    {
+      "Sequence": 2,
+      "Steps": [
+        {
+          "DataId": 1045255,
+          "Position": {
+            "X": 156.52553,
+            "Y": 1.8741739,
+            "Z": 782.1787
+          },
+          "TerritoryId": 957,
+          "InteractionType": "Interact",
+          "StopDistance": 1,
+          "Fly": true,
+          "Land": true,
+          "AetheryteShortcut": "Thavnair - Yedlihmad"
+        }
+      ]
+    },
+    {
+      "Sequence": 3,
+      "Steps": [
+        {
+          "TerritoryId": 957,
+          "InteractionType": "Duty",
+          "DutyOptions": {
+            "ContentFinderConditionId": 961,
+            "Enabled": false
+          }
+        }
+      ]
+    },
+    {
+      "Sequence": 4,
+      "Steps": [
+        {
+          "DataId": 1045255,
+          "Position": {
+            "X": 155.41309,
+            "Y": 1.8741739,
+            "Z": 782.3147
+          },
+          "TerritoryId": 957,
+          "InteractionType": "Interact",
+          "AetheryteShortcut": "Thavnair - Yedlihmad"
+        }
+      ]
+    },
+    {
+      "Sequence": 255,
+      "Steps": [
+        {
+          "DataId": 1043624,
+          "Position": {
+            "X": 41.031494,
+            "Y": -15.646993,
+            "Z": 107.80493
+          },
+          "TerritoryId": 962,
+          "InteractionType": "CompleteQuest",
+          "AetheryteShortcut": "Old Sharlayan",
+          "AethernetShortcut": [
+            "[Old Sharlayan] Aetheryte Plaza",
+            "[Old Sharlayan] Scholar's Harbor"
+          ]
+        }
+      ]
+    }
+  ]
+}
