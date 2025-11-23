@@ -27,6 +27,13 @@ internal sealed class ExcelFunctions
     public StringOrRegex GetDialogueText(Quest? currentQuest, string? excelSheetName, string key, bool isRegex)
     {
         var seString = GetRawDialogueText(currentQuest, excelSheetName, key);
+        // Return empty string if dialogue text lookup fails to prevent ArgumentNullException
+        if (seString == null)
+        {
+            _logger.LogWarning("Could not find dialogue text for key '{Key}' in sheet '{Sheet}'", key, excelSheetName);
+            return new StringOrRegex(string.Empty);
+        }
+        
         if (isRegex)
             return new StringOrRegex(seString.ToRegex());
         else
@@ -73,7 +80,23 @@ internal sealed class ExcelFunctions
 
     public ReadOnlySeString? GetRawDialogueTextByRowId(string? excelSheet, uint rowId)
     {
-        if (excelSheet == "GimmickYesNo")
+        // Support raw sheets for dialogue text lookup by RowId
+        // quest, custom, cut_scene, and dungeon sheets all use QuestDialogueText
+        if (excelSheet?.StartsWith("quest/") == true || excelSheet?.StartsWith("custom/") == true ||
+            excelSheet?.StartsWith("cut_scene/") == true || excelSheet?.StartsWith("dungeon/") == true)
+        {
+            try
+            {
+                var dialogueSheet = _dataManager.GetExcelSheet<QuestDialogueText>(name: excelSheet);
+                return dialogueSheet?.GetRowOrDefault(rowId)?.Value;
+            }
+            catch (SheetNotFoundException e)
+            {
+                _logger.LogError(e, "Could not find dialogue sheet '{Sheet}'", excelSheet);
+                return null;
+            }
+        }
+        else if (excelSheet == "GimmickYesNo")
         {
             var questRow = _dataManager.GetExcelSheet<GimmickYesNo>().GetRowOrDefault(rowId);
             return questRow?.Unknown0;
