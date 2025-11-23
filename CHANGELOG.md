@@ -1,1 +1,1 @@
-- Added Rokkon/Aloalo unlocks by alydev
+- Add: Support for raw sheets dialogue by Oblituarius
