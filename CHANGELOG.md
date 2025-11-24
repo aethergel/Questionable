@@ -1,4 +1,2 @@
-- Add missing Sightseeing logs Shb(3604) EW(4174) by Kiarra
-- 194 Unicorn power CNJ specific quest by Kiarra
-- Fix angle on gathering node by alydev
-- Add recovery to some tribe quests by alydev
+- 141: Add support for HQ item delivery by Oblituarius
+- 568: Accept 253 is now automatic by Oblituarius
