@@ -17,6 +17,7 @@ permissions:
 jobs:
   detect-version-change:
     runs-on: ubuntu-latest
+    if: github.actor == 'alyssadev'
     outputs:
       version: ${{ steps.get-version.outputs.version }}
       should-release: ${{ steps.check-release.outputs.should-release }}
