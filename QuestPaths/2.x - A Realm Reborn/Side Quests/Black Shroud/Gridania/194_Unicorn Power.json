@@ -1,11 +1,11 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-  "Author": "alydev",
-  "Disabled": true,
+  "Author": ["Kiarra"," alydev"],
+  
   "QuestSequence": [
     {
       "Sequence": 0,
-      "Comment": "Unequip Soul of the White Mage to complete this quest",
+      "Comment": "Unequip Soul of the White Mage to see this quest",
       "Steps": [
         {
           "InteractionType": "None",
@@ -45,6 +45,51 @@
           "TerritoryId": 133,
           "InteractionType": "AcceptQuest"
         }
+      ]
+    },
+    {
+      "Sequence": 1,
+      "Steps": [
+        {
+          "DataId": 1008174,
+            "Position": {
+            "X": -248.67633,
+            "Y": -79.661125,
+            "Z": 475.02856
+        },
+          "Fly":false,
+          "TerritoryId": 154,
+          "InteractionType": "Interact",
+          "AetheryteShortcut": "North Shroud - Fallgourd Float",
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "InTerritory": [
+                154
+              ]
+            }
+          }
+        },
+        {
+          "DataId": 1008174,
+            "Position": {
+            "X": -248.67633,
+            "Y": -79.661125,
+            "Z": 475.02856
+        },
+          "Fly":false,
+          "TerritoryId": 154,
+          "InteractionType": "Action",
+          "Action":"Cure",
+          "AetheryteShortcut": "North Shroud - Fallgourd Float",
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "InTerritory": [
+                154
+              ]
+            }
+          }
+        }
+
       ]
     },
     {
