@@ -1,1 +1,2 @@
+- Fix angle on gathering node by alydev
 - Add recovery to some tribe quests by alydev
