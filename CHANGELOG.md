@@ -1,2 +1,3 @@
+- 194 Unicorn power CNJ specific quest by Kiarra
 - Fix angle on gathering node by alydev
 - Add recovery to some tribe quests by alydev
