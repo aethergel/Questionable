@@ -66,6 +66,7 @@
           },
           "TerritoryId": 132,
           "InteractionType": "Interact",
+          "AllowHighQuality": true,
           "AethernetShortcut": [
             "[Gridania] Aetheryte Plaza",
             "[Gridania] Archers' Guild"
@@ -93,6 +94,7 @@
           },
           "TerritoryId": 133,
           "InteractionType": "Interact",
+          "AllowHighQuality": true,
           "AethernetShortcut": [
             "[Gridania] Archers' Guild",
             "[Gridania] Lancers' Guild"
