@@ -1,2 +1,3 @@
+- 3873 Rock the Castrum:Reorder coffer before going to war -Kiarra
 - 141: Add support for HQ item delivery by Oblituarius
 - 568: Accept 253 is now automatic by Oblituarius
