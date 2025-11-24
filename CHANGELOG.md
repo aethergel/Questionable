@@ -1,1 +1,1 @@
-- Add: Support for raw sheets dialogue by Oblituarius
+- Add recovery to some tribe quests by alydev

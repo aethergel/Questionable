@@ -22,11 +22,11 @@
       "Steps": [
         {
           "Position": {
-            "X": 74.20459,
-            "Y": -48.533592,
-            "Z": -171.12994
+            "X": 73.12757,
+            "Y": -48.668316,
+            "Z": -169.80252
           },
-          "StopDistance": 3,
+          "StopDistance": 1,
           "TerritoryId": 398,
           "InteractionType": "WalkTo",
           "Fly": true,
@@ -52,7 +52,8 @@
             "Z": -171.12994
           },
           "TerritoryId": 398,
-          "InteractionType": "Interact"
+          "InteractionType": "Interact",
+          "Land": true
         }
       ]
     },

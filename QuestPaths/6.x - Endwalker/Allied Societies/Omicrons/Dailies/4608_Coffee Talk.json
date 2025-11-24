@@ -6,6 +6,31 @@
       "Sequence": 0,
       "Steps": [
         {
+          "DataId": 2013072,
+          "Position": {
+            "X": 456.65674,
+            "Y": 438.04077,
+            "Z": 310.2312
+          },
+          "TerritoryId": 960,
+          "InteractionType": "Interact",
+          "TargetTerritoryId": 960,
+          "AetheryteShortcut": "Ultima Thule - Base Omicron",
+          "SkipConditions": {
+            "StepIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": 314.9004,
+                  "Y": 481.99442,
+                  "Z": 148.11926
+                },
+                "TerritoryId": 960,
+                "MaximumDistance": 26
+              }
+            }
+          }
+        },
+        {
           "DataId": 1043417,
           "Position": {
             "X": 314.9004,
@@ -79,15 +104,29 @@
       "Sequence": 255,
       "Steps": [
         {
-          "DataId": 1043421,
+          "DataId": 2013072,
           "Position": {
-            "X": 2.4261475,
-            "Y": 499.87805,
-            "Z": 46.036377
+            "X": 456.65674,
+            "Y": 438.04077,
+            "Z": 310.2312
           },
-          "TerritoryId": 1073,
+          "TerritoryId": 960,
           "InteractionType": "Interact",
-          "TargetTerritoryId": 960
+          "TargetTerritoryId": 960,
+          "AetheryteShortcut": "Ultima Thule - Base Omicron",
+          "SkipConditions": {
+            "StepIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": 314.9004,
+                  "Y": 481.99442,
+                  "Z": 148.11926
+                },
+                "TerritoryId": 960,
+                "MaximumDistance": 26
+              }
+            }
+          }
         },
         {
           "DataId": 1043417,
