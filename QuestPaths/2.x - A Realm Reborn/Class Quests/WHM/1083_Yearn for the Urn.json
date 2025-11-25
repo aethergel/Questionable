@@ -128,6 +128,17 @@
       "Sequence": 3,
       "Steps": [
         {
+          "Position": {
+            "X": 47.682095,
+            "Y": 9.470074,
+            "Z": -98.02502
+          },
+          "StopDistance": 0.25,
+          "TerritoryId": 153,
+          "InteractionType": "WalkTo",
+          "DisableNavmesh": true
+        },
+        {
           "DataId": 2002403,
           "Position": {
             "X": 151.53735,
