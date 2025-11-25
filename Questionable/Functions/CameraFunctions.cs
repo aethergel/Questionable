@@ -79,11 +79,11 @@ internal unsafe class CameraFunctions : IDisposable
 
     internal void Face(Vector3 pos)
     {
-        _logger.LogWarning("Facing " + pos);
+        _logger.LogDebug("Facing " + pos);
         Enabled         = true;
         if (this._clientState.LocalPlayer == null)
         {
-            _logger.LogWarning("LocalPlayer was null");
+            _logger.LogDebug("LocalPlayer was null");
             return;
         }
         Vector3 diff = pos - this._clientState.LocalPlayer.Position;
