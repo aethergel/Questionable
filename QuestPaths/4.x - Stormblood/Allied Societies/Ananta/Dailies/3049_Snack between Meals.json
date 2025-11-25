@@ -6,6 +6,31 @@
       "Sequence": 0,
       "Steps": [
         {
+          "Position": {
+            "X": -26.902342,
+            "Y": 56.092464,
+            "Z": 234.37491
+          },
+          "TerritoryId": 612,
+          "InteractionType": "WalkTo",
+          "Fly": true,
+          "StopDistance": 1,
+          "AetheryteShortcut": "Fringes - Peering Stones",
+          "SkipConditions": {
+            "StepIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": -26.902342,
+                  "Y": 56.092464,
+                  "Z": 234.37491
+                },
+                "TerritoryId": 612,
+                "MaximumDistance": 30
+              }
+            }
+          }
+        },
+        {
           "DataId": 1024773,
           "Position": {
             "X": -28.33606,
@@ -118,13 +143,28 @@
       "Steps": [
         {
           "Position": {
-            "X": -25.868523,
-            "Y": 56.02146,
-            "Z": 231.54045
+            "X": -26.902342,
+            "Y": 56.092464,
+            "Z": 234.37491
           },
           "TerritoryId": 612,
           "InteractionType": "WalkTo",
-          "Fly": true
+          "Fly": true,
+          "StopDistance": 1,
+          "AetheryteShortcut": "Fringes - Peering Stones",
+          "SkipConditions": {
+            "StepIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": -26.902342,
+                  "Y": 56.092464,
+                  "Z": 234.37491
+                },
+                "TerritoryId": 612,
+                "MaximumDistance": 30
+              }
+            }
+          }
         },
         {
           "DataId": 1024773,
