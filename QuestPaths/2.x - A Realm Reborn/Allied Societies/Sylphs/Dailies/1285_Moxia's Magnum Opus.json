@@ -1,0 +1,230 @@
+{
+  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+  "Author": "alydev",
+  "QuestSequence": [
+    {
+      "Sequence": 0,
+      "Steps": [
+        {
+          "DataId": 1005563,
+          "Position": {
+            "X": 48.874634,
+            "Y": 6.0734596,
+            "Z": 251.17871
+          },
+          "TerritoryId": 152,
+          "InteractionType": "AcceptQuest",
+          "AetheryteShortcut": "East Shroud - Hawthorne Hut",
+          "Fly": true,
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "InSameTerritory": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Sequence": 1,
+      "Steps": [
+        {
+          "$": "Tested: 1 2 3 4",
+          "Position": {
+            "X": 173.50601,
+            "Y": -22.575947,
+            "Z": -463.2622
+          },
+          "TerritoryId": 152,
+          "Fly": true,
+          "InteractionType": "WalkTo"
+        },
+        {
+          "DataId": 2003295,
+          "Position": {
+            "X": 155.74878,
+            "Y": -24.399231,
+            "Z": -462.51624
+          },
+          "TerritoryId": 152,
+          "Fly": true,
+          "InteractionType": "UseItem",
+          "ItemId": 2001187,
+          "GroundTarget": true,
+          "RequiredQuestVariables": [
+            null,
+            null,
+            null,
+            [
+              {
+                "High": 1
+              },
+              {
+                "High": 3
+              },
+              {
+                "High": 4
+              }
+            ],
+            null,
+            null
+          ],
+          "CompletionQuestVariablesFlags": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "High": 4
+            }
+          ]
+        },
+        {
+          "DataId": 2003294,
+          "Position": {
+            "X": 180.10217,
+            "Y": -23.758362,
+            "Z": -494.89587
+          },
+          "TerritoryId": 152,
+          "Fly": true,
+          "InteractionType": "UseItem",
+          "ItemId": 2001187,
+          "GroundTarget": true,
+          "RequiredQuestVariables": [
+            null,
+            null,
+            null,
+            [
+              {
+                "High": 1
+              },
+              {
+                "High": 2
+              },
+              {
+                "High": 3
+              }
+            ],
+            null,
+            null
+          ],
+          "CompletionQuestVariablesFlags": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "High": 8
+            }
+          ]
+        },
+        {
+          "DataId": 2003296,
+          "Position": {
+            "X": 131.73108,
+            "Y": -22.751282,
+            "Z": -560.50964
+          },
+          "TerritoryId": 152,
+          "Fly": true,
+          "InteractionType": "UseItem",
+          "ItemId": 2001187,
+          "GroundTarget": true,
+          "RequiredQuestVariables": [
+            null,
+            null,
+            null,
+            [
+              {
+                "High": 1
+              },
+              {
+                "High": 2
+              },
+              {
+                "High": 4
+              }
+            ],
+            null,
+            null
+          ],
+          "CompletionQuestVariablesFlags": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "High": 2
+            }
+          ]
+        },
+        {
+          "DataId": 2003297,
+          "Position": {
+            "X": 255.87854,
+            "Y": -23.941406,
+            "Z": -546.6544
+          },
+          "TerritoryId": 152,
+          "Fly": true,
+          "InteractionType": "UseItem",
+          "ItemId": 2001187,
+          "GroundTarget": true,
+          "RequiredQuestVariables": [
+            null,
+            null,
+            null,
+            [
+              {
+                "High": 2
+              },
+              {
+                "High": 3
+              },
+              {
+                "High": 4
+              }
+            ],
+            null,
+            null
+          ],
+          "CompletionQuestVariablesFlags": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "High": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Sequence": 255,
+      "Steps": [
+        {
+          "DataId": 1005563,
+          "Position": {
+            "X": 48.874634,
+            "Y": 6.0734596,
+            "Z": 251.17871
+          },
+          "TerritoryId": 152,
+          "InteractionType": "CompleteQuest",
+          "AetheryteShortcut": "East Shroud - Hawthorne Hut",
+          "Fly": true,
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "InSameTerritory": true
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
