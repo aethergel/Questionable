@@ -2,3 +2,4 @@
 - CameraFunctions LogDebug instead of LogWarning by alydev
 - WHM 1083 path out of enclosed area by alydev
 - Moogle 2299 pathing by alydev
+- Added #developer-feed thing by alydev
