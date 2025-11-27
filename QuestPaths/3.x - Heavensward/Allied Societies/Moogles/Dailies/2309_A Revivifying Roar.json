@@ -1,7 +1,6 @@
 ﻿{
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
   "Author": "skiaz",
-  "Disabled": false,
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -14,7 +13,9 @@
             "Z": 313.98486
           },
           "TerritoryId": 400,
-          "InteractionType": "AcceptQuest"
+          "InteractionType": "AcceptQuest",
+          "AetheryteShortcut": "The Churning Mists - Zenith",
+          "Fly": true
         }
       ]
     },
@@ -102,7 +103,7 @@
           "Fly": true
         }
       ]
-    },   
+    },
     {
       "Sequence": 255,
       "Steps": [
@@ -116,20 +117,7 @@
           "TerritoryId": 400,
           "InteractionType": "CompleteQuest",
           "AetheryteShortcut": "The Churning Mists - Zenith",
-          "Fly": true,
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": -335.56116,
-                  "Y": 59.003433,
-                  "Z": 313.98486
-                },
-                "TerritoryId": 400,
-                "MaximumDistance": 50
-              }
-            }
-          }
+          "Fly": true
         }
       ]
     }

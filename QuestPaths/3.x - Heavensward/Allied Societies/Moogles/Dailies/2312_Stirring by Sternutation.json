@@ -13,7 +13,9 @@
             "Z": 313.98486
           },
           "TerritoryId": 400,
-          "InteractionType": "AcceptQuest"
+          "InteractionType": "AcceptQuest",
+          "AetheryteShortcut": "The Churning Mists - Zenith",
+          "Fly": true
         }
       ]
     },

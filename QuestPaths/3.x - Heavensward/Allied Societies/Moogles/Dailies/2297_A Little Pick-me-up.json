@@ -27,6 +27,29 @@
       "Sequence": 1,
       "Steps": [
         {
+          "Position": {
+            "X": -331.5633,
+            "Y": 58.823204,
+            "Z": 323.17078
+          },
+          "TerritoryId": 400,
+          "InteractionType": "WalkTo",
+          "Fly": true,
+          "SkipConditions": {
+            "StepIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": -331.5633,
+                  "Y": 58.823204,
+                  "Z": 323.17078
+                },
+                "TerritoryId": 400,
+                "MaximumDistance": 50
+              }
+            }
+          }
+        },
+        {
           "DataId": 1017322,
           "Position": {
             "X": -331.5633,
@@ -83,20 +106,7 @@
           "TerritoryId": 400,
           "InteractionType": "CompleteQuest",
           "AetheryteShortcut": "The Churning Mists - Zenith",
-          "Fly": true,
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": -335.56116,
-                  "Y": 59.003433,
-                  "Z": 313.98486
-                },
-                "TerritoryId": 400,
-                "MaximumDistance": 50
-              }
-            }
-          }
+          "Fly": true
         }
       ]
     }
