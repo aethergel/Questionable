@@ -30,7 +30,9 @@
             "Z": -390.89038
           },
           "TerritoryId": 401,
-          "InteractionType": "Interact"
+          "InteractionType": "Interact",
+          "AetheryteShortcut": "The Sea of Clouds - Ok' Zundu",
+          "Fly": true
         }
       ]
     },

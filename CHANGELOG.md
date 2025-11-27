@@ -1,5 +1,2 @@
-- Moogle daily aetheryte shortcut by alydev
-- Draft variant dungeon unlocks (incomplete) by alydev
-- Minor spring cleaning per code analysis by alydev
-- Society aetheryte shortcuts by alydev
-- Add missing sequences reported in #20 by alydev
+- Fix gathering for ixal 1499 by alydev
+- Make sure vanu dailies don't fly all the way across sea of clouds for no reason by alydev
