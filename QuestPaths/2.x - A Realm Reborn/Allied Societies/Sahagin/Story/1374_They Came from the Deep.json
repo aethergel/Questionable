@@ -6,6 +6,23 @@
       "Sequence": 0,
       "Steps": [
         {
+          "TerritoryId": 129,
+          "TargetTerritoryId": 128,
+          "InteractionType": "None",
+          "AetheryteShortcut": "Limsa Lominsa",
+          "AethernetShortcut": [
+            "[Limsa Lominsa] Aetheryte Plaza",
+            "[Limsa Lominsa] The Aftcastle"
+          ],
+          "SkipConditions": {
+            "StepIf": {
+              "InTerritory": [
+                128
+              ]
+            }
+          }
+        },
+        {
           "DataId": 1003281,
           "Position": {
             "X": 97.520386,
@@ -156,6 +173,7 @@
           },
           "TerritoryId": 138,
           "InteractionType": "CompleteQuest",
+          "AetheryteShortcut": "Western La Noscea - Aleport",
           "Fly": true,
           "NextQuestId": 1375
         }

@@ -13,7 +13,9 @@
             "Z": -362.11188
           },
           "TerritoryId": 146,
-          "InteractionType": "AcceptQuest"
+          "InteractionType": "AcceptQuest",
+          "AetheryteShortcut": "Southern Thanalan - Little Ala Mhigo",
+          "Fly": true
         }
       ]
     },
@@ -92,6 +94,8 @@
           },
           "TerritoryId": 146,
           "InteractionType": "CompleteQuest",
+          "AetheryteShortcut": "Southern Thanalan - Little Ala Mhigo",
+          "Fly": true,
           "DialogueChoices": [
             {
               "Type": "List",

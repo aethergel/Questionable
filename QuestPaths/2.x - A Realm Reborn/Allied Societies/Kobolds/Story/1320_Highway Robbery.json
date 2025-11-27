@@ -6,6 +6,23 @@
       "Sequence": 0,
       "Steps": [
         {
+          "TerritoryId": 129,
+          "TargetTerritoryId": 128,
+          "InteractionType": "None",
+          "AetheryteShortcut": "Limsa Lominsa",
+          "AethernetShortcut": [
+            "[Limsa Lominsa] Aetheryte Plaza",
+            "[Limsa Lominsa] The Aftcastle"
+          ],
+          "SkipConditions": {
+            "StepIf": {
+              "InTerritory": [
+                128
+              ]
+            }
+          }
+        },
+        {
           "DataId": 1003550,
           "Position": {
             "X": 76.85962,
@@ -128,6 +145,8 @@
           },
           "TerritoryId": 180,
           "InteractionType": "CompleteQuest",
+          "AetheryteShortcut": "Outer La Noscea - Camp Overlook",
+          "Fly": true,
           "NextQuestId": 1321
         }
       ]
