@@ -83,7 +83,7 @@ internal sealed class AlliedSocietyJournalComponent
                 else
                     isOpen = ImGui.CollapsingHeader(label);
 #else
-                bool isOpen = ImGui.CollapsingHeader(label);
+                isOpen = ImGui.CollapsingHeader(label);
 #endif
             }
 
