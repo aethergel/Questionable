@@ -141,7 +141,7 @@ internal sealed class DebugOverlay : Window
 
         ImGui.GetWindowDrawList().AddCircleFilled(screenPos, 3f, color);
         ImGui.GetWindowDrawList().AddText(screenPos + new Vector2(10, -8), color,
-            $"{counter}: {step.InteractionType}\n{position.ToString("G", CultureInfo.InvariantCulture)} [{(position - _clientState.LocalPlayer!.Position).Length():N2}]\n{step.Comment}");
+            $"{counter}: {step.InteractionType} {step.DataId ?? '-'}\n{position.ToString("G", CultureInfo.InvariantCulture)} [{(position - _clientState.LocalPlayer!.Position).Length():N2}]\n{step.Comment}");
     }
 
     private void DrawCombatTargets()

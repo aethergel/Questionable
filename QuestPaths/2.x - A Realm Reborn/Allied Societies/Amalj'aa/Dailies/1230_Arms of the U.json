@@ -1,6 +1,7 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-  "Author": "plogon_enjoyer",
+  "Author": ["plogon_enjoyer","alydev"],
+  "LastChecked":{"Username": "alydev", "Date": "2025-11-27"},
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -22,7 +23,7 @@
     {
       "Sequence": 1,
       "Steps": [
-        {
+        {"$": "tested 1 3 QW: (1L) (-) (1H) (4L) (-) (2H)",
           "DataId": 2003141,
           "Position": {
             "X": -22.537598,
@@ -32,7 +33,8 @@
           "TerritoryId": 146,
           "InteractionType": "Interact",
           "Fly": true,
-          "RequiredQuestVariables": [null, null, null, [2, 3, 4], null, null]
+          "RequiredQuestVariables": [null, null, null, [{"Low": 2}, {"Low": 3}, {"Low": 4}], null, null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"High": 2}]
         },
         {
           "DataId": 2003148,
@@ -44,7 +46,8 @@
           "TerritoryId": 146,
           "InteractionType": "Interact",
           "Fly": true,
-          "RequiredQuestVariables": [null, null, null, [1, 4, 5], null, null]
+          "RequiredQuestVariables": [null, null, null, [{"Low": 1}, {"Low": 4}, {"Low": 5}], null, null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"Low": 8}]
         },
         {
           "DataId": 2003147,
@@ -56,7 +59,8 @@
           "TerritoryId": 146,
           "InteractionType": "Interact",
           "Fly": true,
-          "RequiredQuestVariables": [null, null, null, [1, 3, 5], null, null]
+          "RequiredQuestVariables": [null, null, null, [{"Low": 1}, {"Low": 3}, {"Low": 5}], null, null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"High": 1}]
         },
         {
           "DataId": 2003140,
@@ -68,7 +72,7 @@
           "TerritoryId": 146,
           "InteractionType": "Interact",
           "Fly": true,
-          "RequiredQuestVariables": [null, null, null, [2, 5], null, null]
+          "RequiredQuestVariables": [null, null, null, [{"Low": 2}, {"Low": 5}], null, null]
         },
         {
           "DataId": 2003136,
@@ -80,24 +84,42 @@
           "TerritoryId": 146,
           "InteractionType": "Interact",
           "Fly": true,
-          "RequiredQuestVariables": [null, null, null, [1, 2, 3, 4], null, null]
+          "RequiredQuestVariables": [null, null, null, [{"Low": 1}, {"Low": 2}, {"Low": 3}, {"Low": 4}], null, null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"High": 8}]
         },
         {
           "Position": {
-            "X": -52.99463,
-            "Y": -1.2055054,
-            "Z": 17.532532
+            "X": -53.41478,
+            "Y": -1.3488411,
+            "Z": 15.20748
           },
           "TerritoryId": 146,
           "InteractionType": "Combat",
           "EnemySpawnType": "OverworldEnemies",
+          "CompletionQuestVariablesFlags": [null,null,{"Low": 1},null,null,null],
+          "$": "QW: (1L) (-) (1H) (3L) (-) (8H)  QW: (1H1L) (-) (1H) (1H3L) (-) (8H)  QW: (2H1L) (-) (1H1L) (1H3L) (-) (8H)",
           "ComplexCombatData": [
             {
               "DataId": 740,
+              "NameId": 1388,
               "MinimumKillCount": 1
-            },
+            }
+          ]
+        },
+        {
+          "Position": {
+            "X": -53.41478,
+            "Y": -1.3488411,
+            "Z": 15.20748
+          },
+          "TerritoryId": 146,
+          "InteractionType": "Combat",
+          "EnemySpawnType": "OverworldEnemies",
+          "CompletionQuestVariablesFlags": [null,null,null,{"High": 1},null,null],
+          "ComplexCombatData": [
             {
               "DataId": 741,
+              "NameId": 1389,
               "MinimumKillCount": 1
             }
           ]
@@ -108,15 +130,6 @@
       "Sequence": 255,
       "Steps": [
         {
-          "Position": {
-            "X": -124.393555,
-            "Y": -2.04119,
-            "Z": 36.344994
-          },
-          "TerritoryId": 146,
-          "InteractionType": "WalkTo"
-        },
-        {
           "DataId": 1005550,
           "Position": {
             "X": 105.27197,
@@ -126,8 +139,7 @@
           "TerritoryId": 146,
           "InteractionType": "CompleteQuest",
           "AetheryteShortcut": "Southern Thanalan - Little Ala Mhigo",
-          "Fly": true,
-          "DelaySecondsAtStart": 3
+          "Fly": true
         }
       ]
     }

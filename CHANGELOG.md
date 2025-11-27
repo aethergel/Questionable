@@ -1,2 +1,1 @@
-- Fix format if no dailies available for a given tribe by alydev
-- Fix vath teleports by alydev
+- Add amaljaa 1229,1230 by aly_hates_arr_tribes_with_a_burning_passion
