@@ -26,7 +26,7 @@ internal static class DoGather
 
         public void OnRevisit() => RevisitTriggered = true;
 
-        public override string ToString() => $"DoGather{(RevisitRequired ? " if revist" : "")}";
+        public override string ToString() => $"DoGather{(RevisitRequired ? " if revisit" : "")}";
     }
 
     internal sealed class GatherExecutor(
@@ -193,6 +193,7 @@ internal static class DoGather
                             CanUseAction(EAction.SharpVision1, EAction.FieldMastery1))
                         {
                             _slotToGather = alternativeSlot;
+                            logger.LogDebug("GatheringChance != 100, >= 95, using SharpVision1/FieldMastery1");
                             actions.Enqueue(PickAction(EAction.SharpVision1, EAction.FieldMastery1));
                             return actions;
                         }
@@ -201,6 +202,7 @@ internal static class DoGather
                             CanUseAction(EAction.SharpVision2, EAction.FieldMastery2))
                         {
                             _slotToGather = alternativeSlot;
+                            logger.LogDebug("GatheringChance != 100, >= 85, using SharpVision2/FieldMastery2");
                             actions.Enqueue(PickAction(EAction.SharpVision2, EAction.FieldMastery2));
                             return actions;
                         }
@@ -209,6 +211,7 @@ internal static class DoGather
                             CanUseAction(EAction.SharpVision3, EAction.FieldMastery3))
                         {
                             _slotToGather = alternativeSlot;
+                            logger.LogDebug("GatheringChance != 100, >= 50, using SharpVision3/FieldMastery3");
                             actions.Enqueue(PickAction(EAction.SharpVision3, EAction.FieldMastery3));
                             return actions;
                         }
@@ -223,15 +226,18 @@ internal static class DoGather
                         CanUseAction(EAction.LuckOfTheMountaineer, EAction.LuckOfThePioneer))
                     {
                         _usedLuck = true;
+                        logger.LogDebug("Using Luck");
                         actions.Enqueue(PickAction(EAction.LuckOfTheMountaineer, EAction.LuckOfThePioneer));
                         return actions;
                     }
                     else if (_usedLuck)
                     {
                         // we still can't find the item, if this node has been hit at least once we just close it
+                        logger.LogDebug("Didn't find item after using Luck, moving on...");
                         if (nodeCondition.CurrentIntegrity != nodeCondition.MaxIntegrity)
                             return null;
-
+                        
+                        logger.LogDebug("Actually there's crystals, let's get those");
                         // otherwise, there most likely is -any- other item available, probably a shard/crystal
                         _slotToGather = slots.MinBy(x => x.ItemId);
                         return actions;
@@ -244,6 +250,7 @@ internal static class DoGather
                     if (slot.GatheringChance >= 95 &&
                         CanUseAction(EAction.SharpVision1, EAction.FieldMastery1))
                     {
+                        logger.LogDebug("GatheringChance != 100, >= 95, using SharpVision1/FieldMastery1");
                         actions.Enqueue(PickAction(EAction.SharpVision1, EAction.FieldMastery1));
                         return actions;
                     }
@@ -251,6 +258,7 @@ internal static class DoGather
                     if (slot.GatheringChance >= 85 &&
                         CanUseAction(EAction.SharpVision2, EAction.FieldMastery2))
                     {
+                        logger.LogDebug("GatheringChance != 100, >= 85, using SharpVision1/FieldMastery1");
                         actions.Enqueue(PickAction(EAction.SharpVision2, EAction.FieldMastery2));
                         return actions;
                     }
@@ -258,6 +266,7 @@ internal static class DoGather
                     if (slot.GatheringChance >= 50 &&
                         CanUseAction(EAction.SharpVision3, EAction.FieldMastery3))
                     {
+                        logger.LogDebug("GatheringChance != 100, >= 50, using SharpVision1/FieldMastery1");
                         actions.Enqueue(PickAction(EAction.SharpVision3, EAction.FieldMastery3));
                         return actions;
                     }
