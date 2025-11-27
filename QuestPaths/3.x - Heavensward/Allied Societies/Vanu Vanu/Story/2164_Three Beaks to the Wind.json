@@ -13,7 +13,9 @@
             "Z": -386.7094
           },
           "TerritoryId": 401,
-          "InteractionType": "AcceptQuest"
+          "InteractionType": "AcceptQuest",
+          "AetheryteShortcut": "The Sea of Clouds - Ok' Zundu",
+          "Fly": true
         }
       ]
     },
@@ -169,7 +171,8 @@
           },
           "TerritoryId": 401,
           "InteractionType": "CompleteQuest",
-          "Mount": false,
+          "AetheryteShortcut": "The Sea of Clouds - Ok' Zundu",
+          "Fly": true,
           "DialogueChoices": [
             {
               "Type": "List",
