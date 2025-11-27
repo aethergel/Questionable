@@ -1,1 +1,2 @@
+- Fix format if no dailies available for a given tribe by alydev
 - Fix vath teleports by alydev
