@@ -15,12 +15,12 @@
           "Locations": [
             {
               "Position": {
-                "X": 609.3118,
-                "Y": -21.51083,
-                "Z": 558.524
+                "X": 610.2234,
+                "Y": -20.80118,
+                "Z": 557.2747
               },
-              "MinimumAngle": 90,
-              "MaximumAngle": 270,
+              "MinimumAngle": -25,
+              "MaximumAngle": 100,
               "MaximumDistance": 3
             }
           ]
@@ -57,8 +57,8 @@
                 "Y": -20.42655,
                 "Z": 561.5663
               },
-              "MinimumAngle": 45,
-              "MaximumAngle": 315,
+              "MinimumAngle": -85,
+              "MaximumAngle": 60,
               "MaximumDistance": 3
             }
           ]

@@ -55,14 +55,21 @@
           ]
         },
         {
-          "DataId": 740,
           "Position": {
             "X": 211.10852,
             "Y": 8.010925,
             "Z": 92.454346
           },
           "TerritoryId": 146,
-          "InteractionType": "UseItem",
+          "InteractionType": "Combat",
+          "$": "Attempted hacky workaround that didn't bear fruit -alydev",
+          "EnemySpawnType": "AfterItemUse",
+          "ComplexCombatData": [
+            {
+              "DataId": 740,
+              "NameId": 2305
+            }
+          ],
           "ItemId": 2001196,
           "RequiredQuestVariables": [
             null,
@@ -125,7 +132,14 @@
             "Z": -104.44806
           },
           "TerritoryId": 146,
-          "InteractionType": "UseItem",
+          "InteractionType": "Combat",
+          "EnemySpawnType": "AfterItemUse",
+          "ComplexCombatData": [
+            {
+              "DataId": 740,
+              "NameId": 2305
+            }
+          ],
           "ItemId": 2001196,
           "RequiredQuestVariables": [
             null,
@@ -191,7 +205,14 @@
             "Z": -83.81781
           },
           "TerritoryId": 146,
-          "InteractionType": "UseItem",
+          "InteractionType": "Combat",
+          "EnemySpawnType": "AfterItemUse",
+          "ComplexCombatData": [
+            {
+              "DataId": 740,
+              "NameId": 2305
+            }
+          ],
           "ItemId": 2001196,
           "RequiredQuestVariables": [
             null,
@@ -263,7 +284,14 @@
             "Z": -138.3841
           },
           "TerritoryId": 146,
-          "InteractionType": "UseItem",
+          "InteractionType": "Combat",
+          "EnemySpawnType": "AfterItemUse",
+          "ComplexCombatData": [
+            {
+              "DataId": 740,
+              "NameId": 2305
+            }
+          ],
           "ItemId": 2001196,
           "RequiredQuestVariables": [
             null,
@@ -332,7 +360,14 @@
             "Z": -79.30121
           },
           "TerritoryId": 146,
-          "InteractionType": "UseItem",
+          "InteractionType": "Combat",
+          "EnemySpawnType": "AfterItemUse",
+          "ComplexCombatData": [
+            {
+              "DataId": 740,
+              "NameId": 2305
+            }
+          ],
           "ItemId": 2001196,
           "RequiredQuestVariables": [
             null,

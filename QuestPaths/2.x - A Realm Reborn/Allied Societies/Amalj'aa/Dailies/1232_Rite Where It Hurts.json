@@ -1,17 +1,16 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
   "Author": "alydev",
-  "LastChecked":{"Username": "alydev", "Date": "2025-11-28"},
   "QuestSequence": [
     {
       "Sequence": 0,
       "Steps": [
         {
-          "DataId": 1005550,
+          "DataId": 1005551,
           "Position": {
-            "X": 105.27197,
-            "Y": 15.359643,
-            "Z": -357.3816
+            "X": 98.924194,
+            "Y": 15.29447,
+            "Z": -349.4469
           },
           "TerritoryId": 146,
           "InteractionType": "AcceptQuest",
@@ -25,39 +24,27 @@
       "Steps": [
         {
           "Position": {
-            "X": -9.631764,
-            "Y": 4.530592,
-            "Z": -52.115612
+            "X": -88.30924,
+            "Y": 45.811226,
+            "Z": 175.01448
           },
           "TerritoryId": 146,
           "InteractionType": "Combat",
+          "Fly": true,
           "EnemySpawnType": "OverworldEnemies",
+          "AetheryteShortcut": "Southern Thanalan - Forgotten Springs",
           "ComplexCombatData": [
             {
-              "DataId": 2452,
-              "NameId": 1390,
-              "MinimumKillCount": 1
-            }
-          ],
-          "Fly": true
-        },
-        {
-          "Position": {
-            "X": -102.21483,
-            "Y": -1.7202407,
-            "Z": 46.500782
-          },
-          "TerritoryId": 146,
-          "InteractionType": "Combat",
-          "EnemySpawnType": "OverworldEnemies",
-          "ComplexCombatData": [
+              "DataId": 742,
+              "NameId": 1879,
+              "MinimumKillCount": 2
+            },
             {
-              "DataId": 2452,
-              "NameId": 1390,
-              "MinimumKillCount": 1
+              "DataId": 740,
+              "NameId": 1880,
+              "MinimumKillCount": 2
             }
-          ],
-          "Fly": true
+          ]
         }
       ]
     },
@@ -65,11 +52,11 @@
       "Sequence": 255,
       "Steps": [
         {
-          "DataId": 1005550,
+          "DataId": 1005551,
           "Position": {
-            "X": 105.27197,
-            "Y": 15.359643,
-            "Z": -357.3816
+            "X": 98.924194,
+            "Y": 15.29447,
+            "Z": -349.4469
           },
           "TerritoryId": 146,
           "InteractionType": "CompleteQuest",

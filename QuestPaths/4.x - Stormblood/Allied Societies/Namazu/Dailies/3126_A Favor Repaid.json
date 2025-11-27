@@ -1,0 +1,127 @@
+{
+  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+  "Author": "alydev",
+  "LastChecked":{"Username": "alydev", "Date": "2025-11-28"},
+  "QuestSequence": [
+    {
+      "Sequence": 0,
+      "Steps": [
+        {
+          "DataId": 1025602,
+          "Position": {
+            "X": -780.148,
+            "Y": 128.25195,
+            "Z": 97.154175
+          },
+          "TerritoryId": 622,
+          "InteractionType": "AcceptQuest",
+          "Mount": true,
+          "AetheryteShortcut": "Azim Steppe - Dhoro Iloh"
+        }
+      ]
+    },
+    {
+      "Sequence": 1,
+      "Steps": [
+        {
+          "DataId": 1025822,
+          "Position": {
+            "X": 88.45642,
+            "Y": -11.547716,
+            "Z": 652.7351
+          },
+          "TerritoryId": 622,
+          "InteractionType": "Interact",
+          "Fly": true,
+          "AetheryteShortcut": "Azim Steppe - Reunion"
+        }
+      ]
+    },
+    {
+      "Sequence": 2,
+      "Steps": [
+        {
+          "DataId": 1025824,
+          "Position": {
+            "X": 87.08313,
+            "Y": -11.459534,
+            "Z": 653.2234
+          },
+          "TerritoryId": 622,
+          "InteractionType": "Interact",
+          "RequiredQuestAcceptedJob": [
+            "DoH"
+          ]
+        },
+        {
+          "TerritoryId": 622,
+          "InteractionType": "Craft",
+          "RequiredQuestAcceptedJob": [
+            "DoH"
+          ],
+          "Fly": true,
+          "ItemId": 22743,
+          "ItemQuality": "HQ",
+          "ItemCount": 1
+        },
+        {
+          "TerritoryId": 622,
+          "InteractionType": "Gather",
+          "RequiredQuestAcceptedJob": [
+            "Miner"
+          ],
+          "Fly": true,
+          "ItemsToGather": [
+            {
+              "ItemId": 22639,
+              "ItemCount": 1
+            }
+          ]
+        },
+        {
+          "TerritoryId": 622,
+          "InteractionType": "Gather",
+          "RequiredQuestAcceptedJob": [
+            "Botanist"
+          ],
+          "Fly": true,
+          "ItemsToGather": [
+            {
+              "ItemId": 22665,
+              "ItemCount": 1
+            }
+          ]
+        },
+        {
+          "DataId": 1025822,
+          "Position": {
+            "X": 88.45642,
+            "Y": -11.547716,
+            "Z": 652.7351
+          },
+          "TerritoryId": 622,
+          "InteractionType": "Interact",
+          "Fly": true,
+          "AetheryteShortcut": "Azim Steppe - Reunion"
+        }
+      ]
+    },
+    {
+      "Sequence": 255,
+      "Steps": [
+        {
+          "DataId": 1025602,
+          "Position": {
+            "X": -780.148,
+            "Y": 128.25195,
+            "Z": 97.154175
+          },
+          "TerritoryId": 622,
+          "InteractionType": "CompleteQuest",
+          "Mount": true,
+          "AetheryteShortcut": "Azim Steppe - Dhoro Iloh"
+        }
+      ]
+    }
+  ]
+}
