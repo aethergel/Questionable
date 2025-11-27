@@ -1,3 +1,1 @@
-- Fix gathering for ixal 1499 by alydev
-- Make sure vanu dailies don't fly all the way across sea of clouds for no reason by alydev
-- Fix aetheryte teleport on vanu story quests by alydev
+- Fix vath teleports by alydev

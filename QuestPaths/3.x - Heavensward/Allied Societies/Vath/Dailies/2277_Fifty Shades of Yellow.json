@@ -34,6 +34,7 @@
           "ChatMessage": {
             "Key": "TEXT_BANGNA602_02277_SYSTEM_000_012"
           },
+          "AetheryteShortcut": "The Dravanian Forelands - Anyx Trine",
           "Fly": true
         },
         {
@@ -103,16 +104,6 @@
     {
       "Sequence": 255,
       "Steps": [
-        {
-          "Position": {
-            "X": 58.39701,
-            "Y": -48.000008,
-            "Z": -172.36507
-          },
-          "TerritoryId": 398,
-          "InteractionType": "WalkTo",
-          "Fly": true
-        },
         {
           "DataId": 1016803,
           "Position": {

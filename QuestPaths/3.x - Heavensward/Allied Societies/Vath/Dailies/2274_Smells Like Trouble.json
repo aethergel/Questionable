@@ -31,6 +31,7 @@
           },
           "TerritoryId": 398,
           "InteractionType": "Interact",
+          "AetheryteShortcut": "The Dravanian Forelands - Anyx Trine",
           "Fly": true
         },
         {
@@ -128,6 +129,7 @@
           },
           "TerritoryId": 398,
           "InteractionType": "CompleteQuest",
+          "AetheryteShortcut": "The Dravanian Forelands - Anyx Trine",
           "Fly": true
         }
       ]

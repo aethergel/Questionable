@@ -32,6 +32,7 @@
           },
           "TerritoryId": 398,
           "InteractionType": "Interact",
+          "AetheryteShortcut": "The Dravanian Forelands - Anyx Trine",
           "Fly": true
         },
         {
@@ -76,17 +77,6 @@
     {
       "Sequence": 255,
       "Steps": [
-        {
-          "Position": {
-            "X": 58.39701,
-            "Y": -48.000008,
-            "Z": -172.36507
-          },
-          "TerritoryId": 398,
-          "InteractionType": "WalkTo",
-          "Fly": true,
-          "AetheryteShortcut": "The Dravanian Forelands - Anyx Trine"
-        },
         {
           "DataId": 1016803,
           "Position": {
