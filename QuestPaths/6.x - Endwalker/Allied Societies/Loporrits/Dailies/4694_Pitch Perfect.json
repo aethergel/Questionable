@@ -6,13 +6,31 @@
       "Sequence": 0,
       "Steps": [
         {
+          "DataId": 2013249,
           "Position": {
-            "X": -201.42024,
-            "Y": -49.149708,
-            "Z": -273.68756
+            "X": -26.34522,
+            "Y": -132.0332,
+            "Z": -445.35086
           },
           "TerritoryId": 959,
-          "InteractionType": "WalkTo"
+          "TargetTerritoryId": 959,
+          "InteractionType": "Interact",
+          "Fly": true,
+          "Land": true,
+          "AetheryteShortcut": "Mare Lamentorum - Bestways Burrow",
+          "SkipConditions": {
+            "StepIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": -201.89743,
+                  "Y": -49.149708,
+                  "Z": -273.6312
+                },
+                "TerritoryId": 959,
+                "MaximumDistance": 100
+              }
+            }
+          }
         },
         {
           "DataId": 1044403,
@@ -79,6 +97,33 @@
       "Sequence": 255,
       "Steps": [
         {
+          "DataId": 2013249,
+          "Position": {
+            "X": -26.34522,
+            "Y": -132.0332,
+            "Z": -445.35086
+          },
+          "TerritoryId": 959,
+          "TargetTerritoryId": 959,
+          "InteractionType": "Interact",
+          "Fly": true,
+          "Land": true,
+          "AetheryteShortcut": "Mare Lamentorum - Bestways Burrow",
+          "SkipConditions": {
+            "StepIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": -201.89743,
+                  "Y": -49.149708,
+                  "Z": -273.6312
+                },
+                "TerritoryId": 959,
+                "MaximumDistance": 100
+              }
+            }
+          }
+        },
+        {
           "DataId": 1044403,
           "Position": {
             "X": -203.5401,
@@ -86,10 +131,7 @@
             "Z": -273.60956
           },
           "TerritoryId": 959,
-          "InteractionType": "CompleteQuest",
-          "StopDistance": 5,
-          "AetheryteShortcut": "Mare Lamentorum - Bestways Burrow",
-          "Fly": true
+          "InteractionType": "CompleteQuest"
         }
       ]
     }

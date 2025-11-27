@@ -23,17 +23,6 @@
           "Land": true,
           "AetheryteShortcut": "Mare Lamentorum - Bestways Burrow",
           "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": -26.34522,
-                  "Y": -132.0332,
-                  "Z": -445.35086
-                },
-                "TerritoryId": 959,
-                "MaximumDistance": 300
-              }
-            },
             "StepIf": {
               "NearPosition": {
                 "Position": {
@@ -99,17 +88,6 @@
           "Land": true,
           "AetheryteShortcut": "Mare Lamentorum - Bestways Burrow",
           "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": -26.34522,
-                  "Y": -132.0332,
-                  "Z": -445.35086
-                },
-                "TerritoryId": 959,
-                "MaximumDistance": 300
-              }
-            },
             "StepIf": {
               "NearPosition": {
                 "Position": {

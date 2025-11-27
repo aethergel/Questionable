@@ -1,3 +1,4 @@
 - Moogle daily aetheryte shortcut by alydev
 - Draft variant dungeon unlocks (incomplete) by alydev
 - Minor spring cleaning per code analysis by alydev
+- Society aetheryte shortcuts by alydev

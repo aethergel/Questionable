@@ -13,7 +13,9 @@
             "Z": 575.1278
           },
           "TerritoryId": 816,
-          "InteractionType": "AcceptQuest"
+          "InteractionType": "AcceptQuest",
+          "AetheryteShortcut":"Il Mheg - Lydha Lran",
+          "Fly": true
         }
       ]
     },

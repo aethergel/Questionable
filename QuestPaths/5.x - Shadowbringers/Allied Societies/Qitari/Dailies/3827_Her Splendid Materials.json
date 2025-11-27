@@ -43,7 +43,9 @@
             "Z": -218.555
           },
           "TerritoryId": 817,
-          "InteractionType": "AcceptQuest"
+          "InteractionType": "AcceptQuest",
+          "AetheryteShortcut":"Rak'tika - Fanow",
+          "Fly": true
         }
       ]
     },

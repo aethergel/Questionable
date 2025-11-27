@@ -22,7 +22,9 @@
             "Z": 97.154175
           },
           "TerritoryId": 622,
-          "InteractionType": "AcceptQuest"
+          "InteractionType": "AcceptQuest",
+          "AetheryteShortcut": "Azim Steppe - Dhoro Iloh",
+          "Fly": true
         }
       ]
     },
