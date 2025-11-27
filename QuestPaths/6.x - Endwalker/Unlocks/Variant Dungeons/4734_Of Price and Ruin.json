@@ -1,0 +1,22 @@
+{
+  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+  "Author": "alydev",
+  "Disabled": true,
+  "QuestSequence": [
+    {
+      "Sequence": 0,
+      "Steps": [
+        {
+          "DataId": 1045249,
+          "Position": {
+            "X": -114.15277,
+            "Y": 11.800039,
+            "Z": -121.049866
+          },
+          "TerritoryId": 628,
+          "InteractionType": "AcceptQuest"
+        }
+      ]
+    }
+  ]
+}
