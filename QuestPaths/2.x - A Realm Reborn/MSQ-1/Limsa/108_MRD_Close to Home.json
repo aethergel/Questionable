@@ -1,6 +1,6 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-  "Author": "liza,alydev",
+  "Author": ["liza", "alydev"],
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -35,14 +35,7 @@
           "TerritoryId": 129,
           "InteractionType": "AttuneAetheryte",
           "Aetheryte": "Limsa Lominsa",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "TerritoryId": 129,
@@ -58,14 +51,7 @@
           },
           "TerritoryId": 129,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "TerritoryId": 129,
@@ -126,14 +112,7 @@
           "TerritoryId": 128,
           "InteractionType": "Interact",
           "Comment": "MRD Receptionist",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         }
       ]
     },

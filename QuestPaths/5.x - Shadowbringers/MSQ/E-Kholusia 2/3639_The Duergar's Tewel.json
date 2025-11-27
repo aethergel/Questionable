@@ -71,14 +71,7 @@
           "TerritoryId": 814,
           "InteractionType": "UseItem",
           "ItemId": 2002610,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 1030236,
@@ -90,14 +83,7 @@
           "TerritoryId": 814,
           "InteractionType": "UseItem",
           "ItemId": 2002610,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 1030237,
@@ -109,14 +95,7 @@
           "TerritoryId": 814,
           "InteractionType": "UseItem",
           "ItemId": 2002610,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         }
       ]
     },

@@ -54,25 +54,11 @@
           "ComplexCombatData": [
             {
               "DataId": 179,
-              "CompletionQuestVariablesFlags": [
-                16,
-                1,
-                null,
-                null,
-                null,
-                null
-              ],
+              "CompletionQuestVariablesFlags": [16,1,null,null,null,null],
               "MinimumKillCount": 1
             }
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            1,
-            null,
-            null,
-            null,
-            null
-          ],
+          "CompletionQuestVariablesFlags": [null,1,null,null,null,null],
           "$": "0 0  0 0  0 0 -> 16 1  0 0  0 0"
         },
         {
@@ -84,14 +70,7 @@
           },
           "TerritoryId": 152,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32],
           "$": "16 1  0 0  0 0 -> 17 1  16 0  0 32"
         },
         {
@@ -103,14 +82,7 @@
           },
           "TerritoryId": 152,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64],
           "$": "17 1  16 0  0 32 -> 18 1  32 0  0 96"
         },
         {
@@ -122,14 +94,7 @@
           },
           "TerritoryId": 152,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128],
           "$": "18 1  32 0  0 96 -> 35 1  48 0  0 224"
         },
         {
@@ -144,25 +109,11 @@
           "ComplexCombatData": [
             {
               "DataId": 7,
-              "CompletionQuestVariablesFlags": [
-                null,
-                16,
-                null,
-                null,
-                null,
-                null
-              ],
+              "CompletionQuestVariablesFlags": [null,16,null,null,null,null],
               "MinimumKillCount": 1
             }
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            16,
-            null,
-            null,
-            null,
-            null
-          ],
+          "CompletionQuestVariablesFlags": [null,16,null,null,null,null],
           "$": "If skipping the previous step: 34 17 32 0 0 96"
         }
       ]

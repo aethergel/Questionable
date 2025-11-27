@@ -77,14 +77,7 @@
           "TerritoryId": 134,
           "InteractionType": "Action",
           "Action": "Heavy Swing",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 2001482,
@@ -96,14 +89,7 @@
           "TerritoryId": 134,
           "InteractionType": "Action",
           "Action": "Heavy Swing",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 2001480,
@@ -115,14 +101,7 @@
           "TerritoryId": 134,
           "InteractionType": "Action",
           "Action": "Heavy Swing",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         }
       ]
     },
@@ -154,14 +133,7 @@
           "TerritoryId": 134,
           "InteractionType": "Action",
           "Action": "Heavy Swing",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 2001485,
@@ -173,14 +145,7 @@
           "TerritoryId": 134,
           "InteractionType": "Action",
           "Action": "Heavy Swing",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 2001484,
@@ -192,14 +157,7 @@
           "TerritoryId": 134,
           "InteractionType": "Action",
           "Action": "Heavy Swing",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         }
       ]
     },

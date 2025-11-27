@@ -33,14 +33,7 @@
             "[Tuliyollal] Aetheryte Plaza",
             "[Tuliyollal] The Resplendent Quarter"
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 1051035,
@@ -51,14 +44,7 @@
           },
           "TerritoryId": 1185,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         }
       ]
     },

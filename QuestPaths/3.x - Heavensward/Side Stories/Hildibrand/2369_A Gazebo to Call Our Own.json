@@ -48,14 +48,7 @@
           },
           "TerritoryId": 419,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 1017963,
@@ -66,14 +59,7 @@
           },
           "TerritoryId": 419,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 1017964,
@@ -84,14 +70,7 @@
           },
           "TerritoryId": 419,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         }
       ]
     },
@@ -138,14 +117,7 @@
           },
           "TerritoryId": 478,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 1012299,
@@ -157,14 +129,7 @@
           "StopDistance": 5,
           "TerritoryId": 478,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "Position": {
@@ -176,14 +141,7 @@
           "InteractionType": "WalkTo",
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                32
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
             }
           }
         },
@@ -197,14 +155,7 @@
           "StopDistance": 7,
           "TerritoryId": 478,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         }
       ]
     },

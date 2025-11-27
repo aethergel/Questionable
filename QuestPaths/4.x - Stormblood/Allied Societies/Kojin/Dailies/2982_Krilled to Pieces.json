@@ -69,14 +69,7 @@
           "TerritoryId": 613,
           "InteractionType": "Action",
           "Action": "Inhale",
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            [16,32, 96, 144],
-            null,
-            null
-          ]
+          "RequiredQuestVariables": [null,null,null,[16,32, 96, 144],null,null]
         },
         {
           "DataId": 2009235,
@@ -100,14 +93,7 @@
           "TerritoryId": 613,
           "InteractionType": "Action",
           "Action": "Inhale",
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            [32, 80, 96, 112],
-            null,
-            null
-          ]
+          "RequiredQuestVariables": [null,null,null,[32, 80, 96, 112],null,null]
         },
         {
           "DataId": 2009237,
@@ -119,14 +105,7 @@
           "TerritoryId": 613,
           "InteractionType": "Action",
           "Action": "Inhale",
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            [32, 80, 112, 144],
-            null,
-            null
-          ]
+          "RequiredQuestVariables": [null,null,null,[32, 80, 112, 144],null,null]
         }
       ]
     },

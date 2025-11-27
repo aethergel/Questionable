@@ -44,14 +44,7 @@
             "[Gridania] Aetheryte Plaza",
             "[Gridania] Leatherworkers' Guild & Shaded Bower"
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 1000692,
@@ -66,14 +59,7 @@
             "[Gridania] Leatherworkers' Guild & Shaded Bower",
             "[Gridania] Conjurers' Guild"
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         }
       ]
     },

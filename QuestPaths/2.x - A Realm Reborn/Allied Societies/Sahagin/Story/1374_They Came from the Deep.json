@@ -47,14 +47,7 @@
           "StopDistance": 7,
           "TerritoryId": 137,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            16
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
         },
         {
           "DataId": 1008831,
@@ -66,14 +59,7 @@
           "StopDistance": 7,
           "TerritoryId": 137,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 1008830,
@@ -85,14 +71,7 @@
           "TerritoryId": 137,
           "InteractionType": "UseItem",
           "ItemId": 2001288,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 1008829,
@@ -104,14 +83,7 @@
           "TerritoryId": 137,
           "InteractionType": "UseItem",
           "ItemId": 2001288,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         }
       ]
     },

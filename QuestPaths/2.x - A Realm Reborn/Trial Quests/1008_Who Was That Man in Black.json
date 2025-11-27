@@ -47,14 +47,7 @@
           },
           "TerritoryId": 132,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 1000156,
@@ -69,14 +62,7 @@
             "[Gridania] Archers' Guild",
             "[Gridania] Aetheryte Plaza"
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            16
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
         },
         {
           "DataId": 1000122,
@@ -87,14 +73,7 @@
           },
           "TerritoryId": 132,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 1000372,
@@ -105,14 +84,7 @@
           },
           "TerritoryId": 132,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         }
       ]
     },

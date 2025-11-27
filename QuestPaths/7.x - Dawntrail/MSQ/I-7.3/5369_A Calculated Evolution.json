@@ -90,14 +90,7 @@
           },
           "TerritoryId": 1299,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            16
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
         },
         {
           "DataId": 2014891,
@@ -108,14 +101,7 @@
           },
           "TerritoryId": 1299,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 2014890,
@@ -126,14 +112,7 @@
           },
           "TerritoryId": 1299,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 2014892,
@@ -144,14 +123,7 @@
           },
           "TerritoryId": 1299,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         }
       ]
     },
@@ -189,14 +161,7 @@
               "Answer": "TEXT_KINGMI106_05369_A5_000_001"
             }
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            128,
-            null,
-            null
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,128,null,null],
           "SkipConditions": {
             "StepIf": {
               "Never": true
@@ -228,14 +193,7 @@
             3,
             4
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            32,
-            null,
-            null
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,32,null,null],
           "$": "Sapphire -> 0, Garnet -> 1, Alexandrite -> 2, Signature -> 3, Cancel -> 4",
           "$.1": "This also sets - - - 128->192 - - if you only insert the alexandrite/don't click the signature, and - - - 128->224 if you click the signature",
           "$.2": "This has a different data id after inserting the alexandrite?"
@@ -256,14 +214,7 @@
               "Answer": "TEXT_KINGMI106_05369_A6_000_001"
             }
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            16,
-            null,
-            null
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,16,null,null],
           "SkipConditions": {
             "StepIf": {
               "Never": true

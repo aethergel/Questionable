@@ -55,14 +55,7 @@
           "TerritoryId": 1188,
           "InteractionType": "Interact",
           "AetheryteShortcut": "Kozama'uka - Ok'hanu",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 1052318,
@@ -73,14 +66,7 @@
           },
           "TerritoryId": 1188,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 1052320,
@@ -92,14 +78,7 @@
           "TerritoryId": 1188,
           "InteractionType": "Interact",
           "Fly": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         }
       ]
     },

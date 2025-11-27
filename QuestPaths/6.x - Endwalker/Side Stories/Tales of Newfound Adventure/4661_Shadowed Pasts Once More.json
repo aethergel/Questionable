@@ -44,14 +44,7 @@
             "[Radz-at-Han] Hall of the Radiant Host",
             "[Radz-at-Han] Aetheryte Plaza"
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            16
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
         },
         {
           "DataId": 1044218,
@@ -67,14 +60,7 @@
             "[Radz-at-Han] Aetheryte Plaza",
             "[Radz-at-Han] Alzadaal's Peace"
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 1044217,
@@ -85,14 +71,7 @@
           },
           "TerritoryId": 963,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 1044215,
@@ -108,14 +87,7 @@
             "[Radz-at-Han] Aetheryte Plaza",
             "[Radz-at-Han] Ruveydah Fibers"
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         }
       ]
     },

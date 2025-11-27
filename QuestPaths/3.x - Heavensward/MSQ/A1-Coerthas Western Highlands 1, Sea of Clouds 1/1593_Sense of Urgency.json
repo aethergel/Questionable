@@ -31,14 +31,7 @@
           "Mount": true,
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                128
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
             }
           }
         },
@@ -53,14 +46,7 @@
           "DisableNavmesh": true,
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                128
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
             }
           }
         },
@@ -74,14 +60,7 @@
           "TerritoryId": 401,
           "InteractionType": "Emote",
           "Emote": "psych",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "Position": {
@@ -102,14 +81,7 @@
           "TerritoryId": 401,
           "InteractionType": "Emote",
           "Emote": "psych",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 1012359,
@@ -121,14 +93,7 @@
           "TerritoryId": 401,
           "InteractionType": "Emote",
           "Emote": "psych",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         }
       ]
     },

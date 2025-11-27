@@ -110,7 +110,7 @@ internal sealed class PandorasBoxIpc : IDisposable
         if (_pausedFeatures != null)
             return;
 
-        _pausedFeatures = new HashSet<string>();
+        _pausedFeatures = [];
 
         foreach (var feature in ConflictingFeatures)
         {

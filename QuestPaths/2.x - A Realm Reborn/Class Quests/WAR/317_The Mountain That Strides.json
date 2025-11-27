@@ -115,14 +115,7 @@
           },
           "TerritoryId": 138,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "Position": {
@@ -142,14 +135,7 @@
           },
           "TerritoryId": 138,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64],
           "DelaySecondsAtStart": 5
         }
       ]

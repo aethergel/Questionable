@@ -68,14 +68,7 @@
           "InteractionType": "Action",
           "StopDistance": 4,
           "Action": "Aspected Benefic",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 1015171,
@@ -88,14 +81,7 @@
           "InteractionType": "Action",
           "StopDistance": 4,
           "Action": "Aspected Benefic",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 1015170,
@@ -108,14 +94,7 @@
           "InteractionType": "Action",
           "StopDistance": 4,
           "Action": "Aspected Benefic",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         }
       ]
     },

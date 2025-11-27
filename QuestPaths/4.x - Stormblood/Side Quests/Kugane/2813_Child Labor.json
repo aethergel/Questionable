@@ -29,14 +29,7 @@
           },
           "TerritoryId": 628,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 1023131,
@@ -51,14 +44,7 @@
             "[Kugane] Bokairo Inn",
             "[Kugane] Shiokaze Hostelry"
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            4
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,4]
         },
         {
           "DataId": 1023126,
@@ -73,14 +59,7 @@
             "[Kugane] Shiokaze Hostelry",
             "[Kugane] Aetheryte Plaza"
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 1023130,
@@ -95,14 +74,7 @@
             "[Kugane] Aetheryte Plaza",
             "[Kugane] Kogane Dori Markets"
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            8
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,8]
         },
         {
           "DataId": 1023128,
@@ -113,14 +85,7 @@
           },
           "TerritoryId": 628,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 1023129,
@@ -135,14 +100,7 @@
             "[Kugane] Kogane Dori Markets",
             "[Kugane] Thavnairian Consulate"
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            16
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
         }
       ]
     },

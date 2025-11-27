@@ -14,7 +14,7 @@ internal sealed class QuestValidator
     private readonly IReadOnlyList<IQuestValidator> _validators;
     private readonly ILogger<QuestValidator> _logger;
 
-    private List<ValidationIssue> _validationIssues = new();
+    private List<ValidationIssue> _validationIssues = [];
 
     public QuestValidator(IEnumerable<IQuestValidator> validators, ILogger<QuestValidator> logger)
     {
@@ -45,7 +45,7 @@ internal sealed class QuestValidator
                 _validationIssues.Clear();
 
                 List<ValidationIssue> issues = [];
-                Dictionary<EAlliedSociety, int> disabledTribeQuests = new();
+                Dictionary<EAlliedSociety, int> disabledTribeQuests = [];
                 foreach (var quest in quests)
                 {
                     foreach (var validator in _validators)

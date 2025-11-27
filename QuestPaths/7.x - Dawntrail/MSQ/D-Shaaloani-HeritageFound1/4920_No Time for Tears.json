@@ -51,14 +51,7 @@
             "[Tuliyollal] Aetheryte Plaza",
             "[Tuliyollal] The Resplendent Quarter"
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 1047019,
@@ -69,14 +62,7 @@
           },
           "TerritoryId": 1185,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 1047022,
@@ -87,14 +73,7 @@
           },
           "TerritoryId": 1185,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            16
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
         },
         {
           "DataId": 1047023,
@@ -105,14 +84,7 @@
           },
           "TerritoryId": 1185,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            8
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,8]
         },
         {
           "DataId": 1047021,
@@ -123,14 +95,7 @@
           },
           "TerritoryId": 1185,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         }
       ]
     },
@@ -174,14 +139,7 @@
             "[Tuliyollal] The Resplendent Quarter",
             "[Tuliyollal] The For'ard Cabins"
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 2013813,
@@ -196,14 +154,7 @@
             "[Tuliyollal] The For'ard Cabins",
             "[Tuliyollal] Bayside Bevy Marketplace"
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            16
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
         },
         {
           "DataId": 2013811,
@@ -214,14 +165,7 @@
           },
           "TerritoryId": 1185,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 2013812,
@@ -232,14 +176,7 @@
           },
           "TerritoryId": 1185,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         }
       ]
     },

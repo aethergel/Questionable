@@ -58,14 +58,7 @@
           "Fly": true,
           "$.0": "[1]",
           "$.1": "QuestVariables if done first: 0 0 0 3 0 0 during fight; 16 1 0 2 16 8 after",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            8
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,8]
         },
         {
           "DataId": 2011076,
@@ -83,14 +76,7 @@
           ],
           "Fly": true,
           "$.1": "QuestVariables if done after [1]: 34 1 0 1 48 40",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 2011079,

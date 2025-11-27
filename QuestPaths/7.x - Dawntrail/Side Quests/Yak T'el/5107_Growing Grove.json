@@ -31,14 +31,7 @@
           "InteractionType": "Interact",
           "AetheryteShortcut": "Yak T'el - Mamook",
           "Fly": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 1048974,
@@ -50,14 +43,7 @@
           "TerritoryId": 1189,
           "InteractionType": "Interact",
           "Fly": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 1048989,
@@ -69,14 +55,7 @@
           "TerritoryId": 1189,
           "InteractionType": "Interact",
           "Fly": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         }
       ]
     },

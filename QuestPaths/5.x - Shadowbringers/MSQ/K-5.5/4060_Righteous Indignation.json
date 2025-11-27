@@ -80,14 +80,7 @@
           "InteractionType": "Interact",
           "Fly": true,
           "$.1": "QuestVariables if done first: 1 16 0 0 0 64",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 1036359,
@@ -101,14 +94,7 @@
           "Mount": true,
           "Fly": true,
           "$.1": "QuestVariables if done after [1]: 2 16 0 0 0 96",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 1036357,
@@ -120,14 +106,7 @@
           "TerritoryId": 402,
           "InteractionType": "Interact",
           "DisableNavmesh": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         }
       ]
     },

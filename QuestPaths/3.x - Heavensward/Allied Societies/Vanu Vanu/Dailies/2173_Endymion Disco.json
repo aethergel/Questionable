@@ -81,14 +81,7 @@
           "Action": "Buffet (Sanuwa)",
           "StopDistance": 3,
           "$": "0 0  0 0  0 0 --> 1 0  0 0  0 16",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            16
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
         },
         {
           "Position": {
@@ -112,14 +105,7 @@
           "Action": "Buffet (Sanuwa)",
           "StopDistance": 3,
           "$": "1 0  0 0  0 16 --> 2 0  0 0  0 80",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "Position": {
@@ -143,14 +129,7 @@
           "Action": "Buffet (Sanuwa)",
           "StopDistance": 3,
           "$": "2 0  0 0  0 80 --> 3 0  0 0  0 112",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "Position": {

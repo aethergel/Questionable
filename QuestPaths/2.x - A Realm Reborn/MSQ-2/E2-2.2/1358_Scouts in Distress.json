@@ -78,14 +78,7 @@
           "TerritoryId": 138,
           "InteractionType": "Interact",
           "$": "0 0  0 0  0 0 -> 1 16  0 0  0 128",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 1008685,
@@ -96,14 +89,7 @@
           },
           "TerritoryId": 138,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         }
       ]
     },

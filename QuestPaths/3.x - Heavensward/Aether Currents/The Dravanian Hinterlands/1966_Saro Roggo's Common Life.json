@@ -52,14 +52,7 @@
             44
           ],
           "$": "0 0 0 0 0 0 -> 16 1 0 0 0 128",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 2006062,
@@ -75,14 +68,7 @@
             44
           ],
           "$": "16 1 0 0 0 128 -> 33 1 0 0 0 192",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 2006063,
@@ -97,14 +83,7 @@
           "KillEnemyDataIds": [
             44
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         }
       ]
     },

@@ -125,14 +125,7 @@
           "DisableNavmesh": true,
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                64
-              ],
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,64],
               "NearPosition": {
                 "Position": {
                   "X": 496.94043,
@@ -169,14 +162,7 @@
           "KillEnemyDataIds": [
             14078
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64],
           "$.0": "[1]",
           "$.1": "QuestVariables if done first: (before) 0 0 2 0 0 0 (after) 16 16 2 0 0 64"
         },
@@ -197,14 +183,7 @@
             "ItemId": 2003231,
             "Condition": "Incapacitated"
           },
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32],
           "$.0": "[2]",
           "$.1": "QuestVariables if done after [1]: 32 17 1 0 0 96"
         },
@@ -218,14 +197,7 @@
           "InteractionType": "WalkTo",
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                128
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
             }
           },
           "Comment": "Avoids combat"
@@ -239,14 +211,7 @@
           },
           "TerritoryId": 958,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128],
           "$.0": "[3]",
           "$.1": "QuestVariables if done after [1, 2]: 49 17 1 0 0 224"
         },
@@ -261,14 +226,7 @@
           "Comment": "Avoids combat",
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                16
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
             }
           }
         },
@@ -290,14 +248,7 @@
             "Condition": "Incapacitated"
           },
           "DisableNavmesh": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            16
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,16],
           "$.0": "[4]"
         }
       ]

@@ -1,6 +1,6 @@
 ﻿{
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-  "Author": "liza,alydev",
+  "Author": ["liza", "alydev"],
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -30,14 +30,7 @@
           },
           "TerritoryId": 148,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "Position": {

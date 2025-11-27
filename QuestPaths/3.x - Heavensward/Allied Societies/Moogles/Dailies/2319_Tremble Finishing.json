@@ -1,6 +1,6 @@
 ﻿{
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-  "Author": "liza, Redacted",
+  "Author": ["liza", " Redacted"],
   "QuestSequence": [
     {
       "Sequence": 0,

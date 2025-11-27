@@ -37,14 +37,7 @@
                     "TerritoryId": 152,
                     "InteractionType": "Interact",
                     "Fly": true,
-                    "CompletionQuestVariablesFlags": [
-                        null,
-                        null,
-                        null,
-                        null,
-                        null,
-                        2
-                    ]
+                    "CompletionQuestVariablesFlags": [null,null,null,null,null,2]
                 },
                 {
                     "DataId": 2003069,
@@ -56,14 +49,7 @@
                     "TerritoryId": 152,
                     "InteractionType": "Interact",
                     "Fly": true,
-                    "CompletionQuestVariablesFlags": [
-                        null,
-                        null,
-                        null,
-                        null,
-                        null,
-                        32
-                    ]
+                    "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
                 },
                 {
                     "DataId": 2003068,
@@ -74,14 +60,7 @@
                     },
                     "TerritoryId": 152,
                     "InteractionType": "Interact",
-                    "CompletionQuestVariablesFlags": [
-                        null,
-                        null,
-                        null,
-                        null,
-                        null,
-                        64
-                    ]
+                    "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
                 },
                 {
                     "DataId": 2003070,
@@ -92,14 +71,7 @@
                     },
                     "TerritoryId": 152,
                     "InteractionType": "Interact",
-                    "CompletionQuestVariablesFlags": [
-                        null,
-                        null,
-                        null,
-                        null,
-                        null,
-                        16
-                    ]
+                    "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
                 },
                 {
                     "DataId": 2003067,

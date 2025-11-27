@@ -68,14 +68,7 @@
             "[Ul'dah] The Chamber of Rule",
             "[Ul'dah] Gladiators' Guild"
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 1021345,
@@ -86,14 +79,7 @@
           },
           "TerritoryId": 131,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 1021346,
@@ -104,14 +90,7 @@
           },
           "TerritoryId": 131,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            16
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
         },
         {
           "DataId": 1021347,
@@ -122,14 +101,7 @@
           },
           "TerritoryId": 131,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            8
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,8]
         },
         {
           "DataId": 1021344,
@@ -140,14 +112,7 @@
           },
           "TerritoryId": 131,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         }
       ]
     },

@@ -1,7 +1,13 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-  "$": "Checked by alydev 20250915",
-  "Author": "plogon_enjoyer,alydev",
+  "Author": [
+    "plogon_enjoyer",
+    "alydev"
+  ],
+  "LastChecked": {
+    "Username": "alydev",
+    "Date": "2025-09-15"
+  },
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -16,20 +22,7 @@
           "TerritoryId": 146,
           "InteractionType": "AcceptQuest",
           "AetheryteShortcut": "Southern Thanalan - Little Ala Mhigo",
-          "Fly": true,
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": 105.27197,
-                  "Y": 15.359643,
-                  "Z": -357.3816
-                },
-                "TerritoryId": 146,
-                "MaximumDistance": 300
-              }
-            }
-          }
+          "Fly": true
         }
       ]
     },
@@ -141,14 +134,7 @@
           "TerritoryId": 146,
           "InteractionType": "Action",
           "Action": "Fiery Breath",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128],
           "RequiredQuestVariables": [
             null,
             [
@@ -178,14 +164,7 @@
           "TerritoryId": 146,
           "InteractionType": "Action",
           "Action": "Fiery Breath",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            2
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,2],
           "RequiredQuestVariables": [
             null,
             [
@@ -233,14 +212,7 @@
           "TerritoryId": 146,
           "InteractionType": "Action",
           "Action": "Fiery Breath",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64],
           "RequiredQuestVariables": [
             null,
             [
@@ -267,14 +239,7 @@
           "TerritoryId": 146,
           "InteractionType": "Action",
           "Action": "Fiery Breath",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            4
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,4],
           "RequiredQuestVariables": [
             null,
             [
@@ -301,14 +266,7 @@
           "TerritoryId": 146,
           "InteractionType": "Action",
           "Action": "Fiery Breath",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32],
           "RequiredQuestVariables": [
             null,
             [
@@ -335,14 +293,7 @@
           "TerritoryId": 146,
           "InteractionType": "Action",
           "Action": "Fiery Breath",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            16
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,16],
           "RequiredQuestVariables": [
             null,
             [
@@ -375,14 +326,7 @@
           "TerritoryId": 146,
           "InteractionType": "Action",
           "Action": "Fiery Breath",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            8
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,8],
           "RequiredQuestVariables": [
             null,
             [
@@ -411,20 +355,7 @@
           "TerritoryId": 146,
           "InteractionType": "CompleteQuest",
           "AetheryteShortcut": "Southern Thanalan - Little Ala Mhigo",
-          "Fly": true,
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": 105.27197,
-                  "Y": 15.359643,
-                  "Z": -357.3816
-                },
-                "TerritoryId": 146,
-                "MaximumDistance": 100
-              }
-            }
-          }
+          "Fly": true
         }
       ]
     }

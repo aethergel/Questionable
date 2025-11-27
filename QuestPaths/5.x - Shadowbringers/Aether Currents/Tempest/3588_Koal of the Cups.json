@@ -51,14 +51,7 @@
               "Answer": "TEXT_LUCKZJ101_03588_A2_000_001"
             }
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 2010464,
@@ -76,14 +69,7 @@
               "Answer": "TEXT_LUCKZJ101_03588_A1_000_001"
             }
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         }
       ]
     },

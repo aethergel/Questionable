@@ -55,14 +55,7 @@
               "Answer": "TEXT_AKTKZF015_04270_A1_000_002"
             }
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            64,
-            null,
-            null,
-            null,
-            null
-          ]
+          "CompletionQuestVariablesFlags": [null,64,null,null,null,null]
         },
         {
           "DataId": 2012396,
@@ -80,14 +73,7 @@
               "Answer": "TEXT_AKTKZF015_04270_A1_000_001"
             }
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            32,
-            null,
-            null,
-            null,
-            null
-          ]
+          "CompletionQuestVariablesFlags": [null,32,null,null,null,null]
         },
         {
           "DataId": 1041152,

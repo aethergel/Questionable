@@ -51,14 +51,7 @@
           },
           "TerritoryId": 397,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 1011237,
@@ -69,14 +62,7 @@
           },
           "TerritoryId": 397,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         }
       ]
     },
@@ -127,14 +113,7 @@
             4677
           ],
           "Fly": true,
-          "CompletionQuestVariablesFlags": [
-            2,
-            null,
-            null,
-            null,
-            null,
-            null
-          ]
+          "CompletionQuestVariablesFlags": [2,null,null,null,null,null]
         },
         {
           "DataId": 2005855,

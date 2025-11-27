@@ -75,14 +75,7 @@
               "InSameTerritory": true
             },
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                1,
-                null,
-                null,
-                null,
-                null,
-                64
-              ]
+              "CompletionQuestVariablesFlags": [1,null,null,null,null,64]
             }
           }
         },
@@ -102,14 +95,7 @@
               "InSameTerritory": true
             },
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                2,
-                null,
-                null,
-                null,
-                null,
-                null
-              ]
+              "CompletionQuestVariablesFlags": [2,null,null,null,null,null]
             }
           }
         },

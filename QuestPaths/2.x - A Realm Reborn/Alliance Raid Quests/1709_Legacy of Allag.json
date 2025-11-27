@@ -78,14 +78,7 @@
           "AetheryteShortcut": "Upper La Noscea - Camp Bronze Lake",
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                128
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
             }
           }
         },
@@ -100,14 +93,7 @@
           "TargetTerritoryId": 180,
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                128
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
             }
           }
         },
@@ -122,14 +108,7 @@
           "Fly": true,
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                128
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
             }
           }
         },
@@ -139,14 +118,7 @@
           "Aetheryte": "Outer La Noscea - Camp Overlook",
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                128
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
             }
           }
         },
@@ -161,14 +133,7 @@
           "Fly": true,
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                128
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
             }
           }
         },
@@ -183,14 +148,7 @@
           "Fly": true,
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                128
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
             }
           }
         },
@@ -205,14 +163,7 @@
           "Fly": true,
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                128
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
             }
           }
         },
@@ -230,14 +181,7 @@
             9487
           ],
           "$": "0 0  0 0  0 0 -> 16 17  0 0  0 128",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "Position": {
@@ -251,14 +195,7 @@
           "AetheryteShortcut": "Western La Noscea - Aleport",
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                64
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
             }
           }
         },
@@ -276,14 +213,7 @@
             9488
           ],
           "$": "16 17  0 0  0 128 -> 0 17  0 0  0 0",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         }
       ]
     },
@@ -351,14 +281,7 @@
             9489
           ],
           "$": "0 0  0 0  0 0 -> 16 17  0 0  0 128",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128],
           "Fly": true,
           "DisableNavmesh": true
         },
@@ -378,14 +301,7 @@
           "Fly": true,
           "AetheryteShortcut": "Coerthas Central Highlands - Camp Dragonhead",
           "$": "16 17  0 0  0 128 -> 0 17  0 0  0 0",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         }
       ]
     },

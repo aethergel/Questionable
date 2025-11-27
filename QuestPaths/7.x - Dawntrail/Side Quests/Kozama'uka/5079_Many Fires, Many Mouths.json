@@ -34,25 +34,11 @@
               "DataId": 17241,
               "RewardItemId": 2003643,
               "RewardItemCount": 1,
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                16,
-                null,
-                null,
-                null
-              ]
+              "CompletionQuestVariablesFlags": [null,null,16,null,null,null]
             }
           ],
           "Fly": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            16,
-            null,
-            null,
-            null
-          ],
+          "CompletionQuestVariablesFlags": [null,null,16,null,null,null],
           "$": "16 0 16 0 0 0"
         },
         {
@@ -69,25 +55,11 @@
               "DataId": 17242,
               "RewardItemId": 2003642,
               "RewardItemCount": 1,
-              "CompletionQuestVariablesFlags": [
-                null,
-                1,
-                null,
-                null,
-                null,
-                null
-              ]
+              "CompletionQuestVariablesFlags": [null,1,null,null,null,null]
             }
           ],
           "Fly": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            1,
-            null,
-            null,
-            null,
-            null
-          ],
+          "CompletionQuestVariablesFlags": [null,1,null,null,null,null],
           "$": "16 1 0 0 0 0"
         }
       ]

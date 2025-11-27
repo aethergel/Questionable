@@ -96,7 +96,7 @@ internal sealed class QuestionableIpc : IDisposable
         _getCurrentlyActiveEventQuests =
             pluginInterface.GetIpcProvider<List<string>>(IpcGetCurrentlyActiveEventQuests);
         _getCurrentlyActiveEventQuests.RegisterFunc(() =>
-            eventInfoComponent.GetCurrentlyActiveEventQuests().Select(q => q.ToString()).ToList());
+            [.. eventInfoComponent.GetCurrentlyActiveEventQuests().Select(q => q.ToString())]);
 
         _startQuest = pluginInterface.GetIpcProvider<string, bool>(IpcStartQuest);
         _startQuest.RegisterFunc(questId => StartQuest(questId, false));
@@ -142,6 +142,8 @@ internal sealed class QuestionableIpc : IDisposable
 
         _stop = pluginInterface.GetIpcProvider<string, bool>(IpcStop);
         _stop.RegisterFunc(Stop);
+
+        _redoUtil = new RedoUtil();
 
         _redoLookup = pluginInterface.GetIpcProvider<uint, string>(IpcRedoLookup);
         _redoLookup.RegisterFunc(RedoLookup);

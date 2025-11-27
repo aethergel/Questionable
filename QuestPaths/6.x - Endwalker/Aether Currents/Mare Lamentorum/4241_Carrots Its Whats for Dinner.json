@@ -31,14 +31,7 @@
           "InteractionType": "WalkTo",
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                128
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
             }
           }
         },
@@ -62,14 +55,7 @@
           "Comment": "Platform 1",
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                128
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
             }
           }
         },
@@ -92,14 +78,7 @@
           "Comment": "Platform 2",
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                128
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
             }
           }
         },
@@ -122,14 +101,7 @@
           "Comment": "Platform 3",
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                128
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
             }
           }
         },
@@ -152,14 +124,7 @@
           "Comment": "Platform 4",
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                128
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
             }
           }
         },
@@ -182,14 +147,7 @@
           "Comment": "Platform 5",
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                128
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
             }
           }
         },
@@ -212,14 +170,7 @@
           "Comment": "Platform 6",
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                128
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
             }
           }
         },
@@ -234,14 +185,7 @@
           "DisableNavmesh": true,
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                128
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
             }
           }
         },
@@ -259,14 +203,7 @@
           "ChatMessage": {
             "Key": "TEXT_AKTKZE002_04241_SYSTEM_000_010"
           },
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 1041790,
@@ -281,14 +218,7 @@
           "ChatMessage": {
             "Key": "TEXT_AKTKZE002_04241_SYSTEM_000_010"
           },
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "Position": {
@@ -321,14 +251,7 @@
           "Comment": "Platform 1",
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                32
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
             }
           }
         },
@@ -352,14 +275,7 @@
           "Comment": "Platform 2",
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                32
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
             }
           }
         },
@@ -383,14 +299,7 @@
           "Comment": "Platform 3",
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                32
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
             }
           }
         },
@@ -414,14 +323,7 @@
           "Comment": "Platform 4",
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                32
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
             }
           }
         },
@@ -445,14 +347,7 @@
           "Comment": "Platform 5",
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                32
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
             }
           }
         },
@@ -476,14 +371,7 @@
           "Comment": "Platform 6",
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                32
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
             }
           }
         },
@@ -500,14 +388,7 @@
           "ChatMessage": {
             "Key": "TEXT_AKTKZE002_04241_SYSTEM_000_010"
           },
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         }
       ]
     },

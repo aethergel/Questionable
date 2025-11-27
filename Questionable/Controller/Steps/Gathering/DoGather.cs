@@ -133,7 +133,7 @@ internal static class DoGather
 
         private unsafe List<SlotInfo> ReadSlots(AddonGathering* addonGathering)
         {
-            List<SlotInfo> slots = new List<SlotInfo>();
+            List<SlotInfo> slots = [];
             for (int i = 0; i < 8; ++i)
             {
                 // +8 = new item?

@@ -45,14 +45,7 @@
           "SkipConditions": {
             "StepIf": {
               "Flying": "Unlocked",
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                64
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
             }
           }
         },
@@ -71,14 +64,7 @@
               "Flying": "Unlocked"
             }
           },
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 2014079,
@@ -92,14 +78,7 @@
           "InteractionType": "UseItem",
           "ItemId": 2003594,
           "Fly": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "Position": {
@@ -112,14 +91,7 @@
           "SkipConditions": {
             "StepIf": {
               "Flying": "Unlocked",
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                128
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
             }
           }
         },
@@ -138,14 +110,7 @@
               "Flying": "Unlocked"
             }
           },
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 2014078,
@@ -159,14 +124,7 @@
           "InteractionType": "UseItem",
           "ItemId": 2003594,
           "Fly": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "Position": {
@@ -179,14 +137,7 @@
           "SkipConditions": {
             "StepIf": {
               "Flying": "Unlocked",
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                32
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
             }
           }
         },
@@ -205,14 +156,7 @@
               "Flying": "Unlocked"
             }
           },
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 2014080,
@@ -226,14 +170,7 @@
           "InteractionType": "UseItem",
           "ItemId": 2003594,
           "Fly": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         }
       ]
     },

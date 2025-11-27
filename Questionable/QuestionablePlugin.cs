@@ -37,7 +37,6 @@ using Action = Questionable.Controller.Steps.Interactions.Action;
 
 namespace Questionable;
 
-[SuppressMessage("ReSharper", "UnusedType.Global")]
 public sealed class QuestionablePlugin : IDalamudPlugin
 {
     private readonly ServiceProvider? _serviceProvider;
@@ -67,7 +66,7 @@ public sealed class QuestionablePlugin : IDalamudPlugin
 
         try
         {
-            ServiceCollection serviceCollection = new();
+            ServiceCollection serviceCollection = [];
             serviceCollection.AddLogging(builder => builder.SetMinimumLevel(LogLevel.Trace)
                 .ClearProviders()
                 .AddDalamudLogger(pluginLog, t => t[(t.LastIndexOf('.') + 1)..]));

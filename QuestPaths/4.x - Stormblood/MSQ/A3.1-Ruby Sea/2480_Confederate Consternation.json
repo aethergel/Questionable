@@ -128,14 +128,7 @@
           "TerritoryId": 613,
           "InteractionType": "Interact",
           "$": "0 0 0 0 0 0 -> 16 1 0 0 0 128",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "Position": {
@@ -147,14 +140,7 @@
           "InteractionType": "WalkTo",
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                32
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
             }
           }
         },
@@ -168,14 +154,7 @@
           "TerritoryId": 613,
           "InteractionType": "Interact",
           "$": "16 1 0 0 0 128 -> 33 1 0 0 0 160",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 2007854,
@@ -186,14 +165,7 @@
           },
           "TerritoryId": 613,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         }
       ]
     },

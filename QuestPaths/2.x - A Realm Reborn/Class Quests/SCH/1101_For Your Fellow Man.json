@@ -60,14 +60,7 @@
           "TerritoryId": 139,
           "InteractionType": "Action",
           "Action": "Esuna",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "Position": {
@@ -80,14 +73,7 @@
           "Mount": true,
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                128
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
             }
           }
         },
@@ -101,14 +87,7 @@
           "TerritoryId": 139,
           "InteractionType": "Action",
           "Action": "Esuna",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 1007840,
@@ -120,14 +99,7 @@
           "TerritoryId": 139,
           "InteractionType": "Action",
           "Action": "Esuna",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            8
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,8]
         },
         {
           "Position": {
@@ -139,14 +111,7 @@
           "InteractionType": "WalkTo",
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                32
-              ],
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,32],
               "Flying": "Unlocked"
             }
           }
@@ -163,14 +128,7 @@
           "InteractionType": "Action",
           "Action": "Esuna",
           "Fly": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 1007841,
@@ -183,14 +141,7 @@
           "InteractionType": "Action",
           "Action": "Esuna",
           "Fly": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            16
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
         }
       ]
     },

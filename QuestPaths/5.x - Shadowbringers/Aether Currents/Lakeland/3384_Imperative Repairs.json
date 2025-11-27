@@ -31,14 +31,7 @@
           "Comment": "Tower Bottom",
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                64
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
             }
           }
         },
@@ -54,14 +47,7 @@
           "Comment": "Tower Bottom Platform 1",
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                64
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
             }
           }
         },
@@ -75,14 +61,7 @@
           "TerritoryId": 813,
           "InteractionType": "UseItem",
           "ItemId": 2002831,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 2010619,
@@ -94,14 +73,7 @@
           "TerritoryId": 813,
           "InteractionType": "UseItem",
           "ItemId": 2002831,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 2010613,
@@ -113,14 +85,7 @@
           "TerritoryId": 813,
           "InteractionType": "UseItem",
           "ItemId": 2002831,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 2010620,
@@ -132,14 +97,7 @@
           "TerritoryId": 813,
           "InteractionType": "UseItem",
           "ItemId": 2002831,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            16
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
         }
       ]
     },

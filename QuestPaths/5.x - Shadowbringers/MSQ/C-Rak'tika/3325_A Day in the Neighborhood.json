@@ -90,14 +90,7 @@
           "ChatMessage": {
             "Key": "TEXT_LUCKMC104_03325_SYSTEM_000_110"
           },
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 1027463,
@@ -111,14 +104,7 @@
           "ChatMessage": {
             "Key": "TEXT_LUCKMC104_03325_SYSTEM_000_110"
           },
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 1027750,
@@ -132,14 +118,7 @@
           "ChatMessage": {
             "Key": "TEXT_LUCKMC104_03325_SYSTEM_000_110"
           },
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         }
       ]
     },

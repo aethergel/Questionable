@@ -48,14 +48,7 @@
           "InteractionType": "WalkTo",
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                64
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
             }
           }
         },
@@ -69,14 +62,7 @@
           "TerritoryId": 957,
           "InteractionType": "UseItem",
           "ItemId": 2003199,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 2011963,
@@ -88,14 +74,7 @@
           "TerritoryId": 957,
           "InteractionType": "UseItem",
           "ItemId": 2003199,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64],
           "DelaySecondsAtStart": 3
         },
         {
@@ -108,14 +87,7 @@
           "InteractionType": "WalkTo",
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                16
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
             }
           }
         },
@@ -129,14 +101,7 @@
           "TerritoryId": 957,
           "InteractionType": "UseItem",
           "ItemId": 2003199,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 2011965,
@@ -148,14 +113,7 @@
           "TerritoryId": 957,
           "InteractionType": "UseItem",
           "ItemId": 2003199,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            16
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,16],
           "DelaySecondsAtStart": 3
         },
         {
@@ -177,14 +135,7 @@
           "TerritoryId": 957,
           "InteractionType": "UseItem",
           "ItemId": 2003199,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            4
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,4]
         },
         {
           "DataId": 2011966,
@@ -196,14 +147,7 @@
           "TerritoryId": 957,
           "InteractionType": "UseItem",
           "ItemId": 2003199,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            8
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,8],
           "DelaySecondsAtStart": 3
         }
       ]

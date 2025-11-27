@@ -31,14 +31,7 @@
           "InteractionType": "WalkTo",
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                16
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
             }
           }
         },
@@ -58,14 +51,7 @@
             46
           ],
           "$": "QW: 16 0 1 16 0 16",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            16
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
         },
         {
           "DataId": 2002233,
@@ -78,14 +64,7 @@
           "InteractionType": "UseItem",
           "ItemId": 2000766,
           "$": "QW: 32 16 1 16 0 80",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "Position": {
@@ -97,14 +76,7 @@
           "InteractionType": "WalkTo",
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                8
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,8]
             }
           }
         },
@@ -119,14 +91,7 @@
           "InteractionType": "UseItem",
           "ItemId": 2000766,
           "$": "48 17 1 16 0 88",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            8
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,8]
         },
         {
           "Position": {
@@ -139,14 +104,7 @@
           "Comment": "Avoids pit",
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                32
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
             }
           }
         },
@@ -161,14 +119,7 @@
           "Comment": "Move into LOS",
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                32
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
             }
           }
         },
@@ -188,14 +139,7 @@
             46
           ],
           "$": "64 17 49 16 0 120",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "Position": {

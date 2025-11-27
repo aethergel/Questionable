@@ -30,14 +30,7 @@
           "InteractionType": "WalkTo",
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                64
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
             }
           }
         },
@@ -51,14 +44,7 @@
           "TerritoryId": 613,
           "InteractionType": "Interact",
           "$": "0 0 0 0 0 0 -> 0 16 0 0 0 64",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "Position": {
@@ -71,14 +57,7 @@
           "Mount": true,
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                128
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
             }
           }
         },
@@ -92,14 +71,7 @@
           "TerritoryId": 613,
           "InteractionType": "Interact",
           "$": "0 16 0 0 0 64 -> 16 32 0 0 0 192",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128],
           "DisableNavmesh": true
         },
         {
@@ -111,14 +83,7 @@
           },
           "TerritoryId": 613,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         }
       ]
     },

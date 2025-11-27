@@ -61,14 +61,7 @@
           "TerritoryId": 815,
           "InteractionType": "UseItem",
           "ItemId": 2002562,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 2009916,
@@ -80,14 +73,7 @@
           "TerritoryId": 815,
           "InteractionType": "UseItem",
           "ItemId": 2002562,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 2009917,
@@ -99,14 +85,7 @@
           "TerritoryId": 815,
           "InteractionType": "UseItem",
           "ItemId": 2002562,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         }
       ]
     },
@@ -126,14 +105,7 @@
           "KillEnemyDataIds": [
             10884
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 2010279,
@@ -148,14 +120,7 @@
           "KillEnemyDataIds": [
             10884
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 2010276,
@@ -170,14 +135,7 @@
           "KillEnemyDataIds": [
             10884
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 2010275,
@@ -192,14 +150,7 @@
           "KillEnemyDataIds": [
             10884
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            2
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,2]
         },
         {
           "DataId": 2010274,
@@ -214,14 +165,7 @@
           "KillEnemyDataIds": [
             10884
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            4
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,4]
         },
         {
           "DataId": 2010281,
@@ -236,14 +180,7 @@
           "KillEnemyDataIds": [
             10884
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            16
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
         },
         {
           "DataId": 2010283,
@@ -258,14 +195,7 @@
           "KillEnemyDataIds": [
             10884
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            8
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,8]
         }
       ]
     },

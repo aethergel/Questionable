@@ -13,16 +13,10 @@ using GimmickYesNo = Lumina.Excel.Sheets.GimmickYesNo;
 
 namespace Questionable.Functions;
 
-internal sealed class ExcelFunctions
+internal sealed class ExcelFunctions(IDataManager dataManager, ILogger<ExcelFunctions> logger)
 {
-    private readonly IDataManager _dataManager;
-    private readonly ILogger<ExcelFunctions> _logger;
-
-    public ExcelFunctions(IDataManager dataManager, ILogger<ExcelFunctions> logger)
-    {
-        _dataManager = dataManager;
-        _logger = logger;
-    }
+    private readonly IDataManager _dataManager = dataManager;
+    private readonly ILogger<ExcelFunctions> _logger = logger;
 
     public StringOrRegex GetDialogueText(Quest? currentQuest, string? excelSheetName, string key, bool isRegex)
     {

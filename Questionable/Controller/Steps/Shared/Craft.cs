@@ -48,9 +48,9 @@ internal static class Craft
         ILogger<DoCraft> logger,
         QuestController questController) : TaskExecutor<CraftTask>
     {
-        private int _startingItemCount = 0;
+        private int _startingItemCount;
         private EItemQuality _itemQuality = EItemQuality.Any;
-        private int _previousCount = 0;
+        private int _previousCount;
         protected override bool Start()
         {
             // Get the item quality requirement from the quest step (NQ, HQ, or Any)
@@ -66,10 +66,8 @@ internal static class Craft
             _startingItemCount = ownedCount;
             _previousCount = ownedCount;
 
-            RecipeLookup? recipeLookup = dataManager.GetExcelSheet<RecipeLookup>().GetRowOrDefault(Task.ItemId);
-            if (recipeLookup == null)
+            RecipeLookup? recipeLookup = dataManager.GetExcelSheet<RecipeLookup>().GetRowOrDefault(Task.ItemId) ??
                 throw new TaskException($"Item {Task.ItemId} is not craftable");
-
             uint recipeId = (EClassJob)clientState.LocalPlayer!.ClassJob.RowId switch
             {
                 EClassJob.Carpenter => recipeLookup.Value.CRP.RowId,

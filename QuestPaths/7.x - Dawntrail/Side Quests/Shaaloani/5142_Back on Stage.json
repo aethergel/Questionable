@@ -48,14 +48,7 @@
           "Fly": true,
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                64
-              ],
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,64],
               "Flying": "Locked"
             }
           }
@@ -71,14 +64,7 @@
           "InteractionType": "Emote",
           "Emote": "dance",
           "Fly": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "Position": {
@@ -91,14 +77,7 @@
           "Fly": true,
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                128
-              ],
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,128],
               "Flying": "Locked"
             }
           },
@@ -114,14 +93,7 @@
           "TerritoryId": 1190,
           "InteractionType": "Emote",
           "Emote": "dance",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "Position": {
@@ -133,14 +105,7 @@
           "InteractionType": "WalkTo",
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                32
-              ],
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,32],
               "Flying": "Locked"
             }
           },
@@ -157,14 +122,7 @@
           "InteractionType": "Emote",
           "Emote": "dance",
           "Fly": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         }
       ]
     },

@@ -48,14 +48,7 @@
           "ItemId": 2001934,
           "Fly": true,
           "AetheryteShortcut": "The Sea of Clouds - Camp Cloudtop",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            8
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,8]
         },
         {
           "DataId": 1016232,
@@ -68,14 +61,7 @@
           "InteractionType": "UseItem",
           "ItemId": 2001934,
           "Fly": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 1016233,
@@ -88,14 +74,7 @@
           "InteractionType": "UseItem",
           "ItemId": 2001934,
           "Fly": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 1016374,
@@ -108,14 +87,7 @@
           "InteractionType": "UseItem",
           "ItemId": 2001934,
           "Fly": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            16
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
         },
         {
           "DataId": 1016231,
@@ -128,14 +100,7 @@
           "InteractionType": "UseItem",
           "ItemId": 2001934,
           "Fly": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         }
       ]
     },

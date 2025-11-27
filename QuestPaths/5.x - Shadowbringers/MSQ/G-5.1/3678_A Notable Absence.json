@@ -30,14 +30,7 @@
           "TerritoryId": 820,
           "InteractionType": "Interact",
           "$.1": "QuestValues if done first: 16 1 16 0 0 128",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 1027602,
@@ -53,14 +46,7 @@
             "[Eulmore] Southeast Derelicts"
           ],
           "$.1": "QuestValues if done after [1]: 32 17 16 16 0 160",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 1029990,
@@ -75,14 +61,7 @@
             "[Eulmore] Southeast Derelicts",
             "[Eulmore] The Glory Gate"
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         }
       ]
     },

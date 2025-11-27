@@ -55,7 +55,7 @@ internal sealed class CombatController : IDisposable
         ChatFunctions chatFunctions,
         ILogger<CombatController> logger)
     {
-        _combatModules = combatModules.ToList();
+        _combatModules = [.. combatModules];
         _movementController = movementController;
         _targetManager = targetManager;
         _objectTable = objectTable;
@@ -204,7 +204,6 @@ internal sealed class CombatController : IDisposable
             return EStatus.InCombat;
     }
 
-    [SuppressMessage("ReSharper", "RedundantJumpStatement")]
     private IGameObject? FindNextTarget()
     {
         if (_currentFight == null)
@@ -457,8 +456,8 @@ internal sealed class CombatController : IDisposable
 
         direction = Vector3.Normalize(direction);
 
-        Vector3 originVect = new Vector3(sourcePos.X, sourcePos.Y, sourcePos.Z);
-        Vector3 directionVect = new Vector3(direction.X, direction.Y, direction.Z);
+        Vector3 originVect = new(sourcePos.X, sourcePos.Y, sourcePos.Z);
+        Vector3 directionVect = new(direction.X, direction.Y, direction.Z);
 
         RaycastHit hit;
         var flags = stackalloc int[] { 0x4000, 0, 0x4000, 0 };
@@ -520,7 +519,7 @@ internal sealed class CombatController : IDisposable
         public required List<ComplexCombatData> ComplexCombatDatas { get; init; }
         public required CombatItemUse? CombatItemUse { get; init; }
 
-        public HashSet<int> CompletedComplexDatas { get; } = new();
+        public HashSet<int> CompletedComplexDatas { get; } = [];
     }
 
     public enum EStatus

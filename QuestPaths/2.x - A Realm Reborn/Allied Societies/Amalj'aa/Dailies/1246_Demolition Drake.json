@@ -1,7 +1,10 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-  "$": "Checked by alydev 20250915",
   "Author": "alydev",
+  "LastChecked": {
+    "Username": "alydev",
+    "Date": "2025-09-15"
+  },
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -16,20 +19,7 @@
           "TerritoryId": 146,
           "InteractionType": "AcceptQuest",
           "AetheryteShortcut": "Southern Thanalan - Little Ala Mhigo",
-          "Fly": true,
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": 85.618286,
-                  "Y": 15.28719,
-                  "Z": -355.70312
-                },
-                "TerritoryId": 146,
-                "MaximumDistance": 300
-              }
-            }
-          }
+          "Fly": true
         }
       ]
     },
@@ -121,14 +111,7 @@
           "TerritoryId": 146,
           "InteractionType": "Action",
           "DisableNavmesh": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128],
           "StopDistance": 5,
           "Action": "Fiery Breath"
         },
@@ -182,14 +165,7 @@
           "TerritoryId": 146,
           "InteractionType": "Action",
           "DisableNavmesh": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64],
           "StopDistance": 5,
           "Action": "Fiery Breath"
         }
@@ -208,20 +184,7 @@
           "TerritoryId": 146,
           "InteractionType": "CompleteQuest",
           "AetheryteShortcut": "Southern Thanalan - Little Ala Mhigo",
-          "Fly": true,
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": 85.618286,
-                  "Y": 15.28719,
-                  "Z": -355.70312
-                },
-                "TerritoryId": 146,
-                "MaximumDistance": 300
-              }
-            }
-          }
+          "Fly": true
         }
       ]
     }

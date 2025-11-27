@@ -132,14 +132,7 @@
               "Answer": "TEXT_LUCKTA503_04036_A9_000_002"
             }
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            8
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,8]
         },
         {
           "DataId": 1035144,
@@ -157,14 +150,7 @@
               "Answer": "TEXT_LUCKTA503_04036_A6_000_002"
             }
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 1035145,
@@ -182,14 +168,7 @@
               "Answer": "TEXT_LUCKTA503_04036_A7_000_002"
             }
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 1035146,
@@ -207,14 +186,7 @@
               "Answer": "TEXT_LUCKTA503_04036_A8_000_001"
             }
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 1035147,
@@ -232,14 +204,7 @@
               "Answer": "TEXT_LUCKTA503_04036_A10_000_002"
             }
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            16
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
         }
       ]
     },

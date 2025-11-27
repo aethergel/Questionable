@@ -61,14 +61,7 @@
           "InteractionType": "UseItem",
           "ItemId": 2003234,
           "GroundTarget": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 2012132,
@@ -81,14 +74,7 @@
           "InteractionType": "UseItem",
           "ItemId": 2003234,
           "GroundTarget": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         }
       ]
     },

@@ -111,14 +111,7 @@
             4374
           ],
           "Fly": true,
-          "CompletionQuestVariablesFlags": [
-            1,
-            null,
-            null,
-            null,
-            null,
-            null
-          ]
+          "CompletionQuestVariablesFlags": [1,null,null,null,null,null]
         },
         {
           "DataId": 2005525,

@@ -31,14 +31,7 @@
           "InteractionType": "Interact",
           "AetheryteShortcut": "Yanxia - House of the Fierce",
           "$": "QW: 0 0    0 0    0 0 -> QW: 17 0    0 0    0 64",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 1019287,
@@ -50,14 +43,7 @@
           "TerritoryId": 614,
           "InteractionType": "Interact",
           "$": "QW: 17 0    0 0    0 64 -> QW: 33 16    0 0    0 96",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 1019285,
@@ -68,14 +54,7 @@
           },
           "TerritoryId": 614,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         }
       ]
     },

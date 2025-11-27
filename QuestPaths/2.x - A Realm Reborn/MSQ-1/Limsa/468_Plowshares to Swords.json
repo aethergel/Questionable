@@ -34,14 +34,7 @@
             349
           ],
           "$": "These flags don't exist, just want this step to not-finish",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         }
       ]
     },

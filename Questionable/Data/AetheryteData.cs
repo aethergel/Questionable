@@ -12,8 +12,8 @@ internal sealed class AetheryteData
 {
     public AetheryteData(IDataManager dataManager)
     {
-        Dictionary<EAetheryteLocation, ushort> territoryIds = new();
-        Dictionary<EAetheryteLocation, ushort> aethernetGroups = new();
+        Dictionary<EAetheryteLocation, ushort> territoryIds = [];
+        Dictionary<EAetheryteLocation, ushort> aethernetGroups = [];
 
 
         void ConfigureAetheryte(EAetheryteLocation aetheryteLocation, ushort territoryId,

@@ -36,14 +36,7 @@
           "TerritoryId": 153,
           "InteractionType": "Interact",
           "$": "0 0  0 0  0 0 -> 16 0  16 0  0 128",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128],
           "Comment": "Enemy loses aggro by the next waypoint"
         },
         {
@@ -65,14 +58,7 @@
           },
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                8
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,8]
             }
           }
         },
@@ -87,14 +73,7 @@
           "InteractionType": "Interact",
           "$": "16 0  16 0  0 128 -> 32 1  16 0  0 136",
           "DisableNavmesh": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            8
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,8]
         },
         {
           "Position": {
@@ -106,14 +85,7 @@
           "InteractionType": "WalkTo",
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                32
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
             }
           }
         },
@@ -136,14 +108,7 @@
           },
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                32
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
             }
           }
         },
@@ -157,14 +122,7 @@
           "TerritoryId": 153,
           "InteractionType": "Interact",
           "$": "32 1  16 0  0 136 -> 49 1  16 0  0 168",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "Position": {
@@ -177,14 +135,7 @@
           "DisableNavmesh": true,
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                16
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
             }
           }
         },
@@ -198,14 +149,7 @@
           "InteractionType": "WalkTo",
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                16
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
             }
           }
         },
@@ -220,14 +164,7 @@
           "TerritoryId": 153,
           "InteractionType": "Interact",
           "$": "49 1  16 0  0 168 -> 65 17  16 0  0 184",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            16
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
         },
         {
           "DataId": 2001950,
@@ -239,14 +176,7 @@
           "TerritoryId": 153,
           "InteractionType": "Interact",
           "$": "65 17  16 0  0 184 -> ",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         }
       ]
     },

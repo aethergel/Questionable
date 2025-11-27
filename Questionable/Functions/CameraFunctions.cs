@@ -24,7 +24,7 @@ internal unsafe struct CameraEx
     [FieldOffset(0x15C)] public float DirVMax; // +45deg by default
 }
 
-internal unsafe class CameraFunctions : IDisposable
+internal sealed unsafe class CameraFunctions : IDisposable
 {
     private readonly ILogger<CameraFunctions> _logger;
     private readonly IClientState             _clientState;
@@ -41,7 +41,7 @@ internal unsafe class CameraFunctions : IDisposable
         }
     }
 
-    private bool IgnoreUserInput = true; // if true - override even if user tries to change camera orientation, otherwise override only if user does nothing
+    private readonly bool IgnoreUserInput = true; // if true - override even if user tries to change camera orientation, otherwise override only if user does nothing
     private float DesiredAzimuth;
     private float DesiredAltitude;
 

@@ -21,20 +21,7 @@
           "InteractionType": "AcceptQuest",
           "AetheryteShortcut": "North Shroud - Fallgourd Float",
           "Fly": true,
-          "Land": true,
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": 153.8872,
-                  "Y": -9.001622,
-                  "Z": 77.50049
-                },
-                "TerritoryId": 154,
-                "MaximumDistance": 250
-              }
-            }
-          }
+          "Land": true
         }
       ]
     },
@@ -93,20 +80,7 @@
           "TerritoryId": 155,
           "InteractionType": "Interact",
           "Fly": true,
-          "AetheryteShortcut": "Coerthas Central Highlands - Camp Dragonhead",
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": 238.33057,
-                  "Y": 302,
-                  "Z": -254.1391
-                },
-                "TerritoryId": 155,
-                "MaximumDistance": 100
-              }
-            }
-          }
+          "AetheryteShortcut": "Coerthas Central Highlands - Camp Dragonhead"
         }
       ]
     },
@@ -122,20 +96,7 @@
           },
           "TerritoryId": 155,
           "InteractionType": "Interact",
-          "AetheryteShortcut": "Coerthas Central Highlands - Camp Dragonhead",
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": 238.33057,
-                  "Y": 302,
-                  "Z": -254.1391
-                },
-                "TerritoryId": 155,
-                "MaximumDistance": 100
-              }
-            }
-          }
+          "AetheryteShortcut": "Coerthas Central Highlands - Camp Dragonhead"
         }
       ]
     },
@@ -166,20 +127,7 @@
           "InteractionType": "CompleteQuest",
           "AetheryteShortcut": "North Shroud - Fallgourd Float",
           "Fly": true,
-          "Land": true,
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": 153.8872,
-                  "Y": -9.001622,
-                  "Z": 77.50049
-                },
-                "TerritoryId": 154,
-                "MaximumDistance": 250
-              }
-            }
-          }
+          "Land": true
         }
       ]
     }

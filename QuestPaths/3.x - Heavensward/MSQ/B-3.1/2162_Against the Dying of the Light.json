@@ -59,14 +59,7 @@
             "[Ishgard] The Jeweled Crozier",
             "[Ishgard] The Tribunal"
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 1016020,
@@ -78,14 +71,7 @@
           "TerritoryId": 419,
           "InteractionType": "Interact",
           "$": "17 0 0 0 0 64 -> 33 16 0 0 0 96",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 1016015,
@@ -96,14 +82,7 @@
           },
           "TerritoryId": 419,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         }
       ]
     },

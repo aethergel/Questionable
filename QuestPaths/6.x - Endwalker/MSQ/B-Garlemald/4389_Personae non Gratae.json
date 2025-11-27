@@ -30,14 +30,7 @@
           "TerritoryId": 958,
           "InteractionType": "Interact",
           "Comment": "Caeso",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 1037718,
@@ -49,14 +42,7 @@
           "TerritoryId": 958,
           "InteractionType": "Interact",
           "Comment": "Octavia",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            16
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
         },
         {
           "Position": {
@@ -68,14 +54,7 @@
           "InteractionType": "WalkTo",
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                128
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
             }
           }
         },
@@ -89,14 +68,7 @@
           "TerritoryId": 958,
           "InteractionType": "Interact",
           "Comment": "Sabinianus",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 1037717,
@@ -108,14 +80,7 @@
           "TerritoryId": 958,
           "InteractionType": "Interact",
           "Comment": "Marcellinus",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 2012062,
@@ -127,14 +92,7 @@
           "TerritoryId": 958,
           "InteractionType": "Interact",
           "Comment": "Magitek Radio",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            8
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,8]
         }
       ]
     },

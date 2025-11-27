@@ -50,14 +50,7 @@
             7546
           ],
           "$": "0 0 0 3 0 0 -> 18 0 0 2 0 8",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            8
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,8]
         },
         {
           "DataId": 2008456,
@@ -75,14 +68,7 @@
             7562
           ],
           "$": "18 0 0 2 0 8 -> 34 0 32 17 0 24",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            16
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
         },
         {
           "DataId": 2008131,
@@ -99,14 +85,7 @@
             7562
           ],
           "$": "If skipping the step before: 34 2 0 33 0 40",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         }
       ]
     },

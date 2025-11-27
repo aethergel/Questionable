@@ -33,14 +33,7 @@
             "[Radz-at-Han] Alzadaal's Peace",
             "[Radz-at-Han] Kama"
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 1037354,
@@ -56,14 +49,7 @@
             "[Radz-at-Han] Kama",
             "[Radz-at-Han] Aetheryte Plaza"
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         }
       ]
     },

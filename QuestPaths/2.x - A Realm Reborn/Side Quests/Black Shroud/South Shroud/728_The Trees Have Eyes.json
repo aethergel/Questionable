@@ -37,14 +37,7 @@
               "RewardItemCount": 4
             }
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            4,
-            null,
-            null,
-            null,
-            null
-          ]
+          "CompletionQuestVariablesFlags": [null,4,null,null,null,null]
         },
         {
           "Position": {
@@ -63,14 +56,7 @@
               "RewardItemCount": 2
             }
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            32,
-            null,
-            null,
-            null
-          ]
+          "CompletionQuestVariablesFlags": [null,null,32,null,null,null]
         }
       ]
     },

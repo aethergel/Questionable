@@ -43,14 +43,7 @@
           "StopDistance": 4,
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                1,
-                null,
-                null,
-                null,
-                null,
-                128
-              ]
+              "CompletionQuestVariablesFlags": [1,null,null,null,null,128]
             }
           }
         },

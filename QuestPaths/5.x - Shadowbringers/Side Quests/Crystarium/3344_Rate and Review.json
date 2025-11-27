@@ -33,14 +33,7 @@
             "[Crystarium] The Dossal Gate",
             "[Crystarium] Temenos Rookery"
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 1027227,
@@ -55,14 +48,7 @@
             "[Crystarium] Temenos Rookery",
             "[Crystarium] The Cabinet of Curiosity"
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            16
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
         },
         {
           "DataId": 1030258,
@@ -77,14 +63,7 @@
             "[Crystarium] The Cabinet of Curiosity",
             "[Crystarium] The Amaro Launch"
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "Position": {
@@ -112,14 +91,7 @@
           },
           "TerritoryId": 819,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         }
       ]
     },

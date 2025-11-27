@@ -229,7 +229,7 @@ internal sealed class PriorityWindow : LWindow
 
     public static List<ElementId> DecodeQuestPriority(string clipboardText)
     {
-        List<ElementId> clipboardItems = new List<ElementId>();
+        List<ElementId> clipboardItems = [];
         try
         {
             if (!string.IsNullOrEmpty(clipboardText))

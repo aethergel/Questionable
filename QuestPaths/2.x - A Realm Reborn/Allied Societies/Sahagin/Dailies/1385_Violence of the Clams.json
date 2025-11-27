@@ -15,20 +15,7 @@
           "TerritoryId": 138,
           "InteractionType": "AcceptQuest",
           "AetheryteShortcut": "Western La Noscea - Aleport",
-          "Fly": true,
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": -220.7218,
-                  "Y": -40.720844,
-                  "Z": 37.247192
-                },
-                "TerritoryId": 138,
-                "MaximumDistance": 100
-              }
-            }
-          }
+          "Fly": true
         }
       ]
     },
@@ -65,23 +52,28 @@
           "RequiredQuestVariables": [
             null,
             [
-              1,17,33,49,65,
-              2,18,34,50,66,
-              3,19,35,51,67
+              1,
+              17,
+              33,
+              49,
+              65,
+              2,
+              18,
+              34,
+              50,
+              66,
+              3,
+              19,
+              35,
+              51,
+              67
             ],
             null,
             null,
             null,
             null
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 2003853,
@@ -95,21 +87,18 @@
           "RequiredQuestVariables": [
             null,
             [
-              1,17,33,49,65
+              1,
+              17,
+              33,
+              49,
+              65
             ],
             null,
             null,
             null,
             null
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            8
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,8]
         },
         {
           "DataId": 2003847,
@@ -123,23 +112,28 @@
           "RequiredQuestVariables": [
             null,
             [
-              1,17,33,49,65,
-              2,18,34,50,66,
-              3,19,35,51,67
+              1,
+              17,
+              33,
+              49,
+              65,
+              2,
+              18,
+              34,
+              50,
+              66,
+              3,
+              19,
+              35,
+              51,
+              67
             ],
             null,
             null,
             null,
             null
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 2003854,
@@ -153,21 +147,18 @@
           "RequiredQuestVariables": [
             null,
             [
-              2,18,34,50,66
+              2,
+              18,
+              34,
+              50,
+              66
             ],
             null,
             null,
             null,
             null
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            4
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,4]
         },
         {
           "DataId": 2003846,
@@ -181,23 +172,28 @@
           "RequiredQuestVariables": [
             null,
             [
-              1,17,33,49,65,
-              2,18,34,50,66,
-              3,19,35,51,67
+              1,
+              17,
+              33,
+              49,
+              65,
+              2,
+              18,
+              34,
+              50,
+              66,
+              3,
+              19,
+              35,
+              51,
+              67
             ],
             null,
             null,
             null,
             null
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 2003848,
@@ -211,23 +207,28 @@
           "RequiredQuestVariables": [
             null,
             [
-              1,17,33,49,65,
-              2,18,34,50,66,
-              3,19,35,51,67
+              1,
+              17,
+              33,
+              49,
+              65,
+              2,
+              18,
+              34,
+              50,
+              66,
+              3,
+              19,
+              35,
+              51,
+              67
             ],
             null,
             null,
             null,
             null
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            16
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
         },
         {
           "DataId": 2003855,
@@ -241,21 +242,18 @@
           "RequiredQuestVariables": [
             null,
             [
-              3,19,35,51,67
+              3,
+              19,
+              35,
+              51,
+              67
             ],
             null,
             null,
             null,
             null
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            2
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,2]
         }
       ]
     },
@@ -282,20 +280,7 @@
           "TerritoryId": 138,
           "InteractionType": "CompleteQuest",
           "AetheryteShortcut": "Western La Noscea - Aleport",
-          "Fly": true,
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": -220.7218,
-                  "Y": -40.720844,
-                  "Z": 37.247192
-                },
-                "TerritoryId": 138,
-                "MaximumDistance": 100
-              }
-            }
-          }
+          "Fly": true
         }
       ]
     }

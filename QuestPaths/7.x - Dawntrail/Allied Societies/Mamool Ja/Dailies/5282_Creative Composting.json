@@ -47,14 +47,7 @@
           "InteractionType": "Action",
           "Action": "Shrouded Luminescence",
           "Fly": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 2014728,
@@ -67,14 +60,7 @@
           "InteractionType": "Action",
           "Action": "Shrouded Luminescence",
           "Fly": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 2014729,
@@ -87,14 +73,7 @@
           "InteractionType": "Action",
           "Action": "Shrouded Luminescence",
           "Fly": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         }
       ]
     },

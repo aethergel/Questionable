@@ -11,7 +11,7 @@ namespace Questionable.Validation.Validators;
 
 internal sealed class JsonSchemaValidator : IQuestValidator
 {
-    private readonly Dictionary<ElementId, JsonNode> _questNodes = new();
+    private readonly Dictionary<ElementId, JsonNode> _questNodes = [];
     private JsonSchema? _questSchema;
 
     public JsonSchemaValidator()

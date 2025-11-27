@@ -36,14 +36,7 @@
           "TerritoryId": 152,
           "InteractionType": "Interact",
           "$": "0 0  0 0  0 0 -> 1 0  0 0  0 128",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 1000277,
@@ -55,14 +48,7 @@
           "TerritoryId": 152,
           "InteractionType": "Interact",
           "$": "1 0  0 0  0 128 -> 2 0  0 0  0 192",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 1000553,
@@ -75,14 +61,7 @@
           "InteractionType": "Interact",
           "AetheryteShortcut": "East Shroud - Hawthorne Hut",
           "$": "2 0  0 0  0 192 -> 3 0  0 0  0 224",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 1000545,
@@ -93,14 +72,7 @@
           },
           "TerritoryId": 152,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            16
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
         }
       ]
     },
@@ -138,14 +110,7 @@
             1897,
             1898
           ],
-          "CompletionQuestVariablesFlags": [
-            4,
-            null,
-            null,
-            null,
-            null,
-            null
-          ]
+          "CompletionQuestVariablesFlags": [4,null,null,null,null,null]
         },
         {
           "DataId": 2001918,

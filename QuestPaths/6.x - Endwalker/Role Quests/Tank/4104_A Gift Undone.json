@@ -83,14 +83,7 @@
                         14014
                     ],
                     "Fly": true,
-                    "CompletionQuestVariablesFlags": [
-                        null,
-                        null,
-                        null,
-                        null,
-                        null,
-                        128
-                    ]
+                    "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
                 },
                 {
                     "DataId": 2011732,
@@ -106,14 +99,7 @@
                         14014
                     ],
                     "Fly": true,
-                    "CompletionQuestVariablesFlags": [
-                        null,
-                        null,
-                        null,
-                        null,
-                        null,
-                        64
-                    ]
+                    "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
                 },
                 {
                     "DataId": 2011731,

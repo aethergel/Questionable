@@ -57,14 +57,7 @@
           ],
           "ItemId": 2002093,
           "$": "0 2 0 0 0 0 -> 16 17 0 0 0 128",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 2007913,
@@ -80,14 +73,7 @@
             6676
           ],
           "ItemId": 2002093,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         }
       ]
     },

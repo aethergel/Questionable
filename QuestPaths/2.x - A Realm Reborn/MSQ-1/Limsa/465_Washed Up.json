@@ -38,14 +38,7 @@
           },
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                8
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,8]
             }
           }
         },
@@ -67,14 +60,7 @@
               "Answer": "TEXT_SUBSEA053_00465_A4_000_2"
             }
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            8
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,8]
         },
         {
           "DataId": 1002638,
@@ -92,14 +78,7 @@
               "Answer": "TEXT_SUBSEA053_00465_A3_000_1"
             }
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            16
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
         },
         {
           "DataId": 1002637,
@@ -117,14 +96,7 @@
               "Answer": "TEXT_SUBSEA053_00465_A2_000_1"
             }
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 1002636,
@@ -142,14 +114,7 @@
               "Answer": "TEXT_SUBSEA053_00465_A1_000_1"
             }
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 1002635,
@@ -160,14 +125,7 @@
           },
           "TerritoryId": 134,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         }
       ]
     },

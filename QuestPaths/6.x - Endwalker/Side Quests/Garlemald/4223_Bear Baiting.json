@@ -31,14 +31,7 @@
           "InteractionType": "UseItem",
           "ItemId": 2003195,
           "Fly": true,
-          "CompletionQuestVariablesFlags": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          64
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64],
           "$": "0 0 48 0 0 0 -> 17 0 32 0 0 64"
         },
         {
@@ -51,14 +44,7 @@
           "TerritoryId": 958,
           "InteractionType": "UseItem",
           "ItemId": 2003195,
-          "CompletionQuestVariablesFlags": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          128
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128],
           "$": "17 0 32 0 0 64 -> 33 16 16 0 0 192"
         },
         {
@@ -76,14 +62,7 @@
             14104
           ],
           "$": "33 16 16 0 0 192 -> 0 0 0 0 0 0",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         }
       ]
     },

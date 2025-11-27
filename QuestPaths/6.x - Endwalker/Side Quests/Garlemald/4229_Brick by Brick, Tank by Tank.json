@@ -33,14 +33,7 @@
           "KillEnemyDataIds": [
             14103
           ],
-          "CompletionQuestVariablesFlags": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          128
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128],
           "$": "0 0 0 0 0 0 -> 16 0 16 0 0 128",
           "Fly": true
         },
@@ -53,14 +46,7 @@
           },
           "TerritoryId": 958,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          32
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32],
           "$": "16 0 16 0 0 128 -> 32 16 16 0 0 160"
         },
         {
@@ -73,14 +59,7 @@
           "TerritoryId": 958,
           "InteractionType": "Interact",
           "Mount": true,
-          "CompletionQuestVariablesFlags": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          64
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64],
           "$": "32 16 16 0 0 160 -> 49 16 16 0 0 224"
         },
         {
@@ -93,14 +72,7 @@
           "TerritoryId": 958,
           "InteractionType": "Interact",
           "$": "49 16 16 0 0 224 -> 0 16 0 0 0 0",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            16
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
         }
       ]
     },

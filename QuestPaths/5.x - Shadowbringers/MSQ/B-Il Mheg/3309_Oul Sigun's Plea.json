@@ -45,14 +45,7 @@
           "TerritoryId": 816,
           "InteractionType": "UseItem",
           "ItemId": 2002536,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 2009826,
@@ -64,14 +57,7 @@
           "TerritoryId": 816,
           "InteractionType": "UseItem",
           "ItemId": 2002536,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         }
       ]
     },

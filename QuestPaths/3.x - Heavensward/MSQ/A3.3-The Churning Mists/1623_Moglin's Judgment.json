@@ -42,14 +42,7 @@
           "TerritoryId": 400,
           "InteractionType": "Interact",
           "$": "0 0 0 0 0 0 -> 16 0 1 0 0 128",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 1013587,
@@ -61,14 +54,7 @@
           "TerritoryId": 400,
           "InteractionType": "Interact",
           "$": "16 0 1 0 0 128 -> 33 0 1 0 0 192",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 1013589,
@@ -80,14 +66,7 @@
           "TerritoryId": 400,
           "InteractionType": "Interact",
           "$": "33 0 1 0 0 192 -> 49 1 1 0 0 208",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            16
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
         },
         {
           "DataId": 1013588,
@@ -99,14 +78,7 @@
           "TerritoryId": 400,
           "InteractionType": "Interact",
           "$": "49 1 1 0 0 208 -> 65 17 1 0 0 240",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 1013590,
@@ -117,14 +89,7 @@
           },
           "TerritoryId": 400,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            8
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,8]
         }
       ]
     },

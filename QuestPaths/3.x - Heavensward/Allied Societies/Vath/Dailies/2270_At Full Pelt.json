@@ -1,6 +1,6 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-  "Author": "AnimaMachinae,alydev",
+  "Author": ["AnimaMachinae", "alydev"],
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -63,14 +63,7 @@
           ],
           "Fly": true,
           "Land": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 2006920,
@@ -90,14 +83,7 @@
           ],
           "Fly": true,
           "Land": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 2006919,

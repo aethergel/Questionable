@@ -51,14 +51,7 @@
           },
           "TerritoryId": 148,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128],
           "$": "QuestVariables if done first: 17 0 16 0 0 128"
         },
         {
@@ -70,14 +63,7 @@
           },
           "TerritoryId": 148,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64],
           "$": "QuestVariables if done first: 17 16 17 0 0 192"
         },
         {
@@ -89,14 +75,7 @@
           },
           "TerritoryId": 148,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            16
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,16],
           "$": "QuestVariables if done first: 33 17 17 16 0 208"
         },
         {
@@ -108,14 +87,7 @@
           },
           "TerritoryId": 148,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         }
       ]
     },

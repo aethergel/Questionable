@@ -101,7 +101,7 @@ internal sealed class QuestData
                 .Where(x => x.RowId > 0 && x.Quest.RowId > 0)
                 .ToDictionary(x => x.Quest.RowId, x => x.Redo.RowId);
 
-        Dictionary<uint, byte> startingCities = new();
+        Dictionary<uint, byte> startingCities = [];
         for (byte redoChapter = 1; redoChapter <= 3; ++redoChapter)
         {
             var questRedo = dataManager.GetExcelSheet<QuestRedo>().GetRow(redoChapter);

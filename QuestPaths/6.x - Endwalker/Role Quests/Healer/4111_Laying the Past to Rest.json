@@ -63,14 +63,7 @@
           "TerritoryId": 612,
           "InteractionType": "Interact",
           "AetheryteShortcut": "Fringes - Peering Stones",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 1020817,
@@ -82,14 +75,7 @@
           "TerritoryId": 612,
           "InteractionType": "Interact",
           "Fly": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         }
       ]
     },

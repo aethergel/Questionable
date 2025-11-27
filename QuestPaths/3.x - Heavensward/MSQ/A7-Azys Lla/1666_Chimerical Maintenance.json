@@ -58,14 +58,7 @@
             4942
           ],
           "$": "0 0 0 0 0 0 -> 18 0 0 0 0 64",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 2005569,
@@ -82,14 +75,7 @@
             4623
           ],
           "$": "18 0 0 0 0 64 -> 34 48 0 0 0 96",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 2005567,
@@ -105,14 +91,7 @@
             4614,
             4942
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         }
       ]
     },

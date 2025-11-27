@@ -28,14 +28,7 @@
           },
           "TerritoryId": 628,
           "InteractionType": "WalkTo",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128],
           "AethernetShortcut": [
             "[Kugane] Thavnairian Consulate",
             "[Kugane] Shiokaze Hostelry"
@@ -125,14 +118,7 @@
             "StopDistance": 0.5
           },
           "RestartNavigationIfCancelled": false,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         }
       ]
     },

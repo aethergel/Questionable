@@ -6,7 +6,7 @@ using Lumina.Excel.Sheets;
 using Lumina.Text.ReadOnly;
 
 namespace Questionable.Windows.Utils;
-internal class RedoUtil
+internal sealed class RedoUtil
 {
     public Dictionary<uint,List<uint>> Dict;
     public Stopwatch Last { get; private set; }

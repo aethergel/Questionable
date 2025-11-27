@@ -8,7 +8,7 @@ namespace Questionable.Model;
 
 internal static class QuestInfoUtils
 {
-    private static readonly Dictionary<uint, IReadOnlyList<EClassJob>> CachedClassJobs = new();
+    private static readonly Dictionary<uint, IReadOnlyList<EClassJob>> CachedClassJobs = [];
 
     internal static IReadOnlyList<EClassJob> AsList(ClassJobCategory? optionalClassJobCategory)
     {

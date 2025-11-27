@@ -59,14 +59,7 @@
           "ComplexCombatData": [
             {
               "DataId": 8582,
-              "CompletionQuestVariablesFlags": [
-                1,
-                null,
-                null,
-                null,
-                null,
-                null
-              ]
+              "CompletionQuestVariablesFlags": [1,null,null,null,null,null]
             }
           ],
           "AetheryteShortcut": "Fringes - Castrum Oriens",
@@ -115,14 +108,7 @@
           "ComplexCombatData": [
             {
               "DataId": 8582,
-              "CompletionQuestVariablesFlags": [
-                1,
-                null,
-                null,
-                null,
-                null,
-                null
-              ]
+              "CompletionQuestVariablesFlags": [1,null,null,null,null,null]
             }
           ],
           "AetheryteShortcut": "Fringes - Castrum Oriens",
@@ -170,14 +156,7 @@
           "ComplexCombatData": [
             {
               "DataId": 8583,
-              "CompletionQuestVariablesFlags": [
-                1,
-                null,
-                null,
-                null,
-                null,
-                null
-              ]
+              "CompletionQuestVariablesFlags": [1,null,null,null,null,null]
             }
           ],
           "Fly": true,

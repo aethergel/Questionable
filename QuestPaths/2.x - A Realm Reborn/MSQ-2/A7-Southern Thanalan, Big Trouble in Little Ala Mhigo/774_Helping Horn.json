@@ -39,14 +39,7 @@
             {
               "DataId": 4,
               "MinimumKillCount": 4,
-              "CompletionQuestVariablesFlags": [
-                null,
-                64,
-                null,
-                null,
-                null,
-                null
-              ]
+              "CompletionQuestVariablesFlags": [null,64,null,null,null,null]
             }
           ]
         }

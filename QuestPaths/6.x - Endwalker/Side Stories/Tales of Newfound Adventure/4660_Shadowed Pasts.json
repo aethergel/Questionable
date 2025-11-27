@@ -58,14 +58,7 @@
           },
           "TerritoryId": 963,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 1044139,
@@ -80,14 +73,7 @@
             "[Radz-at-Han] Hall of the Radiant Host",
             "[Radz-at-Han] Mehryde's Meyhane"
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 1044142,
@@ -102,14 +88,7 @@
             "[Radz-at-Han] Mehryde's Meyhane",
             "[Radz-at-Han] Kama"
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 1044145,
@@ -124,14 +103,7 @@
             "[Radz-at-Han] Kama",
             "[Radz-at-Han] Airship Landing"
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            16
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
         }
       ]
     },

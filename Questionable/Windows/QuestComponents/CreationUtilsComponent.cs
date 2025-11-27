@@ -316,7 +316,7 @@ internal sealed class CreationUtilsComponent
     private string GetCurrentQuestInfoAsString()
     {
         var q = _questFunctions.GetCurrentQuest();
-        string qw = "QW: -";
+        string qw;
         if (q.CurrentQuest is QuestId)
         {
             var progressInfo = _questFunctions.GetQuestProgressInfo(q.CurrentQuest);

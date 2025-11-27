@@ -33,14 +33,7 @@
             "[Crystarium] The Amaro Launch",
             "[Crystarium] The Dossal Gate"
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 1027252,
@@ -55,14 +48,7 @@
             "[Crystarium] The Dossal Gate",
             "[Crystarium] The Pendants"
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 1027260,

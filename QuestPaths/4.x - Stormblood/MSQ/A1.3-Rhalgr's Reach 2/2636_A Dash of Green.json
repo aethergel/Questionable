@@ -51,14 +51,7 @@
           "TerritoryId": 635,
           "InteractionType": "Interact",
           "$": "0 32 0 0 0 0 -> 1 48 0 0 0 16",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            16
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
         },
         {
           "Position": {
@@ -70,14 +63,7 @@
           "InteractionType": "WalkTo",
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                128
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
             }
           }
         },
@@ -90,14 +76,7 @@
           },
           "TerritoryId": 635,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 2007953,
@@ -110,14 +89,7 @@
           "InteractionType": "Interact",
           "AetheryteShortcut": "Rhalgr's Reach",
           "$": "2 64 0 0 0 80 -> 3 80 0 0 0 112",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 2007952,
@@ -129,14 +101,7 @@
           "TerritoryId": 635,
           "InteractionType": "Interact",
           "$": "1 48 0 0 0 16 -> 2 64 0 0 0 80",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         }
       ]
     },

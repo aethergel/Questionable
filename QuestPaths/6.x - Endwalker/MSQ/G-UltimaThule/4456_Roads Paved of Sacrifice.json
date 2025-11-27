@@ -111,14 +111,7 @@
           "InteractionType": "WalkTo",
           "SkipConditions": {
             "StepIf": {
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                128
-              ]
+              "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
             }
           }
         },
@@ -133,14 +126,7 @@
           "TerritoryId": 960,
           "InteractionType": "Interact",
           "DisableNavmesh": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128],
           "$.0": "[1]",
           "$.1": "QuestVariables if done first: 1 0 0 0 0 128"
         },
@@ -154,14 +140,7 @@
           "StopDistance": 4,
           "TerritoryId": 960,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64],
           "$.0": "[2]",
           "$.1": "QuestVariables if done after [1]: 2 0 0 0 0 192"
         },
@@ -183,14 +162,7 @@
           "InteractionType": "Interact",
           "$.0": "[3]",
           "$.1": "QuestVariables if done after [2]: 3 0 0 0 0 224",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 2012357,
@@ -202,14 +174,7 @@
           "StopDistance": 4,
           "TerritoryId": 960,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            16
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,16],
           "$.0": "[4]",
           "$.1": "QuestVariables if done first: 1 0 0 0 0 16"
         }

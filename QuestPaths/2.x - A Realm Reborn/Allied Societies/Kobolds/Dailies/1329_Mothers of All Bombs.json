@@ -15,20 +15,7 @@
           "TerritoryId": 180,
           "InteractionType": "AcceptQuest",
           "AetheryteShortcut": "Outer La Noscea - Camp Overlook",
-          "Fly": true,
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": 7.095398,
-                  "Y": 16.167778,
-                  "Z": -188.67786
-                },
-                "TerritoryId": 180,
-                "MaximumDistance": 100
-              }
-            }
-          }
+          "Fly": true
         }
       ]
     },
@@ -48,14 +35,7 @@
           "KillEnemyDataIds": [
             17
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "Position": {
@@ -70,14 +50,7 @@
           "KillEnemyDataIds": [
             17
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            2
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,2]
         },
         {
           "Position": {
@@ -108,20 +81,7 @@
           "TerritoryId": 180,
           "InteractionType": "CompleteQuest",
           "AetheryteShortcut": "Outer La Noscea - Camp Overlook",
-          "Fly": true,
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": 7.095398,
-                  "Y": 16.167778,
-                  "Z": -188.67786
-                },
-                "TerritoryId": 180,
-                "MaximumDistance": 100
-              }
-            }
-          }
+          "Fly": true
         }
       ]
     }

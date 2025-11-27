@@ -33,14 +33,7 @@
             "[Old Sharlayan] Aetheryte Plaza",
             "[Old Sharlayan] Scholar's Harbor"
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 1039338,
@@ -55,14 +48,7 @@
             "[Old Sharlayan] Scholar's Harbor",
             "[Old Sharlayan] Journey's End"
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 1039339,
@@ -77,14 +63,7 @@
             "[Old Sharlayan] Journey's End",
             "[Old Sharlayan] The Studium"
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         }
       ]
     },

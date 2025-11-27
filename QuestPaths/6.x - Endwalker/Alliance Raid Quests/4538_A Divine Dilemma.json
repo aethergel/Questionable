@@ -63,14 +63,7 @@
           "TerritoryId": 635,
           "InteractionType": "Interact",
           "IgnoreDistanceToObject": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 1042283,
@@ -81,14 +74,7 @@
           },
           "TerritoryId": 635,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 1042284,
@@ -103,14 +89,7 @@
             "[Rhalgr's Reach] Western Rhalgr's Reach",
             "[Rhalgr's Reach] Northeastern Rhalgr's Reach"
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         }
       ]
     },

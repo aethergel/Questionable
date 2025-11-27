@@ -1,3 +1,3 @@
-- Ignore AetheryteShortcut InSameTerritory by alydev
-- Clearer formatting on QuestProgressInfo QW by alydev
-- Sylph 1285 by alydev
+- Moogle daily aetheryte shortcut by alydev
+- Draft variant dungeon unlocks (incomplete) by alydev
+- Minor spring cleaning per code analysis by alydev

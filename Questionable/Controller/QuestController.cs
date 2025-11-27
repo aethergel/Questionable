@@ -841,8 +841,8 @@ internal sealed class QuestController : MiniTaskController<QuestController>
             foreach (var task in _taskCreator.CreateTasks(CurrentQuest.Quest, CurrentQuest.Sequence, seq, step)) {
                 if (_simulatedQuest != null) { 
                     string repr = task.ToString() ?? "";
-                    string[] SimSkip = {"Interact","Action","Emote","Craft","Unmount"};
-                    if (repr.Contains('(') && SimSkip.Contains(repr[..repr.IndexOf('(')]) && step.TargetTerritoryId.Equals(step.TerritoryId)) { 
+                    string[] SimSkip = ["Interact","Action","Emote","Craft","Unmount"];
+                    if (repr.Contains('(') && SimSkip.Contains(repr[..repr.IndexOf('(')]) && step != null && step.TargetTerritoryId.Equals(step.TerritoryId)) { 
                         _logger.LogInformation($"Skipping {repr} due to simulation");
                         continue;
                     }

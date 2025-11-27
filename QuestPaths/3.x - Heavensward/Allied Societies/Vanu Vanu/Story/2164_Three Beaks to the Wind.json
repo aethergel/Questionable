@@ -116,14 +116,7 @@
           "InteractionType": "Action",
           "Action": "Buffet (Sanuwa)",
           "Fly": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 1016157,
@@ -136,14 +129,7 @@
           "InteractionType": "Action",
           "Action": "Buffet (Sanuwa)",
           "Fly": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 1016156,
@@ -156,14 +142,7 @@
           "InteractionType": "Action",
           "Action": "Buffet (Sanuwa)",
           "Fly": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         }
       ]
     },

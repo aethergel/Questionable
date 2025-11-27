@@ -44,14 +44,7 @@
           },
           "TerritoryId": 962,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 1040985,
@@ -66,14 +59,7 @@
             "[Old Sharlayan] Scholar's Harbor",
             "[Old Sharlayan] Aetheryte Plaza"
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 2012610,
@@ -88,14 +74,7 @@
             "[Old Sharlayan] Aetheryte Plaza",
             "[Old Sharlayan] The Studium"
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         }
       ]
     },

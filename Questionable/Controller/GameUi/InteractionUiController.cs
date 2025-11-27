@@ -189,7 +189,7 @@ internal sealed class InteractionUiController : IDisposable
         if (actualPrompt == null)
             return;
 
-        List<string?> answers = new();
+        List<string?> answers = [];
         for (ushort i = 7; i < addonSelectString->AtkUnitBase.AtkValuesCount; ++i)
         {
             if (addonSelectString->AtkUnitBase.AtkValues[i].Type == ValueType.String)
@@ -220,7 +220,7 @@ internal sealed class InteractionUiController : IDisposable
         if (actualPrompt == null)
             return;
 
-        List<string?> answers = new();
+        List<string?> answers = [];
         for (int i = 5; i < addonCutSceneSelectString->AtkUnitBase.AtkValuesCount; ++i)
             answers.Add(addonCutSceneSelectString->AtkUnitBase.AtkValues[i].ReadAtkString());
 
@@ -235,7 +235,6 @@ internal sealed class InteractionUiController : IDisposable
         SelectIconStringPostSetup(addonSelectIconString, false);
     }
 
-    [SuppressMessage("ReSharper", "RedundantJumpStatement")]
     private unsafe void SelectIconStringPostSetup(AddonSelectIconString* addonSelectIconString, bool checkAllSteps)
     {
         if (!ShouldHandleUiInteractions)
@@ -302,7 +301,7 @@ internal sealed class InteractionUiController : IDisposable
 
     public static unsafe List<string?> GetChoices(AddonSelectIconString* addonSelectIconString)
     {
-        List<string?> answers = new();
+        List<string?> answers = [];
         for (ushort i = 0; i < addonSelectIconString->AtkUnitBase.AtkValues[5].Int; i++)
             answers.Add(addonSelectIconString->AtkValues[i * 3 + 7].ReadAtkString());
 
@@ -349,8 +348,7 @@ internal sealed class InteractionUiController : IDisposable
                         .FirstOrDefault(x => x.InteractionType == EInteractionType.SinglePlayerDuty);
                 }
 
-                if (step == null)
-                    step = quest.FindSequence(currentQuest.Sequence)?.FindStep(currentQuest.Step);
+                step ??= quest.FindSequence(currentQuest.Sequence)?.FindStep(currentQuest.Step);
 
                 if (step == null)
                     _logger.LogDebug("Ignoring current quest dialogue choices, no active step");
@@ -585,7 +583,6 @@ internal sealed class InteractionUiController : IDisposable
         SelectYesnoPostSetup(addonSelectYesno, false);
     }
 
-    [SuppressMessage("ReSharper", "RedundantJumpStatement")]
     private unsafe void SelectYesnoPostSetup(AddonSelectYesno* addonSelectYesno, bool checkAllSteps)
     {
         if (!ShouldHandleUiInteractions)
@@ -884,7 +881,7 @@ internal sealed class InteractionUiController : IDisposable
         return step.TargetTerritoryId;
     }
 
-    private bool IsHqTradeAllowed(QuestController.QuestProgress currentQuest)
+    private static bool IsHqTradeAllowed(QuestController.QuestProgress currentQuest)
     {
         if (currentQuest?.Quest == null)
             return false;
@@ -900,7 +897,7 @@ internal sealed class InteractionUiController : IDisposable
         return step.AllowHighQuality == true;
     }
 
-    private bool IsHqTradeAllowedInSequence(QuestController.QuestProgress currentQuest)
+    private static bool IsHqTradeAllowedInSequence(QuestController.QuestProgress currentQuest)
     {
         if (currentQuest?.Quest == null)
             return false;

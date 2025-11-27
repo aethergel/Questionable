@@ -36,14 +36,7 @@
           "TerritoryId": 398,
           "InteractionType": "Interact",
           "AetheryteShortcut": "The Dravanian Forelands - Tailfeather",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "Position": {
@@ -64,14 +57,7 @@
           "TerritoryId": 398,
           "InteractionType": "Interact",
           "$": "0 0 0 0 0 0 -> 1 0 0 0 0 128",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 1011921,
@@ -83,14 +69,7 @@
           "TerritoryId": 398,
           "InteractionType": "Interact",
           "$": "1 0 0 0 0 128 -> 2 0 0 0 0 160",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         }
       ]
     },

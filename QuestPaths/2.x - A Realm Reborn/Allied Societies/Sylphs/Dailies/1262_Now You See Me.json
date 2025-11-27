@@ -54,14 +54,7 @@
                     "InteractionType": "Interact",
                     "SkipConditions": {
                         "StepIf": {
-                            "CompletionQuestVariablesFlags": [
-                                null,
-                                null,
-                                null,
-                                null,
-                                null,
-                                8
-                            ]
+                            "CompletionQuestVariablesFlags": [null,null,null,null,null,8]
                         }
                     }
                 },
@@ -74,14 +67,7 @@
                     },
                     "TerritoryId": 152,
                     "InteractionType": "Interact",
-                    "CompletionQuestVariablesFlags": [
-                        null,
-                        null,
-                        null,
-                        null,
-                        null,
-                        8
-                    ]
+                    "CompletionQuestVariablesFlags": [null,null,null,null,null,8]
                 },
                 {
                     "DataId": 2003301,

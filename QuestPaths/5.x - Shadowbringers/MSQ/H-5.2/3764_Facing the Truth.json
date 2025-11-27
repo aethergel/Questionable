@@ -72,14 +72,7 @@
           "TerritoryId": 819,
           "InteractionType": "Interact",
           "Comment": "Chessamile",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 1027224,
@@ -91,14 +84,7 @@
           "TerritoryId": 819,
           "InteractionType": "Interact",
           "Comment": "Bragi",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 1027322,
@@ -111,14 +97,7 @@
           "TerritoryId": 819,
           "InteractionType": "Interact",
           "Comment": "Glynard",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            8
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,8]
         },
         {
           "DataId": 1027232,
@@ -134,14 +113,7 @@
             "[Crystarium] The Pendants",
             "[Crystarium] The Crystalline Mean"
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            16
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
         },
         {
           "DataId": 1027226,
@@ -157,14 +129,7 @@
             "[Crystarium] The Crystalline Mean",
             "[Crystarium] The Cabinet of Curiosity"
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         }
       ]
     },

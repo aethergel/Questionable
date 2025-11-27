@@ -22,7 +22,7 @@ internal sealed class GatheringPointRegistry : IDisposable
     private readonly GatheringData _gatheringData;
     private readonly ILogger<QuestRegistry> _logger;
 
-    private readonly Dictionary<GatheringPointId, GatheringRoot> _gatheringPoints = new();
+    private readonly Dictionary<GatheringPointId, GatheringRoot> _gatheringPoints = [];
 
     public GatheringPointRegistry(IDalamudPluginInterface pluginInterface,
         QuestRegistry questRegistry,

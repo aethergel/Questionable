@@ -58,14 +58,7 @@
           "InteractionType": "Action",
           "Action": "Inhale",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            [16, 48, 128, 144],
-            null,
-            null
-          ]
+          "RequiredQuestVariables": [null,null,null,[16, 48, 128, 144],null,null]
         },
         {
           "DataId": 2009108,
@@ -78,14 +71,7 @@
           "InteractionType": "Action",
           "Action": "Inhale",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            [16, 48, 128, 160],
-            null,
-            null
-          ]
+          "RequiredQuestVariables": [null,null,null,[16, 48, 128, 160],null,null]
         },
         {
           "DataId": 2009106,
@@ -98,14 +84,7 @@
           "InteractionType": "Action",
           "Action": "Inhale",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            [16, 64, 160],
-            null,
-            null
-          ]
+          "RequiredQuestVariables": [null,null,null,[16, 64, 160],null,null]
         },
         {
           "DataId": 2009107,
@@ -118,14 +97,7 @@
           "InteractionType": "Action",
           "Action": "Inhale",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            [48, 64, 144, 160],
-            null,
-            null
-          ]
+          "RequiredQuestVariables": [null,null,null,[48, 64, 144, 160],null,null]
         },
         {
           "DataId": 2009105,
@@ -138,14 +110,7 @@
           "InteractionType": "Action",
           "Action": "Inhale",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            [64, 128, 144],
-            null,
-            null
-          ]
+          "RequiredQuestVariables": [null,null,null,[64, 128, 144],null,null]
         }
       ]
     },

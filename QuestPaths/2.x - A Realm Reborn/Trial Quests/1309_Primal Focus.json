@@ -27,14 +27,7 @@
             "ContentFinderConditionId": 65,
             "Enabled": false
           },
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "TerritoryId": 180,
@@ -43,14 +36,7 @@
             "ContentFinderConditionId": 64,
             "Enabled": false
           },
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "TerritoryId": 146,
@@ -59,14 +45,7 @@
             "ContentFinderConditionId": 63,
             "Enabled": false
           },
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         }
       ]
     },

@@ -81,14 +81,7 @@
             4482,
             5049
           ],
-          "CompletionQuestVariablesFlags": [
-            2,
-            null,
-            null,
-            null,
-            null,
-            null
-          ]
+          "CompletionQuestVariablesFlags": [2,null,null,null,null,null]
         },
         {
           "DataId": 1013466,

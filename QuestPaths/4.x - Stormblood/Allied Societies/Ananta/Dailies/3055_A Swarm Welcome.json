@@ -73,14 +73,7 @@
           "InteractionType": "Action",
           "Action": "Buffet (Griffin)",
           "Fly": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 1025171,
@@ -93,14 +86,7 @@
           "InteractionType": "Action",
           "Action": "Buffet (Griffin)",
           "Fly": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         }
       ]
     },

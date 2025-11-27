@@ -30,14 +30,7 @@
           "TerritoryId": 1185,
           "InteractionType": "Emote",
           "Emote": "soothe",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 1051045,
@@ -53,14 +46,7 @@
             "[Tuliyollal] Dirigible Landing",
             "[Tuliyollal] Aetheryte Plaza"
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         }
       ]
     },

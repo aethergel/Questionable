@@ -56,14 +56,7 @@
           "TerritoryId": 418,
           "InteractionType": "Action",
           "Action": "Slug Shot",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 1014753,
@@ -80,14 +73,7 @@
             "[Ishgard] Skysteel Manufactory",
             "[Ishgard] The Forgotten Knight"
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 1014754,
@@ -104,14 +90,7 @@
             "[Ishgard] The Forgotten Knight",
             "[Ishgard] The Brume"
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         }
       ]
     },

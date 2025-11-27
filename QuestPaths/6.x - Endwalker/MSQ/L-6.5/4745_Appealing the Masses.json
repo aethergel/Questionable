@@ -60,14 +60,7 @@
           },
           "TerritoryId": 820,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 1045633,
@@ -82,14 +75,7 @@
             "[Eulmore] Aetheryte Plaza",
             "[Eulmore] The Mainstay"
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 1045634,
@@ -104,14 +90,7 @@
             "[Eulmore] The Mainstay",
             "[Eulmore] Nightsoil Pots"
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         }
       ]
     },

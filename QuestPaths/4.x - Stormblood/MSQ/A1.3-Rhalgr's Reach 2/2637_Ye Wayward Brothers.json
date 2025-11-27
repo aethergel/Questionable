@@ -46,14 +46,7 @@
           "TerritoryId": 635,
           "InteractionType": "Interact",
           "$": "0 0 0 0 0 0 -> 1 0 0 0 0 128",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 1021169,
@@ -65,14 +58,7 @@
           "TerritoryId": 635,
           "InteractionType": "Interact",
           "$": "1 0 0 0 0 128 -> 2 0 0 0 0 192",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 1021171,
@@ -84,14 +70,7 @@
           "TerritoryId": 635,
           "InteractionType": "Interact",
           "$": "2 0 0 0 0 192 -> 3 0 0 0 0 208",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            16
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
         },
         {
           "DataId": 1021170,
@@ -103,14 +82,7 @@
           "TerritoryId": 635,
           "InteractionType": "Interact",
           "$": "3 0 0 0 0 208 -> 4 0 0 0 0 240",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 1021172,
@@ -121,14 +93,7 @@
           },
           "TerritoryId": 635,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            8
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,8]
         }
       ]
     },

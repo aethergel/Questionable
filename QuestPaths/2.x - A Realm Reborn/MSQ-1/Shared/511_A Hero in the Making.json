@@ -72,14 +72,7 @@
             "[Ul'dah] The Chamber of Rule"
           ],
           "$.0": "QuestVariables if done first: 16 1 0 64 0 0",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            64,
-            null,
-            null
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,64,null,null]
         },
         {
           "DataId": 1001029,
@@ -99,14 +92,7 @@
             }
           ],
           "$.0": "QuestVariables if done after Ul'dah: 33 1 0 96 0 0",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            32,
-            null,
-            null
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,32,null,null]
         },
         {
           "DataId": 2001690,
@@ -122,14 +108,7 @@
             "[Gridania] Aetheryte Plaza",
             "[Gridania] Mih Khetto's Amphitheatre"
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            128,
-            null,
-            null
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,128,null,null]
         }
       ]
     },

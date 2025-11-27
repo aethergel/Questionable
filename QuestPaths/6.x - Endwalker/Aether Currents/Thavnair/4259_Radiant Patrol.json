@@ -44,14 +44,7 @@
           },
           "TerritoryId": 957,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64],
           "$": "QuestVariables after: 17 0 0 0 0 64"
         },
         {
@@ -68,14 +61,7 @@
           "KillEnemyDataIds": [
             14111
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            1,
-            null,
-            null,
-            null,
-            64
-          ],
+          "CompletionQuestVariablesFlags": [null,1,null,null,null,64],
           "$": "QuestVariables after killing enemy: 17 1 0 0 0 64"
         },
         {
@@ -87,14 +73,7 @@
           },
           "TerritoryId": 957,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32],
           "$": "QuestVariables after: 33 2 0 0 0 96"
         },
         {
@@ -106,14 +85,7 @@
           },
           "TerritoryId": 957,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128],
           "$": "QuestVariables if done first: 16 16 16 0 0 128"
         }
       ]

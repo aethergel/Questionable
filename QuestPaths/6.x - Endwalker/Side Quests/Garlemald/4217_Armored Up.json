@@ -51,14 +51,7 @@
           "KillEnemyDataIds": [
             14107
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128],
           "$.0": "0 0 0 0 0 0 -> 16 64 0 0 0 128"
         },
         {
@@ -74,14 +67,7 @@
           "KillEnemyDataIds": [
             14107
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         }
       ]
     },

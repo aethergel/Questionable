@@ -1,6 +1,6 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-  "Author": "AnimaMachinae,alydev",
+  "Author": ["AnimaMachinae", "alydev"],
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -47,14 +47,7 @@
           "AetheryteShortcut": "The Sea of Clouds - Camp Cloudtop",
           "Fly": true,
           "$": "QW: 1 0 16 0 0 2",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            2
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,2]
         },
         {
           "DataId": 2006706,
@@ -67,14 +60,7 @@
           "InteractionType": "Interact",
           "Fly": true,
           "$": "QW: 2 0 32 0 0 3",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            1
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,1]
         },
         {
           "DataId": 2006704,
@@ -86,14 +72,7 @@
           "TerritoryId": 401,
           "InteractionType": "Interact",
           "$": "QW: 19 0 48 0 0 7",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            4
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,4]
         },
         {
           "DataId": 2006670,
@@ -106,14 +85,7 @@
           "InteractionType": "Interact",
           "Fly": true,
           "$": "QW: 19 17 48 0 0 39",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 2006669,
@@ -126,14 +98,7 @@
           "InteractionType": "Interact",
           "Fly": true,
           "$": "QW: 19 34 48 0 0 103",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 2006671,

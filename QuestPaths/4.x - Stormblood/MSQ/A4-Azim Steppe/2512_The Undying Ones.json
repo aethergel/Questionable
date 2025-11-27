@@ -61,14 +61,7 @@
           "TerritoryId": 622,
           "InteractionType": "Interact",
           "$": "QW: 0 0    0 0    0 0 -> QW: 1 0    0 0    0 64",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 1019322,
@@ -80,14 +73,7 @@
           "TerritoryId": 622,
           "InteractionType": "Interact",
           "$": "QW: 1 0    0 0    0 64 -> QW: 2 0    0 0    0 96",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 1019321,
@@ -98,14 +84,7 @@
           },
           "TerritoryId": 622,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         }
       ]
     },

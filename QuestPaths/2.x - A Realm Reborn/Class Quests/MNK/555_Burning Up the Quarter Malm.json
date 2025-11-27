@@ -36,14 +36,7 @@
           "TerritoryId": 130,
           "InteractionType": "Action",
           "Action": "Bootshine",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            128,
-            null,
-            null
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,128,null,null]
         },
         {
           "DataId": 2001719,
@@ -55,14 +48,7 @@
           "TerritoryId": 130,
           "InteractionType": "Action",
           "Action": "Bootshine",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            64,
-            null,
-            null
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,64,null,null]
         },
         {
           "DataId": 2001720,
@@ -74,14 +60,7 @@
           "TerritoryId": 130,
           "InteractionType": "Action",
           "Action": "Bootshine",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            32,
-            null,
-            null
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,32,null,null]
         },
         {
           "DataId": 2001721,
@@ -93,14 +72,7 @@
           "TerritoryId": 130,
           "InteractionType": "Action",
           "Action": "Bootshine",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            16,
-            null,
-            null
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,16,null,null]
         },
         {
           "DataId": 2001722,
@@ -112,14 +84,7 @@
           "TerritoryId": 130,
           "InteractionType": "Action",
           "Action": "Bootshine",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            8,
-            null,
-            null
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,8,null,null]
         }
       ]
     },

@@ -71,14 +71,7 @@
             null,
             null
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64],
           "SkipConditions": {
             "AetheryteShortcutIf": {
               "RequiredQuestVariablesNotMet": true
@@ -110,14 +103,7 @@
             null,
             null
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32],
           "SkipConditions": {
             "AetheryteShortcutIf": {
               "RequiredQuestVariablesNotMet": true
@@ -149,14 +135,7 @@
             null,
             null
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         }
       ]
     },

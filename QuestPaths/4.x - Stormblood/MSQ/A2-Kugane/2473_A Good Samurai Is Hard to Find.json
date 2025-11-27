@@ -113,14 +113,7 @@
             "[Kugane] Kogane Dori Markets"
           ],
           "$": "? ? ? ? ? ? -> 16 16 16 0 0 32",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 1020469,
@@ -132,14 +125,7 @@
           "TerritoryId": 628,
           "InteractionType": "Interact",
           "$": "16 16 16 0 0 32 -> 32 17 16 0 0 160",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 1020470,
@@ -150,14 +136,7 @@
           },
           "TerritoryId": 628,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         }
       ]
     },

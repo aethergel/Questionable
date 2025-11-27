@@ -70,14 +70,7 @@
           "TerritoryId": 737,
           "InteractionType": "Interact",
           "Comment": "A-Ruhn-Senna",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 1038812,
@@ -90,14 +83,7 @@
           "TerritoryId": 737,
           "InteractionType": "Interact",
           "Comment": "Sicard",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 1038813,
@@ -110,14 +96,7 @@
           "TerritoryId": 737,
           "InteractionType": "Interact",
           "Comment": "Lyse",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 1038814,
@@ -130,14 +109,7 @@
           "TerritoryId": 737,
           "InteractionType": "Interact",
           "Comment": "Lucia",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            16
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
         },
         {
           "DataId": 1038815,
@@ -150,14 +122,7 @@
           "TerritoryId": 737,
           "InteractionType": "Interact",
           "Comment": "Cirina",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            8
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,8]
         }
       ]
     },

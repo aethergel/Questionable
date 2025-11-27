@@ -21,14 +21,13 @@ internal sealed class YesAlreadyIpc : IDisposable
     private readonly IClientState _clientState;
     private readonly ILogger<YesAlreadyIpc> _logger;
 
-    private static EzIPCDisposalToken[] _disposalTokens = EzIPC.Init(typeof(YesAlreadyIpc), "YesAlready", SafeWrapper.IPCException);
+    private readonly static EzIPCDisposalToken[] _disposalTokens = EzIPC.Init(typeof(YesAlreadyIpc), "YesAlready", SafeWrapper.IPCException);
     [EzIPC("IsPluginEnabled")] public static readonly Func<bool> IsPluginEnabled;
     [EzIPC("SetPluginEnabled")] private static readonly Action<bool> SetPluginEnabled;
 
     private bool _wasEnabled;
 
-    public YesAlreadyIpc(IDalamudPluginInterface pluginInterface,
-        IFramework framework,
+    public YesAlreadyIpc(IFramework framework,
         QuestController questController,
         TerritoryData territoryData,
         IClientState clientState,
@@ -56,20 +55,18 @@ internal sealed class YesAlreadyIpc : IDisposable
             {
                 if (IsPluginEnabled() && !_wasEnabled)
                 {
-                    _logger.LogDebug("it's *on*, that means i turn it *off*");
+                    _logger.LogDebug("Requested YesAlready off");
                     SetPluginEnabled(false);
                     _wasEnabled = true;
-                    _logger.LogDebug("and just walk away!");
                 }
             }
             else
             {
                 if (!IsPluginEnabled() && _wasEnabled)
                 {
-                    _logger.LogDebug("it's *off*, that means i turn it *on*");
+                    _logger.LogDebug("Requested YesAlready on");
                     SetPluginEnabled(true);
                     _wasEnabled = false;
-                    _logger.LogDebug("and just walk away!");
                 }
             }
         }
@@ -81,11 +78,22 @@ internal sealed class YesAlreadyIpc : IDisposable
         IPCSubscriber_Common.DisposeAll(_disposalTokens);
     }
 
-    internal class IPCSubscriber_Common
+    internal sealed class IPCSubscriber_Common
     {
         internal static bool IsReady(string pluginName) => DalamudReflector.TryGetDalamudPlugin(pluginName, out _, false, true);
 
-        internal static Version? Version(string pluginName) => DalamudReflector.TryGetDalamudPlugin(pluginName, out var dalamudPlugin, false, true) ? dalamudPlugin.GetType().Assembly.GetName().Version : new Version(0, 0, 0, 0);
+        internal static Version? Version(string pluginName)
+        {
+            Version _version;
+            if (DalamudReflector.TryGetDalamudPlugin(pluginName, out var dalamudPlugin, false, true))
+            {
+                _version = dalamudPlugin.GetType().Assembly.GetName().Version ?? new Version(0, 0, 0, 0);
+                dalamudPlugin.Dispose();
+            } else {
+                _version = new Version(0, 0, 0, 0);
+            }
+            return _version;
+        }
 
         internal static void DisposeAll(EzIPCDisposalToken[] _disposalTokens)
         {

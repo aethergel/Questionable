@@ -33,14 +33,7 @@
           "ChatMessage": {
             "Key": "TEXT_KINGMA111_04870_SAYTODO_000_046"
           },
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 1046699,
@@ -54,14 +47,7 @@
           "ChatMessage": {
             "Key": "TEXT_KINGMA111_04870_SAYTODO_000_046"
           },
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 1046752,
@@ -75,14 +61,7 @@
           "ChatMessage": {
             "Key": "TEXT_KINGMA111_04870_SAYTODO_000_046"
           },
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         }
       ]
     },

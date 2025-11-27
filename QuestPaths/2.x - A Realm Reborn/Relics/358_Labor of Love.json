@@ -76,14 +76,7 @@
             "Enabled": true,
             "ContentFinderConditionId": 5
           },
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "TerritoryId": 156,
@@ -92,14 +85,7 @@
             "Enabled": true,
             "ContentFinderConditionId": 19
           },
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         }
       ]
     },
@@ -145,14 +131,7 @@
             "Enabled": true,
             "ContentFinderConditionId": 22
           },
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "TerritoryId": 156,
@@ -161,14 +140,7 @@
             "Enabled": true,
             "ContentFinderConditionId": 28
           },
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         }
       ]
     },

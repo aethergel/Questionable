@@ -57,14 +57,7 @@
           "ItemId": 2003721,
           "AetheryteShortcut": "Kozama'uka - Ok'hanu",
           "Fly": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 2014493,
@@ -76,14 +69,7 @@
           "TerritoryId": 1188,
           "InteractionType": "UseItem",
           "ItemId": 2003721,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         }
       ]
     },

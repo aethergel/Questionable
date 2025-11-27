@@ -100,14 +100,7 @@
               "Answer": "TEXT_AKTKBA351_04119_A3_000_001"
             }
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 1040191,
@@ -126,14 +119,7 @@
               "Answer": "TEXT_AKTKBA351_04119_A4_000_001"
             }
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 1040192,
@@ -152,14 +138,7 @@
               "Answer": "TEXT_AKTKBA351_04119_A5_000_001"
             }
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
           "DataId": 1040193,
@@ -178,14 +157,7 @@
               "Answer": "TEXT_AKTKBA351_04119_A6_000_001"
             }
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            16
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
         },
         {
           "DataId": 1040194,
@@ -204,14 +176,7 @@
               "Answer": "TEXT_AKTKBA351_04119_A7_000_001"
             }
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            8
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,8]
         }
       ]
     },

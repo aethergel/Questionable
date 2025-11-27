@@ -98,14 +98,7 @@
           "InteractionType": "Interact",
           "Fly": true,
           "$": "0 0  0 0  0 0 -> 1 0  0 0  0 16",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            16
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
         },
         {
           "DataId": 1010955,
@@ -118,14 +111,7 @@
           "InteractionType": "Interact",
           "Fly": true,
           "$": "1 0  0 0  0 16 -> 2 0  0 0  0 144",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "Position": {
@@ -147,14 +133,7 @@
           "TerritoryId": 156,
           "InteractionType": "Interact",
           "$": "2 0  0 0  0 144 -> 3 0  0 0  0 208",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "Position": {
@@ -175,14 +154,7 @@
           },
           "TerritoryId": 156,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         }
       ]
     },

@@ -31,14 +31,7 @@
           "StopDistance": 0.5,
           "TerritoryId": 398,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128],
           "Fly": true
         },
         {
@@ -51,14 +44,7 @@
           "StopDistance": 0.5,
           "TerritoryId": 398,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64],
           "Fly": true
         }
       ]

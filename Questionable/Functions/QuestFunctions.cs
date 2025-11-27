@@ -37,7 +37,7 @@ internal sealed unsafe class QuestFunctions
     private readonly IClientState _clientState;
     private readonly IGameGui _gameGui;
     private readonly IAetheryteList _aetheryteList;
-    internal static readonly int[] questsThatUseWhiteWolfGate = new[] { 439, 1080, 3870, 33 };
+    internal static readonly int[] questsThatUseWhiteWolfGate = [439, 1080, 3870, 33];
 
     public QuestFunctions(
         QuestRegistry questRegistry,

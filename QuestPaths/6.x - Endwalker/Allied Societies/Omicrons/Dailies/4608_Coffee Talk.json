@@ -68,14 +68,7 @@
           "ChatMessage": {
             "Key": "TEXT_BANOMI102_04608_SAYTODO_000_050"
           },
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "DataId": 1044044,
@@ -89,14 +82,7 @@
           "ChatMessage": {
             "Key": "TEXT_BANOMI102_04608_SAYTODO_000_050"
           },
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         }
       ]
     },

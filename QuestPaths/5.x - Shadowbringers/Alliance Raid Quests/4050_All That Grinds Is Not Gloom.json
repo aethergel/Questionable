@@ -100,14 +100,7 @@
           "TerritoryId": 896,
           "InteractionType": "Interact",
           "DelaySecondsAtStart": 2,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "DataId": 2011456,
@@ -118,14 +111,7 @@
           },
           "TerritoryId": 896,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         }
       ]
     },

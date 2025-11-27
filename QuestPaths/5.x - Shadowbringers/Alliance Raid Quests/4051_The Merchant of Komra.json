@@ -140,14 +140,7 @@
             null,
             null
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
           "Position": {
@@ -239,14 +232,7 @@
           },
           "TerritoryId": 928,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
-          ]
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
           "Position": {
@@ -258,14 +244,7 @@
           "InteractionType": "WalkTo",
           "RestartNavigationIfCancelled": false,
           "DelaySecondsAtStart": 2,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            [2],
-            null,
-            null
-          ]
+          "RequiredQuestVariables": [null,null,null,[2],null,null]
         },
         {
           "TerritoryId": 928,
@@ -290,14 +269,7 @@
             }
           },
           "DelaySecondsAtStart": 2,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            [2],
-            null,
-            null
-          ]
+          "RequiredQuestVariables": [null,null,null,[2],null,null]
         },
         {
           "DataId": 2011269,
@@ -309,14 +281,7 @@
           "TerritoryId": 928,
           "InteractionType": "Interact",
           "TargetTerritoryId": 928,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            [2],
-            null,
-            null
-          ]
+          "RequiredQuestVariables": [null,null,null,[2],null,null]
         },
         {
           "DataId": 2011459,
@@ -327,14 +292,7 @@
           },
           "TerritoryId": 928,
           "InteractionType": "Interact",
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            [2],
-            null,
-            null
-          ]
+          "RequiredQuestVariables": [null,null,null,[2],null,null]
         }
       ]
     },
