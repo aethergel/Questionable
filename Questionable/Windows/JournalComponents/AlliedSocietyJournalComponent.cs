@@ -60,29 +60,32 @@ internal sealed class AlliedSocietyJournalComponent
             List<IQuestInfo> quests = _alliedSocietyQuestFunctions.GetAvailableAlliedSocietyQuests(alliedSociety)
                 .Select(x => _questData.GetQuestInfo(x))
                 .ToList();
-            if (quests.Count == 0)
-                continue;
+            //if (quests.Count == 0)
+            //    continue;
 
             string label = $"{alliedSociety}###AlliedSociety{(int)alliedSociety}";
-#if DEBUG
             bool isOpen;
-            //if (quests.Any(x => !_questRegistry.TryGetQuest(x.QuestId, out var quest) || quest.Root.LastChecked.Date))
-            if (quests.Any(x => !x.QuestId.Value.Equals(1569) && // Ixal "Deliverance"
-                                (!_questRegistry.TryGetQuest(x.QuestId, out var quest) || quest.Root.Disabled)))
-            {
-                using (ImRaii.PushColor(ImGuiCol.Text, ImGuiColors.DalamudOrange))
+
+            using (ImRaii.Disabled(quests.Count == 0)) {
+#if DEBUG
+                //if (quests.Any(x => !_questRegistry.TryGetQuest(x.QuestId, out var quest) || quest.Root.LastChecked.Date))
+                if (quests.Any(x => !x.QuestId.Value.Equals(1569) && // Ixal "Deliverance"
+                                    (!_questRegistry.TryGetQuest(x.QuestId, out var quest) || quest.Root.Disabled)))
+                {
+                    using (ImRaii.PushColor(ImGuiCol.Text, ImGuiColors.DalamudOrange))
+                        isOpen = ImGui.CollapsingHeader(label);
+                }
+                else if (quests.Any(x => !_questFunctions.IsQuestComplete(x.QuestId)))
+                {
+                    using (ImRaii.PushColor(ImGuiCol.Text, ImGuiColors.DalamudYellow))
+                        isOpen = ImGui.CollapsingHeader(label);
+                }
+                else
                     isOpen = ImGui.CollapsingHeader(label);
-            }
-            else if (quests.Any(x => !_questFunctions.IsQuestComplete(x.QuestId)))
-            {
-                using (ImRaii.PushColor(ImGuiCol.Text, ImGuiColors.DalamudYellow))
-                    isOpen = ImGui.CollapsingHeader(label);
-            }
-            else
-                isOpen = ImGui.CollapsingHeader(label);
 #else
-            bool isOpen = ImGui.CollapsingHeader(label);
+                bool isOpen = ImGui.CollapsingHeader(label);
 #endif
+            }
 
             _questJournalUtils.ShowQuestGroupContextMenu($"DrawAlliedSocietyQuests{alliedSociety}",quests);
 
