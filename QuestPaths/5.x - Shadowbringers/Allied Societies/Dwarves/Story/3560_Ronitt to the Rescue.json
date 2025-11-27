@@ -14,20 +14,7 @@
           },
           "TerritoryId": 814,
           "InteractionType": "AcceptQuest",
-          "AetheryteShortcut": "Kholusia - Tomra",
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": -396.68878,
-                  "Y": 417.51825,
-                  "Z": -657.9232
-                },
-                "TerritoryId": 814,
-                "MaximumDistance": 50
-              }
-            }
-          }
+          "AetheryteShortcut": "Kholusia - Tomra"
         }
       ]
     },
@@ -43,20 +30,7 @@
           },
           "TerritoryId": 814,
           "InteractionType": "Interact",
-          "AetheryteShortcut": "Kholusia - Wright",
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": -262.83667,
-                  "Y": 21.717266,
-                  "Z": 369.64978
-                },
-                "TerritoryId": 814,
-                "MaximumDistance": 50
-              }
-            }
-          }
+          "AetheryteShortcut": "Kholusia - Wright"
         }
       ]
     },
@@ -72,20 +46,7 @@
           },
           "TerritoryId": 814,
           "InteractionType": "Interact",
-          "AetheryteShortcut": "Kholusia - Tomra",
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": -408.80444,
-                  "Y": 417.2132,
-                  "Z": -631.7388
-                },
-                "TerritoryId": 814,
-                "MaximumDistance": 50
-              }
-            }
-          }
+          "AetheryteShortcut": "Kholusia - Tomra"
         }
       ]
     },
@@ -148,20 +109,7 @@
           },
           "TerritoryId": 814,
           "InteractionType": "Interact",
-          "AetheryteShortcut": "Kholusia - Wright",
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": -262.83667,
-                  "Y": 21.717266,
-                  "Z": 369.64978
-                },
-                "TerritoryId": 814,
-                "MaximumDistance": 50
-              }
-            }
-          }
+          "AetheryteShortcut": "Kholusia - Wright"
         }
       ]
     },
@@ -178,20 +126,7 @@
           "TerritoryId": 814,
           "InteractionType": "CompleteQuest",
           "Fly": true,
-          "AetheryteShortcut": "Kholusia - Tomra",
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": -531.02924,
-                  "Y": 415.2066,
-                  "Z": -567.4983
-                },
-                "TerritoryId": 814,
-                "MaximumDistance": 50
-              }
-            }
-          }
+          "AetheryteShortcut": "Kholusia - Tomra"
         }
       ]
     }

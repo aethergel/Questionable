@@ -135,20 +135,7 @@
           "TerritoryId": 1187,
           "InteractionType": "Interact",
           "Fly": true,
-          "AetheryteShortcut": "Urqopacha - Worlar's Echo",
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": 703.8834,
-                  "Y": 75.19972,
-                  "Z": 633.3562
-                },
-                "TerritoryId": 1187,
-                "MaximumDistance": 200
-              }
-            }
-          }
+          "AetheryteShortcut": "Urqopacha - Worlar's Echo"
         }
       ]
     },

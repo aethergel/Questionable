@@ -19,19 +19,7 @@
           "TerritoryId": 400,
           "InteractionType": "AcceptQuest",
           "AetheryteShortcut": "The Churning Mists - Moghome",
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": 234.33276,
-                  "Y": -42.20274,
-                  "Z": 601.00696
-                },
-                "TerritoryId": 400,
-                "MaximumDistance": 50
-              }
-            }
-          }
+          "Fly": true
         }
       ]
     },
@@ -172,6 +160,8 @@
           },
           "TerritoryId": 400,
           "InteractionType": "CompleteQuest",
+          "AetheryteShortcut": "The Churning Mists - Zenith",
+          "Fly": true,
           "DialogueChoices": [
             {
               "Type": "List",

@@ -31,11 +31,6 @@
           "InteractionType": "Interact",
           "Fly": true,
           "AetheryteShortcut": "Yanxia - Namai",
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            }
-          },
           "DialogueChoices": [
             {
               "Type": "List",
@@ -58,12 +53,7 @@
           },
           "TerritoryId": 622,
           "InteractionType": "Interact",
-          "AetheryteShortcut": "Azim Steppe - Reunion",
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            }
-          }
+          "AetheryteShortcut": "Azim Steppe - Reunion"
         }
       ]
     },
@@ -83,12 +73,7 @@
           "AethernetShortcut": [
             "[Kugane] Aetheryte Plaza",
             "[Kugane] Pier #1"
-          ],
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            }
-          }
+          ]
         }
       ]
     },

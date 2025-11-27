@@ -15,12 +15,7 @@
           "TerritoryId": 398,
           "InteractionType": "AcceptQuest",
           "Fly": true,
-          "AetheryteShortcut": "The Dravanian Forelands - Anyx Trine",
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            }
-          }
+          "AetheryteShortcut": "The Dravanian Forelands - Anyx Trine"
         }
       ]
     },
@@ -115,12 +110,7 @@
           },
           "TerritoryId": 478,
           "InteractionType": "Interact",
-          "AetheryteShortcut": "Idyllshire",
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            }
-          }
+          "AetheryteShortcut": "Idyllshire"
         }
       ]
     },
@@ -185,12 +175,7 @@
           "TerritoryId": 398,
           "InteractionType": "Interact",
           "Fly": true,
-          "AetheryteShortcut": "The Dravanian Forelands - Anyx Trine",
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            }
-          }
+          "AetheryteShortcut": "The Dravanian Forelands - Anyx Trine"
         }
       ]
     },

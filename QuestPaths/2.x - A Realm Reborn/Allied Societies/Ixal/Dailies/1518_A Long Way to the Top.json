@@ -33,12 +33,7 @@
           "InteractionType": "WalkTo",
           "AetheryteShortcut": "Coerthas Central Highlands - Camp Dragonhead",
           "Fly": true,
-          "Land": true,
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            }
-          }
+          "Land": true
         },
         {
           "DataId": 1009219,

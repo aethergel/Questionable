@@ -16,12 +16,7 @@
                     "InteractionType": "AcceptQuest",
                     "Fly": true,
                     "Land": true,
-                    "AetheryteShortcut": "The Dravanian Forelands - Anyx Trine",
-                    "SkipConditions": {
-                        "AetheryteShortcutIf": {
-                            "InSameTerritory": true
-                        }
-                    }
+                    "AetheryteShortcut": "The Dravanian Forelands - Anyx Trine"
                 }
             ]
         },

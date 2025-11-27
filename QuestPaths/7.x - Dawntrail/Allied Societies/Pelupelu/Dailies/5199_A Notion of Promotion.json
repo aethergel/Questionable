@@ -18,20 +18,7 @@
           "TerritoryId": 1188,
           "InteractionType": "WalkTo",
           "AetheryteShortcut": "Kozama'uka - Dock Poga",
-          "Fly": true,
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": 770.70636,
-                  "Y": 12.846572,
-                  "Z": -260.59436
-                },
-                "TerritoryId": 1188,
-                "MaximumDistance": 100
-              }
-            }
-          }
+          "Fly": true
         },
         {
           "DataId": 1051711,
@@ -52,20 +39,7 @@
         {
           "InteractionType": "None",
           "TerritoryId": 1188,
-          "AetheryteShortcut": "Kozama'uka - Ok'hanu",
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": 219.98926,
-                  "Y": 10.289447,
-                  "Z": -522.9115
-                },
-                "TerritoryId": 1188,
-                "MaximumDistance": 200
-              }
-            }
-          }
+          "AetheryteShortcut": "Kozama'uka - Ok'hanu"
         },
         {
           "DataId": 1052301,
@@ -140,20 +114,7 @@
           "TerritoryId": 1188,
           "InteractionType": "WalkTo",
           "AetheryteShortcut": "Kozama'uka - Dock Poga",
-          "Fly": true,
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": 770.70636,
-                  "Y": 12.846572,
-                  "Z": -260.59436
-                },
-                "TerritoryId": 1188,
-                "MaximumDistance": 100
-              }
-            }
-          }
+          "Fly": true
         },
         {
           "DataId": 1051711,

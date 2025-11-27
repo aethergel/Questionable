@@ -126,12 +126,7 @@
           "InteractionType": "Interact",
           "TargetTerritoryId": 960,
           "Mount": true,
-          "AetheryteShortcut": "Ultima Thule - Base Omicron",
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            }
-          }
+          "AetheryteShortcut": "Ultima Thule - Base Omicron"
         },
         {
           "DataId": 1043865,

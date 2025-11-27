@@ -15,20 +15,7 @@
                     "TerritoryId": 398,
                     "InteractionType": "AcceptQuest",
                     "AetheryteShortcut": "The Dravanian Forelands - Anyx Trine",
-                    "Fly": true,
-                    "SkipConditions": {
-                        "AetheryteShortcutIf": {
-                            "NearPosition": {
-                                "Position": {
-                                    "X": 53.360718,
-                                    "Y": -48.000004,
-                                    "Z": -169.97028
-                                },
-                                "TerritoryId": 398,
-                                "MaximumDistance": 100
-                            }
-                        }
-                    }
+                    "Fly": true
                 }
             ]
         },

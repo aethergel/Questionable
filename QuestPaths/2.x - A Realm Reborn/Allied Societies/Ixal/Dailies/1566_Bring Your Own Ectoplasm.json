@@ -49,12 +49,7 @@
               "MinimumKillCount": 1
             }
           ],
-          "Fly": true,
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            }
-          }
+          "Fly": true
         }
       ]
     },

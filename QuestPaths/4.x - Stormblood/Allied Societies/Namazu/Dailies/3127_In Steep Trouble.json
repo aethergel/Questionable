@@ -14,20 +14,7 @@
           },
           "TerritoryId": 622,
           "InteractionType": "AcceptQuest",
-          "AetheryteShortcut": "Azim Steppe - Dhoro Iloh",
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": -780.148,
-                  "Y": 128.25195,
-                  "Z": 97.154175
-                },
-                "TerritoryId": 622,
-                "MaximumDistance": 50
-              }
-            }
-          }
+          "AetheryteShortcut": "Azim Steppe - Dhoro Iloh"
         }
       ]
     },
@@ -46,19 +33,6 @@
           "ItemId": 2002479,
           "AetheryteShortcut": "Azim Steppe - Dawn Throne",
           "Fly": true,
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": 435.32446,
-                  "Y": 5.107297,
-                  "Z": 18.234497
-                },
-                "TerritoryId": 622,
-                "MaximumDistance": 200
-              }
-            }
-          },
           "RequiredQuestVariables": [
             null,
             [
@@ -129,20 +103,7 @@
           "TerritoryId": 622,
           "InteractionType": "CompleteQuest",
           "Mount": true,
-          "AetheryteShortcut": "Azim Steppe - Dhoro Iloh",
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": -780.148,
-                  "Y": 128.25195,
-                  "Z": 97.154175
-                },
-                "TerritoryId": 622,
-                "MaximumDistance": 50
-              }
-            }
-          }
+          "AetheryteShortcut": "Azim Steppe - Dhoro Iloh"
         }
       ]
     }

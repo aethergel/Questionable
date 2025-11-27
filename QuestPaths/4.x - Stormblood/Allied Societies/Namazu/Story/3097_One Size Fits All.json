@@ -15,12 +15,7 @@
           "TerritoryId": 622,
           "InteractionType": "AcceptQuest",
           "Fly": true,
-          "AetheryteShortcut": "Azim Steppe - Dhoro Iloh",
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            }
-          }
+          "AetheryteShortcut": "Azim Steppe - Dhoro Iloh"
         }
       ]
     },

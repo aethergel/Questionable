@@ -14,12 +14,7 @@
           },
           "TerritoryId": 1189,
           "InteractionType": "AcceptQuest",
-          "AetheryteShortcut": "Yak T'el - Mamook",
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            }
-          }
+          "AetheryteShortcut": "Yak T'el - Mamook"
         }
       ]
     },

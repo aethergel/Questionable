@@ -79,20 +79,7 @@
               "Type": "List",
               "Answer": "TEXT_BANYOK128_05363_A1_000_001"
             }
-          ],
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": 429.80078,
-                  "Y": -107.349785,
-                  "Z": -188.28113
-                },
-                "TerritoryId": 1187,
-                "MaximumDistance": 200
-              }
-            }
-          }
+          ]
         }
       ]
     },

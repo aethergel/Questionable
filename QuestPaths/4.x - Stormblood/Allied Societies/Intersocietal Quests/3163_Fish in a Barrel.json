@@ -22,12 +22,7 @@
               "Answer": "TEXT_BANALL230_03163_A1_000_001"
             }
           ],
-          "AetheryteShortcut": "Ruby Sea - Onokoro",
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            }
-          }
+          "AetheryteShortcut": "Ruby Sea - Onokoro"
         }
       ]
     },

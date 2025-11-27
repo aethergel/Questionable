@@ -143,20 +143,7 @@
           "TerritoryId": 398,
           "InteractionType": "WalkTo",
           "Fly": true,
-          "AetheryteShortcut": "The Dravanian Forelands - Anyx Trine",
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": 57.297607,
-                  "Y": -47.842846,
-                  "Z": -174.63953
-                },
-                "TerritoryId": 398,
-                "MaximumDistance": 500
-              }
-            }
-          }
+          "AetheryteShortcut": "The Dravanian Forelands - Anyx Trine"
         },
         {
           "DataId": 1016803,

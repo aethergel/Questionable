@@ -188,20 +188,7 @@
           "TerritoryId": 957,
           "InteractionType": "Interact",
           "AetheryteShortcut": "Thavnair - Yedlihmad",
-          "Fly": true,
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": -76.82922,
-                  "Y": 39.977543,
-                  "Z": 309.98706
-                },
-                "TerritoryId": 957,
-                "MaximumDistance": 400
-              }
-            }
-          }
+          "Fly": true
         }
       ]
     },
@@ -219,20 +206,7 @@
           "TerritoryId": 957,
           "InteractionType": "Interact",
           "AetheryteShortcut": "Thavnair - Yedlihmad",
-          "Fly": true,
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": -79.6369,
-                  "Y": 39.981316,
-                  "Z": 311.78748
-                },
-                "TerritoryId": 957,
-                "MaximumDistance": 400
-              }
-            }
-          }
+          "Fly": true
         }
       ]
     },
@@ -271,20 +245,7 @@
             }
           ],
           "AetheryteShortcut": "Thavnair - Yedlihmad",
-          "Fly": true,
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": -76.82922,
-                  "Y": 39.977543,
-                  "Z": 309.98706
-                },
-                "TerritoryId": 957,
-                "MaximumDistance": 400
-              }
-            }
-          }
+          "Fly": true
         }
       ]
     },
@@ -303,20 +264,7 @@
           "InteractionType": "CompleteQuest",
           "NextQuestId": 4788,
           "AetheryteShortcut": "Thavnair - Yedlihmad",
-          "Fly": true,
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": -79.6369,
-                  "Y": 39.981316,
-                  "Z": 311.78748
-                },
-                "TerritoryId": 957,
-                "MaximumDistance": 400
-              }
-            }
-          }
+          "Fly": true
         }
       ]
     }

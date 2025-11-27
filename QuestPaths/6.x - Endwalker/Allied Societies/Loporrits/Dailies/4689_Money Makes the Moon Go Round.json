@@ -72,20 +72,7 @@
           "TerritoryId": 959,
           "InteractionType": "Interact",
           "AetheryteShortcut": "Mare Lamentorum - Bestways Burrow",
-          "Fly": true,
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": -638.056,
-                  "Y": -143.79326,
-                  "Z": -513.0846
-                },
-                "TerritoryId": 959,
-                "MaximumDistance": 300
-              }
-            }
-          }
+          "Fly": true
         }
       ]
     },

@@ -30,20 +30,7 @@
           "TerritoryId": 1189,
           "InteractionType": "Interact",
           "Fly": true,
-          "AetheryteShortcut": "Yak T'el - Iq Br'aax",
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": -333.0282,
-                  "Y": 18.46631,
-                  "Z": -407.8584
-                },
-                "TerritoryId": 1189,
-                "MaximumDistance": 50
-              }
-            }
-          }
+          "AetheryteShortcut": "Yak T'el - Iq Br'aax"
         }
       ]
     },
@@ -76,20 +63,7 @@
           "TerritoryId": 1189,
           "InteractionType": "Interact",
           "Fly": true,
-          "AetheryteShortcut": "Yak T'el - Mamook",
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": 576.1653,
-                  "Y": -145.13588,
-                  "Z": 751.09485
-                },
-                "TerritoryId": 1189,
-                "MaximumDistance": 50
-              }
-            }
-          }
+          "AetheryteShortcut": "Yak T'el - Mamook"
         }
       ]
     },
@@ -214,20 +188,7 @@
           "TerritoryId": 1189,
           "InteractionType": "Interact",
           "Fly": true,
-          "AetheryteShortcut": "Yak T'el - Mamook",
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": 576.1653,
-                  "Y": -145.13588,
-                  "Z": 751.09485
-                },
-                "TerritoryId": 1189,
-                "MaximumDistance": 50
-              }
-            }
-          }
+          "AetheryteShortcut": "Yak T'el - Mamook"
         }
       ]
     },

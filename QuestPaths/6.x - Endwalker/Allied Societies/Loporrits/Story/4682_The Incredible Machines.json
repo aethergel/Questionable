@@ -15,20 +15,7 @@
           "InteractionType": "None",
           "AetheryteShortcut": "Mare Lamentorum - Bestways Burrow",
           "Fly": true,
-          "StopDistance": 5,
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": -193.89642,
-                  "Y": -49.19972,
-                  "Z": -262.13477
-                },
-                "TerritoryId": 959,
-                "MaximumDistance": 100
-              }
-            }
-          }
+          "StopDistance": 5
         }
         ,
         {
@@ -59,12 +46,7 @@
           "InteractionType": "Interact",
           "StopDistance": 5,
           "AetheryteShortcut": "Mare Lamentorum - Bestways Burrow",
-          "Fly": true,
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            }
-          }
+          "Fly": true
         }
       ]
     },
@@ -82,12 +64,7 @@
           "InteractionType": "Interact",
           "StopDistance": 5,
           "AetheryteShortcut": "Mare Lamentorum - Bestways Burrow",
-          "Fly": true,
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            }
-          }
+          "Fly": true
         }
       ]
     },
@@ -105,12 +82,7 @@
           "InteractionType": "Interact",
           "StopDistance": 5,
           "AetheryteShortcut": "Mare Lamentorum - Bestways Burrow",
-          "Fly": true,
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            }
-          }
+          "Fly": true
         }
       ]
     },
@@ -134,12 +106,7 @@
           "InteractionType": "CompleteQuest",
           "StopDistance": 5,
           "AetheryteShortcut": "Mare Lamentorum - Bestways Burrow",
-          "Fly": true,
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            }
-          }
+          "Fly": true
         }
       ]
     }

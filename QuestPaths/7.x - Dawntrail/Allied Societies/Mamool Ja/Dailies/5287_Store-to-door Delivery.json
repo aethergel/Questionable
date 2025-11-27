@@ -104,20 +104,7 @@
           "TerritoryId": 1189,
           "InteractionType": "CompleteQuest",
           "AetheryteShortcut": "Yak T'el - Mamook",
-          "Fly": true,
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "NearPosition": {
-                "Position": {
-                  "X": 589.3186,
-                  "Y": -142.89168,
-                  "Z": 729.4575
-                },
-                "TerritoryId": 1189,
-                "MaximumDistance": 200
-              }
-            }
-          }
+          "Fly": true
         }
       ]
     }

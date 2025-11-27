@@ -34,11 +34,6 @@
           "InteractionType": "Interact",
           "AetheryteShortcut": "Coerthas Central Highlands - Camp Dragonhead",
           "Fly": true,
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            }
-          },
           "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
