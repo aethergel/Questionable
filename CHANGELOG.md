@@ -1,1 +1,4 @@
-- Add amaljaa 1229,1230 by aly_hates_arr_tribes_with_a_burning_passion
+- 2453 fix missing duty sequence by alydev
+- 1509 fix incorrect TerritoryId by alydev
+- Add ixal 1514, fix npc location by alydev
+- Update command MessageTag to include version number by alydev
