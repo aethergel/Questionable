@@ -19,6 +19,17 @@
           "Land": true,
           "AetheryteShortcut": "Mare Lamentorum - Bestways Burrow",
           "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": -201.89743,
+                  "Y": -49.149708,
+                  "Z": -273.6312
+                },
+                "TerritoryId": 959,
+                "MaximumDistance": 100
+              }
+            },
             "StepIf": {
               "NearPosition": {
                 "Position": {
@@ -81,6 +92,17 @@
           "InteractionType": "WalkTo",
           "Fly": true,
           "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": -201.89743,
+                  "Y": -49.149708,
+                  "Z": -273.6312
+                },
+                "TerritoryId": 959,
+                "MaximumDistance": 100
+              }
+            },
             "StepIf": {
               "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
             }
@@ -116,6 +138,17 @@
           "Land": true,
           "AetheryteShortcut": "Mare Lamentorum - Bestways Burrow",
           "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": -201.89743,
+                  "Y": -49.149708,
+                  "Z": -273.6312
+                },
+                "TerritoryId": 959,
+                "MaximumDistance": 100
+              }
+            },
             "StepIf": {
               "NearPosition": {
                 "Position": {
