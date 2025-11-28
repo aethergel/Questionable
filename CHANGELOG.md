@@ -1,1 +1,1 @@
-- ARR/HW tribe fixes by alydev
+- DT lm/hf gathering nodes by alydev
