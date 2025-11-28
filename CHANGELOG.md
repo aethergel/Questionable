@@ -1,1 +1,3 @@
-- GatheringPaths additions and GatheringPathRenderer update by alydev
+- Change version scheme to (api version).(code revisions).(path revisions).(build number) by alydev
+- lop 4711 add qw options by alydev
+- lop quest fix recovery by alydev
