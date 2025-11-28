@@ -8,11 +8,12 @@
         {
           "DataId": 1009213,
           "Position": {
-            "X": 159.28894,
-            "Y": -3.6960998,
-            "Z": 64.286255
+            "X": 162.01082,
+            "Y": -4.7442336,
+            "Z": 64.199814
           },
           "TerritoryId": 154,
+          "StopDistance": 1,
           "InteractionType": "AcceptQuest",
           "AetheryteShortcut": "North Shroud - Fallgourd Float",
           "Fly": true,
@@ -90,11 +91,12 @@
         {
           "DataId": 1009213,
           "Position": {
-            "X": 159.28894,
-            "Y": -3.6960998,
-            "Z": 64.286255
+            "X": 162.01082,
+            "Y": -4.7442336,
+            "Z": 64.199814
           },
           "TerritoryId": 154,
+          "StopDistance": 1,
           "InteractionType": "CompleteQuest",
           "AetheryteShortcut": "North Shroud - Fallgourd Float",
           "Fly": true,

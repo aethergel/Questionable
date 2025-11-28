@@ -1,6 +1,10 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-  "Author": "Censored",
+  "Author": "alydev",
+  "LastChecked": {
+    "Username": "alydev",
+    "Date": "2025-11-28"
+  },
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -25,26 +29,67 @@
       "Sequence": 1,
       "Steps": [
         {
+          "InteractionType": "SwitchClass",
+          "TargetClass": "Fisher",
+          "TerritoryId": 154
+        },
+        {
           "Position": {
-            "X": 244.82239,
-            "Y": 222.01717,
-            "Z": 352.99496
+            "X": -369.33804,
+            "Y": -4.500569,
+            "Z": 183.48431
+          },
+          "TerritoryId": 154,
+          "InteractionType": "WalkTo",
+          "Comment": "Fish for 1x Saint Carp using Moth Pupa",
+          "Fly": true,
+          "AetheryteShortcut": "North Shroud - Fallgourd Float",
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "InTerritory": [
+                155
+              ]
+            },
+            "StepIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": -55.165855,
+                  "Y": 199.67697,
+                  "Z": 470.63123
+                },
+                "TerritoryId": 155,
+                "MaximumDistance": 200
+              }
+            }
+          }
+        },
+        {
+          "Position": {
+            "X": -55.165855,
+            "Y": 199.67697,
+            "Z": 470.63123
           },
           "TerritoryId": 155,
           "InteractionType": "WalkTo",
-          "AetheryteShortcut": "Coerthas Central Highlands - Camp Dragonhead",
-          "Fly": true,
-          "Land": true
+          "Comment": "Fish for 1x Saint Carp using Moth Pupa",
+          "Fly": true
         },
         {
-          "DataId": 1009219,
+          "TerritoryId": 155,
+          "InteractionType": "Action",
+          "Comment": "Fish for 1x Saint Carp using Moth Pupa",
+          "Action": "FSHCast"
+        },
+        {
           "Position": {
-            "X": 251.11768,
-            "Y": 222,
-            "Z": 366.2317
+            "X": -55.165855,
+            "Y": 199.67697,
+            "Z": 470.63123
           },
           "TerritoryId": 155,
-          "InteractionType": "Interact"
+          "Comment": "Fish for 1x Saint Carp using Moth Pupa",
+          "InteractionType": "WaitForManualProgress",
+          "Mount": false
         }
       ]
     },
@@ -52,49 +97,15 @@
       "Sequence": 2,
       "Steps": [
         {
-          "Position": {
-            "X": 244.82239,
-            "Y": 222.01717,
-            "Z": 352.99496
-          },
           "TerritoryId": 155,
-          "InteractionType": "WalkTo"
+          "InteractionType": "Action",
+          "Action": "FSHQuit"
         },
         {
-          "Position": {
-            "X": 195.20084,
-            "Y": 307.86295,
-            "Z": 411.4291
-          },
+          "InteractionType": "SwitchClass",
+          "TargetClass": "QuestStartJob",
           "TerritoryId": 155,
-          "InteractionType": "WalkTo",
-          "Fly": true,
-          "Land": true
-        },
-        {
-          "DataId": 1006378,
-          "Position": {
-            "X": 204.5166,
-            "Y": 293.32996,
-            "Z": 418.57007
-          },
-          "TerritoryId": 155,
-          "InteractionType": "Interact"
-        }
-      ]
-    },
-    {
-      "Sequence": 3,
-      "Steps": [
-        {
-          "Position": {
-            "X": 195.20084,
-            "Y": 307.86295,
-            "Z": 411.4291
-          },
-          "TerritoryId": 155,
-          "InteractionType": "WalkTo",
-          "Mount": true
+          "DelaySecondsAtStart": 1
         },
         {
           "Position": {
@@ -125,15 +136,9 @@
         {
           "TerritoryId": 155,
           "InteractionType": "Craft",
-          "ItemId": 8104,
-          "ItemCount": 1,
-          "SkipConditions": {
-            "StepIf": {
-              "Item": {
-                "NotInInventory": false
-              }
-            }
-          }
+          "ItemId": 8100,
+          "ItemCount": 2,
+          "ItemQuality": "HQ"
         },
         {
           "DataId": 1009213,
