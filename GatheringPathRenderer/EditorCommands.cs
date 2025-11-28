@@ -8,6 +8,8 @@ using Dalamud.Game.ClientState.Objects.Enums;
 using Dalamud.Game.ClientState.Objects.Types;
 using Dalamud.Game.Command;
 using Dalamud.Plugin.Services;
+using ECommons;
+using ECommons.GameFunctions;
 using Lumina.Excel.Sheets;
 using Questionable.Model;
 using Questionable.Model.Gathering;
@@ -52,6 +54,9 @@ internal sealed class EditorCommands : IDisposable
                 case "add":
                     CreateOrAddLocationToGroup(arguments);
                     break;
+                //case "list":
+                //    ListLocationsInCurrentTerritory(arguments);
+                //    break;
             }
         }
         catch (Exception e)
@@ -162,6 +167,24 @@ internal sealed class EditorCommands : IDisposable
             _chatGui.Print($"Added new node {target.BaseId}.", "qG");
         }
     }
+
+    //public void ListLocationsInCurrentTerritory(List<string> arguments)
+    //{
+    //    var a = _clientState.TerritoryType;
+    //    var gatheringPoints = GenericHelpers.GetSheet<GatheringPoint>().Where(x => x.PlaceName);
+    //    var loadedPoints = _plugin.GetLocationsInTerritory(_clientState.TerritoryType);
+    //    foreach (GatheringPoint _point in gatheringPoints)
+    //    {
+    //        if (!loadedPoints.Any(x => x.Id.Equals(_point.RowId)))
+    //        {
+    //            _chatGui.PrintError($"!{_point.RowId}_{_point.PlaceName.Value.Name}", "qG");
+    //        }
+    //        else
+    //        {
+    //            _chatGui.Print($"{_point.RowId}_{_point.PlaceName.Value.Name}", "qG");
+    //        }
+    //    }
+    //}
 
     public (FileInfo targetFile, GatheringRoot root) CreateNewFile(GatheringPoint gatheringPoint, IGameObject target)
     {

@@ -1,7 +1,7 @@
 {
   "Name": "GatheringPathRenderer",
-  "Author": "Liza Carvelli",
+  "Author": "alydev",
   "Punchline": "[Questionable dev plugin]: Renders gathering location.",
   "Description": "[Questionable dev plugin]: Renders gathering location using Pictomancy.",
-  "RepoUrl": "https://github.com/qstxiv/Questionable/tree/main/GatheringPathRenderer"
+  "RepoUrl": "https://github.com/PunishXIV/Questionable/tree/main/GatheringPathRenderer"
 }

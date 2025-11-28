@@ -53,6 +53,7 @@ public sealed class RendererPlugin : IDalamudPlugin
         _clientState = clientState;
         _pluginLog = pluginLog;
         _chatGui = chatGui;
+        ECommonsMain.Init(pluginInterface, this);
 
         Configuration? configuration = (Configuration?)pluginInterface.GetPluginConfig();
         if (configuration == null)
