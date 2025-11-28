@@ -1,4 +1,1 @@
-- 2453 fix missing duty sequence by alydev
-- 1509 fix incorrect TerritoryId by alydev
-- Add ixal 1514, fix npc location by alydev
-- Update command MessageTag to include version number by alydev
+- GatheringPaths additions and GatheringPathRenderer update by alydev
