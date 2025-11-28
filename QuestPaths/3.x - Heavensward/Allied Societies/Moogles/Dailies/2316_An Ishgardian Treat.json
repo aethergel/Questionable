@@ -30,7 +30,9 @@
             "Z": 319.7832
           },
           "TerritoryId": 400,
-          "InteractionType": "Interact"
+          "InteractionType": "Interact",
+          "AetheryteShortcut": "The Churning Mists - Zenith",
+          "Fly": true
         }
       ]
     },

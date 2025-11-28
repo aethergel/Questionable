@@ -30,6 +30,7 @@
           },
           "TerritoryId": 400,
           "InteractionType": "WalkTo",
+          "AetheryteShortcut": "The Churning Mists - Zenith",
           "Fly": true
         },
         {

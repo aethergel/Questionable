@@ -25,11 +25,12 @@
         {
           "DataId": 1008818,
           "Position": {
-            "X": -188.89148,
-            "Y": -41.164997,
-            "Z": -42.832153
+            "X": -187.37245,
+            "Y": -40.965363,
+            "Z": -43.943237
           },
           "TerritoryId": 138,
+          "StopDistance": 1,
           "InteractionType": "Combat",
           "EnemySpawnType": "AfterInteraction",
           "KillEnemyDataIds": [
@@ -41,11 +42,12 @@
         {
           "DataId": 1008819,
           "Position": {
-            "X": -156.35925,
-            "Y": -38.790955,
-            "Z": -49.302002
+            "X": -157.43172,
+            "Y": -38.810497,
+            "Z": -48.025734
           },
           "TerritoryId": 138,
+          "StopDistance": 1,
           "InteractionType": "Combat",
           "EnemySpawnType": "AfterInteraction",
           "KillEnemyDataIds": [
@@ -55,11 +57,12 @@
         {
           "DataId": 1008820,
           "Position": {
-            "X": -153.27692,
-            "Y": -35.290905,
-            "Z": -72.70929
+            "X": -153.9412,
+            "Y": -35.335495,
+            "Z": -73.209656
           },
           "TerritoryId": 138,
+          "StopDistance": 1,
           "InteractionType": "Combat",
           "EnemySpawnType": "AfterInteraction",
           "KillEnemyDataIds": [
