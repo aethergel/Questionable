@@ -16,7 +16,7 @@ namespace Questionable.Controller;
 
 internal sealed class CommandHandler : IDisposable
 {
-    public const string MessageTag = "Questionable";
+    public static readonly string MessageTag = $"QST v{typeof(QuestionablePlugin).Assembly.GetName().Version!.ToString(4)}";
     public const ushort TagColor = 576;
 
     private readonly ICommandManager _commandManager;
