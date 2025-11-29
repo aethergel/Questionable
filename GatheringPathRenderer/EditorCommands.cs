@@ -185,6 +185,7 @@ internal sealed class EditorCommands : IDisposable
             x.GatheringPointBase.Value.GatheringType.RowId <= 3 // 4,5 = fishing/spearfishing
         );
         var loadedPoints = _plugin.GatheringLocations;
+        var shownNone = true;
         foreach (GatheringPoint _point in gatheringPoints)
         {
             if (!loadedPoints.Any(location => location.Root.Groups.Any(group => group.Nodes.Any(node => node.DataId.Equals(_point.RowId)))))
@@ -211,8 +212,10 @@ internal sealed class EditorCommands : IDisposable
                     Message = new SeString(payloads),
                     Type = XivChatType.Debug
                 });
+                shownNone = false;
             }
         }
+        if (shownNone) _chatGui.Print("No (unadded) results");
     }
 
     public (FileInfo targetFile, GatheringRoot root) CreateNewFile(GatheringPoint gatheringPoint, IGameObject target)
