@@ -51,7 +51,7 @@ internal sealed class EditorCommands : IDisposable
     {
         string[] parts = argument.Split(' ');
         string subCommand = parts[0];
-        List<string> arguments = parts.Skip(1).ToList();
+        List<string> arguments = [.. parts.Skip(1)];
 
         try
         {
@@ -61,7 +61,7 @@ internal sealed class EditorCommands : IDisposable
                     CreateOrAddLocationToGroup(arguments);
                     break;
                 case "list":
-                    ListLocationsInCurrentTerritory(arguments);
+                    ListLocationsInCurrentTerritory();
                     break;
             }
         }
@@ -77,14 +77,11 @@ internal sealed class EditorCommands : IDisposable
         if (target == null || target.ObjectKind != ObjectKind.GatheringPoint)
             throw new Exception("No valid target");
 
-        var gatheringPoint = _dataManager.GetExcelSheet<GatheringPoint>().GetRowOrDefault(target.BaseId);
-        if (gatheringPoint == null)
-            throw new Exception("Invalid gathering point");
-
+        var gatheringPoint = _dataManager.GetExcelSheet<GatheringPoint>().GetRowOrDefault(target.BaseId) ?? throw new Exception("Invalid gathering point");
         FileInfo targetFile;
         GatheringRoot root;
         var locationsInTerritory = _plugin.GetLocationsInTerritory(_clientState.TerritoryType).ToList();
-        var location = locationsInTerritory.SingleOrDefault(x => x.Id == gatheringPoint.Value.GatheringPointBase.RowId);
+        var location = locationsInTerritory.SingleOrDefault(x => x.Id == gatheringPoint.GatheringPointBase.RowId);
         if (location != null)
         {
             targetFile = location.File;
@@ -103,7 +100,7 @@ internal sealed class EditorCommands : IDisposable
         }
         else
         {
-            (targetFile, root) = CreateNewFile(gatheringPoint.Value, target);
+            (targetFile, root) = CreateNewFile(gatheringPoint, target);
             _chatGui.Print($"Creating new file under {targetFile.FullName}", "qG");
         }
 
@@ -174,16 +171,19 @@ internal sealed class EditorCommands : IDisposable
         }
     }
 
-    public void ListLocationsInCurrentTerritory(List<string> arguments)
+    public void ListLocationsInCurrentTerritory()
     {
-        Vector2 ConvertToMapCoords(Vector3 worldPos, int scale)
-        {
-            float mapX = ((worldPos.X - 1024f) / scale) + 32f;
-            float mapY = ((worldPos.Z - 1024f) / scale) + 32f;
-            return new Vector2(mapX, mapY);
-        }
+        //Vector2 ConvertToMapCoords(Vector3 worldPos, int scale)
+        //{
+        //    float mapX = ((worldPos.X - 1024f) / scale) + 32f;
+        //    float mapY = ((worldPos.Z - 1024f) / scale) + 32f;
+        //    return new Vector2(mapX, mapY);
+        //}
         var a = _clientState.TerritoryType;
-        var gatheringPoints = _dataManager.GetExcelSheet<GatheringPoint>().Where(x => x.TerritoryType.RowId.Equals(_clientState.TerritoryType));
+        var gatheringPoints = _dataManager.GetExcelSheet<GatheringPoint>().Where(
+            x => x.TerritoryType.RowId.Equals(_clientState.TerritoryType) &&
+            x.GatheringPointBase.Value.GatheringType.RowId <= 3 // 4,5 = fishing/spearfishing
+        );
         var loadedPoints = _plugin.GatheringLocations;
         foreach (GatheringPoint _point in gatheringPoints)
         {
@@ -191,14 +191,14 @@ internal sealed class EditorCommands : IDisposable
             {
                 List<Payload> payloads = [];
                 payloads.Add(new TextPayload($"{_point.RowId}_{_point.PlaceName.Value.Name}  "));
-                if (_plugin.GBRLocationData.ContainsKey(_point.RowId))
+                if (_plugin.GBRLocationData.TryGetValue(_point.RowId, out List<Vector3>? value))
                 {
-                    var gbr = _plugin.GBRLocationData[_point.RowId].FirstOrNull();
+                    var gbr = value.FirstOrNull();
                     if (gbr != null)
                     {
                         var scale = _point.TerritoryType.Value.Map.Value.SizeFactor;
                         //Vector2 mapCoords = ConvertToMapCoords(gbr.Value, scale);
-                        payloads.Add(new TextPayload($"{gbr.Value.X} {gbr.Value.Y} {gbr.Value.Z}  "));
+                        payloads.Add(new TextPayload($"{gbr.Value.X} {gbr.Value.Y} {gbr.Value.Z}"));
                         //payloads.AddRange(SeString.CreateMapLink(_clientState.TerritoryType, _point.TerritoryType.Value.Map.RowId, mapCoords.X, mapCoords.Y).Payloads);
                     }
                 }
@@ -229,7 +229,7 @@ internal sealed class EditorCommands : IDisposable
         }
 
         FileInfo targetFile =
-            new FileInfo(
+            new(
                 Path.Combine(targetFolder.FullName,
                     $"{gatheringPoint.GatheringPointBase.RowId}_{gatheringPoint.PlaceName.Value.Name}_{(_clientState.LocalPlayer!.ClassJob.RowId == 16 ? "MIN" : "BTN")}.json"));
         var root = new GatheringRoot

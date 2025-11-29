@@ -28,7 +28,6 @@ using Questionable.Model.Gathering;
 
 namespace GatheringPathRenderer;
 
-[SuppressMessage("ReSharper", "ClassNeverInstantiated.Global")]
 public sealed class RendererPlugin : IDalamudPlugin
 {
     private readonly WindowSystem _windowSystem = new(nameof(RendererPlugin));
@@ -92,89 +91,89 @@ public sealed class RendererPlugin : IDalamudPlugin
         _pluginInterface.UiBuilder.Draw += Draw;
         _clientState.ClassJobChanged += ClassJobChanged;
 
-        commandManager.AddHandler("/qipc", new CommandInfo(CallIPC));
+        //commandManager.AddHandler("/qipc", new CommandInfo(CallIPC));
     }
 
-    private void CallIPC(string command, string argument)
-    {
-        string[] parts = argument.Split(' ');
-        string function = parts[0];
-        List<Type> types = [];
-        List<object> arguments = [];
-        char delim = ':';
-        foreach (string part in parts.Skip(1).ToArray())
-        {
-            char t;
-            string v;
-            if (!part.Contains(':'))
-            {
-                t = 's';
-                v = part;
-            }
-            else
-            {
-                var _ = part.Split(':', 2);
-                t = char.Parse(_[0]);
-                v = _[1];
-            }
-            switch (t)
-            {
-                case 'i':
-                    types.Add(typeof(int));
-                    if (v.Length != 0)
-                        arguments.Add(int.Parse(v));
-                    break;
-                case 'b':
-                    types.Add(typeof(bool));
-                    if (v.Length != 0)
-                        arguments.Add(bool.Parse(v));
-                    break;
-                case 'u':
-                    types.Add(typeof(uint));
-                    if (v.Length != 0)
-                        arguments.Add(uint.Parse(v));
-                    break;
-                case 'h':
-                    types.Add(typeof(ushort));
-                    if (v.Length != 0)
-                        arguments.Add(ushort.Parse(v));
-                    break;
-                case 'y':
-                    types.Add(typeof(byte));
-                    if (v.Length != 0)
-                        arguments.Add(byte.Parse(v));
-                    break;
-                default:
-                    types.Add(typeof(string));
-                    if (v.Length != 0)
-                        arguments.Add((string)v);
-                    break;
-            }
-        }
-        var _types = types.ToArray();
-        var _arguments = arguments.ToArray();
-        _pluginLog.Debug(_types.Print(","));
-        _pluginLog.Debug(_arguments.Print(","));
-        _pluginLog.Debug($"{_types.Length},{_arguments.Length}");
-        _pluginLog.Debug($"Attempting to call {function}({_arguments.Print()})");
-        EzIPCDisposalToken[] _disposalTokens = EzIPC.Init(_pluginInterface, function.Split('.')[0], SafeWrapper.IPCException);
+    //private void CallIPC(string command, string argument)
+    //{
+    //    string[] parts = argument.Split(' ');
+    //    string function = parts[0];
+    //    List<Type> types = [];
+    //    List<object> arguments = [];
+    //    char delim = ':';
+    //    foreach (string part in parts.Skip(1).ToArray())
+    //    {
+    //        char t;
+    //        string v;
+    //        if (!part.Contains(':'))
+    //        {
+    //            t = 's';
+    //            v = part;
+    //        }
+    //        else
+    //        {
+    //            var _ = part.Split(':', 2);
+    //            t = char.Parse(_[0]);
+    //            v = _[1];
+    //        }
+    //        switch (t)
+    //        {
+    //            case 'i':
+    //                types.Add(typeof(int));
+    //                if (v.Length != 0)
+    //                    arguments.Add(int.Parse(v));
+    //                break;
+    //            case 'b':
+    //                types.Add(typeof(bool));
+    //                if (v.Length != 0)
+    //                    arguments.Add(bool.Parse(v));
+    //                break;
+    //            case 'u':
+    //                types.Add(typeof(uint));
+    //                if (v.Length != 0)
+    //                    arguments.Add(uint.Parse(v));
+    //                break;
+    //            case 'h':
+    //                types.Add(typeof(ushort));
+    //                if (v.Length != 0)
+    //                    arguments.Add(ushort.Parse(v));
+    //                break;
+    //            case 'y':
+    //                types.Add(typeof(byte));
+    //                if (v.Length != 0)
+    //                    arguments.Add(byte.Parse(v));
+    //                break;
+    //            default:
+    //                types.Add(typeof(string));
+    //                if (v.Length != 0)
+    //                    arguments.Add((string)v);
+    //                break;
+    //        }
+    //    }
+    //    var _types = types.ToArray();
+    //    var _arguments = arguments.ToArray();
+    //    _pluginLog.Debug(_types.Print(","));
+    //    _pluginLog.Debug(_arguments.Print(","));
+    //    _pluginLog.Debug($"{_types.Length},{_arguments.Length}");
+    //    _pluginLog.Debug($"Attempting to call {function}({_arguments.Print()})");
+    //    EzIPCDisposalToken[] _disposalTokens = EzIPC.Init(_pluginInterface, function.Split('.')[0], SafeWrapper.IPCException);
 
-        MethodInfo? method1 = typeof(IDalamudPluginInterface).GetMethod("GetIpcSubscriber", _types.Length, _types);
-        MethodInfo? func1 = method1?.MakeGenericMethod(_types);
-        object? callGateSubscriber = func1?.Invoke(_pluginInterface, [function]);
-        MethodInfo? method2 = typeof(ICallGateSubscriber).GetMethod("InvokeFunc", _types.Length, _types);
-        MethodInfo? func2 = method2?.MakeGenericMethod(_types);
-        func2?.Invoke(callGateSubscriber, _arguments);
-        //ICallGateSubscriber<string,bool> callGateSubscriber = _pluginInterface.GetIpcSubscriber<string,bool>(function);
-        //_chatGui.Print(callGateSubscriber.InvokeFunc(args[0]).ToString(), "qipc");
-        foreach (var token in _disposalTokens) token.Dispose();
-        //else if (parts.Length == 2)
-        //{
-        //    MethodInfo method0 = typeof(arguments[0].GetType());
-        //    ICallGateProvider<type,bool> callGateSubscriber = _pluginInterface.GetIpcSubscriber<T,bool>(function);
-        //}
+    //    MethodInfo? method1 = typeof(IDalamudPluginInterface).GetMethod("GetIpcSubscriber", _types.Length, _types);
+    //    MethodInfo? func1 = method1?.MakeGenericMethod(_types);
+    //    object? callGateSubscriber = func1?.Invoke(_pluginInterface, [function]);
+    //    MethodInfo? method2 = typeof(ICallGateSubscriber).GetMethod("InvokeFunc", _types.Length, _types);
+    //    MethodInfo? func2 = method2?.MakeGenericMethod(_types);
+    //    func2?.Invoke(callGateSubscriber, _arguments);
+    //    //ICallGateSubscriber<string,bool> callGateSubscriber = _pluginInterface.GetIpcSubscriber<string,bool>(function);
+    //    //_chatGui.Print(callGateSubscriber.InvokeFunc(args[0]).ToString(), "qipc");
+    //    foreach (var token in _disposalTokens) token.Dispose();
+    //    //else if (parts.Length == 2)
+    //    //{
+    //    //    MethodInfo method0 = typeof(arguments[0].GetType());
+    //    //    ICallGateProvider<type,bool> callGateSubscriber = _pluginInterface.GetIpcSubscriber<T,bool>(function);
+    //    //}
 
-    }
+    //}
 
     internal DirectoryInfo PathsDirectory
     {
@@ -185,7 +184,7 @@ public sealed class RendererPlugin : IDalamudPlugin
             if (solutionDirectory != null)
             {
                 DirectoryInfo pathProjectDirectory =
-                    new DirectoryInfo(Path.Combine(solutionDirectory.FullName, "GatheringPaths"));
+                    new(Path.Combine(solutionDirectory.FullName, "GatheringPaths"));
                 if (pathProjectDirectory.Exists)
                     return pathProjectDirectory;
             }
@@ -240,7 +239,7 @@ public sealed class RendererPlugin : IDalamudPlugin
         {
             try
             {
-                using FileStream stream = new FileStream(fileInfo.FullName, FileMode.Open, FileAccess.Read);
+                using FileStream stream = new(fileInfo.FullName, FileMode.Open, FileAccess.Read);
                 LoadLocationFromStream(fileInfo, stream);
             }
             catch (Exception e)
@@ -261,10 +260,10 @@ public sealed class RendererPlugin : IDalamudPlugin
             root));
     }
 
-    public Dictionary<uint, List<Vector3>> LoadGBRPosData(string directoryName)
+    public static Dictionary<uint, List<Vector3>> LoadGBRPosData(string directoryName)
     {
         var path = Path.Combine(directoryName, "world_locations.json");
-        using FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Read);
+        using FileStream stream = new(path, FileMode.Open, FileAccess.Read);
         var root = JsonNode.Parse(stream);
         var result = new Dictionary<uint, List<Vector3>>();
 
@@ -312,9 +311,13 @@ public sealed class RendererPlugin : IDalamudPlugin
         using (var stream = File.Create(targetFile.FullName))
         {
             var jsonNode = (JsonObject)JsonSerializer.SerializeToNode(root, options)!;
-            var newNode = new JsonObject();
-            newNode.Add("$schema",
-                "https://qstxiv.github.io/schema/gatheringlocation-v1.json");
+            JsonObject newNode = new()
+            {
+                {
+                    "$schema",
+                    "https://qstxiv.github.io/schema/gatheringlocation-v1.json"
+                }
+            };
             foreach (var (key, value) in jsonNode)
                 newNode.Add(key, value?.DeepClone());
 

@@ -141,7 +141,7 @@ internal sealed class EditorWindow : Window
             ImGui.Text(context.File.Name);
             ImGui.Unindent();
             ImGui.Text(
-                $"{_target.BaseId} +{node.Locations.Count - 1} / {location.InternalId.ToString().Substring(0, 4)}");
+                $"{_target.BaseId} +{node.Locations.Count - 1} / {location.InternalId.ToString()[..4]}");
             ImGui.Text(string.Create(CultureInfo.InvariantCulture, $"{location.Position:G}"));
 
             if (!_changes.TryGetValue(location.InternalId, out LocationOverride? locationOverride))
@@ -212,12 +212,8 @@ internal sealed class EditorWindow : Window
             //}
 
 
-            List<IGameObject> nodesInObjectTable = _objectTable
-                .Where(x => x.ObjectKind == ObjectKind.GatheringPoint && x.BaseId == _target.BaseId)
-                .ToList();
-            List<IGameObject> missingLocations = nodesInObjectTable
-                .Where(x => !node.Locations.Any(y => Vector3.Distance(x.Position, y.Position) < 0.1f))
-                .ToList();
+            List<IGameObject> nodesInObjectTable = [.. _objectTable.Where(x => x.ObjectKind == ObjectKind.GatheringPoint && x.BaseId == _target.BaseId)];
+            List<IGameObject> missingLocations = [.. nodesInObjectTable.Where(x => !node.Locations.Any(y => Vector3.Distance(x.Position, y.Position) < 0.1f))];
             if (missingLocations.Count > 0)
             {
                 if (ImGui.Button("Add missing locations"))
