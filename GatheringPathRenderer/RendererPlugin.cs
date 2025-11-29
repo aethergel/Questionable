@@ -313,12 +313,16 @@ public sealed class RendererPlugin : IDalamudPlugin
             return;
 
         Vector3 position = _clientState.LocalPlayer?.Position ?? Vector3.Zero;
+        float drawDistance = 200f;
+        # if DEBUG
+        drawDistance = 20000f;
+        # endif
         foreach (var location in GetLocationsInTerritory(_clientState.TerritoryType))
         {
             if (!location.Root.Groups.Any(gr =>
                     gr.Nodes.Any(
                         no => no.Locations.Any(
-                            loc => Vector3.Distance(loc.Position, position) < 200f))))
+                            loc => Vector3.Distance(loc.Position, position) < drawDistance))))
                 continue;
 
             foreach (var group in location.Root.Groups)

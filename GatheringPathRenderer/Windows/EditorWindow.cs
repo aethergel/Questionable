@@ -11,6 +11,7 @@ using Dalamud.Interface;
 using Dalamud.Interface.Colors;
 using Dalamud.Interface.Windowing;
 using Dalamud.Plugin.Services;
+using ECommons.MathHelpers;
 using Lumina.Excel.Sheets;
 using Questionable.Model.Gathering;
 
@@ -196,6 +197,19 @@ internal sealed class EditorWindow : Window
             }
 
             ImGui.EndDisabled();
+            
+            //ImGui.SameLine();
+            //if (ImGui.Button("90deg"))
+            //{
+            //    Vector3? position = _clientState.LocalPlayer?.Position;
+            //    if (position != null && position.Value.Length() != 0 && location.Position.Length() != 0)
+            //    {
+            //        var angle = Math.Acos(Vector3.Dot(position.Value, location.Position) /
+            //                              (position.Value.Length() * location.Position.Length()));
+            //        locationOverride.MinimumAngle = (int)angle;
+            //        locationOverride.MaximumAngle = (int)angle;
+            //    }
+            //}
 
 
             List<IGameObject> nodesInObjectTable = _objectTable
