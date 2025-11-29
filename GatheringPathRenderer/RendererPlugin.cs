@@ -43,7 +43,11 @@ public sealed class RendererPlugin : IDalamudPlugin
     private readonly EditorWindow _editorWindow;
 
     private readonly List<GatheringLocationContext> _gatheringLocations = [];
+    private readonly Dictionary<uint, List<Vector3>> _gbrLocationData;
     private EClassJob _currentClassJob = EClassJob.Adventurer;
+
+    internal List<GatheringLocationContext> GatheringLocations => _gatheringLocations;
+    internal Dictionary<uint, List<Vector3>> GBRLocationData => _gbrLocationData;
 
     public RendererPlugin(IDalamudPluginInterface pluginInterface, IClientState clientState,
         ICommandManager commandManager, IDataManager dataManager, ITargetManager targetManager, IChatGui chatGui,
@@ -53,6 +57,8 @@ public sealed class RendererPlugin : IDalamudPlugin
         _clientState = clientState;
         _pluginLog = pluginLog;
         _chatGui = chatGui;
+        _gbrLocationData = LoadGBRPosData(_pluginInterface.AssemblyLocation.DirectoryName!);
+        pluginLog.Info($"Loaded {_gbrLocationData.Count} entries from GBR data");
         ECommonsMain.Init(pluginInterface, this);
 
         Configuration? configuration = (Configuration?)pluginInterface.GetPluginConfig();
@@ -63,11 +69,11 @@ public sealed class RendererPlugin : IDalamudPlugin
         }
 
         _editorCommands = new EditorCommands(this, dataManager, commandManager, targetManager, clientState, chatGui,
-            configuration);
+            pluginLog, configuration);
         var configWindow = new ConfigWindow(pluginInterface, configuration);
         _editorWindow = new EditorWindow(this, _editorCommands, dataManager, targetManager, clientState, objectTable,
                 configWindow)
-            { IsOpen = true };
+        { IsOpen = true };
         _windowSystem.AddWindow(configWindow);
         _windowSystem.AddWindow(_editorWindow);
 
@@ -85,7 +91,7 @@ public sealed class RendererPlugin : IDalamudPlugin
         _pluginInterface.UiBuilder.Draw += _windowSystem.Draw;
         _pluginInterface.UiBuilder.Draw += Draw;
         _clientState.ClassJobChanged += ClassJobChanged;
-        
+
         commandManager.AddHandler("/qipc", new CommandInfo(CallIPC));
     }
 
@@ -100,10 +106,13 @@ public sealed class RendererPlugin : IDalamudPlugin
         {
             char t;
             string v;
-            if (!part.Contains(':')) {
+            if (!part.Contains(':'))
+            {
                 t = 's';
                 v = part;
-            } else {
+            }
+            else
+            {
                 var _ = part.Split(':', 2);
                 t = char.Parse(_[0]);
                 v = _[1];
@@ -252,6 +261,39 @@ public sealed class RendererPlugin : IDalamudPlugin
             root));
     }
 
+    public Dictionary<uint, List<Vector3>> LoadGBRPosData(string directoryName)
+    {
+        var path = Path.Combine(directoryName, "world_locations.json");
+        using FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Read);
+        var root = JsonNode.Parse(stream);
+        var result = new Dictionary<uint, List<Vector3>>();
+
+        if (root is not JsonObject obj)
+            return result;
+
+        foreach (var kvp in obj)
+        {
+            if (!uint.TryParse(kvp.Key, out uint key))
+                continue;
+
+            var vectorList = new List<Vector3>();
+            if (kvp.Value is JsonArray arr)
+            {
+                foreach (var vecNode in arr)
+                {
+                    float x = vecNode?["X"]?.GetValue<float>() ?? 0f;
+                    float y = vecNode?["Y"]?.GetValue<float>() ?? 0f;
+                    float z = vecNode?["Z"]?.GetValue<float>() ?? 0f;
+                    vectorList.Add(new Vector3(x, y, z));
+                }
+            }
+
+            result[key] = vectorList;
+        }
+
+        return result;
+    }
+
     internal IEnumerable<GatheringLocationContext> GetLocationsInTerritory(ushort territoryId)
         => _gatheringLocations.Where(x => x.Root.Steps.LastOrDefault()?.TerritoryId == territoryId);
 
@@ -314,9 +356,9 @@ public sealed class RendererPlugin : IDalamudPlugin
 
         Vector3 position = _clientState.LocalPlayer?.Position ?? Vector3.Zero;
         float drawDistance = 200f;
-        # if DEBUG
+#if DEBUG
         drawDistance = 20000f;
-        # endif
+#endif
         foreach (var location in GetLocationsInTerritory(_clientState.TerritoryType))
         {
             if (!location.Root.Groups.Any(gr =>

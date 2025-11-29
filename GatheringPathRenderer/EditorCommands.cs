@@ -7,6 +7,9 @@ using Dalamud.Game.ClientState.Objects;
 using Dalamud.Game.ClientState.Objects.Enums;
 using Dalamud.Game.ClientState.Objects.Types;
 using Dalamud.Game.Command;
+using Dalamud.Game.Text;
+using Dalamud.Game.Text.SeStringHandling;
+using Dalamud.Game.Text.SeStringHandling.Payloads;
 using Dalamud.Plugin.Services;
 using ECommons;
 using ECommons.GameFunctions;
@@ -25,10 +28,11 @@ internal sealed class EditorCommands : IDisposable
     private readonly ITargetManager _targetManager;
     private readonly IClientState _clientState;
     private readonly IChatGui _chatGui;
+    private readonly IPluginLog _pluginLog;
     private readonly Configuration _configuration;
 
     public EditorCommands(RendererPlugin plugin, IDataManager dataManager, ICommandManager commandManager,
-        ITargetManager targetManager, IClientState clientState, IChatGui chatGui, Configuration configuration)
+        ITargetManager targetManager, IClientState clientState, IChatGui chatGui, IPluginLog pluginLog, Configuration configuration)
     {
         _plugin = plugin;
         _dataManager = dataManager;
@@ -36,6 +40,7 @@ internal sealed class EditorCommands : IDisposable
         _targetManager = targetManager;
         _clientState = clientState;
         _chatGui = chatGui;
+        _pluginLog = pluginLog;
         _configuration = configuration;
 
         _commandManager.AddHandler("/qg", new CommandInfo(ProcessCommand));
@@ -54,9 +59,9 @@ internal sealed class EditorCommands : IDisposable
                 case "add":
                     CreateOrAddLocationToGroup(arguments);
                     break;
-                //case "list":
-                //    ListLocationsInCurrentTerritory(arguments);
-                //    break;
+                case "list":
+                    ListLocationsInCurrentTerritory(arguments);
+                    break;
             }
         }
         catch (Exception e)
@@ -168,23 +173,42 @@ internal sealed class EditorCommands : IDisposable
         }
     }
 
-    //public void ListLocationsInCurrentTerritory(List<string> arguments)
-    //{
-    //    var a = _clientState.TerritoryType;
-    //    var gatheringPoints = GenericHelpers.GetSheet<GatheringPoint>().Where(x => x.PlaceName);
-    //    var loadedPoints = _plugin.GetLocationsInTerritory(_clientState.TerritoryType);
-    //    foreach (GatheringPoint _point in gatheringPoints)
-    //    {
-    //        if (!loadedPoints.Any(x => x.Id.Equals(_point.RowId)))
-    //        {
-    //            _chatGui.PrintError($"!{_point.RowId}_{_point.PlaceName.Value.Name}", "qG");
-    //        }
-    //        else
-    //        {
-    //            _chatGui.Print($"{_point.RowId}_{_point.PlaceName.Value.Name}", "qG");
-    //        }
-    //    }
-    //}
+    public void ListLocationsInCurrentTerritory(List<string> arguments)
+    {
+        Vector2 ConvertToMapCoords(Vector3 worldPos, ushort scale)
+        {
+            float mapX = ((worldPos.X - 1024f) / scale) + 32f;
+            float mapY = ((worldPos.Z - 1024f) / scale) + 32f;
+            return new Vector2(mapX, mapY);
+        }
+        var a = _clientState.TerritoryType;
+        var gatheringPoints = _dataManager.GetExcelSheet<GatheringPoint>().Where(x => x.TerritoryType.RowId.Equals(_clientState.TerritoryType));
+        var loadedPoints = _plugin.GatheringLocations;
+        foreach (GatheringPoint _point in gatheringPoints)
+        {
+            if (!loadedPoints.Any(location => location.Root.Groups.Any(group => group.Nodes.Any(node => node.DataId.Equals(_point.RowId)))))
+            {
+                List<Payload> payloads = [];
+                payloads.Add(new TextPayload($"{_point.RowId}_{_point.PlaceName.Value.Name}"));
+                if (_plugin.GBRLocationData.ContainsKey(_point.RowId))
+                {
+                    var gbr = _plugin.GBRLocationData[_point.RowId].FirstOrNull();
+                    if (gbr != null)
+                    {
+                        var scale = _point.TerritoryType.Value.Map.Value.SizeFactor;
+                        Vector2 mapCoords = ConvertToMapCoords(gbr.Value, scale);
+                        payloads.AddRange(SeString.CreateMapLink(_clientState.TerritoryType, _point.TerritoryType.Value.Map.RowId, mapCoords.X, mapCoords.Y).Payloads);
+                    }
+                }
+                _chatGui.Print(new XivChatEntry
+                {
+                    Name = "qG",
+                    Message = new SeString(payloads),
+                    Type = XivChatType.Debug
+                });
+            }
+        }
+    }
 
     public (FileInfo targetFile, GatheringRoot root) CreateNewFile(GatheringPoint gatheringPoint, IGameObject target)
     {

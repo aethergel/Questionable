@@ -18,7 +18,9 @@
                 "X": 649.5298,
                 "Y": 14.19326,
                 "Z": -222.9378
-              }
+              },
+              "MinimumDistance": 1,
+              "MaximumDistance": 2.4
             }
           ]
         }

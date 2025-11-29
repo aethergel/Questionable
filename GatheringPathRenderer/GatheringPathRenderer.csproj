@@ -1,6 +1,6 @@
 <Project Sdk="Dalamud.NET.Sdk/13.0.0">
     <PropertyGroup>
-        <Version>0.5</Version>
+        <Version>0.6</Version>
         <OutputPath>dist</OutputPath>
         <PathMap Condition="$(SolutionDir) != ''">$(SolutionDir)=X:\</PathMap>
         <Platforms>x64</Platforms>
@@ -17,6 +17,12 @@
 
     <ItemGroup>
       <PackageReference Update="DalamudPackager" Version="13.1.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="world_locations.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
     <Import Project="..\LLib\LLib.targets" />

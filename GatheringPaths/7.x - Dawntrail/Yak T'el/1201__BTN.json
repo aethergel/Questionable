@@ -19,8 +19,8 @@
                 "Y": -169.826,
                 "Z": 379.3596
               },
-              "MinimumAngle": -360,
-              "MaximumAngle": 0
+              "MinimumAngle": -295,
+              "MaximumAngle": -150
             }
           ]
         }
@@ -38,7 +38,9 @@
                 "Z": 343.6277
               },
               "MinimumAngle": -360,
-              "MaximumAngle": 0
+              "MaximumAngle": 0,
+              "MinimumDistance": 1,
+              "MaximumDistance": 2.1
             }
           ]
         }
@@ -55,8 +57,8 @@
                 "Y": -171.871,
                 "Z": 388.8273
               },
-              "MinimumAngle": -360,
-              "MaximumAngle": 0
+              "MinimumAngle": -225,
+              "MaximumAngle": -160
             }
           ]
         }
