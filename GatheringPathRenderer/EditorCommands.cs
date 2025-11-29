@@ -13,6 +13,7 @@ using Dalamud.Game.Text.SeStringHandling.Payloads;
 using Dalamud.Plugin.Services;
 using ECommons;
 using ECommons.GameFunctions;
+using Lumina.Excel;
 using Lumina.Excel.Sheets;
 using Questionable.Model;
 using Questionable.Model.Gathering;
@@ -175,7 +176,7 @@ internal sealed class EditorCommands : IDisposable
 
     public void ListLocationsInCurrentTerritory(List<string> arguments)
     {
-        Vector2 ConvertToMapCoords(Vector3 worldPos, ushort scale)
+        Vector2 ConvertToMapCoords(Vector3 worldPos, int scale)
         {
             float mapX = ((worldPos.X - 1024f) / scale) + 32f;
             float mapY = ((worldPos.Z - 1024f) / scale) + 32f;
@@ -189,17 +190,21 @@ internal sealed class EditorCommands : IDisposable
             if (!loadedPoints.Any(location => location.Root.Groups.Any(group => group.Nodes.Any(node => node.DataId.Equals(_point.RowId)))))
             {
                 List<Payload> payloads = [];
-                payloads.Add(new TextPayload($"{_point.RowId}_{_point.PlaceName.Value.Name}"));
+                payloads.Add(new TextPayload($"{_point.RowId}_{_point.PlaceName.Value.Name}  "));
                 if (_plugin.GBRLocationData.ContainsKey(_point.RowId))
                 {
                     var gbr = _plugin.GBRLocationData[_point.RowId].FirstOrNull();
                     if (gbr != null)
                     {
                         var scale = _point.TerritoryType.Value.Map.Value.SizeFactor;
-                        Vector2 mapCoords = ConvertToMapCoords(gbr.Value, scale);
-                        payloads.AddRange(SeString.CreateMapLink(_clientState.TerritoryType, _point.TerritoryType.Value.Map.RowId, mapCoords.X, mapCoords.Y).Payloads);
+                        //Vector2 mapCoords = ConvertToMapCoords(gbr.Value, scale);
+                        payloads.Add(new TextPayload($"{gbr.Value.X} {gbr.Value.Y} {gbr.Value.Z}  "));
+                        //payloads.AddRange(SeString.CreateMapLink(_clientState.TerritoryType, _point.TerritoryType.Value.Map.RowId, mapCoords.X, mapCoords.Y).Payloads);
                     }
                 }
+                //var firstItem = _point.GatheringPointBase.Value.Item
+                //if (firstItem.)
+                //    payloads.Add(new TextPayload($"{firstItem.Value.Name}"));
                 _chatGui.Print(new XivChatEntry
                 {
                     Name = "qG",
