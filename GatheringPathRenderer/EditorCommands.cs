@@ -186,12 +186,14 @@ internal sealed class EditorCommands : IDisposable
         );
         var loadedPoints = _plugin.GatheringLocations;
         var shownNone = true;
-        foreach (GatheringPoint _point in gatheringPoints)
+        _chatGui.Print($"Nodes in {_clientState.TerritoryType}:");
+        foreach (GatheringPoint _point in gatheringPoints.OrderBy(x => x.PlaceName.Value.Name.ToMacroString()))
         {
+            if (_point.GatheringPointBase.RowId >= 653 && _point.GatheringPointBase.RowId <= 680) continue; // obsolete skybuilders stuff
             if (!loadedPoints.Any(location => location.Root.Groups.Any(group => group.Nodes.Any(node => node.DataId.Equals(_point.RowId)))))
             {
                 List<Payload> payloads = [];
-                payloads.Add(new TextPayload($"{_point.RowId}_{_point.PlaceName.Value.Name}  "));
+                payloads.Add(new TextPayload($"{_point.RowId} {_point.PlaceName.Value.Name}  "));
                 if (_plugin.GBRLocationData.TryGetValue(_point.RowId, out List<Vector3>? value))
                 {
                     var gbr = value.FirstOrNull();

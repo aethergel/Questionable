@@ -101,6 +101,52 @@
               "MaximumAngle": 15
             }
           ]
+        },
+        {
+          "DataId": 34791,
+          "Locations": [
+            {
+              "Position": {
+                "X": -484.3413,
+                "Y": 16.65653,
+                "Z": -559.6157
+              },
+              "MinimumAngle": -160,
+              "MaximumAngle": -100
+            }
+          ]
+        },
+        {
+          "DataId": 34792,
+          "Locations": [
+            {
+              "Position": {
+                "X": -492.8936,
+                "Y": 16.20802,
+                "Z": -567.3248
+              },
+              "MinimumAngle": -210,
+              "MaximumAngle": -125
+            },
+            {
+              "Position": {
+                "X": -488.2536,
+                "Y": 16.60593,
+                "Z": -563.0154
+              },
+              "MinimumAngle": -165,
+              "MaximumAngle": -105
+            },
+            {
+              "Position": {
+                "X": -479.0105,
+                "Y": 16.51814,
+                "Z": -558.4577
+              },
+              "MinimumAngle": -175,
+              "MaximumAngle": -125
+            }
+          ]
         }
       ]
     }
