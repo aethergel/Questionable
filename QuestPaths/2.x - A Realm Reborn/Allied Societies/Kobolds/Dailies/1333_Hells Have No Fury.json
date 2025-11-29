@@ -47,6 +47,7 @@
           "TerritoryId": 180,
           "InteractionType": "Emote",
           "Emote": "soothe",
+          "StopDistance": 1,
           "Fly": true,
           "Land": true,
           "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
@@ -60,6 +61,7 @@
           },
           "TerritoryId": 180,
           "InteractionType": "Emote",
+          "StopDistance": 1,
           "Emote": "soothe",
           "CompletionQuestVariablesFlags": [null,null,null,null,null,8]
         },
@@ -72,6 +74,7 @@
           },
           "TerritoryId": 180,
           "InteractionType": "Emote",
+          "StopDistance": 1,
           "Emote": "soothe",
           "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
@@ -84,6 +87,7 @@
           },
           "TerritoryId": 180,
           "InteractionType": "Emote",
+          "StopDistance": 1,
           "Emote": "soothe",
           "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
@@ -96,6 +100,7 @@
           },
           "TerritoryId": 180,
           "InteractionType": "Emote",
+          "StopDistance": 1,
           "Emote": "soothe"
         }
       ]

@@ -23,6 +23,23 @@
       "Sequence": 1,
       "Steps": [
         {
+          "DataId": 1008794,
+          "Position": {
+            "X": -111.80292,
+            "Y": -23.317877,
+            "Z": 82.07825
+          },
+          "TerritoryId": 138,
+          "InteractionType": "Combat",
+          "EnemySpawnType": "AfterInteraction",
+          "KillEnemyDataIds": [
+            2903
+          ],
+          "Fly": true,
+          "RequiredQuestVariables": [null,null,[{"Low": 3},{"Low": 4}],null,null,null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"High": 4}]
+        },
+        {
           "DataId": 1008793,
           "Position": {
             "X": -55.436035,
@@ -35,7 +52,9 @@
           "KillEnemyDataIds": [
             2903
           ],
-          "Fly": true
+          "Fly": true,
+          "RequiredQuestVariables": [null,null,[{"Low":1},{"Low": 2}],null,null,null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"High": 8}]
         },
         {
           "DataId": 1008796,
@@ -50,7 +69,26 @@
           "KillEnemyDataIds": [
             2903
           ],
-          "Fly": true
+          "Fly": true,
+          "RequiredQuestVariables": [null,null,[{"Low": 2},{"Low": 3}],null,null,null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"High": 1}]
+        },
+        {
+          "DataId": 1008795,
+"Position": {
+    "X": 92.851074,
+    "Y": -14.358462,
+    "Z": 32.028687
+},
+"TerritoryId": 138,
+          "InteractionType": "Combat",
+          "EnemySpawnType": "AfterInteraction",
+          "KillEnemyDataIds": [
+            2903
+          ],
+          "Fly": true,
+          "RequiredQuestVariables": [null,null,[{"Low": 1},{"Low": 4}],null,null,null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"High": 2}]
         }
       ]
     },
