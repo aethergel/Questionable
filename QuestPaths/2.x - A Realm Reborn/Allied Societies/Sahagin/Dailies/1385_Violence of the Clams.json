@@ -1,6 +1,10 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
   "Author": "alydev",
+  "LastChecked": {
+    "Username": "alydev",
+    "Date": "2025-12-01"
+  },
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -21,7 +25,7 @@
     },
     {
       "Sequence": 1,
-      "Comment": "WIP, adds spawn when walking over certain spots, please attack manually",
+      "Comment": "Use VBM for autorotation, clams spawn at regular intervals",
       "Steps": [
         {
           "DataId": 1005946,
@@ -34,11 +38,24 @@
           "InteractionType": "Interact",
           "DialogueChoices": [
             {
-              "Type": "List",
+              "Type": "YesNo",
               "Prompt": "TEXT_BANSAH107_01385_Q1_000_000",
-              "Answer": "TEXT_BANSAH107_01385_A1_000_001"
+              "Yes": true
             }
-          ]
+          ],
+          "SkipConditions": {
+            "StepIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": -813.22955,
+                  "Y": -41.763977,
+                  "Z": 670.3745
+                },
+                "TerritoryId": 138,
+                "MaximumDistance": 100
+              }
+            }
+          }
         },
         {
           "DataId": 2003845,
@@ -52,28 +69,29 @@
           "RequiredQuestVariables": [
             null,
             [
-              1,
-              17,
-              33,
-              49,
-              65,
-              2,
-              18,
-              34,
-              50,
-              66,
-              3,
-              19,
-              35,
-              51,
-              67
+              {
+                "Low": 1
+              },
+              {
+                "Low": 2
+              },
+              {
+                "Low": 3
+              }
             ],
             null,
             null,
             null,
             null
           ],
-          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
+          "CompletionQuestVariablesFlags": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            128
+          ]
         },
         {
           "DataId": 2003853,
@@ -87,18 +105,23 @@
           "RequiredQuestVariables": [
             null,
             [
-              1,
-              17,
-              33,
-              49,
-              65
+              {
+                "Low": 1
+              }
             ],
             null,
             null,
             null,
             null
           ],
-          "CompletionQuestVariablesFlags": [null,null,null,null,null,8]
+          "CompletionQuestVariablesFlags": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            8
+          ]
         },
         {
           "DataId": 2003847,
@@ -112,28 +135,29 @@
           "RequiredQuestVariables": [
             null,
             [
-              1,
-              17,
-              33,
-              49,
-              65,
-              2,
-              18,
-              34,
-              50,
-              66,
-              3,
-              19,
-              35,
-              51,
-              67
+              {
+                "Low": 1
+              },
+              {
+                "Low": 2
+              },
+              {
+                "Low": 3
+              }
             ],
             null,
             null,
             null,
             null
           ],
-          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
+          "CompletionQuestVariablesFlags": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            32
+          ]
         },
         {
           "DataId": 2003854,
@@ -147,18 +171,23 @@
           "RequiredQuestVariables": [
             null,
             [
-              2,
-              18,
-              34,
-              50,
-              66
+              {
+                "Low": 2
+              }
             ],
             null,
             null,
             null,
             null
           ],
-          "CompletionQuestVariablesFlags": [null,null,null,null,null,4]
+          "CompletionQuestVariablesFlags": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            4
+          ]
         },
         {
           "DataId": 2003846,
@@ -172,28 +201,29 @@
           "RequiredQuestVariables": [
             null,
             [
-              1,
-              17,
-              33,
-              49,
-              65,
-              2,
-              18,
-              34,
-              50,
-              66,
-              3,
-              19,
-              35,
-              51,
-              67
+              {
+                "Low": 1
+              },
+              {
+                "Low": 2
+              },
+              {
+                "Low": 3
+              }
             ],
             null,
             null,
             null,
             null
           ],
-          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
+          "CompletionQuestVariablesFlags": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            64
+          ]
         },
         {
           "DataId": 2003848,
@@ -207,28 +237,29 @@
           "RequiredQuestVariables": [
             null,
             [
-              1,
-              17,
-              33,
-              49,
-              65,
-              2,
-              18,
-              34,
-              50,
-              66,
-              3,
-              19,
-              35,
-              51,
-              67
+              {
+                "Low": 1
+              },
+              {
+                "Low": 2
+              },
+              {
+                "Low": 3
+              }
             ],
             null,
             null,
             null,
             null
           ],
-          "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
+          "CompletionQuestVariablesFlags": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            16
+          ]
         },
         {
           "DataId": 2003855,
@@ -242,24 +273,42 @@
           "RequiredQuestVariables": [
             null,
             [
-              3,
-              19,
-              35,
-              51,
-              67
+              {
+                "Low": 3
+              }
             ],
             null,
             null,
             null,
             null
           ],
-          "CompletionQuestVariablesFlags": [null,null,null,null,null,2]
+          "CompletionQuestVariablesFlags": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            2
+          ]
         }
       ]
     },
     {
       "Sequence": 255,
       "Steps": [
+        {
+          "TerritoryId": 138,
+          "Position": {
+            "X": -814.84705,
+            "Y": -42.154568,
+            "Z": 694.3312
+          },
+          "InteractionType": "Combat",
+          "EnemySpawnType": "FinishCombatIfAny",
+          "KillEnemyDataIds": [
+            2874
+          ]
+        },
         {
           "DataId": 1008802,
           "Position": {
@@ -268,6 +317,7 @@
             "Z": 694.3312
           },
           "TerritoryId": 138,
+          "TargetTerritoryId": 138,
           "InteractionType": "Interact"
         },
         {

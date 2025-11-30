@@ -1,1 +1,1 @@
-- All gathering node locations done by alydev
+- sahagin 1385 1387 fixes by alydev
