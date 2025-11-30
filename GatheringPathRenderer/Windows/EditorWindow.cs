@@ -285,6 +285,9 @@ internal sealed class EditorWindow : Window
         var loadedPoints = _plugin.GatheringLocations;
         var shownNone = true;
         ImGui.Text($"Nodes in {_clientState.TerritoryType}: ({count})");
+        ImGui.SameLine();
+        ImGui.Text("[vnav stop]");
+        if (ImGui.IsItemClicked()) _commandManager.ProcessCommand("/vnav stop");
         List<string> seen = [];
         count = 0;
         foreach (GatheringPoint _point in gatheringPoints.OrderBy(x => x.PlaceName.Value.Name.ToMacroString()))
