@@ -33,6 +33,7 @@ internal sealed class EditorWindow : Window
     private readonly Dictionary<Guid, LocationOverride> _changes = [];
 
     private IGameObject? _target;
+    private int count;
 
     private (RendererPlugin.GatheringLocationContext Context, GatheringNode Node, GatheringLocation Location)?
         _targetLocation;
@@ -276,12 +277,6 @@ internal sealed class EditorWindow : Window
 
     public void ListLocationsInCurrentTerritory()
     {
-        //Vector2 ConvertToMapCoords(Vector3 worldPos, int scale)
-        //{
-        //    float mapX = ((worldPos.X - 1024f) / scale) + 32f;
-        //    float mapY = ((worldPos.Z - 1024f) / scale) + 32f;
-        //    return new Vector2(mapX, mapY);
-        //}
         var a = _clientState.TerritoryType;
         var gatheringPoints = _dataManager.GetExcelSheet<GatheringPoint>().Where(
             _point => _point.TerritoryType.RowId.Equals(_clientState.TerritoryType) &&
@@ -289,16 +284,17 @@ internal sealed class EditorWindow : Window
         );
         var loadedPoints = _plugin.GatheringLocations;
         var shownNone = true;
-        ImGui.Text($"Nodes in {_clientState.TerritoryType}:");
+        ImGui.Text($"Nodes in {_clientState.TerritoryType}: ({count})");
         List<string> seen = [];
+        count = 0;
         foreach (GatheringPoint _point in gatheringPoints.OrderBy(x => x.PlaceName.Value.Name.ToMacroString()))
         {
-            if (seen.Contains(_point.PlaceName.Value.Name.ToMacroString())) continue;
-            seen.Add(_point.PlaceName.Value.Name.ToMacroString());
             if (_point.GatheringPointBase.RowId >= 653 && _point.GatheringPointBase.RowId <= 680) continue; // obsolete skybuilders stuff
             if (!loadedPoints.Any(location => location.Root.Groups.Any(group => group.Nodes.Any(node => node.DataId.Equals(_point.RowId)))))
             {
-                List<Payload> payloads = [];
+                count += 1;
+                if (seen.Contains(_point.PlaceName.Value.Name.ToMacroString())) continue;
+                seen.Add(_point.PlaceName.Value.Name.ToMacroString());
                 ImGui.Text($"{_point.RowId} {_point.PlaceName.Value.Name}  ");
                 if (_plugin.GBRLocationData.TryGetValue(_point.RowId, out List<Vector3>? value))
                 {
@@ -306,7 +302,6 @@ internal sealed class EditorWindow : Window
                     if (gbr != null)
                     {
                         var scale = _point.TerritoryType.Value.Map.Value.SizeFactor;
-                        //Vector2 mapCoords = ConvertToMapCoords(gbr.Value, scale);
                         ImGui.SameLine();
                         ImGui.Text($"{gbr.Value.X} {gbr.Value.Y} {gbr.Value.Z}");
                         if (ImGui.IsItemClicked())
@@ -317,12 +312,8 @@ internal sealed class EditorWindow : Window
                         ImGui.SameLine();
                         if (distance < 200) ImGui.TextColored(ImGuiColors.DalamudOrange, $"({distance:F2})");
                         else ImGui.Text($"({distance:F2})");
-                        //payloads.AddRange(SeString.CreateMapLink(_clientState.TerritoryType, _point.TerritoryType.Value.Map.RowId, mapCoords.X, mapCoords.Y).Payloads);
                     }
                 }
-                //var firstItem = _point.GatheringPointBase.Value.Item
-                //if (firstItem.)
-                //    payloads.Add(new TextPayload($"{firstItem.Value.Name}"));
                 shownNone = false;
             }
         }
