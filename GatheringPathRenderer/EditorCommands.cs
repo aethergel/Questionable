@@ -181,8 +181,8 @@ internal sealed class EditorCommands : IDisposable
         //}
         var a = _clientState.TerritoryType;
         var gatheringPoints = _dataManager.GetExcelSheet<GatheringPoint>().Where(
-            x => x.TerritoryType.RowId.Equals(_clientState.TerritoryType) &&
-            x.GatheringPointBase.Value.GatheringType.RowId <= 3 // 4,5 = fishing/spearfishing
+            _point => _point.TerritoryType.RowId.Equals(_clientState.TerritoryType) &&
+            _point.GatheringPointBase.Value.GatheringType.RowId <= (uint)GatheringType.Harvesting
         );
         var loadedPoints = _plugin.GatheringLocations;
         var shownNone = true;
@@ -275,5 +275,14 @@ internal sealed class EditorCommands : IDisposable
     public void Dispose()
     {
         _commandManager.RemoveHandler("/qg");
+    }
+
+    enum GatheringType {
+        Mining,
+        Quarrying,
+        Logging,
+        Harvesting,
+        Fishing,
+        Spearfishing
     }
 }
