@@ -1,1 +1,1 @@
-- An absurd amount of gathering paths by alydev
+- All gathering node locations done by alydev

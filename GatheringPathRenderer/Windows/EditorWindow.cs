@@ -35,6 +35,7 @@ internal sealed class EditorWindow : Window
     private IGameObject? _target;
     private int count;
     private bool compact;
+    private bool unaddedVisible = true;
 
     private (RendererPlugin.GatheringLocationContext Context, GatheringNode Node, GatheringLocation Location)?
         _targetLocation;
@@ -83,6 +84,7 @@ internal sealed class EditorWindow : Window
         {
             _target = null;
             _targetLocation = null;
+            unaddedVisible = true;
             return;
         }
 
@@ -132,7 +134,7 @@ internal sealed class EditorWindow : Window
 
     public override bool DrawConditions()
     {
-        return true;//!(_clientState.TerritoryType is 0 or 939) && (_target != null || _targetLocation != null);
+        return unaddedVisible || !(_clientState.TerritoryType is 0 or 939) && (_target != null || _targetLocation != null) ;
     }
 
     public override void Draw()
@@ -337,7 +339,11 @@ internal sealed class EditorWindow : Window
                 shownNone = false;
             }
         }
-        if (shownNone) ImGui.Text("No (unadded) results");
+        if (shownNone)
+        {
+            ImGui.Text("No (unadded) results");
+            unaddedVisible = false;
+        }
     }
 
     enum GatheringType {
