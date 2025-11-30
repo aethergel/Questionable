@@ -32,6 +32,29 @@
               "MaximumAngle": 255
             }
           ]
+        },
+        {
+          "DataId": 34476,
+          "Locations": [
+            {
+              "Position": {
+                "X": -235.4542,
+                "Y": 13.21097,
+                "Z": -150.8489
+              },
+              "MinimumAngle": -110,
+              "MaximumAngle": 0
+            },
+            {
+              "Position": {
+                "X": -288.55,
+                "Y": 9.376548,
+                "Z": -128.6882
+              },
+              "MinimumAngle": -160,
+              "MaximumAngle": -70
+            }
+          ]
         }
       ]
     },

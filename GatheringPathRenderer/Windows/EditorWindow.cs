@@ -268,7 +268,7 @@ internal sealed class EditorWindow : Window
                 }
             }
         }
-        if (ImGui.CollapsingHeader("Unadded nodes"))
+        if (_clientState.TerritoryType != 0 && _clientState.LocalPlayer != null && ImGui.CollapsingHeader("Unadded nodes"))
             ListLocationsInCurrentTerritory();
     }
 
