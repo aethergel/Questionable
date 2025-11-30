@@ -359,7 +359,7 @@ public sealed class RendererPlugin : IDalamudPlugin
 
         Vector3 position = _clientState.LocalPlayer?.Position ?? Vector3.Zero;
         float drawDistance = 200f;
-#if DEBUG
+#if false
         drawDistance = 20000f;
 #endif
         foreach (var location in GetLocationsInTerritory(_clientState.TerritoryType))
