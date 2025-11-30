@@ -55,7 +55,7 @@ internal sealed class QuestJournalComponent
         if (!tab)
             return;
 
-        if (ImGui.CollapsingHeader("Explanation", ImGuiTreeNodeFlags.DefaultOpen))
+        if (ImGui.CollapsingHeader("Explanation"))
         {
             ImGui.Text("The list below contains all quests that appear in your journal.");
             ImGui.BulletText("'Supported' lists quests that Questionable can do for you");

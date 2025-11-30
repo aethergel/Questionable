@@ -68,7 +68,7 @@ internal sealed class PriorityWindow : LWindow
     public override void DrawContent()
     {
 
-        if (ImGui.CollapsingHeader("Explanation", ImGuiTreeNodeFlags.DefaultOpen))
+        if (ImGui.CollapsingHeader("Explanation"))
         {
             ImGui.TextWrapped(
                 "Questionable will generally try to do:");

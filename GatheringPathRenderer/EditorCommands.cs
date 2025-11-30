@@ -60,9 +60,6 @@ internal sealed class EditorCommands : IDisposable
                 case "add":
                     CreateOrAddLocationToGroup(arguments);
                     break;
-                case "list":
-                    ListLocationsInCurrentTerritory();
-                    break;
             }
         }
         catch (Exception e)
@@ -171,55 +168,6 @@ internal sealed class EditorCommands : IDisposable
         }
     }
 
-    public void ListLocationsInCurrentTerritory()
-    {
-        //Vector2 ConvertToMapCoords(Vector3 worldPos, int scale)
-        //{
-        //    float mapX = ((worldPos.X - 1024f) / scale) + 32f;
-        //    float mapY = ((worldPos.Z - 1024f) / scale) + 32f;
-        //    return new Vector2(mapX, mapY);
-        //}
-        var a = _clientState.TerritoryType;
-        var gatheringPoints = _dataManager.GetExcelSheet<GatheringPoint>().Where(
-            _point => _point.TerritoryType.RowId.Equals(_clientState.TerritoryType) &&
-            _point.GatheringPointBase.Value.GatheringType.RowId <= (uint)GatheringType.Harvesting
-        );
-        var loadedPoints = _plugin.GatheringLocations;
-        var shownNone = true;
-        _chatGui.Print($"Nodes in {_clientState.TerritoryType}:");
-        foreach (GatheringPoint _point in gatheringPoints.OrderBy(x => x.PlaceName.Value.Name.ToMacroString()))
-        {
-            if (_point.GatheringPointBase.RowId >= 653 && _point.GatheringPointBase.RowId <= 680) continue; // obsolete skybuilders stuff
-            if (!loadedPoints.Any(location => location.Root.Groups.Any(group => group.Nodes.Any(node => node.DataId.Equals(_point.RowId)))))
-            {
-                List<Payload> payloads = [];
-                payloads.Add(new TextPayload($"{_point.RowId} {_point.PlaceName.Value.Name}  "));
-                if (_plugin.GBRLocationData.TryGetValue(_point.RowId, out List<Vector3>? value))
-                {
-                    var gbr = value.FirstOrNull();
-                    if (gbr != null)
-                    {
-                        var scale = _point.TerritoryType.Value.Map.Value.SizeFactor;
-                        //Vector2 mapCoords = ConvertToMapCoords(gbr.Value, scale);
-                        payloads.Add(new TextPayload($"{gbr.Value.X} {gbr.Value.Y} {gbr.Value.Z}"));
-                        //payloads.AddRange(SeString.CreateMapLink(_clientState.TerritoryType, _point.TerritoryType.Value.Map.RowId, mapCoords.X, mapCoords.Y).Payloads);
-                    }
-                }
-                //var firstItem = _point.GatheringPointBase.Value.Item
-                //if (firstItem.)
-                //    payloads.Add(new TextPayload($"{firstItem.Value.Name}"));
-                _chatGui.Print(new XivChatEntry
-                {
-                    Name = "qG",
-                    Message = new SeString(payloads),
-                    Type = XivChatType.Debug
-                });
-                shownNone = false;
-            }
-        }
-        if (shownNone) _chatGui.Print("No (unadded) results");
-    }
-
     public (FileInfo targetFile, GatheringRoot root) CreateNewFile(GatheringPoint gatheringPoint, IGameObject target)
     {
         // determine target folder
@@ -275,14 +223,5 @@ internal sealed class EditorCommands : IDisposable
     public void Dispose()
     {
         _commandManager.RemoveHandler("/qg");
-    }
-
-    enum GatheringType {
-        Mining,
-        Quarrying,
-        Logging,
-        Harvesting,
-        Fishing,
-        Spearfishing
     }
 }

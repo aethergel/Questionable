@@ -70,7 +70,7 @@ public sealed class RendererPlugin : IDalamudPlugin
         _editorCommands = new EditorCommands(this, dataManager, commandManager, targetManager, clientState, chatGui,
             pluginLog, configuration);
         var configWindow = new ConfigWindow(pluginInterface, configuration);
-        _editorWindow = new EditorWindow(this, _editorCommands, dataManager, targetManager, clientState, objectTable,
+        _editorWindow = new EditorWindow(this, _editorCommands, dataManager, commandManager, targetManager, clientState, objectTable,
                 configWindow)
         { IsOpen = true };
         _windowSystem.AddWindow(configWindow);

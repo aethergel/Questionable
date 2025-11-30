@@ -7,10 +7,13 @@ using Dalamud.Bindings.ImGui;
 using Dalamud.Game.ClientState.Objects;
 using Dalamud.Game.ClientState.Objects.Enums;
 using Dalamud.Game.ClientState.Objects.Types;
+using Dalamud.Game.Text;
+using Dalamud.Game.Text.SeStringHandling;
 using Dalamud.Interface;
 using Dalamud.Interface.Colors;
 using Dalamud.Interface.Windowing;
 using Dalamud.Plugin.Services;
+using ECommons;
 using ECommons.MathHelpers;
 using Lumina.Excel.Sheets;
 using Questionable.Model.Gathering;
@@ -22,6 +25,7 @@ internal sealed class EditorWindow : Window
     private readonly RendererPlugin _plugin;
     private readonly EditorCommands _editorCommands;
     private readonly IDataManager _dataManager;
+    private readonly ICommandManager _commandManager;
     private readonly ITargetManager _targetManager;
     private readonly IClientState _clientState;
     private readonly IObjectTable _objectTable;
@@ -33,7 +37,7 @@ internal sealed class EditorWindow : Window
     private (RendererPlugin.GatheringLocationContext Context, GatheringNode Node, GatheringLocation Location)?
         _targetLocation;
 
-    public EditorWindow(RendererPlugin plugin, EditorCommands editorCommands, IDataManager dataManager,
+    public EditorWindow(RendererPlugin plugin, EditorCommands editorCommands, IDataManager dataManager, ICommandManager commandManager,
         ITargetManager targetManager, IClientState clientState, IObjectTable objectTable, ConfigWindow configWindow)
         : base($"Gathering Path Editor {typeof(EditorWindow).Assembly.GetName().Version!.ToString(2)}###QuestionableGatheringPathEditor",
             ImGuiWindowFlags.NoFocusOnAppearing | ImGuiWindowFlags.NoNavFocus | ImGuiWindowFlags.AlwaysAutoResize)
@@ -41,6 +45,7 @@ internal sealed class EditorWindow : Window
         _plugin = plugin;
         _editorCommands = editorCommands;
         _dataManager = dataManager;
+        _commandManager = commandManager;
         _targetManager = targetManager;
         _clientState = clientState;
         _objectTable = objectTable;
@@ -125,8 +130,7 @@ internal sealed class EditorWindow : Window
 
     public override bool DrawConditions()
     {
-        return !(_clientState.TerritoryType is 0 or 939) &&
-            (_target != null || _targetLocation != null);
+        return true;//!(_clientState.TerritoryType is 0 or 939) && (_target != null || _targetLocation != null);
     }
 
     public override void Draw()
@@ -263,10 +267,76 @@ internal sealed class EditorWindow : Window
                 }
             }
         }
+        if (ImGui.CollapsingHeader("Unadded nodes"))
+            ListLocationsInCurrentTerritory();
     }
 
     public bool TryGetOverride(Guid internalId, out LocationOverride? locationOverride)
         => _changes.TryGetValue(internalId, out locationOverride);
+
+    public void ListLocationsInCurrentTerritory()
+    {
+        //Vector2 ConvertToMapCoords(Vector3 worldPos, int scale)
+        //{
+        //    float mapX = ((worldPos.X - 1024f) / scale) + 32f;
+        //    float mapY = ((worldPos.Z - 1024f) / scale) + 32f;
+        //    return new Vector2(mapX, mapY);
+        //}
+        var a = _clientState.TerritoryType;
+        var gatheringPoints = _dataManager.GetExcelSheet<GatheringPoint>().Where(
+            _point => _point.TerritoryType.RowId.Equals(_clientState.TerritoryType) &&
+            _point.GatheringPointBase.Value.GatheringType.RowId <= (uint)GatheringType.Harvesting
+        );
+        var loadedPoints = _plugin.GatheringLocations;
+        var shownNone = true;
+        ImGui.Text($"Nodes in {_clientState.TerritoryType}:");
+        List<string> seen = [];
+        foreach (GatheringPoint _point in gatheringPoints.OrderBy(x => x.PlaceName.Value.Name.ToMacroString()))
+        {
+            if (seen.Contains(_point.PlaceName.Value.Name.ToMacroString())) continue;
+            seen.Add(_point.PlaceName.Value.Name.ToMacroString());
+            if (_point.GatheringPointBase.RowId >= 653 && _point.GatheringPointBase.RowId <= 680) continue; // obsolete skybuilders stuff
+            if (!loadedPoints.Any(location => location.Root.Groups.Any(group => group.Nodes.Any(node => node.DataId.Equals(_point.RowId)))))
+            {
+                List<Payload> payloads = [];
+                ImGui.Text($"{_point.RowId} {_point.PlaceName.Value.Name}  ");
+                if (_plugin.GBRLocationData.TryGetValue(_point.RowId, out List<Vector3>? value))
+                {
+                    var gbr = value.FirstOrNull();
+                    if (gbr != null)
+                    {
+                        var scale = _point.TerritoryType.Value.Map.Value.SizeFactor;
+                        //Vector2 mapCoords = ConvertToMapCoords(gbr.Value, scale);
+                        ImGui.SameLine();
+                        ImGui.Text($"{gbr.Value.X} {gbr.Value.Y} {gbr.Value.Z}");
+                        if (ImGui.IsItemClicked())
+                        {
+                            _commandManager.ProcessCommand($"/vnav flyto {gbr.Value.X} {gbr.Value.Y} {gbr.Value.Z}");
+                        }
+                        var distance = (_clientState.LocalPlayer.Position - gbr).Value.Length();
+                        ImGui.SameLine();
+                        if (distance < 200) ImGui.TextColored(ImGuiColors.DalamudOrange, $"({distance:F2})");
+                        else ImGui.Text($"({distance:F2})");
+                        //payloads.AddRange(SeString.CreateMapLink(_clientState.TerritoryType, _point.TerritoryType.Value.Map.RowId, mapCoords.X, mapCoords.Y).Payloads);
+                    }
+                }
+                //var firstItem = _point.GatheringPointBase.Value.Item
+                //if (firstItem.)
+                //    payloads.Add(new TextPayload($"{firstItem.Value.Name}"));
+                shownNone = false;
+            }
+        }
+        if (shownNone) ImGui.Text("No (unadded) results");
+    }
+
+    enum GatheringType {
+        Mining,
+        Quarrying,
+        Logging,
+        Harvesting,
+        Fishing,
+        Spearfishing
+    }
 }
 
 internal sealed class LocationOverride
