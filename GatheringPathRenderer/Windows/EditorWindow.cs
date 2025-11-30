@@ -290,7 +290,7 @@ internal sealed class EditorWindow : Window
         ImGui.Text("[vnav stop]");
         if (ImGui.IsItemClicked()) _commandManager.ProcessCommand("/vnav stop");
         ImGui.SameLine();
-        ImGui.Text("[compact]");
+        ImGui.Text($"[compact {(compact ? 'y' : 'n')}]");
         if (ImGui.IsItemClicked()) compact = !compact;
         List<string> seen = [];
         count = 0;
@@ -304,7 +304,15 @@ internal sealed class EditorWindow : Window
                     if (seen.Contains(_point.PlaceName.Value.Name.ToMacroString())) continue;
                     seen.Add(_point.PlaceName.Value.Name.ToMacroString());
                 }
-                ImGui.Text($"{_point.RowId} {_point.PlaceName.Value.Name}  ");
+                char special = ' ';
+                if (_dataManager.GetExcelSheet<GatheringPointTransient>().TryGetRow(_point.RowId, out var gatheringPointTransient) &&
+                    (gatheringPointTransient.EphemeralStartTime != 65535 ||
+                    gatheringPointTransient.EphemeralEndTime != 65535 ||
+                    gatheringPointTransient.GatheringRarePopTimeTable.RowId != 0))
+                {
+                    special = '*';
+                }
+                ImGui.Text($"{((GatheringType)_point.GatheringPointBase.Value.GatheringType.RowId).ToString()[..1]}{special}{_point.RowId} {_point.PlaceName.Value.Name}  ");
                 if (_plugin.GBRLocationData.TryGetValue(_point.RowId, out List<Vector3>? value))
                 {
                     var gbr = value.FirstOrNull();
