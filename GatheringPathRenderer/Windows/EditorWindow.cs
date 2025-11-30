@@ -341,8 +341,8 @@ internal sealed class EditorWindow : Window
         }
         if (shownNone)
         {
-            ImGui.Text("No (unadded) results");
-            unaddedVisible = false;
+            ImGui.Text($"No (unadded) results. [pinned {(unaddedVisible ? 'y' : 'n')}]");
+            if (ImGui.IsItemClicked()) unaddedVisible = !unaddedVisible;
         }
     }
 
