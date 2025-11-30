@@ -292,6 +292,9 @@ internal sealed class EditorWindow : Window
         ImGui.SameLine();
         ImGui.Text($"[compact {(compact ? 'y' : 'n')}]");
         if (ImGui.IsItemClicked()) compact = !compact;
+        ImGui.SameLine();
+        ImGui.Text($"[distant {(_plugin.DistantRange ? 'y' : 'n')}]");
+        if (ImGui.IsItemClicked()) _plugin.DistantRange = !_plugin.DistantRange;
         List<string> seen = [];
         count = 0;
         foreach (GatheringPoint _point in gatheringPoints.OrderBy(x => x.PlaceName.Value.Name.ToMacroString()))

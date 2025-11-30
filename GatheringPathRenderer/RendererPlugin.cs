@@ -48,6 +48,7 @@ public sealed class RendererPlugin : IDalamudPlugin
 
     internal List<GatheringLocationContext> GatheringLocations => _gatheringLocations;
     internal Dictionary<uint, List<Vector3>> GBRLocationData => _gbrLocationData;
+    internal bool DistantRange { get; set; }
 
     public RendererPlugin(IDalamudPluginInterface pluginInterface, IClientState clientState,
         ICommandManager commandManager, IDataManager dataManager, ITargetManager targetManager, IChatGui chatGui,
@@ -359,10 +360,7 @@ public sealed class RendererPlugin : IDalamudPlugin
             return;
 
         Vector3 position = _clientState.LocalPlayer?.Position ?? Vector3.Zero;
-        float drawDistance = 200f;
-#if false
-        drawDistance = 20000f;
-#endif
+        float drawDistance = DistantRange ? 20000f : 200f;
         foreach (var location in GetLocationsInTerritory(_clientState.TerritoryType))
         {
             if (!location.Root.Groups.Any(gr =>
