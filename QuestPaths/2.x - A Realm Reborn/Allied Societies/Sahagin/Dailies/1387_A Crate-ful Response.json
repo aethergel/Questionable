@@ -59,6 +59,7 @@
             "Z": 886.75653
           },
           "TerritoryId": 138,
+          "StopDistance": 1,
           "InteractionType": "Combat",
           "EnemySpawnType": "AutoOnEnterArea",
           "KillEnemyDataIds": [
@@ -83,6 +84,7 @@
           },
           "TerritoryId": 138,
           "InteractionType": "Combat",
+          "StopDistance": 1,
           "EnemySpawnType": "AutoOnEnterArea",
           "KillEnemyDataIds": [
             2839
@@ -106,6 +108,7 @@
           },
           "TerritoryId": 138,
           "InteractionType": "Combat",
+          "StopDistance": 1,
           "EnemySpawnType": "AutoOnEnterArea",
           "KillEnemyDataIds": [
             2839
