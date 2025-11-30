@@ -11,34 +11,34 @@
     {
       "Nodes": [
         {
-          "DataId": 31464,
+          "DataId": 31709,
           "Locations": [
             {
               "Position": {
-                "X": -723.8522,
-                "Y": 160.5705,
-                "Z": 554.4196
+                "X": -614.5861,
+                "Y": 168.0191,
+                "Z": 763.6442
               },
-              "MinimumAngle": -190,
-              "MaximumAngle": -120
+              "MinimumAngle": -330,
+              "MaximumAngle": -235
             },
             {
               "Position": {
-                "X": -658.3278,
-                "Y": 168.6156,
-                "Z": 799.0139
+                "X": -519.7656,
+                "Y": 168.0021,
+                "Z": 755.4191
               },
-              "MinimumAngle": -140,
-              "MaximumAngle": -85
+              "MinimumAngle": -215,
+              "MaximumAngle": -130
             },
             {
               "Position": {
-                "X": -558.1853,
-                "Y": 168.2384,
-                "Z": 798.0054
+                "X": -691.1583,
+                "Y": 173.6187,
+                "Z": 813.4564
               },
-              "MinimumAngle": -255,
-              "MaximumAngle": -205
+              "MinimumAngle": -85,
+              "MaximumAngle": 0
             }
           ]
         }

@@ -3,7 +3,7 @@
   "Author": "alydev",
   "Steps": [
     {
-      "TerritoryId": 400,
+      "TerritoryId": 402,
       "InteractionType": "None"
     }
   ],
@@ -11,34 +11,34 @@
     {
       "Nodes": [
         {
-          "DataId": 31464,
+          "DataId": 31467,
           "Locations": [
             {
               "Position": {
-                "X": -723.8522,
-                "Y": 160.5705,
-                "Z": 554.4196
+                "X": 664.5602,
+                "Y": -9.39993,
+                "Z": -385.7441
               },
-              "MinimumAngle": -190,
+              "MinimumAngle": -140,
               "MaximumAngle": -120
             },
             {
               "Position": {
-                "X": -658.3278,
-                "Y": 168.6156,
-                "Z": 799.0139
+                "X": 692.2935,
+                "Y": -8.998344,
+                "Z": -367.9267
               },
-              "MinimumAngle": -140,
-              "MaximumAngle": -85
+              "MinimumAngle": -190,
+              "MaximumAngle": -175
             },
             {
               "Position": {
-                "X": -558.1853,
-                "Y": 168.2384,
-                "Z": 798.0054
+                "X": 665.8322,
+                "Y": -9.879004,
+                "Z": -320.044
               },
-              "MinimumAngle": -255,
-              "MaximumAngle": -205
+              "MinimumAngle": -10,
+              "MaximumAngle": 20
             }
           ]
         }
