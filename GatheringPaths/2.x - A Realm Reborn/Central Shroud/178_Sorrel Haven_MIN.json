@@ -1,0 +1,108 @@
+{
+  "$schema": "https://qstxiv.github.io/schema/gatheringlocation-v1.json",
+  "Author": "alydev",
+  "Steps": [
+    {
+      "TerritoryId": 148,
+      "InteractionType": "None"
+    }
+  ],
+  "Groups": [
+    {
+      "Nodes": [
+        {
+          "DataId": 30495,
+          "Locations": [
+            {
+              "Position": {
+                "X": -385.9567,
+                "Y": 52.00616,
+                "Z": 26.53242
+              },
+              "MinimumAngle": -180,
+              "MaximumAngle": -160
+            },
+            {
+              "Position": {
+                "X": -368.5809,
+                "Y": 53.13653,
+                "Z": 8.314313
+              },
+              "MinimumAngle": -265,
+              "MaximumAngle": -255
+            },
+            {
+              "Position": {
+                "X": -369.1571,
+                "Y": 52.85375,
+                "Z": 20.9355
+              },
+              "MinimumAngle": -230,
+              "MaximumAngle": -215
+            }
+          ]
+        },
+        {
+          "DataId": 30496,
+          "Locations": [
+            {
+              "Position": {
+                "X": -337.6368,
+                "Y": 63.71526,
+                "Z": 64.01435
+              },
+              "MinimumAngle": -265,
+              "MaximumAngle": -225
+            },
+            {
+              "Position": {
+                "X": -343.0678,
+                "Y": 63.88876,
+                "Z": 66.89906
+              },
+              "MinimumAngle": -205,
+              "MaximumAngle": -155
+            },
+            {
+              "Position": {
+                "X": -346.886,
+                "Y": 63.49036,
+                "Z": 72.55968
+              },
+              "MinimumAngle": -245,
+              "MaximumAngle": -170
+            }
+          ]
+        },
+        {
+          "DataId": 30497,
+          "Locations": [
+            {
+              "Position": {
+                "X": -365.9836,
+                "Y": 59.73738,
+                "Z": 74.7201
+              },
+              "MinimumAngle": -240,
+              "MaximumAngle": -175
+            },
+            {
+              "Position": {
+                "X": -358.2379,
+                "Y": 61.8622,
+                "Z": 73.75404
+              }
+            },
+            {
+              "Position": {
+                "X": -373.3425,
+                "Y": 59.46436,
+                "Z": 79.4428
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

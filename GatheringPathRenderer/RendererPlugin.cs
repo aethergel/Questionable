@@ -14,6 +14,7 @@ using System.Text.Json.Serialization;
 using System.Text.Json.Serialization.Metadata;
 using Dalamud.Game.ClientState.Objects;
 using Dalamud.Game.Command;
+using Dalamud.Interface.Colors;
 using Dalamud.Interface.Windowing;
 using Dalamud.Plugin;
 using Dalamud.Plugin.Ipc;
@@ -401,13 +402,14 @@ public sealed class RendererPlugin : IDalamudPlugin
 
                         minimumAngle *= (float)Math.PI / 180;
                         maximumAngle *= (float)Math.PI / 180;
+                        uint color = _colors[location.Root.Groups.IndexOf(group) % _colors.Count];
                         if (!isCone || maximumAngle - minimumAngle >= 2 * Math.PI)
                         {
                             minimumAngle = 0;
                             maximumAngle = (float)Math.PI * 2;
+                            color = ImGuiColors.DalamudOrange.ToUint() - 0xB0000000;
                         }
 
-                        uint color = _colors[location.Root.Groups.IndexOf(group) % _colors.Count];
                         drawList.AddFanFilled(x.Position,
                             locationOverride?.MinimumDistance ?? x.CalculateMinimumDistance(),
                             locationOverride?.MaximumDistance ?? x.CalculateMaximumDistance(),
