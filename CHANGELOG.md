@@ -1,2 +1,1 @@
-- More gathering paths by alydev
-- ARR tribe quest fixes by alydev
+- More gathering paths by Ice
