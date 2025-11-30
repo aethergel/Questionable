@@ -14,6 +14,7 @@ using Dalamud.Interface.Colors;
 using Dalamud.Interface.Windowing;
 using Dalamud.Plugin.Services;
 using ECommons;
+using ECommons.GameHelpers;
 using ECommons.MathHelpers;
 using Lumina.Excel.Sheets;
 using Questionable.Model.Gathering;
@@ -88,6 +89,9 @@ internal sealed class EditorWindow : Window
             return;
         }
 
+        if (_clientState.LocalPlayer != null && !_clientState.LocalPlayer.ClassJob.RowId.InRange(16,18))
+            unaddedVisible = true;
+
         _target = _targetManager.Target;
         var gatheringLocations = _plugin.GetLocationsInTerritory(_clientState.TerritoryType);
         var location = gatheringLocations.ToList().SelectMany(context =>
@@ -134,7 +138,8 @@ internal sealed class EditorWindow : Window
 
     public override bool DrawConditions()
     {
-        return unaddedVisible || !(_clientState.TerritoryType is 0 or 939) && (_target != null || _targetLocation != null) ;
+        return (_clientState.LocalPlayer != null && _clientState.LocalPlayer.ClassJob.RowId.InRange(16,18)) &&
+                !(_clientState.TerritoryType is 0 or 939) && (_target != null || _targetLocation != null || unaddedVisible) ;
     }
 
     public override void Draw()
