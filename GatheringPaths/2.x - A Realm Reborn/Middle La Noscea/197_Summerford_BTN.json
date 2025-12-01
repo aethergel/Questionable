@@ -18,21 +18,27 @@
                 "X": -7.250644,
                 "Y": 47.13503,
                 "Z": 31.54072
-              }
+              },
+              "MinimumAngle": 0,
+              "MaximumAngle": 359
             },
             {
               "Position": {
                 "X": -12.45945,
                 "Y": 48.81578,
                 "Z": -39.47475
-              }
+              },
+              "MinimumAngle": 0,
+              "MaximumAngle": 359
             },
             {
               "Position": {
                 "X": -4.770366,
                 "Y": 48.9969,
                 "Z": 4.600432
-              }
+              },
+              "MinimumAngle": 0,
+              "MaximumAngle": 359
             }
           ]
         },
@@ -44,21 +50,27 @@
                 "X": -63.25118,
                 "Y": 45.89258,
                 "Z": 8.707791
-              }
+              },
+              "MinimumAngle": 0,
+              "MaximumAngle": 359
             },
             {
               "Position": {
                 "X": -55.32331,
                 "Y": 46.54463,
                 "Z": -5.440426
-              }
+              },
+              "MinimumAngle": 0,
+              "MaximumAngle": 359
             },
             {
               "Position": {
                 "X": -65.77558,
                 "Y": 45.29813,
                 "Z": 0.6923263
-              }
+              },
+              "MinimumAngle": 0,
+              "MaximumAngle": 359
             }
           ]
         },
@@ -70,21 +82,27 @@
                 "X": -90.96844,
                 "Y": 40.84414,
                 "Z": 39.01356
-              }
+              },
+              "MinimumAngle": 0,
+              "MaximumAngle": 359
             },
             {
               "Position": {
                 "X": -123.9829,
                 "Y": 43.15182,
                 "Z": -0.9642326
-              }
+              },
+              "MinimumAngle": 0,
+              "MaximumAngle": 359
             },
             {
               "Position": {
                 "X": -92.61315,
                 "Y": 41.74643,
                 "Z": 25.9026
-              }
+              },
+              "MinimumAngle": 0,
+              "MaximumAngle": 359
             }
           ]
         },
@@ -96,21 +114,27 @@
                 "X": -101.1138,
                 "Y": 43.8482,
                 "Z": -25.39335
-              }
+              },
+              "MinimumAngle": 0,
+              "MaximumAngle": 359
             },
             {
               "Position": {
                 "X": -111.0851,
                 "Y": 46.57095,
                 "Z": -61.64178
-              }
+              },
+              "MinimumAngle": 0,
+              "MaximumAngle": 359
             },
             {
               "Position": {
                 "X": -108.2213,
                 "Y": 46.55541,
                 "Z": -57.61868
-              }
+              },
+              "MinimumAngle": 0,
+              "MaximumAngle": 359
             }
           ]
         }
