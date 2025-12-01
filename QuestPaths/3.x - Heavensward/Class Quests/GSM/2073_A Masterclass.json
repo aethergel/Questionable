@@ -1,6 +1,7 @@
 {
 	"$schema": "https://qstxiv.github.io/schema/quest-v1.json",
 	"Author": "Gezah",
+	"Comment": "Crafted Item: 1x Aurum Regis Cylinder // Autocraft requires: 1x Aurum Regis Nugget, 1x Cloud Mica Whetstone",
 	"QuestSequence":
 	[
 	{
@@ -8,12 +9,12 @@
 		"Steps":
 		[
 		{
-			"DataId": 1004093,
+			"DataId": 1012528,
 			"Position":
 			{
-				"X": -25.162231,
-				"Y": 12.199998,
-				"Z": 110.795654
+				"X": -57.41974,
+				"Y": 18.504038,
+				"Z": 66.544556
 			},
 			"TerritoryId": 131,
 			"InteractionType": "AcceptQuest",
@@ -42,12 +43,12 @@
 		"Steps":
 		[
 		{
-			"DataId": 1012528,
+			"DataId": 1004093,
 			"Position":
 			{
-				"X": -57.41974,
-				"Y": 18.504038,
-				"Z": 66.544556
+				"X": -25.162231,
+				"Y": 12.199998,
+				"Z": 110.795654
 			},
 			"TerritoryId": 131,
 			"InteractionType": "Interact"
@@ -59,6 +60,39 @@
 		"Steps":
 		[
 		{
+			"DataId": 1012536,
+			"Position":
+			{
+				"X": -38.68164,
+				"Y": 13.499997,
+				"Z": 119.21863
+			},
+			"TerritoryId": 131,
+			"InteractionType": "Interact"
+		}
+		]
+	},
+	{
+		"Sequence": 3,
+		"Steps":
+		[
+		{
+			"InteractionType": "Craft",
+			"TerritoryId": 131,
+			"ItemId": 12644,
+			"ItemCount": 1,
+			"SkipConditions":
+			{
+				"StepIf":
+				{
+					"Item":
+					{
+						"NotInInventory": false
+					}
+				}
+			}
+		},
+		{
 			"DataId": 1004093,
 			"Position":
 			{
@@ -67,23 +101,8 @@
 				"Z": 110.795654
 			},
 			"TerritoryId": 131,
-			"InteractionType": "Interact"
-		},
-		{
-			"DataId": 1001353,
-			"Position":
-			{
-				"X": 21.072632,
-				"Y": 7.45,
-				"Z": -78.78235
-			},
-			"TerritoryId": 130,
 			"InteractionType": "Interact",
-			"AethernetShortcut":
-			[
-			"[Ul'dah] Goldsmiths' Guild",
-			"[Ul'dah] Adventurers' Guild"
-			]
+			"AllowHighQuality":true
 		}
 		]
 	},
@@ -100,12 +119,7 @@
 				"Z": 66.544556
 			},
 			"TerritoryId": 131,
-			"InteractionType": "CompleteQuest",
-			"AethernetShortcut":
-			[
-			"[Ul'dah] Adventurers' Guild",
-			"[Ul'dah] Goldsmiths' Guild"
-			]
+			"InteractionType": "CompleteQuest"
 		}
 		]
 	}

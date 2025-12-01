@@ -1,6 +1,7 @@
 {
 	"$schema": "https://qstxiv.github.io/schema/quest-v1.json",
 	"Author": "Gezah",
+	"Comment": "Crafted Item: 1x Star Ruby Music Box, 1x Star Sapphire Music Box // Autocraft requires: 8x Aurum Regis Nugget, 2x Aurum Regis Cylinder, 1x Star Ruby, 1x Star Sapphire, 2x Hardsilver Ingot, 4x Fieldcraft Demimateria II",
 	"QuestSequence":
 	[
 	{
@@ -8,12 +9,12 @@
 		"Steps":
 		[
 		{
-			"DataId": 1004093,
+			"DataId": 1012528,
 			"Position":
 			{
-				"X": -25.162231,
-				"Y": 12.199998,
-				"Z": 110.795654
+				"X": -57.41974,
+				"Y": 18.504038,
+				"Z": 66.544556
 			},
 			"TerritoryId": 131,
 			"InteractionType": "AcceptQuest",
@@ -42,6 +43,38 @@
 		"Steps":
 		[
 		{
+			"InteractionType": "Craft",
+			"TerritoryId": 131,
+			"ItemId": 12109,
+			"ItemCount": 1,
+			"SkipConditions":
+			{
+				"StepIf":
+				{
+					"Item":
+					{
+						"NotInInventory": false
+					}
+				}
+			}
+		},
+		{
+			"InteractionType": "Craft",
+			"TerritoryId": 131,
+			"ItemId": 12108,
+			"ItemCount": 1,
+			"SkipConditions":
+			{
+				"StepIf":
+				{
+					"Item":
+					{
+						"NotInInventory": false
+					}
+				}
+			}
+		},
+		{
 			"DataId": 1012528,
 			"Position":
 			{
@@ -59,23 +92,12 @@
 		"Steps":
 		[
 		{
-			"DataId": 1004093,
+			"DataId": 1012532,
 			"Position":
 			{
-				"X": -25.162231,
-				"Y": 12.199998,
-				"Z": 110.795654
-			},
-			"TerritoryId": 131,
-			"InteractionType": "Interact"
-		},
-		{
-			"DataId": 1001353,
-			"Position":
-			{
-				"X": 21.072632,
-				"Y": 7.45,
-				"Z": -78.78235
+				"X": 24.338135,
+				"Y": 7.9999824,
+				"Z": -117.41821
 			},
 			"TerritoryId": 130,
 			"InteractionType": "Interact",
@@ -84,6 +106,23 @@
 			"[Ul'dah] Goldsmiths' Guild",
 			"[Ul'dah] Adventurers' Guild"
 			]
+		}
+		]
+	},
+	{
+		"Sequence": 3,
+		"Steps":
+		[
+		{
+			"DataId": 1012530,
+			"Position":
+			{
+				"X": 12.588623,
+				"Y": 6.9999933,
+				"Z": -86.44238
+			},
+			"TerritoryId": 130,
+			"InteractionType": "Interact"
 		}
 		]
 	},
