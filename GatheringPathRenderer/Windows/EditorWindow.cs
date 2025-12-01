@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Numerics;
+using System.Reflection.Metadata.Ecma335;
 using Dalamud.Bindings.ImGui;
 using Dalamud.Game.ClientState.Objects;
 using Dalamud.Game.ClientState.Objects.Enums;
@@ -39,6 +40,7 @@ internal sealed class EditorWindow : Window
     private bool compact;
     private bool unaddedVisible = true;
     private bool sortByDistance = true;
+    private FilterClass filterClass = FilterClass.None;
 
     private (RendererPlugin.GatheringLocationContext Context, GatheringNode Node, GatheringLocation Location)?
         _targetLocation;
@@ -59,7 +61,6 @@ internal sealed class EditorWindow : Window
         SizeConstraints = new WindowSizeConstraints
         {
             MinimumSize = new Vector2(-1, 100),
-            MaximumSize = new Vector2(-1, 500),
         };
 
         TitleBarButtons.Add(new TitleBarButton
@@ -306,6 +307,14 @@ internal sealed class EditorWindow : Window
         ImGui.SameLine();
         if (ImGuiComponents.IconButton(sortByDistance ? FontAwesomeIcon.SortNumericDown : FontAwesomeIcon.SortAlphaDown))
             sortByDistance = !sortByDistance;
+        ImGui.SameLine();
+        var filterClassIcon = FontAwesomeIcon.Notdef;
+        if (filterClass.Equals(FilterClass.Miner)) filterClassIcon = FontAwesomeIcon.HandRock;
+        if (filterClass.Equals(FilterClass.Botanist)) filterClassIcon = FontAwesomeIcon.HandScissors;
+        if (ImGuiComponents.IconButton(filterClassIcon))
+        {
+            filterClass = (FilterClass)(((int)filterClass + 1) % Enum.GetValues(typeof(FilterClass)).Length);
+        }
 
         ImGui.Text($"Nodes in {_clientState.TerritoryType}: ({count})");
         List<string> seen = [];
@@ -330,7 +339,10 @@ internal sealed class EditorWindow : Window
                 {
                     special = '*';
                 }
-                string line = $"{((GatheringType)_point.GatheringPointBase.Value.GatheringType.RowId).ToString()[..1]}{special}{_point.RowId} {_point.PlaceName.Value.Name}  ";
+                GatheringType gatheringType = (GatheringType)_point.GatheringPointBase.Value.GatheringType.RowId;
+                if (filterClass.Equals(FilterClass.Miner) && !gatheringType.Equals(GatheringType.Mining) && !gatheringType.Equals(GatheringType.Quarrying)) continue;
+                if (filterClass.Equals(FilterClass.Botanist) && !gatheringType.Equals(GatheringType.Logging) && !gatheringType.Equals(GatheringType.Harvesting)) continue;
+                string line = $"{gatheringType.ToString()[..1]}{special}{_point.RowId} {_point.PlaceName.Value.Name}  ";
                 bool orange = false;
                 float distance = 0.0f;
                 if (_plugin.GBRLocationData.TryGetValue(_point.RowId, out List<Vector3>? value))
@@ -390,6 +402,13 @@ internal sealed class EditorWindow : Window
         Harvesting,
         Fishing,
         Spearfishing
+    }
+
+    enum FilterClass
+    {
+        None,
+        Miner,
+        Botanist
     }
 }
 
