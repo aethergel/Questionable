@@ -18,21 +18,27 @@
                 "X": 99.07694,
                 "Y": -7.526944,
                 "Z": 159.0305
-              }
+              },
+              "MinimumAngle": 0,
+              "MaximumAngle": 359
             },
             {
               "Position": {
                 "X": 97.0298,
                 "Y": -6.118188,
                 "Z": 142.9839
-              }
+              },
+              "MinimumAngle": 0,
+              "MaximumAngle": 359
             },
             {
               "Position": {
                 "X": 102.1405,
                 "Y": -6.339455,
                 "Z": 145.334
-              }
+              },
+              "MinimumAngle": 0,
+              "MaximumAngle": 359
             }
           ]
         }
@@ -49,6 +55,8 @@
                 "Y": -8.243351,
                 "Z": 128.8389
               },
+              "MinimumAngle": 0,
+              "MaximumAngle": 359,
               "MinimumDistance": 1,
               "MaximumDistance": 1.4
             },
@@ -57,14 +65,18 @@
                 "X": 17.51699,
                 "Y": -8.000002,
                 "Z": 119.4361
-              }
+              },
+              "MinimumAngle": 0,
+              "MaximumAngle": 359
             },
             {
               "Position": {
                 "X": 17.64562,
                 "Y": -5.746959,
                 "Z": 130.9842
-              }
+              },
+              "MinimumAngle": 0,
+              "MaximumAngle": 359
             }
           ]
         }
@@ -116,7 +128,9 @@
                 "X": 69.96223,
                 "Y": -5.746856,
                 "Z": 92.32835
-              }
+              },
+              "MinimumAngle": 0,
+              "MaximumAngle": 359
             },
             {
               "Position": {
@@ -124,6 +138,8 @@
                 "Y": -6.826841,
                 "Z": 74.58802
               },
+              "MinimumAngle": 0,
+              "MaximumAngle": 359,
               "MinimumDistance": 1,
               "MaximumDistance": 2.3
             },

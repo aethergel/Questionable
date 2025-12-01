@@ -18,21 +18,27 @@
                 "X": -149.2238,
                 "Y": 0.8605778,
                 "Z": 340.604
-              }
+              },
+              "MinimumAngle": 0,
+              "MaximumAngle": 359
             },
             {
               "Position": {
                 "X": -171.6793,
                 "Y": -2.059998,
                 "Z": 336.7207
-              }
+              },
+              "MinimumAngle": 0,
+              "MaximumAngle": 359
             },
             {
               "Position": {
                 "X": -157.7631,
                 "Y": -2.509482,
                 "Z": 330.3425
-              }
+              },
+              "MinimumAngle": 0,
+              "MaximumAngle": 359
             }
           ]
         }
@@ -66,7 +72,9 @@
                 "X": -178.7862,
                 "Y": 10.59438,
                 "Z": 381.4195
-              }
+              },
+              "MinimumAngle": 0,
+              "MaximumAngle": 359
             }
           ]
         }
@@ -102,7 +110,9 @@
                 "X": -120.4867,
                 "Y": 1.996863,
                 "Z": 347.6763
-              }
+              },
+              "MinimumAngle": 0,
+              "MaximumAngle": 359
             }
           ]
         }
@@ -127,7 +137,9 @@
                 "X": -159.8948,
                 "Y": -6.927245,
                 "Z": 282.4843
-              }
+              },
+              "MinimumAngle": 0,
+              "MaximumAngle": 359
             },
             {
               "Position": {

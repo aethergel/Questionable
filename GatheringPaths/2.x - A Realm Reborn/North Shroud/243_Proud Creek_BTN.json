@@ -1,16 +1,16 @@
 {
   "$schema": "https://qstxiv.github.io/schema/gatheringlocation-v1.json",
   "Author": "Censored",
-  "ExtraQuestItems": [
-    2001388,
-    2001389
-  ],
   "Steps": [
     {
       "TerritoryId": 154,
       "InteractionType": "None",
       "AetheryteShortcut": "North Shroud - Fallgourd Float"
     }
+  ],
+  "ExtraQuestItems": [
+    2001388,
+    2001389
   ],
   "Groups": [
     {
@@ -23,7 +23,9 @@
                 "X": 37.26512,
                 "Y": -5.35672,
                 "Z": -17.14218
-              }
+              },
+              "MinimumAngle": -50,
+              "MaximumAngle": 55
             },
             {
               "Position": {
