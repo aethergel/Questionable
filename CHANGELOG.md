@@ -1,1 +1,2 @@
-- sahagin 1385 1387 fixes by alydev
+- diadem gathering paths by alydev
+- ARR gathering paths improved by Ice

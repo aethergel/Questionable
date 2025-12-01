@@ -11,6 +11,7 @@ using Dalamud.Plugin.Services;
 using Dalamud.Utility.Signatures;
 using LLib.GameData;
 using Lumina.Excel.Sheets;
+using Microsoft.Extensions.Logging;
 using Questionable.Controller;
 using Questionable.Model;
 using Questionable.Model.Gathering;
@@ -24,6 +25,8 @@ internal sealed class GatheringJournalComponent
     private readonly GatheringPointRegistry _gatheringPointRegistry;
     private readonly Dictionary<int, string> _gatheringItems;
     private readonly List<ExpansionPoints> _gatheringPointsByExpansion;
+    private readonly GatheringController _gatheringController;
+    private readonly ILogger<GatheringJournalComponent> _logger;
     private readonly List<ushort> _gatheredItems = [];
 
     private List<FilteredExpansion> _filteredExpansions = [];
@@ -37,11 +40,14 @@ internal sealed class GatheringJournalComponent
     private bool IsGatheringItemGathered(uint item) => _getIsGatheringItemGathered((ushort)item) != 0;
 
     public GatheringJournalComponent(IDataManager dataManager, IDalamudPluginInterface pluginInterface, UiUtils uiUtils,
-        IGameInteropProvider gameInteropProvider, GatheringPointRegistry gatheringPointRegistry)
+        IGameInteropProvider gameInteropProvider, GatheringController gatheringController, ILogger<GatheringJournalComponent> logger,
+        GatheringPointRegistry gatheringPointRegistry)
     {
         _pluginInterface = pluginInterface;
         _uiUtils = uiUtils;
         _gatheringPointRegistry = gatheringPointRegistry;
+        _gatheringController = gatheringController;
+        _logger = logger;
 
         // TODO some of the logic here would be better suited elsewhere, in particular the [item] → [gathering item] → [location] lookup
         var routeToGatheringPoint = dataManager.GetExcelSheet<GatheringLeveRoute>()
@@ -239,18 +245,25 @@ internal sealed class GatheringJournalComponent
         if (open)
         {
             foreach (var item in point.GatheringItemIds)
-                DrawItem(item);
+                DrawItem(item, point.Point.Id);
 
             ImGui.TreePop();
         }
     }
 
-    private void DrawItem(ushort item)
+    private void DrawItem(ushort item, GatheringPointId pointId)
     {
         ImGui.TableNextRow();
         ImGui.TableNextColumn();
-        ImGui.TreeNodeEx(_gatheringItems.GetValueOrDefault(item, "???"),
+        ImGui.TreeNodeEx($"{item} - " + _gatheringItems.GetValueOrDefault(item, "???"),
             ImGuiTreeNodeFlags.Leaf | ImGuiTreeNodeFlags.NoTreePushOnOpen | ImGuiTreeNodeFlags.SpanFullWidth);
+        if (ImGui.IsItemClicked())
+        {
+            var request = new GatheringController.GatheringRequest(pointId, item, 0, 1);
+            _logger.LogDebug($"clicked, doing {request}");
+            _gatheringController.Start(request);
+            
+        }
 
         ImGui.TableNextColumn();
 
