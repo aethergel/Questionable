@@ -1,0 +1,148 @@
+{
+	"$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+	"Author": "Gezah",
+	"QuestSequence":
+	[
+	{
+		"Sequence": 0,
+		"Steps":
+		[
+		{
+			"DataId": 1003818,
+			"Position":
+			{
+				"X": 157.36621,
+				"Y": 7.7920074,
+				"Z": 98.924194
+			},
+			"TerritoryId": 131,
+			"InteractionType": "AcceptQuest",
+			"AetheryteShortcut": "Ul'dah",
+			"AethernetShortcut":
+			[
+			"[Ul'dah] Aetheryte Plaza",
+			"[Ul'dah] Weavers' Guild"
+			],
+			"SkipConditions":
+			{
+				"AetheryteShortcutIf":
+				{
+					"InTerritory":
+					[
+					130,
+					131
+					]
+				}
+			}
+		}
+		]
+	},
+	{
+		"Sequence": 1,
+		"Steps":
+		[
+		{
+			"DataId": 1019811,
+			"Position":
+			{
+				"X": -6.1799316,
+				"Y": 5.9353356,
+				"Z": -147.93628
+			},
+			"TerritoryId": 628,
+			"InteractionType": "Interact",
+			"AetheryteShortcut": "Kugane",
+			"AethernetShortcut":
+			[
+			"[Kugane] Aetheryte Plaza",
+			"[Kugane] Rakuza District"
+			]
+		}
+		]
+	},
+	{
+		"Sequence": 2,
+		"Steps":
+		[
+		{
+			"DataId": 1019813,
+			"Position":
+			{
+				"X": -29.221008,
+				"Y": 5.9771156,
+				"Z": -172.99158
+			},
+			"TerritoryId": 628,
+			"InteractionType": "Interact"
+		}
+		]
+	},
+	{
+		"Sequence": 3,
+		"Steps":
+		[
+		{
+			"DataId": 1019811,
+			"Position":
+			{
+				"X": -6.1799316,
+				"Y": 5.9353356,
+				"Z": -147.93628
+			},
+			"TerritoryId": 628,
+			"InteractionType": "Interact"
+		}
+		]
+	},
+	{
+		"Sequence": 4,
+		"Steps":
+		[
+		{
+			"DataId": 1019812,
+			"Position":
+			{
+				"X": -9.048645,
+				"Y": 5.9453874,
+				"Z": -149.15698
+			},
+			"TerritoryId": 628,
+			"InteractionType": "Interact"
+		}
+		]
+	},
+	{
+		"Sequence": 255,
+		"Steps":
+		[
+		{
+			"InteractionType": "Craft",
+			"TerritoryId": 628,
+			"ItemId": 17918,
+			"ItemCount": 1,
+			"SkipConditions":
+			{
+				"StepIf": 
+				{
+					"Item": 
+					{
+						"NotInInventory": false
+					}
+				}
+			}
+		},
+		{
+			"DataId": 1019811,
+			"Position":
+			{
+				"X": -6.1799316,
+				"Y": 5.9353356,
+				"Z": -147.93628
+			},
+			"TerritoryId": 628,
+			"InteractionType": "CompleteQuest"
+		}
+		]
+	}
+	]
+}

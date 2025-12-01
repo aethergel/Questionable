@@ -1,0 +1,132 @@
+{
+	"$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+	"Author": "Gezah",
+	"QuestSequence":
+	[
+	{
+		"Sequence": 0,
+		"Steps":
+		[
+		{
+			"DataId": 1019811,
+			"Position":
+			{
+				"X": -6.1799316,
+				"Y": 5.9353356,
+				"Z": -147.93628
+			},
+			"TerritoryId": 628,
+			"InteractionType": "AcceptQuest",
+			"AetheryteShortcut": "Kugane",
+			"AethernetShortcut":
+			[
+			"[Kugane] Aetheryte Plaza",
+			"[Kugane] Rakuza District"
+			],
+			"SkipConditions":
+			{
+				"AetheryteShortcutIf":
+				{
+					"InTerritory":
+					[
+					628
+					]
+				}
+			}
+		}
+		]
+	},
+	{
+		"Sequence": 1,
+		"Steps":
+		[
+		{
+			"DataId": 1019814,
+			"Position":
+			{
+				"X": -29.221008,
+				"Y": 5.9771156,
+				"Z": -172.99158
+			},
+			"TerritoryId": 628,
+			"InteractionType": "Interact",
+			"DialogueChoices":
+			[
+			{
+				"Prompt": "TEXT_CLSWVR650_02433_Q1_000_000",
+				"Answer": "TEXT_CLSWVR650_02433_A1_000_001",
+				"Type": "List"
+			}
+			]
+		}
+		]
+	},
+	{
+		"Sequence": 2,
+		"Steps":
+		[
+		{
+			"DataId": 1019811,
+			"Position":
+			{
+				"X": -6.1799316,
+				"Y": 5.9353356,
+				"Z": -147.93628
+			},
+			"TerritoryId": 628,
+			"InteractionType": "Interact"
+		}
+		]
+	},
+	{
+		"Sequence": 3,
+		"Steps":
+		[
+		{
+			"DataId": 1019812,
+			"Position":
+			{
+				"X": -9.048645,
+				"Y": 5.9453874,
+				"Z": -149.15698
+			},
+			"TerritoryId": 628,
+			"InteractionType": "Interact"
+		}
+		]
+	},
+	{
+		"Sequence": 255,
+		"Steps":
+		[
+		{
+			"InteractionType": "Craft",
+			"TerritoryId": 628,
+			"ItemId": 17920,
+			"ItemCount": 1,
+			"SkipConditions":
+			{
+				"StepIf": 
+				{
+					"Item": 
+					{
+						"NotInInventory": false
+					}
+				}
+			}
+		},
+		{
+			"DataId": 1019811,
+			"Position":
+			{
+				"X": -6.1799316,
+				"Y": 5.9353356,
+				"Z": -147.93628
+			},
+			"TerritoryId": 628,
+			"InteractionType": "CompleteQuest"
+		}
+		]
+	}
+	]
+}

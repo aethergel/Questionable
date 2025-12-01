@@ -1,1 +1,107 @@
-
+{
+	"$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+	"Author": "Gezah",
+	"QuestSequence":
+	[
+	{
+		"Sequence": 0,
+		"Steps":
+		[
+		{
+			"DataId": 1003818,
+			"Position":
+			{
+				"X": 157.36621,
+				"Y": 7.7920074,
+				"Z": 98.924194
+			},
+			"TerritoryId": 131,
+			"InteractionType": "AcceptQuest",
+			"AetheryteShortcut": "Ul'dah",
+			"AethernetShortcut":
+			[
+			"[Ul'dah] Aetheryte Plaza",
+			"[Ul'dah] Weavers' Guild"
+			],
+			"SkipConditions":
+			{
+				"AetheryteShortcutIf":
+				{
+					"InTerritory":
+					[
+					130,
+					131
+					]
+				}
+			}
+		}
+		]
+	},
+	{
+		"Sequence": 1,
+		"Steps":
+		[
+		{
+			"DataId": 1019805,
+			"Position":
+			{
+				"X": -28.305542,
+				"Y": 8.041113,
+				"Z": -97.276245
+			},
+			"TerritoryId": 130,
+			"InteractionType": "Interact",
+			"AethernetShortcut":
+			[
+			"[Ul'dah] Weavers' Guild",
+			"[Ul'dah] Adventurers' Guild"
+			]
+		}
+		]
+	},
+	{
+		"Sequence": 2,
+		"Steps":
+		[
+		{
+			"DataId": 1019807,
+			"Position":
+			{
+				"X": 15.304749,
+				"Y": 30,
+				"Z": 22.415466
+			},
+			"TerritoryId": 131,
+			"InteractionType": "Interact",
+			"AethernetShortcut":
+			[
+			"[Ul'dah] Adventurers' Guild",
+			"[Ul'dah] The Chamber of Rule"
+			]
+		}
+		]
+	},
+	{
+		"Sequence": 255,
+		"Steps":
+		[
+		{
+			"DataId": 1003818,
+			"Position":
+			{
+				"X": 157.36621,
+				"Y": 7.7920074,
+				"Z": 98.924194
+			},
+			"TerritoryId": 131,
+			"InteractionType": "CompleteQuest",
+			"AethernetShortcut":
+			[
+			"[Ul'dah] The Chamber of Rule",
+			"[Ul'dah] Weavers' Guild"
+			]
+		}
+		]
+	}
+	]
+}
