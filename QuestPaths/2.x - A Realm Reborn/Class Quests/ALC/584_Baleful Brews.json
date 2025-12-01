@@ -1,0 +1,119 @@
+{
+	"$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+	"Author": "Gezah",
+	"Comment": "Crafted Item: 3x Weak Blinding Potion HQ // Autocraft requires: 1x Quicksilver, 1x Bat Wing, 1x Bat Fang",
+	"QuestSequence":
+	[
+	{
+		"Sequence": 0,
+		"Steps":
+		[
+		{
+			"DataId": 1002299,
+			"Position":
+			{
+				"X": -98.8938,
+				"Y": 40.200146,
+				"Z": 120.83618
+			},
+			"TerritoryId": 131,
+			"InteractionType": "AcceptQuest",
+			"AetheryteShortcut": "Ul'dah",
+			"AethernetShortcut":
+			[
+			"[Ul'dah] Aetheryte Plaza",
+			"[Ul'dah] Alchemists' Guild"
+			],
+			"SkipConditions":
+			{
+				"AetheryteShortcutIf":
+				{
+					"InTerritory":
+					[
+					130,
+					131
+					]
+				}
+			}
+		}
+		]
+	},
+	{
+		"Sequence": 1,
+		"Steps":
+		[
+		{
+			"InteractionType": "Craft",
+			"TerritoryId": 419,
+			"ItemId": 4575,
+			"ItemCount": 3,
+			"SkipConditions":
+			{
+				"StepIf": 
+				{
+					"Item": 
+					{
+						"NotInInventory": false
+					}
+				}
+			}
+		},
+		{
+			"DataId": 1002299,
+			"Position":
+			{
+				"X": -98.8938,
+				"Y": 40.200146,
+				"Z": 120.83618
+			},
+			"TerritoryId": 131,
+			"InteractionType": "Interact"
+		}
+		]
+	},
+	{
+		"Sequence": 2,
+		"Steps":
+		[
+		{
+			"DataId": 1003927,
+			"Position":
+			{
+				"X": 105.94336,
+				"Y": 7.9999933,
+				"Z": -32.700073
+			},
+			"TerritoryId": 131,
+			"InteractionType": "Interact",
+			"AethernetShortcut":
+			[
+			"[Ul'dah] Alchemists' Guild",
+			"[Ul'dah] Sapphire Avenue Exchange"
+			]
+		}
+		]
+	},
+	{
+		"Sequence": 255,
+		"Steps":
+		[			
+		{
+			"DataId": 1002299,
+			"Position":
+			{
+				"X": -98.8938,
+				"Y": 40.200146,
+				"Z": 120.83618
+			},
+			"TerritoryId": 131,
+			"InteractionType": "CompleteQuest",
+			"AethernetShortcut":
+			[
+			"[Ul'dah] Sapphire Avenue Exchange",
+			"[Ul'dah] Alchemists' Guild"
+			]
+		}
+		]
+	}
+	]
+}
