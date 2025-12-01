@@ -1,0 +1,146 @@
+{
+	"$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+	"Author": "Gezah",
+	"QuestSequence":
+	[
+	{
+		"Sequence": 0,
+		"Steps":
+		[
+		{
+			"DataId": 1020940,
+			"Position":
+			{
+				"X": 76.157715,
+				"Y": 0,
+				"Z": -124.4068
+			},
+			"TerritoryId": 133,
+			"InteractionType": "AcceptQuest",
+			"AetheryteShortcut": "Gridania",
+			"AethernetShortcut":
+			[
+			"[Gridania] Aetheryte Plaza",
+			"[Gridania] Leatherworkers' Guild & Shaded Bower"
+			],
+			"SkipConditions":
+			{
+				"AetheryteShortcutIf":
+				{
+					"InTerritory":
+					[
+					132,
+					133
+					]
+				}
+			}
+		}
+		]
+	},
+	{
+		"Sequence": 1,
+		"Steps":
+		[
+		{
+			"DataId": 1020940,
+			"Position":
+			{
+				"X": 76.157715,
+				"Y": 0,
+				"Z": -124.4068
+			},
+			"TerritoryId": 133,
+			"InteractionType": "Interact"
+		}
+		]
+	},{
+		"Sequence": 2,
+		"Steps":
+		[
+		{
+			"DataId": 1000691,
+			"Position":
+			{
+				"X": 71.97681,
+				"Y": 8,
+				"Z": -166.52173
+			},
+			"TerritoryId": 133,
+			"InteractionType": "Interact"
+		}
+		]
+	},
+	{
+		"Sequence": 3,
+		"Steps":
+		[
+		{
+			"DataId": 1000352,
+			"Position":
+			{
+				"X": 65.69006,
+				"Y": 8,
+				"Z": -147.41742
+			},
+			"TerritoryId": 133,
+			"InteractionType": "Interact"
+		}
+		]
+	},
+	{
+		"Sequence": 4,
+		"Steps":
+		[
+		{
+			"InteractionType": "Craft",
+			"TerritoryId": 133,
+			"ItemId": 17914,
+			"ItemCount": 1,
+			"SkipConditions":
+			{
+				"StepIf": 
+				{
+					"Item": 
+					{
+						"NotInInventory": false
+					}
+				}
+			}
+		},
+		{
+			"DataId": 1000691,
+			"Position":
+			{
+				"X": 71.97681,
+				"Y": 8,
+				"Z": -166.52173
+			},
+			"TerritoryId": 133,
+			"InteractionType": "Interact"
+		}
+		]
+	},
+	{
+		"Sequence": 255,
+		"Steps":
+		[
+		{
+			"DataId": 1020940,
+			"Position":
+			{
+				"X": 76.157715,
+				"Y": 0,
+				"Z": -124.4068
+			},
+			"TerritoryId": 133,
+			"InteractionType": "CompleteQuest",
+			"AethernetShortcut":
+			[
+			"[Gridania] Aetheryte Plaza",
+			"[Gridania] Leatherworkers' Guild & Shaded Bower"
+			]
+		}
+		]
+	}
+	]
+}
