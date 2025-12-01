@@ -1,0 +1,127 @@
+{
+	"$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+	"Author": "Gezah",
+	"Comment": "Crafted Item: 1x Fang Earrings, 1x Brass Gorget // Autocraft requires: 3x Brass Ingot, 2x Hard Leather, 1x Bat Fang",
+	"QuestSequence":
+	[
+	{
+		"Sequence": 0,
+		"Steps":
+		[
+		{
+			"DataId": 1004093,
+			"Position":
+			{
+				"X": -25.162231,
+				"Y": 12.199998,
+				"Z": 110.795654
+			},
+			"TerritoryId": 131,
+			"InteractionType": "AcceptQuest",
+			"AetheryteShortcut": "Ul'dah",
+			"AethernetShortcut":
+			[
+			"[Ul'dah] Aetheryte Plaza",
+			"[Ul'dah] Goldsmiths' Guild"
+			],
+			"SkipConditions":
+			{
+				"AetheryteShortcutIf":
+				{
+					"InTerritory":
+					[
+					130,
+					131
+					]
+				}
+			}
+		}
+		]
+	},
+	{
+		"Sequence": 1,
+		"Steps":
+		[
+		{
+			"InteractionType": "Craft",
+			"TerritoryId": 131,
+			"ItemId": 4204,
+			"ItemCount": 1,
+			"SkipConditions":
+			{
+				"StepIf":
+				{
+					"Item":
+					{
+						"NotInInventory": false
+					}
+				}
+			}
+		},
+		{
+			"InteractionType": "Craft",
+			"TerritoryId": 131,
+			"ItemId": 4309,
+			"ItemCount": 1,
+			"SkipConditions":
+			{
+				"StepIf":
+				{
+					"Item":
+					{
+						"NotInInventory": false
+					}
+				}
+			}
+		},
+		{
+			"DataId": 1004093,
+			"Position":
+			{
+				"X": -25.162231,
+				"Y": 12.199998,
+				"Z": 110.795654
+			},
+			"TerritoryId": 131,
+			"InteractionType": "Interact",
+			"AllowHighQuality":true
+		}
+		]
+	},
+	{
+		"Sequence": 2,
+		"Steps":
+		[
+		{
+			"DataId": 1004097,
+			"Position":
+			{
+				"X": -22.171448,
+				"Y": 14,
+				"Z": 73.28906
+			},
+			"TerritoryId": 131,
+			"InteractionType": "Interact",
+			"AllowHighQuality":true
+		}
+		]
+	},
+	{
+		"Sequence": 255,
+		"Steps":
+		[
+		{
+			"DataId": 1004093,
+			"Position":
+			{
+				"X": -25.162231,
+				"Y": 12.199998,
+				"Z": 110.795654
+			},
+			"TerritoryId": 131,
+			"InteractionType": "CompleteQuest"
+		}
+		]
+	}
+	]
+}

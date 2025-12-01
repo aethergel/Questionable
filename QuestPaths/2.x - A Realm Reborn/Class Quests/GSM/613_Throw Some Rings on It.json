@@ -1,0 +1,110 @@
+{
+	"$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+	"Author": "Gezah",
+	"Comment": "Crafted Item: 12x Copper Rings // Autocraft requires: 12x Copper Ingot",
+	"QuestSequence":
+	[
+	{
+		"Sequence": 0,
+		"Steps":
+		[
+		{
+			"DataId": 1004093,
+			"Position":
+			{
+				"X": -25.162231,
+				"Y": 12.199998,
+				"Z": 110.795654
+			},
+			"TerritoryId": 131,
+			"InteractionType": "AcceptQuest",
+			"AetheryteShortcut": "Ul'dah",
+			"AethernetShortcut":
+			[
+			"[Ul'dah] Aetheryte Plaza",
+			"[Ul'dah] Goldsmiths' Guild"
+			],
+			"SkipConditions":
+			{
+				"AetheryteShortcutIf":
+				{
+					"InTerritory":
+					[
+					130,
+					131
+					]
+				}
+			}
+		}
+		]
+	},
+	{
+		"Sequence": 1,
+		"Steps":
+		[
+		{
+			"InteractionType": "Craft",
+			"TerritoryId": 131,
+			"ItemId": 5086,
+			"ItemCount": 12,
+			"SkipConditions":
+			{
+				"StepIf":
+				{
+					"Item":
+					{
+						"NotInInventory": false
+					}
+				}
+			}
+		},
+		{
+			"DataId": 1004093,
+			"Position":
+			{
+				"X": -25.162231,
+				"Y": 12.199998,
+				"Z": 110.795654
+			},
+			"TerritoryId": 131,
+			"InteractionType": "Interact",
+			"AllowHighQuality":true
+		}
+		]
+	},{
+		"Sequence": 2,
+		"Steps":
+		[
+		{
+			"DataId": 1004097,
+			"Position":
+			{
+				"X": -22.171448,
+				"Y": 14,
+				"Z": 73.28906
+			},
+			"TerritoryId": 131,
+			"InteractionType": "Interact",
+			"AllowHighQuality":true
+		}
+		]
+	},
+	{
+		"Sequence": 255,
+		"Steps":
+		[
+		{
+			"DataId": 1004093,
+			"Position":
+			{
+				"X": -25.162231,
+				"Y": 12.199998,
+				"Z": 110.795654
+			},
+			"TerritoryId": 131,
+			"InteractionType": "CompleteQuest"
+		}
+		]
+	}
+	]
+}
