@@ -1,0 +1,141 @@
+{
+	"$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+	"Author": "Gezah",
+	"Comment": "Crafted Item: 1x Patrician's Bottoms HQ, 1x Patrician's Coatee HQ, 1x Patrician's Wedge Cap HQ // Autocraft requires: 5x Undyed Felt, 1x Undyed Woolen Cloth, 4x Woolen Yarn, 3x Linen Yarn, 3x Electrum Ingot",
+	"QuestSequence":
+	[
+	{
+		"Sequence": 0,
+		"Steps":
+		[
+		{
+			"DataId": 1003818,
+			"Position":
+			{
+				"X": 157.36621,
+				"Y": 7.7920074,
+				"Z": 98.924194
+			},
+			"TerritoryId": 131,
+			"InteractionType": "AcceptQuest",
+			"AetheryteShortcut": "Ul'dah",
+			"AethernetShortcut":
+			[
+			"[Ul'dah] Aetheryte Plaza",
+			"[Ul'dah] Weavers' Guild"
+			],
+			"SkipConditions":
+			{
+				"AetheryteShortcutIf":
+				{
+					"InTerritory":
+					[
+					130,
+					131
+					]
+				}
+			}
+		}
+		]
+	},
+	{
+		"Sequence": 1,
+		"Steps":
+		[
+		{
+			"InteractionType": "Craft",
+			"TerritoryId": 131,
+			"ItemId": 3215,
+			"ItemCount": 1,
+			"SkipConditions":
+			{
+				"StepIf": 
+				{
+					"Item": 
+					{
+						"NotInInventory": false
+					}
+				}
+			}
+		},
+		{
+			"InteractionType": "Craft",
+			"TerritoryId": 131,
+			"ItemId": 3475,
+			"ItemCount": 1,
+			"SkipConditions":
+			{
+				"StepIf": 
+				{
+					"Item": 
+					{
+						"NotInInventory": false
+					}
+				}
+			}
+		},
+		{
+			"InteractionType": "Craft",
+			"TerritoryId": 131,
+			"ItemId": 2895,
+			"ItemCount": 1,
+			"SkipConditions":
+			{
+				"StepIf": 
+				{
+					"Item": 
+					{
+						"NotInInventory": false
+					}
+				}
+			}
+		},
+		{
+			"DataId": 1003818,
+			"Position":
+			{
+				"X": 157.36621,
+				"Y": 7.7920074,
+				"Z": 98.924194
+			},
+			"TerritoryId": 131,
+			"InteractionType": "Interact"
+		}
+		]
+	},
+	{
+		"Sequence": 2,
+		"Steps":
+		[
+		{
+			"DataId": 1003921,
+			"Position":
+			{
+				"X": 23.23944,
+				"Y": 14,
+				"Z": 10.452393
+			},
+			"TerritoryId": 131,
+			"InteractionType": "Interact"
+		}
+		]
+	},
+	{
+		"Sequence": 255,
+		"Steps":
+		[
+		{
+			"DataId": 1003818,
+			"Position":
+			{
+				"X": 157.36621,
+				"Y": 7.7920074,
+				"Z": 98.924194
+			},
+			"TerritoryId": 131,
+			"InteractionType": "CompleteQuest"
+		}
+		]
+	}
+	]
+}

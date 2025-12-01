@@ -1,0 +1,76 @@
+{
+	"$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+	"Author": "Gezah",
+	"Comment": "Crafted Item: 3x Hempen Breeches // Autocraft requires: 6x Undyed Hempen Cloth, 3x Hempen Yarn, 3x Leather",
+	"QuestSequence":
+	[
+	{
+		"Sequence": 0,
+		"Steps":
+		[
+		{
+			"DataId": 1003818,
+			"Position":
+			{
+				"X": 157.36621,
+				"Y": 7.7920074,
+				"Z": 98.924194
+			},
+			"TerritoryId": 131,
+			"InteractionType": "AcceptQuest",
+			"AetheryteShortcut": "Ul'dah",
+			"AethernetShortcut":
+			[
+			"[Ul'dah] Aetheryte Plaza",
+			"[Ul'dah] Weavers' Guild"
+			],
+			"SkipConditions":
+			{
+				"AetheryteShortcutIf":
+				{
+					"InTerritory":
+					[
+					130,
+					131
+					]
+				}
+			}
+		}
+		]
+	},
+	{
+		"Sequence": 255,
+		"Steps":
+		[
+		{
+			"InteractionType": "Craft",
+			"TerritoryId": 131,
+			"ItemId": 3274,
+			"ItemCount": 3,
+			"SkipConditions":
+			{
+				"StepIf": 
+				{
+					"Item": 
+					{
+						"NotInInventory": false
+					}
+				}
+			}
+		},
+		{
+			"DataId": 1003818,
+			"Position":
+			{
+				"X": 157.36621,
+				"Y": 7.7920074,
+				"Z": 98.924194
+			},
+			"TerritoryId": 131,
+			"InteractionType": "CompleteQuest",
+			"AllowHighQuality":true
+		}
+		]
+	}
+	]
+}
