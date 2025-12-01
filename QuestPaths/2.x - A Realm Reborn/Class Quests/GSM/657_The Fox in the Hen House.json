@@ -1,175 +1,149 @@
 {
-	"$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-	"Author": "Gezah",
-	"Comment": "Crafted Item: 1x Electrum Circlet (Amber) HQ, 1x Electrum Circlet (Spinel) HQ, 1x Electrum Circlet (Zircon) HQ // Autocraft requires: 9x Electrum Ingot, 1x Amber, 1x Zircon, 1x Spinel",
-	"QuestSequence":
-	[
-	{
-		"Sequence": 0,
-		"Steps":
-		[
-		{
-			"DataId": 1004093,
-			"Position":
-			{
-				"X": -25.162231,
-				"Y": 12.199998,
-				"Z": 110.795654
-			},
-			"TerritoryId": 131,
-			"InteractionType": "AcceptQuest",
-			"AetheryteShortcut": "Ul'dah",
-			"AethernetShortcut":
-			[
-			"[Ul'dah] Aetheryte Plaza",
-			"[Ul'dah] Goldsmiths' Guild"
-			],
-			"SkipConditions":
-			{
-				"AetheryteShortcutIf":
-				{
-					"InTerritory":
-					[
-					130,
-					131
-					]
-				}
-			}
-		}
-		]
-	},
-	{
-		"Sequence": 1,
-		"Steps":
-		[
-		{
-			"InteractionType": "Craft",
-			"TerritoryId": 131,
-			"ItemId": 2872,
-			"ItemCount": 1,
-			"SkipConditions":
-			{
-				"StepIf":
-				{
-					"Item":
-					{
-						"NotInInventory": false
-					}
-				}
-			}
-		},
-		{
-			"InteractionType": "Craft",
-			"TerritoryId": 131,
-			"ItemId": 2876,
-			"ItemCount": 1,
-			"SkipConditions":
-			{
-				"StepIf":
-				{
-					"Item":
-					{
-						"NotInInventory": false
-					}
-				}
-			}
-		},
-		{
-			"InteractionType": "Craft",
-			"TerritoryId": 131,
-			"ItemId": 2878,
-			"ItemCount": 1,
-			"SkipConditions":
-			{
-				"StepIf":
-				{
-					"Item":
-					{
-						"NotInInventory": false
-					}
-				}
-			}
-		},
-		{
-			"DataId": 1004093,
-			"Position":
-			{
-				"X": -25.162231,
-				"Y": 12.199998,
-				"Z": 110.795654
-			},
-			"TerritoryId": 131,
-			"InteractionType": "Interact"
-		}
-		]
-	},
-	{
-		"Sequence": 2,
-		"Steps":
-		[
-		{
-			"DataId": 1004097,
-			"Position":
-			{
-				"X": -22.171448,
-				"Y": 14,
-				"Z": 73.28906
-			},
-			"TerritoryId": 131,
-			"InteractionType": "Interact"
-		}
-		]
-	},{
-		"Sequence": 3,
-		"Steps":
-		[
-		{
-			"DataId": 1004098,
-			"Position":
-			{
-				"X": -19.272217,
-				"Y": 9,
-				"Z": -89.15851
-			},
-			"TerritoryId": 130,
-			"InteractionType": "Interact",
-			"AethernetShortcut":
-			[
-			"[Ul'dah] Goldsmiths' Guild",
-			"[Ul'dah] Adventurers' Guild"
-			],
-			"DialogueChoices":
-			[
-			{
-				"Prompt": "TEXT_CLSGLD450_00657_Q1_000_000",
-				"Answer": "TEXT_CLSGLD450_00657_A1_000_001",
-				"Type": "List"
-			}
-			]
-		}
-		]
-	},
-	{
-		"Sequence": 255,
-		"Steps":
-		[
-		{
-			"DataId": 1004093,
-			"Position":
-			{
-				"X": -25.162231,
-				"Y": 12.199998,
-				"Z": 110.795654
-			},
-			"TerritoryId": 131,
-			"InteractionType": "CompleteQuest",
-			"AethernetShortcut":
-			[
-			"[Ul'dah] Adventurers' Guild",
-			"[Ul'dah] Goldsmiths' Guild"
-			]
-		}
-		]
-	}
-	]
+  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+  "Author": "Gezah",
+  "Comment": "Crafted Item:\n 1x Electrum Circlet (Amber) HQ,\n 1x Electrum Circlet (Spinel) HQ,\n 1x Electrum Circlet (Zircon) HQ\nAutocraft requires:\n 9x Electrum Ingot,\n 1x Amber,\n 1x Zircon,\n 1x Spinel",
+  "QuestSequence": [
+    {
+      "Sequence": 0,
+      "Steps": [
+        {
+          "DataId": 1004093,
+          "Position": {
+            "X": -25.162231,
+            "Y": 12.199998,
+            "Z": 110.795654
+          },
+          "TerritoryId": 131,
+          "InteractionType": "AcceptQuest",
+          "AetheryteShortcut": "Ul'dah",
+          "AethernetShortcut": [
+            "[Ul'dah] Aetheryte Plaza",
+            "[Ul'dah] Goldsmiths' Guild"
+          ],
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "InTerritory": [
+                130,
+                131
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Sequence": 1,
+      "Steps": [
+        {
+          "InteractionType": "Craft",
+          "TerritoryId": 131,
+          "ItemId": 2872,
+          "ItemCount": 1,
+          "SkipConditions": {
+            "StepIf": {
+              "Item": {
+                "NotInInventory": false
+              }
+            }
+          }
+        },
+        {
+          "InteractionType": "Craft",
+          "TerritoryId": 131,
+          "ItemId": 2876,
+          "ItemCount": 1,
+          "SkipConditions": {
+            "StepIf": {
+              "Item": {
+                "NotInInventory": false
+              }
+            }
+          }
+        },
+        {
+          "InteractionType": "Craft",
+          "TerritoryId": 131,
+          "ItemId": 2878,
+          "ItemCount": 1,
+          "SkipConditions": {
+            "StepIf": {
+              "Item": {
+                "NotInInventory": false
+              }
+            }
+          }
+        },
+        {
+          "DataId": 1004093,
+          "Position": {
+            "X": -25.162231,
+            "Y": 12.199998,
+            "Z": 110.795654
+          },
+          "TerritoryId": 131,
+          "InteractionType": "Interact"
+        }
+      ]
+    },
+    {
+      "Sequence": 2,
+      "Steps": [
+        {
+          "DataId": 1004097,
+          "Position": {
+            "X": -22.171448,
+            "Y": 14,
+            "Z": 73.28906
+          },
+          "TerritoryId": 131,
+          "InteractionType": "Interact"
+        }
+      ]
+    },
+    {
+      "Sequence": 3,
+      "Steps": [
+        {
+          "DataId": 1004098,
+          "Position": {
+            "X": -19.272217,
+            "Y": 9,
+            "Z": -89.15851
+          },
+          "TerritoryId": 130,
+          "InteractionType": "Interact",
+          "AethernetShortcut": [
+            "[Ul'dah] Goldsmiths' Guild",
+            "[Ul'dah] Adventurers' Guild"
+          ],
+          "DialogueChoices": [
+            {
+              "Prompt": "TEXT_CLSGLD450_00657_Q1_000_000",
+              "Answer": "TEXT_CLSGLD450_00657_A1_000_001",
+              "Type": "List"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Sequence": 255,
+      "Steps": [
+        {
+          "DataId": 1004093,
+          "Position": {
+            "X": -25.162231,
+            "Y": 12.199998,
+            "Z": 110.795654
+          },
+          "TerritoryId": 131,
+          "InteractionType": "CompleteQuest",
+          "AethernetShortcut": [
+            "[Ul'dah] Adventurers' Guild",
+            "[Ul'dah] Goldsmiths' Guild"
+          ]
+        }
+      ]
+    }
+  ]
 }

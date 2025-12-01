@@ -1,110 +1,93 @@
 {
-	"$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-	"Author": "Gezah",
-	"Comment": "Crafted Item: 1x Hard Leather Caligae, 1x Hard Leather Choker // Autocraft requires: 2x Hard Leather, 1x Bronze Rivets, 2x Beast Sinew",
-	"QuestSequence":
-	[
-	{
-		"Sequence": 0,
-		"Steps":
-		[
-		{
-			"DataId": 1000691,
-			"Position":
-			{
-				"X": 71.97681,
-				"Y": 8,
-				"Z": -166.52173
-			},
-			"TerritoryId": 133,
-			"InteractionType": "AcceptQuest",
-			"AetheryteShortcut": "Gridania",
-			"AethernetShortcut":
-			[
-			"[Gridania] Aetheryte Plaza",
-			"[Gridania] Leatherworkers' Guild & Shaded Bower"
-			],
-			"SkipConditions":
-			{
-				"AetheryteShortcutIf":
-				{
-					"InTerritory":
-					[
-					132,
-					133
-					]
-				}
-			}
-		}
-		]
-	},
-	{
-		"Sequence": 1,
-		"Steps":
-		[
-		{
-			"InteractionType": "Craft",
-			"TerritoryId": 133,
-			"ItemId": 3772,
-			"ItemCount": 1,
-			"SkipConditions":
-			{
-				"StepIf": 
-				{
-					"Item": 
-					{
-						"NotInInventory": false
-					}
-				}
-			}
-		},
-		{
-			"InteractionType": "Craft",
-			"TerritoryId": 133,
-			"ItemId": 4308,
-			"ItemCount": 1,
-			"SkipConditions":
-			{
-				"StepIf": 
-				{
-					"Item": 
-					{
-						"NotInInventory": false
-					}
-				}
-			}
-		},
-		{
-			"DataId": 1000691,
-			"Position":
-			{
-				"X": 71.97681,
-				"Y": 8,
-				"Z": -166.52173
-			},
-			"TerritoryId": 133,
-			"InteractionType": "Interact",
-			"AllowHighQuality":true
-		}
-		]
-	},
-	{
-		"Sequence": 255,
-		"Steps":
-		[
-		{
-			"DataId": 1000681,
-			"Position":
-			{
-				"X": 58.731934,
-				"Y": 7.9804688,
-				"Z": -138.5672
-			},
-			"TerritoryId": 133,
-			"InteractionType": "CompleteQuest",
-			"Emote": "kneel"
-		}
-		]
-	}
-	]
+  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+  "Author": "Gezah",
+  "Comment": "Crafted Item:\n 1x Hard Leather Caligae,\n 1x Hard Leather Choker\nAutocraft requires:\n 2x Hard Leather,\n 1x Bronze Rivets,\n 2x Beast Sinew",
+  "QuestSequence": [
+    {
+      "Sequence": 0,
+      "Steps": [
+        {
+          "DataId": 1000691,
+          "Position": {
+            "X": 71.97681,
+            "Y": 8,
+            "Z": -166.52173
+          },
+          "TerritoryId": 133,
+          "InteractionType": "AcceptQuest",
+          "AetheryteShortcut": "Gridania",
+          "AethernetShortcut": [
+            "[Gridania] Aetheryte Plaza",
+            "[Gridania] Leatherworkers' Guild & Shaded Bower"
+          ],
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "InTerritory": [
+                132,
+                133
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Sequence": 1,
+      "Steps": [
+        {
+          "InteractionType": "Craft",
+          "TerritoryId": 133,
+          "ItemId": 3772,
+          "ItemCount": 1,
+          "SkipConditions": {
+            "StepIf": {
+              "Item": {
+                "NotInInventory": false
+              }
+            }
+          }
+        },
+        {
+          "InteractionType": "Craft",
+          "TerritoryId": 133,
+          "ItemId": 4308,
+          "ItemCount": 1,
+          "SkipConditions": {
+            "StepIf": {
+              "Item": {
+                "NotInInventory": false
+              }
+            }
+          }
+        },
+        {
+          "DataId": 1000691,
+          "Position": {
+            "X": 71.97681,
+            "Y": 8,
+            "Z": -166.52173
+          },
+          "TerritoryId": 133,
+          "InteractionType": "Interact",
+          "AllowHighQuality": true
+        }
+      ]
+    },
+    {
+      "Sequence": 255,
+      "Steps": [
+        {
+          "DataId": 1000681,
+          "Position": {
+            "X": 58.731934,
+            "Y": 7.9804688,
+            "Z": -138.5672
+          },
+          "TerritoryId": 133,
+          "InteractionType": "CompleteQuest",
+          "Emote": "kneel"
+        }
+      ]
+    }
+  ]
 }

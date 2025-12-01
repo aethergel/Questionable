@@ -1,120 +1,103 @@
 {
-	"$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-	"Author": "Gezah",
-	"Comment": "Crafted Item: 1x Undyed Velveteen HQ // Autocraft requires: 1x Cotton Yarn, 1x Dew Thread",
-	"QuestSequence":
-	[
-	{
-		"Sequence": 0,
-		"Steps":
-		[
-		{
-			"DataId": 1003818,
-			"Position":
-			{
-				"X": 157.36621,
-				"Y": 7.7920074,
-				"Z": 98.924194
-			},
-			"TerritoryId": 131,
-			"InteractionType": "AcceptQuest",
-			"AetheryteShortcut": "Ul'dah",
-			"AethernetShortcut":
-			[
-			"[Ul'dah] Aetheryte Plaza",
-			"[Ul'dah] Weavers' Guild"
-			],
-			"SkipConditions":
-			{
-				"AetheryteShortcutIf":
-				{
-					"InTerritory":
-					[
-					130,
-					131
-					]
-				}
-			}
-		}
-		]
-	},
-	{
-		"Sequence": 1,
-		"Steps":
-		[
-		{
-			"DataId": 1003823,
-			"Position":
-			{
-				"X": -1.236023,
-				"Y": 14.999997,
-				"Z": 6.8512573
-			},
-			"TerritoryId": 131,
-			"InteractionType": "Interact"
-		},
-		{
-			"DataId": 1003821,
-			"Position":
-			{
-				"X": -0.6256714,
-				"Y": 15.000004,
-				"Z": 6.454529
-			},
-			"TerritoryId": 131,
-			"InteractionType": "Interact"
-		}
-		]
-	},
-	{
-		"Sequence": 2,
-		"Steps":
-		[
-		{
-			"DataId": 1003818,
-			"Position":
-			{
-				"X": 157.36621,
-				"Y": 7.7920074,
-				"Z": 98.924194
-			},
-			"TerritoryId": 131,
-			"InteractionType": "Interact"
-		}
-		]
-	},
-	{
-		"Sequence": 255,
-		"Steps":
-		[
-		{
-			"InteractionType": "Craft",
-			"TerritoryId": 131,
-			"ItemId": 5326,
-			"ItemCount": 1,
-			"SkipConditions":
-			{
-				"StepIf": 
-				{
-					"Item": 
-					{
-						"NotInInventory": false
-					}
-				}
-			}
-		},
-		{
-			"DataId": 1003818,
-			"Position":
-			{
-				"X": 157.36621,
-				"Y": 7.7920074,
-				"Z": 98.924194
-			},
-			"TerritoryId": 131,
-			"InteractionType": "CompleteQuest"
-		}
-		]
-	}
-	]
+  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+  "Author": "Gezah",
+  "Comment": "Crafted Item:\n 1x Undyed Velveteen HQ\nAutocraft requires:\n 1x Cotton Yarn,\n 1x Dew Thread",
+  "QuestSequence": [
+    {
+      "Sequence": 0,
+      "Steps": [
+        {
+          "DataId": 1003818,
+          "Position": {
+            "X": 157.36621,
+            "Y": 7.7920074,
+            "Z": 98.924194
+          },
+          "TerritoryId": 131,
+          "InteractionType": "AcceptQuest",
+          "AetheryteShortcut": "Ul'dah",
+          "AethernetShortcut": [
+            "[Ul'dah] Aetheryte Plaza",
+            "[Ul'dah] Weavers' Guild"
+          ],
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "InTerritory": [
+                130,
+                131
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Sequence": 1,
+      "Steps": [
+        {
+          "DataId": 1003823,
+          "Position": {
+            "X": -1.236023,
+            "Y": 14.999997,
+            "Z": 6.8512573
+          },
+          "TerritoryId": 131,
+          "InteractionType": "Interact"
+        },
+        {
+          "DataId": 1003821,
+          "Position": {
+            "X": -0.6256714,
+            "Y": 15.000004,
+            "Z": 6.454529
+          },
+          "TerritoryId": 131,
+          "InteractionType": "Interact"
+        }
+      ]
+    },
+    {
+      "Sequence": 2,
+      "Steps": [
+        {
+          "DataId": 1003818,
+          "Position": {
+            "X": 157.36621,
+            "Y": 7.7920074,
+            "Z": 98.924194
+          },
+          "TerritoryId": 131,
+          "InteractionType": "Interact"
+        }
+      ]
+    },
+    {
+      "Sequence": 255,
+      "Steps": [
+        {
+          "InteractionType": "Craft",
+          "TerritoryId": 131,
+          "ItemId": 5326,
+          "ItemCount": 1,
+          "SkipConditions": {
+            "StepIf": {
+              "Item": {
+                "NotInInventory": false
+              }
+            }
+          }
+        },
+        {
+          "DataId": 1003818,
+          "Position": {
+            "X": 157.36621,
+            "Y": 7.7920074,
+            "Z": 98.924194
+          },
+          "TerritoryId": 131,
+          "InteractionType": "CompleteQuest"
+        }
+      ]
+    }
+  ]
 }

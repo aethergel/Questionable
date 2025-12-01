@@ -1,163 +1,139 @@
 {
-	"$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-	"Author": "Gezah",
-	"Comment": "Crafted Item: 1x Toadskin Jacket HQ // Autocraft requires: 2x Toad Leather, 1x Aldgoat Leather, 1x Diremite Sinew",
-	"QuestSequence":
-	[
-	{
-		"Sequence": 0,
-		"Steps":
-		[
-		{
-			"DataId": 1000691,
-			"Position":
-			{
-				"X": 71.97681,
-				"Y": 8,
-				"Z": -166.52173
-			},
-			"TerritoryId": 133,
-			"InteractionType": "AcceptQuest",
-			"AetheryteShortcut": "Gridania",
-			"AethernetShortcut":
-			[
-			"[Gridania] Aetheryte Plaza",
-			"[Gridania] Leatherworkers' Guild & Shaded Bower"
-			],
-			"SkipConditions":
-			{
-				"AetheryteShortcutIf":
-				{
-					"InTerritory":
-					[
-					132,
-					133
-					]
-				}
-			}
-		}
-		]
-	},
-	{
-		"Sequence": 1,
-		"Steps":
-		[
-		{
-			"DataId": 1000170,
-			"Position":
-			{
-				"X": 72.098755,
-				"Y": 13.980126,
-				"Z": -254.99353
-			},
-			"TerritoryId": 133,
-			"InteractionType": "Interact",
-			"AethernetShortcut":
-			[
-			"[Gridania] Leatherworkers' Guild & Shaded Bower",
-			"[Gridania] Lancers' Guild"
-			]
-		}
-		]
-	},
-	{
-		"Sequence": 2,
-		"Steps":
-		[
-		{
-			"DataId": 1000691,
-			"Position":
-			{
-				"X": 71.97681,
-				"Y": 8,
-				"Z": -166.52173
-			},
-			"TerritoryId": 133,
-			"InteractionType": "Interact",
-			"AethernetShortcut":
-			[
-			"[Gridania] Lancers' Guild",
-			"[Gridania] Leatherworkers' Guild & Shaded Bower"
-			]
-		}
-		]
-	},
-	{
-		"Sequence": 3,
-		"Steps":
-		[
-		{
-			"InteractionType": "Craft",
-			"TerritoryId": 133,
-			"ItemId": 3100,
-			"ItemCount": 1,
-			"SkipConditions":
-			{
-				"StepIf": 
-				{
-					"Item": 
-					{
-						"NotInInventory": false
-					}
-				}
-			}
-		},
-		{
-			"DataId": 1000691,
-			"Position":
-			{
-				"X": 71.97681,
-				"Y": 8,
-				"Z": -166.52173
-			},
-			"TerritoryId": 133,
-			"InteractionType": "Interact"
-		}
-		]
-	},
-	{
-		"Sequence": 4,
-		"Steps":
-		[
-		{
-			"DataId": 1000170,
-			"Position":
-			{
-				"X": 72.098755,
-				"Y": 13.980126,
-				"Z": -254.99353
-			},
-			"TerritoryId": 133,
-			"InteractionType": "Interact",
-			"AethernetShortcut":
-			[
-			"[Gridania] Leatherworkers' Guild & Shaded Bower",
-			"[Gridania] Lancers' Guild"
-			]
-		}
-		]
-	},
-	{
-		"Sequence": 255,
-		"Steps":
-		[
-		{
-			"DataId": 1000691,
-			"Position":
-			{
-				"X": 71.97681,
-				"Y": 8,
-				"Z": -166.52173
-			},
-			"TerritoryId": 133,
-			"InteractionType": "CompleteQuest",
-			"AethernetShortcut":
-			[
-			"[Gridania] Lancers' Guild",
-			"[Gridania] Leatherworkers' Guild & Shaded Bower"
-			]
-		}
-		]
-	}
-	]
+  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+  "Author": "Gezah",
+  "Comment": "Crafted Item:\n 1x Toadskin Jacket HQ\nAutocraft requires:\n 2x Toad Leather,\n 1x Aldgoat Leather,\n 1x Diremite Sinew",
+  "QuestSequence": [
+    {
+      "Sequence": 0,
+      "Steps": [
+        {
+          "DataId": 1000691,
+          "Position": {
+            "X": 71.97681,
+            "Y": 8,
+            "Z": -166.52173
+          },
+          "TerritoryId": 133,
+          "InteractionType": "AcceptQuest",
+          "AetheryteShortcut": "Gridania",
+          "AethernetShortcut": [
+            "[Gridania] Aetheryte Plaza",
+            "[Gridania] Leatherworkers' Guild & Shaded Bower"
+          ],
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "InTerritory": [
+                132,
+                133
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Sequence": 1,
+      "Steps": [
+        {
+          "DataId": 1000170,
+          "Position": {
+            "X": 72.098755,
+            "Y": 13.980126,
+            "Z": -254.99353
+          },
+          "TerritoryId": 133,
+          "InteractionType": "Interact",
+          "AethernetShortcut": [
+            "[Gridania] Leatherworkers' Guild & Shaded Bower",
+            "[Gridania] Lancers' Guild"
+          ]
+        }
+      ]
+    },
+    {
+      "Sequence": 2,
+      "Steps": [
+        {
+          "DataId": 1000691,
+          "Position": {
+            "X": 71.97681,
+            "Y": 8,
+            "Z": -166.52173
+          },
+          "TerritoryId": 133,
+          "InteractionType": "Interact",
+          "AethernetShortcut": [
+            "[Gridania] Lancers' Guild",
+            "[Gridania] Leatherworkers' Guild & Shaded Bower"
+          ]
+        }
+      ]
+    },
+    {
+      "Sequence": 3,
+      "Steps": [
+        {
+          "InteractionType": "Craft",
+          "TerritoryId": 133,
+          "ItemId": 3100,
+          "ItemCount": 1,
+          "SkipConditions": {
+            "StepIf": {
+              "Item": {
+                "NotInInventory": false
+              }
+            }
+          }
+        },
+        {
+          "DataId": 1000691,
+          "Position": {
+            "X": 71.97681,
+            "Y": 8,
+            "Z": -166.52173
+          },
+          "TerritoryId": 133,
+          "InteractionType": "Interact"
+        }
+      ]
+    },
+    {
+      "Sequence": 4,
+      "Steps": [
+        {
+          "DataId": 1000170,
+          "Position": {
+            "X": 72.098755,
+            "Y": 13.980126,
+            "Z": -254.99353
+          },
+          "TerritoryId": 133,
+          "InteractionType": "Interact",
+          "AethernetShortcut": [
+            "[Gridania] Leatherworkers' Guild & Shaded Bower",
+            "[Gridania] Lancers' Guild"
+          ]
+        }
+      ]
+    },
+    {
+      "Sequence": 255,
+      "Steps": [
+        {
+          "DataId": 1000691,
+          "Position": {
+            "X": 71.97681,
+            "Y": 8,
+            "Z": -166.52173
+          },
+          "TerritoryId": 133,
+          "InteractionType": "CompleteQuest",
+          "AethernetShortcut": [
+            "[Gridania] Lancers' Guild",
+            "[Gridania] Leatherworkers' Guild & Shaded Bower"
+          ]
+        }
+      ]
+    }
+  ]
 }

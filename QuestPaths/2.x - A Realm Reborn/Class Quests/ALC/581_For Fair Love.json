@@ -1,138 +1,117 @@
 {
-	"$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-	"Author": "Gezah",
-	"Comment": "Crafted Item: 1x Potion of Intelligence, 1x Potion of Dexterity // Autocraft requires: 2x Rock Salt, 1x Beastkin Blood, 1x Red Landtrap Leaf, 1x Bat Fang",
-	"QuestSequence":
-	[
-	{
-		"Sequence": 0,
-		"Steps":
-		[
-		{
-			"DataId": 1002299,
-			"Position":
-			{
-				"X": -98.8938,
-				"Y": 40.200146,
-				"Z": 120.83618
-			},
-			"TerritoryId": 131,
-			"InteractionType": "AcceptQuest",
-			"AetheryteShortcut": "Ul'dah",
-			"AethernetShortcut":
-			[
-			"[Ul'dah] Aetheryte Plaza",
-			"[Ul'dah] Alchemists' Guild"
-			],
-			"SkipConditions":
-			{
-				"AetheryteShortcutIf":
-				{
-					"InTerritory":
-					[
-					130,
-					131
-					]
-				}
-			}
-		}
-		]
-	},
-	{
-		"Sequence": 1,
-		"Steps":
-		[
-		{
-			"InteractionType": "Craft",
-			"TerritoryId": 419,
-			"ItemId": 4597,
-			"ItemCount": 1,
-			"SkipConditions":
-			{
-				"StepIf": 
-				{
-					"Item": 
-					{
-						"NotInInventory": false
-					}
-				}
-			}
-		},
-		{
-			"InteractionType": "Craft",
-			"TerritoryId": 419,
-			"ItemId": 4595,
-			"ItemCount": 1,
-			"SkipConditions":
-			{
-				"StepIf": 
-				{
-					"Item": 
-					{
-						"NotInInventory": false
-					}
-				}
-			}
-		},
-		{
-			"DataId": 1002299,
-			"Position":
-			{
-				"X": -98.8938,
-				"Y": 40.200146,
-				"Z": 120.83618
-			},
-			"TerritoryId": 131,
-			"InteractionType": "Interact",
-			"AllowHighQuality":true
-		}
-		]
-	},
-	{
-		"Sequence": 2,
-		"Steps":
-		[
-		{
-			"DataId": 1003926,
-			"Position":
-			{
-				"X": -80.1557,
-				"Y": 7.014179,
-				"Z": -5.142395
-			},
-			"TerritoryId": 131,
-			"InteractionType": "Interact",
-			"AllowHighQuality":true,
-			"AethernetShortcut":
-			[
-			"[Ul'dah] Alchemists' Guild",
-			"[Ul'dah] Gladiators' Guild"
-			]
-		}
-		]
-	},
-	{
-		"Sequence": 255,
-		"Steps":
-		[			
-		{
-			"DataId": 1002299,
-			"Position":
-			{
-				"X": -98.8938,
-				"Y": 40.200146,
-				"Z": 120.83618
-			},
-			"TerritoryId": 131,
-			"InteractionType": "CompleteQuest",
-			"AllowHighQuality":true,
-			"AethernetShortcut":
-			[
-			"[Ul'dah] Gladiators' Guild",
-			"[Ul'dah] Alchemists' Guild"
-			]
-		}
-		]
-	}
-	]
+  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+  "Author": "Gezah",
+  "Comment": "Crafted Item:\n 1x Potion of Intelligence,\n 1x Potion of Dexterity\nAutocraft requires:\n 2x Rock Salt,\n 1x Beastkin Blood,\n 1x Red Landtrap Leaf,\n 1x Bat Fang",
+  "QuestSequence": [
+    {
+      "Sequence": 0,
+      "Steps": [
+        {
+          "DataId": 1002299,
+          "Position": {
+            "X": -98.8938,
+            "Y": 40.200146,
+            "Z": 120.83618
+          },
+          "TerritoryId": 131,
+          "InteractionType": "AcceptQuest",
+          "AetheryteShortcut": "Ul'dah",
+          "AethernetShortcut": [
+            "[Ul'dah] Aetheryte Plaza",
+            "[Ul'dah] Alchemists' Guild"
+          ],
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "InTerritory": [
+                130,
+                131
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Sequence": 1,
+      "Steps": [
+        {
+          "InteractionType": "Craft",
+          "TerritoryId": 419,
+          "ItemId": 4597,
+          "ItemCount": 1,
+          "SkipConditions": {
+            "StepIf": {
+              "Item": {
+                "NotInInventory": false
+              }
+            }
+          }
+        },
+        {
+          "InteractionType": "Craft",
+          "TerritoryId": 419,
+          "ItemId": 4595,
+          "ItemCount": 1,
+          "SkipConditions": {
+            "StepIf": {
+              "Item": {
+                "NotInInventory": false
+              }
+            }
+          }
+        },
+        {
+          "DataId": 1002299,
+          "Position": {
+            "X": -98.8938,
+            "Y": 40.200146,
+            "Z": 120.83618
+          },
+          "TerritoryId": 131,
+          "InteractionType": "Interact",
+          "AllowHighQuality": true
+        }
+      ]
+    },
+    {
+      "Sequence": 2,
+      "Steps": [
+        {
+          "DataId": 1003926,
+          "Position": {
+            "X": -80.1557,
+            "Y": 7.014179,
+            "Z": -5.142395
+          },
+          "TerritoryId": 131,
+          "InteractionType": "Interact",
+          "AllowHighQuality": true,
+          "AethernetShortcut": [
+            "[Ul'dah] Alchemists' Guild",
+            "[Ul'dah] Gladiators' Guild"
+          ]
+        }
+      ]
+    },
+    {
+      "Sequence": 255,
+      "Steps": [
+        {
+          "DataId": 1002299,
+          "Position": {
+            "X": -98.8938,
+            "Y": 40.200146,
+            "Z": 120.83618
+          },
+          "TerritoryId": 131,
+          "InteractionType": "CompleteQuest",
+          "AllowHighQuality": true,
+          "AethernetShortcut": [
+            "[Ul'dah] Gladiators' Guild",
+            "[Ul'dah] Alchemists' Guild"
+          ]
+        }
+      ]
+    }
+  ]
 }

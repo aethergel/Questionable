@@ -1,149 +1,127 @@
 {
-	"$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-	"Author": "Gezah",
-	"Comment": "Crafted Item: 1x Feathered Harpoon, 1x Ash Shortbow // Autocraft requires: 2x Ash Lumber, 1x Crow Feather, 1x Soiled Femur, 1x Animal Glue, 1x Ash Branch, 1x Hempen Yarn",
-	"QuestSequence":
-	[
-	{
-		"Sequence": 0,
-		"Steps":
-		[
-		{
-			"DataId": 1000153,
-			"Position":
-			{
-				"X": -44.87683,
-				"Y": -1.2500024,
-				"Z": 56.839844
-			},
-			"TerritoryId": 132,
-			"InteractionType": "AcceptQuest",
-			"AetheryteShortcut": "Gridania",
-			"SkipConditions":
-			{
-				"AetheryteShortcutIf":
-				{
-					"InSameTerritory": true,
-					"InTerritory":
-					[
-					132
-					]
-				}
-			}
-		}
-		]
-	},
-	{
-		"Sequence": 1,
-		"Steps":
-		[
-		{
-			"DataId": 1000149,
-			"Position":
-			{
-				"X": -9.720032,
-				"Y": -3.25,
-				"Z": 52.475708
-			},
-			"TerritoryId": 132,
-			"InteractionType": "Interact"
-		}
-		]
-	},
-	{
-		"Sequence": 2,
-		"Steps":
-		[
-		{
-			"InteractionType": "Craft",
-			"TerritoryId": 132,
-			"ItemId": 1895,
-			"ItemCount": 1,
-			"SkipConditions":
-			{
-				"StepIf": 
-				{
-					"Item": 
-					{
-						"NotInInventory": false
-					}
-				}
-			}
-		},
-		{
-			"InteractionType": "Craft",
-			"TerritoryId": 132,
-			"ItemId": 1823,
-			"ItemCount": 1,
-			"SkipConditions":
-			{
-				"StepIf": 
-				{
-					"Item": 
-					{
-						"NotInInventory": false
-					}
-				}
-			}
-		},
-		{
-			"DataId": 1000200,
-			"Position":
-			{
-				"X": 209.55212,
-				"Y": 0.9999819,
-				"Z": 35.01941
-			},
-			"TerritoryId": 132,
-			"InteractionType": "Interact",
-			"AllowHighQuality":true,
-			"AethernetShortcut":
-			[
-			"[Gridania] Aetheryte Plaza",
-			"[Gridania] Archers' Guild"
-			]
-		},
-		{
-			"DataId": 1000254,
-			"Position":
-			{
-				"X": 157.7019,
-				"Y": 15.900381,
-				"Z": -270.34418
-			},
-			"TerritoryId": 133,
-			"InteractionType": "Interact",
-			"AllowHighQuality":true,
-			"AethernetShortcut":
-			[
-			"[Gridania] Archers' Guild",
-			"[Gridania] Lancers' Guild"
-			]
-		}
-		]
-	},	
-	{
-		"Sequence": 255,
-		"Steps":
-		[
-		{
-			"DataId": 1000153,
-			"Position":
-			{
-				"X": -44.87683,
-				"Y": -1.2500024,
-				"Z": 56.839844
-			},
-			"TerritoryId": 132,
-			"InteractionType": "CompleteQuest",
-			"AllowHighQuality":true,
-			"AethernetShortcut":
-			[
-			"[Gridania] Lancers' Guild",
-			"[Gridania] Aetheryte Plaza"
-			]
-			}
-		]
-	}
-	]
+  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+  "Author": "Gezah",
+  "Comment": "Crafted Item:\n 1x Feathered Harpoon,\n 1x Ash Shortbow\nAutocraft requires:\n 2x Ash Lumber,\n 1x Crow Feather,\n 1x Soiled Femur,\n 1x Animal Glue,\n 1x Ash Branch,\n 1x Hempen Yarn",
+  "QuestSequence": [
+    {
+      "Sequence": 0,
+      "Steps": [
+        {
+          "DataId": 1000153,
+          "Position": {
+            "X": -44.87683,
+            "Y": -1.2500024,
+            "Z": 56.839844
+          },
+          "TerritoryId": 132,
+          "InteractionType": "AcceptQuest",
+          "AetheryteShortcut": "Gridania",
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "InSameTerritory": true,
+              "InTerritory": [
+                132
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Sequence": 1,
+      "Steps": [
+        {
+          "DataId": 1000149,
+          "Position": {
+            "X": -9.720032,
+            "Y": -3.25,
+            "Z": 52.475708
+          },
+          "TerritoryId": 132,
+          "InteractionType": "Interact"
+        }
+      ]
+    },
+    {
+      "Sequence": 2,
+      "Steps": [
+        {
+          "InteractionType": "Craft",
+          "TerritoryId": 132,
+          "ItemId": 1895,
+          "ItemCount": 1,
+          "SkipConditions": {
+            "StepIf": {
+              "Item": {
+                "NotInInventory": false
+              }
+            }
+          }
+        },
+        {
+          "InteractionType": "Craft",
+          "TerritoryId": 132,
+          "ItemId": 1823,
+          "ItemCount": 1,
+          "SkipConditions": {
+            "StepIf": {
+              "Item": {
+                "NotInInventory": false
+              }
+            }
+          }
+        },
+        {
+          "DataId": 1000200,
+          "Position": {
+            "X": 209.55212,
+            "Y": 0.9999819,
+            "Z": 35.01941
+          },
+          "TerritoryId": 132,
+          "InteractionType": "Interact",
+          "AllowHighQuality": true,
+          "AethernetShortcut": [
+            "[Gridania] Aetheryte Plaza",
+            "[Gridania] Archers' Guild"
+          ]
+        },
+        {
+          "DataId": 1000254,
+          "Position": {
+            "X": 157.7019,
+            "Y": 15.900381,
+            "Z": -270.34418
+          },
+          "TerritoryId": 133,
+          "InteractionType": "Interact",
+          "AllowHighQuality": true,
+          "AethernetShortcut": [
+            "[Gridania] Archers' Guild",
+            "[Gridania] Lancers' Guild"
+          ]
+        }
+      ]
+    },
+    {
+      "Sequence": 255,
+      "Steps": [
+        {
+          "DataId": 1000153,
+          "Position": {
+            "X": -44.87683,
+            "Y": -1.2500024,
+            "Z": 56.839844
+          },
+          "TerritoryId": 132,
+          "InteractionType": "CompleteQuest",
+          "AllowHighQuality": true,
+          "AethernetShortcut": [
+            "[Gridania] Lancers' Guild",
+            "[Gridania] Aetheryte Plaza"
+          ]
+        }
+      ]
+    }
+  ]
 }

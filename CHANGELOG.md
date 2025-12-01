@@ -1,2 +1,1 @@
-- diadem gathering paths by alydev
-- ARR gathering paths improved by Ice
+- Crafting quests by Gezeh
