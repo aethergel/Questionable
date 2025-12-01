@@ -1,0 +1,75 @@
+{
+	"$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+	"Author": "Gezah",
+	"Comment": "Crafted Item: 1x Wrapped Crowsbeak Hammer HQ // Autocraft requires: 1x Steel Crowsbeak Hammer, 2x Steel Ingot, 1x Oak Lumber, 1x Iron Ingot",
+	"QuestSequence":
+	[
+	{
+		"Sequence": 0,
+		"Steps":
+		[
+		{
+			"DataId": 1000997,
+			"Position":
+			{
+				"X": -31.265808,
+				"Y": 44.5,
+				"Z": 185.53442
+			},
+			"TerritoryId": 128,
+			"InteractionType": "AcceptQuest",
+			"AetheryteShortcut": "Limsa Lominsa",
+			"AethernetShortcut":
+			[
+			"[Limsa Lominsa] Aetheryte Plaza",
+			"[Limsa Lominsa] The Aftcastle"
+			],
+			"SkipConditions":
+			{
+				"AetheryteShortcutIf":
+				{
+					"InTerritory":
+					[
+					129,
+					128
+					]
+				}
+			}
+		}
+		]
+	},
+	{
+		"Sequence": 255,
+		"Steps":
+		[
+		{
+			"InteractionType": "Craft",
+			"TerritoryId": 155,
+			"ItemId": 2350,
+			"ItemCount": 1,
+			"SkipConditions":
+			{
+				"StepIf":
+				{
+					"Item":
+					{
+						"NotInInventory": false
+					}
+				}
+			}
+		},
+		{
+			"DataId": 1000997,
+			"Position":
+			{
+				"X": -31.265808,
+				"Y": 44.5,
+				"Z": 185.53442
+			},
+			"TerritoryId": 128,
+			"InteractionType": "CompleteQuest"
+		}
+		]
+	}
+	]
+}

@@ -1,0 +1,76 @@
+{
+	"$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+	"Author": "Gezah",
+	"Comment": "Crafted Item: 3x Bronze Cross-pein Hammer // Autocraft requires: 3x Bronze Ingot, 3x Undyed Hempen Cloth, 3x Maple Lumber",
+	"QuestSequence":
+	[
+	{
+		"Sequence": 0,
+		"Steps":
+		[
+		{
+			"DataId": 1000997,
+			"Position":
+			{
+				"X": -31.265808,
+				"Y": 44.5,
+				"Z": 185.53442
+			},
+			"TerritoryId": 128,
+			"InteractionType": "AcceptQuest",
+			"AetheryteShortcut": "Limsa Lominsa",
+			"AethernetShortcut":
+			[
+			"[Limsa Lominsa] Aetheryte Plaza",
+			"[Limsa Lominsa] The Aftcastle"
+			],
+			"SkipConditions":
+			{
+				"AetheryteShortcutIf":
+				{
+					"InTerritory":
+					[
+					129,
+					128
+					]
+				}
+			}
+		}
+		]
+	},
+	{
+		"Sequence": 255,
+		"Steps":
+		[
+		{
+			"InteractionType": "Craft",
+			"TerritoryId": 128,
+			"ItemId": 2341,
+			"ItemCount": 3,
+			"SkipConditions":
+			{
+				"StepIf":
+				{
+					"Item":
+					{
+						"NotInInventory": false
+					}
+				}
+			}
+		},
+		{
+			"DataId": 1000997,
+			"Position":
+			{
+				"X": -31.265808,
+				"Y": 44.5,
+				"Z": 185.53442
+			},
+			"TerritoryId": 128,
+			"InteractionType": "CompleteQuest",
+			"AllowHighQuality":true
+		}
+		]
+	}
+	]
+}
