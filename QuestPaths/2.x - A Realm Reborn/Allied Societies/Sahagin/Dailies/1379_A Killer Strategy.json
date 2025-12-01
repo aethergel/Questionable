@@ -24,15 +24,28 @@
       "Sequence": 255,
       "Steps": [
         {
+          "DataId": 2147,
           "Position": {
             "X": -143.67775,
             "Y": -32.78761,
             "Z": -122.891304
           },
           "TerritoryId": 138,
-          "InteractionType": "WaitForManualProgress",
+          "InteractionType": "Combat",
+          "EnemySpawnType": "FateEnemies",
+          "KillEnemyDataIds": [
+            2147
+          ],
+          "ItemId": 7798,
           "Fly": true,
-          "Comment": "Do the FATE"
+          "Comment": "Do the FATE, or click Skip if you have the item",
+          "SkipConditions": {
+            "StepIf": {
+              "Item": {
+                "NotInInventory": false
+              }
+            }
+          }
         },
         {
           "DataId": 1005938,

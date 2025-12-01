@@ -1,0 +1,132 @@
+{
+  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+  "Author": "alydev",
+  "QuestSequence": [
+    {
+      "Sequence": 0,
+      "Steps": [
+        {
+          "DataId": 1005938,
+          "Position": {
+            "X": -220.7218,
+            "Y": -40.720844,
+            "Z": 37.247192
+          },
+          "TerritoryId": 138,
+          "InteractionType": "AcceptQuest",
+          "AetheryteShortcut": "Western La Noscea - Aleport",
+          "Fly": true
+        }
+      ]
+    },
+    {
+      "Sequence": 1,
+      "Steps": [
+        {
+          "DataId": 1005946,
+          "Position": {
+            "X": -239.27673,
+            "Y": -42.130188,
+            "Z": 15.213196
+          },
+          "TerritoryId": 138,
+          "InteractionType": "Interact",
+          "DialogueChoices": [
+            {
+              "Type": "YesNo",
+              "Prompt": "TEXT_BANSAH106_01384_Q1_000_000",
+              "Yes": true
+            }
+          ]
+        },
+        {
+          "DataId": 383,
+          "Position": {
+            "X": -805.9968,
+            "Y": -40.921333,
+            "Z": 661.21924
+          },
+          "TerritoryId": 138,
+          "InteractionType": "Combat",
+          "EnemySpawnType": "OverworldEnemies",
+          "KillEnemyDataIds": [
+            383
+          ]
+        }
+      ]
+    },
+    {
+      "Sequence": 2,
+      "Steps": [
+        {
+          "DataId": 2003840,
+          "Position": {
+            "X": -770.56537,
+            "Y": -38.223938,
+            "Z": 651.4227
+          },
+          "TerritoryId": 138,
+          "InteractionType": "Combat",
+          "EnemySpawnType": "AfterItemUse",
+          "ItemId": 2001267,
+          "KillEnemyDataIds": [
+            2842
+          ],
+          "CompletionQuestVariablesFlags": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "High": 8
+            }
+          ]
+        },
+        {
+          "DataId": 2003841,
+          "Position": {
+            "X": -765.2247,
+            "Y": -38.132385,
+            "Z": 658.1062
+          },
+          "TerritoryId": 138,
+          "InteractionType": "Combat",
+          "EnemySpawnType": "AfterItemUse",
+          "ItemId": 2001267,
+          "KillEnemyDataIds": [
+            2842
+          ]
+        }
+      ]
+    },
+    {
+      "Sequence": 255,
+      "Steps": [
+        {
+          "DataId": 1008802,
+          "Position": {
+            "X": -814.84705,
+            "Y": -42.154568,
+            "Z": 694.3312
+          },
+          "TerritoryId": 138,
+          "InteractionType": "Interact",
+          "TargetTerritoryId": 138
+        },
+        {
+          "DataId": 1005938,
+          "Position": {
+            "X": -220.7218,
+            "Y": -40.720844,
+            "Z": 37.247192
+          },
+          "TerritoryId": 138,
+          "InteractionType": "CompleteQuest",
+          "AetheryteShortcut": "Western La Noscea - Aleport",
+          "Fly": true
+        }
+      ]
+    }
+  ]
+}
