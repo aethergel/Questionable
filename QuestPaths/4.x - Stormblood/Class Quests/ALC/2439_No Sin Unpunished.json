@@ -1,0 +1,190 @@
+{
+	"$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+	"Author": "Gezah",
+	"QuestSequence":
+	[
+	{
+		"Sequence": 0,
+		"Steps":
+		[
+		{
+			"DataId": 1020098,
+			"Position":
+			{
+				"X": -157.5495,
+				"Y": 14.048001,
+				"Z": 58.64038
+			},
+			"TerritoryId": 130,
+			"InteractionType": "AcceptQuest",
+			"AetheryteShortcut": "Ul'dah",
+			"AethernetShortcut":
+			[
+			"[Ul'dah] Aetheryte Plaza",
+			"[Ul'dah] Thaumaturges' Guild"
+			],
+			"SkipConditions":
+			{
+				"AetheryteShortcutIf":
+				{
+					"InTerritory":
+					[
+					130
+					]
+				}
+			}
+		}
+		]
+	},
+	{
+		"Sequence": 1,
+		"Steps":
+		[			
+		{
+			"DataId": 1020098,
+			"Position":
+			{
+				"X": -157.5495,
+				"Y": 14.048001,
+				"Z": 58.64038
+			},
+			"TerritoryId": 130,
+			"InteractionType": "Interact"
+		}
+		]
+	},
+	{
+		"Sequence": 2,
+		"Steps":
+		[			
+		{
+			"DataId": 1012528,
+			"Position":
+			{
+				"X": -57.41974,
+				"Y": 18.504038,
+				"Z": 66.544556
+			},
+			"TerritoryId": 131,
+			"InteractionType": "Interact",
+			"AethernetShortcut":
+			[
+			"[Ul'dah] Thaumaturges' Guild",
+			"[Ul'dah] Goldsmiths' Guild"
+			]
+		}
+		]
+	},
+	{
+		"Sequence": 3,
+		"Steps":
+		[			
+		{
+			"DataId": 1020100,
+			"Position":
+			{
+				"X": -80.79657,
+				"Y": 40,
+				"Z": 101.27405
+			},
+			"TerritoryId": 131,
+			"InteractionType": "Interact",
+			"AethernetShortcut":
+			[
+			"[Ul'dah] Goldsmiths' Guild",
+			"[Ul'dah] Alchemists' Guild"
+			]
+		}
+		]
+	},
+	{
+		"Sequence": 4,
+		"Steps":
+		[			
+		{
+			"DataId": 1002299,
+			"Position":
+			{
+				"X": -98.8938,
+				"Y": 40.200146,
+				"Z": 120.83618
+			},
+			"TerritoryId": 131,
+			"InteractionType": "Interact"
+		}
+		]
+	},
+	{
+		"Sequence": 5,
+		"Steps":
+		[
+		{
+			"InteractionType": "Craft",
+			"TerritoryId": 131,
+			"ItemId": 17930,
+			"ItemCount": 1,
+			"SkipConditions":
+			{
+				"StepIf": 
+				{
+					"Item": 
+					{
+						"NotInInventory": false
+					}
+				}
+			}
+		},
+		{
+			"DataId": 1020103,
+			"Position":
+			{
+				"X": 67.88733,
+				"Y": 7.992012,
+				"Z": -31.75409
+			},
+			"TerritoryId": 131,
+			"InteractionType": "Interact",
+			"AethernetShortcut":
+			[
+			"[Ul'dah] Alchemists' Guild",
+			"[Ul'dah] Sapphire Avenue Exchange"
+			]
+		}
+		]
+	},
+	{
+		"Sequence": 6,
+		"Steps":
+		[
+		{
+			"DataId": 1020105,
+			"Position":
+			{
+				"X": 129.38123,
+				"Y": 4,
+				"Z": -76.24939
+			},
+			"TerritoryId": 131,
+			"InteractionType": "Interact"
+		}
+		]
+	},
+	{
+		"Sequence": 255,
+		"Steps":
+		[
+		{
+			"DataId": 1020107,
+			"Position":
+			{
+				"X": 133.59265,
+				"Y": 3.9999995,
+				"Z": -20.035156
+			},
+			"TerritoryId": 131,
+			"InteractionType": "CompleteQuest"
+		}
+		]
+	}
+	]
+}

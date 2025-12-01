@@ -1,0 +1,161 @@
+{
+	"$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+	"Author": "Gezah",
+	"Comment": "Crafted Item: 1x Decorated Bronze Barbut, 1x Bronze Buckler // Autocraft requires: 1x Bronze Barbut, 1x Copper Ingot, 1x Brass Ingot, 1x Bronze Plate, 1x Bronze Ingot, 1x Iron Rivets",
+	"QuestSequence":
+	[
+	{
+		"Sequence": 0,
+		"Steps":
+		[
+		{
+			"DataId": 1001000,
+			"Position":
+			{
+				"X": -32.028687,
+				"Y": 41.499985,
+				"Z": 208.39233
+			},
+			"TerritoryId": 128,
+			"InteractionType": "AcceptQuest",
+			"AetheryteShortcut": "Limsa Lominsa",
+			"AethernetShortcut":
+			[
+			"[Limsa Lominsa] Aetheryte Plaza",
+			"[Limsa Lominsa] The Aftcastle"
+			],
+			"SkipConditions":
+			{
+				"AetheryteShortcutIf":
+				{
+					"InTerritory":
+					[
+					129,
+					128
+					]
+				}
+			}
+		}
+		]
+	},
+	{
+		"Sequence": 1,
+		"Steps":
+		[
+		{
+			"DataId": 1001011,
+			"Position":
+			{
+				"X": -61.997437,
+				"Y": 42.49971,
+				"Z": 201.86157
+			},
+			"TerritoryId": 128,
+			"InteractionType": "Interact"
+		}
+		]
+	},
+	{
+		"Sequence": 2,
+		"Steps":
+		[
+		{
+			"DataId": 1001001,
+			"Position":
+			{
+				"X": -56.443176,
+				"Y": 39.974316,
+				"Z": 178.72888
+			},
+			"TerritoryId": 128,
+			"InteractionType": "Interact"
+		}
+		]
+	},
+	{
+		"Sequence": 3,
+		"Steps":
+		[
+		{
+			"InteractionType": "Craft",
+			"TerritoryId": 128,
+			"ItemId": 2680,
+			"ItemCount": 1,
+			"SkipConditions":
+			{
+				"StepIf": 
+				{
+					"Item": 
+					{
+						"NotInInventory": false
+					}
+				}
+			}
+		},
+		{
+			"InteractionType": "Craft",
+			"TerritoryId": 128,
+			"ItemId": 2231,
+			"ItemCount": 1,
+			"SkipConditions":
+			{
+				"StepIf": 
+				{
+					"Item": 
+					{
+						"NotInInventory": false
+					}
+				}
+			}
+		},
+		{
+			"DataId": 1001001,
+			"Position":
+			{
+				"X": -56.443176,
+				"Y": 39.974316,
+				"Z": 178.72888
+			},
+			"TerritoryId": 128,
+			"InteractionType": "Interact",
+			"AllowHighQuality":true
+		}
+		]
+	},
+	{
+		"Sequence": 4,
+		"Steps":
+		[
+		{
+			"DataId": 1001011,
+			"Position":
+			{
+				"X": -61.997437,
+				"Y": 42.49971,
+				"Z": 201.86157
+			},
+			"TerritoryId": 128,
+			"InteractionType": "Interact"
+		}
+		]
+	},
+	{
+		"Sequence": 255,
+		"Steps":
+		[
+		{
+			"DataId": 1001000,
+			"Position":
+			{
+				"X": -32.028687,
+				"Y": 41.499985,
+				"Z": 208.39233
+			},
+			"TerritoryId": 128,
+			"InteractionType": "CompleteQuest",
+			"AllowHighQuality":true
+		}
+		]
+	}
+	]
+}

@@ -1,0 +1,186 @@
+{
+	"$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+	"Author": "Gezah",
+	"QuestSequence":
+	[
+	{
+		"Sequence": 0,
+		"Steps":
+		[
+		{
+			"DataId": 1002280,
+			"Position":
+			{
+				"X": -35.385742,
+				"Y": 13.599964,
+				"Z": 97.24573
+			},
+			"TerritoryId": 131,
+			"InteractionType": "AcceptQuest",
+			"AetheryteShortcut": "Ul'dah",
+			"AethernetShortcut":
+			[
+			"[Ul'dah] Aetheryte Plaza",
+			"[Ul'dah] Goldsmiths' Guild"
+			],
+			"SkipConditions":
+			{
+				"AetheryteShortcutIf":
+				{
+					"InTerritory":
+					[
+					130,
+					131
+					]
+				}
+			}
+		}
+		]
+	},
+	{
+		"Sequence": 1,
+		"Steps":
+		[
+		{
+			"DataId": 1021142,
+			"Position":
+			{
+				"X": -47.196167,
+				"Y": 15.68513,
+				"Z": 347.12744
+			},
+			"TerritoryId": 141,
+			"InteractionType": "Interact",
+			"AethernetShortcut":
+			[
+			"[Ul'dah] Goldsmiths' Guild",
+			"[Ul'dah] Gate of Nald (Central Thanalan)"
+			]
+		}
+		]
+	},
+	{
+		"Sequence": 2,
+		"Steps":
+		[
+		{
+			"DataId": 1021143,
+			"Position":
+			{
+				"X": 42.06909,
+				"Y": 4.2285886E-09,
+				"Z": 78.690796
+			},
+			"TerritoryId": 635,
+			"InteractionType": "Interact",
+			"AetheryteShortcut": "Rhalgr's Reach",
+			"DialogueChoices":
+			[
+			{
+				"Prompt": "TEXT_CLSGLD630_02600_Q1_000_124",
+				"Answer": "TEXT_CLSGLD630_02600_A1_000_125",
+				"Type": "List"
+			}
+			]
+		}
+		]
+	},
+	{
+		"Sequence": 3,
+		"Steps":
+		[
+		{
+			"DataId": 1021134,
+			"Position":
+			{
+				"X": -89.707825,
+				"Y": 0,
+				"Z": 56.443115
+			},
+			"TerritoryId": 635,
+			"InteractionType": "Interact"
+		},
+		{
+			"DataId": 1021133,
+			"Position":
+			{
+				"X": -91.99664,
+				"Y": 0.02,
+				"Z": 53.57434
+			},
+			"TerritoryId": 635,
+			"InteractionType": "Interact"
+		},
+		{
+			"DataId": 1021132,
+			"Position":
+			{
+				"X": -87.35791,
+				"Y": 0,
+				"Z": 48.874634
+			},
+			"TerritoryId": 635,
+			"InteractionType": "Interact"
+		}
+		]
+	},
+	{
+		"Sequence": 4,
+		"Steps":
+		[
+		{
+			"DataId": 1021131,
+			"Position":
+			{
+				"X": -77.958374,
+				"Y": 0.010000985,
+				"Z": 45.548096
+			},
+			"TerritoryId": 635,
+			"InteractionType": "Interact",
+			"DialogueChoices":
+			[
+			{
+				"Prompt": "TEXT_CLSGLD630_02600_Q2_000_274",
+				"Answer": "TEXT_CLSGLD630_02600_A2_000_275",
+				"Type": "List"
+			}
+			]
+		}
+		]
+	},
+	{
+		"Sequence": 255,
+		"Steps":
+		[
+		{
+			"InteractionType": "Craft",
+			"TerritoryId": 635,
+			"ItemId": 17902,
+			"ItemCount": 1,
+			"SkipConditions":
+			{
+				"StepIf": 
+				{
+					"Item": 
+					{
+						"NotInInventory": false
+					}
+				}
+			}
+		},
+		{
+			"DataId": 1021131,
+			"Position":
+			{
+				"X": -77.958374,
+				"Y": 0.010000985,
+				"Z": 45.548096
+			},
+			"TerritoryId": 635,
+			"InteractionType": "CompleteQuest"
+		}
+		]
+	}
+	]
+}

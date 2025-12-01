@@ -1,0 +1,169 @@
+{
+	"$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+	"Author": "Gezah",
+	"QuestSequence":
+	[
+	{
+		"Sequence": 0,
+		"Steps":
+		[
+		{
+			"DataId": 1000997,
+			"Position":
+			{
+				"X": -31.265808,
+				"Y": 44.5,
+				"Z": 185.53442
+			},
+			"TerritoryId": 128,
+			"InteractionType": "AcceptQuest",
+			"AetheryteShortcut": "Limsa Lominsa",
+			"AethernetShortcut":
+			[
+			"[Limsa Lominsa] Aetheryte Plaza",
+			"[Limsa Lominsa] The Aftcastle"
+			],
+			"SkipConditions":
+			{
+				"AetheryteShortcutIf":
+				{
+					"InTerritory":
+					[
+					128,
+					129
+					]
+				}
+			}
+		}
+		]
+	},
+	{
+		"Sequence": 1,
+		"Steps":
+		[
+		{
+			"DataId": 1021046,
+			"Position":
+			{
+				"X": -238.84949,
+				"Y": 16.2,
+				"Z": 39.81079
+			},
+			"TerritoryId": 129,
+			"InteractionType": "Interact",
+			"AethernetShortcut":
+			[
+			"[Limsa Lominsa] The Aftcastle",
+			"[Limsa Lominsa] Hawkers' Alley"
+			]
+		}
+		]
+	},
+	{
+		"Sequence": 2,
+		"Steps":
+		[
+		{
+			"DataId": 1000997,
+			"Position":
+			{
+				"X": -31.265808,
+				"Y": 44.5,
+				"Z": 185.53442
+			},
+			"TerritoryId": 128,
+			"InteractionType": "Interact",
+			"AethernetShortcut":
+			[
+			"[Limsa Lominsa] Hawkers' Alley",
+			"[Limsa Lominsa] The Aftcastle"
+			]
+		}
+		]
+	},
+	{
+		"Sequence": 3,
+		"Steps":
+		[
+		{
+			"DataId": 1000995,
+			"Position":
+			{
+				"X": -52.018066,
+				"Y": 42.799633,
+				"Z": 192.2179
+			},
+			"TerritoryId": 128,
+			"InteractionType": "Interact"
+		}
+		]
+	},
+	{
+		"Sequence": 4,
+		"Steps":
+		[
+		{
+			"InteractionType": "Craft",
+			"TerritoryId": 128,
+			"ItemId": 17890,
+			"ItemCount": 1,
+			"SkipConditions":
+			{
+				"StepIf": 
+				{
+					"Item": 
+					{
+						"NotInInventory": false
+					}
+				}
+			}
+		},
+		{
+			"DataId": 1000997,
+			"Position":
+			{
+				"X": -31.265808,
+				"Y": 44.5,
+				"Z": 185.53442
+			},
+			"TerritoryId": 128,
+			"InteractionType": "Interact"
+		}
+		]
+	},
+	{
+		"Sequence": 5,
+		"Steps":
+		[
+		{
+			"DataId": 1021042,
+			"Position":
+			{
+				"X": -184.92413,
+				"Y": 41,
+				"Z": 184.67993
+			},
+			"TerritoryId": 128,
+			"InteractionType": "Interact"
+		}
+		]
+	},
+	{
+		"Sequence": 255,
+		"Steps":
+		[
+		{
+			"DataId": 1021047,
+			"Position":
+			{
+				"X": -31.876099,
+				"Y": 44.5,
+				"Z": 187.82324
+			},
+			"TerritoryId": 128,
+			"InteractionType": "CompleteQuest"
+		}
+		]
+	}
+	]
+}

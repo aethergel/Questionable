@@ -1,0 +1,102 @@
+{
+	"$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+	"Author": "Gezah",
+	"QuestSequence":
+	[
+	{
+		"Sequence": 0,
+		"Steps":
+		[
+		{
+			"DataId": 1000691,
+			"Position":
+			{
+				"X": 71.97681,
+				"Y": 8,
+				"Z": -166.52173
+			},
+			"TerritoryId": 133,
+			"InteractionType": "AcceptQuest",
+			"AetheryteShortcut": "Gridania",
+			"AethernetShortcut":
+			[
+			"[Gridania] Aetheryte Plaza",
+			"[Gridania] Leatherworkers' Guild & Shaded Bower"
+			],
+			"SkipConditions":
+			{
+				"AetheryteShortcutIf":
+				{
+					"InTerritory":
+					[
+					132,
+					133
+					]
+				}
+			}
+		}
+		]
+	},
+	{
+		"Sequence": 1,
+		"Steps":
+		[
+		{
+			"DataId": 1020929,
+			"Position":
+			{
+				"X": 141.71057,
+				"Y": 13.571404,
+				"Z": -90.44025
+			},
+			"TerritoryId": 133,
+			"InteractionType": "Interact"
+		}
+		]
+	},
+	{
+		"Sequence": 2,
+		"Steps":
+		[
+		{
+			"DataId": 1020930,
+			"Position":
+			{
+				"X": 34.37854,
+				"Y": -8,
+				"Z": 109.69714
+			},
+			"TerritoryId": 132,
+			"InteractionType": "Interact",
+			"AethernetShortcut":
+			[
+			"[Gridania] Leatherworkers' Guild & Shaded Bower",
+			"[Gridania] Airship Landing"
+			]
+		}
+		]
+	},
+	{
+		"Sequence": 255,
+		"Steps":
+		[
+		{
+			"DataId": 1020929,
+			"Position":
+			{
+				"X": 141.71057,
+				"Y": 13.571404,
+				"Z": -90.44025
+			},
+			"TerritoryId": 133,
+			"InteractionType": "CompleteQuest",
+			"AethernetShortcut":
+			[
+			"[Gridania] Aetheryte Plaza",
+			"[Gridania] Leatherworkers' Guild & Shaded Bower"
+			]
+		}
+		]
+	}
+	]
+}

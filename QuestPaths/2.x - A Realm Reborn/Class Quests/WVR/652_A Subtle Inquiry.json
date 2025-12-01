@@ -1,0 +1,92 @@
+{
+	"$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+	"Author": "Gezah",
+	"Comment": "Crafted Item: 1x Woolen Tights HQ // Autocraft requires: 2x Undyed Woolen Cloth, 1x Woolen Yarn",
+	"QuestSequence":
+	[
+	{
+		"Sequence": 0,
+		"Steps":
+		[
+		{
+			"DataId": 1003818,
+			"Position":
+			{
+				"X": 157.36621,
+				"Y": 7.7920074,
+				"Z": 98.924194
+			},
+			"TerritoryId": 131,
+			"InteractionType": "AcceptQuest",
+			"AetheryteShortcut": "Ul'dah",
+			"AethernetShortcut":
+			[
+			"[Ul'dah] Aetheryte Plaza",
+			"[Ul'dah] Weavers' Guild"
+			],
+			"SkipConditions":
+			{
+				"AetheryteShortcutIf":
+				{
+					"InTerritory":
+					[
+					130,
+					131
+					]
+				}
+			}
+		}
+		]
+	},
+	{
+		"Sequence": 1,
+		"Steps":
+		[
+		{
+			"DataId": 1003918,
+			"Position":
+			{
+				"X": 2.0598755,
+				"Y": 15.000007,
+				"Z": 6.8207397
+			},
+			"TerritoryId": 131,
+			"InteractionType": "Interact"
+		}
+		]
+	},
+	{
+		"Sequence": 255,
+		"Steps":
+		[
+		{
+			"InteractionType": "Craft",
+			"TerritoryId": 131,
+			"ItemId": 3413,
+			"ItemCount": 1,
+			"SkipConditions":
+			{
+				"StepIf": 
+				{
+					"Item": 
+					{
+						"NotInInventory": false
+					}
+				}
+			}
+		},
+		{
+			"DataId": 1003818,
+			"Position":
+			{
+				"X": 157.36621,
+				"Y": 7.7920074,
+				"Z": 98.924194
+			},
+			"TerritoryId": 131,
+			"InteractionType": "CompleteQuest"
+		}
+		]
+	}
+	]
+}

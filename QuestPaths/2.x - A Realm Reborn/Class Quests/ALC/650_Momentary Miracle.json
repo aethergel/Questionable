@@ -1,0 +1,162 @@
+{
+	"$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+	"Author": "Gezah",
+	"Comment": "!!Requires Manual Melding!! Crafted Item: 1x Budding Rosewood Wand HQ with 1x Quicktongue Materia III // Autocraft requires: 1x Growth Formula Gamma, 1x Rosewood Branch, 1x Spoken Blood, 1x Mega-Potion of Mind",
+	"QuestSequence":
+	[
+	{
+		"Sequence": 0,
+		"Steps":
+		[
+		{
+			"DataId": 1002299,
+			"Position":
+			{
+				"X": -98.8938,
+				"Y": 40.200146,
+				"Z": 120.83618
+			},
+			"TerritoryId": 131,
+			"InteractionType": "AcceptQuest",
+			"AetheryteShortcut": "Ul'dah",
+			"AethernetShortcut":
+			[
+			"[Ul'dah] Aetheryte Plaza",
+			"[Ul'dah] Alchemists' Guild"
+			],
+			"SkipConditions":
+			{
+				"AetheryteShortcutIf":
+				{
+					"InTerritory":
+					[
+					130,
+					131
+					]
+				}
+			}
+		}
+		]
+	},
+	{
+		"Sequence": 1,
+		"Steps":
+		[
+		{
+			"DataId": 1003927,
+			"Position":
+			{
+				"X": 105.94336,
+				"Y": 7.9999933,
+				"Z": -32.700073
+			},
+			"TerritoryId": 131,
+			"InteractionType": "Interact",
+			"AethernetShortcut":
+			[
+			"[Ul'dah] Alchemists' Guild",
+			"[Ul'dah] Sapphire Avenue Exchange"
+			]
+		}
+		]
+	},
+	{
+		"Sequence": 2,
+		"Steps":
+		[
+		{
+			"DataId": 1001309,
+			"Position":
+			{
+				"X": 37.67456,
+				"Y": 7.9999285,
+				"Z": -113.206726
+			},
+			"TerritoryId": 130,
+			"InteractionType": "Interact",
+			"AethernetShortcut":
+			[
+			"[Ul'dah] Sapphire Avenue Exchange",
+			"[Ul'dah] Adventurers' Guild"
+			]
+		},
+		{
+			"DataId": 1001301,
+			"Position":
+			{
+				"X": 14.175598,
+				"Y": 6.9733276,
+				"Z": -83.878845
+			},
+			"TerritoryId": 130,
+			"InteractionType": "Interact"
+		},
+		{
+			"DataId": 1001354,
+			"Position":
+			{
+				"X": -34.16504,
+				"Y": 9.0999775,
+				"Z": -87.44946
+			},
+			"TerritoryId": 130,
+			"InteractionType": "Interact"
+		}
+		]
+	},{
+		"Sequence": 3,
+		"Steps":
+		[
+		{
+			"InteractionType": "Craft",
+			"TerritoryId": 419,
+			"ItemId": 1987,
+			"ItemCount": 1,
+			"SkipConditions":
+			{
+				"StepIf": 
+				{
+					"Item": 
+					{
+						"NotInInventory": false
+					}
+				}
+			}
+		},
+		{
+			"DataId": 1002299,
+			"Position":
+			{
+				"X": -98.8938,
+				"Y": 40.200146,
+				"Z": 120.83618
+			},
+			"TerritoryId": 131,
+			"InteractionType": "Interact",
+			"AethernetShortcut":
+			[
+			"[Ul'dah] Adventurers' Guild",
+			"[Ul'dah] Alchemists' Guild"
+			]
+		}
+		]
+	},
+	{
+		"Sequence": 255,
+		"Steps":
+		[
+		{
+			"DataId": 1002299,
+			"Position":
+			{
+				"X": -98.8938,
+				"Y": 40.200146,
+				"Z": 120.83618
+			},
+			"TerritoryId": 131,
+			"InteractionType": "CompleteQuest"
+		}
+		]
+	}
+	]
+}

@@ -1,0 +1,107 @@
+{
+	"$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+	"Author": "Gezah",
+	"Comment": "Crafted Item: 1x Mega-Potion of Intelligence HQ, 1x Mega-Potion of Mind HQ, 1x Mega-Potion of Vitality HQ // Autocraft requires: 3x Rock Salt, 1x Black Scorpion, 1x Sandworm Fang, 1x Ahriman Wing, 1x Blue Yarzon Leg, 1x Grenade Ash, 1x Pudding Flesh",
+	"QuestSequence":
+	[
+	{
+		"Sequence": 0,
+		"Steps":
+		[
+		{
+			"DataId": 1002299,
+			"Position":
+			{
+				"X": -98.8938,
+				"Y": 40.200146,
+				"Z": 120.83618
+			},
+			"TerritoryId": 131,
+			"InteractionType": "AcceptQuest",
+			"AetheryteShortcut": "Ul'dah",
+			"AethernetShortcut":
+			[
+			"[Ul'dah] Aetheryte Plaza",
+			"[Ul'dah] Alchemists' Guild"
+			],
+			"SkipConditions":
+			{
+				"AetheryteShortcutIf":
+				{
+					"InTerritory":
+					[
+					130,
+					131
+					]
+				}
+			}
+		}
+		]
+	},
+	{
+		"Sequence": 255,
+		"Steps":
+		[
+		{
+			"InteractionType": "Craft",
+			"TerritoryId": 419,
+			"ItemId": 4607,
+			"ItemCount": 1,
+			"SkipConditions":
+			{
+				"StepIf": 
+				{
+					"Item": 
+					{
+						"NotInInventory": false
+					}
+				}
+			}
+		},
+		{
+			"InteractionType": "Craft",
+			"TerritoryId": 419,
+			"ItemId": 4608,
+			"ItemCount": 1,
+			"SkipConditions":
+			{
+				"StepIf": 
+				{
+					"Item": 
+					{
+						"NotInInventory": false
+					}
+				}
+			}
+		},
+		{
+			"InteractionType": "Craft",
+			"TerritoryId": 419,
+			"ItemId": 4606,
+			"ItemCount": 1,
+			"SkipConditions":
+			{
+				"StepIf": 
+				{
+					"Item": 
+					{
+						"NotInInventory": false
+					}
+				}
+			}
+		},
+		{
+			"DataId": 1002299,
+			"Position":
+			{
+				"X": -98.8938,
+				"Y": 40.200146,
+				"Z": 120.83618
+			},
+			"TerritoryId": 131,
+			"InteractionType": "CompleteQuest"
+		}
+		]
+	}
+	]
+}

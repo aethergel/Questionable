@@ -1,59 +1,71 @@
 {
-  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-  "Author": "Gezah",
-  "Comment": "Meld any materia to the Iron Lance before turn in",
-  "QuestSequence": [
-    {
-      "Sequence": 0,
-      "Steps": [
-        {
-          "DataId": 1000153,
-          "Position": {
-            "X": -44.87683,
-            "Y": -1.2500024,
-            "Z": 56.839844
-          },
-          "TerritoryId": 132,
-          "AetheryteShortcut": "Gridania",
-          "InteractionType": "AcceptQuest",
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true,
-              "InTerritory": [
-                132
-              ]
-            }
-          }
-        }
-      ]
-    },
-    {
-      "Sequence": 255,
-      "Steps": [
-        {
-          "InteractionType": "Craft",
-          "TerritoryId": 132,
-          "ItemId": 1827,
-          "ItemCount": 1,
-          "SkipConditions": {
-            "StepIf": {
-              "Item": {
-                "NotInInventory": false
-              }
-            }
-          }
-        },
-        {
-          "DataId": 1000153,
-          "Position": {
-            "X": -44.87683,
-            "Y": -1.2500024,
-            "Z": 56.839844
-          },
-          "TerritoryId": 132,
-          "InteractionType": "CompleteQuest"
-        }
-      ]
-    }
-  ]
+	"$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+	"Author": "Gezah",
+	"Comment": "!!Requires Manual Melding!! Crafted Item: 1x Iron Lance with any Materia // Autocraft requires: 1x Elm Lumber, 2x Iron Ingot, 1x Hard Leather",
+	"QuestSequence":
+	[
+	{
+		"Sequence": 0,
+		"Steps":
+		[
+		{
+			"DataId": 1000153,
+			"Position":
+			{
+				"X": -44.87683,
+				"Y": -1.2500024,
+				"Z": 56.839844
+			},
+			"TerritoryId": 132,
+			"InteractionType": "AcceptQuest",
+			"AetheryteShortcut": "Gridania",
+			"SkipConditions":
+			{
+				"AetheryteShortcutIf":
+				{
+					"InSameTerritory": true,
+					"InTerritory":
+					[
+					132
+					]
+				}
+			}
+		}
+		]
+	},
+	{
+		"Sequence": 255,
+		"Steps":
+		[
+		{
+			"InteractionType": "Craft",
+			"TerritoryId": 132,
+			"ItemId": 1827,
+			"ItemCount": 1,
+			"SkipConditions":
+			{
+				"StepIf": 
+				{
+					"Item": 
+					{
+						"NotInInventory": false
+					}
+				}
+			}
+		},
+			{
+				"DataId": 1000153,
+				"Position":
+				{
+					"X": -44.87683,
+					"Y": -1.2500024,
+					"Z": 56.839844
+				},
+				"TerritoryId": 132,
+				"InteractionType": "CompleteQuest",
+				"AllowHighQuality":true
+			}
+		]
+	}
+	]
 }

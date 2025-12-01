@@ -1,128 +1,149 @@
 {
-  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-  "Author": "Gezah",
-  "QuestSequence": [
-    {
-      "Sequence": 0,
-      "Steps": [
-        {
-          "DataId": 1000153,
-          "Position": {
-            "X": -44.87683,
-            "Y": -1.2500024,
-            "Z": 56.839844
-          },
-          "TerritoryId": 132,
-          "AetheryteShortcut": "Gridania",
-          "InteractionType": "AcceptQuest",
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true,
-              "InTerritory": [
-                132
-              ]
-            }
-          }
-        }
-      ]
-    },
-    {
-      "Sequence": 1,
-      "Steps": [
-        {
-          "InteractionType": "Craft",
-          "TerritoryId": 132,
-          "ItemId": 2015,
-          "ItemCount": 1,
-          "SkipConditions": {
-            "StepIf": {
-              "Item": {
-                "NotInInventory": false
-              }
-            }
-          }
-        },
-        {
-          "DataId": 1000153,
-          "Position": {
-            "X": -44.87683,
-            "Y": -1.2500024,
-            "Z": 56.839844
-          },
-          "TerritoryId": 132,
-          "InteractionType": "Interact"
-        }
-      ]
-    },
-    {
-      "Sequence": 2,
-      "Steps": [
-        {
-          "DataId": 1000125,
-          "Position": {
-            "X": -56.26001,
-            "Y": -0.50339824,
-            "Z": -0.16790771
-          },
-          "TerritoryId": 132,
-          "InteractionType": "Interact"
-        }
-      ]
-    },
-    {
-      "Sequence": 3,
-      "Steps": [
-        {
-          "Position": {
-            "X": -105.05157,
-            "Y": 1.2897747,
-            "Z": 6.982371
-          },
-          "TerritoryId": 132,
-          "InteractionType": "WalkTo"
-        },
-        {
-          "DataId": 1000235,
-          "Position": {
-            "X": -230.42651,
-            "Y": -4,
-            "Z": -8.255188
-          },
-          "TerritoryId": 133,
-          "InteractionType": "Interact"
-        }
-      ]
-    },
-    {
-      "Sequence": 4,
-      "Steps": [
-        {
-          "DataId": 1000125,
-          "Position": {
-            "X": -56.26001,
-            "Y": -0.50339824,
-            "Z": -0.16790771
-          },
-          "TerritoryId": 132,
-          "AetheryteShortcut": "Gridania",
-          "InteractionType": "Interact"
-        }
-      ]
-    },
-    {
-      "Sequence": 255,
-      "Steps": [
-        {
-          "DataId": 1000153,
-          "Position": {
-            "X": -44.87683,
-            "Y": -1.2500024,
-            "Z": 56.839844
-          },
-          "TerritoryId": 132,
-          "InteractionType": "CompleteQuest"
-        }
-      ]
-    }
-  ]
+	"$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+	"Author": "Gezah",
+	"Comment": "Crafted Item: 1x Walnut Cane HQ // Autocraft requires: 1x Walnut Lumber, 1x Growth Formula Beta",
+	"QuestSequence":
+	[
+	{
+		"Sequence": 0,
+		"Steps":
+		[
+		{
+			"DataId": 1000153,
+			"Position":
+			{
+				"X": -44.87683,
+				"Y": -1.2500024,
+				"Z": 56.839844
+			},
+			"TerritoryId": 132,
+			"InteractionType": "AcceptQuest",
+			"AetheryteShortcut": "Gridania",
+			"SkipConditions":
+			{
+				"AetheryteShortcutIf":
+				{
+					"InSameTerritory": true,
+					"InTerritory":
+					[
+					132
+					]
+				}
+			}
+		}
+		]
+	},
+	{
+		"Sequence": 1,
+		"Steps":
+		[
+		{
+			"InteractionType": "Craft",
+			"TerritoryId": 132,
+			"ItemId": 2015,
+			"ItemCount": 1,
+			"SkipConditions":
+			{
+				"StepIf": 
+				{
+					"Item": 
+					{
+						"NotInInventory": false
+					}
+				}
+			}
+		},
+		{
+			"DataId": 1000153,
+			"Position":
+			{
+				"X": -44.87683,
+				"Y": -1.2500024,
+				"Z": 56.839844
+			},
+			"TerritoryId": 132,
+			"InteractionType": "Interact"
+		}
+		]
+	},
+	{
+		"Sequence": 2,
+		"Steps":
+		[
+		{
+			"DataId": 1000125,
+			"Position":
+			{
+				"X": -56.26001,
+				"Y": -0.50339824,
+				"Z": -0.16790771
+			},
+			"TerritoryId": 132,
+			"InteractionType": "Interact"
+		}
+		]
+	},
+	{
+		"Sequence": 3,
+		"Steps":
+		[
+		{
+			"Position":
+			{
+				"X": -105.05157,
+				"Y": 1.2897747,
+				"Z": 6.982371
+			},
+			"TerritoryId": 132,
+			"InteractionType": "WalkTo"
+		},
+		{
+			"DataId": 1000235,
+			"Position":
+			{
+				"X": -230.42651,
+				"Y": -4,
+				"Z": -8.255188
+			},
+			"TerritoryId": 133,
+			"InteractionType": "Interact"
+		}
+		]
+	},
+	{
+		"Sequence": 4,
+		"Steps":
+		[
+		{
+			"DataId": 1000125,
+			"Position":
+			{
+				"X": -56.26001,
+				"Y": -0.50339824,
+				"Z": -0.16790771
+			},
+			"TerritoryId": 132,
+			"AetheryteShortcut": "Gridania",
+			"InteractionType": "Interact"
+		}
+		]
+	},
+	{
+		"Sequence": 255,
+		"Steps":
+		[
+		{
+			"DataId": 1000153,
+			"Position":
+			{
+				"X": -44.87683,
+				"Y": -1.2500024,
+				"Z": 56.839844
+			},
+			"TerritoryId": 132,
+			"InteractionType": "CompleteQuest"
+			}
+		]
+	}
+	]
 }

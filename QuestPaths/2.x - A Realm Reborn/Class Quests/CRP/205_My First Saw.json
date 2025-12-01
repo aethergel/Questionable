@@ -1,66 +1,70 @@
 {
-  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-  "Author": "liza",
-  "QuestSequence": [
-    {
-      "Sequence": 0,
-      "Steps": [
-        {
-          "TerritoryId": 132,
-          "InteractionType": "EquipItem",
-          "ItemId": 2314
-        },
-        {
-          "DataId": 1000153,
-          "Position": {
-            "X": -44.87683,
-            "Y": -1.2500024,
-            "Z": 56.839844
-          },
-          "TerritoryId": 132,
-          "InteractionType": "AcceptQuest",
-          "AetheryteShortcut": "Gridania",
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            }
-          }
-        }
-      ]
-    },
-    {
-      "Sequence": 255,
-      "Steps": [
-        {
-          "InteractionType": "Craft",
-          "TerritoryId": 132,
-          "ItemId": 5361,
-          "ItemCount": 1,
-          "SkipConditions": {
-            "StepIf": {
-              "Item": {
-                "NotInInventory": false
-              }
-            }
-          }
-        },
-        {
-          "DataId": 1000153,
-          "Position": {
-            "X": -44.87683,
-            "Y": -1.2500024,
-            "Z": 56.839844
-          },
-          "TerritoryId": 132,
-          "InteractionType": "CompleteQuest",
-          "AetheryteShortcut": "Gridania",
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            }
-          }
-        }
-      ]
-    }
-  ]
+	"$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+	"Author": "liza, Gezah",
+	"Comment": "Crafted Item: 1x Maple Lumber, // Autocraft requires: 3x Maple Log",
+	"QuestSequence":
+	[
+	{
+		"Sequence": 0,
+		"Steps":
+		[
+		{
+			"DataId": 1000153,
+			"Position":
+			{
+				"X": -44.87683,
+				"Y": -1.2500024,
+				"Z": 56.839844
+			},
+			"TerritoryId": 132,
+			"InteractionType": "AcceptQuest",
+			"AetheryteShortcut": "Gridania",
+			"SkipConditions":
+			{
+				"AetheryteShortcutIf":
+				{
+					"InTerritory":
+					[
+					132
+					]
+				}
+			}
+		}
+		]
+	},
+	{
+		"Sequence": 255,
+		"Steps":
+		[
+		{
+			"InteractionType": "Craft",
+			"TerritoryId": 132,
+			"ItemId": 5361,
+			"ItemCount": 1,
+			"SkipConditions":
+			{
+				"StepIf":
+				{
+					"Item":
+					{
+						"NotInInventory": false
+					}
+				}
+			}
+		},
+		{
+			"DataId": 1000153,
+			"Position":
+			{
+				"X": -44.87683,
+				"Y": -1.2500024,
+				"Z": 56.839844
+			},
+			"TerritoryId": 132,
+			"InteractionType": "CompleteQuest",
+			"AllowHighQuality":true
+		}
+		]
+	}
+	]
 }

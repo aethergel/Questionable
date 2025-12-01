@@ -1,0 +1,192 @@
+{
+	"$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+	"Author": "Gezah",
+	"QuestSequence":
+	[
+	{
+		"Sequence": 0,
+		"Steps":
+		[
+		{
+			"DataId": 1002299,
+			"Position":
+			{
+				"X": -98.8938,
+				"Y": 40.200146,
+				"Z": 120.83618
+			},
+			"TerritoryId": 131,
+			"InteractionType": "AcceptQuest",
+			"AetheryteShortcut": "Ul'dah",
+			"AethernetShortcut":
+			[
+			"[Ul'dah] Aetheryte Plaza",
+			"[Ul'dah] Alchemists' Guild"
+			],
+			"SkipConditions":
+			{
+				"AetheryteShortcutIf":
+				{
+					"InTerritory":
+					[
+					130,
+					131
+					]
+				}
+			}
+		}
+		]
+	},
+	{
+		"Sequence": 1,
+		"Steps":
+		[			
+		{
+			"DataId": 1001361,
+			"Position":
+			{
+				"X": -114.42743,
+				"Y": 10,
+				"Z": 81.223755
+			},
+			"TerritoryId": 130,
+			"InteractionType": "Interact",
+			"AethernetShortcut":
+			[
+			"[Ul'dah] Alchemists' Guild",
+			"[Ul'dah] Thaumaturges' Guild"
+			]
+		}
+		]
+	},
+	{
+		"Sequence": 2,
+		"Steps":
+		[
+		{
+			"Position":
+			{
+				"X": 52.484417,
+				"Y": 50,
+				"Z": -775.8464
+			},
+			"TerritoryId": 156,
+			"InteractionType": "WalkTo",
+			"AetheryteShortcut": "Mor Dhona",
+			"Fly": true
+		},
+		{
+			"DataId": 1018433,
+			"Position":
+			{
+				"X": 50.766724,
+				"Y": 50,
+				"Z": -772.3964
+			},
+			"TerritoryId": 156,
+			"InteractionType": "Interact"
+		}
+		]
+	},
+	{
+		"Sequence": 3,
+		"Steps":
+		[			
+		{
+			"DataId": 1020096,
+			"Position":
+			{
+				"X": -115.00726,
+				"Y": 10,
+				"Z": 72.64819
+			},
+			"TerritoryId": 130,
+			"InteractionType": "Interact",
+			"AetheryteShortcut": "Ul'dah",
+			"AethernetShortcut":
+			[
+			"[Ul'dah] Aetheryte Plaza",
+			"[Ul'dah] Thaumaturges' Guild"
+			]
+		}
+		]
+	},
+	{
+		"Sequence": 4,
+		"Steps":
+		[			
+		{
+			"DataId": 1020098,
+			"Position":
+			{
+				"X": -157.5495,
+				"Y": 14.048001,
+				"Z": 58.64038
+			},
+			"TerritoryId": 130,
+			"InteractionType": "Interact"
+		}
+		]
+	},
+	{
+		"Sequence": 5,
+		"Steps":
+		[			
+		{
+			"DataId": 1002299,
+			"Position":
+			{
+				"X": -98.8938,
+				"Y": 40.200146,
+				"Z": 120.83618
+			},
+			"TerritoryId": 131,
+			"InteractionType": "Interact",
+			"AethernetShortcut":
+			[
+			"[Ul'dah] Thaumaturges' Guild",
+			"[Ul'dah] Alchemists' Guild"
+			]
+		}
+		]
+	},
+	{
+		"Sequence": 255,
+		"Steps":
+		[
+		{
+			"InteractionType": "Craft",
+			"TerritoryId": 131,
+			"ItemId": 17928,
+			"ItemCount": 1,
+			"SkipConditions":
+			{
+				"StepIf": 
+				{
+					"Item": 
+					{
+						"NotInInventory": false
+					}
+				}
+			}
+		},
+		{
+			"DataId": 1020098,
+			"Position":
+			{
+				"X": -157.5495,
+				"Y": 14.048001,
+				"Z": 58.64038
+			},
+			"TerritoryId": 130,
+			"InteractionType": "CompleteQuest",
+			"AethernetShortcut":
+			[
+			"[Ul'dah] Alchemists' Guild",
+			"[Ul'dah] Thaumaturges' Guild"
+			]
+		}
+		]
+	}
+	]
+}

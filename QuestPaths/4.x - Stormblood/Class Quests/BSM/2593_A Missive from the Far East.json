@@ -1,0 +1,84 @@
+{
+	"$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+	"Author": "Gezah",
+	"QuestSequence":
+	[
+	{
+		"Sequence": 0,
+		"Steps":
+		[
+		{
+			"DataId": 1000997,
+			"Position":
+			{
+				"X": -31.265808,
+				"Y": 44.5,
+				"Z": 185.53442
+			},
+			"TerritoryId": 128,
+			"InteractionType": "AcceptQuest",
+			"AetheryteShortcut": "Limsa Lominsa",
+			"AethernetShortcut":
+			[
+			"[Limsa Lominsa] Aetheryte Plaza",
+			"[Limsa Lominsa] The Aftcastle"
+			],
+			"SkipConditions":
+			{
+				"AetheryteShortcutIf":
+				{
+					"InTerritory":
+					[
+					128,  129
+					]
+				}
+			}
+		}
+		]
+	},
+	{
+		"Sequence": 1,
+		"Steps":
+		[
+		{
+			"DataId": 1021040,
+			"Position":
+			{
+				"X": -217.18164,
+				"Y": 5.9999957,
+				"Z": 162.27966
+			},
+			"TerritoryId": 129,
+			"InteractionType": "Interact",
+			"AethernetShortcut":
+			[
+			"[Limsa Lominsa] The Aftcastle",
+			"[Limsa Lominsa] Fishermen's Guild"
+			]
+		}
+		]
+	},
+	{
+		"Sequence": 255,
+		"Steps":
+		[
+		{
+			"DataId": 1000997,
+			"Position":
+			{
+				"X": -31.265808,
+				"Y": 44.5,
+				"Z": 185.53442
+			},
+			"TerritoryId": 128,
+			"InteractionType": "CompleteQuest",
+			"AethernetShortcut":
+			[
+			"[Limsa Lominsa] Fishermen's Guild",
+			"[Limsa Lominsa] The Aftcastle"
+			]
+		}
+		]
+	}
+	]
+}

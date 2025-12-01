@@ -1,0 +1,125 @@
+{
+	"$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+	"Author": "Gezah",
+	"Comment": "!!Requires Manual Melding!! Crafted Item: 1x Raptorskin Jerkin HQ with 1x Gatherer's Grasp Materia III // Autocraft requires: 1x Boar Leather, 2x Raptor Leather, 1x Undyed Felt, 1x Electrum Ingot",
+	"QuestSequence":
+	[
+	{
+		"Sequence": 0,
+		"Steps":
+		[
+		{
+			"DataId": 1000691,
+			"Position":
+			{
+				"X": 71.97681,
+				"Y": 8,
+				"Z": -166.52173
+			},
+			"TerritoryId": 133,
+			"InteractionType": "AcceptQuest",
+			"AetheryteShortcut": "Gridania",
+			"AethernetShortcut":
+			[
+			"[Gridania] Aetheryte Plaza",
+			"[Gridania] Leatherworkers' Guild & Shaded Bower"
+			],
+			"SkipConditions":
+			{
+				"AetheryteShortcutIf":
+				{
+					"InTerritory":
+					[
+					132,
+					133
+					]
+				}
+			}
+		}
+		]
+	},
+	{
+		"Sequence": 1,
+		"Steps":
+		[
+		{
+			"DataId": 1003676,
+			"Position":
+			{
+				"X": -94.16345,
+				"Y": 5.7185907,
+				"Z": -155.41315
+			},
+			"TerritoryId": 133,
+			"InteractionType": "Interact"
+		}
+		]
+	},{
+		"Sequence": 2,
+		"Steps":
+		[
+		{
+			"DataId": 1000691,
+			"Position":
+			{
+				"X": 71.97681,
+				"Y": 8,
+				"Z": -166.52173
+			},
+			"TerritoryId": 133,
+			"InteractionType": "Interact"
+		}
+		]
+	},
+	{
+		"Sequence": 3,
+		"Steps":
+		[
+		{
+			"InteractionType": "Craft",
+			"TerritoryId": 133,
+			"ItemId": 3206,
+			"ItemCount": 1,
+			"SkipConditions":
+			{
+				"StepIf": 
+				{
+					"Item": 
+					{
+						"NotInInventory": false
+					}
+				}
+			}
+		},
+		{
+			"DataId": 1000286,
+			"Position":
+			{
+				"X": -53.574463,
+				"Y": 7.2025366,
+				"Z": -118.36426
+			},
+			"TerritoryId": 133,
+			"InteractionType": "Interact"
+		}
+		]
+	},
+	{
+		"Sequence": 255,
+		"Steps":
+		[
+		{
+			"DataId": 1000691,
+			"Position":
+			{
+				"X": 71.97681,
+				"Y": 8,
+				"Z": -166.52173
+			},
+			"TerritoryId": 133,
+			"InteractionType": "CompleteQuest"
+		}
+		]
+	}
+	]
+}
