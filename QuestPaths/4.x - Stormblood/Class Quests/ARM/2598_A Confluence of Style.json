@@ -1,0 +1,147 @@
+{
+	"$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+	"Author": "Gezah",
+	"QuestSequence":
+	[
+	{
+		"Sequence": 0,
+		"Steps":
+		[
+		{
+			"DataId": 1021369,
+			"Position":
+			{
+				"X": -128.16058,
+				"Y": -4.750018,
+				"Z": 203.8147
+			},
+			"TerritoryId": 628,
+			"InteractionType": "AcceptQuest",
+			"AetheryteShortcut": "Kugane",
+			"AethernetShortcut":
+			[
+			"[Kugane] Aetheryte Plaza",
+			"[Kugane] Pier #1"
+			],
+			"SkipConditions":
+			{
+				"AetheryteShortcutIf":
+				{
+					"InTerritory":
+					[
+					628					
+					]
+				}
+			}
+		}
+		]
+	},
+	{
+		"Sequence": 1,
+		"Steps":
+		[
+		{
+			"DataId": 1021376,
+			"Position":
+			{
+				"X": -144.02997,
+				"Y": -4.9999995,
+				"Z": 152.42236
+			},
+			"TerritoryId": 628,
+			"InteractionType": "Interact"
+		}
+		]
+	},
+	{
+		"Sequence": 2,
+		"Steps":
+		[
+		{
+			"DataId": 1019053,
+			"Position":
+			{
+				"X": -124.55945,
+				"Y": -4.705104,
+				"Z": 206.46973
+			},
+			"TerritoryId": 628,
+			"InteractionType": "Interact"
+		}
+		]
+	},
+	{
+		"Sequence": 3,
+		"Steps":
+		[
+		{
+			"InteractionType": "Craft",
+			"TerritoryId": 628,
+			"ItemId": 17900,
+			"ItemCount": 1,
+			"SkipConditions":
+			{
+				"StepIf": 
+				{
+					"Item": 
+					{
+						"NotInInventory": false
+					}
+				}
+			}
+		},
+		{
+			"DataId": 1021376,
+			"Position":
+			{
+				"X": -144.02997,
+				"Y": -4.9999995,
+				"Z": 152.42236
+			},
+			"TerritoryId": 628,
+			"InteractionType": "Interact"
+		}
+		]
+	},
+	{
+		"Sequence": 4,
+		"Steps":
+		[
+		{
+			"DataId": 1021369,
+			"Position":
+			{
+				"X": -128.16058,
+				"Y": -4.750018,
+				"Z": 203.8147
+			},
+			"TerritoryId": 628,
+			"InteractionType": "Interact"
+		}
+		]
+	},
+	{
+		"Sequence": 255,
+		"Steps":
+		[
+		{
+			"DataId": 1001000,
+			"Position":
+			{
+				"X": -32.028687,
+				"Y": 41.499985,
+				"Z": 208.39233
+			},
+			"TerritoryId": 128,
+			"InteractionType": "CompleteQuest",
+			"AetheryteShortcut": "Limsa Lominsa",
+			"AethernetShortcut":
+			[
+			"[Limsa Lominsa] Aetheryte Plaza",
+			"[Limsa Lominsa] The Aftcastle"
+			]
+		}
+		]
+	}
+	]
+}
