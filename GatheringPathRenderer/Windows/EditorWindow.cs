@@ -11,6 +11,7 @@ using Dalamud.Game.Text;
 using Dalamud.Game.Text.SeStringHandling;
 using Dalamud.Interface;
 using Dalamud.Interface.Colors;
+using Dalamud.Interface.Components;
 using Dalamud.Interface.Windowing;
 using Dalamud.Plugin.Services;
 using ECommons;
@@ -44,7 +45,7 @@ internal sealed class EditorWindow : Window
     public EditorWindow(RendererPlugin plugin, EditorCommands editorCommands, IDataManager dataManager, ICommandManager commandManager,
         ITargetManager targetManager, IClientState clientState, IObjectTable objectTable, ConfigWindow configWindow)
         : base($"Gathering Path Editor {typeof(EditorWindow).Assembly.GetName().Version!.ToString(2)}###QuestionableGatheringPathEditor",
-            ImGuiWindowFlags.NoFocusOnAppearing | ImGuiWindowFlags.NoNavFocus | ImGuiWindowFlags.AlwaysAutoResize)
+            ImGuiWindowFlags.NoFocusOnAppearing | ImGuiWindowFlags.NoNavFocus | ImGuiWindowFlags.AlwaysVerticalScrollbar)
     {
         _plugin = plugin;
         _editorCommands = editorCommands;
@@ -56,7 +57,8 @@ internal sealed class EditorWindow : Window
 
         SizeConstraints = new WindowSizeConstraints
         {
-            MinimumSize = new Vector2(300, 100),
+            MinimumSize = new Vector2(-1, 100),
+            MaximumSize = new Vector2(-1, 500),
         };
 
         TitleBarButtons.Add(new TitleBarButton
@@ -89,7 +91,7 @@ internal sealed class EditorWindow : Window
             return;
         }
 
-        if (_clientState.LocalPlayer != null && !_clientState.LocalPlayer.ClassJob.RowId.InRange(16,18))
+        if (_clientState.LocalPlayer != null && !_clientState.LocalPlayer.ClassJob.RowId.InRange(16, 18))
             unaddedVisible = true;
 
         _target = _targetManager.Target;
@@ -138,8 +140,8 @@ internal sealed class EditorWindow : Window
 
     public override bool DrawConditions()
     {
-        return (_clientState.LocalPlayer != null && _clientState.LocalPlayer.ClassJob.RowId.InRange(16,18)) &&
-                !(_clientState.TerritoryType is 0 or 939) && (_target != null || _targetLocation != null || unaddedVisible) ;
+        return (_clientState.LocalPlayer != null && _clientState.LocalPlayer.ClassJob.RowId.InRange(16, 18)) &&
+                _clientState.TerritoryType is not 0 && (_target != null || _targetLocation != null || unaddedVisible);
     }
 
     public override void Draw()
@@ -210,7 +212,7 @@ internal sealed class EditorWindow : Window
             }
 
             ImGui.EndDisabled();
-            
+
             //ImGui.SameLine();
             //if (ImGui.Button("90deg"))
             //{
@@ -292,16 +294,16 @@ internal sealed class EditorWindow : Window
         );
         var loadedPoints = _plugin.GatheringLocations;
         var shownNone = true;
+        if (ImGuiComponents.IconButton(FontAwesomeIcon.Stop))
+            _commandManager.ProcessCommand("/vnav stop");
+        ImGui.SameLine();
+        if (ImGuiComponents.IconButton(compact ? FontAwesomeIcon.Expand : FontAwesomeIcon.Compress))
+            compact = !compact;
+        ImGui.SameLine();
+        if (ImGuiComponents.IconButton(_plugin.DistantRange ? FontAwesomeIcon.Eye : FontAwesomeIcon.EyeSlash))
+            _plugin.DistantRange = !_plugin.DistantRange;
+
         ImGui.Text($"Nodes in {_clientState.TerritoryType}: ({count})");
-        ImGui.SameLine();
-        ImGui.Text("[vnav stop]");
-        if (ImGui.IsItemClicked()) _commandManager.ProcessCommand("/vnav stop");
-        ImGui.SameLine();
-        ImGui.Text($"[compact {(compact ? 'y' : 'n')}]");
-        if (ImGui.IsItemClicked()) compact = !compact;
-        ImGui.SameLine();
-        ImGui.Text($"[distant {(_plugin.DistantRange ? 'y' : 'n')}]");
-        if (ImGui.IsItemClicked()) _plugin.DistantRange = !_plugin.DistantRange;
         List<string> seen = [];
         count = 0;
         foreach (GatheringPoint _point in gatheringPoints.OrderBy(x => x.PlaceName.Value.Name.ToMacroString()))
@@ -310,7 +312,8 @@ internal sealed class EditorWindow : Window
             if (!loadedPoints.Any(location => location.Root.Groups.Any(group => group.Nodes.Any(node => node.DataId.Equals(_point.RowId)))))
             {
                 count += 1;
-                if (compact) {
+                if (compact)
+                {
                     if (seen.Contains(_point.PlaceName.Value.Name.ToMacroString())) continue;
                     seen.Add(_point.PlaceName.Value.Name.ToMacroString());
                 }
@@ -322,25 +325,39 @@ internal sealed class EditorWindow : Window
                 {
                     special = '*';
                 }
-                ImGui.Text($"{((GatheringType)_point.GatheringPointBase.Value.GatheringType.RowId).ToString()[..1]}{special}{_point.RowId} {_point.PlaceName.Value.Name}  ");
+                string line = $"{((GatheringType)_point.GatheringPointBase.Value.GatheringType.RowId).ToString()[..1]}{special}{_point.RowId} {_point.PlaceName.Value.Name}  ";
+                bool orange = false;
                 if (_plugin.GBRLocationData.TryGetValue(_point.RowId, out List<Vector3>? value))
                 {
                     var gbr = value.FirstOrNull();
                     if (gbr != null)
                     {
                         var scale = _point.TerritoryType.Value.Map.Value.SizeFactor;
-                        ImGui.SameLine();
-                        ImGui.Text($"{gbr.Value.X} {gbr.Value.Y} {gbr.Value.Z}");
+                        line += $"{gbr.Value.X} {gbr.Value.Y} {gbr.Value.Z}";
                         if (ImGui.IsItemClicked())
                         {
                             _commandManager.ProcessCommand($"/vnav flyto {gbr.Value.X} {gbr.Value.Y} {gbr.Value.Z}");
                         }
                         var distance = (_clientState.LocalPlayer.Position - gbr).Value.Length();
-                        ImGui.SameLine();
-                        if (distance < 200) ImGui.TextColored(ImGuiColors.DalamudOrange, $"({distance:F2})");
-                        else ImGui.Text($"({distance:F2})");
+                        if (distance < 200)
+                        {
+                            line += $"  ({distance:F2})";
+                            orange = true;
+                        }
+                        else if (distance < 500 && !_plugin.DistantRange || _plugin.DistantRange)
+                        {
+                            line += $"  ({distance:F2})";
+                        }
+                        else
+                        {
+                            continue;
+                        }
                     }
                 }
+                if (orange)
+                    ImGui.TextColored(ImGuiColors.DalamudOrange, line);
+                else
+                    ImGui.Text(line);
                 shownNone = false;
             }
         }
@@ -351,7 +368,8 @@ internal sealed class EditorWindow : Window
         }
     }
 
-    enum GatheringType {
+    enum GatheringType
+    {
         Mining,
         Quarrying,
         Logging,
