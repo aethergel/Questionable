@@ -37,10 +37,11 @@ internal sealed class EditorWindow : Window
 
     private IGameObject? _target;
     private int count;
-    private bool compact;
+    private bool compact = false;
     private bool unaddedVisible = true;
     private bool sortByDistance = true;
     private FilterClass filterClass = FilterClass.None;
+    private bool showAll = false;
 
     private (RendererPlugin.GatheringLocationContext Context, GatheringNode Node, GatheringLocation Location)?
         _targetLocation;
@@ -298,15 +299,27 @@ internal sealed class EditorWindow : Window
         var shownNone = true;
         if (ImGuiComponents.IconButton(FontAwesomeIcon.Stop))
             _commandManager.ProcessCommand("/vnav stop");
+        if (ImGui.IsItemHovered())
+            ImGui.SetTooltip("vnav stop");
+
         ImGui.SameLine();
         if (ImGuiComponents.IconButton(compact ? FontAwesomeIcon.Expand : FontAwesomeIcon.Compress))
             compact = !compact;
+        if (ImGui.IsItemHovered())
+            ImGui.SetTooltip("compact");
+
         ImGui.SameLine();
-        if (ImGuiComponents.IconButton(_plugin.DistantRange ? FontAwesomeIcon.Eye : FontAwesomeIcon.EyeSlash))
+        if (ImGuiComponents.IconButton(_plugin.DistantRange ? FontAwesomeIcon.Binoculars : FontAwesomeIcon.Eye))
             _plugin.DistantRange = !_plugin.DistantRange;
+        if (ImGui.IsItemHovered())
+            ImGui.SetTooltip("distant");
+
         ImGui.SameLine();
-        if (ImGuiComponents.IconButton(sortByDistance ? FontAwesomeIcon.SortNumericDown : FontAwesomeIcon.SortAlphaDown))
+        if (ImGuiComponents.IconButton(sortByDistance ? FontAwesomeIcon.SortNumericUp : FontAwesomeIcon.SortAlphaDown))
             sortByDistance = !sortByDistance;
+        if (ImGui.IsItemHovered())
+            ImGui.SetTooltip("sort by distance/class");
+
         ImGui.SameLine();
         var filterClassIcon = FontAwesomeIcon.Notdef;
         if (filterClass.Equals(FilterClass.Miner)) filterClassIcon = FontAwesomeIcon.HandRock;
@@ -315,71 +328,86 @@ internal sealed class EditorWindow : Window
         {
             filterClass = (FilterClass)(((int)filterClass + 1) % Enum.GetValues(typeof(FilterClass)).Length);
         }
+        if (ImGui.IsItemHovered())
+            ImGui.SetTooltip("filter none/min/btn");
+
+        ImGui.SameLine();
+        if (ImGuiComponents.IconButton(showAll ? FontAwesomeIcon.Eye : FontAwesomeIcon.EyeSlash))
+            showAll = !showAll;
+        if (ImGui.IsItemHovered())
+            ImGui.SetTooltip("show nodes inc added");
 
         ImGui.Text($"Nodes in {_clientState.TerritoryType}: ({count})");
         List<string> seen = [];
         count = 0;
-        Dictionary<uint, Tuple<string, string, bool, float>> output = [];
+        Dictionary<uint, Tuple<string, string, bool, float, bool>> output = [];
         foreach (GatheringPoint _point in gatheringPoints.OrderBy(x => x.PlaceName.Value.Name.ToMacroString()))
         {
             if (_point.GatheringPointBase.RowId >= 653 && _point.GatheringPointBase.RowId <= 680) continue; // obsolete skybuilders stuff
-            if (!loadedPoints.Any(location => location.Root.Groups.Any(group => group.Nodes.Any(node => node.DataId.Equals(_point.RowId)))))
+            bool alreadyAdded = false;
+            if (loadedPoints.Any(location => location.Root.Groups.Any(group => group.Nodes.Any(node => node.DataId.Equals(_point.RowId)))))
             {
-                count += 1;
-                if (compact)
+                if (showAll)
+                    alreadyAdded = true;
+                else
+                    continue;
+            }
+            count += 1;
+            if (compact)
+            {
+                if (seen.Contains(_point.PlaceName.Value.Name.ToMacroString())) continue;
+                seen.Add(_point.PlaceName.Value.Name.ToMacroString());
+            }
+            char special = ' ';
+            if (_dataManager.GetExcelSheet<GatheringPointTransient>().TryGetRow(_point.RowId, out var gatheringPointTransient) &&
+                (gatheringPointTransient.EphemeralStartTime != 65535 ||
+                gatheringPointTransient.EphemeralEndTime != 65535 ||
+                gatheringPointTransient.GatheringRarePopTimeTable.RowId != 0))
+            {
+                special = '*';
+            }
+            GatheringType gatheringType = (GatheringType)_point.GatheringPointBase.Value.GatheringType.RowId;
+            if (filterClass.Equals(FilterClass.Miner) && !gatheringType.Equals(GatheringType.Mining) && !gatheringType.Equals(GatheringType.Quarrying)) continue;
+            if (filterClass.Equals(FilterClass.Botanist) && !gatheringType.Equals(GatheringType.Logging) && !gatheringType.Equals(GatheringType.Harvesting)) continue;
+            string line = $"{gatheringType.ToString()[..1]}{special}{_point.RowId} {_point.PlaceName.Value.Name}  ";
+            string coords = "";
+            bool orange = false;
+            float distance = 0.0f;
+            if (_plugin.GBRLocationData.TryGetValue(_point.RowId, out List<Vector3>? value))
+            {
+                var gbr = value.FirstOrNull();
+                if (gbr != null)
                 {
-                    if (seen.Contains(_point.PlaceName.Value.Name.ToMacroString())) continue;
-                    seen.Add(_point.PlaceName.Value.Name.ToMacroString());
-                }
-                char special = ' ';
-                if (_dataManager.GetExcelSheet<GatheringPointTransient>().TryGetRow(_point.RowId, out var gatheringPointTransient) &&
-                    (gatheringPointTransient.EphemeralStartTime != 65535 ||
-                    gatheringPointTransient.EphemeralEndTime != 65535 ||
-                    gatheringPointTransient.GatheringRarePopTimeTable.RowId != 0))
-                {
-                    special = '*';
-                }
-                GatheringType gatheringType = (GatheringType)_point.GatheringPointBase.Value.GatheringType.RowId;
-                if (filterClass.Equals(FilterClass.Miner) && !gatheringType.Equals(GatheringType.Mining) && !gatheringType.Equals(GatheringType.Quarrying)) continue;
-                if (filterClass.Equals(FilterClass.Botanist) && !gatheringType.Equals(GatheringType.Logging) && !gatheringType.Equals(GatheringType.Harvesting)) continue;
-                string line = $"{gatheringType.ToString()[..1]}{special}{_point.RowId} {_point.PlaceName.Value.Name}  ";
-                string coords = "";
-                bool orange = false;
-                float distance = 0.0f;
-                if (_plugin.GBRLocationData.TryGetValue(_point.RowId, out List<Vector3>? value))
-                {
-                    var gbr = value.FirstOrNull();
-                    if (gbr != null)
+                    var scale = _point.TerritoryType.Value.Map.Value.SizeFactor;
+                    coords = $"{gbr.Value.X} {gbr.Value.Y} {gbr.Value.Z}";
+                    line += coords;
+                    distance = (_clientState.LocalPlayer.Position - gbr).Value.Length();
+                    if (distance < 200)
                     {
-                        var scale = _point.TerritoryType.Value.Map.Value.SizeFactor;
-                        coords = $"{gbr.Value.X} {gbr.Value.Y} {gbr.Value.Z}";
-                        line += coords;
-                        distance = (_clientState.LocalPlayer.Position - gbr).Value.Length();
-                        if (distance < 200)
-                        {
-                            line += $"  ({distance:F2})";
-                            orange = true;
-                        }
-                        else if (distance < 500 && !_plugin.DistantRange || _plugin.DistantRange)
-                        {
-                            line += $"  ({distance:F2})";
-                        }
-                        else
-                        {
-                            continue;
-                        }
+                        line += $"  ({distance:F2})";
+                        orange = true;
+                    }
+                    else if (distance < 500 && !_plugin.DistantRange || _plugin.DistantRange)
+                    {
+                        line += $"  ({distance:F2})";
+                    }
+                    else
+                    {
+                        continue;
                     }
                 }
-                output.Add(_point.RowId, new(line, coords, orange, distance));
-                shownNone = false;
             }
+            output.Add(_point.RowId, new(line, coords, orange, distance, alreadyAdded));
+            shownNone = false;
         }
         if (!shownNone)
         {
-            var sorted = sortByDistance ? output.Values.OrderBy(t => t.Item3) : output.Values.OrderBy(t => t.Item1);
-            foreach (var (line, coords, orange, distance) in sorted)
+            var sorted = sortByDistance ? output.Values.OrderBy(t => t.Item4) : output.Values.OrderBy(t => t.Item1);
+            foreach (var (line, coords, orange, distance, alreadyAdded) in sorted)
             {
-                if (orange)
+                if (alreadyAdded)
+                    ImGui.TextColored(ImGuiColors.DalamudGrey2, line);
+                else if (orange)
                     ImGui.TextColored(ImGuiColors.DalamudOrange, line);
                 else
                     ImGui.Text(line);
