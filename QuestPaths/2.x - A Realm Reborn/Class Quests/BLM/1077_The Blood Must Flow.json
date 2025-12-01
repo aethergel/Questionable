@@ -56,6 +56,46 @@
           "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
+          "Position": {
+            "X": 287.2875,
+            "Y": 41.545933,
+            "Z": -200.75758
+          },
+          "TerritoryId": 139,
+          "InteractionType": "WalkTo",
+          "Fly": true,
+          "AetheryteShortcut": "Upper La Noscea - Camp Bronze Lake",
+          "SkipConditions": {"StepIf": {"AetheryteUnlocked": "Outer La Noscea - Camp Overlook"}}
+        },
+        {
+          "Position": {
+            "X": 285.82883,
+            "Y": 42.26685,
+            "Z": -203.32939
+          },
+          "TerritoryId": 139,
+          "InteractionType": "WalkTo",
+          "TargetTerritoryId": 180,
+          "SkipConditions": {"StepIf": {"AetheryteUnlocked": "Outer La Noscea - Camp Overlook"}}
+        },
+        {
+          "Position": {
+            "X": -114.35803,
+            "Y": 64.464615,
+            "Z": -217.34372
+          },
+          "TerritoryId": 180,
+          "InteractionType": "WalkTo",
+          "Fly": true,
+          "SkipConditions": {"StepIf": {"AetheryteUnlocked": "Outer La Noscea - Camp Overlook"}}
+        },
+        {
+          "TerritoryId": 180,
+          "InteractionType": "AttuneAetheryte",
+          "Aetheryte": "Outer La Noscea - Camp Overlook",
+          "SkipConditions": {"StepIf": {"AetheryteUnlocked": "Outer La Noscea - Camp Overlook"}}
+        },
+        {
           "DataId": 2002436,
           "Position": {
               "X": 68.680786,
