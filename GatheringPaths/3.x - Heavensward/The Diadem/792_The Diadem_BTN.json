@@ -1,0 +1,247 @@
+{
+  "$schema": "https://qstxiv.github.io/schema/gatheringlocation-v1.json",
+  "Author": "alydev",
+  "Steps": [
+    {
+      "TerritoryId": 939,
+      "InteractionType": "None"
+    }
+  ],
+  "Groups": [
+    {
+      "Nodes": [
+        {
+          "DataId": 33740,
+          "Locations": [
+            {
+              "Position": {
+                "X": -732.2567,
+                "Y": 271.9411,
+                "Z": -58.10455
+              },
+              "MinimumAngle": -165,
+              "MaximumAngle": -45
+            },
+            {
+              "Position": {
+                "X": -736.6248,
+                "Y": 272.0075,
+                "Z": -60.29051
+              },
+              "MinimumAngle": -345,
+              "MaximumAngle": 0,
+              "MinimumDistance": 1.1,
+              "MaximumDistance": 2.1
+            }
+          ]
+        },
+        {
+          "DataId": 33792,
+          "Locations": [
+            {
+              "Position": {
+                "X": -322.3601,
+                "Y": 318.7378,
+                "Z": 579.6113
+              },
+              "MinimumAngle": -185,
+              "MaximumAngle": -140
+            },
+            {
+              "Position": {
+                "X": -316.7111,
+                "Y": 319.7499,
+                "Z": 582.8223
+              },
+              "MinimumAngle": -210,
+              "MaximumAngle": -165
+            }
+          ]
+        },
+        {
+          "DataId": 33745,
+          "Locations": [
+            {
+              "Position": {
+                "X": -135.8206,
+                "Y": 114.8377,
+                "Z": 562.9622
+              },
+              "MinimumAngle": -300,
+              "MaximumAngle": 0,
+              "MinimumDistance": 1,
+              "MaximumDistance": 2.4
+            },
+            {
+              "Position": {
+                "X": -138.6308,
+                "Y": 114.5854,
+                "Z": 555.1761
+              },
+              "MinimumAngle": -230,
+              "MaximumAngle": 0,
+              "MinimumDistance": 1,
+              "MaximumDistance": 2.4
+            }
+          ]
+        },
+        {
+          "DataId": 33799,
+          "Locations": [
+            {
+              "Position": {
+                "X": 261.4651,
+                "Y": 86.76636,
+                "Z": 558.4628
+              },
+              "MinimumAngle": -90,
+              "MaximumAngle": 0,
+              "MinimumDistance": 1,
+              "MaximumDistance": 1.9
+            },
+            {
+              "Position": {
+                "X": 264.502,
+                "Y": 86.59077,
+                "Z": 550.4167
+              },
+              "MinimumAngle": -30,
+              "MaximumAngle": 0,
+              "MinimumDistance": 1,
+              "MaximumDistance": 1.7
+            }
+          ]
+        },
+        {
+          "DataId": 33752,
+          "Locations": [
+            {
+              "Position": {
+                "X": 340.9007,
+                "Y": -4.387763,
+                "Z": 449.2666
+              },
+              "MinimumAngle": -200,
+              "MaximumAngle": 0
+            },
+            {
+              "Position": {
+                "X": 336.0591,
+                "Y": -4.423589,
+                "Z": 442.1274
+              },
+              "MinimumAngle": -110,
+              "MaximumAngle": -55
+            }
+          ]
+        },
+        {
+          "DataId": 33806,
+          "Locations": [
+            {
+              "Position": {
+                "X": 474.1015,
+                "Y": -23.71619,
+                "Z": 197.223
+              },
+              "MinimumAngle": -360,
+              "MaximumAngle": -265
+            }
+          ]
+        },
+        {
+          "DataId": 33759,
+          "Locations": [
+            {
+              "Position": {
+                "X": 652.8947,
+                "Y": 227.4962,
+                "Z": -130.7602
+              },
+              "MinimumAngle": -90,
+              "MaximumAngle": 0
+            },
+            {
+              "Position": {
+                "X": 645.5934,
+                "Y": 227.7486,
+                "Z": -131.0807
+              },
+              "MinimumAngle": -55,
+              "MaximumAngle": 0
+            }
+          ]
+        },
+        {
+          "DataId": 33811,
+          "Locations": [
+            {
+              "Position": {
+                "X": 643.1981,
+                "Y": 252.6253,
+                "Z": -401.1021
+              },
+              "MinimumAngle": -270,
+              "MaximumAngle": -165
+            },
+            {
+              "Position": {
+                "X": 646.2314,
+                "Y": 252.7168,
+                "Z": -405.6476
+              },
+              "MinimumAngle": 0,
+              "MaximumAngle": 110
+            }
+          ]
+        },
+        {
+          "DataId": 33813,
+          "Locations": [
+            {
+              "Position": {
+                "X": 528.9276,
+                "Y": 193.5699,
+                "Z": -515.0824
+              },
+              "MinimumAngle": -150,
+              "MaximumAngle": 0
+            },
+            {
+              "Position": {
+                "X": 530.1288,
+                "Y": 193.4073,
+                "Z": -517.847
+              },
+              "MinimumAngle": -70,
+              "MaximumAngle": 0
+            }
+          ]
+        },
+        {
+          "DataId": 33766,
+          "Locations": [
+            {
+              "Position": {
+                "X": 584.748,
+                "Y": 191.6504,
+                "Z": -556.0752
+              },
+              "MinimumAngle": -95,
+              "MaximumAngle": 0
+            },
+            {
+              "Position": {
+                "X": 581.3025,
+                "Y": 191.8162,
+                "Z": -552.4212
+              },
+              "MinimumAngle": -100,
+              "MaximumAngle": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

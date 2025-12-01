@@ -13,6 +13,7 @@ using Dalamud.Game.Text.SeStringHandling.Payloads;
 using Dalamud.Plugin.Services;
 using ECommons;
 using ECommons.GameFunctions;
+using FFXIVClientStructs.FFXIV.Client.LayoutEngine;
 using Lumina.Excel;
 using Lumina.Excel.Sheets;
 using Questionable.Model;
@@ -60,11 +61,29 @@ internal sealed class EditorCommands : IDisposable
                 case "add":
                     CreateOrAddLocationToGroup(arguments);
                     break;
+                case "clobber":
+                    //AddAllMissing();
+                    break;
             }
         }
         catch (Exception e)
         {
             _chatGui.PrintError(e.ToString(), "qG");
+        }
+    }
+
+    private unsafe void AddAllMissing()
+    {
+        var layout = LayoutWorld.Instance()->ActiveLayout;
+        if (layout == null || !layout->InstancesByType.TryGetValue(InstanceType.Gathering, out var mapPtr, false))
+        {
+            return;
+        }
+
+        foreach (ILayoutInstance* instance in mapPtr.Value->Values)
+        {
+            var transform = instance->GetTransformImpl();
+            var position = transform->Translation;
         }
     }
 

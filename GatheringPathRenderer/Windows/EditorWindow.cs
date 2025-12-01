@@ -173,6 +173,7 @@ internal sealed class EditorWindow : Window
             if (ImGui.DragIntRange2("Angle", ref minAngle, ref maxAngle, 5, -360, 360))
             {
                 locationOverride.MinimumAngle = minAngle;
+                if (minAngle >= maxAngle) maxAngle = 360;
                 locationOverride.MaximumAngle = maxAngle;
             }
 
@@ -183,6 +184,13 @@ internal sealed class EditorWindow : Window
                 locationOverride.MinimumDistance = minDistance;
                 locationOverride.MaximumDistance = maxDistance;
             }
+
+            if (ImGui.Button("60deg"))
+            {
+                locationOverride.MinimumAngle = minAngle <= 270 ? minAngle : minAngle-360;
+                locationOverride.MaximumAngle = maxAngle = minAngle <= 270 ? minAngle + 60 : minAngle-360+60;
+            }
+            ImGui.SameLine();
 
             bool unsaved = locationOverride.NeedsSave();
             ImGui.BeginDisabled(!unsaved);
@@ -215,19 +223,6 @@ internal sealed class EditorWindow : Window
             }
 
             ImGui.EndDisabled();
-
-            //ImGui.SameLine();
-            //if (ImGui.Button("90deg"))
-            //{
-            //    Vector3? position = _clientState.LocalPlayer?.Position;
-            //    if (position != null && position.Value.Length() != 0 && location.Position.Length() != 0)
-            //    {
-            //        var angle = Math.Acos(Vector3.Dot(position.Value, location.Position) /
-            //                              (position.Value.Length() * location.Position.Length()));
-            //        locationOverride.MinimumAngle = (int)angle;
-            //        locationOverride.MaximumAngle = (int)angle;
-            //    }
-            //}
 
 
             List<IGameObject> nodesInObjectTable = [.. _objectTable.Where(x => x.ObjectKind == ObjectKind.GatheringPoint && x.BaseId == _target.BaseId)];
