@@ -1,0 +1,119 @@
+{
+	"$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+	"Author": "Gezah",
+	"Comment": "Crafted Item: 1x Steel Chainmail HQ // Autocraft requires: 3x Steel Rings, 1x Undyed Velveteen",
+	"QuestSequence":
+	[
+	{
+		"Sequence": 0,
+		"Steps":
+		[
+		{
+			"DataId": 1001000,
+			"Position":
+			{
+				"X": -32.028687,
+				"Y": 41.499985,
+				"Z": 208.39233
+			},
+			"TerritoryId": 128,
+			"InteractionType": "AcceptQuest",
+			"AetheryteShortcut": "Limsa Lominsa",
+			"AethernetShortcut":
+			[
+			"[Limsa Lominsa] Aetheryte Plaza",
+			"[Limsa Lominsa] The Aftcastle"
+			],
+			"SkipConditions":
+			{
+				"AetheryteShortcutIf":
+				{
+					"InTerritory":
+					[
+					129,
+					128
+					]
+				}
+			}
+		}
+		]
+	},
+	{
+		"Sequence": 1,
+		"Steps":
+		[
+		{
+			"DataId": 1002107,
+			"Position":
+			{
+				"X": -157.21375,
+				"Y": 6.250008,
+				"Z": 164.96521
+			},
+			"TerritoryId": 129,
+			"InteractionType": "Interact",
+			"AethernetShortcut":
+			[
+			"[Limsa Lominsa] The Aftcastle",
+			"[Limsa Lominsa] Fishermen's Guild"
+			]
+		}
+		]
+	},
+	{
+		"Sequence": 2,
+		"Steps":
+		[
+		{
+			"DataId": 1001001,
+			"Position":
+			{
+				"X": -56.443176,
+				"Y": 39.974316,
+				"Z": 178.72888
+			},
+			"TerritoryId": 128,
+			"InteractionType": "Interact",
+			"AethernetShortcut":
+			[
+			"[Limsa Lominsa] Fishermen's Guild",
+			"[Limsa Lominsa] The Aftcastle"
+			]
+		}
+		]
+	},
+	{
+		"Sequence": 255,
+		"Steps":
+		[
+		{
+			"InteractionType": "Craft",
+			"TerritoryId": 128,
+			"ItemId": 3096,
+			"ItemCount": 1,
+			"SkipConditions":
+			{
+				"StepIf":
+				{
+					"Item":
+					{
+						"NotInInventory": false
+					}
+				}
+			}
+		},
+		{
+			"DataId": 1001001,
+			"Position":
+			{
+				"X": -56.443176,
+				"Y": 39.974316,
+				"Z": 178.72888
+			},
+			"TerritoryId": 128,
+			"InteractionType": "CompleteQuest"
+		}
+		]
+	}
+	]
+}

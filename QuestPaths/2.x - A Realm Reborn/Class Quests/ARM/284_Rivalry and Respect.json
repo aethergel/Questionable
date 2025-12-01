@@ -1,0 +1,120 @@
+{
+	"$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+	"Author": "Gezah",
+	"Comment": "!!Requires Manual Melding!! Crafted Item: 1x Cobalt Haubergeon HQ with 1x Heavens' Eye Materia III // Autocraft requires: 3x Cobalt Rings, 1x Undyed Felt, 1x Mythril Plate, 1x Boar Leather",
+	"QuestSequence":
+	[
+	{
+		"Sequence": 0,
+		"Steps":
+		[
+		{
+			"DataId": 1001000,
+			"Position":
+			{
+				"X": -32.028687,
+				"Y": 41.499985,
+				"Z": 208.39233
+			},
+			"TerritoryId": 128,
+			"InteractionType": "AcceptQuest",
+			"AetheryteShortcut": "Limsa Lominsa",
+			"AethernetShortcut":
+			[
+			"[Limsa Lominsa] Aetheryte Plaza",
+			"[Limsa Lominsa] The Aftcastle"
+			],
+			"SkipConditions":
+			{
+				"AetheryteShortcutIf":
+				{
+					"InTerritory":
+					[
+					129,
+					128
+					]
+				}
+			}
+		}
+		]
+	},
+	{
+		"Sequence": 1,
+		"Steps":
+		[
+		{
+			"InteractionType": "Craft",
+			"TerritoryId": 128,
+			"ItemId": 3203,
+			"ItemCount": 1,
+			"SkipConditions":
+			{
+				"StepIf": 
+				{
+					"Item": 
+					{
+						"NotInInventory": false
+					}
+				}
+			}
+		},
+		{
+			"DataId": 1001540,
+			"Position":
+			{
+				"X": -202.68567,
+				"Y": 16,
+				"Z": 56.99243
+			},
+			"TerritoryId": 129,
+			"InteractionType": "Interact",
+			"AethernetShortcut":
+			[
+			"[Limsa Lominsa] The Aftcastle",
+			"[Limsa Lominsa] Hawkers' Alley"
+			]
+		}
+		]
+	},
+	{
+		"Sequence": 2,
+		"Steps":
+		[
+		{
+			"DataId": 1001001,
+			"Position":
+			{
+				"X": -56.443176,
+				"Y": 39.974316,
+				"Z": 178.72888
+			},
+			"TerritoryId": 128,
+			"InteractionType": "Interact",
+			"AethernetShortcut":
+			[
+			"[Limsa Lominsa] Hawkers' Alley",
+			"[Limsa Lominsa] The Aftcastle"
+			]
+		}
+		]
+	},
+	{
+		"Sequence": 255,
+		"Steps":
+		[
+		{
+			"DataId": 1001000,
+			"Position":
+			{
+				"X": -32.028687,
+				"Y": 41.499985,
+				"Z": 208.39233
+			},
+			"TerritoryId": 128,
+			"InteractionType": "CompleteQuest",
+			"AllowHighQuality":true
+		}
+		]
+	}
+	]
+}
