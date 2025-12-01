@@ -319,7 +319,7 @@ internal sealed class EditorWindow : Window
         ImGui.Text($"Nodes in {_clientState.TerritoryType}: ({count})");
         List<string> seen = [];
         count = 0;
-        Dictionary<uint, Tuple<string, bool, float>> output = [];
+        Dictionary<uint, Tuple<string, string, bool, float>> output = [];
         foreach (GatheringPoint _point in gatheringPoints.OrderBy(x => x.PlaceName.Value.Name.ToMacroString()))
         {
             if (_point.GatheringPointBase.RowId >= 653 && _point.GatheringPointBase.RowId <= 680) continue; // obsolete skybuilders stuff
@@ -343,6 +343,7 @@ internal sealed class EditorWindow : Window
                 if (filterClass.Equals(FilterClass.Miner) && !gatheringType.Equals(GatheringType.Mining) && !gatheringType.Equals(GatheringType.Quarrying)) continue;
                 if (filterClass.Equals(FilterClass.Botanist) && !gatheringType.Equals(GatheringType.Logging) && !gatheringType.Equals(GatheringType.Harvesting)) continue;
                 string line = $"{gatheringType.ToString()[..1]}{special}{_point.RowId} {_point.PlaceName.Value.Name}  ";
+                string coords = "";
                 bool orange = false;
                 float distance = 0.0f;
                 if (_plugin.GBRLocationData.TryGetValue(_point.RowId, out List<Vector3>? value))
@@ -351,11 +352,8 @@ internal sealed class EditorWindow : Window
                     if (gbr != null)
                     {
                         var scale = _point.TerritoryType.Value.Map.Value.SizeFactor;
-                        line += $"{gbr.Value.X} {gbr.Value.Y} {gbr.Value.Z}";
-                        if (ImGui.IsItemClicked())
-                        {
-                            _commandManager.ProcessCommand($"/vnav flyto {gbr.Value.X} {gbr.Value.Y} {gbr.Value.Z}");
-                        }
+                        coords = $"{gbr.Value.X} {gbr.Value.Y} {gbr.Value.Z}";
+                        line += coords;
                         distance = (_clientState.LocalPlayer.Position - gbr).Value.Length();
                         if (distance < 200)
                         {
@@ -372,19 +370,23 @@ internal sealed class EditorWindow : Window
                         }
                     }
                 }
-                output.Add(_point.RowId, new(line, orange, distance));
+                output.Add(_point.RowId, new(line, coords, orange, distance));
                 shownNone = false;
             }
         }
         if (!shownNone)
         {
             var sorted = sortByDistance ? output.Values.OrderBy(t => t.Item3) : output.Values.OrderBy(t => t.Item1);
-            foreach (var (line, orange, distance) in sorted)
+            foreach (var (line, coords, orange, distance) in sorted)
             {
                 if (orange)
                     ImGui.TextColored(ImGuiColors.DalamudOrange, line);
                 else
                     ImGui.Text(line);
+                if (ImGui.IsItemClicked())
+                {
+                    _commandManager.ProcessCommand($"/vnav flyto {coords}");
+                }
             }
         }
         else
