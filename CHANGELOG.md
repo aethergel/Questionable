@@ -1,1 +1,1 @@
-- Crafting quests by Gezeh
+- Always show next auto prio quest by alydev

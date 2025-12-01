@@ -264,51 +264,44 @@ internal sealed partial class ActiveQuestComponent
                     }
                 }
 
-                if (_configuration.Advanced.AdditionalStatusInformation && _questController.IsInterruptible())
+                ImGui.SameLine();
+                ImGui.TextColored(ImGuiColors.DalamudYellow, SeIconChar.Hyadelyn.ToIconString());
+                if (ImGui.IsItemHovered())
                 {
-                    ImGui.SameLine();
-                    ImGui.TextColored(ImGuiColors.DalamudYellow, SeIconChar.Hyadelyn.ToIconString());
-                    if (ImGui.IsItemHovered())
+                    using var tooltip = ImRaii.Tooltip();
+                    if (tooltip)
                     {
-                        using var tooltip = ImRaii.Tooltip();
-                        if (tooltip)
+                        ImGui.Text(
+                            "Certain priority quest (e.g. class quests) may be started/completed by the plugin prior to continuing, usually at a teleport step.");
+                        ImGui.Separator();
+                        ImGui.Text("Available priority quests:");
+
+                        List<PriorityQuestInfo> priorityQuests = _questFunctions.GetNextPriorityQuestsThatCanBeAccepted();
+                        var availablePriorityQuests = priorityQuests
+                            .Where(x => x.IsAvailable)
+                            .Select(x => x.QuestId)
+                            .ToList();
+                        if (availablePriorityQuests.Count > 0)
                         {
-                            ImGui.Text("This quest sequence starts with a teleport to an Aetheryte.");
-                            ImGui.Text(
-                                "Certain priority quest (e.g. class quests) may be started/completed by the plugin prior to continuing with this quest.");
-                            ImGui.Separator();
-                            ImGui.Text("Available priority quests:");
-
-                            List<PriorityQuestInfo> priorityQuests = _questFunctions.GetNextPriorityQuestsThatCanBeAccepted();
-                            var availablePriorityQuests = priorityQuests
-                                .Where(x => x.IsAvailable)
-                                .Select(x => x.QuestId)
-                                .ToList();
-                            if (availablePriorityQuests.Count > 0)
+                            foreach (var questId in availablePriorityQuests)
                             {
-                                foreach (var questId in availablePriorityQuests)
-                                {
-                                    if (_questRegistry.TryGetQuest(questId, out var quest))
-                                        ImGui.BulletText($"{quest.Info.Name} ({questId})");
-                                }
+                                if (_questRegistry.TryGetQuest(questId, out var quest))
+                                    ImGui.BulletText($"{quest.Info.Name} ({questId})");
                             }
-                            else
-                                ImGui.BulletText("(none)");
+                        }
+                        else
+                            ImGui.BulletText("(none)");
 
-                            if (_configuration.Advanced.AdditionalStatusInformation)
+                        var unavailablePriorityQuests = priorityQuests
+                            .Where(x => !x.IsAvailable)
+                            .ToList();
+                        if (unavailablePriorityQuests.Count > 0)
+                        {
+                            ImGui.Text("Unavailable priority quests:");
+                            foreach (var (questId, reason) in unavailablePriorityQuests)
                             {
-                                var unavailablePriorityQuests = priorityQuests
-                                    .Where(x => !x.IsAvailable)
-                                    .ToList();
-                                if (unavailablePriorityQuests.Count > 0)
-                                {
-                                    ImGui.Text("Unavailable priority quests:");
-                                    foreach (var (questId, reason) in unavailablePriorityQuests)
-                                    {
-                                        if (_questRegistry.TryGetQuest(questId, out var quest))
-                                            ImGui.BulletText($"{quest.Info.Name} ({questId}) - {reason}");
-                                    }
-                                }
+                                if (_questRegistry.TryGetQuest(questId, out var quest))
+                                    ImGui.BulletText($"{quest.Info.Name} ({questId}) - {reason}");
                             }
                         }
                     }
