@@ -1,1 +1,1 @@
-- Always show next auto prio quest by alydev
+- Unlock overlook earlier by alydev
