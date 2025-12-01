@@ -310,7 +310,7 @@ internal sealed class EditorWindow : Window
         ImGui.SameLine();
         var filterClassIcon = FontAwesomeIcon.Notdef;
         if (filterClass.Equals(FilterClass.Miner)) filterClassIcon = FontAwesomeIcon.HandRock;
-        if (filterClass.Equals(FilterClass.Botanist)) filterClassIcon = FontAwesomeIcon.HandScissors;
+        if (filterClass.Equals(FilterClass.Botanist)) filterClassIcon = FontAwesomeIcon.HandPaper;
         if (ImGuiComponents.IconButton(filterClassIcon))
         {
             filterClass = (FilterClass)(((int)filterClass + 1) % Enum.GetValues(typeof(FilterClass)).Length);
