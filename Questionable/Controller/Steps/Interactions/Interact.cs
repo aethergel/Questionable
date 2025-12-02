@@ -278,6 +278,14 @@ internal static class Interact
 
         public override bool ShouldInterruptOnDamage() => true;
 
+        public override bool WasInterrupted()
+        {
+            if (condition[ConditionFlag.InCombat])
+                return true;
+
+            return base.WasInterrupted();
+        }
+
         private enum EInteractionState
         {
             None,
