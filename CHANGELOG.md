@@ -1,3 +1,1 @@
-- Add message if player has not unlocked grd gates by alydev
-- Only show prio quest info if there are any options available by alydev
-- sahagin tribe: add 1384, fix 1379 by alydev
+- vanu 2172 position fix by alydev
