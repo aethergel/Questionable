@@ -1,1 +1,2 @@
 - Remove deprecated _clientState.LocalPlayer, code cleanup by alydev
+- Fix race condition when interacting with NPCs after combat by Brappp
