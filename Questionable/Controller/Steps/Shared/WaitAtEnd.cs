@@ -19,6 +19,7 @@ internal static class WaitAtEnd
 {
     internal sealed class Factory(
         IClientState clientState,
+        IObjectTable objectTable,
         ICondition condition,
         TerritoryData territoryData,
         AutoDutyIpc autoDutyIpc,
@@ -88,10 +89,10 @@ internal static class WaitAtEnd
                     }
                     else
                     {
-                        Vector3 lastPosition = step.Position ?? clientState.LocalPlayer?.Position ?? Vector3.Zero;
+                        Vector3 lastPosition = step.Position ?? objectTable.LocalPlayer?.Position ?? Vector3.Zero;
                         waitInteraction = new WaitCondition.Task(() =>
                             {
-                                Vector3? currentPosition = clientState.LocalPlayer?.Position;
+                                Vector3? currentPosition = objectTable.LocalPlayer?.Position;
                                 if (currentPosition == null)
                                     return false;
 

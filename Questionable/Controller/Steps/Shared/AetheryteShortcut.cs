@@ -56,6 +56,7 @@ internal static class AetheryteShortcut
         AetheryteFunctions aetheryteFunctions,
         QuestFunctions questFunctions,
         IClientState clientState,
+        IObjectTable objectTable,
         IChatGui chatGui,
         ICondition condition,
         AetheryteData aetheryteData,
@@ -142,7 +143,7 @@ internal static class AetheryteShortcut
                     if (skipConditions.NearPosition is { } nearPosition &&
                         clientState.TerritoryType == nearPosition.TerritoryId)
                     {
-                        if (Vector3.Distance(nearPosition.Position, clientState.LocalPlayer!.Position) <=
+                        if (Vector3.Distance(nearPosition.Position, objectTable.LocalPlayer!.Position) <=
                             nearPosition.MaximumDistance)
                         {
                             logger.LogInformation("Skipping aetheryte shortcut, as we're near the position");
@@ -154,7 +155,7 @@ internal static class AetheryteShortcut
                         clientState.TerritoryType == notNearPosition.TerritoryId)
                     {
                         if (notNearPosition.MaximumDistance <=
-                            Vector3.Distance(notNearPosition.Position, clientState.LocalPlayer!.Position))
+                            Vector3.Distance(notNearPosition.Position, objectTable.LocalPlayer!.Position))
                         {
                             logger.LogInformation("Skipping aetheryte shortcut, as we're not near the position");
                             return true;
@@ -186,7 +187,7 @@ internal static class AetheryteShortcut
                             return false;
                         }
 
-                        Vector3 pos = clientState.LocalPlayer!.Position;
+                        Vector3 pos = objectTable.LocalPlayer!.Position;
                         float distance_target = (pos - Task.Step.Position.Value).Length();
                         float distance_aetheryte_to_target = aetheryteData.CalculateDistance(Task.Step.Position.Value, territoryType, Task.TargetAetheryte);
                         if (distance_target < Task.Step.CalculateActualStopDistance())
@@ -267,7 +268,8 @@ internal static class AetheryteShortcut
     internal sealed class MoveAwayFromAetheryteExecutor(
         MoveExecutor moveExecutor,
         AetheryteData aetheryteData,
-        IClientState clientState) : TaskExecutor<MoveAwayFromAetheryte>
+        IClientState clientState,
+        IObjectTable objectTable) : TaskExecutor<MoveAwayFromAetheryte>
     {
         private static readonly Dictionary<EAetheryteLocation, List<Vector3>> AetherytesToMoveFrom = new()
         {
@@ -287,7 +289,7 @@ internal static class AetheryteShortcut
         protected override bool Start()
         {
             // only relevant if we're actually near the s9 aetheryte at the end
-            Vector3 playerPosition = clientState.LocalPlayer!.Position;
+            Vector3 playerPosition = objectTable.LocalPlayer!.Position;
             if (aetheryteData.CalculateDistance(playerPosition, clientState.TerritoryType, Task.TargetAetheryte) >= 20)
                 return false;
 

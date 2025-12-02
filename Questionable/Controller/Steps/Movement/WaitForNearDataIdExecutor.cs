@@ -6,7 +6,7 @@ namespace Questionable.Controller.Steps.Movement;
 
 internal sealed class WaitForNearDataIdExecutor(
     GameFunctions gameFunctions,
-    IClientState clientState) : TaskExecutor<WaitForNearDataId>
+    IObjectTable objectTable) : TaskExecutor<WaitForNearDataId>
 {
     protected override bool Start() => true;
 
@@ -14,7 +14,7 @@ internal sealed class WaitForNearDataIdExecutor(
     {
         IGameObject? gameObject = gameFunctions.FindObjectByDataId(Task.DataId);
         if (gameObject == null ||
-            (gameObject.Position - clientState.LocalPlayer!.Position).Length() > Task.StopDistance)
+            (gameObject.Position - objectTable.LocalPlayer!.Position).Length() > Task.StopDistance)
         {
             throw new TaskException("Object not found or too far away, no position so we can't move");
         }

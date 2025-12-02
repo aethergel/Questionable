@@ -30,7 +30,8 @@ internal static class DoGatherCollectable
     internal sealed class GatherCollectableExecutor(
         GatheringController gatheringController,
         GameFunctions gameFunctions,
-        IClientState clientState,
+        IPlayerState playerState,
+        IObjectTable objectTable,
         IGameGui gameGui,
         ILogger<GatherCollectableExecutor> logger) : TaskExecutor<Task>
     {
@@ -141,12 +142,16 @@ internal static class DoGatherCollectable
 
         private Queue<EAction> GetNextActions(NodeCondition nodeCondition)
         {
-            uint gp = clientState.LocalPlayer!.CurrentGp;
+            Queue<EAction> actions = new();
+
+            if (objectTable.LocalPlayer == null)
+                return actions;
+
+            uint gp = objectTable.LocalPlayer!.CurrentGp;
             logger.LogTrace(
                 "Getting next actions (with {GP} GP, {MeticulousCollectability}~ meticulous, {ScourCollectability}~ scour)",
                 gp, nodeCondition.CollectabilityFromMeticulous, nodeCondition.CollectabilityFromScour);
 
-            Queue<EAction> actions = new();
 
             uint neededCollectability = nodeCondition.CollectabilityToGoal(Task.Request.Collectability);
             if (neededCollectability <= nodeCondition.CollectabilityFromMeticulous)
@@ -193,7 +198,7 @@ internal static class DoGatherCollectable
 
         private EAction PickAction(EAction minerAction, EAction botanistAction)
         {
-            if ((EClassJob?)clientState.LocalPlayer?.ClassJob.RowId == EClassJob.Miner)
+            if ((EClassJob?)playerState.ClassJob.RowId == EClassJob.Miner)
                 return minerAction;
             else
                 return botanistAction;

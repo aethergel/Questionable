@@ -63,6 +63,7 @@ internal static class AethernetShortcut
         GameFunctions gameFunctions,
         QuestFunctions questFunctions,
         IClientState clientState,
+        IObjectTable objectTable,
         AetheryteData aetheryteData,
         TerritoryData territoryData,
         LifestreamIpc lifestreamIpc,
@@ -125,7 +126,7 @@ internal static class AethernetShortcut
                 aetheryteFunctions.IsAetheryteUnlocked(Task.To))
             {
                 ushort territoryType = clientState.TerritoryType;
-                Vector3 playerPosition = clientState.LocalPlayer!.Position;
+                Vector3 playerPosition = objectTable.LocalPlayer!.Position;
 
                 // closer to the source
                 if (aetheryteData.CalculateDistance(playerPosition, territoryType, Task.From) <
@@ -244,7 +245,7 @@ internal static class AethernetShortcut
                 return ETaskResult.StillRunning;
             }
 
-            Vector3? position = clientState.LocalPlayer?.Position;
+            Vector3? position = objectTable.LocalPlayer?.Position;
             if (position == null)
                 return ETaskResult.StillRunning;
 

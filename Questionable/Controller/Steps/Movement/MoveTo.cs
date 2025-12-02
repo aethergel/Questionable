@@ -13,6 +13,7 @@ internal static class MoveTo
 {
     internal sealed class Factory(
         IClientState clientState,
+        IObjectTable objectTable,
         AetheryteData aetheryteData,
         TerritoryData territoryData,
         ILogger<Factory> logger) : ITaskFactory
@@ -47,7 +48,7 @@ internal static class MoveTo
         private IEnumerable<ITask> CreateMoveTasks(QuestStep step, Vector3 destination)
         {
             if (step.InteractionType == EInteractionType.Jump && step.JumpDestination != null &&
-                (clientState.LocalPlayer!.Position - step.JumpDestination.Position).Length() <=
+                (objectTable.LocalPlayer!.Position - step.JumpDestination.Position).Length() <=
                 (step.JumpDestination.StopDistance ?? 1f))
             {
                 logger.LogInformation("We're at the jump destination, skipping movement");

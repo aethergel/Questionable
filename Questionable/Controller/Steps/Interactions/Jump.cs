@@ -43,14 +43,14 @@ internal static class Jump
 
     internal abstract class JumpBase<T>(
         MovementController movementController,
-        IClientState clientState,
+        IObjectTable objectTable,
         IFramework framework) : TaskExecutor<T>
         where T : class, IJumpTask
     {
         protected override bool Start()
         {
             float stopDistance = Task.JumpDestination.CalculateStopDistance();
-            if ((clientState.LocalPlayer!.Position - Task.JumpDestination.Position).Length() <= stopDistance)
+            if ((objectTable.LocalPlayer!.Position - Task.JumpDestination.Position).Length() <= stopDistance)
                 return false;
 
             movementController.NavigateTo(EMovementType.Quest, Task.DataId, [Task.JumpDestination.Position], false,
@@ -84,8 +84,8 @@ internal static class Jump
 
     internal sealed class DoSingleJump(
         MovementController movementController,
-        IClientState clientState,
-        IFramework framework) : JumpBase<SingleJumpTask>(movementController, clientState, framework);
+        IObjectTable objectTable,
+        IFramework framework) : JumpBase<SingleJumpTask>(movementController, objectTable, framework);
 
     internal sealed record RepeatedJumpTask(
         uint? DataId,
@@ -97,12 +97,11 @@ internal static class Jump
 
     internal sealed class DoRepeatedJumps(
         MovementController movementController,
-        IClientState clientState,
         IObjectTable objectTable,
         IFramework framework,
         ICondition condition,
         ILogger<DoRepeatedJumps> logger)
-        : JumpBase<RepeatedJumpTask>(movementController, clientState, framework)
+        : JumpBase<RepeatedJumpTask>(movementController, objectTable, framework)
     {
         private readonly IObjectTable _objectTable = objectTable;
         private DateTime _continueAt = DateTime.MinValue;

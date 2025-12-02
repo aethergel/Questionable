@@ -57,6 +57,8 @@ internal static class SkipCondition
         GameFunctions gameFunctions,
         QuestFunctions questFunctions,
         IClientState clientState,
+        IObjectTable objectTable,
+        IPlayerState playerState,
         ICondition condition,
         ExtraConditionUtils extraConditionUtils,
         ClassJobUtils classJobUtils) : TaskExecutor<SkipTask>
@@ -218,7 +220,7 @@ internal static class SkipCondition
                 IGameObject? gameObject = gameFunctions.FindObjectByDataId(step.DataId.Value);
                 if (gameObject == null)
                 {
-                    if ((step.Position.GetValueOrDefault() - clientState.LocalPlayer!.Position).Length() < 100)
+                    if ((step.Position.GetValueOrDefault() - objectTable.LocalPlayer!.Position).Length() < 100)
                     {
                         logger.LogInformation("Skipping step, object is not nearby (but we are)");
                         return true;
@@ -391,7 +393,7 @@ internal static class SkipCondition
             {
                 List<EClassJob> expectedJobs =
                     step.RequiredCurrentJob.SelectMany(x => classJobUtils.AsIndividualJobs(x, elementId)).ToList();
-                EClassJob currentJob = (EClassJob)clientState.LocalPlayer!.ClassJob.RowId;
+                EClassJob currentJob = (EClassJob)playerState.ClassJob.RowId;
                 logger.LogInformation("Checking current job {CurrentJob} against {ExpectedJobs}", currentJob,
                     string.Join(",", expectedJobs));
                 if (!expectedJobs.Contains(currentJob))
@@ -409,7 +411,7 @@ internal static class SkipCondition
             if (skipConditions.NearPosition is { } nearPosition &&
                 clientState.TerritoryType == nearPosition.TerritoryId)
             {
-                if (Vector3.Distance(nearPosition.Position, clientState.LocalPlayer!.Position) <=
+                if (Vector3.Distance(nearPosition.Position, objectTable.LocalPlayer!.Position) <=
                     nearPosition.MaximumDistance)
                 {
                     logger.LogInformation("Skipping step, as we're near the position");
@@ -421,7 +423,7 @@ internal static class SkipCondition
                 clientState.TerritoryType == notNearPosition.TerritoryId)
             {
                 if (notNearPosition.MaximumDistance <=
-                    Vector3.Distance(notNearPosition.Position, clientState.LocalPlayer!.Position))
+                    Vector3.Distance(notNearPosition.Position, objectTable.LocalPlayer!.Position))
                 {
                     logger.LogInformation("Skipping step, as we're not near the position");
                     return true;

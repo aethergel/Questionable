@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Questionable.Controller.Steps.Movement;
 
-internal sealed class LandExecutor(IClientState clientState, ICondition condition, ILogger<LandExecutor> logger)
+internal sealed class LandExecutor(IObjectTable objectTable, ICondition condition, ILogger<LandExecutor> logger)
     : TaskExecutor<LandTask>
 {
     private bool _landing;
@@ -47,7 +47,7 @@ internal sealed class LandExecutor(IClientState clientState, ICondition conditio
 
     private unsafe bool AttemptLanding()
     {
-        var character = (Character*)(clientState.LocalPlayer?.Address ?? 0);
+        var character = (Character*)(objectTable.LocalPlayer?.Address ?? 0);
         if (character != null)
         {
             if (ActionManager.Instance()->GetActionStatus(ActionType.GeneralAction, 23) == 0)

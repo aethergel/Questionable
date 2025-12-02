@@ -27,11 +27,11 @@ internal static class SwitchClassJob
         public override string ToString() => $"SwitchJob({ClassJob})";
     }
 
-    internal sealed class SwitchClassJobExecutor(IClientState clientState) : AbstractDelayedTaskExecutor<Task>
+    internal sealed class SwitchClassJobExecutor(IPlayerState playerState) : AbstractDelayedTaskExecutor<Task>
     {
         protected override unsafe bool StartInternal()
         {
-            if (clientState.LocalPlayer!.ClassJob.RowId == (uint)Task.ClassJob)
+            if (playerState.ClassJob.RowId == (uint)Task.ClassJob)
                 return false;
 
             var gearsetModule = RaptureGearsetModule.Instance();

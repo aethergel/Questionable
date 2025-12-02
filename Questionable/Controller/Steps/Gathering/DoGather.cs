@@ -33,7 +33,7 @@ internal static class DoGather
         GatheringController gatheringController,
         GameFunctions gameFunctions,
         IGameGui gameGui,
-        IClientState clientState,
+        IPlayerState playerState,
         ICondition condition,
         ILogger<GatherExecutor> logger) : TaskExecutor<Task>
     {
@@ -171,7 +171,7 @@ internal static class DoGather
             if (_slotToGather != null && slots.All(x => x.Index != _slotToGather.Index))
                 _slotToGather = null;
 
-            //uint gp = clientState.LocalPlayer!.CurrentGp;
+            //uint gp = objectTable.CurrentGp;
             Queue<EAction> actions = new();
 
             if (!gameFunctions.HasStatus(EStatus.GatheringRateUp))
@@ -278,7 +278,7 @@ internal static class DoGather
 
         private EAction PickAction(EAction minerAction, EAction botanistAction)
         {
-            if ((EClassJob?)clientState.LocalPlayer?.ClassJob.RowId == EClassJob.Miner)
+            if ((EClassJob?)playerState.ClassJob.RowId == EClassJob.Miner)
                 return minerAction;
             else
                 return botanistAction;
