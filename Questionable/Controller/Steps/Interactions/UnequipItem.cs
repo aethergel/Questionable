@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using Dalamud.Game.Text.SeStringHandling;
 using Dalamud.Plugin.Services;
 using FFXIVClientStructs.FFXIV.Client.Game;
@@ -116,7 +115,7 @@ internal static class UnequipItem
             foreach (ushort slot in _targetSlots)
             {
                 var itemSlot = equippedContainer->GetInventorySlot(slot);
-                
+
                 if (itemSlot != null && itemSlot->ItemId != Task.ItemId)
                 {
                     logger.LogInformation("Already unequipped {Item}, skipping step", _item?.Name.ToString());

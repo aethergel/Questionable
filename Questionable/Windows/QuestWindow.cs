@@ -20,6 +20,7 @@ internal sealed class QuestWindow : LWindow, IPersistableWindowConfig
     private readonly IDalamudPluginInterface _pluginInterface;
     private readonly QuestController _questController;
     private readonly IClientState _clientState;
+    private readonly IObjectTable _objectTable;
     private readonly Configuration _configuration;
     private readonly TerritoryData _territoryData;
     private readonly ActiveQuestComponent _activeQuestComponent;
@@ -35,6 +36,7 @@ internal sealed class QuestWindow : LWindow, IPersistableWindowConfig
     public QuestWindow(IDalamudPluginInterface pluginInterface,
         QuestController questController,
         IClientState clientState,
+        IObjectTable objectTable,
         Configuration configuration,
         TerritoryData territoryData,
         ActiveQuestComponent activeQuestComponent,
@@ -52,6 +54,7 @@ internal sealed class QuestWindow : LWindow, IPersistableWindowConfig
         _pluginInterface = pluginInterface;
         _questController = questController;
         _clientState = clientState;
+        _objectTable = objectTable;
         _configuration = configuration;
         _territoryData = territoryData;
         _activeQuestComponent = activeQuestComponent;
@@ -129,7 +132,7 @@ internal sealed class QuestWindow : LWindow, IPersistableWindowConfig
         if (!_configuration.IsPluginSetupComplete())
             return false;
 
-        if (!_clientState.IsLoggedIn || _clientState.LocalPlayer == null || _clientState.IsPvPExcludingDen)
+        if (!_clientState.IsLoggedIn || _objectTable.LocalPlayer == null || _clientState.IsPvPExcludingDen)
             return false;
 
         if (_configuration.General.HideInAllInstances && _territoryData.IsDutyInstance(_clientState.TerritoryType))

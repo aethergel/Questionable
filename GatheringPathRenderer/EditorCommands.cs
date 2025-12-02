@@ -7,14 +7,8 @@ using Dalamud.Game.ClientState.Objects;
 using Dalamud.Game.ClientState.Objects.Enums;
 using Dalamud.Game.ClientState.Objects.Types;
 using Dalamud.Game.Command;
-using Dalamud.Game.Text;
-using Dalamud.Game.Text.SeStringHandling;
-using Dalamud.Game.Text.SeStringHandling.Payloads;
 using Dalamud.Plugin.Services;
-using ECommons;
-using ECommons.GameFunctions;
 using FFXIVClientStructs.FFXIV.Client.LayoutEngine;
-using Lumina.Excel;
 using Lumina.Excel.Sheets;
 using Questionable.Model;
 using Questionable.Model.Gathering;
@@ -29,18 +23,23 @@ internal sealed class EditorCommands : IDisposable
     private readonly ICommandManager _commandManager;
     private readonly ITargetManager _targetManager;
     private readonly IClientState _clientState;
+    private readonly IObjectTable _objectTable;
+    private readonly IPlayerState _playerState;
     private readonly IChatGui _chatGui;
     private readonly IPluginLog _pluginLog;
     private readonly Configuration _configuration;
 
     public EditorCommands(RendererPlugin plugin, IDataManager dataManager, ICommandManager commandManager,
-        ITargetManager targetManager, IClientState clientState, IChatGui chatGui, IPluginLog pluginLog, Configuration configuration)
+        ITargetManager targetManager, IClientState clientState, IObjectTable objectTable, IPlayerState playerState,
+        IChatGui chatGui, IPluginLog pluginLog, Configuration configuration)
     {
         _plugin = plugin;
         _dataManager = dataManager;
         _commandManager = commandManager;
         _targetManager = targetManager;
         _clientState = clientState;
+        _objectTable = objectTable;
+        _playerState = playerState;
         _chatGui = chatGui;
         _pluginLog = pluginLog;
         _configuration = configuration;
@@ -167,7 +166,7 @@ internal sealed class EditorCommands : IDisposable
                     Group = group,
                     Distance = group.Nodes.Min(x =>
                         x.Locations.Min(y =>
-                            Vector3.Distance(_clientState.LocalPlayer!.Position, y.Position)))
+                            Vector3.Distance(_objectTable.LocalPlayer!.Position, y.Position)))
                 })
                 .OrderBy(x => x.Distance)
                 .First();
@@ -203,7 +202,7 @@ internal sealed class EditorCommands : IDisposable
         FileInfo targetFile =
             new(
                 Path.Combine(targetFolder.FullName,
-                    $"{gatheringPoint.GatheringPointBase.RowId}_{gatheringPoint.PlaceName.Value.Name}_{(_clientState.LocalPlayer!.ClassJob.RowId == 16 ? "MIN" : "BTN")}.json"));
+                    $"{gatheringPoint.GatheringPointBase.RowId}_{gatheringPoint.PlaceName.Value.Name}_{(_playerState.ClassJob.RowId == 16 ? "MIN" : "BTN")}.json"));
         var root = new GatheringRoot
         {
             Author = [_configuration.AuthorName],

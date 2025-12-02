@@ -236,7 +236,7 @@ internal static class DoGather
                         logger.LogDebug("Didn't find item after using Luck, moving on...");
                         if (nodeCondition.CurrentIntegrity != nodeCondition.MaxIntegrity)
                             return null;
-                        
+
                         logger.LogDebug("Actually there's crystals, let's get those");
                         // otherwise, there most likely is -any- other item available, probably a shard/crystal
                         _slotToGather = slots.MinBy(x => x.ItemId);

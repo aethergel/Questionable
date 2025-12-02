@@ -104,9 +104,6 @@ internal sealed unsafe class AetheryteFunctions
 
     public AetheryteRegistrationResult CanRegisterFreeOrFavoriteAetheryte(EAetheryteLocation aetheryteLocation)
     {
-        if (_clientState.LocalPlayer == null)
-            return AetheryteRegistrationResult.NotPossible;
-
         var playerState = PlayerState.Instance();
         if (playerState == null)
             return AetheryteRegistrationResult.NotPossible;

@@ -4,7 +4,6 @@ using Dalamud.Interface.Components;
 using Dalamud.Interface.Utility.Raii;
 using Dalamud.Plugin.Services;
 using Questionable.Controller;
-using Questionable.Data;
 using Questionable.Functions;
 using Questionable.Model;
 using Questionable.Model.Questing;
@@ -86,7 +85,7 @@ internal sealed class QuestJournalUtils
 
         if (ImGui.MenuItem("Add all to Priority Quests"))
         {
-            foreach(var quest in quests)
+            foreach (var quest in quests)
             {
                 _questController.AddQuestPriority(quest.QuestId);
             }
@@ -94,7 +93,7 @@ internal sealed class QuestJournalUtils
 
         if (ImGui.MenuItem("Remove all from Priority Quests"))
         {
-            foreach(var quest in quests)
+            foreach (var quest in quests)
             {
                 _questController.RemoveQuestPriority(quest.QuestId);
             }

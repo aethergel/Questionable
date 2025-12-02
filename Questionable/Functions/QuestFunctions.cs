@@ -35,6 +35,8 @@ internal sealed unsafe class QuestFunctions
     private readonly Configuration _configuration;
     private readonly IDataManager _dataManager;
     private readonly IClientState _clientState;
+    private readonly IObjectTable _objectTable;
+    private readonly IPlayerState _playerState;
     private readonly IGameGui _gameGui;
     private readonly IChatGui _chatGui;
     private readonly IAetheryteList _aetheryteList;
@@ -49,6 +51,8 @@ internal sealed unsafe class QuestFunctions
         Configuration configuration,
         IDataManager dataManager,
         IClientState clientState,
+        IObjectTable objectTable,
+        IPlayerState playerState,
         IGameGui gameGui,
         IChatGui chatGui,
         IAetheryteList aetheryteList)
@@ -61,6 +65,8 @@ internal sealed unsafe class QuestFunctions
         _configuration = configuration;
         _dataManager = dataManager;
         _clientState = clientState;
+        _objectTable = objectTable;
+        _playerState = playerState;
         _gameGui = gameGui;
         _chatGui = chatGui;
         _aetheryteList = aetheryteList;
@@ -114,7 +120,8 @@ internal sealed unsafe class QuestFunctions
                  !_aetheryteFunctions.IsAetheryteUnlocked(EAetheryteLocation.GridaniaWhiteWolfGate))
         {
             // quests that use white wolf gate, finish 'broadening horizons' to unlock it
-            if (!_aetheryteFunctions.IsAetheryteUnlocked(EAetheryteLocation.GridaniaBlueBadgerGate)) {
+            if (!_aetheryteFunctions.IsAetheryteUnlocked(EAetheryteLocation.GridaniaBlueBadgerGate))
+            {
                 _chatGui.Print("This quest uses the White Wolf Gate, which requires that you unlock all aethernet shards in Gridania.\n" +
                                "This should have happened as part of the quest \"Close To Home\" if starting in Gridania, or \"The Ul'dahn/Lominsan Envoy\" for the other cities.\n" +
                                "Please unlock the aethernet shards, or complete the current quest sequence manually before continuing.");
@@ -351,10 +358,10 @@ internal sealed unsafe class QuestFunctions
         else if (!IsReadyToAcceptQuest(currentQuest))
             return (QuestReference.NoQuest(MainScenarioQuestState.Unavailable), $"Not readdy to accept quest {currentQuest.Value}");
 
-        var currentLevel = _clientState.LocalPlayer?.Level;
+        var currentLevel = _playerState.Level;
 
         // are we in a loading screen?
-        if (currentLevel == null)
+        if (_objectTable.LocalPlayer == null)
             return (QuestReference.NoQuest(MainScenarioQuestState.LoadingScreen), "In loading screen");
 
         // if we're not at a high enough level to continue, we also ignore it
@@ -367,7 +374,7 @@ internal sealed unsafe class QuestFunctions
 
     private bool IsOnAlliedSocietyMount()
     {
-        BattleChara* battleChara = (BattleChara*)(_clientState.LocalPlayer?.Address ?? 0);
+        BattleChara* battleChara = (BattleChara*)(_objectTable.LocalPlayer?.Address ?? 0);
         return battleChara != null &&
                battleChara->Mount.MountId != 0 &&
                _alliedSocietyData.Mounts.ContainsKey(battleChara->Mount.MountId);
@@ -462,13 +469,13 @@ internal sealed unsafe class QuestFunctions
                         return (EAetheryteLocation?)null;
                     })
                     .FirstOrDefault(y => y != null);
-                if (firstLockedAetheryte != null) 
+                if (firstLockedAetheryte != null)
                 {
                     // if quest requires white wolf gate, and unlock quest is available, don't report locked
                     if (firstLockedAetheryte == EAetheryteLocation.GridaniaWhiteWolfGate && IsReadyToAcceptQuest(new QuestId(802)))
                         return new PriorityQuestInfo(x);
                     return new PriorityQuestInfo(x, $"Aetheryte locked: {firstLockedAetheryte}");
-                    }
+                }
 
                 return new PriorityQuestInfo(x);
             })
@@ -511,7 +518,7 @@ internal sealed unsafe class QuestFunctions
 
         if (!_configuration.Advanced.SkipClassJobQuests)
         {
-            EClassJob classJob = (EClassJob?)_clientState.LocalPlayer?.ClassJob.RowId ?? EClassJob.Adventurer;
+            EClassJob classJob = (EClassJob?)_playerState.ClassJob.RowId ?? EClassJob.Adventurer;
             uint[] shadowbringersRoleQuestChapters = QuestData.AllRoleQuestChapters.Select(x => x[0]).ToArray();
             if (classJob != EClassJob.Adventurer)
             {
@@ -578,7 +585,7 @@ internal sealed unsafe class QuestFunctions
         if (!ignoreLevel)
         {
             // if we're not at a high enough level to continue, we also ignore it
-            var currentLevel = _clientState.LocalPlayer?.Level ?? 0;
+            var currentLevel = _playerState.Level;
             if (currentLevel != 0 && quest != null && quest.Info.Level > currentLevel)
                 return false;
         }

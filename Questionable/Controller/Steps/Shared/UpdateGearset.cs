@@ -68,14 +68,14 @@ internal static class UpdateGearset
             {
                 // Find gearset by class/job
                 logger.LogInformation("Looking for gearset with job {ClassJob}", Task.TargetClass.Value);
-                
+
                 bool found = false;
                 gearsetId = -1;
-                
+
                 for (int i = 0; i < 100; ++i)
                 {
                     var gearset = gearsetModule->GetGearset(i);
-                    if (gearset != null && 
+                    if (gearset != null &&
                         gearset->Flags.HasFlag(RaptureGearsetModule.GearsetFlag.Exists) &&
                         gearset->ClassJob == (byte)Task.TargetClass.Value)
                     {
@@ -97,13 +97,13 @@ internal static class UpdateGearset
                 // Update the currently equipped gearset
                 // CurrentGearsetIndex is -1 if no gearset is equipped
                 gearsetId = gearsetModule->CurrentGearsetIndex;
-                
+
                 if (gearsetId < 0)
                 {
                     logger.LogError("No gearset is currently equipped");
                     throw new TaskException("No gearset is currently equipped");
                 }
-                
+
                 logger.LogInformation("Updating currently equipped gearset {GearsetId}", gearsetId);
             }
 

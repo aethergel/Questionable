@@ -207,7 +207,7 @@ internal static class Mount
             IPlayerCharacter? localPlayer = clientState.LocalPlayer;
             if (localPlayer != null)
             {
-                BattleChara* battleChara = (BattleChara*) localPlayer.Address;
+                BattleChara* battleChara = (BattleChara*)localPlayer.Address;
                 return (battleChara->Mount.Flags & 1) == 1;
             }
 

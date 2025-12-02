@@ -262,7 +262,7 @@ internal sealed class GatheringJournalComponent
             var request = new GatheringController.GatheringRequest(pointId, item, 0, 1);
             _logger.LogDebug($"clicked, doing {request}");
             _gatheringController.Start(request);
-            
+
         }
 
         ImGui.TableNextColumn();

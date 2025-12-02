@@ -1,10 +1,9 @@
-﻿﻿using System;
+﻿using System;
 using System.Linq;
 using Dalamud.Game.ClientState.Conditions;
 using Dalamud.Plugin.Services;
 using FFXIVClientStructs.FFXIV.Client.Game.Object;
 using Microsoft.Extensions.Logging;
-using Questionable.Functions;
 using GameObject = FFXIVClientStructs.FFXIV.Client.Game.Object.GameObject;
 
 namespace Questionable.Controller.Utils;
@@ -26,7 +25,7 @@ internal sealed class HighlightObject : IDisposable
         ILogger<HighlightObject> logger,
         IObjectTable objectTable)
     {
-        
+
         _framework = framework;
         _configuration = configuration;
         _condition = condition;
@@ -94,7 +93,7 @@ internal sealed class HighlightObject : IDisposable
             ToggleHighlight(false);
             if (_targetNpcDataId.Length == 0 && Ids.Length == 0)
                 return;
-            _logger.LogDebug($"Setting highlight to {String.Join(',',Ids)}");
+            _logger.LogDebug($"Setting highlight to {String.Join(',', Ids)}");
             _targetNpcDataId = Ids;
             ToggleHighlight(true);
         });

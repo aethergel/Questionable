@@ -203,7 +203,7 @@ internal sealed class GeneralConfigComponent : ConfigComponent
                 }
             }
 
-            #if false
+#if false
             ImGui.Spacing();
             bool autoStepRefreshEnabled = Configuration.General.AutoStepRefreshEnabled;
             if (ImGui.Checkbox("Automatically refresh quest steps when stuck (WIP see tooltip)", ref autoStepRefreshEnabled))
@@ -243,7 +243,7 @@ internal sealed class GeneralConfigComponent : ConfigComponent
                     $"Quest steps will refresh automatically after {autoStepRefreshDelay} seconds if no progress is made.");
                 ImGui.Unindent();
             }
-            #endif
+#endif
         }
     }
 }

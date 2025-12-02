@@ -1,27 +1,20 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Numerics;
-using System.Reflection;
-using System.Reflection.Metadata.Ecma335;
 using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 using System.Text.Json.Serialization.Metadata;
 using Dalamud.Game.ClientState.Objects;
-using Dalamud.Game.Command;
 using Dalamud.Interface.Colors;
 using Dalamud.Interface.Windowing;
 using Dalamud.Plugin;
-using Dalamud.Plugin.Ipc;
 using Dalamud.Plugin.Services;
 using ECommons;
-using ECommons.Automation;
-using ECommons.EzIpcManager;
 using GatheringPathRenderer.Windows;
 using LLib.GameData;
 using Pictomancy;
@@ -36,8 +29,9 @@ public sealed class RendererPlugin : IDalamudPlugin
 
     private readonly IDalamudPluginInterface _pluginInterface;
     private readonly IClientState _clientState;
+    private readonly IObjectTable _objectTable;
+    private readonly IPlayerState _playerState;
     private readonly IPluginLog _pluginLog;
-    private readonly IChatGui _chatGui;
 
     private readonly EditorCommands _editorCommands;
     private readonly EditorWindow _editorWindow;
@@ -50,14 +44,15 @@ public sealed class RendererPlugin : IDalamudPlugin
     internal Dictionary<uint, List<Vector3>> GBRLocationData => _gbrLocationData;
     internal bool DistantRange { get; set; }
 
-    public RendererPlugin(IDalamudPluginInterface pluginInterface, IClientState clientState,
+    public RendererPlugin(IDalamudPluginInterface pluginInterface, IClientState clientState, IPlayerState playerState,
         ICommandManager commandManager, IDataManager dataManager, ITargetManager targetManager, IChatGui chatGui,
         IObjectTable objectTable, IPluginLog pluginLog, IFramework framework)
     {
         _pluginInterface = pluginInterface;
         _clientState = clientState;
+        _objectTable = objectTable;
+        _playerState = playerState;
         _pluginLog = pluginLog;
-        _chatGui = chatGui;
         _gbrLocationData = LoadGBRPosData(_pluginInterface.AssemblyLocation.DirectoryName!);
         pluginLog.Info($"Loaded {_gbrLocationData.Count} entries from GBR data");
         ECommonsMain.Init(pluginInterface, this);
@@ -69,8 +64,8 @@ public sealed class RendererPlugin : IDalamudPlugin
             pluginInterface.SavePluginConfig(configuration);
         }
 
-        _editorCommands = new EditorCommands(this, dataManager, commandManager, targetManager, clientState, chatGui,
-            pluginLog, configuration);
+        _editorCommands = new EditorCommands(this, dataManager, commandManager, targetManager, clientState,
+            objectTable, playerState, chatGui, pluginLog, configuration);
         var configWindow = new ConfigWindow(pluginInterface, configuration);
         _editorWindow = new EditorWindow(this, _editorCommands, dataManager, commandManager, targetManager, clientState, objectTable,
                 configWindow)
@@ -80,7 +75,7 @@ public sealed class RendererPlugin : IDalamudPlugin
 
         framework.RunOnFrameworkThread(() =>
         {
-            _currentClassJob = (EClassJob?)_clientState.LocalPlayer?.ClassJob.RowId ?? EClassJob.Adventurer;
+            _currentClassJob = (EClassJob?)_playerState.ClassJob.RowId ?? EClassJob.Adventurer;
         });
 
         _pluginInterface.GetIpcSubscriber<object>("Questionable.ReloadData")
@@ -359,7 +354,7 @@ public sealed class RendererPlugin : IDalamudPlugin
         if (drawList == null)
             return;
 
-        Vector3 position = _clientState.LocalPlayer?.Position ?? Vector3.Zero;
+        Vector3 position = _objectTable.LocalPlayer?.Position ?? Vector3.Zero;
         float drawDistance = DistantRange ? 20000f : 200f;
         foreach (var location in GetLocationsInTerritory(_clientState.TerritoryType))
         {

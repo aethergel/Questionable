@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Numerics;
 using Dalamud.Game.ClientState.Conditions;
@@ -252,11 +251,11 @@ internal sealed class CombatController : IDisposable
         }
 
         return _objectTable.Select(x => new
-            {
-                GameObject = x,
-                GetKillPriority(x).Priority,
-                Distance = Vector3.Distance(x.Position, _clientState.LocalPlayer!.Position),
-            })
+        {
+            GameObject = x,
+            GetKillPriority(x).Priority,
+            Distance = Vector3.Distance(x.Position, _objectTable.LocalPlayer!.Position),
+        })
             .Where(x => x.Priority > 0)
             .OrderByDescending(x => x.Priority)
             .ThenBy(x => x.Distance)
@@ -274,7 +273,7 @@ internal sealed class CombatController : IDisposable
         if (gameObject is IBattleNpc battleNpc && battleNpc.StatusFlags.HasFlag(StatusFlags.InCombat))
         {
             // stuff trying to kill us
-            if (gameObject.TargetObjectId == _clientState.LocalPlayer?.GameObjectId)
+            if (gameObject.TargetObjectId == _objectTable.LocalPlayer?.GameObjectId)
                 return (rawPriority.Value + 150, reason + "/Targeted");
 
             // stuff on our enmity list that's not necessarily targeting us
@@ -309,11 +308,11 @@ internal sealed class CombatController : IDisposable
             var complexCombatData = _currentFight.Data.ComplexCombatDatas;
             var gameObjectStruct = (GameObject*)gameObject.Address;
             if (gameObjectStruct->FateId != 0 &&
-                gameObject.TargetObjectId != _clientState.LocalPlayer?.GameObjectId &&
+                gameObject.TargetObjectId != _objectTable.LocalPlayer?.GameObjectId &&
                 _currentFight.Data.SpawnType != EEnemySpawnType.FateEnemies)
                 return (null, "FATE mob");
 
-            var ownPosition = _clientState.LocalPlayer?.Position ?? Vector3.Zero;
+            var ownPosition = _objectTable.LocalPlayer?.Position ?? Vector3.Zero;
             bool expectQuestMarker;
             if (_currentFight.Data.SpawnType == EEnemySpawnType.FinishCombatIfAny)
                 expectQuestMarker = false;
@@ -343,7 +342,8 @@ internal sealed class CombatController : IDisposable
             else
             {
                 if ((!expectQuestMarker || gameObjectStruct->NamePlateIconId != 0 || _currentFight.Data.SpawnType == EEnemySpawnType.FateEnemies) &&
-                    _currentFight.Data.KillEnemyDataIds.Contains(GameFunctions.GetBaseID(battleNpc))) {
+                    _currentFight.Data.KillEnemyDataIds.Contains(GameFunctions.GetBaseID(battleNpc)))
+                {
                     if (_currentFight.Data.SpawnType == EEnemySpawnType.FateEnemies && !PlayerState.Instance()->IsLevelSynced)
                         _chatFunctions.ExecuteCommand("/lsync");
                     return (90, "KED");
@@ -376,10 +376,10 @@ internal sealed class CombatController : IDisposable
                 _targetManager.Target = null;
             }
         }
-        else if (Vector3.Distance(_clientState.LocalPlayer!.Position, target.Position) > MaxTargetRange)
+        else if (Vector3.Distance(_objectTable.LocalPlayer!.Position, target.Position) > MaxTargetRange)
         {
             _logger.LogInformation("Moving to target, distance: {Distance:N2}",
-                Vector3.Distance(_clientState.LocalPlayer!.Position, target.Position));
+                Vector3.Distance(_objectTable.LocalPlayer!.Position, target.Position));
             MoveToTarget(target);
         }
         else
@@ -408,7 +408,7 @@ internal sealed class CombatController : IDisposable
 
     private void MoveToTarget(IGameObject gameObject)
     {
-        var player = _clientState.LocalPlayer;
+        var player = _objectTable.LocalPlayer;
         if (player == null)
             return; // uh oh
 
@@ -445,7 +445,7 @@ internal sealed class CombatController : IDisposable
 
     internal unsafe bool IsInLineOfSight(IGameObject target)
     {
-        Vector3 sourcePos = _clientState.LocalPlayer!.Position;
+        Vector3 sourcePos = _objectTable.LocalPlayer!.Position;
         sourcePos.Y += 2;
 
         Vector3 targetPos = target.Position;

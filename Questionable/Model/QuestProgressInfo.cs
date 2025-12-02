@@ -15,7 +15,7 @@ internal sealed class QuestProgressInfo
         Id = new QuestId(questWork.QuestId);
         Sequence = questWork.Sequence;
         Flags = questWork.Flags;
-        Variables = [..questWork.Variables.ToArray()];
+        Variables = [.. questWork.Variables.ToArray()];
         IsHidden = questWork.IsHidden;
         ClassJob = (EClassJob)questWork.AcceptClassJob;
         Tooltip = "";
@@ -35,7 +35,9 @@ internal sealed class QuestProgressInfo
                 if (upper != 0) repr += $"{upper}H";
                 if (lower != 0) repr += $"{lower}L";
                 repr += ") ";
-            } else {
+            }
+            else
+            {
                 repr += "(-) ";
             }
             if (i % 2 == 1)

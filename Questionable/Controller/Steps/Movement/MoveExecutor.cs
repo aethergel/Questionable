@@ -22,6 +22,7 @@ internal sealed class MoveExecutor : TaskExecutor<MoveTask>, IToastAware
     private readonly GameFunctions _gameFunctions;
     private readonly ILogger<MoveExecutor> _logger;
     private readonly IClientState _clientState;
+    private readonly IObjectTable _objectTable;
     private readonly ICondition _condition;
     private readonly Mount.MountEvaluator _mountEvaluator;
     private readonly IServiceProvider _serviceProvider;
@@ -39,6 +40,7 @@ internal sealed class MoveExecutor : TaskExecutor<MoveTask>, IToastAware
         GameFunctions gameFunctions,
         ILogger<MoveExecutor> logger,
         IClientState clientState,
+        IObjectTable objectTable,
         ICondition condition,
         IDataManager dataManager,
         Mount.MountEvaluator mountEvaluator,
@@ -48,6 +50,7 @@ internal sealed class MoveExecutor : TaskExecutor<MoveTask>, IToastAware
         _gameFunctions = gameFunctions;
         _logger = logger;
         _clientState = clientState;
+        _objectTable = objectTable;
         _condition = condition;
         _serviceProvider = serviceProvider;
         _mountEvaluator = mountEvaluator;
@@ -90,7 +93,7 @@ internal sealed class MoveExecutor : TaskExecutor<MoveTask>, IToastAware
 
 
         float stopDistance = Task.StopDistance ?? QuestStep.DefaultStopDistance;
-        Vector3? position = _clientState.LocalPlayer?.Position;
+        Vector3? position = _objectTable.LocalPlayer?.Position;
         float actualDistance = position == null ? float.MaxValue : Vector3.Distance(position.Value, _destination);
         bool requiresMovement = actualDistance > stopDistance;
         if (requiresMovement)
@@ -147,7 +150,7 @@ internal sealed class MoveExecutor : TaskExecutor<MoveTask>, IToastAware
 
     public override ETaskResult Update()
     {
-        if (UpdateMountState() is {} mountStateResult)
+        if (UpdateMountState() is { } mountStateResult)
             return mountStateResult;
 
         if (_startAction == null)
@@ -161,7 +164,7 @@ internal sealed class MoveExecutor : TaskExecutor<MoveTask>, IToastAware
             return ETaskResult.StillRunning;
 
         if (_canRestart &&
-            Vector3.Distance(_clientState.LocalPlayer!.Position, _destination) >
+            Vector3.Distance(_objectTable.LocalPlayer!.Position, _destination) >
             (Task.StopDistance ?? QuestStep.DefaultStopDistance) + 5f)
         {
             _canRestart = false;
@@ -181,7 +184,7 @@ internal sealed class MoveExecutor : TaskExecutor<MoveTask>, IToastAware
 
     private ETaskResult? UpdateMountState()
     {
-        if (_mountBeforeMovement is { Executor: {} mountBeforeMoveExecutor })
+        if (_mountBeforeMovement is { Executor: { } mountBeforeMoveExecutor })
         {
             if (mountBeforeMoveExecutor.Update() == ETaskResult.TaskComplete)
             {
@@ -205,7 +208,7 @@ internal sealed class MoveExecutor : TaskExecutor<MoveTask>, IToastAware
 
             return ETaskResult.StillRunning;
         }
-        else if (_mountDuringMovement is { Executor: { } mountDuringMoveExecutor, Task: {} mountTask })
+        else if (_mountDuringMovement is { Executor: { } mountDuringMoveExecutor, Task: { } mountTask })
         {
             if (mountDuringMoveExecutor.Update() == ETaskResult.TaskComplete)
             {
@@ -232,7 +235,7 @@ internal sealed class MoveExecutor : TaskExecutor<MoveTask>, IToastAware
     {
         DateTime retryAt = DateTime.Now;
         if (Task.Fly && _condition[ConditionFlag.InCombat] && !_condition[ConditionFlag.Mounted] &&
-            _mountBeforeMovement is { Task: {} mountTask } &&
+            _mountBeforeMovement is { Task: { } mountTask } &&
             _mountEvaluator.EvaluateMountState(mountTask, true, ref retryAt) == Mount.MountResult.WhenOutOfCombat)
         {
             return true;

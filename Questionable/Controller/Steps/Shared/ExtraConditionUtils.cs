@@ -8,15 +8,17 @@ namespace Questionable.Controller.Steps.Shared;
 internal sealed class ExtraConditionUtils
 {
     private readonly IClientState _clientState;
+    private readonly IObjectTable _objectTable;
 
-    public ExtraConditionUtils(IClientState clientState)
+    public ExtraConditionUtils(IClientState clientState, IObjectTable objectTable)
     {
         _clientState = clientState;
+        _objectTable = objectTable;
     }
 
     public bool MatchesExtraCondition(EExtraSkipCondition skipCondition)
     {
-        var position = _clientState.LocalPlayer?.Position;
+        var position = _objectTable.LocalPlayer?.Position;
         return position != null &&
                _clientState.TerritoryType != 0 &&
                MatchesExtraCondition(skipCondition, position.Value, _clientState.TerritoryType);

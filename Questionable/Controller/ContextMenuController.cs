@@ -29,6 +29,7 @@ internal sealed class ContextMenuController : IDisposable
     private readonly IGameGui _gameGui;
     private readonly IChatGui _chatGui;
     private readonly IClientState _clientState;
+    private readonly IPlayerState _playerState;
     private readonly ILogger<ContextMenuController> _logger;
 
     public ContextMenuController(
@@ -43,6 +44,7 @@ internal sealed class ContextMenuController : IDisposable
         IGameGui gameGui,
         IChatGui chatGui,
         IClientState clientState,
+        IPlayerState playerState,
         ILogger<ContextMenuController> logger)
     {
         _contextMenu = contextMenu;
@@ -56,6 +58,7 @@ internal sealed class ContextMenuController : IDisposable
         _gameGui = gameGui;
         _chatGui = chatGui;
         _clientState = clientState;
+        _playerState = playerState;
         _logger = logger;
 
         _contextMenu.OnMenuOpened += MenuOpened;
@@ -109,7 +112,7 @@ internal sealed class ContextMenuController : IDisposable
     private void AddContextMenuEntry(IMenuOpenedArgs args, uint itemId, uint npcId, EClassJob classJob,
         string verb)
     {
-        EClassJob currentClassJob = (EClassJob)_clientState.LocalPlayer!.ClassJob.RowId;
+        EClassJob currentClassJob = (EClassJob)_playerState.ClassJob.RowId;
         if (classJob != currentClassJob && currentClassJob is EClassJob.Miner or EClassJob.Botanist)
             return;
 
@@ -136,7 +139,7 @@ internal sealed class ContextMenuController : IDisposable
         }
 
         string lockedReasonn = string.Empty;
-        #if !DEBUG
+#if !DEBUG
         if (!_questFunctions.IsClassJobUnlocked(classJob))
             lockedReasonn = $"{classJob} not unlocked";
         else if (quantityToGather == 0)
@@ -145,7 +148,7 @@ internal sealed class ContextMenuController : IDisposable
             lockedReasonn = "Inventory full";
         else if (_gameFunctions.IsOccupied())
             lockedReasonn = "Can't be used while interacting";
-        #endif
+#endif
 
         string name = $"{verb} with Questionable";
         if (!string.IsNullOrEmpty(lockedReasonn))

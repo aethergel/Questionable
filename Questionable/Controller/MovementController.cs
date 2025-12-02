@@ -32,6 +32,7 @@ internal sealed class MovementController : IDisposable
 
     private readonly NavmeshIpc _navmeshIpc;
     private readonly IClientState _clientState;
+    private readonly IObjectTable _objectTable;
     private readonly GameFunctions _gameFunctions;
     private readonly ChatFunctions _chatFunctions;
     private readonly ICondition _condition;
@@ -43,10 +44,11 @@ internal sealed class MovementController : IDisposable
 
     public MovementController(NavmeshIpc navmeshIpc, IClientState clientState, GameFunctions gameFunctions,
         ChatFunctions chatFunctions, ICondition condition, MovementOverrideController movementOverrideController,
-        AetheryteData aetheryteData, ILogger<MovementController> logger)
+        IObjectTable objectTable, AetheryteData aetheryteData, ILogger<MovementController> logger)
     {
         _navmeshIpc = navmeshIpc;
         _clientState = clientState;
+        _objectTable = objectTable;
         _gameFunctions = gameFunctions;
         _chatFunctions = chatFunctions;
         _condition = condition;
@@ -104,7 +106,7 @@ internal sealed class MovementController : IDisposable
                 }
 
                 var navPoints = _pathfindTask.Result.Skip(1).ToList();
-                Vector3 start = _clientState.LocalPlayer?.Position ?? navPoints[0];
+                Vector3 start = _objectTable.LocalPlayer?.Position ?? navPoints[0];
                 if (Destination.IsFlying && !_condition[ConditionFlag.InFlight] && _condition[ConditionFlag.Mounted])
                 {
                     if (IsOnFlightPath(start) || navPoints.Any(IsOnFlightPath))
@@ -175,7 +177,7 @@ internal sealed class MovementController : IDisposable
                 return;
             }
 
-            Vector3 localPlayerPosition = _clientState.LocalPlayer?.Position ?? Vector3.Zero;
+            Vector3 localPlayerPosition = _objectTable.LocalPlayer?.Position ?? Vector3.Zero;
             if (Destination.MovementType == EMovementType.Landing)
             {
                 if (!_condition[ConditionFlag.InFlight])
@@ -231,7 +233,7 @@ internal sealed class MovementController : IDisposable
             else
             {
                 List<Vector3> navPoints = _navmeshIpc.GetWaypoints();
-                Vector3? start = _clientState.LocalPlayer?.Position;
+                Vector3? start = _objectTable.LocalPlayer?.Position;
                 if (start != null)
                 {
                     if (Destination.ShouldRecalculateNavmesh() && RecalculateNavmesh(navPoints, start.Value))
@@ -300,7 +302,7 @@ internal sealed class MovementController : IDisposable
         _cancellationTokenSource = new();
         _cancellationTokenSource.CancelAfter(TimeSpan.FromSeconds(30));
 
-        Vector3 startPosition = _clientState.LocalPlayer!.Position;
+        Vector3 startPosition = _objectTable.LocalPlayer!.Position;
         if (fly && _aetheryteData.CalculateDistance(startPosition, _clientState.TerritoryType,
                 EAetheryteLocation.CoerthasCentralHighlandsCampDragonhead) < 11f)
         {
@@ -364,7 +366,7 @@ internal sealed class MovementController : IDisposable
         if (nextWaypoint == default)
             return false;
 
-        var distance = Vector2.Distance(new Vector2(start.X, start.Z), 
+        var distance = Vector2.Distance(new Vector2(start.X, start.Z),
             new Vector2(nextWaypoint.X, nextWaypoint.Z));
         if (Destination.LastWaypoint == null ||
             (Destination.LastWaypoint.Position - nextWaypoint).Length() > 0.1f)

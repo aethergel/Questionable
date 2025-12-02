@@ -1,7 +1,7 @@
-﻿using Dalamud.Game.ClientState.Objects.Types;
+﻿using System;
+using Dalamud.Game.ClientState.Objects.Types;
 using Dalamud.Plugin.Ipc.Exceptions;
 using Microsoft.Extensions.Logging;
-using System;
 using Questionable.External;
 
 namespace Questionable.Controller.CombatModules;

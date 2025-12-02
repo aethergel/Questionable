@@ -1,5 +1,4 @@
 using System.Globalization;
-using System.Text.Json;
 using System.Text.Json.Nodes;
 using Json.Schema;
 using Questionable.Model;
@@ -29,7 +28,7 @@ public sealed class ValidJsonFilesTest
         SchemaRegistry.Global.Register(
             new Uri("https://qstxiv.github.io/schema/common-vector3.json"),
             JsonSchema.FromStream(AssemblyModelLoader.CommonVector3).AsTask().Result);
-        
+
         QuestSchema = JsonSchema.FromStream(AssemblyQuestLoader.QuestSchema).AsTask().Result;
     }
 

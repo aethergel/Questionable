@@ -98,7 +98,7 @@ internal sealed class DebugOverlay : Window
             if (step != null && TryGetPosition(step, out Vector3? position))
             {
                 DrawStep(i.ToString(CultureInfo.InvariantCulture), step, position.Value,
-                    Vector3.Distance(_clientState.LocalPlayer!.Position, position.Value) <
+                    Vector3.Distance(_objectTable.LocalPlayer!.Position, position.Value) <
                     step.CalculateActualStopDistance()
                         ? 0xFF00FF00
                         : 0xFF0000FF);
@@ -141,7 +141,7 @@ internal sealed class DebugOverlay : Window
 
         ImGui.GetWindowDrawList().AddCircleFilled(screenPos, 3f, color);
         ImGui.GetWindowDrawList().AddText(screenPos + new Vector2(10, -8), color,
-            $"{counter}: {step.InteractionType} {step.DataId ?? '-'}\n{position.ToString("G", CultureInfo.InvariantCulture)} [{(position - _clientState.LocalPlayer!.Position).Length():N2}]\n{step.Comment}");
+            $"{counter}: {step.InteractionType} {step.DataId ?? '-'}\n{position.ToString("G", CultureInfo.InvariantCulture)} [{(position - _objectTable.LocalPlayer!.Position).Length():N2}]\n{step.Comment}");
     }
 
     private void DrawCombatTargets()
@@ -160,7 +160,7 @@ internal sealed class DebugOverlay : Window
 
             var (priority, reason) = _combatController.GetKillPriority(x);
             ImGui.GetWindowDrawList().AddText(screenPos + new Vector2(10, -8), priority > 0 ? 0xFF00FF00 : 0xFFFFFFFF,
-                $"{x.Name}/{x.GameObjectId:X}, {GameFunctions.GetBaseID(x)}, {priority} - {reason}, {Vector3.Distance(x.Position, _clientState.LocalPlayer!.Position):N2}, {x.IsTargetable}");
+                $"{x.Name}/{x.GameObjectId:X}, {GameFunctions.GetBaseID(x)}, {priority} - {reason}, {Vector3.Distance(x.Position, _objectTable.LocalPlayer!.Position):N2}, {x.IsTargetable}");
         }
     }
 
@@ -171,12 +171,12 @@ internal sealed class DebugOverlay : Window
             position = step.Position;
             return true;
         }
-        else if (step is { InteractionType: EInteractionType.AttuneAetheryte or EInteractionType.RegisterFreeOrFavoredAetheryte, Aetheryte: {} aetheryteLocation })
+        else if (step is { InteractionType: EInteractionType.AttuneAetheryte or EInteractionType.RegisterFreeOrFavoredAetheryte, Aetheryte: { } aetheryteLocation })
         {
             position = _aetheryteData.Locations[aetheryteLocation];
             return true;
         }
-        else if (step is { InteractionType: EInteractionType.AttuneAethernetShard, AethernetShard: {} aethernetShard })
+        else if (step is { InteractionType: EInteractionType.AttuneAethernetShard, AethernetShard: { } aethernetShard })
         {
             position = _aetheryteData.Locations[aethernetShard];
             return true;

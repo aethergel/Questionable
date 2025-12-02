@@ -1,9 +1,12 @@
-﻿using Dalamud.Game.Addon.Lifecycle;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
+using System.Linq;
+using System.Text.RegularExpressions;
+using Dalamud.Game.Addon.Lifecycle;
 using Dalamud.Game.Addon.Lifecycle.AddonArgTypes;
 using Dalamud.Game.ClientState.Objects;
 using Dalamud.Plugin.Services;
-using FFXIVClientStructs.FFXIV.Client.Game.Event;
-using FFXIVClientStructs.FFXIV.Client.Game.InstanceContent;
 using FFXIVClientStructs.FFXIV.Client.UI;
 using FFXIVClientStructs.FFXIV.Client.UI.Misc;
 using FFXIVClientStructs.FFXIV.Component.GUI;
@@ -19,11 +22,6 @@ using Questionable.Model;
 using Questionable.Model.Common;
 using Questionable.Model.Gathering;
 using Questionable.Model.Questing;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Text.RegularExpressions;
 using Quest = Questionable.Model.Quest;
 using ValueType = FFXIVClientStructs.FFXIV.Component.GUI.ValueType;
 
@@ -44,6 +42,7 @@ internal sealed class InteractionUiController : IDisposable
     private readonly IGameGui _gameGui;
     private readonly ITargetManager _targetManager;
     private readonly IClientState _clientState;
+    private readonly IPlayerState _playerState;
     private readonly ShopController _shopController;
     private readonly BossModIpc _bossModIpc;
     private readonly Configuration _configuration;
@@ -70,6 +69,7 @@ internal sealed class InteractionUiController : IDisposable
         ITargetManager targetManager,
         IPluginLog pluginLog,
         IClientState clientState,
+        IPlayerState playerState,
         ShopController shopController,
         BossModIpc bossModIpc,
         Configuration configuration,
@@ -88,6 +88,7 @@ internal sealed class InteractionUiController : IDisposable
         _gameGui = gameGui;
         _targetManager = targetManager;
         _clientState = clientState;
+        _playerState = playerState;
         _shopController = shopController;
         _bossModIpc = bossModIpc;
         _configuration = configuration;
@@ -364,7 +365,7 @@ internal sealed class InteractionUiController : IDisposable
                             Answer = step.PurchaseMenu.Key,
                         }));
 
-                    if (step is { InteractionType: EInteractionType.RegisterFreeOrFavoredAetheryte, Aetheryte: {} aetheryte })
+                    if (step is { InteractionType: EInteractionType.RegisterFreeOrFavoredAetheryte, Aetheryte: { } aetheryte })
                         freeOrFavoredAetheryteRegistrations = [aetheryte];
 
                     isTaxiStandUnlock = step.InteractionType == EInteractionType.UnlockTaxiStand;
@@ -397,7 +398,8 @@ internal sealed class InteractionUiController : IDisposable
                     Answer = ExcelRef.FromKey("TEXT_AETHERYTE_REGISTER_TOKEN_FAVORITE"),
                     AnswerIsRegularExpression = true,
                 }));
-            } else if (freeOrFavoredAetheryteRegistrations.Any(x =>
+            }
+            else if (freeOrFavoredAetheryteRegistrations.Any(x =>
                     _aetheryteFunctions.CanRegisterFreeOrFavoriteAetheryte(x) ==
                     AetheryteRegistrationResult.FavoredDestinationAvailable))
             {
@@ -562,7 +564,7 @@ internal sealed class InteractionUiController : IDisposable
         if (actualAnswer == null || expectedAnswer == null)
             return false;
 
-        return expectedAnswer.IsMatch(actualAnswer) || expectedAnswer.IsMatch(actualAnswer.Replace("\n",string.Empty));
+        return expectedAnswer.IsMatch(actualAnswer) || expectedAnswer.IsMatch(actualAnswer.Replace("\n", string.Empty));
     }
 
     private int? HandleInstanceListChoice(string? actualPrompt)
@@ -642,7 +644,7 @@ internal sealed class InteractionUiController : IDisposable
     private unsafe bool HandleDefaultYesNo(AddonSelectYesno* addonSelectYesno, Quest quest,
         QuestStep? step, List<DialogueChoice> dialogueChoices, string actualPrompt)
     {
-        if (step is { InteractionType: EInteractionType.RegisterFreeOrFavoredAetheryte, Aetheryte: {} aetheryteLocation })
+        if (step is { InteractionType: EInteractionType.RegisterFreeOrFavoredAetheryte, Aetheryte: { } aetheryteLocation })
         {
             var registrationResult = _aetheryteFunctions.CanRegisterFreeOrFavoriteAetheryte(aetheryteLocation);
             if (registrationResult == AetheryteRegistrationResult.SecurityTokenFreeDestinationAvailable)
@@ -841,7 +843,7 @@ internal sealed class InteractionUiController : IDisposable
             step.InteractionType == EInteractionType.Gather)
         {
             if (_gatheringPointRegistry.TryGetGatheringPointId(step.ItemsToGather[0].ItemId,
-                    (EClassJob?)_clientState.LocalPlayer?.ClassJob.RowId ?? EClassJob.Adventurer,
+                    (EClassJob?)_playerState.ClassJob.RowId ?? EClassJob.Adventurer,
                     out GatheringPointId? gatheringPointId) &&
                 _gatheringPointRegistry.TryGetGatheringPoint(gatheringPointId, out GatheringRoot? root))
             {

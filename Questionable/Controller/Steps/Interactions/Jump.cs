@@ -98,12 +98,13 @@ internal static class Jump
     internal sealed class DoRepeatedJumps(
         MovementController movementController,
         IClientState clientState,
+        IObjectTable objectTable,
         IFramework framework,
         ICondition condition,
         ILogger<DoRepeatedJumps> logger)
         : JumpBase<RepeatedJumpTask>(movementController, clientState, framework)
     {
-        private readonly IClientState _clientState = clientState;
+        private readonly IObjectTable _objectTable = objectTable;
         private DateTime _continueAt = DateTime.MinValue;
         private int _attempts;
 
@@ -119,11 +120,12 @@ internal static class Jump
                 return ETaskResult.StillRunning;
 
             float stopDistance = Task.JumpDestination.CalculateStopDistance();
-            if ((_clientState.LocalPlayer!.Position - Task.JumpDestination.Position).Length() <= stopDistance ||
-                _clientState.LocalPlayer.Position.Y >= Task.JumpDestination.Position.Y - 0.5f)
+            if (_objectTable.LocalPlayer == null) return ETaskResult.StillRunning;
+            if ((_objectTable.LocalPlayer!.Position - Task.JumpDestination.Position).Length() <= stopDistance ||
+                _objectTable.LocalPlayer?.Position.Y >= Task.JumpDestination.Position.Y - 0.5f)
                 return ETaskResult.TaskComplete;
 
-            logger.LogTrace("Y-Heights for jumps: player={A}, target={B}", _clientState.LocalPlayer.Position.Y,
+            logger.LogTrace("Y-Heights for jumps: player={A}, target={B}", _objectTable.LocalPlayer?.Position.Y,
                 Task.JumpDestination.Position.Y - 0.5f);
             unsafe
             {

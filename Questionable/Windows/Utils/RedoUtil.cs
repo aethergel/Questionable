@@ -8,7 +8,7 @@ using Lumina.Text.ReadOnly;
 namespace Questionable.Windows.Utils;
 internal sealed class RedoUtil
 {
-    public Dictionary<uint,List<uint>> Dict;
+    public Dictionary<uint, List<uint>> Dict;
     public Stopwatch Last { get; private set; }
 
     public RedoUtil()

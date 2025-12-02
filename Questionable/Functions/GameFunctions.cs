@@ -106,7 +106,7 @@ internal sealed unsafe class GameFunctions
 
     public ushort? GetMountId()
     {
-        BattleChara* battleChara = (BattleChara*)(_clientState.LocalPlayer?.Address ?? 0);
+        BattleChara* battleChara = (BattleChara*)(_objectTable.LocalPlayer?.Address ?? 0);
         if (battleChara != null && battleChara->Mount.MountId != 0)
             return battleChara->Mount.MountId;
         else
@@ -298,7 +298,7 @@ internal sealed unsafe class GameFunctions
         if (playerState != null && !playerState->IsMountUnlocked(1))
             return true;
 
-        var localPlayer = _clientState.LocalPlayer;
+        var localPlayer = _objectTable.LocalPlayer;
         if (localPlayer == null)
             return false;
 
@@ -315,7 +315,7 @@ internal sealed unsafe class GameFunctions
 
     private bool HasCharacterStatusPreventingMountOrSprint()
     {
-        var localPlayer = _clientState.LocalPlayer;
+        var localPlayer = _objectTable.LocalPlayer;
         if (localPlayer == null)
             return false;
 
@@ -330,7 +330,7 @@ internal sealed unsafe class GameFunctions
 
     public bool HasStatus(EStatus statusId)
     {
-        var localPlayer = _clientState.LocalPlayer;
+        var localPlayer = _objectTable.LocalPlayer;
         if (localPlayer == null)
             return false;
 
@@ -438,7 +438,7 @@ internal sealed unsafe class GameFunctions
 
     public bool IsOccupied()
     {
-        if (!_clientState.IsLoggedIn || _clientState.LocalPlayer == null)
+        if (!_clientState.IsLoggedIn || _objectTable.LocalPlayer == null)
             return true;
 
         if (IsLoadingScreenVisible())

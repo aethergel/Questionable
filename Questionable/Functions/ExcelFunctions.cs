@@ -8,8 +8,8 @@ using Lumina.Excel.Sheets;
 using Lumina.Text.ReadOnly;
 using Microsoft.Extensions.Logging;
 using Questionable.Model;
-using Quest = Questionable.Model.Quest;
 using GimmickYesNo = Lumina.Excel.Sheets.GimmickYesNo;
+using Quest = Questionable.Model.Quest;
 
 namespace Questionable.Functions;
 
@@ -27,7 +27,7 @@ internal sealed class ExcelFunctions(IDataManager dataManager, ILogger<ExcelFunc
             _logger.LogWarning("Could not find dialogue text for key '{Key}' in sheet '{Sheet}'", key, excelSheetName);
             return new StringOrRegex(string.Empty);
         }
-        
+
         if (isRegex)
             return new StringOrRegex(seString.ToRegex());
         else

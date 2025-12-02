@@ -260,7 +260,7 @@ internal sealed class QuestRegistry
 
     public List<QuestInfo> GetKnownClassJobQuests(EClassJob classJob, bool includeRoleQuests = true)
     {
-        List<QuestInfo> allQuests = [.._questData.GetClassJobQuests(classJob, includeRoleQuests)];
+        List<QuestInfo> allQuests = [.. _questData.GetClassJobQuests(classJob, includeRoleQuests)];
         if (classJob.AsJob() != classJob)
             allQuests.AddRange(_questData.GetClassJobQuests(classJob.AsJob(), includeRoleQuests));
 

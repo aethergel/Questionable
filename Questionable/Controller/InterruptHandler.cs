@@ -15,6 +15,7 @@ internal sealed unsafe class InterruptHandler : IDisposable
 {
     private readonly Hook<ProcessActionEffect> _processActionEffectHook;
     private readonly IClientState _clientState;
+    private readonly IObjectTable _objectTable;
     private readonly TerritoryData _territoryData;
     private readonly ILogger<InterruptHandler> _logger;
 
@@ -22,9 +23,10 @@ internal sealed unsafe class InterruptHandler : IDisposable
         EffectHeader* effectHeader, EffectEntry* effectArray, ulong* effectTail);
 
     public InterruptHandler(IGameInteropProvider gameInteropProvider, IClientState clientState,
-        TerritoryData territoryData, ILogger<InterruptHandler> logger)
+        IObjectTable objectTable, TerritoryData territoryData, ILogger<InterruptHandler> logger)
     {
         _clientState = clientState;
+        _objectTable = objectTable;
         _territoryData = territoryData;
         _logger = logger;
         _processActionEffectHook =
@@ -47,7 +49,7 @@ internal sealed unsafe class InterruptHandler : IDisposable
                     uint targetId = (uint)(effectTail[i] & uint.MaxValue);
                     EffectEntry* effect = effectArray + 8 * i;
 
-                    if (targetId == _clientState.LocalPlayer?.GameObjectId &&
+                    if (targetId == _objectTable.LocalPlayer?.GameObjectId &&
                         effect->Type is EActionEffectType.Damage or EActionEffectType.BlockedDamage
                             or EActionEffectType.ParriedDamage)
                     {

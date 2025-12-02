@@ -66,7 +66,8 @@ internal sealed class AlliedSocietyJournalComponent
             string label = $"{alliedSociety}###AlliedSociety{(int)alliedSociety}";
             bool isOpen;
 
-            using (ImRaii.Disabled(quests.Count == 0)) {
+            using (ImRaii.Disabled(quests.Count == 0))
+            {
 #if DEBUG
                 //if (quests.Any(x => !_questRegistry.TryGetQuest(x.QuestId, out var quest) || quest.Root.LastChecked.Date))
                 if (quests.Any(x => !x.QuestId.Value.Equals(1569) && // Ixal "Deliverance"
@@ -87,7 +88,7 @@ internal sealed class AlliedSocietyJournalComponent
 #endif
             }
 
-            _questJournalUtils.ShowQuestGroupContextMenu($"DrawAlliedSocietyQuests{alliedSociety}",quests);
+            _questJournalUtils.ShowQuestGroupContextMenu($"DrawAlliedSocietyQuests{alliedSociety}", quests);
 
             if (!isOpen)
                 continue;

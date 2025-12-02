@@ -35,7 +35,7 @@ internal static class Duty
                 yield return new WaitAutoDutyTask(step.DutyOptions.ContentFinderConditionId);
 
                 if (!QuestWorkUtils.HasCompletionFlags(step.CompletionQuestVariablesFlags))
-                   yield return new WaitAtEnd.WaitNextStepOrSequence();
+                    yield return new WaitAtEnd.WaitNextStepOrSequence();
             }
             else
             {

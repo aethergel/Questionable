@@ -3,20 +3,16 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Numerics;
-using System.Reflection.Metadata.Ecma335;
 using Dalamud.Bindings.ImGui;
 using Dalamud.Game.ClientState.Objects;
 using Dalamud.Game.ClientState.Objects.Enums;
 using Dalamud.Game.ClientState.Objects.Types;
-using Dalamud.Game.Text;
-using Dalamud.Game.Text.SeStringHandling;
 using Dalamud.Interface;
 using Dalamud.Interface.Colors;
 using Dalamud.Interface.Components;
 using Dalamud.Interface.Windowing;
 using Dalamud.Plugin.Services;
 using ECommons;
-using ECommons.GameHelpers;
 using ECommons.MathHelpers;
 using Lumina.Excel.Sheets;
 using Questionable.Model.Gathering;
@@ -86,7 +82,7 @@ internal sealed class EditorWindow : Window
 
     public override void Update()
     {
-        if (!_clientState.IsLoggedIn || _clientState.LocalPlayer == null)
+        if (!_clientState.IsLoggedIn || _objectTable.LocalPlayer == null)
         {
             _target = null;
             _targetLocation = null;
@@ -94,7 +90,7 @@ internal sealed class EditorWindow : Window
             return;
         }
 
-        if (_clientState.LocalPlayer != null && !_clientState.LocalPlayer.ClassJob.RowId.InRange(16, 18))
+        if (_objectTable.LocalPlayer != null && !_objectTable.LocalPlayer.ClassJob.RowId.InRange(16, 18))
             unaddedVisible = true;
 
         _target = _targetManager.Target;
@@ -108,7 +104,7 @@ internal sealed class EditorWindow : Window
                             if (_target != null)
                                 distance = Vector3.Distance(location.Position, _target.Position);
                             else
-                                distance = Vector3.Distance(location.Position, _clientState.LocalPlayer.Position);
+                                distance = Vector3.Distance(location.Position, _objectTable.LocalPlayer!.Position);
 
                             return new { Context = context, Node = node, Location = location, Distance = distance };
                         })
@@ -132,7 +128,7 @@ internal sealed class EditorWindow : Window
             .Select(x => new
             {
                 Object = x,
-                Distance = Vector3.Distance(location.Location.Position, _clientState.LocalPlayer.Position)
+                Distance = Vector3.Distance(location.Location.Position, _objectTable.LocalPlayer!.Position)
             })
             .Where(x => x.Distance < 3f)
             .OrderBy(x => x.Distance)
@@ -143,7 +139,7 @@ internal sealed class EditorWindow : Window
 
     public override bool DrawConditions()
     {
-        return (_clientState.LocalPlayer != null && _clientState.LocalPlayer.ClassJob.RowId.InRange(16, 18)) &&
+        return (_objectTable.LocalPlayer != null && _objectTable.LocalPlayer.ClassJob.RowId.InRange(16, 18)) &&
                 _clientState.TerritoryType is not 0 && (_target != null || _targetLocation != null || unaddedVisible);
     }
 
@@ -187,8 +183,8 @@ internal sealed class EditorWindow : Window
 
             if (ImGui.Button("60deg"))
             {
-                locationOverride.MinimumAngle = minAngle <= 270 ? minAngle : minAngle-360;
-                locationOverride.MaximumAngle = maxAngle = minAngle <= 270 ? minAngle + 60 : minAngle-360+60;
+                locationOverride.MinimumAngle = minAngle <= 270 ? minAngle : minAngle - 360;
+                locationOverride.MaximumAngle = maxAngle = minAngle <= 270 ? minAngle + 60 : minAngle - 360 + 60;
             }
             ImGui.SameLine();
 
@@ -276,7 +272,7 @@ internal sealed class EditorWindow : Window
                 }
             }
         }
-        if (_clientState.TerritoryType != 0 && _clientState.LocalPlayer != null && ImGui.CollapsingHeader("Unadded nodes"))
+        if (_clientState.TerritoryType != 0 && _objectTable.LocalPlayer != null && ImGui.CollapsingHeader("Unadded nodes"))
             ListLocationsInCurrentTerritory();
     }
 
@@ -376,7 +372,7 @@ internal sealed class EditorWindow : Window
                     var scale = _point.TerritoryType.Value.Map.Value.SizeFactor;
                     coords = $"{gbr.Value.X} {gbr.Value.Y} {gbr.Value.Z}";
                     line += coords;
-                    distance = (_clientState.LocalPlayer.Position - gbr).Value.Length();
+                    distance = (_objectTable.LocalPlayer!.Position - gbr).Value.Length();
                     if (distance < 200)
                     {
                         line += $"  ({distance:F2})";

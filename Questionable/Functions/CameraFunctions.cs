@@ -3,13 +3,13 @@
 namespace Questionable.Functions;
 
 using System;
+using System.Numerics;
+using System.Runtime.InteropServices;
 using Dalamud.Hooking;
 using Dalamud.Plugin.Services;
 using Dalamud.Utility.Signatures;
 using FFXIVClientStructs.FFXIV.Client.System.Framework;
 using Microsoft.Extensions.Logging;
-using System.Numerics;
-using System.Runtime.InteropServices;
 
 [StructLayout(LayoutKind.Explicit, Size = 0x2B0)]
 internal unsafe struct CameraEx
@@ -27,7 +27,7 @@ internal unsafe struct CameraEx
 internal sealed unsafe class CameraFunctions : IDisposable
 {
     private readonly ILogger<CameraFunctions> _logger;
-    private readonly IClientState             _clientState;
+    private readonly IObjectTable _objectTable;
 
     public bool Enabled
     {
@@ -49,11 +49,11 @@ internal sealed unsafe class CameraFunctions : IDisposable
     [Signature("48 8B C4 53 48 81 EC ?? ?? ?? ?? 44 0F 29 50 ??")]
     private Hook<RMICameraDelegate> _rmiCameraHook = null!;
 
-    public CameraFunctions(IGameInteropProvider gameInteropProvider, ILogger<CameraFunctions> logger, IClientState clientState)
+    public CameraFunctions(IGameInteropProvider gameInteropProvider, ILogger<CameraFunctions> logger, IObjectTable objectTable)
     {
         _logger = logger;
         gameInteropProvider.InitializeFromAttributes(this);
-        _clientState = clientState;
+        _objectTable = objectTable;
     }
 
     public void Dispose()
@@ -80,14 +80,13 @@ internal sealed unsafe class CameraFunctions : IDisposable
     internal void Face(Vector3 pos)
     {
         _logger.LogDebug("Facing " + pos);
-        Enabled         = true;
-        if (this._clientState.LocalPlayer == null)
+        Enabled = true;
+        if (_objectTable.LocalPlayer == null)
         {
-            _logger.LogDebug("LocalPlayer was null");
             return;
         }
-        Vector3 diff = pos - this._clientState.LocalPlayer.Position;
-        DesiredAzimuth  = MathF.Atan2(diff.X, diff.Z) + Deg2Rad(180);
+        Vector3 diff = pos - _objectTable.LocalPlayer.Position;
+        DesiredAzimuth = MathF.Atan2(diff.X, diff.Z) + Deg2Rad(180);
         DesiredAltitude = Deg2Rad(-30);
     }
 

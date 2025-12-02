@@ -277,14 +277,14 @@ internal static class SkipCondition
 
         private bool CheckAetheryteCondition(QuestStep step, SkipStepConditions skipConditions)
         {
-            if (step is { Aetheryte: {} aetheryteLocation, InteractionType: EInteractionType.AttuneAetheryte } &&
+            if (step is { Aetheryte: { } aetheryteLocation, InteractionType: EInteractionType.AttuneAetheryte } &&
                 aetheryteFunctions.IsAetheryteUnlocked(aetheryteLocation))
             {
                 logger.LogInformation("Skipping step, as aetheryte is unlocked");
                 return true;
             }
 
-            if (step is { Aetheryte: {} aethernetShard, InteractionType: EInteractionType.AttuneAethernetShard } &&
+            if (step is { Aetheryte: { } aethernetShard, InteractionType: EInteractionType.AttuneAethernetShard } &&
                 aetheryteFunctions.IsAetheryteUnlocked(aethernetShard))
             {
                 logger.LogInformation("Skipping step, as aethernet shard is unlocked");
@@ -467,11 +467,13 @@ internal static class SkipCondition
         private unsafe bool CheckTaxiStandUnlocked(QuestStep step)
         {
             UIState* uiState = UIState.Instance();
-            if (step.TaxiStandId is not null) {
+            if (step.TaxiStandId is not null)
+            {
                 uint? taxiStandId = step.TaxiStandId;
                 if ((int)taxiStandId < 0)
                     taxiStandId += 0x120000u;
-                if (uiState->IsChocoboTaxiStandUnlocked(taxiStandId.Value)) {
+                if (uiState->IsChocoboTaxiStandUnlocked(taxiStandId.Value))
+                {
                     logger.LogInformation("Skipping step, as taxi stand {TaxiStandId} is unlocked", taxiStandId);
                     return true;
                 }

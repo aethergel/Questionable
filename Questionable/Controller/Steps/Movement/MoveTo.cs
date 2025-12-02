@@ -28,15 +28,15 @@ internal static class MoveTo
                 return [new WaitForNearDataId(step.DataId.Value, step.StopDistance.Value)];
             }
             else if (step is
-                     {
-                         InteractionType: EInteractionType.AttuneAetheryte
+            {
+                InteractionType: EInteractionType.AttuneAetheryte
                              or EInteractionType.RegisterFreeOrFavoredAetheryte,
-                         Aetheryte: {} aetheryteLocation
-                     })
+                Aetheryte: { } aetheryteLocation
+            })
             {
                 return CreateMoveTasks(step, aetheryteData.Locations[aetheryteLocation]);
             }
-            else if (step is { InteractionType: EInteractionType.AttuneAethernetShard, AethernetShard: {} aethernetShard })
+            else if (step is { InteractionType: EInteractionType.AttuneAethernetShard, AethernetShard: { } aethernetShard })
             {
                 return CreateMoveTasks(step, aetheryteData.Locations[aethernetShard]);
             }

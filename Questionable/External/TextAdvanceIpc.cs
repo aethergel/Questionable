@@ -1,9 +1,9 @@
-﻿using Dalamud.Plugin;
+﻿using System;
+using System.Diagnostics.CodeAnalysis;
+using Dalamud.Plugin;
 using Dalamud.Plugin.Ipc;
 using Dalamud.Plugin.Services;
 using Questionable.Controller;
-using System;
-using System.Diagnostics.CodeAnalysis;
 
 namespace Questionable.External;
 

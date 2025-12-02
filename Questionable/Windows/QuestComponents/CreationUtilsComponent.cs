@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.Globalization;
-using System.Linq;
 using System.Numerics;
 using Dalamud.Bindings.ImGui;
 using Dalamud.Game.ClientState.Conditions;
@@ -13,13 +10,10 @@ using Dalamud.Interface;
 using Dalamud.Interface.Colors;
 using Dalamud.Interface.Components;
 using Dalamud.Plugin.Services;
-using ECommons;
 using FFXIVClientStructs.FFXIV.Client.Game;
 using FFXIVClientStructs.FFXIV.Client.Game.Control;
 using FFXIVClientStructs.FFXIV.Client.Game.Object;
 using FFXIVClientStructs.FFXIV.Client.Game.UI;
-using Lumina.Excel;
-using Lumina.Excel.Sheets;
 using Lumina.Text.ReadOnly;
 using Microsoft.Extensions.Logging;
 using Questionable.Controller;
@@ -29,7 +23,6 @@ using Questionable.Model;
 using Questionable.Model.Common;
 using Questionable.Model.Questing;
 using Questionable.Windows.Utils;
-using static Questionable.Controller.QuestController;
 using ObjectKind = Dalamud.Game.ClientState.Objects.Enums.ObjectKind;
 
 namespace Questionable.Windows.QuestComponents;
@@ -47,6 +40,8 @@ internal sealed class CreationUtilsComponent
     private readonly QuestSelectionWindow _questSelectionWindow;
     private readonly PriorityWindow _priorityWindow;
     private readonly IClientState _clientState;
+    private readonly IObjectTable _objectTable;
+    private readonly IPlayerState _playerState;
     private readonly ITargetManager _targetManager;
     private readonly ICondition _condition;
     private readonly IGameGui _gameGui;
@@ -67,6 +62,8 @@ internal sealed class CreationUtilsComponent
         QuestSelectionWindow questSelectionWindow,
         PriorityWindow priorityWindow,
         IClientState clientState,
+        IObjectTable objectTable,
+        IPlayerState playerState,
         ITargetManager targetManager,
         ICondition condition,
         IGameGui gameGui,
@@ -85,6 +82,8 @@ internal sealed class CreationUtilsComponent
         _questSelectionWindow = questSelectionWindow;
         _priorityWindow = priorityWindow;
         _clientState = clientState;
+        _objectTable = objectTable;
+        _playerState = playerState;
         _targetManager = targetManager;
         _condition = condition;
         _gameGui = gameGui;
@@ -97,7 +96,7 @@ internal sealed class CreationUtilsComponent
 
     public void Draw()
     {
-        Debug.Assert(_clientState.LocalPlayer != null, "_clientState.LocalPlayer != null");
+        if (_objectTable.LocalPlayer == null) return;
 
         string territoryName = _territoryData.GetNameAndId(_clientState.TerritoryType);
         ImGui.Text(territoryName);
@@ -246,13 +245,13 @@ internal sealed class CreationUtilsComponent
         ImGui.Text(string.Create(CultureInfo.InvariantCulture,
             $"Target: {target.Name}  ({target.ObjectKind}; {GameFunctions.GetBaseID(target)}{nameId})"));
 
-        if (_clientState.LocalPlayer != null)
+        if (_objectTable.LocalPlayer != null)
         {
             ImGui.Text(string.Create(CultureInfo.InvariantCulture,
-                $"Distance: {(target.Position - _clientState.LocalPlayer.Position).Length():F2}"));
+                $"Distance: {(target.Position - _objectTable.LocalPlayer.Position).Length():F2}"));
             ImGui.SameLine();
 
-            float verticalDistance = target.Position.Y - _clientState.LocalPlayer.Position.Y;
+            float verticalDistance = target.Position.Y - _objectTable.LocalPlayer.Position.Y;
             string verticalDistanceText = string.Create(CultureInfo.InvariantCulture, $"Y: {verticalDistance:F2}");
             if (Math.Abs(verticalDistance) >= MovementController.DefaultVerticalInteractionDistance)
                 ImGui.TextColored(ImGuiColors.DalamudOrange, verticalDistanceText);
@@ -359,14 +358,14 @@ internal sealed class CreationUtilsComponent
                     _ => "Interact",
                 };
                 ImGui.SetClipboardText($$"""
-                                         "DataId": {{GameFunctions.GetBaseID(target)}},
-                                         "Position": {
-                                             "X": {{target.Position.X.ToString(CultureInfo.InvariantCulture)}},
-                                             "Y": {{target.Position.Y.ToString(CultureInfo.InvariantCulture)}},
-                                             "Z": {{target.Position.Z.ToString(CultureInfo.InvariantCulture)}}
-                                         },
-                                         "TerritoryId": {{_clientState.TerritoryType}},
-                                         "InteractionType": "{{interactionType}}"
+                                                   "DataId": {{GameFunctions.GetBaseID(target)}},
+                                                   "Position": {
+                                                       "X": {{target.Position.X.ToString(CultureInfo.InvariantCulture)}},
+                                                       "Y": {{target.Position.Y.ToString(CultureInfo.InvariantCulture)}},
+                                                       "Z": {{target.Position.Z.ToString(CultureInfo.InvariantCulture)}}
+                                                   },
+                                                   "TerritoryId": {{_clientState.TerritoryType}},
+                                                   "InteractionType": "{{interactionType}}"
                                          """);
             }
         }
@@ -386,7 +385,7 @@ internal sealed class CreationUtilsComponent
 
     private void DrawCopyButton()
     {
-        if (_clientState.LocalPlayer == null)
+        if (_objectTable.LocalPlayer == null)
             return;
 
         bool copy = ImGuiComponents.IconButton(FontAwesomeIcon.Copy);
@@ -396,18 +395,18 @@ internal sealed class CreationUtilsComponent
         if (copy)
         {
             ImGui.SetClipboardText($$"""
-                                     "Position": {
-                                         "X": {{_clientState.LocalPlayer.Position.X.ToString(CultureInfo.InvariantCulture)}},
-                                         "Y": {{_clientState.LocalPlayer.Position.Y.ToString(CultureInfo.InvariantCulture)}},
-                                         "Z": {{_clientState.LocalPlayer.Position.Z.ToString(CultureInfo.InvariantCulture)}}
-                                     },
-                                     "TerritoryId": {{_clientState.TerritoryType}},
-                                     "InteractionType": ""
+                                               "Position": {
+                                                   "X": {{_objectTable.LocalPlayer.Position.X.ToString(CultureInfo.InvariantCulture)}},
+                                                   "Y": {{_objectTable.LocalPlayer.Position.Y.ToString(CultureInfo.InvariantCulture)}},
+                                                   "Z": {{_objectTable.LocalPlayer.Position.Z.ToString(CultureInfo.InvariantCulture)}}
+                                               },
+                                               "TerritoryId": {{_clientState.TerritoryType}},
+                                               "InteractionType": ""
                                      """);
         }
         else if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
         {
-            Vector3 position = _clientState.LocalPlayer!.Position;
+            Vector3 position = _objectTable.LocalPlayer!.Position;
             ImGui.SetClipboardText(string.Create(CultureInfo.InvariantCulture,
                 $"new({position.X}f, {position.Y}f, {position.Z}f)"));
         }

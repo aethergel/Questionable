@@ -27,6 +27,8 @@ namespace Questionable.Controller;
 internal sealed class QuestController : MiniTaskController<QuestController>
 {
     private readonly IClientState _clientState;
+    private readonly IObjectTable _objectTable;
+    private readonly IPlayerState _playerState;
     private readonly GameFunctions _gameFunctions;
     private readonly QuestFunctions _questFunctions;
     private readonly MovementController _movementController;
@@ -77,6 +79,8 @@ internal sealed class QuestController : MiniTaskController<QuestController>
 
     public QuestController(
         IClientState clientState,
+        IObjectTable objectTable,
+        IPlayerState playerState,
         GameFunctions gameFunctions,
         QuestFunctions questFunctions,
         MovementController movementController,
@@ -99,6 +103,8 @@ internal sealed class QuestController : MiniTaskController<QuestController>
         : base(chatGui, condition, serviceProvider, interruptHandler, dataManager, logger)
     {
         _clientState = clientState;
+        _objectTable = objectTable;
+        _playerState = playerState;
         _gameFunctions = gameFunctions;
         _questFunctions = questFunctions;
         _movementController = movementController;
@@ -263,9 +269,9 @@ internal sealed class QuestController : MiniTaskController<QuestController>
 
         // check level stop condition
         // stops immediately instead of quest stop after completion of quest
-        if (_configuration.Stop.Enabled && _configuration.Stop.LevelToStopAfter && _clientState.LocalPlayer != null)
+        if (_configuration.Stop.Enabled && _configuration.Stop.LevelToStopAfter)
         {
-            int currentLevel = _clientState.LocalPlayer.Level;
+            int currentLevel = _playerState.Level;
             if (currentLevel >= _configuration.Stop.TargetLevel && IsRunning)
             {
                 _logger.LogInformation("Reached level stop condition (level: {CurrentLevel}, target: {TargetLevel})", currentLevel, _configuration.Stop.TargetLevel);
@@ -302,7 +308,7 @@ internal sealed class QuestController : MiniTaskController<QuestController>
             !IsRunning ||
             CurrentQuest == null ||
             !_clientState.IsLoggedIn ||
-            _clientState.LocalPlayer == null ||
+            _objectTable.LocalPlayer == null ||
             DateTime.Now < _lastAutoRefresh.AddSeconds(5))
         {
             return;
@@ -327,7 +333,7 @@ internal sealed class QuestController : MiniTaskController<QuestController>
             return;
         }
 
-        Vector3 currentPosition = _clientState.LocalPlayer.Position;
+        Vector3 currentPosition = _objectTable.LocalPlayer!.Position;
         ElementId currentQuestId = CurrentQuest.Quest.Id;
         byte currentSequence = CurrentQuest.Sequence;
         int currentStep = CurrentQuest.Step;
@@ -502,12 +508,11 @@ internal sealed class QuestController : MiniTaskController<QuestController>
                         _logger.LogInformation("New quest: {QuestName}", quest.Info.Name);
                         _startedQuest = new QuestProgress(quest, currentSequence);
 
-                        if (_clientState.LocalPlayer != null &&
-                            _clientState.LocalPlayer.Level < quest.Info.Level)
+                        if (_playerState.Level < quest.Info.Level)
                         {
                             _logger.LogInformation(
                                 "Stopping automation, player level ({PlayerLevel}) < quest level ({QuestLevel}",
-                                _clientState.LocalPlayer!.Level, quest.Info.Level);
+                                _playerState.Level, quest.Info.Level);
                             Stop("Quest level too high");
                         }
                         else
@@ -838,11 +843,14 @@ internal sealed class QuestController : MiniTaskController<QuestController>
 
         try
         {
-            foreach (var task in _taskCreator.CreateTasks(CurrentQuest.Quest, CurrentQuest.Sequence, seq, step)) {
-                if (_simulatedQuest != null) { 
+            foreach (var task in _taskCreator.CreateTasks(CurrentQuest.Quest, CurrentQuest.Sequence, seq, step))
+            {
+                if (_simulatedQuest != null)
+                {
                     string repr = task.ToString() ?? "";
-                    string[] SimSkip = ["Interact","Action","Emote","Craft","Unmount"];
-                    if (repr.Contains('(') && SimSkip.Contains(repr[..repr.IndexOf('(')]) && step != null && step.TargetTerritoryId.Equals(step.TerritoryId)) { 
+                    string[] SimSkip = ["Interact", "Action", "Emote", "Craft", "Unmount"];
+                    if (repr.Contains('(') && SimSkip.Contains(repr[..repr.IndexOf('(')]) && step != null && step.TargetTerritoryId.Equals(step.TerritoryId))
+                    {
                         _logger.LogInformation($"Skipping {repr} due to simulation");
                         continue;
                     }
@@ -1127,7 +1135,7 @@ internal sealed class QuestController : MiniTaskController<QuestController>
 
         if (itemId >= 500_000)
             itemId -= 500_000;
-            
+
         var info = (SatisfactionSupplyInfo)_questData.GetAllByIssuerDataId(npcId)
             .Single(x => x is SatisfactionSupplyInfo);
         if (_questRegistry.TryGetQuest(info.QuestId, out Quest? quest))

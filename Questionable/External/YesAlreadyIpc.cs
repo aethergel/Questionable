@@ -1,7 +1,4 @@
 ﻿using System;
-using Dalamud.Plugin;
-using Dalamud.Plugin.Ipc;
-using Dalamud.Plugin.Ipc.Exceptions;
 using Dalamud.Plugin.Services;
 using ECommons.DalamudServices;
 using ECommons.EzIpcManager;
@@ -89,7 +86,9 @@ internal sealed class YesAlreadyIpc : IDisposable
             {
                 _version = dalamudPlugin.GetType().Assembly.GetName().Version ?? new Version(0, 0, 0, 0);
                 dalamudPlugin.Dispose();
-            } else {
+            }
+            else
+            {
                 _version = new Version(0, 0, 0, 0);
             }
             return _version;

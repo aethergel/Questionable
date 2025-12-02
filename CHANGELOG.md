@@ -1,1 +1,1 @@
-- vanu 2172 position fix by alydev
+- Remove deprecated _clientState.LocalPlayer, code cleanup by alydev

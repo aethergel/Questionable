@@ -35,6 +35,7 @@ internal sealed partial class ActiveQuestComponent
     private readonly PriorityWindow _priorityWindow;
     private readonly UiUtils _uiUtils;
     private readonly IClientState _clientState;
+    private readonly IPlayerState _playerState;
     private readonly IChatGui _chatGui;
     private readonly ILogger<ActiveQuestComponent> _logger;
 
@@ -50,6 +51,7 @@ internal sealed partial class ActiveQuestComponent
         PriorityWindow priorityWindow,
         UiUtils uiUtils,
         IClientState clientState,
+        IPlayerState playerState,
         IChatGui chatGui,
         ILogger<ActiveQuestComponent> logger)
     {
@@ -64,6 +66,7 @@ internal sealed partial class ActiveQuestComponent
         _priorityWindow = priorityWindow;
         _uiUtils = uiUtils;
         _clientState = clientState;
+        _playerState = playerState;
         _chatGui = chatGui;
         _logger = logger;
     }
@@ -203,7 +206,7 @@ internal sealed partial class ActiveQuestComponent
 
                     if (hasLevelCondition)
                     {
-                        int currentLevel = _clientState.LocalPlayer?.Level ?? 0;
+                        int currentLevel = _playerState.Level;
                         if (currentLevel > 0 && currentLevel >= _configuration.Stop.TargetLevel)
                         {
                             iconColor = ImGuiColors.ParsedGreen;
@@ -226,7 +229,7 @@ internal sealed partial class ActiveQuestComponent
                             // Level stop condition
                             if (hasLevelCondition)
                             {
-                                int currentLevel = _clientState.LocalPlayer?.Level ?? 0;
+                                int currentLevel = _playerState.Level;
                                 ImGui.BulletText($"Stop at level {_configuration.Stop.TargetLevel}");
                                 if (currentLevel > 0)
                                 {
