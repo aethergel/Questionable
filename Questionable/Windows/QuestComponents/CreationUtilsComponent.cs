@@ -41,7 +41,7 @@ internal sealed class CreationUtilsComponent
     private readonly PriorityWindow _priorityWindow;
     private readonly IClientState _clientState;
     private readonly IObjectTable _objectTable;
-    private readonly IPlayerState _playerState;
+    private readonly Dalamud.Game.ClientState.Objects.SubKinds.IPlayerCharacter _playerState; //private readonly IPlayerState _playerState;
     private readonly ITargetManager _targetManager;
     private readonly ICondition _condition;
     private readonly IGameGui _gameGui;
@@ -63,7 +63,7 @@ internal sealed class CreationUtilsComponent
         PriorityWindow priorityWindow,
         IClientState clientState,
         IObjectTable objectTable,
-        IPlayerState playerState,
+        //IPlayerState playerState,
         ITargetManager targetManager,
         ICondition condition,
         IGameGui gameGui,
@@ -83,7 +83,7 @@ internal sealed class CreationUtilsComponent
         _priorityWindow = priorityWindow;
         _clientState = clientState;
         _objectTable = objectTable;
-        _playerState = playerState;
+        _playerState = objectTable.LocalPlayer!; //_playerState = playerState;
         _targetManager = targetManager;
         _condition = condition;
         _gameGui = gameGui;

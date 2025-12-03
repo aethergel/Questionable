@@ -30,7 +30,7 @@ public sealed class RendererPlugin : IDalamudPlugin
     private readonly IDalamudPluginInterface _pluginInterface;
     private readonly IClientState _clientState;
     private readonly IObjectTable _objectTable;
-    private readonly IPlayerState _playerState;
+    private readonly Dalamud.Game.ClientState.Objects.SubKinds.IPlayerCharacter _playerState; //private readonly IPlayerState _playerState;
     private readonly IPluginLog _pluginLog;
 
     private readonly EditorCommands _editorCommands;
@@ -44,14 +44,14 @@ public sealed class RendererPlugin : IDalamudPlugin
     internal Dictionary<uint, List<Vector3>> GBRLocationData => _gbrLocationData;
     internal bool DistantRange { get; set; }
 
-    public RendererPlugin(IDalamudPluginInterface pluginInterface, IClientState clientState, IPlayerState playerState,
+    public RendererPlugin(IDalamudPluginInterface pluginInterface, IClientState clientState, 
         ICommandManager commandManager, IDataManager dataManager, ITargetManager targetManager, IChatGui chatGui,
         IObjectTable objectTable, IPluginLog pluginLog, IFramework framework)
     {
         _pluginInterface = pluginInterface;
         _clientState = clientState;
         _objectTable = objectTable;
-        _playerState = playerState;
+        _playerState = objectTable.LocalPlayer!; //_playerState = playerState;
         _pluginLog = pluginLog;
         _gbrLocationData = LoadGBRPosData(_pluginInterface.AssemblyLocation.DirectoryName!);
         pluginLog.Info($"Loaded {_gbrLocationData.Count} entries from GBR data");
@@ -65,7 +65,7 @@ public sealed class RendererPlugin : IDalamudPlugin
         }
 
         _editorCommands = new EditorCommands(this, dataManager, commandManager, targetManager, clientState,
-            objectTable, playerState, chatGui, pluginLog, configuration);
+            objectTable, chatGui, pluginLog, configuration);
         var configWindow = new ConfigWindow(pluginInterface, configuration);
         _editorWindow = new EditorWindow(this, _editorCommands, dataManager, commandManager, targetManager, clientState, objectTable,
                 configWindow)

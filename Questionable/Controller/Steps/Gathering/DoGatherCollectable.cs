@@ -30,7 +30,7 @@ internal static class DoGatherCollectable
     internal sealed class GatherCollectableExecutor(
         GatheringController gatheringController,
         GameFunctions gameFunctions,
-        IPlayerState playerState,
+        
         IObjectTable objectTable,
         IGameGui gameGui,
         ILogger<GatherCollectableExecutor> logger) : TaskExecutor<Task>
@@ -198,7 +198,7 @@ internal static class DoGatherCollectable
 
         private EAction PickAction(EAction minerAction, EAction botanistAction)
         {
-            if ((EClassJob?)playerState.ClassJob.RowId == EClassJob.Miner)
+            if ((EClassJob?)objectTable.LocalPlayer!.ClassJob.RowId == EClassJob.Miner)
                 return minerAction;
             else
                 return botanistAction;

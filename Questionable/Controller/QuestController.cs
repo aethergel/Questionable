@@ -28,7 +28,7 @@ internal sealed class QuestController : MiniTaskController<QuestController>
 {
     private readonly IClientState _clientState;
     private readonly IObjectTable _objectTable;
-    private readonly IPlayerState _playerState;
+    private readonly Dalamud.Game.ClientState.Objects.SubKinds.IPlayerCharacter _playerState; //private readonly IPlayerState _playerState;
     private readonly GameFunctions _gameFunctions;
     private readonly QuestFunctions _questFunctions;
     private readonly MovementController _movementController;
@@ -80,7 +80,7 @@ internal sealed class QuestController : MiniTaskController<QuestController>
     public QuestController(
         IClientState clientState,
         IObjectTable objectTable,
-        IPlayerState playerState,
+        //IPlayerState playerState,
         GameFunctions gameFunctions,
         QuestFunctions questFunctions,
         MovementController movementController,
@@ -104,7 +104,7 @@ internal sealed class QuestController : MiniTaskController<QuestController>
     {
         _clientState = clientState;
         _objectTable = objectTable;
-        _playerState = playerState;
+        _playerState = objectTable.LocalPlayer!; //_playerState = playerState;
         _gameFunctions = gameFunctions;
         _questFunctions = questFunctions;
         _movementController = movementController;

@@ -58,7 +58,7 @@ internal static class SkipCondition
         QuestFunctions questFunctions,
         IClientState clientState,
         IObjectTable objectTable,
-        IPlayerState playerState,
+        //IPlayerState playerState,
         ICondition condition,
         ExtraConditionUtils extraConditionUtils,
         ClassJobUtils classJobUtils) : TaskExecutor<SkipTask>
@@ -393,7 +393,7 @@ internal static class SkipCondition
             {
                 List<EClassJob> expectedJobs =
                     step.RequiredCurrentJob.SelectMany(x => classJobUtils.AsIndividualJobs(x, elementId)).ToList();
-                EClassJob currentJob = (EClassJob)playerState.ClassJob.RowId;
+                EClassJob currentJob = (EClassJob)objectTable.LocalPlayer!.ClassJob.RowId;
                 logger.LogInformation("Checking current job {CurrentJob} against {ExpectedJobs}", currentJob,
                     string.Join(",", expectedJobs));
                 if (!expectedJobs.Contains(currentJob))

@@ -1,3 +1,2 @@
-- Remove deprecated _clientState.LocalPlayer, code cleanup by alydev
-- Fix race condition when interacting with NPCs after combat by Brappp
-- A few spots were missed in deprecation by alydev
+- Fix support for CN (hopefully) by alydev
+- 修复支持 CN (希望) by alydev

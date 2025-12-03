@@ -36,7 +36,7 @@ internal sealed unsafe class QuestFunctions
     private readonly IDataManager _dataManager;
     private readonly IClientState _clientState;
     private readonly IObjectTable _objectTable;
-    private readonly IPlayerState _playerState;
+    private readonly Dalamud.Game.ClientState.Objects.SubKinds.IPlayerCharacter _playerState; //private readonly IPlayerState _playerState;
     private readonly IGameGui _gameGui;
     private readonly IChatGui _chatGui;
     private readonly IAetheryteList _aetheryteList;
@@ -52,7 +52,7 @@ internal sealed unsafe class QuestFunctions
         IDataManager dataManager,
         IClientState clientState,
         IObjectTable objectTable,
-        IPlayerState playerState,
+        //IPlayerState playerState,
         IGameGui gameGui,
         IChatGui chatGui,
         IAetheryteList aetheryteList)
@@ -66,7 +66,7 @@ internal sealed unsafe class QuestFunctions
         _dataManager = dataManager;
         _clientState = clientState;
         _objectTable = objectTable;
-        _playerState = playerState;
+        _playerState = objectTable.LocalPlayer!; //_playerState = playerState;
         _gameGui = gameGui;
         _chatGui = chatGui;
         _aetheryteList = aetheryteList;

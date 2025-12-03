@@ -24,13 +24,13 @@ internal sealed class EditorCommands : IDisposable
     private readonly ITargetManager _targetManager;
     private readonly IClientState _clientState;
     private readonly IObjectTable _objectTable;
-    private readonly IPlayerState _playerState;
+    private readonly Dalamud.Game.ClientState.Objects.SubKinds.IPlayerCharacter _playerState; //private readonly Dalamud.Game.ClientState.Objects.SubKinds.IPlayerCharacter _playerState;
     private readonly IChatGui _chatGui;
     private readonly IPluginLog _pluginLog;
     private readonly Configuration _configuration;
 
     public EditorCommands(RendererPlugin plugin, IDataManager dataManager, ICommandManager commandManager,
-        ITargetManager targetManager, IClientState clientState, IObjectTable objectTable, IPlayerState playerState,
+        ITargetManager targetManager, IClientState clientState, IObjectTable objectTable,
         IChatGui chatGui, IPluginLog pluginLog, Configuration configuration)
     {
         _plugin = plugin;
@@ -39,7 +39,7 @@ internal sealed class EditorCommands : IDisposable
         _targetManager = targetManager;
         _clientState = clientState;
         _objectTable = objectTable;
-        _playerState = playerState;
+        _playerState = objectTable.LocalPlayer!; //_playerState = objectTable.LocalPlayer!;
         _chatGui = chatGui;
         _pluginLog = pluginLog;
         _configuration = configuration;

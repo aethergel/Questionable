@@ -43,7 +43,7 @@ internal static class Craft
 
     internal sealed class DoCraft(
         IDataManager dataManager,
-        IPlayerState playerState,
+        IObjectTable objectTable,
         ArtisanIpc artisanIpc,
         ILogger<DoCraft> logger,
         QuestController questController) : TaskExecutor<CraftTask>
@@ -68,7 +68,7 @@ internal static class Craft
 
             RecipeLookup? recipeLookup = dataManager.GetExcelSheet<RecipeLookup>().GetRowOrDefault(Task.ItemId) ??
                 throw new TaskException($"Item {Task.ItemId} is not craftable");
-            uint recipeId = (EClassJob)playerState.ClassJob.RowId switch
+            uint recipeId = (EClassJob)objectTable.LocalPlayer!.ClassJob.RowId switch
             {
                 EClassJob.Carpenter => recipeLookup.Value.CRP.RowId,
                 EClassJob.Blacksmith => recipeLookup.Value.BSM.RowId,

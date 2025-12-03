@@ -42,7 +42,7 @@ internal sealed class InteractionUiController : IDisposable
     private readonly IGameGui _gameGui;
     private readonly ITargetManager _targetManager;
     private readonly IClientState _clientState;
-    private readonly IPlayerState _playerState;
+    private readonly Dalamud.Game.ClientState.Objects.SubKinds.IPlayerCharacter _playerState; //private readonly IPlayerState _playerState;
     private readonly ShopController _shopController;
     private readonly BossModIpc _bossModIpc;
     private readonly Configuration _configuration;
@@ -69,7 +69,7 @@ internal sealed class InteractionUiController : IDisposable
         ITargetManager targetManager,
         IPluginLog pluginLog,
         IClientState clientState,
-        IPlayerState playerState,
+        IObjectTable objectTable,
         ShopController shopController,
         BossModIpc bossModIpc,
         Configuration configuration,
@@ -88,7 +88,7 @@ internal sealed class InteractionUiController : IDisposable
         _gameGui = gameGui;
         _targetManager = targetManager;
         _clientState = clientState;
-        _playerState = playerState;
+        _playerState = objectTable.LocalPlayer!; //_playerState = playerState;
         _shopController = shopController;
         _bossModIpc = bossModIpc;
         _configuration = configuration;

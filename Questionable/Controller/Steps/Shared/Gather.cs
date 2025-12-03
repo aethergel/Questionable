@@ -42,7 +42,7 @@ internal static class Gather
         GatheringPointRegistry gatheringPointRegistry,
         TerritoryData territoryData,
         IClientState clientState,
-        IPlayerState playerState,
+        IObjectTable objectTable,
         IServiceProvider serviceProvider,
         ILogger<DelayedGatheringExecutor> logger) : TaskExecutor<DelayedGatheringTask>, IExtraTaskCreator
     {
@@ -52,7 +52,7 @@ internal static class Gather
 
         public IEnumerable<ITask> CreateExtraTasks()
         {
-            EClassJob currentClassJob = (EClassJob)playerState.ClassJob.RowId;
+            EClassJob currentClassJob = (EClassJob)objectTable.LocalPlayer!.ClassJob.RowId;
             if (!gatheringPointRegistry.TryGetGatheringPointId(Task.GatheredItem.ItemId, currentClassJob,
                     out GatheringPointId? gatheringPointId))
                 throw new TaskException($"No gathering point found for item {Task.GatheredItem.ItemId}");

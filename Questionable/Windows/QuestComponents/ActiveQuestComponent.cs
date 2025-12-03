@@ -35,7 +35,7 @@ internal sealed partial class ActiveQuestComponent
     private readonly PriorityWindow _priorityWindow;
     private readonly UiUtils _uiUtils;
     private readonly IClientState _clientState;
-    private readonly IPlayerState _playerState;
+    private readonly Dalamud.Game.ClientState.Objects.SubKinds.IPlayerCharacter _playerState; //private readonly IPlayerState _playerState;
     private readonly IChatGui _chatGui;
     private readonly ILogger<ActiveQuestComponent> _logger;
 
@@ -51,7 +51,7 @@ internal sealed partial class ActiveQuestComponent
         PriorityWindow priorityWindow,
         UiUtils uiUtils,
         IClientState clientState,
-        IPlayerState playerState,
+        IObjectTable objectTable,//IPlayerState playerState,
         IChatGui chatGui,
         ILogger<ActiveQuestComponent> logger)
     {
@@ -66,7 +66,7 @@ internal sealed partial class ActiveQuestComponent
         _priorityWindow = priorityWindow;
         _uiUtils = uiUtils;
         _clientState = clientState;
-        _playerState = playerState;
+        _playerState = objectTable.LocalPlayer!; //_playerState = playerState;
         _chatGui = chatGui;
         _logger = logger;
     }
