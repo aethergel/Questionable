@@ -114,7 +114,7 @@ internal sealed class ContextMenuController : IDisposable
         string verb)
     {
         EClassJob currentClassJob = (EClassJob)PlayerState.Instance()->CurrentClassJobId;
-        if (classJob != currentClassJob && currentClassJob is EClassJob.Miner or EClassJob.Botanist)
+        if (classJob != currentClassJob)
             return;
 
         if (!_gatheringPointRegistry.TryGetGatheringPointId(itemId, classJob, out _))
