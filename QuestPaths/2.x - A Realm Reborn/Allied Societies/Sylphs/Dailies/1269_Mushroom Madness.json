@@ -1,7 +1,7 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
   "Author": "alydev",
-  "Disabled": true,
+  "LastChecked":{"Username": "alydev", "Date": "2025-12-04"},
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -17,6 +17,116 @@
           "InteractionType": "AcceptQuest",
           "AetheryteShortcut": "East Shroud - Hawthorne Hut",
           "Fly": true
+        }
+      ]
+    },
+    {
+      "Sequence": 1,
+      "Steps": [
+        {
+          "DataId": 2003248,
+          "Position": {
+            "X": 270.42245,
+            "Y": -9.517881,
+            "Z": -80.421486
+          },
+          "TerritoryId": 152,
+          "Fly": true,
+          "StopDistance": 1,
+          "InteractionType": "UseItem",
+          "ItemId": 2001180,
+          "RequiredQuestVariables": [null,[{"Low": 1},{"Low": 2},{"Low": 3},{"Low": 5}],null,null,null,null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"Low": 2}]
+        },
+        {
+          "DataId": 2003242,
+          "Position": {
+              "X": 253.1195,
+              "Y": -10.103601,
+              "Z": -140.7707
+          },
+          "TerritoryId": 152,
+          "Fly": true,
+          "StopDistance": 1,
+          "InteractionType": "UseItem",
+          "ItemId": 2001180,
+          "RequiredQuestVariables": [null,[{"Low": 1}],null,null,null,null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"High": 8}]
+        },
+        {
+          "DataId": 2003244,
+          "Position": {
+              "X": 208.08806,
+              "Y": -5.410058,
+              "Z": -142.27278
+          },
+          "TerritoryId": 152,
+          "Fly": true,
+          "StopDistance": 1,
+          "InteractionType": "UseItem",
+          "ItemId": 2001180,
+          "RequiredQuestVariables": [null,[{"Low": 3},{"Low": 5}],null,null,null,null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"High": 2}]
+        },
+        {
+          "DataId": 2003243,
+          "Position": {
+              "X": 206.42912,
+              "Y": -7.2092905,
+              "Z": -192.24521
+          },
+          "TerritoryId": 152,
+          "Fly": true,
+          "StopDistance": 1,
+          "InteractionType": "UseItem",
+          "ItemId": 2001180,
+          "RequiredQuestVariables": [null,[{"Low": 2},{"Low": 4}],null,null,null,null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"High": 4}]
+        },
+        {
+          "DataId": 2003245,
+          "Position": {
+              "X": 326.5836,
+              "Y": -18.321123,
+              "Z": -175.72629
+          },
+          "TerritoryId": 152,
+          "Fly": true,
+          "StopDistance": 1,
+          "InteractionType": "UseItem",
+          "ItemId": 2001180,
+          "RequiredQuestVariables": [null,[{"Low": 4},{"Low": 5}],null,null,null,null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"High": 1}]
+        },
+        {
+          "DataId": 2003247,
+          "Position": {
+              "X": 372.90823,
+              "Y": -19.276072,
+              "Z": -162.69167
+          },
+          "TerritoryId": 152,
+          "Fly": true,
+          "StopDistance": 1,
+          "InteractionType": "UseItem",
+          "ItemId": 2001180,
+          "RequiredQuestVariables": [null,[{"Low": 1},{"Low": 2},{"Low": 4},{"Low": 5}],null,null,null,null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"Low": 4}]
+        },
+        {
+          "DataId": 2003246,
+          "Position": {
+              "X": 386.42917,
+              "Y": -18.999943,
+              "Z": -224.5021
+          },
+          "TerritoryId": 152,
+          "Fly": true,
+          "StopDistance": 1,
+          "InteractionType": "UseItem",
+          "ItemId": 2001180,
+          "RequiredQuestVariables": [null,[{"Low": 1},{"Low": 2},{"Low": 3},{"Low": 4}],null,null,null,null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"Low": 8}]
         }
       ]
     },
