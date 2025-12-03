@@ -15,6 +15,7 @@ using Dalamud.Interface.Windowing;
 using Dalamud.Plugin;
 using Dalamud.Plugin.Services;
 using ECommons;
+using FFXIVClientStructs.FFXIV.Client.Game.UI;
 using GatheringPathRenderer.Windows;
 using LLib.GameData;
 using Pictomancy;
@@ -30,7 +31,7 @@ public sealed class RendererPlugin : IDalamudPlugin
     private readonly IDalamudPluginInterface _pluginInterface;
     private readonly IClientState _clientState;
     private readonly IObjectTable _objectTable;
-    private readonly Dalamud.Game.ClientState.Objects.SubKinds.IPlayerCharacter _playerState; //private readonly IPlayerState _playerState;
+    //private readonly IPlayerState _playerState;
     private readonly IPluginLog _pluginLog;
 
     private readonly EditorCommands _editorCommands;
@@ -44,14 +45,14 @@ public sealed class RendererPlugin : IDalamudPlugin
     internal Dictionary<uint, List<Vector3>> GBRLocationData => _gbrLocationData;
     internal bool DistantRange { get; set; }
 
-    public RendererPlugin(IDalamudPluginInterface pluginInterface, IClientState clientState, 
+    public RendererPlugin(IDalamudPluginInterface pluginInterface, IClientState clientState,
         ICommandManager commandManager, IDataManager dataManager, ITargetManager targetManager, IChatGui chatGui,
         IObjectTable objectTable, IPluginLog pluginLog, IFramework framework)
     {
         _pluginInterface = pluginInterface;
         _clientState = clientState;
         _objectTable = objectTable;
-        _playerState = objectTable.LocalPlayer!; //_playerState = playerState;
+        //_playerState = playerState;
         _pluginLog = pluginLog;
         _gbrLocationData = LoadGBRPosData(_pluginInterface.AssemblyLocation.DirectoryName!);
         pluginLog.Info($"Loaded {_gbrLocationData.Count} entries from GBR data");
@@ -75,7 +76,10 @@ public sealed class RendererPlugin : IDalamudPlugin
 
         framework.RunOnFrameworkThread(() =>
         {
-            _currentClassJob = (EClassJob?)_playerState.ClassJob.RowId ?? EClassJob.Adventurer;
+            unsafe
+            {
+                _currentClassJob = (EClassJob?)PlayerState.Instance()->CurrentClassJobId ?? EClassJob.Adventurer;
+            }
         });
 
         _pluginInterface.GetIpcSubscriber<object>("Questionable.ReloadData")

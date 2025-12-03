@@ -3,6 +3,7 @@ using System.Linq;
 using Dalamud.Game.Gui.ContextMenu;
 using Dalamud.Game.Text;
 using Dalamud.Plugin.Services;
+using FFXIVClientStructs.FFXIV.Client.Game.UI;
 using FFXIVClientStructs.FFXIV.Client.UI;
 using FFXIVClientStructs.FFXIV.Client.UI.Agent;
 using LLib.GameData;
@@ -29,7 +30,7 @@ internal sealed class ContextMenuController : IDisposable
     private readonly IGameGui _gameGui;
     private readonly IChatGui _chatGui;
     private readonly IClientState _clientState;
-    private readonly Dalamud.Game.ClientState.Objects.SubKinds.IPlayerCharacter _playerState; //private readonly IPlayerState _playerState;
+    //private readonly IPlayerState _playerState;
     private readonly ILogger<ContextMenuController> _logger;
 
     public ContextMenuController(
@@ -58,7 +59,7 @@ internal sealed class ContextMenuController : IDisposable
         _gameGui = gameGui;
         _chatGui = chatGui;
         _clientState = clientState;
-        _playerState = objectTable.LocalPlayer!; //_playerState = playerState;
+        //_playerState = playerState;
         _logger = logger;
 
         _contextMenu.OnMenuOpened += MenuOpened;
@@ -109,10 +110,10 @@ internal sealed class ContextMenuController : IDisposable
         return 0;
     }
 
-    private void AddContextMenuEntry(IMenuOpenedArgs args, uint itemId, uint npcId, EClassJob classJob,
+    private unsafe void AddContextMenuEntry(IMenuOpenedArgs args, uint itemId, uint npcId, EClassJob classJob,
         string verb)
     {
-        EClassJob currentClassJob = (EClassJob)_playerState.ClassJob.RowId;
+        EClassJob currentClassJob = (EClassJob)PlayerState.Instance()->CurrentClassJobId;
         if (classJob != currentClassJob && currentClassJob is EClassJob.Miner or EClassJob.Botanist)
             return;
 
@@ -127,15 +128,12 @@ internal sealed class ContextMenuController : IDisposable
         if (collectability == 0)
             return;
 
-        unsafe
+        var agentSatisfactionSupply = AgentSatisfactionSupply.Instance();
+        if (agentSatisfactionSupply->IsAgentActive())
         {
-            var agentSatisfactionSupply = AgentSatisfactionSupply.Instance();
-            if (agentSatisfactionSupply->IsAgentActive())
-            {
-                int maxTurnIns = agentSatisfactionSupply->NpcInfo.SatisfactionRank == 1 ? 3 : 6;
-                quantityToGather = Math.Min(agentSatisfactionSupply->NpcData.RemainingAllowances,
-                    ((AgentSatisfactionSupply2*)agentSatisfactionSupply)->CalculateTurnInsToNextRank(maxTurnIns));
-            }
+            int maxTurnIns = agentSatisfactionSupply->NpcInfo.SatisfactionRank == 1 ? 3 : 6;
+            quantityToGather = Math.Min(agentSatisfactionSupply->NpcData.RemainingAllowances,
+                ((AgentSatisfactionSupply2*)agentSatisfactionSupply)->CalculateTurnInsToNextRank(maxTurnIns));
         }
 
         string lockedReasonn = string.Empty;

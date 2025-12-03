@@ -8,6 +8,7 @@ using Dalamud.Game.ClientState.Objects.Enums;
 using Dalamud.Game.ClientState.Objects.Types;
 using Dalamud.Game.Command;
 using Dalamud.Plugin.Services;
+using FFXIVClientStructs.FFXIV.Client.Game.UI;
 using FFXIVClientStructs.FFXIV.Client.LayoutEngine;
 using Lumina.Excel.Sheets;
 using Questionable.Model;
@@ -24,7 +25,7 @@ internal sealed class EditorCommands : IDisposable
     private readonly ITargetManager _targetManager;
     private readonly IClientState _clientState;
     private readonly IObjectTable _objectTable;
-    private readonly Dalamud.Game.ClientState.Objects.SubKinds.IPlayerCharacter _playerState; //private readonly Dalamud.Game.ClientState.Objects.SubKinds.IPlayerCharacter _playerState;
+    //private readonly Dalamud.Game.ClientState.Objects.SubKinds.IPlayerCharacter _playerState;
     private readonly IChatGui _chatGui;
     private readonly IPluginLog _pluginLog;
     private readonly Configuration _configuration;
@@ -39,7 +40,7 @@ internal sealed class EditorCommands : IDisposable
         _targetManager = targetManager;
         _clientState = clientState;
         _objectTable = objectTable;
-        _playerState = objectTable.LocalPlayer!; //_playerState = objectTable.LocalPlayer!;
+        //_playerState = objectTable.LocalPlayer!;
         _chatGui = chatGui;
         _pluginLog = pluginLog;
         _configuration = configuration;
@@ -186,7 +187,7 @@ internal sealed class EditorCommands : IDisposable
         }
     }
 
-    public (FileInfo targetFile, GatheringRoot root) CreateNewFile(GatheringPoint gatheringPoint, IGameObject target)
+    public unsafe (FileInfo targetFile, GatheringRoot root) CreateNewFile(GatheringPoint gatheringPoint, IGameObject target)
     {
         // determine target folder
         DirectoryInfo? targetFolder = _plugin.GetLocationsInTerritory(_clientState.TerritoryType).FirstOrDefault()
@@ -202,7 +203,7 @@ internal sealed class EditorCommands : IDisposable
         FileInfo targetFile =
             new(
                 Path.Combine(targetFolder.FullName,
-                    $"{gatheringPoint.GatheringPointBase.RowId}_{gatheringPoint.PlaceName.Value.Name}_{(_playerState.ClassJob.RowId == 16 ? "MIN" : "BTN")}.json"));
+                    $"{gatheringPoint.GatheringPointBase.RowId}_{gatheringPoint.PlaceName.Value.Name}_{(PlayerState.Instance()->CurrentClassJobId == 16 ? "MIN" : "BTN")}.json"));
         var root = new GatheringRoot
         {
             Author = [_configuration.AuthorName],

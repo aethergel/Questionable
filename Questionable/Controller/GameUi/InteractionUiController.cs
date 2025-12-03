@@ -7,6 +7,7 @@ using Dalamud.Game.Addon.Lifecycle;
 using Dalamud.Game.Addon.Lifecycle.AddonArgTypes;
 using Dalamud.Game.ClientState.Objects;
 using Dalamud.Plugin.Services;
+using FFXIVClientStructs.FFXIV.Client.Game.UI;
 using FFXIVClientStructs.FFXIV.Client.UI;
 using FFXIVClientStructs.FFXIV.Client.UI.Misc;
 using FFXIVClientStructs.FFXIV.Component.GUI;
@@ -42,7 +43,7 @@ internal sealed class InteractionUiController : IDisposable
     private readonly IGameGui _gameGui;
     private readonly ITargetManager _targetManager;
     private readonly IClientState _clientState;
-    private readonly Dalamud.Game.ClientState.Objects.SubKinds.IPlayerCharacter _playerState; //private readonly IPlayerState _playerState;
+    //private readonly IPlayerState _playerState;
     private readonly ShopController _shopController;
     private readonly BossModIpc _bossModIpc;
     private readonly Configuration _configuration;
@@ -88,7 +89,7 @@ internal sealed class InteractionUiController : IDisposable
         _gameGui = gameGui;
         _targetManager = targetManager;
         _clientState = clientState;
-        _playerState = objectTable.LocalPlayer!; //_playerState = playerState;
+        //_playerState = playerState;
         _shopController = shopController;
         _bossModIpc = bossModIpc;
         _configuration = configuration;
@@ -825,7 +826,7 @@ internal sealed class InteractionUiController : IDisposable
         }
     }
 
-    private ushort? FindTargetTerritoryFromQuestStep(QuestController.QuestProgress currentQuest)
+    private unsafe ushort? FindTargetTerritoryFromQuestStep(QuestController.QuestProgress currentQuest)
     {
         // this can be triggered either manually (in which case we should increase the step counter), or automatically
         // (in which case it is ~1 frame later, and the step counter has already been increased)
@@ -843,7 +844,7 @@ internal sealed class InteractionUiController : IDisposable
             step.InteractionType == EInteractionType.Gather)
         {
             if (_gatheringPointRegistry.TryGetGatheringPointId(step.ItemsToGather[0].ItemId,
-                    (EClassJob?)_playerState.ClassJob.RowId ?? EClassJob.Adventurer,
+                    (EClassJob?)PlayerState.Instance()->CurrentClassJobId ?? EClassJob.Adventurer,
                     out GatheringPointId? gatheringPointId) &&
                 _gatheringPointRegistry.TryGetGatheringPoint(gatheringPointId, out GatheringRoot? root))
             {

@@ -10,6 +10,7 @@ using Dalamud.Game.Text.SeStringHandling;
 using Dalamud.Plugin.Services;
 using ECommons.ExcelServices;
 using FFXIVClientStructs.FFXIV.Client.Game;
+using FFXIVClientStructs.FFXIV.Client.Game.UI;
 using Microsoft.Extensions.Logging;
 using Questionable.Controller.Steps;
 using Questionable.Controller.Steps.Interactions;
@@ -28,7 +29,7 @@ internal sealed class QuestController : MiniTaskController<QuestController>
 {
     private readonly IClientState _clientState;
     private readonly IObjectTable _objectTable;
-    private readonly Dalamud.Game.ClientState.Objects.SubKinds.IPlayerCharacter _playerState; //private readonly IPlayerState _playerState;
+    //private readonly IPlayerState _playerState;
     private readonly GameFunctions _gameFunctions;
     private readonly QuestFunctions _questFunctions;
     private readonly MovementController _movementController;
@@ -104,7 +105,7 @@ internal sealed class QuestController : MiniTaskController<QuestController>
     {
         _clientState = clientState;
         _objectTable = objectTable;
-        _playerState = objectTable.LocalPlayer!; //_playerState = playerState;
+        //_playerState = playerState;
         _gameFunctions = gameFunctions;
         _questFunctions = questFunctions;
         _movementController = movementController;
@@ -271,13 +272,16 @@ internal sealed class QuestController : MiniTaskController<QuestController>
         // stops immediately instead of quest stop after completion of quest
         if (_configuration.Stop.Enabled && _configuration.Stop.LevelToStopAfter)
         {
-            int currentLevel = _playerState.Level;
-            if (currentLevel >= _configuration.Stop.TargetLevel && IsRunning)
+            unsafe
             {
-                _logger.LogInformation("Reached level stop condition (level: {CurrentLevel}, target: {TargetLevel})", currentLevel, _configuration.Stop.TargetLevel);
-                _chatGui.Print($"Reached or exceeded target level {_configuration.Stop.TargetLevel}.", CommandHandler.MessageTag, CommandHandler.TagColor);
-                Stop($"Level stop condition reached [{currentLevel}]");
-                return;
+                var currentLevel = PlayerState.Instance()->CurrentLevel;
+                if (currentLevel >= _configuration.Stop.TargetLevel && IsRunning)
+                {
+                    _logger.LogInformation("Reached level stop condition (level: {CurrentLevel}, target: {TargetLevel})", currentLevel, _configuration.Stop.TargetLevel);
+                    _chatGui.Print($"Reached or exceeded target level {_configuration.Stop.TargetLevel}.", CommandHandler.MessageTag, CommandHandler.TagColor);
+                    Stop($"Level stop condition reached [{currentLevel}]");
+                    return;
+                }
             }
         }
 
@@ -508,22 +512,25 @@ internal sealed class QuestController : MiniTaskController<QuestController>
                         _logger.LogInformation("New quest: {QuestName}", quest.Info.Name);
                         _startedQuest = new QuestProgress(quest, currentSequence);
 
-                        if (_playerState.Level < quest.Info.Level)
+                        unsafe
                         {
-                            _logger.LogInformation(
-                                "Stopping automation, player level ({PlayerLevel}) < quest level ({QuestLevel}",
-                                _playerState.Level, quest.Info.Level);
-                            Stop("Quest level too high");
-                        }
-                        else
-                        {
-                            if (AutomationType == EAutomationType.SingleQuestB)
+                            if (PlayerState.Instance()->CurrentLevel < quest.Info.Level)
                             {
-                                _logger.LogInformation("Single quest is finished");
-                                AutomationType = EAutomationType.Manual;
+                                _logger.LogInformation(
+                                    "Stopping automation, player level ({PlayerLevel}) < quest level ({QuestLevel}",
+                                    PlayerState.Instance()->CurrentLevel, quest.Info.Level);
+                                Stop("Quest level too high");
                             }
+                            else
+                            {
+                                if (AutomationType == EAutomationType.SingleQuestB)
+                                {
+                                    _logger.LogInformation("Single quest is finished");
+                                    AutomationType = EAutomationType.Manual;
+                                }
 
-                            CheckNextTasks("Different Quest");
+                                CheckNextTasks("Different Quest");
+                            }
                         }
                     }
                     else if (_startedQuest != null)

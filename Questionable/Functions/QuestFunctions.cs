@@ -36,7 +36,7 @@ internal sealed unsafe class QuestFunctions
     private readonly IDataManager _dataManager;
     private readonly IClientState _clientState;
     private readonly IObjectTable _objectTable;
-    private readonly Dalamud.Game.ClientState.Objects.SubKinds.IPlayerCharacter _playerState; //private readonly IPlayerState _playerState;
+    //private readonly IPlayerState _playerState;
     private readonly IGameGui _gameGui;
     private readonly IChatGui _chatGui;
     private readonly IAetheryteList _aetheryteList;
@@ -66,7 +66,7 @@ internal sealed unsafe class QuestFunctions
         _dataManager = dataManager;
         _clientState = clientState;
         _objectTable = objectTable;
-        _playerState = objectTable.LocalPlayer!; //_playerState = playerState;
+        //_playerState = playerState;
         _gameGui = gameGui;
         _chatGui = chatGui;
         _aetheryteList = aetheryteList;
@@ -312,9 +312,8 @@ internal sealed unsafe class QuestFunctions
             // fallback lookup; find a quest which isn't completed but where all prequisites are met
             // excluding branching quests
 
-            var playerState = PlayerState.Instance();
             var potentialQuests = _questData.MainScenarioQuests
-                .Where(x => x.StartingCity == 0 || x.StartingCity == playerState->StartTown)
+                .Where(x => x.StartingCity == 0 || x.StartingCity == PlayerState.Instance()->StartTown)
                 .Where(q => IsReadyToAcceptQuest(q.QuestId, true))
                 .ToList();
             if (potentialQuests.Count == 0)
@@ -358,7 +357,7 @@ internal sealed unsafe class QuestFunctions
         else if (!IsReadyToAcceptQuest(currentQuest))
             return (QuestReference.NoQuest(MainScenarioQuestState.Unavailable), $"Not readdy to accept quest {currentQuest.Value}");
 
-        var currentLevel = _playerState.Level;
+        var currentLevel = PlayerState.Instance()->CurrentLevel;
 
         // are we in a loading screen?
         if (_objectTable.LocalPlayer == null)
@@ -518,7 +517,7 @@ internal sealed unsafe class QuestFunctions
 
         if (!_configuration.Advanced.SkipClassJobQuests)
         {
-            EClassJob classJob = (EClassJob?)_playerState.ClassJob.RowId ?? EClassJob.Adventurer;
+            EClassJob classJob = (EClassJob?)PlayerState.Instance()->CurrentClassJobId ?? EClassJob.Adventurer;
             uint[] shadowbringersRoleQuestChapters = QuestData.AllRoleQuestChapters.Select(x => x[0]).ToArray();
             if (classJob != EClassJob.Adventurer)
             {
@@ -585,7 +584,7 @@ internal sealed unsafe class QuestFunctions
         if (!ignoreLevel)
         {
             // if we're not at a high enough level to continue, we also ignore it
-            var currentLevel = _playerState.Level;
+            var currentLevel = PlayerState.Instance()->CurrentLevel;
             if (currentLevel != 0 && quest != null && quest.Info.Level > currentLevel)
                 return false;
         }

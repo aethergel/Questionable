@@ -7,6 +7,7 @@ using Dalamud.Interface.Components;
 using Dalamud.Interface.Utility.Raii;
 using Dalamud.Plugin;
 using Dalamud.Plugin.Services;
+using FFXIVClientStructs.FFXIV.Client.Game.UI;
 using Questionable.Controller;
 using Questionable.Functions;
 using Questionable.Model;
@@ -24,7 +25,7 @@ internal sealed class StopConditionComponent : ConfigComponent
     private readonly QuestTooltipComponent _questTooltipComponent;
     private readonly UiUtils _uiUtils;
     private readonly IClientState _clientState;
-    private readonly Dalamud.Game.ClientState.Objects.SubKinds.IPlayerCharacter _playerState; //private readonly IPlayerState _playerState;
+    //private readonly IPlayerState _playerState;
 
     public StopConditionComponent(
         IDalamudPluginInterface pluginInterface,
@@ -34,7 +35,7 @@ internal sealed class StopConditionComponent : ConfigComponent
         QuestTooltipComponent questTooltipComponent,
         UiUtils uiUtils,
         IClientState clientState,
-        IObjectTable objectTable,//IPlayerState playerState,
+        //IPlayerState playerState,
         Configuration configuration)
         : base(pluginInterface, configuration)
     {
@@ -44,7 +45,7 @@ internal sealed class StopConditionComponent : ConfigComponent
         _questTooltipComponent = questTooltipComponent;
         _uiUtils = uiUtils;
         _clientState = clientState;
-        _playerState = objectTable.LocalPlayer!; //_playerState = playerState;
+        //_playerState = playerState;
 
         _questSelector.SuggestionPredicate = quest => configuration.Stop.QuestsToStopAfter.All(x => x != quest.Id);
         _questSelector.DefaultPredicate = quest => quest.Info.IsMainScenarioQuest && questFunctions.IsQuestAccepted(quest.Id);
@@ -93,11 +94,15 @@ internal sealed class StopConditionComponent : ConfigComponent
                 }
 
                 // Show current level for reference
-                int currentLevel = _playerState.Level;
-                if (currentLevel > 0)
+                unsafe
                 {
-                    ImGui.SameLine();
-                    ImGui.TextDisabled($"(Current: {currentLevel})");
+                    var playerState = PlayerState.Instance();
+                    var currentLevel = playerState->CurrentLevel;
+                    if (currentLevel > 0)
+                    {
+                        ImGui.SameLine();
+                        ImGui.TextDisabled($"(Current: {currentLevel})");
+                    }
                 }
             }
 
