@@ -1,1 +1,1 @@
-- ARR dailies by alydev
+- ARR and moogle dailies by alydev
