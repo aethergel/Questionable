@@ -31,7 +31,7 @@
           },
           "TerritoryId": 400,
           "InteractionType": "Interact",
-          "Fly": true
+          "AetheryteShortcut": "The Churning Mists - Zenith"
         },
         {
           "DataId": 1017173,
