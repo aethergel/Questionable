@@ -14,6 +14,7 @@ using Dalamud.Interface.Windowing;
 using Dalamud.Plugin.Services;
 using ECommons;
 using ECommons.MathHelpers;
+using FFXIVClientStructs.FFXIV.Client.Game.UI;
 using Lumina.Excel.Sheets;
 using Questionable.Model.Gathering;
 
@@ -80,9 +81,9 @@ internal sealed class EditorWindow : Window
         AllowClickthrough = false;
     }
 
-    public override void Update()
+    public unsafe override void Update()
     {
-        if (!_clientState.IsLoggedIn || _objectTable.LocalPlayer == null)
+        if (!_clientState.IsLoggedIn || _objectTable[0] == null)
         {
             _target = null;
             _targetLocation = null;
@@ -90,7 +91,7 @@ internal sealed class EditorWindow : Window
             return;
         }
 
-        if (_objectTable.LocalPlayer != null && !_objectTable.LocalPlayer.ClassJob.RowId.InRange(16, 18))
+        if (_objectTable[0] != null && !PlayerState.Instance()->CurrentClassJobId.InRange(16, 18))
             unaddedVisible = true;
 
         _target = _targetManager.Target;
@@ -104,7 +105,7 @@ internal sealed class EditorWindow : Window
                             if (_target != null)
                                 distance = Vector3.Distance(location.Position, _target.Position);
                             else
-                                distance = Vector3.Distance(location.Position, _objectTable.LocalPlayer!.Position);
+                                distance = Vector3.Distance(location.Position, _objectTable[0]!.Position);
 
                             return new { Context = context, Node = node, Location = location, Distance = distance };
                         })
@@ -128,7 +129,7 @@ internal sealed class EditorWindow : Window
             .Select(x => new
             {
                 Object = x,
-                Distance = Vector3.Distance(location.Location.Position, _objectTable.LocalPlayer!.Position)
+                Distance = Vector3.Distance(location.Location.Position, _objectTable[0]!.Position)
             })
             .Where(x => x.Distance < 3f)
             .OrderBy(x => x.Distance)
@@ -137,9 +138,9 @@ internal sealed class EditorWindow : Window
         _targetLocation = (location.Context, location.Node, location.Location);
     }
 
-    public override bool DrawConditions()
+    public unsafe override bool DrawConditions()
     {
-        return (_objectTable.LocalPlayer != null && _objectTable.LocalPlayer.ClassJob.RowId.InRange(16, 18)) &&
+        return (_objectTable[0] != null && PlayerState.Instance()->CurrentClassJobId.InRange(16, 18)) &&
                 _clientState.TerritoryType is not 0 && (_target != null || _targetLocation != null || unaddedVisible);
     }
 
@@ -272,7 +273,7 @@ internal sealed class EditorWindow : Window
                 }
             }
         }
-        if (_clientState.TerritoryType != 0 && _objectTable.LocalPlayer != null && ImGui.CollapsingHeader("Unadded nodes"))
+        if (_clientState.TerritoryType != 0 && _objectTable[0] != null && ImGui.CollapsingHeader("Unadded nodes"))
             ListLocationsInCurrentTerritory();
     }
 
@@ -372,7 +373,7 @@ internal sealed class EditorWindow : Window
                     var scale = _point.TerritoryType.Value.Map.Value.SizeFactor;
                     coords = $"{gbr.Value.X} {gbr.Value.Y} {gbr.Value.Z}";
                     line += coords;
-                    distance = (_objectTable.LocalPlayer!.Position - gbr).Value.Length();
+                    distance = (_objectTable[0]!.Position - gbr).Value.Length();
                     if (distance < 200)
                     {
                         line += $"  ({distance:F2})";

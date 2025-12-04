@@ -2,6 +2,7 @@
 using Dalamud.Game.ClientState.Conditions;
 using Dalamud.Plugin.Services;
 using FFXIVClientStructs.FFXIV.Client.Game;
+using FFXIVClientStructs.FFXIV.Client.Game.UI;
 using FFXIVClientStructs.FFXIV.Client.UI.Misc;
 using Questionable.Model;
 using Questionable.Model.Questing;
@@ -39,7 +40,7 @@ internal static class EquipRecommended
         public override string ToString() => "EquipRecommended";
     }
 
-    internal sealed unsafe class DoEquipRecommended(IObjectTable objectTable, IChatGui chatGui, ICondition condition)
+    internal sealed unsafe class DoEquipRecommended(IChatGui chatGui, ICondition condition)
         : TaskExecutor<EquipTask>
     {
         private bool _checkedOrTriggeredEquipmentUpdate;
@@ -50,7 +51,7 @@ internal static class EquipRecommended
             if (condition[ConditionFlag.InCombat])
                 return false;
 
-            RecommendEquipModule.Instance()->SetupForClassJob((byte)objectTable.LocalPlayer!.ClassJob.RowId);
+            RecommendEquipModule.Instance()->SetupForClassJob((byte)PlayerState.Instance()->CurrentClassJobId);
             return true;
         }
 

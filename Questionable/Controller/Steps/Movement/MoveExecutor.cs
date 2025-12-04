@@ -93,7 +93,7 @@ internal sealed class MoveExecutor : TaskExecutor<MoveTask>, IToastAware
 
 
         float stopDistance = Task.StopDistance ?? QuestStep.DefaultStopDistance;
-        Vector3? position = _objectTable.LocalPlayer?.Position;
+        Vector3? position = _objectTable[0]?.Position;
         float actualDistance = position == null ? float.MaxValue : Vector3.Distance(position.Value, _destination);
         bool requiresMovement = actualDistance > stopDistance;
         if (requiresMovement)
@@ -164,7 +164,7 @@ internal sealed class MoveExecutor : TaskExecutor<MoveTask>, IToastAware
             return ETaskResult.StillRunning;
 
         if (_canRestart &&
-            Vector3.Distance(_objectTable.LocalPlayer!.Position, _destination) >
+            Vector3.Distance(_objectTable[0]!.Position, _destination) >
             (Task.StopDistance ?? QuestStep.DefaultStopDistance) + 5f)
         {
             _canRestart = false;

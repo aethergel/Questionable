@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Dalamud.Game.ClientState.Objects.SubKinds;
 using Dalamud.Game.Text;
 using Dalamud.Game.Text.SeStringHandling;
 using Dalamud.Plugin.Services;
@@ -52,7 +53,7 @@ internal static class Gather
 
         public IEnumerable<ITask> CreateExtraTasks()
         {
-            EClassJob currentClassJob = (EClassJob)objectTable.LocalPlayer!.ClassJob.RowId;
+            EClassJob currentClassJob = (EClassJob)((IPlayerCharacter)objectTable[0]!).ClassJob.RowId;
             if (!gatheringPointRegistry.TryGetGatheringPointId(Task.GatheredItem.ItemId, currentClassJob,
                     out GatheringPointId? gatheringPointId))
                 throw new TaskException($"No gathering point found for item {Task.GatheredItem.ItemId}");
@@ -70,7 +71,7 @@ internal static class Gather
 
             using (var _ = logger.BeginScope("Gathering(inner)"))
             {
-                QuestSequence gatheringSequence = new QuestSequence
+                QuestSequence gatheringSequence = new()
                 {
                     Sequence = 0,
                     Steps = gatheringRoot.Steps
@@ -109,16 +110,16 @@ internal static class Gather
     }
 
     internal sealed record GatheringTask(
-        GatheringPointId gatheringPointId,
-        GatheredItem gatheredItem) : ITask
+        GatheringPointId GatheringPointId,
+        GatheredItem GatheredItem) : ITask
     {
         public override string ToString()
         {
-            if (gatheredItem.Collectability == 0)
-                return $"Gather({gatheredItem.ItemCount}x {gatheredItem.ItemId})";
+            if (GatheredItem.Collectability == 0)
+                return $"Gather({GatheredItem.ItemCount}x {GatheredItem.ItemId})";
             else
                 return
-                    $"Gather({gatheredItem.ItemCount}x {gatheredItem.ItemId} {SeIconChar.Collectible.ToIconString()} {gatheredItem.Collectability})";
+                    $"Gather({GatheredItem.ItemCount}x {GatheredItem.ItemId} {SeIconChar.Collectible.ToIconString()} {GatheredItem.Collectability})";
         }
     }
 
@@ -127,9 +128,9 @@ internal static class Gather
     {
         protected override bool Start()
         {
-            return gatheringController.Start(new GatheringController.GatheringRequest(Task.gatheringPointId,
-                Task.gatheredItem.ItemId, Task.gatheredItem.AlternativeItemId, Task.gatheredItem.ItemCount,
-                Task.gatheredItem.Collectability));
+            return gatheringController.Start(new GatheringController.GatheringRequest(Task.GatheringPointId,
+                Task.GatheredItem.ItemId, Task.GatheredItem.AlternativeItemId, Task.GatheredItem.ItemCount,
+                Task.GatheredItem.Collectability));
         }
 
         public override ETaskResult Update()

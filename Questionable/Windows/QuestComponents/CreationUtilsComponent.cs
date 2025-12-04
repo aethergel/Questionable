@@ -27,76 +27,49 @@ using ObjectKind = Dalamud.Game.ClientState.Objects.Enums.ObjectKind;
 
 namespace Questionable.Windows.QuestComponents;
 
-internal sealed class CreationUtilsComponent
+internal sealed class CreationUtilsComponent(
+    QuestController questController,
+    MovementController movementController,
+    GameFunctions gameFunctions,
+    QuestRegistry questRegistry,
+    QuestFunctions questFunctions,
+    CameraFunctions cameraFunctions,
+    TerritoryData territoryData,
+    QuestData questData,
+    QuestSelectionWindow questSelectionWindow,
+    PriorityWindow priorityWindow,
+    IClientState clientState,
+    IObjectTable objectTable,
+    //IPlayerState playerState,
+    ITargetManager targetManager,
+    ICondition condition,
+    IGameGui gameGui,
+    Configuration configuration,
+    ILogger<CreationUtilsComponent> logger)
 {
-    private readonly QuestController _questController;
-    private readonly MovementController _movementController;
-    private readonly GameFunctions _gameFunctions;
-    private readonly QuestRegistry _questRegistry;
-    private readonly QuestFunctions _questFunctions;
-    private readonly CameraFunctions _cameraFunctions;
-    private readonly TerritoryData _territoryData;
-    private readonly QuestData _questData;
-    private readonly QuestSelectionWindow _questSelectionWindow;
-    private readonly PriorityWindow _priorityWindow;
-    private readonly IClientState _clientState;
-    private readonly IObjectTable _objectTable;
+    private readonly QuestController _questController = questController;
+    private readonly MovementController _movementController = movementController;
+    private readonly GameFunctions _gameFunctions = gameFunctions;
+    private readonly QuestRegistry _questRegistry = questRegistry;
+    private readonly QuestFunctions _questFunctions = questFunctions;
+    private readonly CameraFunctions _cameraFunctions = cameraFunctions;
+    private readonly TerritoryData _territoryData = territoryData;
+    private readonly QuestData _questData = questData;
+    private readonly QuestSelectionWindow _questSelectionWindow = questSelectionWindow;
+    private readonly PriorityWindow _priorityWindow = priorityWindow;
+    private readonly IClientState _clientState = clientState;
+    private readonly IObjectTable _objectTable = objectTable;
     //private readonly IPlayerState _playerState;
-    private readonly ITargetManager _targetManager;
-    private readonly ICondition _condition;
-    private readonly IGameGui _gameGui;
-    private readonly IChatGui _chatGui;
-    private readonly Configuration _configuration;
-    private readonly ILogger<CreationUtilsComponent> _logger;
-    private readonly RedoUtil _redoUtil;
-
-    public CreationUtilsComponent(
-        QuestController questController,
-        MovementController movementController,
-        GameFunctions gameFunctions,
-        QuestRegistry questRegistry,
-        QuestFunctions questFunctions,
-        CameraFunctions cameraFunctions,
-        TerritoryData territoryData,
-        QuestData questData,
-        QuestSelectionWindow questSelectionWindow,
-        PriorityWindow priorityWindow,
-        IClientState clientState,
-        IObjectTable objectTable,
-        //IPlayerState playerState,
-        ITargetManager targetManager,
-        ICondition condition,
-        IGameGui gameGui,
-        IChatGui chatGui,
-        Configuration configuration,
-        ILogger<CreationUtilsComponent> logger)
-    {
-        _questController = questController;
-        _movementController = movementController;
-        _gameFunctions = gameFunctions;
-        _questRegistry = questRegistry;
-        _questFunctions = questFunctions;
-        _territoryData = territoryData;
-        _questData = questData;
-        _cameraFunctions = cameraFunctions;
-        _questSelectionWindow = questSelectionWindow;
-        _priorityWindow = priorityWindow;
-        _clientState = clientState;
-        _objectTable = objectTable;
-        //_playerState = playerState;
-        _targetManager = targetManager;
-        _condition = condition;
-        _gameGui = gameGui;
-        _chatGui = chatGui;
-        _configuration = configuration;
-        _logger = logger;
-        _redoUtil = new RedoUtil();
-        //_logger.LogDebug("{" + string.Join(",   ", _redoUtil.Dict.Select(kv => kv.Key + ": " + string.Join(",", kv.Value)).ToArray()) + "}");
-    }
+    private readonly ITargetManager _targetManager = targetManager;
+    private readonly ICondition _condition = condition;
+    private readonly IGameGui _gameGui = gameGui;
+    private readonly Configuration _configuration = configuration;
+    private readonly ILogger<CreationUtilsComponent> _logger = logger;
+    private readonly RedoUtil _redoUtil = new RedoUtil();
 
     public void Draw()
     {
-        if (_objectTable.LocalPlayer == null) return;
+        if (_objectTable[0] == null) return;
 
         string territoryName = _territoryData.GetNameAndId(_clientState.TerritoryType);
         ImGui.Text(territoryName);
@@ -245,13 +218,13 @@ internal sealed class CreationUtilsComponent
         ImGui.Text(string.Create(CultureInfo.InvariantCulture,
             $"Target: {target.Name}  ({target.ObjectKind}; {GameFunctions.GetBaseID(target)}{nameId})"));
 
-        if (_objectTable.LocalPlayer != null)
+        if (_objectTable[0] != null)
         {
             ImGui.Text(string.Create(CultureInfo.InvariantCulture,
-                $"Distance: {(target.Position - _objectTable.LocalPlayer.Position).Length():F2}"));
+                $"Distance: {(target.Position - _objectTable[0]!.Position).Length():F2}"));
             ImGui.SameLine();
 
-            float verticalDistance = target.Position.Y - _objectTable.LocalPlayer.Position.Y;
+            float verticalDistance = target.Position.Y - _objectTable[0]!.Position.Y;
             string verticalDistanceText = string.Create(CultureInfo.InvariantCulture, $"Y: {verticalDistance:F2}");
             if (Math.Abs(verticalDistance) >= MovementController.DefaultVerticalInteractionDistance)
                 ImGui.TextColored(ImGuiColors.DalamudOrange, verticalDistanceText);
@@ -385,7 +358,7 @@ internal sealed class CreationUtilsComponent
 
     private void DrawCopyButton()
     {
-        if (_objectTable.LocalPlayer == null)
+        if (_objectTable[0] == null)
             return;
 
         bool copy = ImGuiComponents.IconButton(FontAwesomeIcon.Copy);
@@ -396,9 +369,9 @@ internal sealed class CreationUtilsComponent
         {
             ImGui.SetClipboardText($$"""
                                                "Position": {
-                                                   "X": {{_objectTable.LocalPlayer.Position.X.ToString(CultureInfo.InvariantCulture)}},
-                                                   "Y": {{_objectTable.LocalPlayer.Position.Y.ToString(CultureInfo.InvariantCulture)}},
-                                                   "Z": {{_objectTable.LocalPlayer.Position.Z.ToString(CultureInfo.InvariantCulture)}}
+                                                   "X": {{_objectTable[0]!.Position.X.ToString(CultureInfo.InvariantCulture)}},
+                                                   "Y": {{_objectTable[0]!.Position.Y.ToString(CultureInfo.InvariantCulture)}},
+                                                   "Z": {{_objectTable[0]!.Position.Z.ToString(CultureInfo.InvariantCulture)}}
                                                },
                                                "TerritoryId": {{_clientState.TerritoryType}},
                                                "InteractionType": ""
@@ -406,7 +379,7 @@ internal sealed class CreationUtilsComponent
         }
         else if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
         {
-            Vector3 position = _objectTable.LocalPlayer!.Position;
+            Vector3 position = _objectTable[0]!.Position;
             ImGui.SetClipboardText(string.Create(CultureInfo.InvariantCulture,
                 $"new({position.X}f, {position.Y}f, {position.Z}f)"));
         }

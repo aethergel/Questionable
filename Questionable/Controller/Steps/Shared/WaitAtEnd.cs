@@ -89,10 +89,10 @@ internal static class WaitAtEnd
                     }
                     else
                     {
-                        Vector3 lastPosition = step.Position ?? objectTable.LocalPlayer?.Position ?? Vector3.Zero;
+                        Vector3 lastPosition = step.Position ?? objectTable[0]?.Position ?? Vector3.Zero;
                         waitInteraction = new WaitCondition.Task(() =>
                             {
-                                Vector3? currentPosition = objectTable.LocalPlayer?.Position;
+                                Vector3? currentPosition = objectTable[0]?.Position;
                                 if (currentPosition == null)
                                     return false;
 

@@ -360,7 +360,7 @@ internal sealed unsafe class QuestFunctions
         var currentLevel = PlayerState.Instance()->CurrentLevel;
 
         // are we in a loading screen?
-        if (_objectTable.LocalPlayer == null)
+        if (_objectTable[0] == null)
             return (QuestReference.NoQuest(MainScenarioQuestState.LoadingScreen), "In loading screen");
 
         // if we're not at a high enough level to continue, we also ignore it
@@ -373,7 +373,7 @@ internal sealed unsafe class QuestFunctions
 
     private bool IsOnAlliedSocietyMount()
     {
-        BattleChara* battleChara = (BattleChara*)(_objectTable.LocalPlayer?.Address ?? 0);
+        BattleChara* battleChara = (BattleChara*)(_objectTable[0]?.Address ?? 0);
         return battleChara != null &&
                battleChara->Mount.MountId != 0 &&
                _alliedSocietyData.Mounts.ContainsKey(battleChara->Mount.MountId);

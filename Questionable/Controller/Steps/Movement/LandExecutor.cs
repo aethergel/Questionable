@@ -47,7 +47,7 @@ internal sealed class LandExecutor(IObjectTable objectTable, ICondition conditio
 
     private unsafe bool AttemptLanding()
     {
-        var character = (Character*)(objectTable.LocalPlayer?.Address ?? 0);
+        var character = (Character*)(objectTable[0]?.Address ?? 0);
         if (character != null)
         {
             if (ActionManager.Instance()->GetActionStatus(ActionType.GeneralAction, 23) == 0)

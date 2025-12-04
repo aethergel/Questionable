@@ -69,7 +69,10 @@ internal sealed class DebugOverlay : Window
         if (_condition[ConditionFlag.OccupiedInCutSceneEvent])
             return;
 
-        if (_clientState is not { IsLoggedIn: true, LocalPlayer: not null, IsPvPExcludingDen: false })
+        if (_clientState is not { IsLoggedIn: true, IsPvPExcludingDen: false })
+            return;
+
+        if (_objectTable[0] == null)
             return;
 
         if (!_questController.IsQuestWindowOpen)
@@ -98,7 +101,7 @@ internal sealed class DebugOverlay : Window
             if (step != null && TryGetPosition(step, out Vector3? position))
             {
                 DrawStep(i.ToString(CultureInfo.InvariantCulture), step, position.Value,
-                    Vector3.Distance(_objectTable.LocalPlayer!.Position, position.Value) <
+                    Vector3.Distance(_objectTable[0]!.Position, position.Value) <
                     step.CalculateActualStopDistance()
                         ? 0xFF00FF00
                         : 0xFF0000FF);
@@ -141,7 +144,7 @@ internal sealed class DebugOverlay : Window
 
         ImGui.GetWindowDrawList().AddCircleFilled(screenPos, 3f, color);
         ImGui.GetWindowDrawList().AddText(screenPos + new Vector2(10, -8), color,
-            $"{counter}: {step.InteractionType} {step.DataId ?? '-'}\n{position.ToString("G", CultureInfo.InvariantCulture)} [{(position - _objectTable.LocalPlayer!.Position).Length():N2}]\n{step.Comment}");
+            $"{counter}: {step.InteractionType} {step.DataId ?? '-'}\n{position.ToString("G", CultureInfo.InvariantCulture)} [{(position - _objectTable[0]!.Position).Length():N2}]\n{step.Comment}");
     }
 
     private void DrawCombatTargets()
@@ -160,7 +163,7 @@ internal sealed class DebugOverlay : Window
 
             var (priority, reason) = _combatController.GetKillPriority(x);
             ImGui.GetWindowDrawList().AddText(screenPos + new Vector2(10, -8), priority > 0 ? 0xFF00FF00 : 0xFFFFFFFF,
-                $"{x.Name}/{x.GameObjectId:X}, {GameFunctions.GetBaseID(x)}, {priority} - {reason}, {Vector3.Distance(x.Position, _objectTable.LocalPlayer!.Position):N2}, {x.IsTargetable}");
+                $"{x.Name}/{x.GameObjectId:X}, {GameFunctions.GetBaseID(x)}, {priority} - {reason}, {Vector3.Distance(x.Position, _objectTable[0]!.Position):N2}, {x.IsTargetable}");
         }
     }
 

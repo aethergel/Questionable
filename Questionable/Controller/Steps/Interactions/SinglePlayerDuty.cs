@@ -75,7 +75,7 @@ internal static class SinglePlayerDuty
                             if (clientState.TerritoryType != SpecialTerritories.Naadam)
                                 return true;
 
-                            var pos = objectTable.LocalPlayer?.Position ?? default;
+                            var pos = objectTable[0]?.Position ?? default;
                             return (new Vector3(352.01f, -1.45f, 288.59f) - pos).Length() < 10f;
                         },
                         "Wait(moving to Ovoo)");

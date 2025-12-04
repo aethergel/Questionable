@@ -50,7 +50,7 @@ internal static class Jump
         protected override bool Start()
         {
             float stopDistance = Task.JumpDestination.CalculateStopDistance();
-            if ((objectTable.LocalPlayer!.Position - Task.JumpDestination.Position).Length() <= stopDistance)
+            if ((objectTable[0]!.Position - Task.JumpDestination.Position).Length() <= stopDistance)
                 return false;
 
             movementController.NavigateTo(EMovementType.Quest, Task.DataId, [Task.JumpDestination.Position], false,
@@ -119,12 +119,12 @@ internal static class Jump
                 return ETaskResult.StillRunning;
 
             float stopDistance = Task.JumpDestination.CalculateStopDistance();
-            if (_objectTable.LocalPlayer == null) return ETaskResult.StillRunning;
-            if ((_objectTable.LocalPlayer!.Position - Task.JumpDestination.Position).Length() <= stopDistance ||
-                _objectTable.LocalPlayer?.Position.Y >= Task.JumpDestination.Position.Y - 0.5f)
+            if (_objectTable[0] == null) return ETaskResult.StillRunning;
+            if ((_objectTable[0]!.Position - Task.JumpDestination.Position).Length() <= stopDistance ||
+                _objectTable[0]?.Position.Y >= Task.JumpDestination.Position.Y - 0.5f)
                 return ETaskResult.TaskComplete;
 
-            logger.LogTrace("Y-Heights for jumps: player={A}, target={B}", _objectTable.LocalPlayer?.Position.Y,
+            logger.LogTrace("Y-Heights for jumps: player={A}, target={B}", _objectTable[0]?.Position.Y,
                 Task.JumpDestination.Position.Y - 0.5f);
             unsafe
             {

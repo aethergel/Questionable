@@ -358,7 +358,7 @@ public sealed class RendererPlugin : IDalamudPlugin
         if (drawList == null)
             return;
 
-        Vector3 position = _objectTable.LocalPlayer?.Position ?? Vector3.Zero;
+        Vector3 position = _objectTable[0]?.Position ?? Vector3.Zero;
         float drawDistance = DistantRange ? 20000f : 200f;
         foreach (var location in GetLocationsInTerritory(_clientState.TerritoryType))
         {

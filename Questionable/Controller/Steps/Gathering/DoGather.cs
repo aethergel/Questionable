@@ -4,6 +4,7 @@ using System.Linq;
 using Dalamud.Game.ClientState.Conditions;
 using Dalamud.Plugin.Services;
 using FFXIVClientStructs.FFXIV.Client.Game;
+using FFXIVClientStructs.FFXIV.Client.Game.UI;
 using FFXIVClientStructs.FFXIV.Client.UI;
 using FFXIVClientStructs.FFXIV.Component.GUI;
 using LLib.GameData;
@@ -33,7 +34,6 @@ internal static class DoGather
         GatheringController gatheringController,
         GameFunctions gameFunctions,
         IGameGui gameGui,
-        IObjectTable objectTable,
         ICondition condition,
         ILogger<GatherExecutor> logger) : TaskExecutor<Task>
     {
@@ -276,9 +276,9 @@ internal static class DoGather
             return actions;
         }
 
-        private EAction PickAction(EAction minerAction, EAction botanistAction)
+        private unsafe EAction PickAction(EAction minerAction, EAction botanistAction)
         {
-            if ((EClassJob?)objectTable.LocalPlayer!.ClassJob.RowId == EClassJob.Miner)
+            if ((EClassJob?)PlayerState.Instance()->CurrentClassJobId == EClassJob.Miner)
                 return minerAction;
             else
                 return botanistAction;

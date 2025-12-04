@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using Dalamud.Plugin.Services;
+using FFXIVClientStructs.FFXIV.Client.Game.UI;
 using FFXIVClientStructs.FFXIV.Client.UI.Misc;
 using LLib.GameData;
 using Questionable.Controller.Steps.Common;
@@ -27,11 +28,11 @@ internal static class SwitchClassJob
         public override string ToString() => $"SwitchJob({ClassJob})";
     }
 
-    internal sealed class SwitchClassJobExecutor(IObjectTable objectTable) : AbstractDelayedTaskExecutor<Task>
+    internal sealed class SwitchClassJobExecutor() : AbstractDelayedTaskExecutor<Task>
     {
         protected override unsafe bool StartInternal()
         {
-            if (objectTable.LocalPlayer!.ClassJob.RowId == (uint)Task.ClassJob)
+            if (PlayerState.Instance()->CurrentClassJobId == (uint)Task.ClassJob)
                 return false;
 
             var gearsetModule = RaptureGearsetModule.Instance();

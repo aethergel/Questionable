@@ -49,7 +49,7 @@ internal sealed unsafe class InterruptHandler : IDisposable
                     uint targetId = (uint)(effectTail[i] & uint.MaxValue);
                     EffectEntry* effect = effectArray + 8 * i;
 
-                    if (targetId == _objectTable.LocalPlayer?.GameObjectId &&
+                    if (targetId == _objectTable[0]?.GameObjectId &&
                         effect->Type is EActionEffectType.Damage or EActionEffectType.BlockedDamage
                             or EActionEffectType.ParriedDamage)
                     {

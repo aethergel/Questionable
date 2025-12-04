@@ -132,7 +132,7 @@ internal sealed class QuestWindow : LWindow, IPersistableWindowConfig
         if (!_configuration.IsPluginSetupComplete())
             return false;
 
-        if (!_clientState.IsLoggedIn || _objectTable.LocalPlayer == null || _clientState.IsPvPExcludingDen)
+        if (!_clientState.IsLoggedIn || _objectTable[0] == null || _clientState.IsPvPExcludingDen)
             return false;
 
         if (_configuration.General.HideInAllInstances && _territoryData.IsDutyInstance(_clientState.TerritoryType))

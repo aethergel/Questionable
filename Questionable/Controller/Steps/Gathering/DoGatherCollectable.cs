@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using Dalamud.Game.ClientState.Objects.SubKinds;
 using Dalamud.Game.Text;
 using Dalamud.Plugin.Services;
+using FFXIVClientStructs.FFXIV.Client.Game.UI;
 using FFXIVClientStructs.FFXIV.Component.GUI;
 using LLib.GameData;
 using LLib.GameUI;
@@ -30,7 +32,7 @@ internal static class DoGatherCollectable
     internal sealed class GatherCollectableExecutor(
         GatheringController gatheringController,
         GameFunctions gameFunctions,
-        
+
         IObjectTable objectTable,
         IGameGui gameGui,
         ILogger<GatherCollectableExecutor> logger) : TaskExecutor<Task>
@@ -144,10 +146,10 @@ internal static class DoGatherCollectable
         {
             Queue<EAction> actions = new();
 
-            if (objectTable.LocalPlayer == null)
+            if (objectTable[0] == null)
                 return actions;
 
-            uint gp = objectTable.LocalPlayer!.CurrentGp;
+            uint gp = ((IPlayerCharacter)objectTable[0]!).CurrentGp;
             logger.LogTrace(
                 "Getting next actions (with {GP} GP, {MeticulousCollectability}~ meticulous, {ScourCollectability}~ scour)",
                 gp, nodeCondition.CollectabilityFromMeticulous, nodeCondition.CollectabilityFromScour);
@@ -196,9 +198,9 @@ internal static class DoGatherCollectable
             }
         }
 
-        private EAction PickAction(EAction minerAction, EAction botanistAction)
+        private unsafe EAction PickAction(EAction minerAction, EAction botanistAction)
         {
-            if ((EClassJob?)objectTable.LocalPlayer!.ClassJob.RowId == EClassJob.Miner)
+            if ((EClassJob?)PlayerState.Instance()->CurrentClassJobId == EClassJob.Miner)
                 return minerAction;
             else
                 return botanistAction;

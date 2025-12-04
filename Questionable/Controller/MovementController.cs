@@ -106,7 +106,7 @@ internal sealed class MovementController : IDisposable
                 }
 
                 var navPoints = _pathfindTask.Result.Skip(1).ToList();
-                Vector3 start = _objectTable.LocalPlayer?.Position ?? navPoints[0];
+                Vector3 start = _objectTable[0]?.Position ?? navPoints[0];
                 if (Destination.IsFlying && !_condition[ConditionFlag.InFlight] && _condition[ConditionFlag.Mounted])
                 {
                     if (IsOnFlightPath(start) || navPoints.Any(IsOnFlightPath))
@@ -177,7 +177,7 @@ internal sealed class MovementController : IDisposable
                 return;
             }
 
-            Vector3 localPlayerPosition = _objectTable.LocalPlayer?.Position ?? Vector3.Zero;
+            Vector3 localPlayerPosition = _objectTable[0]?.Position ?? Vector3.Zero;
             if (Destination.MovementType == EMovementType.Landing)
             {
                 if (!_condition[ConditionFlag.InFlight])
@@ -233,7 +233,7 @@ internal sealed class MovementController : IDisposable
             else
             {
                 List<Vector3> navPoints = _navmeshIpc.GetWaypoints();
-                Vector3? start = _objectTable.LocalPlayer?.Position;
+                Vector3? start = _objectTable[0]?.Position;
                 if (start != null)
                 {
                     if (Destination.ShouldRecalculateNavmesh() && RecalculateNavmesh(navPoints, start.Value))
@@ -302,7 +302,7 @@ internal sealed class MovementController : IDisposable
         _cancellationTokenSource = new();
         _cancellationTokenSource.CancelAfter(TimeSpan.FromSeconds(30));
 
-        Vector3 startPosition = _objectTable.LocalPlayer!.Position;
+        Vector3 startPosition = _objectTable[0]!.Position;
         if (fly && _aetheryteData.CalculateDistance(startPosition, _clientState.TerritoryType,
                 EAetheryteLocation.CoerthasCentralHighlandsCampDragonhead) < 11f)
         {

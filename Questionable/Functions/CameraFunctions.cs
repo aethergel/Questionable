@@ -81,11 +81,11 @@ internal sealed unsafe class CameraFunctions : IDisposable
     {
         _logger.LogDebug("Facing " + pos);
         Enabled = true;
-        if (_objectTable.LocalPlayer == null)
+        if (_objectTable[0] == null)
         {
             return;
         }
-        Vector3 diff = pos - _objectTable.LocalPlayer.Position;
+        Vector3 diff = pos - _objectTable[0]!.Position;
         DesiredAzimuth = MathF.Atan2(diff.X, diff.Z) + Deg2Rad(180);
         DesiredAltitude = Deg2Rad(-30);
     }

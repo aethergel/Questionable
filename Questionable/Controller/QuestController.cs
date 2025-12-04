@@ -312,7 +312,7 @@ internal sealed class QuestController : MiniTaskController<QuestController>
             !IsRunning ||
             CurrentQuest == null ||
             !_clientState.IsLoggedIn ||
-            _objectTable.LocalPlayer == null ||
+            _objectTable[0] == null ||
             DateTime.Now < _lastAutoRefresh.AddSeconds(5))
         {
             return;
@@ -337,7 +337,7 @@ internal sealed class QuestController : MiniTaskController<QuestController>
             return;
         }
 
-        Vector3 currentPosition = _objectTable.LocalPlayer!.Position;
+        Vector3 currentPosition = _objectTable[0]!.Position;
         ElementId currentQuestId = CurrentQuest.Quest.Id;
         byte currentSequence = CurrentQuest.Sequence;
         int currentStep = CurrentQuest.Step;

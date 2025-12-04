@@ -126,7 +126,7 @@ internal static class AethernetShortcut
                 aetheryteFunctions.IsAetheryteUnlocked(Task.To))
             {
                 ushort territoryType = clientState.TerritoryType;
-                Vector3 playerPosition = objectTable.LocalPlayer!.Position;
+                Vector3 playerPosition = objectTable[0]!.Position;
 
                 // closer to the source
                 if (aetheryteData.CalculateDistance(playerPosition, territoryType, Task.From) <
@@ -245,7 +245,8 @@ internal static class AethernetShortcut
                 return ETaskResult.StillRunning;
             }
 
-            Vector3? position = objectTable.LocalPlayer?.Position;
+            if (objectTable[0] == null) return ETaskResult.StillRunning;
+            Vector3? position = objectTable[0]!.Position;
             if (position == null)
                 return ETaskResult.StillRunning;
 

@@ -40,7 +40,7 @@ internal sealed class EditorCommands : IDisposable
         _targetManager = targetManager;
         _clientState = clientState;
         _objectTable = objectTable;
-        //_playerState = objectTable.LocalPlayer!;
+        //_playerState = objectTable[0]!;
         _chatGui = chatGui;
         _pluginLog = pluginLog;
         _configuration = configuration;
@@ -167,7 +167,7 @@ internal sealed class EditorCommands : IDisposable
                     Group = group,
                     Distance = group.Nodes.Min(x =>
                         x.Locations.Min(y =>
-                            Vector3.Distance(_objectTable.LocalPlayer!.Position, y.Position)))
+                            Vector3.Distance(_objectTable[0]!.Position, y.Position)))
                 })
                 .OrderBy(x => x.Distance)
                 .First();

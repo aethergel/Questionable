@@ -56,7 +56,7 @@ internal static class Mount
 
             if (task.MountIf == EMountIf.AwayFromPosition)
             {
-                Vector3 playerPosition = objectTable.LocalPlayer?.Position ?? Vector3.Zero;
+                Vector3 playerPosition = objectTable[0]?.Position ?? Vector3.Zero;
                 float distance = System.Numerics.Vector3.Distance(playerPosition, task.Position.GetValueOrDefault());
                 if (task.TerritoryId == clientState.TerritoryType && distance < 30f && !Conditions.Instance()->Diving)
                 {
@@ -205,7 +205,7 @@ internal static class Mount
 
         private unsafe bool IsUnmounting()
         {
-            IPlayerCharacter? localPlayer = objectTable.LocalPlayer;
+            IPlayerCharacter? localPlayer = (IPlayerCharacter?)objectTable[0];
             if (localPlayer != null)
             {
                 BattleChara* battleChara = (BattleChara*)localPlayer.Address;

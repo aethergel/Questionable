@@ -5,6 +5,7 @@ using System.Numerics;
 using Dalamud.Game.ClientState.Conditions;
 using Dalamud.Game.ClientState.Objects;
 using Dalamud.Game.ClientState.Objects.Enums;
+using Dalamud.Game.ClientState.Objects.SubKinds;
 using Dalamud.Game.ClientState.Objects.Types;
 using Dalamud.Plugin.Services;
 using FFXIVClientStructs.FFXIV.Client.Game;
@@ -254,7 +255,7 @@ internal sealed class CombatController : IDisposable
         {
             GameObject = x,
             GetKillPriority(x).Priority,
-            Distance = Vector3.Distance(x.Position, _objectTable.LocalPlayer!.Position),
+            Distance = Vector3.Distance(x.Position, _objectTable[0]!.Position),
         })
             .Where(x => x.Priority > 0)
             .OrderByDescending(x => x.Priority)
@@ -273,7 +274,7 @@ internal sealed class CombatController : IDisposable
         if (gameObject is IBattleNpc battleNpc && battleNpc.StatusFlags.HasFlag(StatusFlags.InCombat))
         {
             // stuff trying to kill us
-            if (gameObject.TargetObjectId == _objectTable.LocalPlayer?.GameObjectId)
+            if (gameObject.TargetObjectId == _objectTable[0]?.GameObjectId)
                 return (rawPriority.Value + 150, reason + "/Targeted");
 
             // stuff on our enmity list that's not necessarily targeting us
@@ -308,11 +309,11 @@ internal sealed class CombatController : IDisposable
             var complexCombatData = _currentFight.Data.ComplexCombatDatas;
             var gameObjectStruct = (GameObject*)gameObject.Address;
             if (gameObjectStruct->FateId != 0 &&
-                gameObject.TargetObjectId != _objectTable.LocalPlayer?.GameObjectId &&
+                gameObject.TargetObjectId != _objectTable[0]?.GameObjectId &&
                 _currentFight.Data.SpawnType != EEnemySpawnType.FateEnemies)
                 return (null, "FATE mob");
 
-            var ownPosition = _objectTable.LocalPlayer?.Position ?? Vector3.Zero;
+            var ownPosition = _objectTable[0]?.Position ?? Vector3.Zero;
             bool expectQuestMarker;
             if (_currentFight.Data.SpawnType == EEnemySpawnType.FinishCombatIfAny)
                 expectQuestMarker = false;
@@ -376,10 +377,10 @@ internal sealed class CombatController : IDisposable
                 _targetManager.Target = null;
             }
         }
-        else if (Vector3.Distance(_objectTable.LocalPlayer!.Position, target.Position) > MaxTargetRange)
+        else if (Vector3.Distance(_objectTable[0]!.Position, target.Position) > MaxTargetRange)
         {
             _logger.LogInformation("Moving to target, distance: {Distance:N2}",
-                Vector3.Distance(_objectTable.LocalPlayer!.Position, target.Position));
+                Vector3.Distance(_objectTable[0]!.Position, target.Position));
             MoveToTarget(target);
         }
         else
@@ -406,15 +407,15 @@ internal sealed class CombatController : IDisposable
         return false;
     }
 
-    private void MoveToTarget(IGameObject gameObject)
+    private unsafe void MoveToTarget(IGameObject gameObject)
     {
-        var player = _objectTable.LocalPlayer;
+        var player = _objectTable[0];
         if (player == null)
             return; // uh oh
 
         float hitboxOffset = player.HitboxRadius + gameObject.HitboxRadius;
         float actualDistance = Vector3.Distance(player.Position, gameObject.Position);
-        float maxDistance = player.ClassJob.ValueNullable?.Role is 3 or 4 ? 20f : 2.9f;
+        float maxDistance = ((IPlayerCharacter)player).ClassJob.ValueNullable?.Role is 3 or 4 ? 20f : 2.9f;
         bool outOfRange = actualDistance - hitboxOffset >= maxDistance;
         bool isInLineOfSight = IsInLineOfSight(gameObject);
         if (outOfRange || !isInLineOfSight)
@@ -445,7 +446,7 @@ internal sealed class CombatController : IDisposable
 
     internal unsafe bool IsInLineOfSight(IGameObject target)
     {
-        Vector3 sourcePos = _objectTable.LocalPlayer!.Position;
+        Vector3 sourcePos = _objectTable[0]!.Position;
         sourcePos.Y += 2;
 
         Vector3 targetPos = target.Position;

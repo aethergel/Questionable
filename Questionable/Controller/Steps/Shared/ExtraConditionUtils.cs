@@ -18,7 +18,7 @@ internal sealed class ExtraConditionUtils
 
     public bool MatchesExtraCondition(EExtraSkipCondition skipCondition)
     {
-        var position = _objectTable.LocalPlayer?.Position;
+        var position = _objectTable[0]?.Position;
         return position != null &&
                _clientState.TerritoryType != 0 &&
                MatchesExtraCondition(skipCondition, position.Value, _clientState.TerritoryType);

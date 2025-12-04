@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Dalamud.Plugin.Services;
 using FFXIVClientStructs.FFXIV.Client.Game;
+using FFXIVClientStructs.FFXIV.Client.Game.UI;
 using FFXIVClientStructs.FFXIV.Client.UI.Agent;
 using FFXIVClientStructs.FFXIV.Component.GUI;
 using LLib.GameData;
@@ -43,7 +44,6 @@ internal static class Craft
 
     internal sealed class DoCraft(
         IDataManager dataManager,
-        IObjectTable objectTable,
         ArtisanIpc artisanIpc,
         ILogger<DoCraft> logger,
         QuestController questController) : TaskExecutor<CraftTask>
@@ -51,7 +51,7 @@ internal static class Craft
         private int _startingItemCount;
         private EItemQuality _itemQuality = EItemQuality.Any;
         private int _previousCount;
-        protected override bool Start()
+        protected unsafe override bool Start()
         {
             // Get the item quality requirement from the quest step (NQ, HQ, or Any)
             _itemQuality = GetItemQuality();
@@ -68,7 +68,7 @@ internal static class Craft
 
             RecipeLookup? recipeLookup = dataManager.GetExcelSheet<RecipeLookup>().GetRowOrDefault(Task.ItemId) ??
                 throw new TaskException($"Item {Task.ItemId} is not craftable");
-            uint recipeId = (EClassJob)objectTable.LocalPlayer!.ClassJob.RowId switch
+            uint recipeId = (EClassJob)PlayerState.Instance()->CurrentClassJobId switch
             {
                 EClassJob.Carpenter => recipeLookup.Value.CRP.RowId,
                 EClassJob.Blacksmith => recipeLookup.Value.BSM.RowId,

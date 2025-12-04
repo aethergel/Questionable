@@ -1,2 +1,2 @@
-- Sahagin 1382, sylph 1269 by alydev
-- Fix bug where attempting to gather custom delivery while non-DoL job would stall by alydev
+- More code rearranging to hopefully work on CN by alydev
+- 修复支持 CN (希望) by alydev
