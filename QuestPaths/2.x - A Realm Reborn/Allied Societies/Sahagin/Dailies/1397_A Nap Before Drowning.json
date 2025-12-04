@@ -8,12 +8,13 @@
         {
           "DataId": 1005939,
           "Position": {
-            "X": -247.73022,
-            "Y": -42.09973,
-            "Z": 52.017944
+              "X": -246.27802,
+              "Y": -41.834713,
+              "Z": 53.050713
           },
           "TerritoryId": 138,
           "InteractionType": "AcceptQuest",
+          "StopDistance": 1,
           "AetheryteShortcut": "Western La Noscea - Aleport",
           "Fly": true
         }
@@ -109,12 +110,13 @@
         {
           "DataId": 1005939,
           "Position": {
-            "X": -247.73022,
-            "Y": -42.09973,
-            "Z": 52.017944
+              "X": -246.27802,
+              "Y": -41.834713,
+              "Z": 53.050713
           },
           "TerritoryId": 138,
           "InteractionType": "CompleteQuest",
+          "StopDistance": 1,
           "AetheryteShortcut": "Western La Noscea - Aleport",
           "Fly": true
         }

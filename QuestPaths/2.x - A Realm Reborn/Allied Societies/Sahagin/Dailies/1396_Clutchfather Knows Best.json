@@ -1,7 +1,7 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
   "Author": "Censored",
-  "Comment": "FATE",
+  "Comment": "This is a FATE Allied Society Quest\nThere are other FATEs that spawn in the\narea that may need to be cleared first\nbefore the correct FATE will spawn.\nThis quest requires manual interaction.",
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -9,12 +9,13 @@
         {
           "DataId": 1005939,
           "Position": {
-            "X": -247.73022,
-            "Y": -42.09973,
-            "Z": 52.017944
+              "X": -246.27802,
+              "Y": -41.834713,
+              "Z": 53.050713
           },
           "TerritoryId": 138,
           "InteractionType": "AcceptQuest",
+          "StopDistance": 1,
           "AetheryteShortcut": "Western La Noscea - Aleport",
           "Fly": true
         }
@@ -25,24 +26,35 @@
       "Steps": [
         {
           "Position": {
-            "X": -184.54332,
-            "Y": -42.06609,
-            "Z": -259.07843
+              "X": -184.87889,
+              "Y": -42.2752,
+              "Z": -253.50372
           },
           "TerritoryId": 138,
-          "InteractionType": "WaitForManualProgress",
+          "InteractionType": "Combat",
+          "Comment": "FATE must complete to acquire Coral Band [7804]",
           "Fly": true,
-          "Comment": "Do the FATE"
+          "EnemySpawnType": "FateEnemies",
+          "ItemId": 7804,
+          "KillEnemyDataIds": [1425,772,773,774,776],
+          "SkipConditions": {
+            "StepIf": {
+              "Item": {
+                "NotInInventory": false
+              }
+            }
+          }
         },
         {
           "DataId": 1005939,
           "Position": {
-            "X": -247.73022,
-            "Y": -42.09973,
-            "Z": 52.017944
+              "X": -246.27802,
+              "Y": -41.834713,
+              "Z": 53.050713
           },
           "TerritoryId": 138,
           "InteractionType": "CompleteQuest",
+          "StopDistance": 1,
           "AetheryteShortcut": "Western La Noscea - Aleport",
           "Fly": true
         }
