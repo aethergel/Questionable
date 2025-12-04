@@ -1,1 +1,1 @@
-- Allow paths to skip if item is present by alydev
+- ARR dailies by alydev
