@@ -1,2 +1,1 @@
-- More code rearranging to hopefully work on CN by alydev
-- 修复支持 CN (希望) by alydev
+- Allow paths to skip if item is present by alydev
