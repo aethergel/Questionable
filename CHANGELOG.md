@@ -1,1 +1,2 @@
 - ARR and moogle dailies by alydev
+- CN testing by alydev
