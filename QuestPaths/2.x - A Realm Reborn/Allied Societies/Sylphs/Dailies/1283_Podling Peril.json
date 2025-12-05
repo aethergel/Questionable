@@ -54,18 +54,6 @@
       "Sequence": 2,
       "Steps": [
         {
-          "DataId": 2003292,
-          "Position": {
-            "X": -10.51355,
-            "Y": -35.202576,
-            "Z": -531.73114
-          },
-          "TerritoryId": 152,
-          "InteractionType": "Interact",
-          "Disabled": true,
-          "$": "In case of retry"
-        },
-        {
           "DataId": 2003480,
           "Position": {
             "X": 152.88,

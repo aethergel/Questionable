@@ -1,1 +1,3 @@
-- Revert "Fix race condition when interacting with NPCs after combat" by alydev
+- Automatically refresh available quests when society rank increased by alydev
+- ARR dailies by alydev
+- Show message on attempt to run disabled quest by alydev
