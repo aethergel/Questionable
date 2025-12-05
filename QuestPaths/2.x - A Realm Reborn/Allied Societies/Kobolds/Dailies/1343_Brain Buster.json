@@ -123,11 +123,27 @@
           },
           "TerritoryId": 180,
           "InteractionType": "Combat",
+          "StopDistance": 1,
           "EnemySpawnType": "AfterInteraction",
           "KillEnemyDataIds": [
             758
           ],
           "CompletionQuestVariablesFlags": [null,null,null,null,null,8]
+        },
+        {
+          "Position": {
+            "X": 239.52087,
+            "Y": 25.649525,
+            "Z": -614.2825
+          },
+          "TerritoryId": 180,
+          "InteractionType": "Jump",
+          "JumpDestination": {
+          "Position": {
+              "X": 240.59186,
+              "Y": 27.544733,
+              "Z": -612.2545
+          }}
         },
         {
           "DataId": 1008783,

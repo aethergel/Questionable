@@ -1,6 +1,7 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
   "Author": "liza",
+  "LastChecked":{"Username": "alydev", "Date": "2025-12-06"},
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -24,16 +25,22 @@
       "Steps": [
         {
           "Position": {
-            "X": 65.98078,
-            "Y": 57.753456,
-            "Z": -310.697
+              "X": 64.87148,
+              "Y": 66.879295,
+              "Z": -264.28268
           },
           "TerritoryId": 180,
           "InteractionType": "Combat",
           "EnemySpawnType": "OverworldEnemies",
-          "KillEnemyDataIds": [
-            755,
-            2881
+          "ComplexCombatData": [
+            {
+              "DataId": 755,
+              "NameId": 377,
+              "MinimumKillCount": 2
+            },
+            {
+              "DataId": 2881
+            }
           ],
           "Fly": true
         }
