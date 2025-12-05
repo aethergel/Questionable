@@ -1,2 +1,3 @@
 - ARR and moogle dailies by alydev
 - CN testing by alydev
+- Minor change to start of 1194-Primal Nature by Kiarra
