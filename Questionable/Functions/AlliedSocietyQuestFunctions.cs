@@ -12,15 +12,23 @@ namespace Questionable.Functions;
 internal sealed class AlliedSocietyQuestFunctions
 {
     private readonly ILogger<AlliedSocietyQuestFunctions> _logger;
+    private readonly QuestData _questData;
     private readonly Dictionary<EAlliedSociety, List<NpcData>> _questsByAlliedSociety = [];
     private readonly Dictionary<(uint NpcDataId, byte Seed, bool OutranksAll, bool RankedUp), List<QuestId>> _dailyQuests = [];
+    private readonly Dictionary<EAlliedSociety, byte> _alliedSocietyLastSeenRank = [];
 
     public AlliedSocietyQuestFunctions(QuestData questData, ILogger<AlliedSocietyQuestFunctions> logger)
     {
+        _questData = questData;
         _logger = logger;
+        Initialize();
+    }
+
+    public void Initialize()
+    {
         foreach (var alliedSociety in Enum.GetValues<EAlliedSociety>().Where(x => x != EAlliedSociety.None))
         {
-            var allQuests = questData.GetAllByAlliedSociety(alliedSociety);
+            var allQuests = _questData.GetAllByAlliedSociety(alliedSociety);
             var questsByIssuer = allQuests
                 .Where(x => x.IsRepeatable)
                 .GroupBy(x => x.IssuerDataId)
@@ -34,6 +42,15 @@ internal sealed class AlliedSocietyQuestFunctions
                 else
                     _questsByAlliedSociety[alliedSociety] = [npcData];
             }
+        }
+        
+    }
+
+    public void Reload()
+    {
+        foreach (var item in _dailyQuests.Keys)
+        {
+            _dailyQuests.Remove(item);
         }
     }
 
@@ -51,6 +68,9 @@ internal sealed class AlliedSocietyQuestFunctions
         {
             bool outranksAll = npcData.AllQuests.All(x => currentRank > x.AlliedSocietyRank);
             var key = (NpcDataId: npcData.IssuerDataId, seed, outranksAll, rankedUp);
+            var rankChanged = _alliedSocietyLastSeenRank.ContainsKey(alliedSociety) && _alliedSocietyLastSeenRank[alliedSociety] != currentRank;
+            if (rankChanged)
+                Reload();
             if (_dailyQuests.TryGetValue(key, out List<QuestId>? questIds))
                 result.AddRange(questIds);
             else
@@ -60,6 +80,7 @@ internal sealed class AlliedSocietyQuestFunctions
 
                 _dailyQuests[key] = quests;
                 result.AddRange(quests);
+                _alliedSocietyLastSeenRank[alliedSociety] = currentRank;
             }
         }
 

@@ -44,6 +44,7 @@ internal sealed class QuestController : MiniTaskController<QuestController>
     private readonly Configuration _configuration;
     private readonly TaskCreator _taskCreator;
     private readonly SinglePlayerDutyConfigComponent _singlePlayerDutyConfigComponent;
+    private readonly AlliedSocietyQuestFunctions _alliedSocietyQuestFunctions;
     private readonly ILogger<QuestController> _logger;
     private readonly HighlightObject _highlightObject;
 
@@ -100,7 +101,8 @@ internal sealed class QuestController : MiniTaskController<QuestController>
         IServiceProvider serviceProvider,
         InterruptHandler interruptHandler,
         IDataManager dataManager,
-        SinglePlayerDutyConfigComponent singlePlayerDutyConfigComponent)
+        SinglePlayerDutyConfigComponent singlePlayerDutyConfigComponent,
+        AlliedSocietyQuestFunctions alliedSocietyQuestFunctions)
         : base(chatGui, condition, serviceProvider, interruptHandler, dataManager, logger)
     {
         _clientState = clientState;
@@ -120,6 +122,7 @@ internal sealed class QuestController : MiniTaskController<QuestController>
         _configuration = configuration;
         _taskCreator = taskCreator;
         _singlePlayerDutyConfigComponent = singlePlayerDutyConfigComponent;
+        _alliedSocietyQuestFunctions = alliedSocietyQuestFunctions;
         _logger = logger;
         _highlightObject = highlightObject;
 
@@ -193,6 +196,7 @@ internal sealed class QuestController : MiniTaskController<QuestController>
 
             _questRegistry.Reload();
             _singlePlayerDutyConfigComponent.Reload();
+            _alliedSocietyQuestFunctions.Reload();
         }
     }
 
