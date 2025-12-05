@@ -1,4 +1,1 @@
-- Automatically refresh available quests when society rank increased by alydev
-- ARR dailies by alydev
-- Show message on attempt to run disabled quest by alydev
-- 2565 #20 seq by alydev
+- 2691 side quest got me Triple Team IX and Triple-Decker XII by alydev
