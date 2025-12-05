@@ -37,11 +37,24 @@ internal sealed class TaskCreator
     public IReadOnlyList<ITask> CreateTasks(Quest quest, byte sequenceNumber, QuestSequence? sequence, QuestStep? step)
     {
         List<ITask> newTasks;
+        if (quest.Root.Disabled)
+        {
+            var reason = (quest.Root.Comment ?? "<no reason specified>").Split('\n', 2)[0];
+            _chatGui.PrintError($"The quest '{quest.Info.Name}' has been marked as Disabled for the following reason: {reason}",
+                CommandHandler.MessageTag, CommandHandler.TagColor);
+            _chatGui.PrintError("We recommend you complete this quest manually, as the provided path may not run successfully.",
+                CommandHandler.MessageTag, CommandHandler.TagColor);
+            _chatGui.PrintError("Thank you for your patience as we expand QST's support to include this quest in a future update.",
+                CommandHandler.MessageTag, CommandHandler.TagColor);
+        }
         if (sequence == null)
         {
-            _chatGui.PrintError(
-                $"Path for quest '{quest.Info.Name}' ({quest.Id}) does not contain sequence {sequenceNumber}, please report this: https://github.com/PunishXIV/Questionable/discussions/20",
-                CommandHandler.MessageTag, CommandHandler.TagColor);
+            if (!quest.Root.Disabled)
+            {
+                _chatGui.PrintError(
+                    $"Path for quest '{quest.Info.Name}' ({quest.Id}) does not contain sequence {sequenceNumber}, please report this: https://github.com/PunishXIV/Questionable/discussions/20",
+                    CommandHandler.MessageTag, CommandHandler.TagColor);
+            }
             newTasks = [new WaitAtEnd.WaitNextStepOrSequence()];
         }
         else if (step == null)
