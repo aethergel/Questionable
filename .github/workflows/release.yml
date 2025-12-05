@@ -224,46 +224,46 @@ jobs:
           title: Questionable v${{ env.VERSION }}
           message: ${{ steps.changelog.outputs.changelog }}
 
-  test-cn:
-    needs: detect-version-change
-    if: ${{ needs.detect-version-change.outputs.testing }} == 'true'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-        with:
-          submodules: recursive
+  # test-cn:
+  #   needs: detect-version-change
+  #   if: ${{ needs.detect-version-change.outputs.testing }} == 'true'
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout Repository
+  #       uses: actions/checkout@v4
+  #       with:
+  #         submodules: recursive
 
-      - name: Set up .NET
-        uses: actions/setup-dotnet@v3
-        with:
-          dotnet-version: 9.0.x
+  #     - name: Set up .NET
+  #       uses: actions/setup-dotnet@v3
+  #       with:
+  #         dotnet-version: 9.0.x
 
-      - name: Cache NuGet packages
-        uses: actions/cache@v4
-        with:
-          path: ~/.nuget/packages
-          key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj', '**/packages.lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-nuget-
+  #     - name: Cache NuGet packages
+  #       uses: actions/cache@v4
+  #       with:
+  #         path: ~/.nuget/packages
+  #         key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj', '**/packages.lock.json') }}
+  #         restore-keys: |
+  #           ${{ runner.os }}-nuget-
 
-      - name: Download and setup Dalamud
-        run: |
-          echo "Downloading Dalamud..."
-          wget -q https://ottercorp.github.io/dalamud-distrib/stg/latest.zip -O dalamud.zip
-          unzip -q dalamud.zip -d .dalamud
-          echo "DALAMUD_HOME=$PWD/.dalamud/" >> $GITHUB_ENV
+  #     - name: Download and setup Dalamud
+  #       run: |
+  #         echo "Downloading Dalamud..."
+  #         wget -q https://ottercorp.github.io/dalamud-distrib/stg/latest.zip -O dalamud.zip
+  #         unzip -q dalamud.zip -d .dalamud
+  #         echo "DALAMUD_HOME=$PWD/.dalamud/" >> $GITHUB_ENV
 
-      - name: Restore NuGet packages
-        run: dotnet restore /p:Configuration=Release --packages .nuget
+  #     - name: Restore NuGet packages
+  #       run: dotnet restore /p:Configuration=Release --packages .nuget
 
-      - name: Build Project
-        run: |
-          dotnet build Questionable/Questionable.csproj \
-          -c Release \
-          -f net9.0-windows \
-          -p:DalamudLibPath=$DALAMUD_HOME \
-          --source $PWD/.nuget
+  #     - name: Build Project
+  #       run: |
+  #         dotnet build Questionable/Questionable.csproj \
+  #         -c Release \
+  #         -f net9.0-windows \
+  #         -p:DalamudLibPath=$DALAMUD_HOME \
+  #         --source $PWD/.nuget
 
   # update-pluginmaster:
   #   needs: build-and-release

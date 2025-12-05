@@ -1,2 +1,1 @@
-- ARR and moogle dailies by alydev
-- Minor change to start of 1194-Primal Nature by Kiarra
+- Revert "Fix race condition when interacting with NPCs after combat" by alydev
