@@ -224,7 +224,9 @@ jobs:
           title: Questionable v${{ env.VERSION }}
           message: ${{ steps.changelog.outputs.changelog }}
 
-  build-cn:
+  test-cn:
+    needs: detect-version-change
+    if: ${{ needs.detect-version-change.outputs.testing }} == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
