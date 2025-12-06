@@ -1,1 +1,1 @@
-- 2691 side quest got me Triple Team IX and Triple-Decker XII by alydev
+- Fix effect handler sig by Taurenkey
