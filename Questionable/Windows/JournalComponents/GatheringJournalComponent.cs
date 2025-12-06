@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Runtime.InteropServices;
 using Dalamud.Bindings.ImGui;
 using Dalamud.Interface;
 using Dalamud.Interface.Colors;
@@ -9,6 +10,7 @@ using Dalamud.Interface.Utility.Raii;
 using Dalamud.Plugin;
 using Dalamud.Plugin.Services;
 using Dalamud.Utility.Signatures;
+using FFXIVClientStructs.FFXIV.Client.Game;
 using LLib.GameData;
 using Lumina.Excel.Sheets;
 using Microsoft.Extensions.Logging;
@@ -32,12 +34,7 @@ internal sealed class GatheringJournalComponent
     private List<FilteredExpansion> _filteredExpansions = [];
     private string _searchText = string.Empty;
 
-    private delegate byte GetIsGatheringItemGatheredDelegate(ushort item);
-
-    [Signature("48 89 5C 24 ?? 57 48 83 EC 20 8B D9 8B F9")]
-    private GetIsGatheringItemGatheredDelegate _getIsGatheringItemGathered = null!;
-
-    private bool IsGatheringItemGathered(uint item) => _getIsGatheringItemGathered((ushort)item) != 0;
+    private static bool IsGatheringItemGathered(uint item) => QuestManager.IsGatheringItemGathered((ushort)item);
 
     public GatheringJournalComponent(IDataManager dataManager, IDalamudPluginInterface pluginInterface, UiUtils uiUtils,
         IGameInteropProvider gameInteropProvider, GatheringController gatheringController, ILogger<GatheringJournalComponent> logger,
