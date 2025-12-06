@@ -253,6 +253,10 @@
       {
         "Track": "Targeting",
         "Option": "Manual"
+      },
+      {
+        "Track": "LL",
+        "Option": "Force"
       }
     ],
     "BossMod.Autorotation.xan.RDM": [
