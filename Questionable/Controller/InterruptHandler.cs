@@ -30,7 +30,7 @@ internal sealed unsafe class InterruptHandler : IDisposable
         _territoryData = territoryData;
         _logger = logger;
         _processActionEffectHook =
-            gameInteropProvider.HookFromSignature<ProcessActionEffect>(Signatures.ActionEffect,
+            gameInteropProvider.HookFromAddress<ProcessActionEffect>(ActionEffectHandler.Addresses.Receive.Value,
                 HandleProcessActionEffect);
         _processActionEffectHook.Enable();
     }
@@ -75,11 +75,6 @@ internal sealed unsafe class InterruptHandler : IDisposable
     {
         _processActionEffectHook.Disable();
         _processActionEffectHook.Dispose();
-    }
-
-    private static class Signatures
-    {
-        internal const string ActionEffect = "40 ?? 56 57 41 ?? 41 ?? 41 ?? 48 ?? ?? ?? ?? ?? ?? ?? 48";
     }
 
     [StructLayout(LayoutKind.Explicit)]
