@@ -1,1 +1,1 @@
-- Fix effect handler sig by Taurenkey
+- Sig updates by Taurenkey
