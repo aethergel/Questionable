@@ -1,2 +1,1 @@
-- Update GatheringItem check by Taurenkey
-- Move Camera to CS by Taurenkey
+- Update BossMod Preset by xan
