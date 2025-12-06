@@ -1,11 +1,20 @@
 {
   "Name": "Questionable - Quest Battles",
   "Modules": {
-    "BossMod.Autorotation.MiscAI.AutoFarm": [],
+    "BossMod.Autorotation.MiscAI.AutoTarget": [
+      {
+        "Track": "QuestBattle",
+        "Option": "Enabled"
+      },
+      {
+        "Track": "Retarget",
+        "Option": "Always"
+      }
+    ],
     "BossMod.Autorotation.xan.DNC": [
       {
         "Track": "Buffs",
-        "Option": "Auto"
+        "Option": "Automatic"
       },
       {
         "Track": "AOE",
@@ -19,7 +28,7 @@
     "BossMod.Autorotation.xan.MCH": [
       {
         "Track": "Buffs",
-        "Option": "Auto"
+        "Option": "Automatic"
       },
       {
         "Track": "AOE",
@@ -43,7 +52,7 @@
     "BossMod.Autorotation.xan.PCT": [
       {
         "Track": "Buffs",
-        "Option": "Auto"
+        "Option": "Automatic"
       },
       {
         "Track": "AOE",
@@ -61,7 +70,7 @@
     "BossMod.Autorotation.xan.PLD": [
       {
         "Track": "Buffs",
-        "Option": "Auto"
+        "Option": "Automatic"
       },
       {
         "Track": "AOE",
@@ -75,7 +84,7 @@
     "BossMod.Autorotation.xan.SAM": [
       {
         "Track": "Buffs",
-        "Option": "Auto"
+        "Option": "Automatic"
       },
       {
         "Track": "AOE",
@@ -99,7 +108,7 @@
     "BossMod.Autorotation.xan.VPR": [
       {
         "Track": "Buffs",
-        "Option": "Auto"
+        "Option": "Automatic"
       },
       {
         "Track": "AOE",
@@ -113,7 +122,7 @@
     "BossMod.Autorotation.xan.NIN": [
       {
         "Track": "Buffs",
-        "Option": "Auto"
+        "Option": "Automatic"
       },
       {
         "Track": "AOE",
@@ -127,7 +136,7 @@
     "BossMod.Autorotation.xan.GNB": [
       {
         "Track": "Buffs",
-        "Option": "Auto"
+        "Option": "Automatic"
       },
       {
         "Track": "AOE",
@@ -141,7 +150,7 @@
     "BossMod.Autorotation.xan.SMN": [
       {
         "Track": "Buffs",
-        "Option": "Auto"
+        "Option": "Automatic"
       },
       {
         "Track": "AOE",
@@ -155,7 +164,7 @@
     "BossMod.Autorotation.xan.DRK": [
       {
         "Track": "Buffs",
-        "Option": "Auto"
+        "Option": "Automatic"
       },
       {
         "Track": "AOE",
@@ -169,7 +178,7 @@
     "BossMod.Autorotation.xan.RPR": [
       {
         "Track": "Buffs",
-        "Option": "Auto"
+        "Option": "Automatic"
       },
       {
         "Track": "AOE",
@@ -183,7 +192,7 @@
     "BossMod.Autorotation.xan.WHM": [
       {
         "Track": "Buffs",
-        "Option": "Auto"
+        "Option": "Automatic"
       },
       {
         "Track": "AOE",
@@ -197,7 +206,7 @@
     "BossMod.Autorotation.xan.AST": [
       {
         "Track": "Buffs",
-        "Option": "Auto"
+        "Option": "Automatic"
       },
       {
         "Track": "AOE",
@@ -211,7 +220,7 @@
     "BossMod.Autorotation.xan.BRD": [
       {
         "Track": "Buffs",
-        "Option": "Auto"
+        "Option": "Automatic"
       },
       {
         "Track": "AOE",
@@ -225,7 +234,7 @@
     "BossMod.Autorotation.xan.SCH": [
       {
         "Track": "Buffs",
-        "Option": "Auto"
+        "Option": "Automatic"
       },
       {
         "Track": "AOE",
@@ -238,10 +247,6 @@
     ],
     "BossMod.Autorotation.xan.BLM": [
       {
-        "Track": "Buffs",
-        "Option": "Auto"
-      },
-      {
         "Track": "AOE",
         "Option": "AOE"
       },
@@ -253,7 +258,7 @@
     "BossMod.Autorotation.xan.RDM": [
       {
         "Track": "Buffs",
-        "Option": "Auto"
+        "Option": "Automatic"
       },
       {
         "Track": "AOE",
@@ -267,7 +272,7 @@
     "BossMod.Autorotation.xan.DRG": [
       {
         "Track": "Buffs",
-        "Option": "Auto"
+        "Option": "Automatic"
       },
       {
         "Track": "AOE",
@@ -284,6 +289,15 @@
         "Option": "AutoFinishCombo"
       }
     ],
+    "BossMod.Autorotation.xan.HealerAI": [
+      {
+        "Track": "Esuna2",
+        "Option": "HintOnly"
+      }
+    ],
+    "BossMod.Autorotation.xan.MeleeAI": [],
+    "BossMod.Autorotation.xan.TankAI": [],
+    "BossMod.Autorotation.xan.RangedAI": [],
     "BossMod.Autorotation.MiscAI.NormalMovement": [
       {
         "Track": "Destination",
