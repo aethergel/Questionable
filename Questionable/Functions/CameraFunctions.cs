@@ -8,21 +8,9 @@ using System.Runtime.InteropServices;
 using Dalamud.Hooking;
 using Dalamud.Plugin.Services;
 using Dalamud.Utility.Signatures;
+using FFXIVClientStructs.FFXIV.Client.Game;
 using FFXIVClientStructs.FFXIV.Client.System.Framework;
 using Microsoft.Extensions.Logging;
-
-[StructLayout(LayoutKind.Explicit, Size = 0x2B0)]
-internal unsafe struct CameraEx
-{
-    [FieldOffset(0x140)] public float DirH; // 0 is north, increases CW
-    [FieldOffset(0x144)] public float DirV; // 0 is horizontal, positive is looking up, negative looking down
-    [FieldOffset(0x148)] public float InputDeltaHAdjusted;
-    [FieldOffset(0x14C)] public float InputDeltaVAdjusted;
-    [FieldOffset(0x150)] public float InputDeltaH;
-    [FieldOffset(0x154)] public float InputDeltaV;
-    [FieldOffset(0x158)] public float DirVMin; // -85deg by default
-    [FieldOffset(0x15C)] public float DirVMax; // +45deg by default
-}
 
 internal sealed unsafe class CameraFunctions : IDisposable
 {
@@ -45,7 +33,7 @@ internal sealed unsafe class CameraFunctions : IDisposable
     private float DesiredAzimuth;
     private float DesiredAltitude;
 
-    private delegate void RMICameraDelegate(CameraEx* self, int inputMode, float speedH, float speedV);
+    private delegate void RMICameraDelegate(Camera* self, int inputMode, float speedH, float speedV);
     [Signature("48 8B C4 53 48 81 EC ?? ?? ?? ?? 44 0F 29 50 ??")]
     private Hook<RMICameraDelegate> _rmiCameraHook = null!;
 
@@ -90,7 +78,7 @@ internal sealed unsafe class CameraFunctions : IDisposable
         DesiredAltitude = Deg2Rad(-30);
     }
 
-    private void RMICameraDetour(CameraEx* self, int inputMode, float speedH, float speedV)
+    private void RMICameraDetour(Camera* self, int inputMode, float speedH, float speedV)
     {
         _rmiCameraHook.Original(self, inputMode, speedH, speedV);
         if (IgnoreUserInput || inputMode == 0) // let user override...
