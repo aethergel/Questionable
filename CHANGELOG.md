@@ -1,1 +1,2 @@
-- Sig updates by Taurenkey
+- Update GatheringItem check by Taurenkey
+- Move Camera to CS by Taurenkey
