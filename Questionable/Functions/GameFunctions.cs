@@ -10,6 +10,7 @@ using Dalamud.Game.ClientState.Objects.Types;
 using Dalamud.Plugin.Services;
 using FFXIVClientStructs.FFXIV.Client.Game;
 using FFXIVClientStructs.FFXIV.Client.Game.Control;
+using FFXIVClientStructs.FFXIV.Client.Game.Event;
 using FFXIVClientStructs.FFXIV.Client.Game.Object;
 using FFXIVClientStructs.FFXIV.Client.Game.UI;
 using FFXIVClientStructs.FFXIV.Client.UI.Agent;
@@ -72,7 +73,7 @@ internal sealed unsafe class GameFunctions
         _logger = logger;
         _highlightObject = highlightObject;
         _abandonDuty =
-            Marshal.GetDelegateForFunctionPointer<AbandonDutyDelegate>(sigScanner.ScanText(Signatures.AbandonDuty));
+            Marshal.GetDelegateForFunctionPointer<AbandonDutyDelegate>(EventFramework.Addresses.LeaveCurrentContent.Value);
 
         _territoryToAetherCurrentCompFlgSet = dataManager.GetExcelSheet<TerritoryType>()
             .Where(x => x.RowId > 0)
@@ -578,8 +579,4 @@ internal sealed unsafe class GameFunctions
     }
 #endif
 
-    private static class Signatures
-    {
-        internal const string AbandonDuty = "E8 ?? ?? ?? ?? 41 B2 01 EB 39";
-    }
 }

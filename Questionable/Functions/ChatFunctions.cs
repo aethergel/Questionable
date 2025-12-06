@@ -12,6 +12,7 @@ using Dalamud.Plugin.Services;
 using FFXIVClientStructs.FFXIV.Client.System.Framework;
 using FFXIVClientStructs.FFXIV.Client.System.Memory;
 using FFXIVClientStructs.FFXIV.Client.System.String;
+using FFXIVClientStructs.FFXIV.Client.UI;
 using Lumina.Excel.Sheets;
 using Microsoft.Extensions.Logging;
 using Questionable.Model.Questing;
@@ -36,7 +37,7 @@ internal sealed unsafe class ChatFunctions
         _targetManager = targetManager;
         _logger = logger;
         _processChatBox =
-            Marshal.GetDelegateForFunctionPointer<ProcessChatBoxDelegate>(sigScanner.ScanText(Signatures.SendChat));
+            Marshal.GetDelegateForFunctionPointer<ProcessChatBoxDelegate>(UIModule.Addresses.ProcessChatBoxEntry.Value);
 
         _emoteCommands = dataManager.GetExcelSheet<Emote>()
             .Where(x => x.RowId > 0)
@@ -149,11 +150,6 @@ internal sealed unsafe class ChatFunctions
     public void UseEmote(EEmote emote)
     {
         ExecuteCommand($"{_emoteCommands[emote]} motion");
-    }
-
-    private static class Signatures
-    {
-        internal const string SendChat = "48 89 5C 24 ?? 48 89 74 24 ?? 57 48 83 EC 20 48 8B F2 48 8B F9 45 84 C9";
     }
 
     [StructLayout(LayoutKind.Explicit)]
