@@ -81,6 +81,12 @@ internal sealed class QuestTooltipComponent
                 ImGui.Text($"Author: {quest.Root.Author[0]}");
             else
                 ImGui.Text($"Authors: {string.Join(", ", quest.Root.Author)}");
+
+            if (quest.Root.Comment != null)
+                ImGui.Text($"Comment: {quest.Root.Comment.Split('\n', 2)[0]}");
+
+            if (quest.Root.LastChecked.Date != null)
+                ImGui.Text($"Last checked: {quest.Root.LastChecked.Date} by {quest.Root.LastChecked.Username}");
         }
         else
         {
