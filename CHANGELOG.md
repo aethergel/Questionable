@@ -1,1 +1,1 @@
-- Update BossMod Preset by xan
+- Dailies by alydev

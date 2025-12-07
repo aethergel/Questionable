@@ -314,11 +314,11 @@ internal sealed class CreationUtilsComponent(
             {
                 ImGui.SetClipboardText($$"""
                                          "DataId": {{GameFunctions.GetBaseID(target)}},
-                                         "Position": {
-                                             "X": {{target.Position.X.ToString(CultureInfo.InvariantCulture)}},
-                                             "Y": {{target.Position.Y.ToString(CultureInfo.InvariantCulture)}},
-                                             "Z": {{target.Position.Z.ToString(CultureInfo.InvariantCulture)}}
-                                         }
+                                                   "Position": {
+                                                     "X": {{target.Position.X.ToString(CultureInfo.InvariantCulture)}},
+                                                     "Y": {{target.Position.Y.ToString(CultureInfo.InvariantCulture)}},
+                                                     "Z": {{target.Position.Z.ToString(CultureInfo.InvariantCulture)}}
+                                                   }
                                          """);
             }
             else
@@ -331,11 +331,11 @@ internal sealed class CreationUtilsComponent(
                     _ => "Interact",
                 };
                 ImGui.SetClipboardText($$"""
-                                                   "DataId": {{GameFunctions.GetBaseID(target)}},
+                                         "DataId": {{GameFunctions.GetBaseID(target)}},
                                                    "Position": {
-                                                       "X": {{target.Position.X.ToString(CultureInfo.InvariantCulture)}},
-                                                       "Y": {{target.Position.Y.ToString(CultureInfo.InvariantCulture)}},
-                                                       "Z": {{target.Position.Z.ToString(CultureInfo.InvariantCulture)}}
+                                                     "X": {{target.Position.X.ToString(CultureInfo.InvariantCulture)}},
+                                                     "Y": {{target.Position.Y.ToString(CultureInfo.InvariantCulture)}},
+                                                     "Z": {{target.Position.Z.ToString(CultureInfo.InvariantCulture)}}
                                                    },
                                                    "TerritoryId": {{_clientState.TerritoryType}},
                                                    "InteractionType": "{{interactionType}}"
@@ -368,10 +368,10 @@ internal sealed class CreationUtilsComponent(
         if (copy)
         {
             ImGui.SetClipboardText($$"""
-                                               "Position": {
-                                                   "X": {{_objectTable[0]!.Position.X.ToString(CultureInfo.InvariantCulture)}},
-                                                   "Y": {{_objectTable[0]!.Position.Y.ToString(CultureInfo.InvariantCulture)}},
-                                                   "Z": {{_objectTable[0]!.Position.Z.ToString(CultureInfo.InvariantCulture)}}
+                                     "Position": {
+                                                 "X": {{_objectTable[0]!.Position.X.ToString(CultureInfo.InvariantCulture)}},
+                                                 "Y": {{_objectTable[0]!.Position.Y.ToString(CultureInfo.InvariantCulture)}},
+                                                 "Z": {{_objectTable[0]!.Position.Z.ToString(CultureInfo.InvariantCulture)}}
                                                },
                                                "TerritoryId": {{_clientState.TerritoryType}},
                                                "InteractionType": ""

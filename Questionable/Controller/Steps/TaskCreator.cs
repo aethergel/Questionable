@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Dalamud.Plugin.Services;
+using ECommons.MathHelpers;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Questionable.Controller.Steps.Interactions;
@@ -37,7 +38,8 @@ internal sealed class TaskCreator
     public IReadOnlyList<ITask> CreateTasks(Quest quest, byte sequenceNumber, QuestSequence? sequence, QuestStep? step)
     {
         List<ITask> newTasks;
-        if (quest.Root.Disabled)
+        # if !DEBUG
+        if (quest.Root.Disabled && sequenceNumber.InRange(1,2))
         {
             var reason = (quest.Root.Comment ?? "<no reason specified>").Split('\n', 2)[0];
             _chatGui.PrintError($"The quest '{quest.Info.Name}' has been marked as Disabled for the following reason: {reason}",
@@ -47,6 +49,7 @@ internal sealed class TaskCreator
             _chatGui.PrintError("Thank you for your patience as we expand QST's support to include this quest in a future update.",
                 CommandHandler.MessageTag, CommandHandler.TagColor);
         }
+        # endif
         if (sequence == null)
         {
             if (!quest.Root.Disabled)

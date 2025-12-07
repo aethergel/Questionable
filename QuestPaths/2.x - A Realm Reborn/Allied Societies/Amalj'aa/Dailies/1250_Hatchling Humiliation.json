@@ -10,9 +10,9 @@
         {
           "DataId": 1005552,
           "Position": {
-            "X": 85.618286,
-            "Y": 15.28719,
-            "Z": -355.70312
+            "X": 86.92553,
+            "Y": 15.260843,
+            "Z": -355.6889
           },
           "TerritoryId": 146,
           "InteractionType": "AcceptQuest",
@@ -400,14 +400,14 @@
         {
           "DataId": 1005552,
           "Position": {
-            "X": 85.618286,
-            "Y": 15.28719,
-            "Z": -355.70312
+            "X": 86.92553,
+            "Y": 15.260843,
+            "Z": -355.6889
           },
           "TerritoryId": 146,
           "InteractionType": "CompleteQuest",
-          "Fly": true,
-          "AetheryteShortcut": "Southern Thanalan - Little Ala Mhigo"
+          "AetheryteShortcut": "Southern Thanalan - Little Ala Mhigo",
+          "Fly": true
         }
       ]
     }

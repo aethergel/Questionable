@@ -1,6 +1,7 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-  "Author": "skiaz",
+  "Author": "alydev",
+  "LastChecked":{"Username": "alydev", "Date": "2025-12-07"},
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -21,43 +22,53 @@
     },
     {
       "Sequence": 1,
-      "$": "Probably better to make here single steps for each enemy, since they are spread across a larger area",
       "Steps": [
         {
           "Position": {
-            "X": 72.098755,
-            "Y": 12.723299,
-            "Z": 23.544617
+            "X": 402.04623,
+            "Y": 16.660986,
+            "Z": -69.18199
           },
           "TerritoryId": 146,
           "InteractionType": "Combat",
+          "AetheryteShortcut": "Southern Thanalan - Little Ala Mhigo",
+          "Fly": true,
+          "EnemySpawnType": "OverworldEnemies",
           "ComplexCombatData": [
             {
-              "DataId": 741,
-              "NameId": 1838,
-              "MinimumKillCount": 3
+              "DataId": 2457,
+              "NameId": 2303,
+              "MinimumKillCount": 2
             }
-          ],
-          "EnemySpawnType": "OverworldEnemies",
-          "Fly": true
-        },
+          ]
+        }
+      ]
+    },
+    {
+      "Sequence": 2,
+      "Steps": [
         {
           "Position": {
-            "X": 168.87158,
-            "Y": 7.586792,
-            "Z": -30.533386
+            "X": 483.98703,
+            "Y": 9.217022,
+            "Z": -162.10231
           },
           "TerritoryId": 146,
-          "InteractionType": "Combat",
-          "EnemySpawnType": "OverworldEnemies",
-          "ComplexCombatData": [
-            {
-              "DataId": 739,
-              "NameId": 1837,
-              "MinimumKillCount": 3
-            }
-          ],
-          "Fly": true
+          "InteractionType": "WalkTo",
+          "Fly": true,
+          "StopDistance": 1
+        },
+        {
+          "DataId": 2002918,
+          "Position": {
+            "X": 483.98703,
+            "Y": 9.217022,
+            "Z": -162.10231
+          },
+          "TerritoryId": 146,
+          "InteractionType": "Interact",
+          "Fly": true,
+          "StopDistance": 1
         }
       ]
     },
