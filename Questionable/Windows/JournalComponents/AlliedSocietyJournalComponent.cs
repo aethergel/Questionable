@@ -71,7 +71,9 @@ internal sealed class AlliedSocietyJournalComponent
 #if DEBUG
                 //if (quests.Any(x => !_questRegistry.TryGetQuest(x.QuestId, out var quest) || quest.Root.LastChecked.Date))
                 if (quests.Any(x => !x.QuestId.Value.Equals(1569) && // Ixal "Deliverance"
-                                    (!_questRegistry.TryGetQuest(x.QuestId, out var quest) || quest.Root.Disabled)))
+                                    (!_questRegistry.TryGetQuest(x.QuestId, out var quest) ||
+                                      (quest.Root.Disabled && !(quest.Root.Comment ?? "").Contains("FATE"))
+                                    )))
                 {
                     using (ImRaii.PushColor(ImGuiCol.Text, ImGuiColors.DalamudOrange))
                         isOpen = ImGui.CollapsingHeader(label);
@@ -125,10 +127,25 @@ internal sealed class AlliedSocietyJournalComponent
     private void DrawQuest(QuestInfo questInfo)
     {
         var (color, icon, tooltipText) = _uiUtils.GetQuestStyle(questInfo.QuestId);
-        if (!_questRegistry.TryGetQuest(questInfo.QuestId, out var quest) || quest.Root.Disabled)
+        Quest? quest;
+        bool fate = false;
+        string lastChecked = "";
+        if (!_questRegistry.TryGetQuest(questInfo.QuestId, out quest))
             color = ImGuiColors.DalamudGrey;
-
-        if (_uiUtils.ChecklistItem($"{questInfo.Name} ({tooltipText})", color, icon))
+        else
+        {
+            if (quest.Root.LastChecked.Date != null)
+                lastChecked = $"({quest.Root.LastChecked.Date})";
+            if (quest.Root.Disabled && (quest.Root.Comment ?? "").Contains("FATE"))
+            {
+                color = ImGuiColors.DalamudOrange;
+                fate = true;
+            }
+        }
+        string checklistItem = $"{questInfo.Name} ({tooltipText}) {lastChecked}";
+        if (fate)
+            checklistItem = "(FATE) " + checklistItem;
+        if (_uiUtils.ChecklistItem(checklistItem, color, icon))
             _questTooltipComponent.Draw(questInfo);
 
         _questJournalUtils.ShowContextMenu(questInfo, quest, nameof(AlliedSocietyJournalComponent));
