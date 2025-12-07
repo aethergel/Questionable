@@ -1,0 +1,44 @@
+{
+  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+  "Author": "alydev",
+  "Disabled": true,
+  "Comment": "WIP",
+  "QuestSequence": [
+    {
+      "Sequence": 0,
+      "Steps": [
+        {
+          "DataId": 1005939,
+          "Position": {
+              "X": -246.27802,
+              "Y": -41.834713,
+              "Z": 53.050713
+          },
+          "TerritoryId": 138,
+          "InteractionType": "AcceptQuest",
+          "StopDistance": 1,
+          "AetheryteShortcut": "Western La Noscea - Aleport",
+          "Fly": true
+        }
+      ]
+    },
+    {
+      "Sequence": 255,
+      "Steps": [
+        {
+          "DataId": 1005939,
+          "Position": {
+              "X": -246.27802,
+              "Y": -41.834713,
+              "Z": 53.050713
+          },
+          "TerritoryId": 138,
+          "InteractionType": "CompleteQuest",
+          "StopDistance": 1,
+          "AetheryteShortcut": "Western La Noscea - Aleport",
+          "Fly": true
+        }
+      ]
+    }
+  ]
+}

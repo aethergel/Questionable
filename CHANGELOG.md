@@ -1,1 +1,3 @@
 - Dailies by alydev
+- LastChecked display by alydev
+- Better quest tooltips by alydev

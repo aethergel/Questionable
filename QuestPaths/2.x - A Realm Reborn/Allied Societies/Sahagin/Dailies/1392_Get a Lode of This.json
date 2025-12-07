@@ -1,10 +1,7 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
   "Author": "Censored",
-  "Disabled": true,
-  "LastChecked":{"Username": "alydev", "Date": "2025-12-05"},
-  "Comment": "Fails to execute combat automatically",
-  "$": "https://discord.com/channels/1001823907193552978/1408201462722596945/1446196256664981658",
+  "LastChecked":{"Username": "alydev", "Date": "2025-12-08"},
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -48,21 +45,7 @@
               "High": 8
             }
           ],
-          "ComplexCombatData": [
-            {
-              "DataId": 2843,
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                {
-                  "High": 8
-                }
-              ]
-            }
-          ]
+          "KillEnemyDataIds": [2843]
         },
         {
           "DataId": 2003765,
@@ -84,21 +67,7 @@
               "High": 4
             }
           ],
-          "ComplexCombatData": [
-            {
-              "DataId": 2843,
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                {
-                  "High": 4
-                }
-              ]
-            }
-          ]
+          "KillEnemyDataIds": [2843]
         },
         {
           "DataId": 2003767,
@@ -120,21 +89,7 @@
               "High": 1
             }
           ],
-          "ComplexCombatData": [
-            {
-              "DataId": 2843,
-              "CompletionQuestVariablesFlags": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                {
-                  "High": 1
-                }
-              ]
-            }
-          ]
+          "KillEnemyDataIds": [2843]
         }
       ]
     },
