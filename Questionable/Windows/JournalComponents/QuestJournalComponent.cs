@@ -192,8 +192,8 @@ internal sealed class QuestJournalComponent
         {
             if (quest.Root.LastChecked.Date != null)
             {
-                lastCheckedLong = $"\nLast checked: {quest.Root.LastChecked.Date} by {quest.Root.LastChecked.Username}";
-                var since = (int)DateTime.Now.Subtract(DateTime.ParseExact(quest.Root.LastChecked.Date, "yyyy-MM-dd", CultureInfo.InvariantCulture)).TotalDays;
+                lastCheckedLong = $"\nLast checked: {quest.Root.LastChecked}";
+                var since = (int)quest.Root.LastChecked.Since(DateTime.Now)!.Value.TotalDays;
                 if (since < 7)
                     lastChecked = $"{since}d";
                 else

@@ -29,7 +29,7 @@ internal sealed class UiUtils
             if (!_questFunctions.IsReadyToAcceptQuest(questId))
                 return (ImGuiColors.ParsedGreen, FontAwesomeIcon.Check, "Complete");
             else if (_questFunctions.IsQuestComplete(questId))
-                return (ImGuiColors.ParsedBlue, FontAwesomeIcon.Running, "Available (Complete)");
+                return (ImGuiColors.ParsedBlue, FontAwesomeIcon.Running, "Available");
             else
                 return (ImGuiColors.DalamudYellow, FontAwesomeIcon.Running, "Available");
         }
