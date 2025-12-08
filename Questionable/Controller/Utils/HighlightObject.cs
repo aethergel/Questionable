@@ -93,7 +93,7 @@ internal sealed class HighlightObject : IDisposable
 
     public void HighlightQuestObjects(ElementId questId)
     {
-        SetHighlight(_dataManager.GetExcelSheet<EObj>().Where(obj => obj.Data.Equals((uint)questId.Value)).Select(obj => obj.RowId).ToArray();
+        SetHighlight(_dataManager.GetExcelSheet<EObj>().Where(obj => obj.Data.Equals((uint)questId.Value)).Select(obj => obj.RowId).ToArray());
     }
 
     public void SetHighlight(uint[] Ids)
