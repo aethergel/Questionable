@@ -1,6 +1,7 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-  "Author": "skiaz",
+  "Author": "alydev",
+  "LastChecked":{"Username": "alydev", "Date": "2025-12-08"},
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -23,6 +24,24 @@
       "Sequence": 1,
       "Steps": [
         {
+          "DataId": 2003092,
+          "Position": {
+            "X": 429.1599,
+            "Y": 17.807251,
+            "Z": -76.76813
+          },
+          "TerritoryId": 146,
+          "InteractionType": "Combat",
+          "EnemySpawnType": "AfterInteraction",
+          "AetheryteShortcut": "Southern Thanalan - Little Ala Mhigo",
+          "Fly": true,
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 3}
+          ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"Low": 4}],
+          "ComplexCombatData": [{"DataId": 739,"NameId": 2304,"MinimumKillCount": 1}]
+        },
+        {
           "DataId": 2003088,
           "Position": {
             "X": 417.2273,
@@ -32,49 +51,12 @@
           "TerritoryId": 146,
           "InteractionType": "Combat",
           "EnemySpawnType": "AfterInteraction",
-          "ComplexCombatData": [
-            {
-              "DataId": 739,
-              "NameId": 2304,
-              "MinimumKillCount": 1
-            }
-          ]
-        },
-        {
-          "DataId": 2003090,
-          "Position": {
-            "X": 537.3159,
-            "Y": 7.583679,
-            "Z": -71.70221
-          },
-          "TerritoryId": 146,
-          "InteractionType": "Combat",
-          "EnemySpawnType": "AfterInteraction",
-          "ComplexCombatData": [
-            {
-              "DataId": 739,
-              "NameId": 2304,
-              "MinimumKillCount": 1
-            }
-          ]
-        },
-        {
-          "DataId": 2003091,
-          "Position": {
-            "X": 586.6636,
-            "Y": 6.5460815,
-            "Z": -77.683716
-          },
-          "TerritoryId": 146,
-          "InteractionType": "Combat",
-          "EnemySpawnType": "AfterInteraction",
-          "ComplexCombatData": [
-            {
-              "DataId": 739,
-              "NameId": 2304,
-              "MinimumKillCount": 1
-            }
-          ]
+          "Fly": true,
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 1},{"Low": 2},{"Low": 3},{"Low": 4}
+          ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"High": 4}],
+          "ComplexCombatData": [{"DataId": 739,"NameId": 2304,"MinimumKillCount": 1}]
         },
         {
           "DataId": 2003087,
@@ -86,13 +68,80 @@
           "TerritoryId": 146,
           "InteractionType": "Combat",
           "EnemySpawnType": "AfterInteraction",
-          "ComplexCombatData": [
-            {
-              "DataId": 739,
-              "NameId": 2304,
-              "MinimumKillCount": 1
-            }
-          ]
+          "Fly": true,
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 4},{"Low": 5}
+          ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"High": 8}],
+          "ComplexCombatData": [{"DataId": 739,"NameId": 2304,"MinimumKillCount": 1}]
+        },
+        {
+          "DataId": 2003093,
+          "Position": {
+            "X": 528.89294,
+            "Y": 7.583679,
+            "Z": -117.47925
+          },
+          "TerritoryId": 146,
+          "InteractionType": "Combat",
+          "EnemySpawnType": "AfterInteraction",
+          "Fly": true,
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 1},{"Low": 5}
+          ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"Low": 2}],
+          "ComplexCombatData": [{"DataId": 739,"NameId": 2304,"MinimumKillCount": 1}]
+        },
+        {
+          "DataId": 2003089,
+          "Position": {
+            "X": 548.577,
+            "Y": 7.583679,
+            "Z": -100.48071
+          },
+          "TerritoryId": 146,
+          "InteractionType": "Combat",
+          "EnemySpawnType": "AfterInteraction",
+          "Fly": true,
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 3}
+          ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"High": 2}],
+          "ComplexCombatData": [{"DataId": 739,"NameId": 2304,"MinimumKillCount": 1}]
+        },
+        {
+          "DataId": 2003090,
+          "Position": {
+            "X": 537.3159,
+            "Y": 7.583679,
+            "Z": -71.70221
+          },
+          "TerritoryId": 146,
+          "InteractionType": "Combat",
+          "EnemySpawnType": "AfterInteraction",
+          "Fly": true,
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 2},{"Low": 4}
+          ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"High": 1}],
+          "ComplexCombatData": [{"DataId": 739,"NameId": 2304,"MinimumKillCount": 1}]
+        },
+        {
+          "DataId": 2003091,
+          "Position": {
+            "X": 586.6636,
+            "Y": 6.5460815,
+            "Z": -77.683716
+          },
+          "TerritoryId": 146,
+          "InteractionType": "Combat",
+          "EnemySpawnType": "AfterInteraction",
+          "Fly": true,
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 1},{"Low": 2},{"Low": 5}
+          ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"Low": 8}],
+          "ComplexCombatData": [{"DataId": 739,"NameId": 2304,"MinimumKillCount": 1}]
         }
       ]
     },
@@ -109,6 +158,10 @@
           "TerritoryId": 146,
           "InteractionType": "UseItem",
           "ItemId": 2001170,
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 4},{"Low": 5}
+          ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"High": 8}],
           "Fly": true
         },
         {
@@ -121,6 +174,10 @@
           "TerritoryId": 146,
           "InteractionType": "UseItem",
           "ItemId": 2001170,
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 1},{"Low": 2},{"Low": 3},{"Low": 4}
+          ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"High": 4}],
           "Fly": true
         },
         {
@@ -133,6 +190,10 @@
           "TerritoryId": 146,
           "InteractionType": "UseItem",
           "ItemId": 2001170,
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 1},{"Low": 2},{"Low": 5}
+          ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"Low": 8}],
           "Fly": true
         },
         {
@@ -145,6 +206,58 @@
           "TerritoryId": 146,
           "InteractionType": "UseItem",
           "ItemId": 2001170,
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 1},{"Low": 5}
+          ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"Low": 2}],
+          "Fly": true
+        },
+        {
+          "DataId": 2003086,
+          "Position": {
+            "X": -159.80774,
+            "Y": 41.153564,
+            "Z": 174.45642
+          },
+          "TerritoryId": 146,
+          "InteractionType": "UseItem",
+          "ItemId": 2001170,
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 2},{"Low": 4}
+          ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"High": 1}],
+          "Fly": true
+        },
+        {
+          "DataId": 2003095,
+          "Position": {
+            "X": -88.76172,
+            "Y": 43.503418,
+            "Z": 145.49475
+          },
+          "TerritoryId": 146,
+          "InteractionType": "UseItem",
+          "ItemId": 2001170,
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 3}
+          ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"Low": 4}],
+          "Fly": true
+        },
+        {
+          "DataId": 2003085,
+          "Position": {
+            "X": -170.0008,
+            "Y": 41.2146,
+            "Z": 175.00574
+          },
+          "TerritoryId": 146,
+          "InteractionType": "UseItem",
+          "ItemId": 2001170,
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 3}
+          ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"High": 2}],
           "Fly": true
         }
       ]
