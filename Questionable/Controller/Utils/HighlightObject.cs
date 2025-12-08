@@ -3,7 +3,9 @@ using System.Linq;
 using Dalamud.Game.ClientState.Conditions;
 using Dalamud.Plugin.Services;
 using FFXIVClientStructs.FFXIV.Client.Game.Object;
+using Lumina.Excel.Sheets;
 using Microsoft.Extensions.Logging;
+using Questionable.Model.Questing;
 using GameObject = FFXIVClientStructs.FFXIV.Client.Game.Object.GameObject;
 
 namespace Questionable.Controller.Utils;
@@ -13,24 +15,27 @@ internal sealed class HighlightObject : IDisposable
     private uint[] _targetNpcDataId = [];
     private DateTime _lastUpdateTime = DateTime.Now;
     private readonly IFramework _framework;
-    private readonly Configuration _configuration;
     private readonly ICondition _condition;
-    private readonly ILogger<HighlightObject> _logger;
     private readonly IObjectTable _objectTable;
+    private readonly IDataManager _dataManager;
+    private readonly Configuration _configuration;
+    private readonly ILogger<HighlightObject> _logger;
 
     public HighlightObject(
         IFramework framework,
         Configuration configuration,
         ICondition condition,
-        ILogger<HighlightObject> logger,
-        IObjectTable objectTable)
+        IObjectTable objectTable,
+        IDataManager dataManager,
+        ILogger<HighlightObject> logger)
     {
 
         _framework = framework;
         _configuration = configuration;
         _condition = condition;
-        _logger = logger;
         _objectTable = objectTable;
+        _dataManager = dataManager;
+        _logger = logger;
         _framework.Update += Framework_OnUpdate;
     }
 
@@ -84,6 +89,11 @@ internal sealed class HighlightObject : IDisposable
             _logger.LogDebug($"Removing {Id} from highlight");
             _targetNpcDataId = _targetNpcDataId.Where(n => n != Id).ToArray();
         });
+    }
+
+    public void HighlightQuestObjects(ElementId questId)
+    {
+        SetHighlight(_dataManager.GetExcelSheet<EObj>().Where(obj => obj.Data.Equals((uint)questId.Value)).Select(obj => obj.RowId).ToArray();
     }
 
     public void SetHighlight(uint[] Ids)

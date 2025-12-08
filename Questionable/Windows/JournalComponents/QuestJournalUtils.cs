@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Dalamud.Bindings.ImGui;
+using Dalamud.Interface;
 using Dalamud.Interface.Components;
 using Dalamud.Interface.Utility.Raii;
 using Dalamud.Plugin.Services;
@@ -48,6 +49,9 @@ internal sealed class QuestJournalUtils
                 _questController.SetNextQuest(quest);
                 _questController.Start(label);
             }
+
+            if (ImGui.MenuItem("Set as next quest"))
+                _questController.SetNextQuest(quest);
         }
 
         bool openInQuestMap = _commandManager.Commands.ContainsKey("/questinfo");

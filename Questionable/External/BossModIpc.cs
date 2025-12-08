@@ -74,7 +74,7 @@ internal sealed class BossModIpc
     // TODO this should use your actual rotation plugin, not always vbm
     public void EnableAi(bool passive)
     {
-        _commandManager.ProcessCommand("/vbmai on");
+        //_commandManager.ProcessCommand("/vbmai on");
         _commandManager.ProcessCommand("/vbm cfg ZoneModuleConfig EnableQuestBattles true");
         _commandManager.ProcessCommand("/vbm cfg Autorotation ClearPresetOnCombatEnd false");
         SetPreset(passive ? EPreset.Overworld : EPreset.QuestBattle);
