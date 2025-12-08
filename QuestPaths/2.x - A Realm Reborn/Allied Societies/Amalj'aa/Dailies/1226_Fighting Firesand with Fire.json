@@ -4,10 +4,7 @@
     "plogon_enjoyer",
     "alydev"
   ],
-  "LastChecked": {
-    "Username": "alydev",
-    "Date": "2025-09-15"
-  },
+  "LastChecked":{"Username": "alydev", "Date": "2025-12-09"},
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -38,6 +35,7 @@
           },
           "TerritoryId": 146,
           "InteractionType": "Interact",
+          "AetheryteShortcut": "Southern Thanalan - Little Ala Mhigo",
           "Fly": true
         }
       ]
@@ -45,85 +43,6 @@
     {
       "Sequence": 2,
       "Steps": [
-        {
-          "Position": {
-            "X": 35.036743,
-            "Y": 3.396969,
-            "Z": -345.2254
-          },
-          "TerritoryId": 146,
-          "InteractionType": "WalkTo",
-          "RequiredQuestVariables": [
-            [
-              0
-            ],
-            null,
-            null,
-            null,
-            null,
-            null
-          ]
-        },
-        {
-          "Position": {
-            "X": 32.888374,
-            "Y": 3.598409,
-            "Z": -301.40466
-          },
-          "TerritoryId": 146,
-          "InteractionType": "WalkTo",
-          "DisableNavmesh": true,
-          "RequiredQuestVariables": [
-            [
-              0
-            ],
-            null,
-            null,
-            null,
-            null,
-            null
-          ]
-        },
-        {
-          "Position": {
-            "X": -14.886532,
-            "Y": -0.5785296,
-            "Z": -221.25523
-          },
-          "TerritoryId": 146,
-          "InteractionType": "WalkTo",
-          "DisableNavmesh": true,
-          "RequiredQuestVariables": [
-            [
-              0
-            ],
-            null,
-            null,
-            null,
-            null,
-            null
-          ]
-        },
-        {
-          "Position": {
-            "X": -22.777428,
-            "Y": -0.49886435,
-            "Z": -181.53052
-          },
-          "TerritoryId": 146,
-          "InteractionType": "WalkTo",
-          "DisableNavmesh": true,
-          "RequiredQuestVariables": [
-            [
-              0
-            ],
-            null,
-            null,
-            null,
-            null,
-            null
-          ]
-        },
         {
           "DataId": 2003127,
           "Position": {
@@ -135,24 +54,9 @@
           "InteractionType": "Action",
           "Action": "Fiery Breath",
           "CompletionQuestVariablesFlags": [null,null,null,null,null,128],
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "High": 1
-              },
-              {
-                "High": 2
-              },
-              {
-                "High": 3
-              }
-            ],
-            null,
-            null,
-            null,
-            null
-          ]
+          "RequiredQuestVariables": [null,[
+              {"High": 1},{"High": 2},{"High": 3}
+            ],null,null,null,null]
         },
         {
           "DataId": 2003133,
@@ -165,42 +69,9 @@
           "InteractionType": "Action",
           "Action": "Fiery Breath",
           "CompletionQuestVariablesFlags": [null,null,null,null,null,2],
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "High": 4
-              }
-            ],
-            null,
-            null,
-            null,
-            null
-          ]
-        },
-        {
-          "Position": {
-            "X": -191.09834,
-            "Y": 2.955683,
-            "Z": -183.68497
-          },
-          "TerritoryId": 146,
-          "InteractionType": "WalkTo",
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "High": 2
-              },
-              {
-                "High": 5
-              }
-            ],
-            null,
-            null,
-            null,
-            null
-          ]
+          "RequiredQuestVariables": [null,[
+              {"High": 4}
+            ],null,null,null,null]
         },
         {
           "DataId": 2003128,
@@ -213,21 +84,9 @@
           "InteractionType": "Action",
           "Action": "Fiery Breath",
           "CompletionQuestVariablesFlags": [null,null,null,null,null,64],
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "High": 2
-              },
-              {
-                "High": 5
-              }
-            ],
-            null,
-            null,
-            null,
-            null
-          ]
+          "RequiredQuestVariables": [null,[
+              {"High": 2},{"High": 5}
+            ],null,null,null,null]
         },
         {
           "DataId": 2003132,
@@ -240,21 +99,9 @@
           "InteractionType": "Action",
           "Action": "Fiery Breath",
           "CompletionQuestVariablesFlags": [null,null,null,null,null,4],
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "High": 3
-              },
-              {
-                "High": 5
-              }
-            ],
-            null,
-            null,
-            null,
-            null
-          ]
+          "RequiredQuestVariables": [null,[
+              {"High": 3},{"High": 5}
+            ],null,null,null,null]
         },
         {
           "DataId": 2003129,
@@ -267,21 +114,9 @@
           "InteractionType": "Action",
           "Action": "Fiery Breath",
           "CompletionQuestVariablesFlags": [null,null,null,null,null,32],
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "High": 1
-              },
-              {
-                "High": 3
-              }
-            ],
-            null,
-            null,
-            null,
-            null
-          ]
+          "RequiredQuestVariables": [null,[
+              {"High": 1},{"High": 3}
+            ],null,null,null,null]
         },
         {
           "DataId": 2003130,
@@ -294,27 +129,9 @@
           "InteractionType": "Action",
           "Action": "Fiery Breath",
           "CompletionQuestVariablesFlags": [null,null,null,null,null,16],
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "High": 1
-              },
-              {
-                "High": 2
-              },
-              {
-                "High": 4
-              },
-              {
-                "High": 5
-              }
-            ],
-            null,
-            null,
-            null,
-            null
-          ]
+          "RequiredQuestVariables": [null,[
+              {"High": 1},{"High": 2},{"High": 4},{"High": 5}
+            ],null,null,null,null]
         },
         {
           "DataId": 2003131,
@@ -327,18 +144,9 @@
           "InteractionType": "Action",
           "Action": "Fiery Breath",
           "CompletionQuestVariablesFlags": [null,null,null,null,null,8],
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "High": 4
-              }
-            ],
-            null,
-            null,
-            null,
-            null
-          ]
+          "RequiredQuestVariables": [null,[
+              {"High": 4}
+            ],null,null,null,null]
         }
       ]
     },

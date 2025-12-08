@@ -164,10 +164,10 @@ public class QuestSourceGenerator : ISourceGenerator
                                 Assignment(nameof(QuestRoot.Disabled), quest.Disabled, emptyQuest.Disabled).AsSyntaxNodeOrToken(),
                                 Assignment(nameof(QuestRoot.Interruptible), quest.Interruptible, emptyQuest.Interruptible).AsSyntaxNodeOrToken(),
                                 Assignment(nameof(QuestRoot.Comment), quest.Comment, emptyQuest.Comment).AsSyntaxNodeOrToken(),
-                                //AssignmentExpression(
-                                //    SyntaxKind.SimpleAssignmentExpression,
-                                //    IdentifierName(nameof(QuestRoot.LastChecked)),
-                                //    CreateLastChecked(quest.LastChecked, emptyQuest.LastChecked)),
+                                AssignmentExpression(
+                                    SyntaxKind.SimpleAssignmentExpression,
+                                    IdentifierName(nameof(QuestRoot.LastChecked)),
+                                    CreateLastChecked(quest.LastChecked, emptyQuest.LastChecked)),
                                 AssignmentExpression(
                                     SyntaxKind.SimpleAssignmentExpression,
                                     IdentifierName(nameof(QuestRoot.QuestSequence)),
@@ -179,21 +179,21 @@ public class QuestSourceGenerator : ISourceGenerator
         }
     }
 
-    //private static ObjectCreationExpressionSyntax CreateLastChecked(LastChecked lastChecked, LastChecked emptyLastChecked)
-    //{
-    //    return ObjectCreationExpression(
-    //                IdentifierName(nameof(LastChecked)))
-    //            .WithInitializer(
-    //                InitializerExpression(
-    //                    SyntaxKind.ObjectInitializerExpression,
-    //                    SeparatedList<ExpressionSyntax>(
-    //                        SyntaxNodeList(
-    //                            Assignment(nameof(LastChecked.Username), lastChecked.Username, emptyLastChecked.Username)
-    //                                .AsSyntaxNodeOrToken(),
-    //                            Assignment(nameof(LastChecked.Date), lastChecked.Date, emptyLastChecked.Date)
-    //                                .AsSyntaxNodeOrToken()
-    //                        ))));
-    //}
+    private static ObjectCreationExpressionSyntax CreateLastChecked(LastChecked lastChecked, LastChecked emptyLastChecked)
+    {
+        return ObjectCreationExpression(
+                    IdentifierName(nameof(LastChecked)))
+                .WithInitializer(
+                    InitializerExpression(
+                        SyntaxKind.ObjectInitializerExpression,
+                        SeparatedList<ExpressionSyntax>(
+                            SyntaxNodeList(
+                                Assignment(nameof(LastChecked.Username), lastChecked.Username, emptyLastChecked.Username)
+                                    .AsSyntaxNodeOrToken(),
+                                Assignment(nameof(LastChecked.Date), lastChecked.Date, emptyLastChecked.Date)
+                                    .AsSyntaxNodeOrToken()
+                            ))));
+    }
 
     private static ExpressionSyntax CreateQuestSequence(List<QuestSequence> sequences)
     {

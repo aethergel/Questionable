@@ -1,7 +1,7 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
   "Author": "alydev",
-  "LastChecked":{"Username": "alydev", "Date": "2025-11-28"},
+  "LastChecked":{"Username": "alydev", "Date": "2025-12-09"},
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -24,7 +24,6 @@
       "Sequence": 1,
       "Steps": [
         {
-          "$": "QW: (1H) (1H) (-) (1L) (3H) (2H)",
           "DataId": 2002994,
           "Position": {
             "X": 31.967651,
@@ -48,7 +47,6 @@
           ]
         },
         {
-          "$": "QW: (1H) (-) (1H) (1L) (4H) (8L)",
           "DataId": 2002996,
           "Position": {
             "X": -19.119629,
@@ -72,7 +70,6 @@
           ]
         },
         {
-          "$": "QW: (-) (-) (-) (-) (2H) (-) QW: (1H) (1L) (-) (1L) (2H) (1H)",
           "DataId": 2002995,
           "Position": {
               "X": -24.612854,
@@ -96,7 +93,6 @@
           ]
         },
         {
-          "$": "QW: (2H1L) (1H) (-) (2L) (3H) (6H)",
           "DataId": 2002993,
           "Position": {
             "X": -79.75891,
@@ -121,7 +117,6 @@
           ]
         },
         {
-          "$": "QW: (2H1L) (1H) (-) (2L) (3H) (6H)",
           "DataId": 2003013,
           "Position": {
             "X": -153.1853,
@@ -168,7 +163,6 @@
       "Sequence": 2,
       "Steps": [
         {
-          "$": "QW: (-) (-) (-) (-) (3H2L) (-)  QW: (1H) (-) (-) (1H) (2H2L) (2L)",
           "DataId": 2003011,
           "Position": {
             "X": -154.71124,
@@ -185,7 +179,6 @@
           "ItemId": 2001148
         },
         {
-          "$": "QW: (-) (-) (-) (-) (3H4L) (-)  QW: (1H) (-) (1H) (-) (2H4L) (8L)",
           "DataId": 2002991,
           "Position": {
               "X": -163.65308,
@@ -194,13 +187,14 @@
           },
           "TerritoryId": 146,
           "InteractionType": "UseItem",
-          "RequiredQuestVariables": [null,null,null,null,[{"Low": 1},{"Low": 4},{"Low": 5}],null],
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 1},{"Low": 4},{"Low": 5}
+            ],null],
           "CompletionQuestVariablesFlags": [ null, null, null, null, null, { "Low": 8 } ],
           "Fly": true,
           "ItemId": 2001148
         },
         {
-          "$": "QW: (1H) (-) (-) (1H) (2H2L) (2L)  QW: (2H) (1H) (-) (1H) (1H2L) (2H2L)",
           "DataId": 2002989,
           "Position": {
             "X": -205.46277,
@@ -209,7 +203,9 @@
           },
           "TerritoryId": 146,
           "InteractionType": "UseItem",
-          "RequiredQuestVariables": [null,null,null,null,[{"Low": 2},{"Low": 3},{"Low": 5}],null],
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 2},{"Low": 3},{"Low": 5}
+            ],null],
           "CompletionQuestVariablesFlags": [ null, null, null, null, null, { "High": 2 } ],
           "Fly": true,
           "ItemId": 2001148
@@ -223,13 +219,14 @@
           },
           "TerritoryId": 146,
           "InteractionType": "UseItem",
-          "RequiredQuestVariables": [null,null,null,null,[{"Low": 3},{"Low": 4},{"Low": 5}],null],
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 3},{"Low": 4},{"Low": 5}
+            ],null],
           "CompletionQuestVariablesFlags": [ null, null, null, null, null, { "High": 1 } ],
           "Fly": true,
           "ItemId": 2001148
         },
         {
-          "$": "QW: (1H) (-) (1H) (-) (2H4L) (8L)  QW: (2H) (-) (1H) (1L) (1H4L) (8H8L)",
           "DataId": 2002987,
           "Position": {
               "X": -236.7132,
@@ -238,7 +235,9 @@
           },
           "TerritoryId": 146,
           "InteractionType": "UseItem",
-          "RequiredQuestVariables": [null,null,null,null,[{"Low": 4}],null],
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 4}
+            ],null],
           "CompletionQuestVariablesFlags": [ null, null, null, null, null, { "High": 8 } ],
           "Fly": true,
           "ItemId": 2001148
@@ -252,7 +251,9 @@
           },
           "TerritoryId": 146,
           "InteractionType": "UseItem",
-          "RequiredQuestVariables": [null,null,null,null,[{"Low": 2}],null],
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 2}
+            ],null],
           "CompletionQuestVariablesFlags": [ null, null, null, null, null, { "High": 4 } ],
           "Fly": true,
           "ItemId": 2001148
@@ -266,7 +267,9 @@
           },
           "TerritoryId": 146,
           "InteractionType": "UseItem",
-          "RequiredQuestVariables": [null,null,null,null,[{"Low": 1}],null],
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 1}
+            ],null],
           "CompletionQuestVariablesFlags": [ null, null, null, null, null, { "Low": 4 } ],
           "Fly": true,
           "ItemId": 2001148
