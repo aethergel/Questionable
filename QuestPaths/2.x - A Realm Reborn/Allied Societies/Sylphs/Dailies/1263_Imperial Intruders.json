@@ -1,8 +1,7 @@
 ﻿{
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
   "Author": "alydev",
-  "Disabled": false,
-  "Comment": "Unsupported: Use Skip/Step manually",
+  "LastChecked":{"Username": "alydev", "Date": "2025-12-08"},
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -25,6 +24,7 @@
       "Sequence": 1,
       "Steps": [
         {
+          "DataId": 1005818,
           "Position": {
             "X": 294.11755,
             "Y": -1.0690334,
@@ -32,9 +32,14 @@
           },
           "TerritoryId": 152,
           "InteractionType": "UseItem",
-          "GroundTarget": true,
+          "AetheryteShortcut": "East Shroud - Hawthorne Hut",
           "Fly": true,
-          "ItemId": 2001179
+          "ItemId": 2001179,
+          "GroundTarget": true,
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 2},{"Low": 4}
+            ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"High": 4}]
         },
         {
           "DataId": 1005821,
@@ -45,11 +50,16 @@
           },
           "TerritoryId": 152,
           "InteractionType": "UseItem",
-          "GroundTarget": true,
           "Fly": true,
-          "ItemId": 2001179
+          "ItemId": 2001179,
+          "GroundTarget": true,
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 2},{"Low": 5}
+            ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"Low": 8}]
         },
         {
+          "DataId": 1005805,
           "Position": {
             "X": 189.6543,
             "Y": -0.91523975,
@@ -57,11 +67,16 @@
           },
           "TerritoryId": 152,
           "InteractionType": "UseItem",
-          "GroundTarget": true,
           "Fly": true,
-          "ItemId": 2001179
+          "ItemId": 2001179,
+          "GroundTarget": true,
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 1},{"Low": 3}
+            ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"High": 8}]
         },
         {
+          "DataId": 1005819,
           "Position": {
             "X": 290.97424,
             "Y": -5.0578775,
@@ -69,11 +84,16 @@
           },
           "TerritoryId": 152,
           "InteractionType": "UseItem",
-          "GroundTarget": true,
           "Fly": true,
-          "ItemId": 2001179
+          "ItemId": 2001179,
+          "GroundTarget": true,
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 2},{"Low": 3},{"Low": 4},{"Low": 5}
+            ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"High": 2}]
         },
         {
+          "DataId": 1005820,
           "Position": {
             "X": 209.0028,
             "Y": -2.711787,
@@ -81,11 +101,16 @@
           },
           "TerritoryId": 152,
           "InteractionType": "UseItem",
-          "GroundTarget": true,
           "Fly": true,
-          "ItemId": 2001179
+          "ItemId": 2001179,
+          "GroundTarget": true,
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 1},{"Low": 4},{"Low": 5}
+            ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"High": 1}]
         },
         {
+          "DataId": 1005822,
           "Position": {
             "X": 106.004395,
             "Y": 6.354765,
@@ -93,11 +118,16 @@
           },
           "TerritoryId": 152,
           "InteractionType": "UseItem",
-          "GroundTarget": true,
           "Fly": true,
-          "ItemId": 2001179
+          "ItemId": 2001179,
+          "GroundTarget": true,
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 1},{"Low": 3}
+            ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"Low": 4}]
         },
         {
+          "DataId": 1005823,
           "Position": {
             "X": 0.6560669,
             "Y": 20.066597,
@@ -105,13 +135,37 @@
           },
           "TerritoryId": 152,
           "InteractionType": "Combat",
-          "GroundTarget": true,
           "Fly": true,
           "ItemId": 2001179,
+          "GroundTarget": true,
           "EnemySpawnType": "AfterItemUse",
           "KillEnemyDataIds": [
             2463
-          ]
+          ],
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 1},{"Low": 3},{"Low": 4},{"Low": 5}
+            ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"Low": 2}]
+        },
+        {
+          "DataId": 1005820,
+          "Position": {
+            "X": 209.0028,
+            "Y": -2.711787,
+            "Z": -18.173523
+          },
+          "TerritoryId": 152,
+          "InteractionType": "Combat",
+          "Fly": true,
+          "ItemId": 2001179,
+          "GroundTarget": true,
+          "EnemySpawnType": "AfterItemUse",
+          "KillEnemyDataIds": [
+            2463
+          ],
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 2}
+            ],null]
         }
       ]
     },
