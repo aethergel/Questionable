@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Numerics;
 using Dalamud.Bindings.ImGui;
 using Dalamud.Interface;
 using Dalamud.Interface.Colors;
+using Dalamud.Interface.Style;
 using Dalamud.Interface.Utility.Raii;
 using Dalamud.Plugin;
 using Questionable.Controller;
@@ -62,6 +64,7 @@ internal sealed class QuestJournalComponent
             ImGui.BulletText("'Completed' lists quests your current character has completed.");
             ImGui.BulletText(
                 "Not all quests can be completed even if they're listed as available, e.g. starting city quest chains.");
+            ImGui.BulletText("The text in the Supported column indicates the last time a quest path was reported to work perfectly.");
             ImGui.TextColoredWrapped(ImGuiColors.DalamudYellow, "Quests can be added to Priority Quests, either individually or by group, with the right click menu.");
 
             ImGui.Spacing();
@@ -175,11 +178,36 @@ internal sealed class QuestJournalComponent
 
     private void DrawQuest(IQuestInfo questInfo)
     {
-        _questRegistry.TryGetQuest(questInfo.QuestId, out var quest);
+        DrawQuest((QuestInfo)questInfo);
+    }
+
+    private void DrawQuest(QuestInfo questInfo)
+    {
+        Quest? quest;
+        bool fate = false;
+        string lastChecked = "";
+        string lastCheckedLong = "";
+        string questDescription = $"{questInfo.Name} ({questInfo.QuestId})";
+        if (_questRegistry.TryGetQuest(questInfo.QuestId, out quest))
+        {
+            if (quest.Root.LastChecked.Date != null)
+            {
+                lastCheckedLong = $"\nLast checked: {quest.Root.LastChecked.Date} by {quest.Root.LastChecked.Username}";
+                var since = (int)DateTime.Now.Subtract(DateTime.ParseExact(quest.Root.LastChecked.Date, "yyyy-MM-dd", CultureInfo.InvariantCulture)).TotalDays;
+                if (since < 7)
+                    lastChecked = $"{since}d";
+                else
+                    lastChecked = $"{since / 7}w";
+            }
+            if ((quest.Root.Comment ?? "").Contains("FATE"))
+            {
+                fate = true;
+            }
+        }
 
         ImGui.TableNextRow();
         ImGui.TableNextColumn();
-        ImGui.TreeNodeEx($"{questInfo.Name} ({questInfo.QuestId})",
+        ImGui.TreeNodeEx(questDescription,
             ImGuiTreeNodeFlags.Leaf | ImGuiTreeNodeFlags.NoTreePushOnOpen | ImGuiTreeNodeFlags.SpanFullWidth);
 
 
@@ -197,21 +225,45 @@ internal sealed class QuestJournalComponent
         }
 
         ImGui.SetCursorPosX(ImGui.GetCursorPosX() + spacing);
+        string defaultReason;
+        var reason = defaultReason = "<no reason specified>";
+        if (quest != null)
+            reason = (quest.Root.Comment ?? defaultReason).Split('\n', 2)[0];
 
         if (_questFunctions.IsQuestRemoved(questInfo.QuestId))
-            _uiUtils.ChecklistItem(string.Empty, ImGuiColors.DalamudGrey, FontAwesomeIcon.Minus);
+        {
+            if (_uiUtils.ChecklistItem(lastChecked, ImGuiColors.DalamudGrey, FontAwesomeIcon.Minus))
+                ImGui.SetTooltip("This quest is not available.");
+        }
+        else if (fate)
+        {
+            if (_uiUtils.ChecklistItem(lastChecked, ImGuiColors.DalamudOrange, FontAwesomeIcon.ExclamationTriangle))
+                ImGui.SetTooltip($"This quest requires completing a FATE.{lastCheckedLong}");
+        }
         else if (quest is { Root.Disabled: false })
         {
             List<ValidationIssue> issues = _questValidator.GetIssues(quest.Id);
             if (issues.Any(x => x.Severity == EIssueSeverity.Error))
-                _uiUtils.ChecklistItem(string.Empty, ImGuiColors.DalamudRed, FontAwesomeIcon.ExclamationTriangle);
+            {
+                if (_uiUtils.ChecklistItem(lastChecked, ImGuiColors.DalamudRed, FontAwesomeIcon.ExclamationTriangle))
+                    ImGui.SetTooltip("This quest could not be loaded.");
+            }
             else if (issues.Count > 0)
-                _uiUtils.ChecklistItem(string.Empty, ImGuiColors.ParsedBlue, FontAwesomeIcon.InfoCircle);
+            {
+                if (_uiUtils.ChecklistItem(lastChecked, ImGuiColors.ParsedBlue, FontAwesomeIcon.InfoCircle))
+                    ImGui.SetTooltip("This quest had validation issues.");
+            }
             else
-                _uiUtils.ChecklistItem(string.Empty, true);
+                if (_uiUtils.ChecklistItem(lastChecked, true))
+                    ImGui.SetTooltip($"This quest is supported.{lastCheckedLong}" + (!reason.Equals(defaultReason, StringComparison.Ordinal) ? $"\nComment: {reason}" : ""));
         }
         else
-            _uiUtils.ChecklistItem(string.Empty, false);
+        {
+            if (quest == null)
+                reason = "No quest path.";
+            if (_uiUtils.ChecklistItem(lastChecked, false))
+                ImGui.SetTooltip($"This quest is not yet supported.{lastCheckedLong}" + (!reason.Equals(defaultReason, StringComparison.Ordinal) ? $"\nReason: {reason}" : ""));
+        }
 
         ImGui.TableNextColumn();
         var (color, icon, text) = _uiUtils.GetQuestStyle(questInfo.QuestId);
