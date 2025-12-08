@@ -1,2 +1,1 @@
-- Amaljaa/sylph dailies by alydev
-- LastChecked by alydev
+- Sylph dailies by alydev

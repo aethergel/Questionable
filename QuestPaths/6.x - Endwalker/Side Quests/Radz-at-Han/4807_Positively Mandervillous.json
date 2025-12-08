@@ -39,14 +39,7 @@
             "[Radz-at-Han] Aetheryte Plaza"
           ],
           "ItemId": 41032,
-          "ItemCount": 3,
-          "SkipConditions": {
-            "StepIf": {
-              "Item": {
-                "NotInInventory": false
-              }
-            }
-          }
+          "ItemCount": 3
         },
         {
           "DataId": 1043891,

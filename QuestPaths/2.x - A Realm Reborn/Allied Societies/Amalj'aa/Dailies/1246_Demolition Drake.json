@@ -1,10 +1,7 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
   "Author": "alydev",
-  "LastChecked": {
-    "Username": "alydev",
-    "Date": "2025-09-15"
-  },
+  "LastChecked":{"Username": "alydev", "Date": "2025-12-09"},
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -43,65 +40,6 @@
       "Sequence": 2,
       "Steps": [
         {
-          "Position": {
-            "X": 31.530312,
-            "Y": 3.656009,
-            "Z": 6.4622016
-          },
-          "TerritoryId": 146,
-          "InteractionType": "WalkTo",
-          "RequiredQuestVariables": [
-            [
-              0
-            ],
-            null,
-            null,
-            null,
-            null,
-            null
-          ]
-        },
-        {
-          "Position": {
-            "X": 70.39711,
-            "Y": 12.356229,
-            "Z": 23.314192
-          },
-          "TerritoryId": 146,
-          "InteractionType": "WalkTo",
-          "RequiredQuestVariables": [
-            [
-              0
-            ],
-            null,
-            null,
-            null,
-            null,
-            null
-          ],
-          "DisableNavmesh": true
-        },
-        {
-          "Position": {
-            "X": 67.634125,
-            "Y": 16.594261,
-            "Z": 31.034203
-          },
-          "TerritoryId": 146,
-          "InteractionType": "WalkTo",
-          "RequiredQuestVariables": [
-            [
-              0
-            ],
-            null,
-            null,
-            null,
-            null,
-            null
-          ],
-          "DisableNavmesh": true
-        },
-        {
           "DataId": 2003197,
           "Position": {
             "X": 45.548096,
@@ -110,50 +48,9 @@
           },
           "TerritoryId": 146,
           "InteractionType": "Action",
-          "DisableNavmesh": true,
-          "CompletionQuestVariablesFlags": [null,null,null,null,null,128],
           "StopDistance": 5,
-          "Action": "Fiery Breath"
-        },
-        {
-          "Position": {
-            "X": 130.30806,
-            "Y": 8.897401,
-            "Z": -13.150017
-          },
-          "TerritoryId": 146,
-          "InteractionType": "WalkTo",
-          "RequiredQuestVariables": [
-            [
-              16
-            ],
-            null,
-            null,
-            null,
-            null,
-            null
-          ],
-          "DisableNavmesh": true
-        },
-        {
-          "Position": {
-            "X": 319.66522,
-            "Y": 8,
-            "Z": -36.07819
-          },
-          "TerritoryId": 146,
-          "InteractionType": "WalkTo",
-          "RequiredQuestVariables": [
-            [
-              16
-            ],
-            null,
-            null,
-            null,
-            null,
-            null
-          ],
-          "DisableNavmesh": true
+          "Action": "Fiery Breath",
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"High": 8}]
         },
         {
           "DataId": 2003199,
@@ -164,10 +61,9 @@
           },
           "TerritoryId": 146,
           "InteractionType": "Action",
-          "DisableNavmesh": true,
-          "CompletionQuestVariablesFlags": [null,null,null,null,null,64],
           "StopDistance": 5,
-          "Action": "Fiery Breath"
+          "Action": "Fiery Breath",
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"High": 4}]
         }
       ]
     },

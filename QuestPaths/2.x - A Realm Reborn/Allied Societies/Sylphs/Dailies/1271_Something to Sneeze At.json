@@ -1,6 +1,7 @@
 ﻿{
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
   "Author": "alydev",
+  "LastChecked":{"Username": "alydev", "Date": "2025-12-09"},
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -34,7 +35,6 @@
           "Fly": true
         },
         {
-          "$": "QuestCleanUp.cs is looking for interaction with the Allied Society quest issuer or else it will teleport to hawthorne hut for Mount ID 24. This step should do nothing. Discussion in #6",
           "DataId": 1052562,
           "Position": {
             "X": 184.64929,
@@ -48,47 +48,76 @@
     },
     {
       "Sequence": 2,
-      "Comment": "WIP: If mount action misses, press Stop and try the action again manually",
       "Steps": [
         {
+          "DataId": 2003249,
           "Position": {
-            "X": 358.78497,
-            "Y": -17.264332,
-            "Z": -131.23358
+            "X": 360.6775,
+            "Y": -17.563171,
+            "Z": -128.06903
           },
           "TerritoryId": 152,
           "InteractionType": "Action",
-          "Action": "Big Sneeze"
+          "Action": "Big Sneeze",
+          "RequiredQuestVariables": [null,null,null,[
+            {"High": 3},{"High": 5}
+          ],null,null]
         },
         {
+          "DataId": 2003251,
           "Position": {
-            "X": 438.96085,
-            "Y": -18.217512,
-            "Z": -200.25444
+            "X": 442.34375,
+            "Y": -17.990417,
+            "Z": -200.3357
           },
           "TerritoryId": 152,
           "InteractionType": "Action",
-          "Action": "Big Sneeze"
+          "Action": "Big Sneeze",
+          "RequiredQuestVariables": [null,null,null,[
+            {"High": 2},{"High": 3}
+          ],null,null]
         },
         {
+          "DataId": 2003252,
           "Position": {
-            "X": 407.7888,
-            "Y": -17.223122,
-            "Z": -252.10526
+            "X": 406.08826,
+            "Y": -16.983276,
+            "Z": -254.99353
           },
           "TerritoryId": 152,
           "InteractionType": "Action",
-          "Action": "Big Sneeze"
+          "Action": "Big Sneeze",
+          "RequiredQuestVariables": [null,null,null,[
+            {"High": 1},{"High": 4}
+          ],null,null]
         },
         {
+          "DataId": 2003250,
           "Position": {
-            "X": 326.5522,
-            "Y": -17.807482,
-            "Z": -220.38939
+            "X": 323.7506,
+            "Y": -17.990417,
+            "Z": -217.60895
           },
           "TerritoryId": 152,
           "InteractionType": "Action",
-          "Action": "Big Sneeze"
+          "Action": "Big Sneeze",
+          "RequiredQuestVariables": [null,null,null,[
+            {"High": 2},{"High": 4}
+          ],null,null]
+        },
+        {
+          "DataId": 2003253,
+          "Position": {
+            "X": 295.67407,
+            "Y": -20.157227,
+            "Z": -297.74933
+          },
+          "TerritoryId": 152,
+          "InteractionType": "Action",
+          "Action": "Big Sneeze",
+          "RequiredQuestVariables": [null,null,null,[
+            {"High": 1},{"High": 5}
+          ],null,null]
         }
       ]
     },

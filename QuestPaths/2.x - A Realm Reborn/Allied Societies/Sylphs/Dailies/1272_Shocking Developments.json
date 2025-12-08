@@ -1,6 +1,7 @@
 ﻿{
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
   "Author": "alydev",
+  "LastChecked":{"Username": "alydev", "Date": "2025-12-09"},
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -23,6 +24,7 @@
       "Sequence": 1,
       "Steps": [
         {
+          "DataId": 2003142,
           "Position": {
             "X": 286.51855,
             "Y": -13.687378,
@@ -48,6 +50,7 @@
           "ItemId": 2001175
         },
         {
+          "DataId": 2003144,
           "Position": {
             "X": 295.1858,
             "Y": -13.01593,
