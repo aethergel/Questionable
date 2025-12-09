@@ -1,88 +1,105 @@
 {
-    "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-    "Author": "Theo",
-    "QuestSequence": [
+  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+  "Author": "Theo",
+  "QuestSequence": [
+    {
+      "Sequence": 0,
+      "Steps": [
         {
-            "Sequence": 0,
-            "Steps": [
-                {
-                    "Position": {
-                        "X": -780.148,
-                        "Y": 128.25195,
-                        "Z": 97.154175
-                    },
-                    "TerritoryId": 622,
-                    "InteractionType": "WalkTo"
-                },
-                {
-                    "DataId": 1025602,
-                    "Position": {
-                        "X": -780.148,
-                        "Y": 128.25195,
-                        "Z": 97.154175
-                    },
-                    "TerritoryId": 622,
-                    "InteractionType": "AcceptQuest",
-          "AetheryteShortcut": "Azim Steppe - Dhoro Iloh",
+          "DataId": 1025602,
+          "Position": {
+            "X": -778.2559,
+            "Y": 127.80886,
+            "Z": 98.54055
+          },
+          "TerritoryId": 622,
+          "StopDistance": 1,
+          "InteractionType": "AcceptQuest",
+          "AetheryteShortcut": "Azim Steppe - Dhoro Iloh"
+        }
+      ]
+    },
+    {
+      "Sequence": 1,
+      "Steps": [
+        {
+          "DataId": 1025773,
+          "Position": {
+            "X": -311.29932,
+            "Y": 50.549908,
+            "Z": -225.8183
+          },
+          "TerritoryId": 622,
+          "InteractionType": "Interact",
+          "StopDistance": 5,
           "Fly": true
         }
-            ]
+      ]
+    },
+    {
+      "Sequence": 255,
+      "Steps": [
+        {
+          "DataId": 1025774,
+          "Position": {
+            "X": -308.73578,
+            "Y": 50.247925,
+            "Z": -226.09296
+          },
+          "TerritoryId": 622,
+          "InteractionType": "Interact",
+          "RequiredQuestAcceptedJob": [
+            "DoH"
+          ]
         },
         {
-            "Sequence": 1,
-            "Steps": [
-                {
-                    "DataId": 1025773,
-                    "Position": {
-                        "X": -311.29932,
-                        "Y": 50.549908,
-                        "Z": -225.8183
-                    },
-                    "TerritoryId": 622,
-                    "InteractionType": "Interact",
-                    "StopDistance": 5,
-                    "Fly": true
-                }
-            ]
+          "TerritoryId": 622,
+          "InteractionType": "Craft",
+          "ItemId": 22727,
+          "ItemCount": 2,
+          "RequiredQuestAcceptedJob": [
+            "DoH"
+          ]
         },
         {
-            "Sequence": 255,
-            "Steps": [
-                {
-                    "DataId": 1025774,
-                    "Position": {
-                        "X": -308.73578,
-                        "Y": 50.247925,
-                        "Z": -226.09296
-                    },
-                    "TerritoryId": 622,
-                    "InteractionType": "Interact",
-                    "RequiredQuestAcceptedJob": [
-                        "DoH"
-                    ]
-                },
-                {
-                    "TerritoryId": 622,
-                    "InteractionType": "Craft",
-                    "ItemId": 22727,
-                    "ItemCount": 2,
-                    "RequiredQuestAcceptedJob": [
-                        "DoH"
-                    ]
-                },
-                {
-                    "DataId": 1025602,
-                    "Position": {
-                        "X": -780.148,
-                        "Y": 128.25195,
-                        "Z": 97.154175
-                    },
-                    "TerritoryId": 622,
-                    "InteractionType": "CompleteQuest",
-                    "Mount": true,
-                    "AetheryteShortcut": "Azim Steppe - Dhoro Iloh"
-                }
-            ]
+          "TerritoryId": 622,
+          "InteractionType": "Gather",
+          "ItemsToGather": [
+            {
+              "ItemId": 22623,
+              "ItemCount": 3
+            }
+          ],
+          "RequiredQuestAcceptedJob": [
+            "Miner"
+          ]
+        },
+        {
+          "TerritoryId": 622,
+          "InteractionType": "Gather",
+          "ItemsToGather": [
+            {
+              "ItemId": 22649,
+              "ItemCount": 3
+            }
+          ],
+          "RequiredQuestAcceptedJob": [
+            "Botanist"
+          ]
+        },
+        {
+          "DataId": 1025602,
+          "Position": {
+            "X": -778.2559,
+            "Y": 127.80886,
+            "Z": 98.54055
+          },
+          "TerritoryId": 622,
+          "StopDistance": 1,
+          "InteractionType": "CompleteQuest",
+          "AetheryteShortcut": "Azim Steppe - Dhoro Iloh"
         }
-    ]
+      ]
+    }
+  ]
 }

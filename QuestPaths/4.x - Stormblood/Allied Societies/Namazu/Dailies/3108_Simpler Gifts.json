@@ -6,25 +6,16 @@
       "Sequence": 0,
       "Steps": [
         {
-          "Position": {
-            "X": -780.148,
-            "Y": 128.25195,
-            "Z": 97.154175
-          },
-          "TerritoryId": 622,
-          "InteractionType": "WalkTo"
-        },
-        {
           "DataId": 1025602,
           "Position": {
-            "X": -780.148,
-            "Y": 128.25195,
-            "Z": 97.154175
+            "X": -778.2559,
+            "Y": 127.80886,
+            "Z": 98.54055
           },
           "TerritoryId": 622,
+          "StopDistance": 1,
           "InteractionType": "AcceptQuest",
-          "AetheryteShortcut": "Azim Steppe - Dhoro Iloh",
-          "Fly": true
+          "AetheryteShortcut": "Azim Steppe - Dhoro Iloh"
         }
       ]
     },
@@ -142,13 +133,13 @@
         {
           "DataId": 1025602,
           "Position": {
-            "X": -780.148,
-            "Y": 128.25195,
-            "Z": 97.154175
+            "X": -778.2559,
+            "Y": 127.80886,
+            "Z": 98.54055
           },
           "TerritoryId": 622,
+          "StopDistance": 1,
           "InteractionType": "CompleteQuest",
-          "Mount": true,
           "AetheryteShortcut": "Azim Steppe - Dhoro Iloh"
         }
       ]

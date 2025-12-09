@@ -1,1 +1,1 @@
-- Sylph dailies by alydev
+- Daily quests checked by alydev

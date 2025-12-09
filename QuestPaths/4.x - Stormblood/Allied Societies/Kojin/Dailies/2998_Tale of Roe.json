@@ -8,14 +8,16 @@
         {
           "DataId": 1024217,
           "Position": {
-            "X": 394.39978,
+            "X": 392.8357,
             "Y": -119.58932,
-            "Z": -232.28815
+            "Z": -234.9542
           },
           "TerritoryId": 613,
           "InteractionType": "AcceptQuest",
           "AetheryteShortcut": "Ruby Sea - Tamamizu",
-          "Fly": true
+          "StopDistance": 1,
+          "Fly": true,
+          "Land": true
         }
       ]
     },
@@ -128,27 +130,18 @@
       "Sequence": 255,
       "Steps": [
         {
-          "Position": {
-            "X": 392.59683,
-            "Y": -119.589325,
-            "Z": -234.30063
-          },
-          "TerritoryId": 613,
-          "InteractionType": "WalkTo",
-          "AetheryteShortcut": "Ruby Sea - Tamamizu",
-          "Fly": true
-        },
-        {
           "DataId": 1024217,
           "Position": {
-            "X": 394.39978,
+            "X": 392.8357,
             "Y": -119.58932,
-            "Z": -232.28815
+            "Z": -234.9542
           },
           "TerritoryId": 613,
           "InteractionType": "CompleteQuest",
           "AetheryteShortcut": "Ruby Sea - Tamamizu",
-          "Fly": true
+          "StopDistance": 1,
+          "Fly": true,
+          "Land": true
         }
       ]
     }
