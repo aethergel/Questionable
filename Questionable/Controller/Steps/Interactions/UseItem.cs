@@ -82,7 +82,7 @@ internal static class UseItem
                         step.CompletionQuestVariablesFlags);
                 }
 
-                return [unmount, new WaitAtEnd.WaitDelay(TimeSpan.FromSeconds(0.5)), task];
+                return [unmount, new WaitAtEnd.WaitDelay(TimeSpan.FromSeconds(1)), task];
             }
             else if (step.DataId != null)
             {

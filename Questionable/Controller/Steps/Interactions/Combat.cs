@@ -30,14 +30,15 @@ internal static class Combat
             {
                 yield return new WaitAtStart.WaitDelay(TimeSpan.FromSeconds(step.CombatDelaySecondsAtStart.Value));
             }
-
+            
+            double delayAfter = 1.5f;
             switch (step.EnemySpawnType)
             {
                 case EEnemySpawnType.AfterInteraction:
                     ArgumentNullException.ThrowIfNull(step.DataId);
 
                     yield return new Interact.Task(step.DataId.Value, quest, EInteractionType.None, true);
-                    yield return new WaitAtEnd.WaitDelay(TimeSpan.FromSeconds(1));
+                    yield return new WaitAtEnd.WaitDelay(TimeSpan.FromSeconds(delayAfter));
                     yield return CreateTask(quest, sequence, step);
                     break;
 
@@ -67,7 +68,7 @@ internal static class Combat
                             step.CompletionQuestVariablesFlags, true);
                     }
 
-                    yield return new WaitAtEnd.WaitDelay(TimeSpan.FromSeconds(1));
+                    yield return new WaitAtEnd.WaitDelay(TimeSpan.FromSeconds(delayAfter));
                     yield return CreateTask(quest, sequence, step);
                     break;
 
@@ -78,7 +79,7 @@ internal static class Combat
                     if (!step.Action.Value.RequiresMount())
                         yield return new Mount.UnmountTask();
                     yield return new Action.UseOnObject(step.DataId.Value, null, step.Action.Value, null);
-                    yield return new WaitAtEnd.WaitDelay(TimeSpan.FromSeconds(1));
+                    yield return new WaitAtEnd.WaitDelay(TimeSpan.FromSeconds(delayAfter));
                     yield return CreateTask(quest, sequence, step);
                     break;
 
@@ -90,13 +91,13 @@ internal static class Combat
                         yield return new Emote.UseOnObject(step.Emote.Value, step.DataId.Value);
                     else
                         yield return new Emote.UseOnSelf(step.Emote.Value);
-                    yield return new WaitAtEnd.WaitDelay(TimeSpan.FromSeconds(1));
+                    yield return new WaitAtEnd.WaitDelay(TimeSpan.FromSeconds(delayAfter));
                     yield return CreateTask(quest, sequence, step);
                     break;
 
                 case EEnemySpawnType.AutoOnEnterArea:
                     if (step.CombatDelaySecondsAtStart == null)
-                        yield return new WaitAtEnd.WaitDelay(TimeSpan.FromSeconds(1));
+                        yield return new WaitAtEnd.WaitDelay(TimeSpan.FromSeconds(delayAfter));
 
                     // automatically triggered when entering area, i.e. only unmount
                     yield return CreateTask(quest, sequence, step);

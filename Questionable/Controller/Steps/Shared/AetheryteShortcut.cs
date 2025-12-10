@@ -28,7 +28,7 @@ internal static class AetheryteShortcut
 
             yield return new Task(step, quest.Id, step.AetheryteShortcut.Value,
                 aetheryteData.TerritoryIds[step.AetheryteShortcut.Value]);
-            yield return new WaitAtEnd.WaitDelay(TimeSpan.FromSeconds(0.5));
+            yield return new WaitAtEnd.WaitDelay(TimeSpan.FromSeconds(1));
 
             if (MoveAwayFromAetheryteExecutor.AppliesTo(step.AetheryteShortcut.Value) &&
                 step.AethernetShortcut?.From != step.AetheryteShortcut.Value)
