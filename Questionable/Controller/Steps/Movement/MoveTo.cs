@@ -61,6 +61,7 @@ internal static class MoveTo
 
             if (clientState.TerritoryType != step.TerritoryId &&
                 step.AetheryteShortcut == null &&
+                step.AethernetShard == null &&
                 step.InteractionType != EInteractionType.Gather)
             {
                 var dest = territoryData.GetName(step.TerritoryId);

@@ -1,5 +1,5 @@
-- More daily quests checked by alydev
-- Not going to put "by alydev" anymore cos it's always me except when it's not
+- Fix bug where lifestream is called despite aethernetshortcut being present
+- More daily quests checked
 - Config: Preferred crafting/gathering job
 - Quests: automatic switching to configured job if current job is invalid for quest
   - ^ only on AcceptQuest for now

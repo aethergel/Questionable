@@ -69,24 +69,27 @@ internal sealed class AlliedSocietyJournalComponent
             using (ImRaii.Disabled(quests.Count == 0))
             {
 #if DEBUG
-                if (quests.Any(x => !x.QuestId.Value.Equals(1569) && // Ixal "Deliverance"
-                                    (!_questRegistry.TryGetQuest(x.QuestId, out var quest) ||
-                                      (quest.Root.Disabled && !(quest.Root.Comment ?? "").Contains("FATE"))
+                if (quests.Any(x => !x.QuestId.Value.Equals(1569) && ( // Ixal "Deliverance"
+                                      !_questRegistry.TryGetQuest(x.QuestId, out var quest) ||
+                                      (quest.Root.Disabled && !(quest.Root.Comment ?? "").Contains("FATE")) ||
+                                      (
+                                        (quest.Root.LastChecked.Date != null && quest.Root.LastChecked.Since(DateTime.Now)!.Value.TotalDays > 60) || 
+                                        (quest.Root.LastChecked.Date == null && !(quest.Root.Comment ?? "").Contains("FATE"))
+                                      )
                                     )))
                 {
                     using (ImRaii.PushColor(ImGuiCol.Text, ImGuiColors.DalamudOrange))
                         isOpen = ImGui.CollapsingHeader(label);
                 }
-                else if (quests.Any(x => !_questFunctions.IsQuestComplete(x.QuestId)))
+                else
+#endif
+                if (quests.Any(x => !_questFunctions.IsQuestComplete(x.QuestId)))
                 {
                     using (ImRaii.PushColor(ImGuiCol.Text, ImGuiColors.DalamudYellow))
                         isOpen = ImGui.CollapsingHeader(label);
                 }
                 else
                     isOpen = ImGui.CollapsingHeader(label);
-#else
-                isOpen = ImGui.CollapsingHeader(label);
-#endif
             }
 
             _questJournalUtils.ShowQuestGroupContextMenu($"DrawAlliedSocietyQuests{alliedSociety}", quests);
@@ -136,13 +139,13 @@ internal sealed class AlliedSocietyJournalComponent
                 lastChecked = $"({quest.Root.LastChecked.Date})";
                 #if DEBUG
                 if (quest.Root.LastChecked.Since(DateTime.Now)!.Value.TotalDays > 60)
-                    color = ImGuiColors.DalamudYellow;
+                    color = ImGuiColors.DalamudRed;
                 #endif
             }
             #if DEBUG
             else
             {
-                color = ImGuiColors.DalamudRed;
+                color = ImGuiColors.DPSRed;
             }
             #endif
             if (quest.Root.Disabled && (quest.Root.Comment ?? "").Contains("FATE"))
