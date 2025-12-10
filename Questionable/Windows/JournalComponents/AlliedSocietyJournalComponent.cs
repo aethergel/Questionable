@@ -98,16 +98,14 @@ internal sealed class AlliedSocietyJournalComponent
             {
                 for (byte i = 1; i <= 8; ++i)
                 {
-                    var questsByRank = quests.Where(x => ((QuestInfo)x).AlliedSocietyRank == i).ToList();
+                    var questsByRank = quests.Where(quest => ((QuestInfo)quest).AlliedSocietyRank == i && !quest.QuestId.Value.Equals(1569)).ToList();
                     if (questsByRank.Count == 0)
                         continue;
 
                     ImGui.Text(RankNames[i - 1]);
+                    _questJournalUtils.ShowQuestGroupContextMenu($"DrawAlliedSocietyQuests{alliedSociety}/{RankNames[i - 1]}", questsByRank);
                     foreach (var quest in questsByRank)
-                    {
-                        if (!quest.QuestId.Value.Equals(1569))
-                            DrawQuest(quest);
-                    }
+                        DrawQuest(quest);
                 }
             }
             else

@@ -59,11 +59,14 @@ internal static class MoveTo
                 yield break;
             }
 
-            if (clientState.TerritoryType != step.TerritoryId)
+            if (clientState.TerritoryType != step.TerritoryId && step.AetheryteShortcut == null)
             {
                 var dest = territoryData.GetName(step.TerritoryId);
                 if (dest != null)
+                {
+                    logger.LogInformation($"Teleporting to vague string '{dest}'");
                     commandManager.ProcessCommand($"/li {dest}");
+                }
             }
             yield return new WaitCondition.Task(() => clientState.TerritoryType == step.TerritoryId,
                 $"Wait(territory: {territoryData.GetNameAndId(step.TerritoryId)})");
