@@ -132,7 +132,19 @@ internal sealed class AlliedSocietyJournalComponent
         else
         {
             if (quest.Root.LastChecked.Date != null)
+            {
                 lastChecked = $"({quest.Root.LastChecked.Date})";
+                #if DEBUG
+                if (quest.Root.LastChecked.Since(DateTime.Now)!.Value.TotalDays > 60)
+                    color = ImGuiColors.DalamudYellow;
+                #endif
+            }
+            #if DEBUG
+            else
+            {
+                color = ImGuiColors.DalamudRed;
+            }
+            #endif
             if (quest.Root.Disabled && (quest.Root.Comment ?? "").Contains("FATE"))
             {
                 color = ImGuiColors.DalamudOrange;

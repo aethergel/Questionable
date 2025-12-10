@@ -1,7 +1,8 @@
-- aly broke MoveTo, this fixes it
-- Config: Preferred crafting/gathering job by alydev
-- Quests: automatic switching to configured job if current job is invalid for quest by alydev
-  - ^ only on AcceptQuest for now by alydev
-- Movement: using Lifestream to teleport to zone automatically by alydev
-- Craft: switch to QuestAcceptedJob instead of first recipe match by alydev
-- Daily quests checked by alydev
+- More daily quests checked by alydev
+- Not going to put "by alydev" anymore cos it's always me except when it's not
+- Config: Preferred crafting/gathering job
+- Quests: automatic switching to configured job if current job is invalid for quest
+  - ^ only on AcceptQuest for now
+- Movement: using Lifestream to teleport to zone automatically
+  - ^ added necessary exceptions cos things broke
+- Craft: switch to QuestAcceptedJob instead of first recipe match

@@ -1,6 +1,8 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
   "Author": "plogon_enjoyer",
+  "LastChecked":{"Username": "alydev", "Date": "2025-12-10"},
+  "$": "Combat starts and stops inconsistently between steps",
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -25,15 +27,6 @@
       "Sequence": 1,
       "Steps": [
         {
-          "TerritoryId": 613,
-          "InteractionType": "None",
-          "AetheryteShortcut": "Kugane",
-          "AethernetShortcut": [
-            "[Kugane] Aetheryte Plaza",
-            "[Kugane] The Ruby Price"
-          ]
-        },
-        {
           "DataId": 2009161,
           "Position": {
             "X": 52.262085,
@@ -43,8 +36,8 @@
           "TerritoryId": 613,
           "InteractionType": "Combat",
           "EnemySpawnType": "AfterInteraction",
-          "KillEnemyDataIds": [8238],
-          "RequiredQuestVariables": [null, null, [16], null, null, null],
+          "KillEnemyDataIds": [8238,8239,8240],
+          "RequiredQuestVariables": [null, null, [{"High": 1}], null, null, null],
           "Fly": true
         },
         {
@@ -54,10 +47,24 @@
             "Z": 576.43994
           },
           "TerritoryId": 613,
+          "DelaySecondsAtStart": 2,
           "InteractionType": "Combat",
           "EnemySpawnType": "OverworldEnemies",
-          "KillEnemyDataIds": [8239],
-          "RequiredQuestVariables": [null, null, [16], null, null, null]
+          "KillEnemyDataIds": [8239,8240],
+          "RequiredQuestVariables": [null, null, [{"High": 1}], null, null, null]
+        },
+        {
+          "Position": {
+            "X": 52.262085,
+            "Y": 18.844849,
+            "Z": 576.43994
+          },
+          "TerritoryId": 613,
+          "DelaySecondsAtStart": 2,
+          "InteractionType": "Combat",
+          "EnemySpawnType": "OverworldEnemies",
+          "KillEnemyDataIds": [8240],
+          "RequiredQuestVariables": [null, null, [{"High": 1}], null, null, null]
         },
         {
           "Position": {
@@ -67,9 +74,10 @@
           },
           "TerritoryId": 613,
           "InteractionType": "Combat",
-          "EnemySpawnType": "OverworldEnemies",
-          "KillEnemyDataIds": [8240],
-          "RequiredQuestVariables": [null, null, [16], null, null, null]
+          "DelaySecondsAtStart": 2,
+          "EnemySpawnType": "FinishCombatIfAny",
+          "KillEnemyDataIds": [8238,8239,8240],
+          "RequiredQuestVariables": [null, null, [{"High": 1}], null, null, null]
         },
         {
           "DataId": 2009162,
@@ -81,8 +89,8 @@
           "TerritoryId": 613,
           "InteractionType": "Combat",
           "EnemySpawnType": "AfterInteraction",
-          "KillEnemyDataIds": [8238],
-          "RequiredQuestVariables": [null, null, [32], null, null, null],
+          "KillEnemyDataIds": [8238,8239,8240],
+          "RequiredQuestVariables": [null, null, [{"High": 2}], null, null, null],
           "Fly": true
         },
         {
@@ -92,10 +100,11 @@
             "Z": 771.35876
           },
           "TerritoryId": 613,
+          "DelaySecondsAtStart": 2,
           "InteractionType": "Combat",
           "EnemySpawnType": "OverworldEnemies",
-          "KillEnemyDataIds": [8239],
-          "RequiredQuestVariables": [null, null, [32], null, null, null]
+          "KillEnemyDataIds": [8239,8240],
+          "RequiredQuestVariables": [null, null, [{"High": 2}], null, null, null]
         },
         {
           "Position": {
@@ -104,10 +113,24 @@
             "Z": 771.35876
           },
           "TerritoryId": 613,
+          "DelaySecondsAtStart": 2,
           "InteractionType": "Combat",
           "EnemySpawnType": "OverworldEnemies",
           "KillEnemyDataIds": [8240],
-          "RequiredQuestVariables": [null, null, [32], null, null, null]
+          "RequiredQuestVariables": [null, null, [{"High": 2}], null, null, null]
+        },
+        {
+          "Position": {
+            "X": 29.587158,
+            "Y": 51.407593,
+            "Z": 771.35876
+          },
+          "TerritoryId": 613,
+          "DelaySecondsAtStart": 2,
+          "InteractionType": "Combat",
+          "EnemySpawnType": "FinishCombatIfAny",
+          "KillEnemyDataIds": [8238,8239,8240],
+          "RequiredQuestVariables": [null, null, [{"High": 2}], null, null, null]
         },
         {
           "DataId": 2009163,
@@ -119,8 +142,8 @@
           "TerritoryId": 613,
           "InteractionType": "Combat",
           "EnemySpawnType": "AfterInteraction",
-          "KillEnemyDataIds": [8238],
-          "RequiredQuestVariables": [null, null, [48], null, null, null],
+          "KillEnemyDataIds": [8238,8239,8240],
+          "RequiredQuestVariables": [null, null, [{"High": 3}], null, null, null],
           "Fly": true
         },
         {
@@ -130,10 +153,11 @@
             "Z": 685.26733
           },
           "TerritoryId": 613,
+          "DelaySecondsAtStart": 2,
           "InteractionType": "Combat",
           "EnemySpawnType": "OverworldEnemies",
-          "KillEnemyDataIds": [8239],
-          "RequiredQuestVariables": [null, null, [48], null, null, null]
+          "KillEnemyDataIds": [8239,8240],
+          "RequiredQuestVariables": [null, null, [{"High": 3}], null, null, null]
         },
         {
           "Position": {
@@ -142,10 +166,24 @@
             "Z": 685.26733
           },
           "TerritoryId": 613,
+          "DelaySecondsAtStart": 2,
           "InteractionType": "Combat",
           "EnemySpawnType": "OverworldEnemies",
           "KillEnemyDataIds": [8240],
-          "RequiredQuestVariables": [null, null, [48], null, null, null]
+          "RequiredQuestVariables": [null, null, [{"High": 3}], null, null, null]
+        },
+        {
+          "Position": {
+            "X": 337.84998,
+            "Y": 5.8136597,
+            "Z": 685.26733
+          },
+          "TerritoryId": 613,
+          "DelaySecondsAtStart": 2,
+          "InteractionType": "Combat",
+          "EnemySpawnType": "FinishCombatIfAny",
+          "KillEnemyDataIds": [8238,8239,8240],
+          "RequiredQuestVariables": [null, null, [{"High": 3}], null, null, null]
         }
       ]
     },

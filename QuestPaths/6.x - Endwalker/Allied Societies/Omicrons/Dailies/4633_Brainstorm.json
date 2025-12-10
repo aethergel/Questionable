@@ -1,6 +1,7 @@
 ﻿{
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
   "Author": "liza",
+  "LastChecked":{"Username": "alydev", "Date": "2025-12-11"},
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -17,6 +18,17 @@
           "TargetTerritoryId": 960,
           "AetheryteShortcut": "Ultima Thule - Base Omicron",
           "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": 314.9004,
+                  "Y": 481.99442,
+                  "Z": 148.11926
+                },
+                "TerritoryId": 960,
+                "MaximumDistance": 26
+              }
+            },
             "StepIf": {
               "NearPosition": {
                 "Position": {
@@ -97,6 +109,17 @@
           "TargetTerritoryId": 960,
           "AetheryteShortcut": "Ultima Thule - Base Omicron",
           "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "NearPosition": {
+                "Position": {
+                  "X": 314.9004,
+                  "Y": 481.99442,
+                  "Z": 148.11926
+                },
+                "TerritoryId": 960,
+                "MaximumDistance": 26
+              }
+            },
             "StepIf": {
               "NearPosition": {
                 "Position": {

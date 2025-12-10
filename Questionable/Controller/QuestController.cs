@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
 using System.Linq;
 using System.Numerics;
 using Dalamud.Game.ClientState.Conditions;
@@ -675,6 +676,36 @@ internal sealed class QuestController : MiniTaskController<QuestController>
         if (shouldContinue && AutomationType != EAutomationType.Manual)
             ExecuteNextStep();
     }
+
+    //internal void AbandonQuest(QuestId questId)
+    //{
+    //    _logger.LogInformation($"AbandonQuest: {questId}");
+    //    GameMain.ExecuteCommand(900, (int)questId.Value, 0, 0, 0);
+    //}
+
+    //internal void AbandonQuest(string questId)
+    //{
+    //    try
+    //    {
+    //        var parsedQuestId = ushort.Parse(questId,CultureInfo.InvariantCulture);
+    //        if (_questFunctions.GetQuestProgressInfo(new QuestId(parsedQuestId)) != null)
+    //            AbandonQuest(new QuestId(parsedQuestId));
+    //        else
+    //            _logger.LogWarning("AbandonQuest failed: could not find quest ID");
+    //    }
+    //    catch (Exception e)
+    //    {
+    //        _logger.LogWarning($"AbandonQuest failed: {e}");
+    //    }
+    //}
+
+    //internal void AbandonQuest()
+    //{
+    //    if (CurrentQuest != null && _questFunctions.GetQuestProgressInfo(CurrentQuest.Quest.Id) != null)
+    //        AbandonQuest((QuestId)CurrentQuest.Quest.Id);
+    //    else
+    //        _logger.LogWarning("AbandonQuest failed: could not find quest ID");
+    //}
 
     private void ClearTasksInternal()
     {

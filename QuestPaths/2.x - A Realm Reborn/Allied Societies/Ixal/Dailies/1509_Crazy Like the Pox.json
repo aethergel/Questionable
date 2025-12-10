@@ -176,6 +176,7 @@
           "TerritoryId": 154,
           "InteractionType": "CompleteQuest",
           "AetheryteShortcut": "North Shroud - Fallgourd Float",
+          "StopDistance": 1,
           "Fly": true,
           "Land": true
         }

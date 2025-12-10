@@ -1,6 +1,7 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
   "Author": "plogon_enjoyer",
+  "LastChecked":{"Username": "alydev", "Date": "2025-12-11"},
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -42,13 +43,24 @@
       "Steps": [
         {
           "Position": {
-            "X": 322.45865,
-            "Y": -121.24298,
-            "Z": -314.65158
+            "X": 335.2263,
+            "Y": -114.671005,
+            "Z": -302.41327
+          },
+          "TerritoryId": 613,
+          "InteractionType": "WalkTo",
+          "Fly": true
+        },
+        {
+          "Position": {
+            "X": 313.70224,
+            "Y": -118.43306,
+            "Z": -325.22238
           },
           "TerritoryId": 613,
           "InteractionType": "WalkTo",
           "Fly": true,
+          "DisableNavmesh": true,
           "RestartNavigationIfCancelled": false
         },
         {
@@ -62,7 +74,9 @@
           "InteractionType": "Action",
           "Action": "Inhale",
           "Fly": true,
-          "RequiredQuestVariables": [null,null,null,[16, 48, 128, 144],null,null]
+          "RequiredQuestVariables": [null,null,null,[
+            {"High": 5},{"High": 6},{"High": 8}
+            ],null,null]
         },
         {
           "DataId": 2009108,
@@ -75,7 +89,9 @@
           "InteractionType": "Action",
           "Action": "Inhale",
           "Fly": true,
-          "RequiredQuestVariables": [null,null,null,[16, 48, 128, 160],null,null]
+          "RequiredQuestVariables": [null,null,null,[
+            {"High": 7},{"High": 8}
+            ],null,null]
         },
         {
           "DataId": 2009106,
@@ -88,7 +104,9 @@
           "InteractionType": "Action",
           "Action": "Inhale",
           "Fly": true,
-          "RequiredQuestVariables": [null,null,null,[16, 64, 160],null,null]
+          "RequiredQuestVariables": [null,null,null,[
+            {"High": 5},{"High": 6},{"High": 7}
+            ],null,null]
         },
         {
           "DataId": 2009107,
@@ -101,7 +119,9 @@
           "InteractionType": "Action",
           "Action": "Inhale",
           "Fly": true,
-          "RequiredQuestVariables": [null,null,null,[48, 64, 144, 160],null,null]
+          "RequiredQuestVariables": [null,null,null,[
+            {"High": 5}
+            ],null,null]
         },
         {
           "DataId": 2009105,
@@ -114,7 +134,9 @@
           "InteractionType": "Action",
           "Action": "Inhale",
           "Fly": true,
-          "RequiredQuestVariables": [null,null,null,[64, 128, 144],null,null]
+          "RequiredQuestVariables": [null,null,null,[
+            {"High": 6},{"High": 7},{"High": 8}
+            ],null,null]
         }
       ]
     },

@@ -59,12 +59,14 @@ internal static class MoveTo
                 yield break;
             }
 
-            if (clientState.TerritoryType != step.TerritoryId && step.AetheryteShortcut == null)
+            if (clientState.TerritoryType != step.TerritoryId &&
+                step.AetheryteShortcut == null &&
+                step.InteractionType != EInteractionType.Gather)
             {
                 var dest = territoryData.GetName(step.TerritoryId);
                 if (dest != null)
                 {
-                    logger.LogInformation($"Teleporting to vague string '{dest}'");
+                    logger.LogInformation($"{clientState.TerritoryType} != {step.TerritoryId}, teleporting to vague string '{dest}'");
                     commandManager.ProcessCommand($"/li {dest}");
                 }
             }

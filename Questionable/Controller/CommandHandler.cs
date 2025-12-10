@@ -198,6 +198,13 @@ internal sealed class CommandHandler : IDisposable
                 _questController.InterruptQueueWithCombat();
                 break;
 
+            //case "abandon-quest":
+            //    if (parts.Length > 1)
+            //        _questController.AbandonQuest(parts[1]);
+            //    else
+            //        _questController.AbandonQuest();
+            //    break;
+
             case "":
                 _questWindow.ToggleOrUncollapse();
                 break;
