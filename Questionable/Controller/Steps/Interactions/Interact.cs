@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Dalamud.Game.ClientState.Conditions;
 using Dalamud.Game.ClientState.Objects.Enums;
+using Dalamud.Game.ClientState.Objects.SubKinds;
 using Dalamud.Game.ClientState.Objects.Types;
 using Dalamud.Plugin.Services;
 using FFXIVClientStructs.FFXIV.Client.Game;
 using FFXIVClientStructs.FFXIV.Client.Game.UI;
+using FFXIVClientStructs.FFXIV.Client.UI.Misc;
+using LLib.GameData;
 using Microsoft.Extensions.Logging;
 using Questionable.Controller.Steps.Shared;
 using Questionable.Controller.Utils;
@@ -107,7 +111,9 @@ internal static class Interact
         GameFunctions gameFunctions,
         QuestFunctions questFunctions,
         CameraFunctions cameraFunctions,
+        Configuration configuration,
         ICondition condition,
+        IObjectTable objectTable,
         ILogger<DoInteract> logger)
         : TaskExecutor<Task>, IConditionChangeAware
     {
@@ -225,10 +231,43 @@ internal static class Interact
 
             if (_needsFacing)
             {
+                logger.LogInformation("Facing target");
                 cameraFunctions.Face(gameObject.Position);
                 _continueAt = DateTime.Now.AddSeconds(0.2);
                 _needsFacing = false;
                 return ETaskResult.StillRunning;
+            }
+
+            if (objectTable[0] != null && Task.Quest != null)
+            {
+                var acceptableJobs = Task.Quest.Info.ClassJobs;
+                var playerJob = (EClassJob)((IPlayerCharacter)objectTable[0]!).ClassJob.Value.RowId;
+                if (!acceptableJobs.Contains(playerJob))
+                {
+                    var switchTo = configuration.General.CombatJob;
+                    if (acceptableJobs[0].IsCrafter())
+                        switchTo = configuration.General.CraftingJob;
+                    if (acceptableJobs[0].IsGatherer())
+                        switchTo = configuration.General.GatheringJob;
+                    logger.LogInformation($"Current ClassJob {playerJob} not valid for {Task.Quest.Id}, switching to {switchTo}");
+                    unsafe
+                    {
+                        var gearsetModule = RaptureGearsetModule.Instance();
+                        if (gearsetModule != null)
+                        {
+                            for (int i = 0; i < 100; ++i)
+                            {
+                                var gearset = gearsetModule->GetGearset(i);
+                                if (gearset->ClassJob == (byte)switchTo)
+                                {
+                                    gearsetModule->EquipGearset(gearset->Id);
+                                }
+                            }
+                        }
+                    }
+                    _continueAt = DateTime.Now.AddSeconds(0.2);
+                    return ETaskResult.StillRunning;
+                }
             }
 
             if (!gameObject.IsTargetable || !HasAnyMarker(gameObject))
