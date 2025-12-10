@@ -89,14 +89,7 @@
           "ItemCount": 2,
           "RequiredCurrentJob": [
             "DoH"
-          ],
-          "SkipConditions": {
-            "StepIf": {
-              "Item": {
-                "NotInInventory": false
-              }
-            }
-          }
+          ]
         },
         {
           "DataId": 1009213,

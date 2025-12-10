@@ -1,5 +1,6 @@
 - Config: Preferred crafting/gathering job by alydev
 - Quests: automatic switching to configured job if current job is invalid for quest by alydev
   - ^ only on AcceptQuest for now by alydev
-- building from release instead of stg ty erdelf by alydev
+- Movement: using Lifestream to teleport to zone automatically by alydev
+- Craft: switch to QuestAcceptedJob instead of first recipe match by alydev
 - Daily quests checked by alydev

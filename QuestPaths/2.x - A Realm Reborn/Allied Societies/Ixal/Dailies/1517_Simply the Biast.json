@@ -79,14 +79,7 @@
           "TerritoryId": 155,
           "InteractionType": "Craft",
           "ItemId": 8103,
-          "ItemCount": 1,
-          "SkipConditions": {
-            "StepIf": {
-              "Item": {
-                "NotInInventory": false
-              }
-            }
-          }
+          "ItemCount": 1
         },
         {
           "DataId": 1009213,
