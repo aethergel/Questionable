@@ -1,1 +1,3 @@
+- Config: Preferred crafting/gathering job (implementation soon) by alydev
+- building from release instead of stg ty erdelf by alydev
 - Daily quests checked by alydev

@@ -31,6 +31,10 @@ internal sealed class GeneralConfigComponent : ConfigComponent
 
     private readonly EClassJob[] _classJobIds;
     private readonly string[] _classJobNames;
+    private readonly EClassJob[] _craftJobIds;
+    private readonly string[] _craftJobNames;
+    private readonly EClassJob[] _gatherJobIds;
+    private readonly string[] _gatherJobNames;
 
     public GeneralConfigComponent(
         IDalamudPluginInterface pluginInterface,
@@ -62,6 +66,22 @@ internal sealed class GeneralConfigComponent : ConfigComponent
             .ToList();
         _classJobIds = DefaultClassJobs.Select(x => x.ClassJob).Concat(classJobs).ToArray();
         _classJobNames = DefaultClassJobs.Select(x => x.Name).Concat(classJobs.Select(x => x.ToFriendlyString())).ToArray();
+
+        var craftJobs = Enum.GetValues<EClassJob>()
+            .Where(x => x != EClassJob.Adventurer)
+            .Where(x => x.IsCrafter())
+            .OrderBy(x => sortedClassJobs.IndexOf(x))
+            .ToList();
+        _craftJobIds = craftJobs.ToArray();
+        _craftJobNames = craftJobs.Select(x => x.ToFriendlyString()).ToArray();
+
+        var gatherJobs = Enum.GetValues<EClassJob>()
+            .Where(x => x != EClassJob.Adventurer)
+            .Where(x => x == EClassJob.Miner || x == EClassJob.Botanist)
+            .OrderBy(x => sortedClassJobs.IndexOf(x))
+            .ToList();
+        _gatherJobIds = gatherJobs.ToArray();
+        _gatherJobNames = gatherJobs.Select(x => x.ToFriendlyString()).ToArray();
     }
 
     public override void DrawTab()
@@ -115,6 +135,38 @@ internal sealed class GeneralConfigComponent : ConfigComponent
         if (ImGui.Combo("Preferred Combat Job", ref combatJob, _classJobNames, _classJobNames.Length))
         {
             Configuration.General.CombatJob = _classJobIds[combatJob];
+            Save();
+        }
+
+
+        int craftingJob = Array.IndexOf(_craftJobIds, Configuration.General.CraftingJob);
+        if (craftingJob == -1)
+        {
+            Configuration.General.CraftingJob = EClassJob.Carpenter;
+            Save();
+
+            craftingJob = 8;
+        }
+
+        if (ImGui.Combo("Preferred Crafting Job", ref craftingJob, _craftJobNames, _craftJobNames.Length))
+        {
+            Configuration.General.CraftingJob = _craftJobIds[craftingJob];
+            Save();
+        }
+
+
+        int gatherJob = Array.IndexOf(_gatherJobIds, Configuration.General.GatheringJob);
+        if (gatherJob == -1)
+        {
+            Configuration.General.GatheringJob = EClassJob.Miner;
+            Save();
+
+            gatherJob = 16;
+        }
+
+        if (ImGui.Combo("Preferred Gathering Job", ref gatherJob, _gatherJobNames, _gatherJobNames.Length))
+        {
+            Configuration.General.GatheringJob = _gatherJobIds[gatherJob];
             Save();
         }
 

@@ -50,6 +50,8 @@
     "DoH",
     "DoL",
     "ConfiguredCombatJob",
-    "QuestStartJob"
+    "QuestStartJob",
+    "ConfiguredCraftingJob",
+    "ConfiguredGatheringJob"
   ]
 }

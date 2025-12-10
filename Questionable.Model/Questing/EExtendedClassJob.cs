@@ -55,5 +55,7 @@ public enum EExtendedClassJob
     DoL,
     ConfiguredCombatJob,
     QuestStartJob,
+    ConfiguredCraftingJob,
+    ConfiguredGatheringJob,
 }
 

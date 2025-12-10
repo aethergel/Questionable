@@ -37,6 +37,8 @@ internal sealed class Configuration : IPluginConfiguration
         public uint MountId { get; set; } = 71;
         public GrandCompany GrandCompany { get; set; } = GrandCompany.None;
         public EClassJob CombatJob { get; set; } = EClassJob.Adventurer;
+        public EClassJob CraftingJob { get; set; } = EClassJob.Carpenter;
+        public EClassJob GatheringJob { get; set; } = EClassJob.Miner;
         public bool HideInAllInstances { get; set; } = true;
         public bool UseEscToCancelQuesting { get; set; } = true;
         public bool ShowIncompleteSeasonalEvents { get; set; } = true;

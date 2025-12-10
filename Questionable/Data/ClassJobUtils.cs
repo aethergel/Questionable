@@ -90,7 +90,7 @@ internal sealed class ClassJobUtils
             EExtendedClassJob.DoM => Enum.GetValues<EClassJob>().Where(x => x.DealsMagicDamage()),
             EExtendedClassJob.DoH => Enum.GetValues<EClassJob>().Where(x => x.IsCrafter()),
             EExtendedClassJob.DoL => Enum.GetValues<EClassJob>().Where(x => x.IsGatherer()),
-            EExtendedClassJob.ConfiguredCombatJob => LookupConfiguredCombatJob() is var combatJob &&
+            EExtendedClassJob.ConfiguredCombatJob => LookupConfiguredJob(EExtendedClassJob.ConfiguredCombatJob) is var combatJob &&
                                                      combatJob != EClassJob.Adventurer
                 ? [combatJob]
                 : [],
@@ -98,16 +98,32 @@ internal sealed class ClassJobUtils
                                                startJob != EClassJob.Adventurer
                 ? [startJob]
                 : [],
+            EExtendedClassJob.ConfiguredCraftingJob => LookupConfiguredJob(EExtendedClassJob.DoH) is var craftJob &&
+                                                     craftJob != EClassJob.Adventurer
+                ? [craftJob]
+                : [],
+            EExtendedClassJob.ConfiguredGatheringJob => LookupConfiguredJob(EExtendedClassJob.DoL) is var gatherJob &&
+                                                     gatherJob != EClassJob.Adventurer
+                ? [gatherJob]
+                : [],
 
             _ => throw new ArgumentOutOfRangeException(nameof(classJob), classJob, null)
         };
     }
 
-    private EClassJob LookupConfiguredCombatJob()
+    private EClassJob LookupConfiguredJob(EExtendedClassJob jobType)
     {
-        var configuredJob = _configuration.General.CombatJob;
-        var combatJobGearSets = GetCombatJobGearSets();
-        HashSet<EClassJob> jobsWithGearSet = combatJobGearSets
+        EClassJob configuredJob;
+        if (jobType is EExtendedClassJob.ConfiguredCombatJob)
+            configuredJob = _configuration.General.CombatJob;
+        else if (jobType is EExtendedClassJob.DoH)
+            configuredJob = _configuration.General.CraftingJob;
+        else if (jobType is EExtendedClassJob.DoL)
+            configuredJob = _configuration.General.GatheringJob;
+        else
+            return EClassJob.Adventurer;
+        var jobGearSets = GetJobGearSets(jobType is EExtendedClassJob.ConfiguredCombatJob);
+        HashSet<EClassJob> jobsWithGearSet = jobGearSets
             .Select(x => x.ClassJob)
             .Distinct()
             .ToHashSet();
@@ -123,7 +139,7 @@ internal sealed class ClassJobUtils
                 return baseClass;
         }
 
-        return combatJobGearSets
+        return jobGearSets
             .OrderByDescending(x => x.Level)
             .ThenByDescending(x => x.ItemLevel)
             .ThenByDescending(x => x.ClassJob switch
@@ -140,7 +156,7 @@ internal sealed class ClassJobUtils
             .FirstOrDefault();
     }
 
-    private unsafe ReadOnlyCollection<(EClassJob ClassJob, short Level, short ItemLevel)> GetCombatJobGearSets()
+    private unsafe ReadOnlyCollection<(EClassJob ClassJob, short Level, short ItemLevel)> GetJobGearSets(bool combat=true)
     {
         List<(EClassJob, short, short)> jobs = [];
 
@@ -155,7 +171,7 @@ internal sealed class ClassJobUtils
             if (gearset->Flags.HasFlag(RaptureGearsetModule.GearsetFlag.Exists))
             {
                 EClassJob classJob = (EClassJob)gearset->ClassJob;
-                if (classJob.IsCrafter() || classJob.IsGatherer())
+                if (combat && (classJob.IsCrafter() || classJob.IsGatherer()))
                     continue;
 
                 short level = playerState->ClassJobLevels[_classJobToExpArrayIndex[classJob]];

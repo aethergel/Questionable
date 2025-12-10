@@ -16,7 +16,8 @@
           "TerritoryId": 400,
           "InteractionType": "AcceptQuest",
           "AetheryteShortcut": "The Churning Mists - Zenith",
-          "Fly": true
+          "Fly": true,
+          "RequiredCurrentJob": ["DoH"]
         }
       ]
     },
