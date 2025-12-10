@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Numerics;
 using Dalamud.Plugin.Services;
+using ECommons.ExcelServices.TerritoryEnumeration;
 using Microsoft.Extensions.Logging;
 using Questionable.Controller.Steps.Common;
 using Questionable.Data;
+using Questionable.External;
 using Questionable.Model;
 using Questionable.Model.Questing;
 
@@ -13,9 +15,11 @@ internal static class MoveTo
 {
     internal sealed class Factory(
         IClientState clientState,
+        ICommandManager commandManager,
         IObjectTable objectTable,
         AetheryteData aetheryteData,
         TerritoryData territoryData,
+        LifestreamIpc lifestreamIpc,
         ILogger<Factory> logger) : ITaskFactory
     {
         public IEnumerable<ITask> CreateAllTasks(Quest quest, QuestSequence sequence, QuestStep step)
@@ -55,6 +59,12 @@ internal static class MoveTo
                 yield break;
             }
 
+            if (clientState.TerritoryType != step.TerritoryId)
+            {
+                var dest = territoryData.GetName(step.TerritoryId);
+                if (dest != null)
+                    commandManager.ProcessCommand($"/li {dest}");
+            }
             yield return new WaitCondition.Task(() => clientState.TerritoryType == step.TerritoryId,
                 $"Wait(territory: {territoryData.GetNameAndId(step.TerritoryId)})");
 

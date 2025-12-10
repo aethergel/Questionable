@@ -12,6 +12,8 @@ internal sealed class LifestreamIpc
     private readonly ICallGateSubscriber<uint, bool> _aethernetTeleportByPlaceNameId;
     private readonly ICallGateSubscriber<uint, bool> _aethernetTeleportById;
     private readonly ICallGateSubscriber<bool> _aethernetTeleportToFirmament;
+    private readonly ICallGateSubscriber<bool> _isBusy;
+    private readonly ICallGateSubscriber<string, bool> _aethernetTeleport;
 
     public LifestreamIpc(IDalamudPluginInterface pluginInterface, ILogger<LifestreamIpc> logger)
     {
@@ -22,6 +24,18 @@ internal sealed class LifestreamIpc
             pluginInterface.GetIpcSubscriber<uint, bool>("Lifestream.AethernetTeleportById");
         _aethernetTeleportToFirmament =
             pluginInterface.GetIpcSubscriber<bool>("Lifestream.AethernetTeleportToFirmament");
+        _isBusy =
+            pluginInterface.GetIpcSubscriber<bool>("Lifestream.IsBusy");
+        _aethernetTeleport = 
+            pluginInterface.GetIpcSubscriber<string, bool>("Lifestream.AethernetTeleport");
+    }
+
+    public bool IsBusy => _isBusy.InvokeFunc();
+
+    public bool Teleport(string destination)
+    {
+        _logger.LogInformation($"Teleporting to vague string '{destination}'");
+        return _aethernetTeleport.InvokeFunc(destination);
     }
 
     public bool Teleport(EAetheryteLocation aetheryteLocation)
