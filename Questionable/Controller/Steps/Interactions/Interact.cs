@@ -238,7 +238,7 @@ internal static class Interact
                 return ETaskResult.StillRunning;
             }
 
-            if (objectTable[0] != null && Task.Quest != null)
+            if (objectTable[0] != null && Task.Quest != null && InteractionType == EInteractionType.AcceptQuest)
             {
                 var acceptableJobs = Task.Quest.Info.ClassJobs;
                 var playerJob = (EClassJob)((IPlayerCharacter)objectTable[0]!).ClassJob.Value.RowId;

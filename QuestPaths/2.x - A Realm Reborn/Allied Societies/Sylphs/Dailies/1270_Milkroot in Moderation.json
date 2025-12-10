@@ -1,10 +1,7 @@
 ﻿{
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
   "Author": "alydev",
-  "LastChecked": {
-    "Username": "alydev",
-    "Date": "2025-11-07"
-  },
+  "LastChecked":{"Username": "alydev", "Date": "2025-12-10"},
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -41,24 +38,9 @@
           "KillEnemyDataIds": [
             2466
           ],
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 3
-              },
-              {
-                "Low": 4
-              },
-              {
-                "Low": 5
-              }
-            ],
-            null
-          ]
+          "RequiredQuestVariables": [null,null,null,null,[
+              {"Low": 3},{"Low": 4},{"Low": 5}
+            ],null]
         },
         {
           "$": "QW: 16 16 0 0 37(5) 32",
@@ -71,35 +53,12 @@
           "TerritoryId": 152,
           "InteractionType": "UseItem",
           "ItemId": 2001181,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 3
-              },
-              {
-                "Low": 4
-              },
-              {
-                "Low": 5
-              }
-            ],
-            null
-          ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 2
-            }
-          ]
+          "RequiredQuestVariables": [null,null,null,null,[
+              {"Low": 3},{"Low": 4},{"Low": 5}
+            ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"High": 2}]
         },
+
         {
           "Comment": "3 4 5",
           "DataId": 2003383,
@@ -116,24 +75,9 @@
           "KillEnemyDataIds": [
             2466
           ],
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 3
-              },
-              {
-                "Low": 4
-              },
-              {
-                "Low": 5
-              }
-            ],
-            null
-          ]
+          "RequiredQuestVariables": [null,null,null,null,[
+              {"Low": 3},{"Low": 4},{"Low": 5}
+            ],null]
         },
         {
           "DataId": 2466,
@@ -145,35 +89,12 @@
           "TerritoryId": 152,
           "InteractionType": "UseItem",
           "ItemId": 2001181,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 3
-              },
-              {
-                "Low": 4
-              },
-              {
-                "Low": 5
-              }
-            ],
-            null
-          ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 1
-            }
-          ]
+          "RequiredQuestVariables": [null,null,null,null,[
+              {"Low": 3},{"Low": 4},{"Low": 5}
+            ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"High": 1}]
         },
+
         {
           "Comment": "1 2 4",
           "DataId": 2003385,
@@ -190,24 +111,9 @@
           "KillEnemyDataIds": [
             2466
           ],
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 2
-              },
-              {
-                "Low": 4
-              }
-            ],
-            null
-          ]
+          "RequiredQuestVariables": [null,null,null,null,[
+              {"Low": 1},{"Low": 2},{"Low": 4}
+            ],null]
         },
         {
           "$": "QW: 16 0 1(1) 0 33(1) 4(4)",
@@ -220,35 +126,12 @@
           "TerritoryId": 152,
           "InteractionType": "UseItem",
           "ItemId": 2001181,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 2
-              },
-              {
-                "Low": 4
-              }
-            ],
-            null
-          ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Low": 4
-            }
-          ]
+          "RequiredQuestVariables": [null,null,null,null,[
+              {"Low": 1},{"Low": 2},{"Low": 4}
+            ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"Low": 4}]
         },
+
         {
           "Comment": "1",
           "DataId": 2003381,
@@ -265,18 +148,9 @@
           "KillEnemyDataIds": [
             2466
           ],
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 1
-              }
-            ],
-            null
-          ]
+          "RequiredQuestVariables": [null,null,null,null,[
+              {"Low": 1}
+            ],null]
         },
         {
           "DataId": 2466,
@@ -288,29 +162,12 @@
           "TerritoryId": 152,
           "InteractionType": "UseItem",
           "ItemId": 2001181,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 1
-              }
-            ],
-            null
-          ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 4
-            }
-          ]
+          "RequiredQuestVariables": [null,null,null,null,[
+              {"Low": 1}
+            ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"High": 4}]
         },
+
         {
           "Comment": "2 3",
           "DataId": 2003380,
@@ -327,21 +184,9 @@
           "KillEnemyDataIds": [
             2466
           ],
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 2
-              },
-              {
-                "Low": 3
-              }
-            ],
-            null
-          ]
+          "RequiredQuestVariables": [null,null,null,null,[
+              {"Low": 2},{"Low": 3}
+            ],null]
         },
         {
           "DataId": 2466,
@@ -353,32 +198,12 @@
           "TerritoryId": 152,
           "InteractionType": "UseItem",
           "ItemId": 2001181,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 2
-              },
-              {
-                "Low": 3
-              }
-            ],
-            null
-          ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 8
-            }
-          ]
+          "RequiredQuestVariables": [null,null,null,null,[
+              {"Low": 2},{"Low": 3}
+            ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"High": 8}]
         },
+
         {
           "Comment": "1 2 5",
           "DataId": 2003384,
@@ -395,24 +220,9 @@
           "KillEnemyDataIds": [
             2466
           ],
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 2
-              },
-              {
-                "Low": 5
-              }
-            ],
-            null
-          ]
+          "RequiredQuestVariables": [null,null,null,null,[
+              {"Low": 1},{"Low": 2},{"Low": 5}
+            ],null]
         },
         {
           "DataId": 2466,
@@ -424,35 +234,12 @@
           "TerritoryId": 152,
           "InteractionType": "UseItem",
           "ItemId": 2001181,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 2
-              },
-              {
-                "Low": 5
-              }
-            ],
-            null
-          ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Low": 8
-            }
-          ]
+          "RequiredQuestVariables": [null,null,null,null,[
+              {"Low": 1},{"Low": 2},{"Low": 5}
+            ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"Low": 8}]
         }
+
       ]
     },
     {

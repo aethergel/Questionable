@@ -1,4 +1,5 @@
 - Config: Preferred crafting/gathering job by alydev
 - Quests: automatic switching to configured job if current job is invalid for quest by alydev
+  - ^ only on AcceptQuest for now by alydev
 - building from release instead of stg ty erdelf by alydev
 - Daily quests checked by alydev
