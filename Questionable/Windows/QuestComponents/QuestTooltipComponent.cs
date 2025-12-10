@@ -87,6 +87,9 @@ internal sealed class QuestTooltipComponent
 
             if (quest.Root.LastChecked.Date != null)
                 ImGui.Text($"Last checked: {quest.Root.LastChecked.Date} by {quest.Root.LastChecked.Username}");
+
+            if (questInfo.AlliedSociety != EAlliedSociety.None)
+                ImGui.Text($"Society: {questInfo.AlliedSociety}");
         }
         else
         {
