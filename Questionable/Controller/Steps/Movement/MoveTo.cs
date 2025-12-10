@@ -59,18 +59,20 @@ internal static class MoveTo
                 yield break;
             }
 
-            if (clientState.TerritoryType != step.TerritoryId &&
-                step.AetheryteShortcut == null &&
-                step.AethernetShard == null &&
-                step.InteractionType != EInteractionType.Gather)
-            {
-                var dest = territoryData.GetName(step.TerritoryId);
-                if (dest != null)
-                {
-                    logger.LogInformation($"{clientState.TerritoryType} != {step.TerritoryId}, teleporting to vague string '{dest}'");
-                    commandManager.ProcessCommand($"/li {dest}");
-                }
-            }
+            //if (clientState.TerritoryType != step.TerritoryId &&
+            //    step.TargetTerritoryId == null &&
+            //    step.AetheryteShortcut == null &&
+            //    step.AethernetShard == null &&
+            //    step.InteractionType == EInteractionType.WalkTo ||
+            //    step.InteractionType == EInteractionType.AcceptQuest)
+            //{
+            //    var dest = territoryData.GetName(step.TerritoryId);
+            //    if (dest != null)
+            //    {
+            //        logger.LogInformation($"{clientState.TerritoryType} != {step.TerritoryId}, teleporting to vague string '{dest}'");
+            //        commandManager.ProcessCommand($"/li {dest}");
+            //    }
+            //}
             yield return new WaitCondition.Task(() => clientState.TerritoryType == step.TerritoryId,
                 $"Wait(territory: {territoryData.GetNameAndId(step.TerritoryId)})");
 

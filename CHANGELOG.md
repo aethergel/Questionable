@@ -1,8 +1,6 @@
-- Fix bug where lifestream is called despite aethernetshortcut being present
+- Disable Lifestream shortcut until bugs are fixed
 - More daily quests checked
 - Config: Preferred crafting/gathering job
 - Quests: automatic switching to configured job if current job is invalid for quest
   - ^ only on AcceptQuest for now
-- Movement: using Lifestream to teleport to zone automatically
-  - ^ added necessary exceptions cos things broke
 - Craft: switch to QuestAcceptedJob instead of first recipe match
