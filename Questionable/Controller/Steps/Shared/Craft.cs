@@ -10,7 +10,9 @@ using LLib.GameData;
 using Lumina.Excel.Sheets;
 using Microsoft.Extensions.Logging;
 using Questionable.External;
+using Questionable.Functions;
 using Questionable.Model.Questing;
+using static Questionable.Controller.GatheringController;
 using Mount = Questionable.Controller.Steps.Common.Mount;
 using Quest = Questionable.Model.Quest;
 
@@ -30,12 +32,13 @@ internal static class Craft
             return
             [
                 new Mount.UnmountTask(),
-                new CraftTask(step.ItemId.Value, step.ItemCount.Value)
+                new CraftTask(quest, step.ItemId.Value, step.ItemCount.Value)
             ];
         }
     }
 
     internal sealed record CraftTask(
+        Quest Quest,
         uint ItemId,
         int ItemCount) : ITask
     {
@@ -44,6 +47,7 @@ internal static class Craft
 
     internal sealed class DoCraft(
         IDataManager dataManager,
+        QuestFunctions questFunctions,
         ArtisanIpc artisanIpc,
         ILogger<DoCraft> logger,
         QuestController questController) : TaskExecutor<CraftTask>
@@ -68,7 +72,11 @@ internal static class Craft
 
             RecipeLookup? recipeLookup = dataManager.GetExcelSheet<RecipeLookup>().GetRowOrDefault(Task.ItemId) ??
                 throw new TaskException($"Item {Task.ItemId} is not craftable");
-            uint recipeId = (EClassJob)PlayerState.Instance()->CurrentClassJobId switch
+            var questWork = questFunctions.GetQuestProgressInfo(Task.Quest.Id);
+            uint recipeId = (questWork != null && questWork.ClassJob.IsCrafter() ?
+                              questWork.ClassJob :
+                              (EClassJob)PlayerState.Instance()->CurrentClassJobId
+                             ) switch
             {
                 EClassJob.Carpenter => recipeLookup.Value.CRP.RowId,
                 EClassJob.Blacksmith => recipeLookup.Value.BSM.RowId,
