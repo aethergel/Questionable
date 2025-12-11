@@ -6,6 +6,7 @@ using Dalamud.Game.ClientState.Objects.Enums;
 using Dalamud.Game.ClientState.Objects.SubKinds;
 using Dalamud.Game.ClientState.Objects.Types;
 using Dalamud.Plugin.Services;
+using ECommons.GameHelpers;
 using FFXIVClientStructs.FFXIV.Client.Game;
 using FFXIVClientStructs.FFXIV.Client.Game.UI;
 using FFXIVClientStructs.FFXIV.Client.UI.Misc;
@@ -113,6 +114,7 @@ internal static class Interact
         CameraFunctions cameraFunctions,
         Configuration configuration,
         ICondition condition,
+        IChatGui chatGui,
         IObjectTable objectTable,
         ILogger<DoInteract> logger)
         : TaskExecutor<Task>, IConditionChangeAware
@@ -238,32 +240,38 @@ internal static class Interact
                 return ETaskResult.StillRunning;
             }
 
-            if (objectTable[0] != null && Task.Quest != null && InteractionType == EInteractionType.AcceptQuest)
+            if (objectTable[0] is IPlayerCharacter player && Task.Quest != null && InteractionType == EInteractionType.AcceptQuest)
             {
-                var acceptableJobs = Task.Quest.Info.ClassJobs;
-                var playerJob = (EClassJob)((IPlayerCharacter)objectTable[0]!).ClassJob.Value.RowId;
+                List<EClassJob> acceptableJobs = [.. Task.Quest.Info.ClassJobs];
+                var playerJob = (EClassJob)player.ClassJob.Value.RowId;
                 if (!acceptableJobs.Contains(playerJob))
                 {
-                    var switchTo = configuration.General.CombatJob;
-                    if (acceptableJobs[0].IsCrafter())
-                        switchTo = configuration.General.CraftingJob;
-                    if (acceptableJobs[0].IsGatherer())
-                        switchTo = configuration.General.GatheringJob;
-                    logger.LogInformation($"Current ClassJob {playerJob} not valid for {Task.Quest.Id}, switching to {switchTo}");
+                    if (!acceptableJobs[0].IsCrafter() && !acceptableJobs[0].IsGatherer())
+                        acceptableJobs = [.. acceptableJobs.Prepend(configuration.General.CombatJob)];
+                    else if (acceptableJobs[0].IsCrafter())
+                        acceptableJobs = [.. acceptableJobs.Prepend(configuration.General.CraftingJob)];
+                    else if (acceptableJobs[0].IsGatherer())
+                        acceptableJobs = [.. acceptableJobs.Prepend(configuration.General.GatheringJob)];
+                    logger.LogInformation($"Current ClassJob {playerJob} not valid for {Task.Quest.Id}, attempting to switch");
                     unsafe
                     {
+                        bool changed = false;
                         var gearsetModule = RaptureGearsetModule.Instance();
                         if (gearsetModule != null)
                         {
                             for (int i = 0; i < 100; ++i)
                             {
                                 var gearset = gearsetModule->GetGearset(i);
-                                if (gearset->ClassJob == (byte)switchTo)
+                                if (acceptableJobs[0].Equals((EClassJob)gearset->ClassJob))
                                 {
                                     gearsetModule->EquipGearset(gearset->Id);
+                                    changed = true;
                                 }
                             }
                         }
+                        if (!changed)
+                            chatGui.PrintError($"Quest {Task.Quest.Info.Name} requires a job like {acceptableJobs[0]}, " +
+                                                "but you do not have a valid job configured in QST Settings.");
                     }
                     _continueAt = DateTime.Now.AddSeconds(0.2);
                     return ETaskResult.StillRunning;

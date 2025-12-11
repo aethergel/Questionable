@@ -1,9 +1,6 @@
+- Fix job switch not checking for valid jobs
 - Migrate xan preset changes to Overworld -Kiarra
 - Add shortcuts to the initial pvp quests -Kiarra
 - Increase delays in combat recovery by 0.5s
 - Disable Lifestream shortcut until bugs are fixed
 - More daily quests checked
-- Config: Preferred crafting/gathering job
-- Quests: automatic switching to configured job if current job is invalid for quest
-  - ^ only on AcceptQuest for now
-- Craft: switch to QuestAcceptedJob instead of first recipe match
