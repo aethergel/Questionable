@@ -76,9 +76,13 @@ internal sealed class GatheringPointRegistry : IDisposable
                     {
                         foreach (GatheringLocation position in node.Locations)
                         {
-                            gatheringRoot.Steps[0].Position = position.Position;
+                            gatheringRoot.Steps[0].Position = gatheringRoot.Steps[0].Position ?? position.Position;
+                            gatheringRoot.Steps[0].Fly = gatheringRoot.Steps[0].Fly ?? true;
+                            break;
                         }
+                        break;
                     }
+                    break;
                 }
             }
             _gatheringPoints[new GatheringPointId(gatheringPointId)] = gatheringRoot;
@@ -128,9 +132,13 @@ internal sealed class GatheringPointRegistry : IDisposable
                 {
                     foreach (GatheringLocation position in node.Locations)
                     {
-                        gatheringRoot.Steps[0].Position = position.Position;
+                        gatheringRoot.Steps[0].Position = gatheringRoot.Steps[0].Position ?? position.Position;
+                        gatheringRoot.Steps[0].Fly = gatheringRoot.Steps[0].Fly ?? true;
+                        break;
                     }
+                    break;
                 }
+                break;
             }
         }
         _gatheringPoints[gatheringPointId] = gatheringRoot;
