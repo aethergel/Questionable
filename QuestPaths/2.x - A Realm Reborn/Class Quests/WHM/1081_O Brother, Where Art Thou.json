@@ -24,9 +24,6 @@
             "DelaySeconds": 0.75
           },
           "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            },
             "StepIf": {
               "Flying": "Unlocked",
               "NearPosition": {
@@ -147,9 +144,6 @@
             "DelaySeconds": 0.75
           },
           "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            },
             "StepIf": {
               "Flying": "Unlocked",
               "NearPosition": {

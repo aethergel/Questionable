@@ -14,9 +14,6 @@
       "SkipConditions": {
         "StepIf": {
           "Flying": "Unlocked"
-        },
-        "AetheryteShortcutIf": {
-          "InSameTerritory": true
         }
       }
     },

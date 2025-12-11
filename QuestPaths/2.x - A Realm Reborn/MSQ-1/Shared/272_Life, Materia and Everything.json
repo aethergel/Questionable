@@ -30,9 +30,6 @@
           "InteractionType": "WalkTo",
           "AetheryteShortcut": "Central Thanalan - Black Brush Station",
           "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            },
             "StepIf": {
               "NearPosition": {
                 "Position": {

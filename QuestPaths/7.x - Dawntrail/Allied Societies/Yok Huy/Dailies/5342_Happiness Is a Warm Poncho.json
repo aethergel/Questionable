@@ -21,9 +21,6 @@
           "Fly": true,
           "AetheryteShortcut": "Urqopacha - Worlar's Echo",
           "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            },
             "StepIf": {
               "NearPosition": {
                 "Position": {
@@ -63,9 +60,6 @@
           "Fly": true,
           "AetheryteShortcut": "Urqopacha - Worlar's Echo",
           "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            },
             "StepIf": {
               "NearPosition": {
                 "Position": {
@@ -136,9 +130,6 @@
           "Fly": true,
           "AetheryteShortcut": "Urqopacha - Worlar's Echo",
           "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            },
             "StepIf": {
               "NearPosition": {
                 "Position": {

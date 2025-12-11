@@ -96,9 +96,6 @@
           "StopDistance": 4,
           "AetheryteShortcut": "Shaaloani - Hhusatahwi",
           "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            },
             "StepIf": {
               "NotNamePlateIconId": [
                 71346
@@ -135,9 +132,6 @@
           "StopDistance": 4,
           "AetheryteShortcut": "Shaaloani - Hhusatahwi",
           "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            },
             "StepIf": {
               "NotNamePlateIconId": [
                 71346
@@ -174,9 +168,6 @@
           "StopDistance": 4,
           "AetheryteShortcut": "Shaaloani - Hhusatahwi",
           "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            },
             "StepIf": {
               "NotNamePlateIconId": [
                 71346

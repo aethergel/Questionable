@@ -72,9 +72,6 @@
           "AetheryteShortcut": "Azys Lla - Helix",
           "Fly": true,
           "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            },
             "StepIf": {
               "NearPosition": {
                 "Position": {

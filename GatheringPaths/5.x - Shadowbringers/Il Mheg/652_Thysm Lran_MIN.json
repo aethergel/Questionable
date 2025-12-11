@@ -11,12 +11,7 @@
       "TerritoryId": 816,
       "InteractionType": "WalkTo",
       "AetheryteShortcut": "Il Mheg - Lydha Lran",
-      "Fly": true,
-      "SkipConditions": {
-        "AetheryteShortcutIf": {
-          "InSameTerritory": true
-        }
-      }
+      "Fly": true
     },
     {
       "Position": {

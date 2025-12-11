@@ -21,9 +21,6 @@
             "[Old Sharlayan] The Baldesion Annex"
           ],
           "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            },
             "StepIf": {
               "NearPosition": {
                 "Position": {

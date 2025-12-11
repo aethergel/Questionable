@@ -40,7 +40,7 @@
         }
       ]
     },
-{
+    {
       "Sequence": 2,
       "Steps": [
         {
@@ -55,7 +55,14 @@
           "ComplexCombatData": [
             {
               "DataId": 17626,
-              "CompletionQuestVariablesFlags": [null,16,null,null,null,null]
+              "CompletionQuestVariablesFlags": [
+                null,
+                16,
+                null,
+                null,
+                null,
+                null
+              ]
             }
           ]
         },
@@ -116,7 +123,14 @@
           "TerritoryId": 957,
           "InteractionType": "Interact",
           "AetheryteShortcut": "Thavnair - Yedlihmad",
-          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
+          "CompletionQuestVariablesFlags": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            32
+          ]
         },
         {
           "DataId": 1048355,
@@ -127,7 +141,14 @@
           },
           "TerritoryId": 957,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
+          "CompletionQuestVariablesFlags": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            64
+          ]
         },
         {
           "DataId": 1048352,
@@ -138,7 +159,14 @@
           },
           "TerritoryId": 957,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
+          "CompletionQuestVariablesFlags": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            128
+          ]
         }
       ]
     },

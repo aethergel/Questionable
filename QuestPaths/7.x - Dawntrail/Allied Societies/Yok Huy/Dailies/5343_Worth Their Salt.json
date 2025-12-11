@@ -1,7 +1,6 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
   "Author": ["alydev","stoat33"],
-  "Comment": "vnavmesh v0.5.5.0",
   "LastChecked": {
     "Username": "alydev",
     "Date": "2025-10-31"
@@ -22,9 +21,6 @@
           "Fly": true,
           "AetheryteShortcut": "Urqopacha - Worlar's Echo",
           "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            },
             "StepIf": {
               "NearPosition": {
                 "Position": {
@@ -122,59 +118,6 @@
       "Sequence": 2,
       "Steps": [
         {
-          "DataId": 1054635,
-          "Position": {
-            "X": 493.2173,
-            "Y": 142.24991,
-            "Z": 783.0471
-          },
-          "TerritoryId": 1187,
-          "InteractionType": "WalkTo",
-          "Fly": true,
-          "AetheryteShortcut": "Urqopacha - Worlar's Echo",
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InTerritory": [
-                1187,
-                1297
-              ]
-            },
-            "StepIf": {
-              "InTerritory": [
-                1297
-              ],
-              "NearPosition": {
-                "Position": {
-                  "X": 493.2173,
-                  "Y": 142.24991,
-                  "Z": 783.0471
-                },
-                "TerritoryId": 1187,
-                "MaximumDistance": 20
-              }
-            }
-          }
-        },
-        {
-          "$": "Recovery",
-          "DataId": 1054640,
-          "Position": {
-            "X": 496.11658,
-            "Y": 142.24991,
-            "Z": 801.6022
-          },
-          "TerritoryId": 1187,
-          "InteractionType": "Interact",
-          "TargetTerritoryId": 1297,
-          "SkipConditions": {
-            "StepIf": {
-              "NotInTerritory": [
-                1187
-              ]
-            }
-          }
-        },
-        {
           "DataId": 2014945,
           "Position": {
             "X": 73.22275,
@@ -250,9 +193,6 @@
           "Fly": true,
           "AetheryteShortcut": "Urqopacha - Worlar's Echo",
           "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            },
             "StepIf": {
               "NearPosition": {
                 "Position": {

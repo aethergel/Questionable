@@ -15,9 +15,6 @@
             "[Ishgard] The Brume"
           ],
           "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            },
             "StepIf": {
               "Item": {
                 "NotInInventory": true

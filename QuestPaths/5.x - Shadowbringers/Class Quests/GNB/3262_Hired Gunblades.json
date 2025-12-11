@@ -11,9 +11,6 @@
           "ItemId": 27357,
           "AetheryteShortcut": "East Shroud - Hawthorne Hut",
           "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            },
             "StepIf": {
               "Item": {
                 "NotInInventory": true

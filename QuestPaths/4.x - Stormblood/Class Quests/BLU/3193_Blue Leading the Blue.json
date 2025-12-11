@@ -11,9 +11,6 @@
           "ItemId": 22746,
           "AetheryteShortcut": "Lower La Noscea - Moraby Drydocks",
           "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            },
             "StepIf": {
               "Item": {
                 "NotInInventory": true

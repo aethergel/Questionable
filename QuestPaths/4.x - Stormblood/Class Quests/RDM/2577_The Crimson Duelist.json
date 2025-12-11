@@ -11,9 +11,6 @@
           "ItemId": 20389,
           "AetheryteShortcut": "Central Thanalan - Black Brush Station",
           "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            },
             "StepIf": {
               "Item": {
                 "NotInInventory": true

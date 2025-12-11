@@ -50,9 +50,6 @@
           "AetheryteShortcut": "Southern Thanalan - Little Ala Mhigo",
           "Fly": true,
           "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            },
             "StepIf": {
               "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
             }

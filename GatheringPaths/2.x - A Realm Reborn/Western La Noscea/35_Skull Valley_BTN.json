@@ -5,12 +5,7 @@
     {
       "TerritoryId": 138,
       "InteractionType": "None",
-      "AetheryteShortcut": "Western La Noscea - Aleport",
-      "SkipConditions": {
-        "AetheryteShortcutIf": {
-          "InSameTerritory": true
-        }
-      }
+      "AetheryteShortcut": "Western La Noscea - Aleport"
     }
   ],
   "Groups": [

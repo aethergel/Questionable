@@ -61,9 +61,6 @@
           "Fly": true,
           "AetheryteShortcut": "Shaaloani - Sheshenewezi Springs",
           "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            },
             "StepIf": {
               "NotNamePlateIconId": [
                 71223
@@ -88,9 +85,6 @@
           "Fly": true,
           "AetheryteShortcut": "Shaaloani - Sheshenewezi Springs",
           "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            },
             "StepIf": {
               "NotNamePlateIconId": [
                 71226
@@ -126,9 +120,6 @@
           "Fly": true,
           "AetheryteShortcut": "Shaaloani - Sheshenewezi Springs",
           "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            },
             "StepIf": {
               "NotNamePlateIconId": [
                 71226
@@ -164,9 +155,6 @@
           "Fly": true,
           "AetheryteShortcut": "Shaaloani - Sheshenewezi Springs",
           "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            },
             "StepIf": {
               "NotNamePlateIconId": [
                 71226

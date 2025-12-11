@@ -19,9 +19,6 @@
             "[Rhalgr's Reach] Northeastern Rhalgr's Reach"
           ],
           "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            },
             "StepIf": {
               "NearPosition": {
                 "Position": {
@@ -130,9 +127,6 @@
             "[Rhalgr's Reach] Northeastern Rhalgr's Reach"
           ],
           "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            },
             "StepIf": {
               "NearPosition": {
                 "Position": {

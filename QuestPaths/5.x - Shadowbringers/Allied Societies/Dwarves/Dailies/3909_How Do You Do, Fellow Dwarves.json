@@ -31,6 +31,7 @@
           },
           "TerritoryId": 813,
           "InteractionType": "Say",
+          "AetheryteShortcut":"Lakeland - Ostall Imperative",
           "ChatMessage": {
             "Key": "TEXT_BANDWA108_03909_SAYTODO_000_030"
           },

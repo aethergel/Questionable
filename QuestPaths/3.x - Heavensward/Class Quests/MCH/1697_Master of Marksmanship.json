@@ -11,9 +11,6 @@
           "ItemId": 10462,
           "AetheryteShortcut": "Outer La Noscea - Camp Overlook",
           "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            },
             "StepIf": {
               "Item": {
                 "NotInInventory": true

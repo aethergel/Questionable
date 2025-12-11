@@ -26,11 +26,12 @@
         {
           "DataId": 1017322,
           "Position": {
-            "X": -331.5633,
-            "Y": 58.823204,
-            "Z": 323.17078
+            "X": -332.54617,
+            "Y": 58.857433,
+            "Z": 322.43085
           },
           "TerritoryId": 400,
+          "StopDistance": 1,
           "InteractionType": "Interact",
           "AetheryteShortcut": "The Churning Mists - Zenith",
           "Fly": true

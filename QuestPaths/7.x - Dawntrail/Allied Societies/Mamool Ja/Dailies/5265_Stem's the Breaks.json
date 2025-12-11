@@ -32,6 +32,7 @@
           "StopDistance": 1,
           "TerritoryId": 1189,
           "InteractionType": "WalkTo",
+          "AetheryteShortcut": "Yak T'el - Mamook",
           "Fly": true
         },
         {

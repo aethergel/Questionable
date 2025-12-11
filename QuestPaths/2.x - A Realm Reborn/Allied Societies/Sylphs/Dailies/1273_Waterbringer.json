@@ -242,6 +242,11 @@
       "Sequence": 3,
       "Steps": [
         {
+          "TerritoryId": 152,
+          "InteractionType": "StatusOff",
+          "Status": "Transparent"
+        },
+        {
           "Position": {
             "X": 384.4284,
             "Y": -34.5,
@@ -249,8 +254,6 @@
           },
           "TerritoryId": 152,
           "InteractionType": "WalkTo",
-          "Comment": "Waiting for Transparent effect to time out",
-          "DelaySecondsAtStart": 15,
           "StopDistance": 1,
           "Fly": true,
           "Land": true

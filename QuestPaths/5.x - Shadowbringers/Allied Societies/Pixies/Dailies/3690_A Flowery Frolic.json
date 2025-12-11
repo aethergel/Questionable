@@ -31,6 +31,7 @@
           },
           "TerritoryId": 816,
           "InteractionType": "Combat",
+          "AetheryteShortcut": "Il Mheg - Lydha Lran",
           "EnemySpawnType": "AfterInteraction",
           "KillEnemyDataIds": [
             11443

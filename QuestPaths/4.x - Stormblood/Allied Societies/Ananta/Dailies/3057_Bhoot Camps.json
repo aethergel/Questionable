@@ -1,6 +1,7 @@
 ﻿{
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
   "Author": "liza",
+  "LastChecked":{"Username": "alydev", "Date": "2025-12-12"},
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -57,7 +58,6 @@
           },
           "TerritoryId": 612,
           "InteractionType": "Combat",
-          "Comment": "Kill enemy, then use item",
           "EnemySpawnType": "AfterInteraction",
           "KillEnemyDataIds": [
             8591
@@ -82,9 +82,9 @@
         {
           "DataId": 8591,
           "Position": {
-            "X": 101.304565,
-            "Y": 41.031494,
-            "Z": -180.89569
+            "X": 109.649055,
+            "Y": 41.41562,
+            "Z": -176.72021
           },
           "TerritoryId": 612,
           "InteractionType": "UseItem",
@@ -115,7 +115,6 @@
           },
           "TerritoryId": 612,
           "InteractionType": "Combat",
-          "Comment": "Kill enemy, then use item",
           "EnemySpawnType": "AfterInteraction",
           "KillEnemyDataIds": [
             8591
@@ -140,9 +139,9 @@
         {
           "DataId": 8591,
           "Position": {
-            "X": 136.40039,
-            "Y": 50.369995,
-            "Z": -397.69592
+            "X": 144.12134,
+            "Y": 50.230858,
+            "Z": -403.06708
           },
           "TerritoryId": 612,
           "InteractionType": "UseItem",
@@ -173,7 +172,6 @@
           },
           "TerritoryId": 612,
           "InteractionType": "Combat",
-          "Comment": "Kill enemy, then use item",
           "EnemySpawnType": "AfterInteraction",
           "KillEnemyDataIds": [
             8591
@@ -198,9 +196,9 @@
         {
           "DataId": 8591,
           "Position": {
-            "X": 12.588623,
-            "Y": 41.672363,
-            "Z": -294.02612
+            "X": 5.508484,
+            "Y": 41.686993,
+            "Z": -295.64362
           },
           "TerritoryId": 612,
           "InteractionType": "UseItem",

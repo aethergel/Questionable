@@ -4,7 +4,6 @@
     "Censored",
     "alydev"
   ],
-  "Comment": "vnavmesh v0.5.5.0",
   "LastChecked": {
     "Username": "alydev",
     "Date": "2025-10-31"
@@ -25,9 +24,6 @@
           "Fly": true,
           "AetheryteShortcut": "Urqopacha - Worlar's Echo",
           "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            },
             "StepIf": {
               "NearPosition": {
                 "Position": {
@@ -154,9 +150,6 @@
           "Fly": true,
           "AetheryteShortcut": "Urqopacha - Worlar's Echo",
           "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            },
             "StepIf": {
               "NearPosition": {
                 "Position": {

@@ -5,12 +5,7 @@
     {
       "TerritoryId": 156,
       "InteractionType": "None",
-      "AetheryteShortcut": "Mor Dhona",
-      "SkipConditions": {
-        "AetheryteShortcutIf": {
-          "InSameTerritory": true
-        }
-      }
+      "AetheryteShortcut": "Mor Dhona"
     }
   ],
   "ExtraQuestItems": [

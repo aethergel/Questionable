@@ -5,12 +5,7 @@
     {
       "TerritoryId": 148,
       "InteractionType": "None",
-      "AetheryteShortcut": "Central Shroud - Bentbranch Meadows",
-      "SkipConditions": {
-        "AetheryteShortcutIf": {
-          "InSameTerritory": true
-        }
-      }
+      "AetheryteShortcut": "Central Shroud - Bentbranch Meadows"
     }
   ],
   "Groups": [

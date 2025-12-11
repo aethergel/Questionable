@@ -110,9 +110,6 @@
             "[Limsa Lominsa] Fishermen's Guild"
           ],
           "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            },
             "StepIf": {
               "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
             }

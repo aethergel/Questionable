@@ -5,20 +5,7 @@
     {
       "TerritoryId": 1189,
       "InteractionType": "None",
-      "AetheryteShortcut": "Yak T'el - Iq Br'aax",
-      "SkipConditions": {
-        "AetheryteShortcutIf": {
-          "NearPosition": {
-            "Position": {
-              "X": 23.8063,
-              "Y": 17.44395,
-              "Z": -861.3718
-            },
-            "TerritoryId": 1189,
-            "MaximumDistance": 250
-          }
-        }
-      }
+      "AetheryteShortcut": "Yak T'el - Iq Br'aax"
     }
   ],
   "Groups": [

@@ -20,9 +20,6 @@
             "[Crystarium] The Crystalline Mean"
           ],
           "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            },
             "AethernetShortcutIf": {
               "InSameTerritory": true
             }

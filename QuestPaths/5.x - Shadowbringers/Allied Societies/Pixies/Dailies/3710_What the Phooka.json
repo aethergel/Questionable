@@ -31,6 +31,7 @@
           },
           "TerritoryId": 816,
           "InteractionType": "UseItem",
+          "AetheryteShortcut": "Il Mheg - Lydha Lran",
           "ItemId": 2002945,
           "$": "QW 0 32 0 0 0 0",
           "Fly": true

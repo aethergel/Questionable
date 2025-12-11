@@ -71,9 +71,6 @@
           "StopDistance": 4,
           "AetheryteShortcut": "Kugane",
           "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            },
             "StepIf": {
               "CompletionQuestVariablesFlags": [1,null,null,null,null,64]
             }
@@ -91,9 +88,6 @@
           "StopDistance": 4,
           "AetheryteShortcut": "Kugane",
           "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            },
             "StepIf": {
               "CompletionQuestVariablesFlags": [2,null,null,null,null,null]
             }

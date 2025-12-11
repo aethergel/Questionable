@@ -32,6 +32,7 @@
           "StopDistance": 1,
           "TerritoryId": 816,
           "InteractionType": "Interact",
+          "AetheryteShortcut": "Il Mheg - Lydha Lran",
           "Fly": true,
           "RequiredQuestVariables": [
             null,

@@ -19,9 +19,6 @@
           "Fly": true,
           "Comment": "Try to use the coffer Bookwyrm's Attire Coffer (IL 385)",
           "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            },
             "StepIf": {
               "Item": {
                 "NotInInventory": true
@@ -166,9 +163,6 @@
             "[Idyllshire] Prologue Gate (Western Hinterlands)"
           ],
           "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            },
             "AethernetShortcutIf": {
               "InSameTerritory": true
             }

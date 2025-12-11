@@ -36,9 +36,6 @@
           "InteractionType": "WalkTo",
           "AetheryteShortcut": "Coerthas Central Highlands - Camp Dragonhead",
           "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            },
             "StepIf": {
               "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
             }
@@ -89,9 +86,6 @@
           "AetheryteShortcut": "South Shroud - Camp Tranquil",
           "Fly": true,
           "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            },
             "StepIf": {
               "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
             }

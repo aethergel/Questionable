@@ -21,9 +21,6 @@
             "[Limsa Lominsa] Fishermen's Guild"
           ],
           "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true
-            },
             "StepIf": {
               "ExtraCondition": "RoguesGuild"
             }

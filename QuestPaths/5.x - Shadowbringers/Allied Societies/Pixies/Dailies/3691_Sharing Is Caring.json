@@ -32,6 +32,7 @@
           },
           "TerritoryId": 816,
           "InteractionType": "Say",
+          "AetheryteShortcut": "Il Mheg - Lydha Lran",
           "ChatMessage": {
             "Key": "TEXT_BANPIX103_03691_SAYTODO_000_030"
           },

@@ -1,6 +1,9 @@
+- More daily quests checked
+- Quest cleanup, locations fixed
+- Skip teleport if near aetheryte already
+- Rebuild navmesh if pathfind returns 0 points
+- Add gathering positions to GatheringLocation for nav
+- Add statuses for StatusOff path interaction
 - Fix job switch not checking for valid jobs
 - Migrate xan preset changes to Overworld -Kiarra
 - Add shortcuts to the initial pvp quests -Kiarra
-- Increase delays in combat recovery by 0.5s
-- Disable Lifestream shortcut until bugs are fixed
-- More daily quests checked

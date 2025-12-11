@@ -32,6 +32,7 @@
           },
           "TerritoryId": 813,
           "InteractionType": "Interact",
+          "AetheryteShortcut":"Lakeland - Ostall Imperative",
           "Fly": true,
           "RequiredQuestVariables": [
             null,

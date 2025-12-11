@@ -1,66 +1,66 @@
 {
-    "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-    "Author": "Censored",
-    "QuestSequence": [
+  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+  "Author": "Censored",
+  "QuestSequence": [
+    {
+      "Sequence": 0,
+      "Steps": [
         {
-            "Sequence": 0,
-            "Steps": [
-                {
-                    "DataId": 1052561,
-                    "Position": {
-                        "X": 578.14905,
-                        "Y": -144.88388,
-                        "Z": 721.8279
-                    },
-                    "TerritoryId": 1189,
-                    "InteractionType": "AcceptQuest",
+          "DataId": 1052561,
+          "Position": {
+            "X": 578.14905,
+            "Y": -144.88388,
+            "Z": 721.8279
+          },
+          "TerritoryId": 1189,
+          "InteractionType": "AcceptQuest",
           "AetheryteShortcut": "Yak T'el - Mamook",
           "Fly": true
         }
-            ]
+      ]
+    },
+    {
+      "Sequence": 255,
+      "Steps": [
+        {
+          "TerritoryId": 1189,
+          "InteractionType": "Gather",
+          "RequiredQuestAcceptedJob": [
+            "Miner"
+          ],
+          "ItemsToGather": [
+            {
+              "ItemId": 48048,
+              "ItemCount": 3
+            }
+          ]
         },
         {
-            "Sequence": 255,
-            "Steps": [
-                {
-                    "TerritoryId": 1189,
-                    "InteractionType": "Gather",
-                    "RequiredQuestAcceptedJob": [
-                        "Miner"
-                    ],
-                    "ItemsToGather": [
-                        {
-                            "ItemId": 48048,
-                            "ItemCount": 3
-                        }
-                    ]
-                },
-                {
-                    "TerritoryId": 1189,
-                    "InteractionType": "Gather",
-                    "RequiredQuestAcceptedJob": [
-                        "Botanist"
-                    ],
-                    "ItemsToGather": [
-                        {
-                            "ItemId": 48049,
-                            "ItemCount": 3
-                        }
-                    ]
-                },
-                {
-                    "DataId": 1052560,
-                    "Position": {
-                        "X": 589.3186,
-                        "Y": -142.89168,
-                        "Z": 729.4575
-                    },
-                    "TerritoryId": 1189,
-                    "InteractionType": "CompleteQuest",
-                    "AetheryteShortcut": "Yak T'el - Mamook",
-                    "Fly": true
-                }
-            ]
+          "TerritoryId": 1189,
+          "InteractionType": "Gather",
+          "RequiredQuestAcceptedJob": [
+            "Botanist"
+          ],
+          "ItemsToGather": [
+            {
+              "ItemId": 48049,
+              "ItemCount": 3
+            }
+          ]
+        },
+        {
+          "DataId": 1052560,
+          "Position": {
+            "X": 589.3186,
+            "Y": -142.89168,
+            "Z": 729.4575
+          },
+          "TerritoryId": 1189,
+          "InteractionType": "CompleteQuest",
+          "AetheryteShortcut": "Yak T'el - Mamook",
+          "Fly": true
         }
-    ]
+      ]
+    }
+  ]
 }
