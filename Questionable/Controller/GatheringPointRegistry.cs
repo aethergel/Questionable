@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 using System.Text.Json;
 using Dalamud.Plugin;
 using LLib.GameData;
@@ -67,6 +68,19 @@ internal sealed class GatheringPointRegistry : IDisposable
         foreach ((ushort gatheringPointId, GatheringRoot gatheringRoot) in
                  AssemblyGatheringLocationLoader.GetLocations())
         {
+            if (gatheringRoot.Steps.Count >= 1)
+            {
+                foreach (GatheringNodeGroup group in gatheringRoot.Groups)
+                {
+                    foreach (GatheringNode node in group.Nodes)
+                    {
+                        foreach (GatheringLocation position in node.Locations)
+                        {
+                            gatheringRoot.Steps[0].Position = position.Position;
+                        }
+                    }
+                }
+            }
             _gatheringPoints[new GatheringPointId(gatheringPointId)] = gatheringRoot;
         }
 
@@ -105,7 +119,21 @@ internal sealed class GatheringPointRegistry : IDisposable
         if (gatheringPointId == null)
             return;
 
-        _gatheringPoints[gatheringPointId] = JsonSerializer.Deserialize<GatheringRoot>(stream)!;
+        var gatheringRoot = JsonSerializer.Deserialize<GatheringRoot>(stream)!;
+        if (gatheringRoot.Steps.Count >= 1)
+        {
+            foreach (GatheringNodeGroup group in gatheringRoot.Groups)
+            {
+                foreach (GatheringNode node in group.Nodes)
+                {
+                    foreach (GatheringLocation position in node.Locations)
+                    {
+                        gatheringRoot.Steps[0].Position = position.Position;
+                    }
+                }
+            }
+        }
+        _gatheringPoints[gatheringPointId] = gatheringRoot;
     }
 
     private void LoadFromDirectory(DirectoryInfo directory)

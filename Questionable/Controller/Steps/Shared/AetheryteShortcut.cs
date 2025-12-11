@@ -181,13 +181,17 @@ internal static class AetheryteShortcut
                             //return true;
                         }
 
+                        Vector3 pos = objectTable[0]!.Position;
                         if (Task.Step.Position == null)
                         {
+                            if (aetheryteData.CalculateDistance(pos, territoryType, Task.TargetAetheryte) < 100)
+                            {
+                                logger.LogInformation("Skipping aetheryte teleport, we're already there");
+                                return true;
+                            }
                             logger.LogInformation("No step position, teleporting to aetheryte");
                             return false;
                         }
-
-                        Vector3 pos = objectTable[0]!.Position;
                         float distance_target = (pos - Task.Step.Position.Value).Length();
                         float distance_aetheryte_to_target = aetheryteData.CalculateDistance(Task.Step.Position.Value, territoryType, Task.TargetAetheryte);
                         if (distance_target < Task.Step.CalculateActualStopDistance())
