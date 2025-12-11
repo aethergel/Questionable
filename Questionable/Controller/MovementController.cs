@@ -33,6 +33,7 @@ internal sealed class MovementController : IDisposable
     private readonly NavmeshIpc _navmeshIpc;
     private readonly IClientState _clientState;
     private readonly IObjectTable _objectTable;
+    private readonly ICommandManager _commandManager;
     private readonly GameFunctions _gameFunctions;
     private readonly ChatFunctions _chatFunctions;
     private readonly ICondition _condition;
@@ -44,11 +45,12 @@ internal sealed class MovementController : IDisposable
 
     public MovementController(NavmeshIpc navmeshIpc, IClientState clientState, GameFunctions gameFunctions,
         ChatFunctions chatFunctions, ICondition condition, MovementOverrideController movementOverrideController,
-        IObjectTable objectTable, AetheryteData aetheryteData, ILogger<MovementController> logger)
+        IObjectTable objectTable, AetheryteData aetheryteData, ICommandManager commandManager, ILogger<MovementController> logger)
     {
         _navmeshIpc = navmeshIpc;
         _clientState = clientState;
         _objectTable = objectTable;
+        _commandManager = commandManager;
         _gameFunctions = gameFunctions;
         _chatFunctions = chatFunctions;
         _condition = condition;
@@ -101,6 +103,7 @@ internal sealed class MovementController : IDisposable
                 _logger.LogInformation("Pathfinding complete, got {Count} points", _pathfindTask.Result.Count);
                 if (_pathfindTask.Result.Count == 0)
                 {
+                    _commandManager.ProcessCommand("/vnav rebuild");
                     ResetPathfinding();
                     throw new PathfindingFailedException();
                 }
@@ -150,6 +153,7 @@ internal sealed class MovementController : IDisposable
             else if (_pathfindTask.IsCompleted)
             {
                 _logger.LogWarning("Unable to complete pathfinding task");
+                _commandManager.ProcessCommand("/vnav rebuild");
                 ResetPathfinding();
                 throw new PathfindingFailedException();
             }
