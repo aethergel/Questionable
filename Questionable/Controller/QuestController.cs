@@ -6,10 +6,12 @@ using System.Linq;
 using System.Numerics;
 using Dalamud.Game.ClientState.Conditions;
 using Dalamud.Game.ClientState.Keys;
+using Dalamud.Game.ClientState.Objects.SubKinds;
 using Dalamud.Game.Gui.Toast;
 using Dalamud.Game.Text.SeStringHandling;
 using Dalamud.Plugin.Services;
 using ECommons.ExcelServices;
+using ECommons.GameFunctions;
 using FFXIVClientStructs.FFXIV.Client.Game;
 using FFXIVClientStructs.FFXIV.Client.Game.UI;
 using Microsoft.Extensions.Logging;
@@ -677,35 +679,35 @@ internal sealed class QuestController : MiniTaskController<QuestController>
             ExecuteNextStep();
     }
 
-    //internal void AbandonQuest(QuestId questId)
-    //{
-    //    _logger.LogInformation($"AbandonQuest: {questId}");
-    //    GameMain.ExecuteCommand(900, (int)questId.Value, 0, 0, 0);
-    //}
+    internal void AbandonQuest(QuestId questId)
+    {
+        _logger.LogInformation($"AbandonQuest: {questId}");
+        GameMain.ExecuteCommand(900, (int)questId.Value, 0, 0, 0);
+    }
 
-    //internal void AbandonQuest(string questId)
-    //{
-    //    try
-    //    {
-    //        var parsedQuestId = ushort.Parse(questId,CultureInfo.InvariantCulture);
-    //        if (_questFunctions.GetQuestProgressInfo(new QuestId(parsedQuestId)) != null)
-    //            AbandonQuest(new QuestId(parsedQuestId));
-    //        else
-    //            _logger.LogWarning("AbandonQuest failed: could not find quest ID");
-    //    }
-    //    catch (Exception e)
-    //    {
-    //        _logger.LogWarning($"AbandonQuest failed: {e}");
-    //    }
-    //}
+    internal void AbandonQuest(string questId)
+    {
+        try
+        {
+            var parsedQuestId = ushort.Parse(questId, CultureInfo.InvariantCulture);
+            if (_questFunctions.GetQuestProgressInfo(new QuestId(parsedQuestId)) != null)
+                AbandonQuest(new QuestId(parsedQuestId));
+            else
+                _logger.LogWarning("AbandonQuest failed: could not find quest ID");
+        }
+        catch (Exception e)
+        {
+            _logger.LogWarning($"AbandonQuest failed: {e}");
+        }
+    }
 
-    //internal void AbandonQuest()
-    //{
-    //    if (CurrentQuest != null && _questFunctions.GetQuestProgressInfo(CurrentQuest.Quest.Id) != null)
-    //        AbandonQuest((QuestId)CurrentQuest.Quest.Id);
-    //    else
-    //        _logger.LogWarning("AbandonQuest failed: could not find quest ID");
-    //}
+    internal void AbandonQuest()
+    {
+        if (CurrentQuest != null && _questFunctions.GetQuestProgressInfo(CurrentQuest.Quest.Id) != null)
+            AbandonQuest((QuestId)CurrentQuest.Quest.Id);
+        else
+            _logger.LogWarning("AbandonQuest failed: could not find quest ID");
+    }
 
     private void ClearTasksInternal()
     {
@@ -733,6 +735,14 @@ internal sealed class QuestController : MiniTaskController<QuestController>
             _lastTaskUpdate = DateTime.Now;
 
             ResetAutoRefreshState();
+            unsafe {
+                if (_objectTable[0] is IPlayerCharacter player)
+                {
+                    var playerStatusManager = player.BattleChara()->GetStatusManager();
+                    if (playerStatusManager->HasStatus(416)) // Transparent
+                        StatusManager.ExecuteStatusOff(416);
+                }
+            }
         }
     }
 

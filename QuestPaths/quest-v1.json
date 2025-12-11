@@ -1409,6 +1409,12 @@
                 "type": "string",
                 "description": "The status to disable",
                 "enum": [
+                  "Triangulate",
+                  "GatheringRateUp",
+                  "Prospect",
+                  "Eukrasia",
+                  "Jog",
+                  "Transparent",
                   "Hidden",
                   "Transfiguration"
                 ]
