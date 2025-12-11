@@ -7,6 +7,23 @@
       "Sequence": 0,
       "Steps": [
         {
+          "InteractionType": "EquipItem",
+          "ItemId": 2391,
+          "TerritoryId": 131
+        },
+        {
+          "InteractionType": "CreateGearset",
+          "TerritoryId": 131
+        },
+        {
+          "InteractionType": "EquipRecommended",
+          "TerritoryId": 131
+        },
+        {
+          "InteractionType": "UpdateGearset",
+          "TerritoryId": 131
+        },
+        {
           "DataId": 1004093,
           "Position": {
             "X": -25.162231,

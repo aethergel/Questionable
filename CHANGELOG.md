@@ -1,3 +1,4 @@
+- Class auto gearset
 - More daily quests checked
 - Quest cleanup, locations fixed
 - Skip teleport if near aetheryte already

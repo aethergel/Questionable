@@ -6,22 +6,21 @@
       "Sequence": 0,
       "Steps": [
         {
-          "TerritoryId": 128,
           "InteractionType": "EquipItem",
           "ItemId": 4550,
-          "AetheryteShortcut": "Limsa Lominsa",
-          "AethernetShortcut": [
-            "[Limsa Lominsa] Aetheryte Plaza",
-            "[Limsa Lominsa] Marauders' Guild"
-          ],
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true,
-              "InTerritory": [
-                128
-              ]
-            }
-          }
+          "TerritoryId": 128
+        },
+        {
+          "InteractionType": "CreateGearset",
+          "TerritoryId": 128
+        },
+        {
+          "InteractionType": "EquipRecommended",
+          "TerritoryId": 128
+        },
+        {
+          "InteractionType": "UpdateGearset",
+          "TerritoryId": 128
         },
         {
           "DataId": 1006757,

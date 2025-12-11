@@ -6,20 +6,21 @@
       "Sequence": 0,
       "Steps": [
         {
-          "TerritoryId": 129,
           "InteractionType": "EquipItem",
           "ItemId": 2571,
-          "SkipConditions": {
-            "StepIf": {
-              "Item": {
-                "NotInInventory": true
-               }
-             }
-           }
+          "TerritoryId": 129
         },
         {
-          "TerritoryId": 129,
-          "InteractionType": "EquipRecommended"
+          "InteractionType": "CreateGearset",
+          "TerritoryId": 129
+        },
+        {
+          "InteractionType": "EquipRecommended",
+          "TerritoryId": 129
+        },
+        {
+          "InteractionType": "UpdateGearset",
+          "TerritoryId": 129
         },
         {
           "DataId": 1000857,

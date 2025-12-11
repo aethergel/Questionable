@@ -6,26 +6,21 @@
       "Sequence": 0,
       "Steps": [
         {
-          "TerritoryId": 133,
           "InteractionType": "EquipItem",
           "ItemId": 1819,
-          "AetheryteShortcut": "Gridania",
-          "AethernetShortcut": [
-            "[Gridania] Aetheryte Plaza",
-            "[Gridania] Lancers' Guild"
-          ],
-          "SkipConditions": {
-            "AetheryteShortcutIf": {
-              "InSameTerritory": true,
-              "InTerritory": [
-                133
-              ]
-            }
-          }
+          "TerritoryId": 133
         },
         {
-          "TerritoryId": 133,
-          "InteractionType": "EquipRecommended"
+          "InteractionType": "CreateGearset",
+          "TerritoryId": 133
+        },
+        {
+          "InteractionType": "EquipRecommended",
+          "TerritoryId": 133
+        },
+        {
+          "InteractionType": "UpdateGearset",
+          "TerritoryId": 133
         },
         {
           "DataId": 1000254,

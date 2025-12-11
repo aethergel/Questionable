@@ -30,11 +30,13 @@
           "TerritoryId": 814,
           "InteractionType": "SinglePlayerDuty",
           "SinglePlayerDutyOptions": {
-            "Enabled": true,
-            "TestedBossModVersion": "0.1.0.1"
+            "Enabled": false
           }
         }
       ]
+    },
+    {
+      "Sequence": 2
     },
     {
       "Sequence": 255,

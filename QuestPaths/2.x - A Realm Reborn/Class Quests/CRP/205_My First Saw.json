@@ -1,11 +1,28 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-  "Author": "liza,\n Gezah",
+  "Author": ["liza", "Gezah"],
   "Comment": "Crafted Item:\n 1x Maple Lumber,\nAutocraft requires:\n 3x Maple Log",
   "QuestSequence": [
     {
       "Sequence": 0,
       "Steps": [
+        {
+          "InteractionType": "EquipItem",
+          "ItemId": 2314,
+          "TerritoryId": 132
+        },
+        {
+          "InteractionType": "CreateGearset",
+          "TerritoryId": 132
+        },
+        {
+          "InteractionType": "EquipRecommended",
+          "TerritoryId": 132
+        },
+        {
+          "InteractionType": "UpdateGearset",
+          "TerritoryId": 132
+        },
         {
           "DataId": 1000153,
           "Position": {
