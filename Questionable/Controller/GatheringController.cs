@@ -6,6 +6,7 @@ using System.Numerics;
 using System.Text.RegularExpressions;
 using Dalamud.Game.ClientState.Conditions;
 using Dalamud.Game.ClientState.Objects.Enums;
+using Dalamud.Game.ClientState.Objects.Types;
 using Dalamud.Game.Text.SeStringHandling;
 using Dalamud.Plugin.Services;
 using FFXIVClientStructs.FFXIV.Client.Game;
@@ -210,6 +211,7 @@ internal sealed unsafe class GatheringController : MiniTaskController<GatheringC
             var locationsAsObjects = currentNode.Locations.Select(x =>
                     _objectTable.FirstOrDefault(y =>
                         currentNode.DataId == GameFunctions.GetBaseID(y) && Vector3.Distance(x.Position, y.Position) < 0.1f))
+                //.OrderBy(x => _objectTable[0] is { } player && x != null ? Vector3.Distance(player.Position, x.Position) : 99999)
                 .ToList();
 
             // Are any of the nodes too far away to be found? This is likely around ~100 yalms. All closer gathering

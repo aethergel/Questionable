@@ -1,0 +1,192 @@
+{
+  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+  "Author": "alydev",
+  "LastChecked": {
+    "Username": "alydev",
+    "Date": "2025-12-12"
+  },
+  "QuestSequence": [
+    {
+      "Sequence": 0,
+      "Steps": [
+        {
+          "DataId": 1013230,
+          "Position": {
+            "X": 85.19104,
+            "Y": 15.00001,
+            "Z": 40.66516
+          },
+          "TerritoryId": 418,
+          "InteractionType": "AcceptQuest",
+          "AetheryteShortcut": "Ishgard",
+          "AethernetShortcut": [
+            "[Ishgard] Aetheryte Plaza",
+            "[Ishgard] The Forgotten Knight"
+          ]
+        }
+      ]
+    },
+    {
+      "Sequence": 1,
+      "Steps": [
+        {
+          "DataId": 1013956,
+          "Position": {
+            "X": 116.0448,
+            "Y": 206.96088,
+            "Z": 80.15564
+          },
+          "TerritoryId": 478,
+          "InteractionType": "Interact",
+          "AetheryteShortcut": "Idyllshire",
+          "DialogueChoices": [
+            {
+              "Prompt": "TEXT_CLSMIN600_02084_Q1_000_050",
+              "Type": "List",
+              "Answer": "TEXT_CLSMIN600_02084_A1_001_050"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Sequence": 2,
+      "Steps": [
+        {
+          "DataId": 1012133,
+          "Position": {
+            "X": -26.840637,
+            "Y": 206.49944,
+            "Z": 28.67163
+          },
+          "TerritoryId": 478,
+          "InteractionType": "Interact"
+        }
+      ]
+    },
+    {
+      "Sequence": 3,
+      "Steps": [
+        {
+          "TerritoryId": 398,
+          "InteractionType": "Gather",
+          "Comment": "Up from 12am-2am,12pm-2pm ET\nAbandon gathering node or finish gathering manually",
+          "ItemsToGather": [
+            {
+              "ItemId": 12538,
+              "ItemCount": 3
+            }
+          ],
+          "GatheringPoint": 320,
+          "SkipConditions": {
+            "StepIf": {
+              "Item": {
+                "NotInInventory": false
+              }
+            }
+          }
+        },
+        {
+          "DataId": 1013958,
+          "Position": {
+            "X": 59.67798,
+            "Y": 207.13025,
+            "Z": 3.3111572
+          },
+          "TerritoryId": 478,
+          "InteractionType": "Interact",
+          "AetheryteShortcut": "Idyllshire"
+        }
+      ]
+    },
+    {
+      "Sequence": 4,
+      "Steps": [
+        {
+          "DataId": 1013956,
+          "Position": {
+            "X": 116.0448,
+            "Y": 206.96088,
+            "Z": 80.15564
+          },
+          "TerritoryId": 478,
+          "InteractionType": "Interact"
+        }
+      ]
+    },
+    {
+      "Sequence": 5,
+      "Steps": [
+        {
+          "Position": {
+            "X": 74.17462,
+            "Y": 205,
+            "Z": 144.68399
+          },
+          "TerritoryId": 478,
+          "InteractionType": "WalkTo",
+          "TargetTerritoryId": 399,
+          "Mount": true,
+          "SkipConditions": {
+            "StepIf": {
+              "InTerritory": [
+                399
+              ]
+            }
+          }
+        },
+        {
+          "DataId": 1013959,
+          "Position": {
+            "X": 169.63452,
+            "Y": 202.79971,
+            "Z": 494.8042
+          },
+          "TerritoryId": 399,
+          "InteractionType": "Interact",
+          "Fly": true
+        }
+      ]
+    },
+    {
+      "Sequence": 6,
+      "Steps": [
+        {
+          "DataId": 1012133,
+          "Position": {
+            "X": -26.840637,
+            "Y": 206.49944,
+            "Z": 28.67163
+          },
+          "TerritoryId": 478,
+          "InteractionType": "Interact",
+          "AetheryteShortcut": "Idyllshire",
+          "AethernetShortcut": [
+            "[Idyllshire] Aetheryte Plaza",
+            "[Idyllshire] West Idyllshire"
+          ]
+        }
+      ]
+    },
+    {
+      "Sequence": 255,
+      "Steps": [
+        {
+          "DataId": 1013230,
+          "Position": {
+            "X": 85.19104,
+            "Y": 15.00001,
+            "Z": 40.66516
+          },
+          "TerritoryId": 418,
+          "InteractionType": "CompleteQuest",
+          "AetheryteShortcut": "Ishgard",
+          "AethernetShortcut": [
+            "[Ishgard] Aetheryte Plaza",
+            "[Ishgard] The Forgotten Knight"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -99,7 +99,7 @@ internal static class DoGather
                                 return ETaskResult.StillRunning;
                             }
 
-                            _actionQueue = GetNextActions(nodeCondition, slots);
+                            _actionQueue = GetNextActions(nodeCondition, slots, logger);
                             if (_actionQueue == null)
                             {
                                 logger.LogInformation("Skipping the rest of gathering...");
@@ -165,7 +165,7 @@ internal static class DoGather
         }
 
         [SuppressMessage("ReSharper", "UnusedParameter.Local")]
-        private Queue<EAction>? GetNextActions(NodeCondition nodeCondition, List<SlotInfo> slots)
+        private Queue<EAction>? GetNextActions(NodeCondition nodeCondition, List<SlotInfo> slots, ILogger<GatherExecutor> logger)
         {
             // it's possible the item has disappeared
             if (_slotToGather != null && slots.All(x => x.Index != _slotToGather.Index))
