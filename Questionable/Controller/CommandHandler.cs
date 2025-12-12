@@ -31,6 +31,7 @@ internal sealed class CommandHandler : IDisposable
     private readonly QuestSelectionWindow _questSelectionWindow;
     private readonly JournalProgressWindow _journalProgressWindow;
     private readonly PriorityWindow _priorityWindow;
+    private readonly QuestValidationWindow _questValidationWindow;
     private readonly ITargetManager _targetManager;
     private readonly QuestFunctions _questFunctions;
     private readonly GameFunctions _gameFunctions;
@@ -53,6 +54,7 @@ internal sealed class CommandHandler : IDisposable
         QuestSelectionWindow questSelectionWindow,
         JournalProgressWindow journalProgressWindow,
         PriorityWindow priorityWindow,
+        QuestValidationWindow questValidationWindow,
         ITargetManager targetManager,
         QuestFunctions questFunctions,
         GameFunctions gameFunctions,
@@ -72,6 +74,7 @@ internal sealed class CommandHandler : IDisposable
         _questSelectionWindow = questSelectionWindow;
         _journalProgressWindow = journalProgressWindow;
         _priorityWindow = priorityWindow;
+        _questValidationWindow = questValidationWindow;
         _targetManager = targetManager;
         _questFunctions = questFunctions;
         _gameFunctions = gameFunctions;
@@ -196,6 +199,10 @@ internal sealed class CommandHandler : IDisposable
 
             case "handle-interrupt":
                 _questController.InterruptQueueWithCombat();
+                break;
+
+            case "validation":
+                _questValidationWindow.ToggleOrUncollapse();
                 break;
 
             //case "abandon-quest":
@@ -378,7 +385,7 @@ internal sealed class CommandHandler : IDisposable
         }
         else
         {
-            _questController.SimulateQuest(null, 0, 0);
+            _questController.StopSimulate();
             _chatGui.Print("Cleared simulated quest.", MessageTag, TagColor);
         }
     }

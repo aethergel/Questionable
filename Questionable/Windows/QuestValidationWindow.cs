@@ -7,6 +7,7 @@ using Dalamud.Interface.Utility.Raii;
 using Dalamud.Plugin;
 using FFXIVClientStructs.FFXIV.Common.Math;
 using LLib.ImGui;
+using Questionable.Controller;
 using Questionable.Data;
 using Questionable.Model;
 using Questionable.Validation;
@@ -17,14 +18,16 @@ internal sealed class QuestValidationWindow : LWindow
 {
     private readonly QuestValidator _questValidator;
     private readonly QuestData _questData;
+    private readonly QuestController _questController;
     private readonly IDalamudPluginInterface _pluginInterface;
 
     public QuestValidationWindow(QuestValidator questValidator, QuestData questData,
-        IDalamudPluginInterface pluginInterface)
+        QuestController questController, IDalamudPluginInterface pluginInterface)
         : base("Quest Validation###QuestionableValidator")
     {
         _questValidator = questValidator;
         _questData = questData;
+        _questController = questController;
         _pluginInterface = pluginInterface;
 
         Size = new Vector2(600, 200);
@@ -69,6 +72,14 @@ internal sealed class QuestValidationWindow : LWindow
                     {
                         string fileName = $"{quest.QuestId}_{quest.SimplifiedName}.json";
                         ImGui.SetClipboardText(fileName);
+                    }
+                    ImGui.SameLine();
+                    bool sim = ImGuiComponents.IconButton(FontAwesomeIcon.Play, new System.Numerics.Vector2(16));
+                    if (ImGui.IsItemHovered())
+                        ImGui.SetTooltip("Simulate quest");
+                    if (sim)
+                    {
+                        _questController.SimulateQuest(quest, validationIssue.Sequence ?? 0, 0);
                     }
                 }
             }

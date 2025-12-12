@@ -775,6 +775,12 @@ internal sealed class QuestController : MiniTaskController<QuestController>
             Stop(label);
     }
 
+    public void SimulateQuest(IQuestInfo? questInfo, byte sequence, int step)
+    {
+        if (questInfo is { } && _questRegistry.TryGetQuest(questInfo.QuestId, out var quest))
+            SimulateQuest(quest, sequence, step);
+    }
+
     public void SimulateQuest(Quest? quest, byte sequence, int step)
     {
         _highlightObject.SetHighlight([]);
@@ -783,6 +789,13 @@ internal sealed class QuestController : MiniTaskController<QuestController>
             _simulatedQuest = new QuestProgress(quest, sequence, step);
         else
             _simulatedQuest = null;
+    }
+
+    public void StopSimulate()
+    {
+        _highlightObject.SetHighlight([]);
+        _logger.LogInformation("StopSimulate");
+        _simulatedQuest = null;
     }
 
     public void SetNextQuest(Quest? quest)
