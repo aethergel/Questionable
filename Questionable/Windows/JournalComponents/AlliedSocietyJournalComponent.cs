@@ -1,9 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using Dalamud.Bindings.ImGui;
+using Dalamud.Interface;
 using Dalamud.Interface.Colors;
+using Dalamud.Interface.Components;
 using Dalamud.Interface.Utility.Raii;
+using Dalamud.Plugin.Services;
+using FFXIVClientStructs.FFXIV.Client.Game;
 using Questionable.Controller;
 using Questionable.Data;
 using Questionable.Functions;
@@ -18,6 +23,7 @@ internal sealed class AlliedSocietyJournalComponent
         ["Neutral", "Recognized", "Friendly", "Trusted", "Respected", "Honored", "Sworn", "Allied"];
 
     private readonly QuestFunctions _questFunctions;
+    private readonly QuestController _questController;
     private readonly AlliedSocietyQuestFunctions _alliedSocietyQuestFunctions;
     private readonly QuestData _questData;
     private readonly QuestRegistry _questRegistry;
@@ -27,6 +33,7 @@ internal sealed class AlliedSocietyJournalComponent
 
     public AlliedSocietyJournalComponent(
         QuestFunctions questFunctions,
+        QuestController questController,
         AlliedSocietyQuestFunctions alliedSocietyQuestFunctions,
         QuestData questData,
         QuestRegistry questRegistry,
@@ -35,6 +42,7 @@ internal sealed class AlliedSocietyJournalComponent
         UiUtils uiUtils)
     {
         _questFunctions = questFunctions;
+        _questController = questController;
         _alliedSocietyQuestFunctions = alliedSocietyQuestFunctions;
         _questData = questData;
         _questRegistry = questRegistry;
@@ -48,6 +56,18 @@ internal sealed class AlliedSocietyJournalComponent
         using var tab = ImRaii.TabItem("Allied Societies");
         if (!tab)
             return;
+        bool addPending = false;
+        #if DEBUG
+        if (ImGuiComponents.IconButtonWithText(FontAwesomeIcon.Plus, "Add"))
+            addPending = true;
+        ImGui.SameLine();
+        #endif
+
+        unsafe {
+            uint allowances = QuestManager.Instance()->GetBeastTribeAllowance();
+            if (allowances < 12)
+                ImGui.Text($"Remaining: {allowances}/12");
+        }
 
         foreach (EAlliedSociety alliedSociety in Enum.GetValues<EAlliedSociety>().Where(x => x != EAlliedSociety.None))
         {
@@ -102,23 +122,18 @@ internal sealed class AlliedSocietyJournalComponent
                     ImGui.Text(RankNames[i - 1]);
                     _questJournalUtils.ShowQuestGroupContextMenu($"DrawAlliedSocietyQuests{alliedSociety}/{RankNames[i - 1]}", questsByRank);
                     foreach (var quest in questsByRank)
-                        DrawQuest(quest);
+                        DrawQuest((QuestInfo)quest, addPending);
                 }
             }
             else
             {
                 foreach (var quest in quests)
-                    DrawQuest(quest);
+                    DrawQuest((QuestInfo)quest, addPending);
             }
         }
     }
 
-    private void DrawQuest(IQuestInfo questInfo)
-    {
-        DrawQuest((QuestInfo)questInfo);
-    }
-
-    private void DrawQuest(QuestInfo questInfo)
+    private void DrawQuest(QuestInfo questInfo, bool addPending = false)
     {
         var (color, icon, tooltipText) = _uiUtils.GetQuestStyle(questInfo.QuestId);
         Quest? quest;
@@ -153,6 +168,8 @@ internal sealed class AlliedSocietyJournalComponent
             checklistItem = "(FATE) " + checklistItem;
         if (_uiUtils.ChecklistItem(checklistItem, color, icon))
             _questTooltipComponent.Draw(questInfo);
+        if (addPending && (color.Equals(ImGuiColors.DalamudRed) || color.Equals(ImGuiColors.DPSRed)))
+            _questController.AddQuestPriority(questInfo.QuestId);
 
         _questJournalUtils.ShowContextMenu(questInfo, quest, nameof(AlliedSocietyJournalComponent));
     }
