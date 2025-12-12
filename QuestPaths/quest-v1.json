@@ -1875,6 +1875,10 @@
                     "ItemCount"
                   ]
                 }
+              },
+              "GatheringPoint": {
+                "type": "number",
+                "description": "The GatheringPoint row ID of the node to target for this quest"
               }
             },
             "required": [

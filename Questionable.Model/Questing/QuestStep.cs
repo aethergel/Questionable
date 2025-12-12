@@ -85,6 +85,7 @@ public sealed class QuestStep
     public List<EExtendedClassJob> RequiredCurrentJob { get; set; } = [];
     public List<EExtendedClassJob> RequiredQuestAcceptedJob { get; set; } = [];
     public List<GatheredItem> ItemsToGather { get; set; } = [];
+    public ushort? GatheringPoint { get; set; }
     public List<QuestWorkValue?> CompletionQuestVariablesFlags { get; set; } = [];
     public List<DialogueChoice> DialogueChoices { get; set; } = [];
     public List<uint> PointMenuChoices { get; set; } = [];

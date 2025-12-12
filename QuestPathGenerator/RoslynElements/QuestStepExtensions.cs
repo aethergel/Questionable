@@ -140,6 +140,10 @@ internal static class QuestStepExtensions
                                 .AsSyntaxNodeOrToken(),
                             AssignmentList(nameof(QuestStep.ItemsToGather),
                                 step.ItemsToGather),
+                            Assignment(nameof(QuestStep.GatheringPoint),
+                                    step.GatheringPoint,
+                                    emptyStep.GatheringPoint)
+                                .AsSyntaxNodeOrToken(),
                             AssignmentList(nameof(QuestStep.CompletionQuestVariablesFlags),
                                     step.CompletionQuestVariablesFlags)
                                 .AsSyntaxNodeOrToken(),

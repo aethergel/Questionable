@@ -29,12 +29,12 @@ internal static class Gather
 
             foreach (var itemToGather in step.ItemsToGather)
             {
-                yield return new DelayedGatheringTask(itemToGather, quest, sequence.Sequence);
+                yield return new DelayedGatheringTask(itemToGather, quest, sequence.Sequence, step);
             }
         }
     }
 
-    internal sealed record DelayedGatheringTask(GatheredItem GatheredItem, Quest Quest, byte Sequence) : ITask
+    internal sealed record DelayedGatheringTask(GatheredItem GatheredItem, Quest Quest, byte Sequence, QuestStep Step) : ITask
     {
         public override string ToString() => $"Gathering(pending for {GatheredItem.ItemId})";
     }
@@ -54,12 +54,15 @@ internal static class Gather
         public IEnumerable<ITask> CreateExtraTasks()
         {
             EClassJob currentClassJob = (EClassJob)((IPlayerCharacter)objectTable[0]!).ClassJob.RowId;
-            if (!gatheringPointRegistry.TryGetGatheringPointId(Task.GatheredItem.ItemId, currentClassJob,
-                    out GatheringPointId? gatheringPointId))
+            GatheringPointId? gatheringPointId;
+            if (Task.Step.GatheringPoint is ushort gatheringPoint)
+                gatheringPointId = new GatheringPointId(gatheringPoint);
+            else if (!gatheringPointRegistry.TryGetGatheringPointId(Task.GatheredItem.ItemId, currentClassJob,
+                    out gatheringPointId))
                 throw new TaskException($"No gathering point found for item {Task.GatheredItem.ItemId}");
 
             if (!gatheringPointRegistry.TryGetGatheringPoint(gatheringPointId, out GatheringRoot? gatheringRoot))
-                throw new TaskException($"No path found for gathering point {gatheringPointId}");
+                throw new TaskException($"No path found for gathering point {gatheringPointId.Value}");
 
             if (HasRequiredItems(Task.GatheredItem))
                 yield break;
