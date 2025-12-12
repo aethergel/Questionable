@@ -4,7 +4,8 @@
   "Steps": [
     {
       "TerritoryId": 135,
-      "InteractionType": "None"
+      "InteractionType": "None",
+      "AetheryteShortcut": "Lower La Noscea - Moraby Drydocks"
     }
   ],
   "Groups": [

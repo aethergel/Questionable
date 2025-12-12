@@ -4,7 +4,8 @@
   "Steps": [
     {
       "TerritoryId": 402,
-      "InteractionType": "None"
+      "InteractionType": "None",
+      "AetheryteShortcut": "Azys Lla - Helix"
     }
   ],
   "Groups": [

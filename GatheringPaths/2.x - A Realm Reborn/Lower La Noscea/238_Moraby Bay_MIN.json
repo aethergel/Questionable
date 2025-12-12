@@ -4,7 +4,13 @@
   "Steps": [
     {
       "TerritoryId": 135,
-      "InteractionType": "None"
+      "InteractionType": "None",
+      "AetheryteShortcut": "Limsa Lominsa",
+      "AethernetShortcut": [
+        "[Limsa Lominsa] Aetheryte Plaza",
+        "[Limsa Lominsa] Tempest Gate (Lower La Noscea)"
+      ],
+      "SkipConditions": {"AetheryteShortcutIf": {"InSameTerritory": true}}
     }
   ],
   "Groups": [

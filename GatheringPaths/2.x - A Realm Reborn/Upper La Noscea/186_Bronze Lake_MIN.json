@@ -4,7 +4,8 @@
   "Steps": [
     {
       "TerritoryId": 139,
-      "InteractionType": "None"
+      "InteractionType": "None",
+      "AetheryteShortcut": "Upper La Noscea - Camp Bronze Lake"
     }
   ],
   "Groups": [

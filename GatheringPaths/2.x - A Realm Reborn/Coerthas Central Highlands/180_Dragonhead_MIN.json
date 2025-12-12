@@ -4,7 +4,8 @@
   "Steps": [
     {
       "TerritoryId": 155,
-      "InteractionType": "None"
+      "InteractionType": "None",
+      "AetheryteShortcut": "Coerthas Central Highlands - Camp Dragonhead"
     }
   ],
   "Groups": [

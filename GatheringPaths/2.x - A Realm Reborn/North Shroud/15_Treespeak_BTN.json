@@ -4,7 +4,13 @@
   "Steps": [
     {
       "TerritoryId": 154,
-      "InteractionType": "None"
+      "InteractionType": "None",
+      "AetheryteShortcut": "Gridania",
+      "AethernetShortcut": [
+        "[Gridania] Aetheryte Plaza",
+        "[Gridania] Yellow Serpent Gate (North Shroud)"
+      ],
+      "SkipConditions": {"AetheryteShortcutIf": {"InSameTerritory": true}}
     }
   ],
   "Groups": [

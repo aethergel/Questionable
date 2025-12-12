@@ -1,0 +1,158 @@
+{
+  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+  "Author": "alydev",
+  "LastChecked": {
+    "Username": "alydev",
+    "Date": "2025-12-12"
+  },
+  "QuestSequence": [
+    {
+      "Sequence": 0,
+      "Steps": [
+        {
+          "DataId": 1002298,
+          "Position": {
+            "X": -18.997498,
+            "Y": 6.2,
+            "Z": 157.42725
+          },
+          "TerritoryId": 131,
+          "InteractionType": "AcceptQuest",
+          "AetheryteShortcut": "Ul'dah",
+          "AethernetShortcut": [
+            "[Ul'dah] Aetheryte Plaza",
+            "[Ul'dah] Miners' Guild"
+          ],
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "InSameTerritory": true,
+              "InTerritory": [
+                131
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Sequence": 1,
+      "Steps": [
+        {
+          "DataId": 1003910,
+          "Position": {
+            "X": -5.44751,
+            "Y": 6.2,
+            "Z": 167.46765
+          },
+          "TerritoryId": 131,
+          "InteractionType": "Interact",
+          "AetheryteShortcut": "Ul'dah",
+          "AethernetShortcut": [
+            "[Ul'dah] Aetheryte Plaza",
+            "[Ul'dah] Miners' Guild"
+          ],
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "InSameTerritory": true,
+              "InTerritory": [
+                131
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Sequence": 2,
+      "Steps": [
+        {
+          "DataId": 1003911,
+          "Position": {
+            "X": -82.29199,
+            "Y": 6.9845686,
+            "Z": 9.414734
+          },
+          "TerritoryId": 131,
+          "InteractionType": "Interact",
+          "AethernetShortcut": [
+            "[Ul'dah] Miners' Guild",
+            "[Ul'dah] Gladiators' Guild"
+          ]
+        }
+      ]
+    },
+    {
+      "Sequence": 3,
+      "Steps": [
+        {
+          "TerritoryId": 131,
+          "InteractionType": "Gather",
+          "ItemsToGather": [
+            {
+              "ItemId": 5125,
+              "ItemCount": 15
+            }
+          ],
+          "SkipConditions": {
+            "StepIf": {
+              "Item": {
+                "NotInInventory": false
+              }
+            }
+          }
+        },
+        {
+          "DataId": 1003910,
+          "Position": {
+            "X": -5.44751,
+            "Y": 6.2,
+            "Z": 167.46765
+          },
+          "TerritoryId": 131,
+          "InteractionType": "Interact",
+          "AetheryteShortcut": "Ul'dah",
+          "AethernetShortcut": [
+            "[Ul'dah] Aetheryte Plaza",
+            "[Ul'dah] Miners' Guild"
+          ],
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "InSameTerritory": true,
+              "InTerritory": [
+                131
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Sequence": 255,
+      "Steps": [
+        {
+          "DataId": 1002298,
+          "Position": {
+            "X": -18.997498,
+            "Y": 6.2,
+            "Z": 157.42725
+          },
+          "TerritoryId": 131,
+          "InteractionType": "CompleteQuest",
+          "AetheryteShortcut": "Ul'dah",
+          "AethernetShortcut": [
+            "[Ul'dah] Aetheryte Plaza",
+            "[Ul'dah] Miners' Guild"
+          ],
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "InTerritory": [
+                130,
+                131
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

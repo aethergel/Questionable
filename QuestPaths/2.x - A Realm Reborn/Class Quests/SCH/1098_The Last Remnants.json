@@ -8,7 +8,12 @@
         {
           "InteractionType": "EquipItem",
           "ItemId": 4550,
-          "TerritoryId": 128
+          "TerritoryId": 128,
+          "AetheryteShortcut": "Limsa Lominsa",
+          "AethernetShortcut": [
+            "[Limsa Lominsa] Aetheryte Plaza",
+            "[Limsa Lominsa] Marauders' Guild"
+          ]
         },
         {
           "InteractionType": "CreateGearset",

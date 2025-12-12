@@ -45,7 +45,14 @@
               "ItemId": 5352,
               "ItemCount": 10
             }
-          ]
+          ],
+          "SkipConditions": {
+            "StepIf": {
+              "Item": {
+                "NotInInventory": false
+              }
+            }
+          }
         },
         {
           "DataId": 1000295,

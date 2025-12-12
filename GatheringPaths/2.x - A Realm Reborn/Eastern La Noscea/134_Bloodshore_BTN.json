@@ -4,7 +4,8 @@
   "Steps": [
     {
       "TerritoryId": 137,
-      "InteractionType": "None"
+      "InteractionType": "None",
+      "AetheryteShortcut": "Eastern La Noscea - Costa Del Sol"
     }
   ],
   "Groups": [

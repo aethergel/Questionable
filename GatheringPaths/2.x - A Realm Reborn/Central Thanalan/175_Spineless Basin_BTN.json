@@ -4,7 +4,13 @@
   "Steps": [
     {
       "TerritoryId": 141,
-      "InteractionType": "None"
+      "InteractionType": "None",
+      "AetheryteShortcut": "Ul'dah",
+      "AethernetShortcut": [
+        "[Ul'dah] Aetheryte Plaza",
+        "[Ul'dah] Gate of Thal (Central Thanalan)"
+      ],
+      "SkipConditions": {"AetheryteShortcutIf": {"InSameTerritory": true}}
     }
   ],
   "Groups": [

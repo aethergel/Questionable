@@ -4,7 +4,8 @@
   "Steps": [
     {
       "TerritoryId": 141,
-      "InteractionType": "None"
+      "InteractionType": "None",
+      "AetheryteShortcut": "Central Thanalan - Black Brush Station"
     }
   ],
   "Groups": [

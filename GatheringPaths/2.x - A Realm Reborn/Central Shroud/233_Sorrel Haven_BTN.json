@@ -4,7 +4,13 @@
   "Steps": [
     {
       "TerritoryId": 148,
-      "InteractionType": "None"
+      "InteractionType": "None",
+      "AetheryteShortcut": "Gridania",
+      "AethernetShortcut": [
+        "[Gridania] Aetheryte Plaza",
+        "[Gridania] White Wolf Gate (Central Shroud)"
+      ],
+      "SkipConditions": {"AetheryteShortcutIf": {"InSameTerritory": true}}
     }
   ],
   "Groups": [

@@ -4,7 +4,8 @@
   "Steps": [
     {
       "TerritoryId": 147,
-      "InteractionType": "None"
+      "InteractionType": "None",
+      "AetheryteShortcut": "Northern Thanalan - Ceruleum Processing Plant"
     }
   ],
   "Groups": [

@@ -4,7 +4,13 @@
   "Steps": [
     {
       "TerritoryId": 134,
-      "InteractionType": "None"
+      "InteractionType": "None",
+      "AetheryteShortcut": "Limsa Lominsa",
+      "AethernetShortcut": [
+        "[Limsa Lominsa] Aetheryte Plaza",
+        "[Limsa Lominsa] Zephyr Gate (Middle La Noscea)"
+      ],
+      "SkipConditions": {"AetheryteShortcutIf": {"InSameTerritory": true}}
     }
   ],
   "Groups": [

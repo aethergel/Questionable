@@ -4,7 +4,8 @@
   "Steps": [
     {
       "TerritoryId": 145,
-      "InteractionType": "None"
+      "InteractionType": "None",
+      "AetheryteShortcut": "Eastern Thanalan - Camp Drybone"
     }
   ],
   "Groups": [

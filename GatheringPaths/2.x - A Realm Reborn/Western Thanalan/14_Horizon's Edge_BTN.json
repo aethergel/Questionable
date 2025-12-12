@@ -4,7 +4,8 @@
   "Steps": [
     {
       "TerritoryId": 140,
-      "InteractionType": "None"
+      "InteractionType": "None",
+      "AetheryteShortcut": "Western Thanalan - Horizon"
     }
   ],
   "Groups": [

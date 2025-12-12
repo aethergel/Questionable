@@ -4,7 +4,8 @@
   "Steps": [
     {
       "TerritoryId": 153,
-      "InteractionType": "None"
+      "InteractionType": "None",
+      "AetheryteShortcut": "South Shroud - Quarrymill"
     }
   ],
   "Groups": [

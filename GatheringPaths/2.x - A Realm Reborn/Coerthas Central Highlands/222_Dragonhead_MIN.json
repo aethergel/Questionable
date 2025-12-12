@@ -3,8 +3,14 @@
   "Author": "alydev",
   "Steps": [
     {
+      "Position": {
+        "X": 291.09995,
+        "Y": 304.66434,
+        "Z": -93.648476
+      },
       "TerritoryId": 155,
-      "InteractionType": "None"
+      "InteractionType": "None",
+      "AetheryteShortcut": "Coerthas Central Highlands - Camp Dragonhead"
     }
   ],
   "Groups": [

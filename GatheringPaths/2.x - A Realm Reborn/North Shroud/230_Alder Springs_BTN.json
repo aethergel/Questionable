@@ -4,7 +4,8 @@
   "Steps": [
     {
       "TerritoryId": 154,
-      "InteractionType": "None"
+      "InteractionType": "None",
+      "AetheryteShortcut": "North Shroud - Fallgourd Float"
     }
   ],
   "Groups": [

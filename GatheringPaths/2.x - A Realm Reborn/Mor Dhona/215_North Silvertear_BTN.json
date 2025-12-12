@@ -4,7 +4,8 @@
   "Steps": [
     {
       "TerritoryId": 156,
-      "InteractionType": "None"
+      "InteractionType": "None",
+      "AetheryteShortcut": "Mor Dhona"
     }
   ],
   "Groups": [

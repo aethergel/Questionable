@@ -4,7 +4,8 @@
   "Steps": [
     {
       "TerritoryId": 152,
-      "InteractionType": "None"
+      "InteractionType": "None",
+      "AetheryteShortcut": "East Shroud - Hawthorne Hut"
     }
   ],
   "Groups": [

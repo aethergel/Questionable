@@ -3,14 +3,8 @@
   "Author": "Censored",
   "Steps": [
     {
-      "Position": {
-        "X": 208.67632,
-        "Y": -5.2013865,
-        "Z": 31.128746
-      },
       "TerritoryId": 154,
       "InteractionType": "None",
-      "Fly": true,
       "AetheryteShortcut": "North Shroud - Fallgourd Float"
     }
   ],

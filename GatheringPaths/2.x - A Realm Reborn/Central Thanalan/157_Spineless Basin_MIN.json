@@ -5,7 +5,12 @@
     {
       "TerritoryId": 141,
       "InteractionType": "None",
-      "AetheryteShortcut": "Central Thanalan - Black Brush Station"
+      "AetheryteShortcut": "Ul'dah",
+      "AethernetShortcut": [
+        "[Ul'dah] Aetheryte Plaza",
+        "[Ul'dah] Gate of Thal (Central Thanalan)"
+      ],
+      "SkipConditions": {"AetheryteShortcutIf": {"InSameTerritory": true}}
     }
   ],
   "Groups": [

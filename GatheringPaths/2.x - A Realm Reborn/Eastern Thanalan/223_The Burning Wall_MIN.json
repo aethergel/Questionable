@@ -4,7 +4,8 @@
   "Steps": [
     {
       "TerritoryId": 145,
-      "InteractionType": "None"
+      "InteractionType": "None",
+      "AetheryteShortcut": "Eastern Thanalan - Camp Drybone"
     }
   ],
   "Groups": [
@@ -18,21 +19,27 @@
                 "X": 339.9391,
                 "Y": 22.44436,
                 "Z": 45.65207
-              }
+              },
+              "MinimumAngle": -335,
+              "MaximumAngle": -275
             },
             {
               "Position": {
                 "X": 308.1687,
                 "Y": 11.61312,
                 "Z": -6.337274
-              }
+              },
+              "MinimumAngle": -230,
+              "MaximumAngle": -170
             },
             {
               "Position": {
                 "X": 339.9988,
                 "Y": 15.12653,
                 "Z": -4.592734
-              }
+              },
+              "MinimumAngle": -320,
+              "MaximumAngle": -255
             }
           ]
         }

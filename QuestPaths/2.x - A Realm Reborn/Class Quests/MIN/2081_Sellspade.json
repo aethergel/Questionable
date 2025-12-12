@@ -1,0 +1,101 @@
+{
+  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+  "Author": "alydev",
+  "LastChecked": {
+    "Username": "alydev",
+    "Date": "2025-12-12"
+  },
+  "QuestSequence": [
+    {
+      "Sequence": 0,
+      "Steps": [
+        {
+          "DataId": 1013230,
+          "Position": {
+            "X": 85.19104,
+            "Y": 15.00001,
+            "Z": 40.66516
+          },
+          "TerritoryId": 418,
+          "InteractionType": "AcceptQuest",
+          "AetheryteShortcut": "Ishgard",
+          "AethernetShortcut": [
+            "[Ishgard] Aetheryte Plaza",
+            "[Ishgard] The Forgotten Knight"
+          ]
+        }
+      ]
+    },
+    {
+      "Sequence": 1,
+      "Steps": [
+        {
+          "DataId": 1013233,
+          "Position": {
+            "X": 299.67188,
+            "Y": 157.91351,
+            "Z": 103.25781
+          },
+          "TerritoryId": 397,
+          "InteractionType": "Interact",
+          "Fly": true,
+          "AetheryteShortcut": "Coerthas Western Highlands - Falcon's Nest"
+        }
+      ]
+    },
+    {
+      "Sequence": 2,
+      "Steps": [
+        {
+          "TerritoryId": 397,
+          "InteractionType": "Gather",
+          "ItemsToGather": [
+            {
+              "ItemId": 12534,
+              "ItemCount": 10
+            }
+          ],
+          "GatheringPoint": 285,
+          "SkipConditions": {
+            "StepIf": {
+              "Item": {
+                "NotInInventory": false
+              }
+            }
+          }
+        },
+        {
+          "DataId": 1013233,
+          "Position": {
+            "X": 299.67188,
+            "Y": 157.91351,
+            "Z": 103.25781
+          },
+          "TerritoryId": 397,
+          "InteractionType": "Interact",
+          "Fly": true
+        }
+      ]
+    },
+    {
+      "Sequence": 255,
+      "Steps": [
+        {
+          "DataId": 1013230,
+          "Position": {
+            "X": 85.19104,
+            "Y": 15.00001,
+            "Z": 40.66516
+          },
+          "TerritoryId": 418,
+          "InteractionType": "CompleteQuest",
+          "AetheryteShortcut": "Ishgard",
+          "AethernetShortcut": [
+            "[Ishgard] Aetheryte Plaza",
+            "[Ishgard] The Forgotten Knight"
+          ]
+        }
+      ]
+    }
+  ]
+}

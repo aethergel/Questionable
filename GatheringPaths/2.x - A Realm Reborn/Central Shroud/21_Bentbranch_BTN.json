@@ -4,7 +4,8 @@
   "Steps": [
     {
       "TerritoryId": 148,
-      "InteractionType": "None"
+      "InteractionType": "None",
+      "AetheryteShortcut": "Central Shroud - Bentbranch Meadows"
     }
   ],
   "Groups": [

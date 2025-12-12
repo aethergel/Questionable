@@ -4,7 +4,8 @@
   "Steps": [
     {
       "TerritoryId": 138,
-      "InteractionType": "None"
+      "InteractionType": "None",
+      "AetheryteShortcut": "Western La Noscea - Swiftperch"
     }
   ],
   "Groups": [
