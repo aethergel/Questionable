@@ -25,6 +25,8 @@
 <!-- Version -->
   <a href="https://github.com/PunishXIV/Questionable/tags" alt="Release">
     <img src="https://img.shields.io/github/v/tag/PunishXIV/Questionable?label=Release&logo=git&logoColor=ffffff&style=for-the-badge" /></a>
+  <a href="https://github.com/sponsors/alyssadev" alt="Sponsor">
+    <img src="https://img.shields.io/github/sponsors/alyssadev?label=Sponsor&logo=githubsponsors&style=for-the-badge" /></a>
 <br>
   <!-- Discord -->
   <a href="https://discord.gg/Zzrcc8kmvy" alt="Discord">
