@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Globalization;
 using System.Numerics;
 using Dalamud.Bindings.ImGui;
@@ -21,12 +22,14 @@ internal sealed class QuickAccessButtonsComponent
     private readonly PriorityWindow _priorityWindow;
     private readonly ICommandManager _commandManager;
     private readonly IDalamudPluginInterface _pluginInterface;
+    private readonly Configuration _configuration;
 
     public QuickAccessButtonsComponent(
         QuestRegistry questRegistry,
         QuestValidationWindow questValidationWindow,
         JournalProgressWindow journalProgressWindow,
         PriorityWindow priorityWindow,
+        Configuration configuration,
         ICommandManager commandManager,
         IDalamudPluginInterface pluginInterface)
     {
@@ -35,6 +38,7 @@ internal sealed class QuickAccessButtonsComponent
         _journalProgressWindow = journalProgressWindow;
         _priorityWindow = priorityWindow;
         _commandManager = commandManager;
+        _configuration = configuration;
         _pluginInterface = pluginInterface;
     }
 
@@ -49,6 +53,11 @@ internal sealed class QuickAccessButtonsComponent
         DrawReloadDataButton();
         ImGui.SameLine();
         DrawJournalProgressButton();
+        if (!_configuration.General.HideSponsorButton)
+        {
+            ImGui.SameLine();
+            DrawSponsorButton();
+        }
 
         if (_questRegistry.ValidationIssueCount > 0)
         {
@@ -97,6 +106,19 @@ internal sealed class QuickAccessButtonsComponent
 
         if (ImGui.IsItemHovered())
             ImGui.SetTooltip("Journal Progress");
+    }
+
+    private static void DrawSponsorButton()
+    {
+        if (ImGuiComponents.IconButton(FontAwesomeIcon.Heart, null, null, ImGuiColors.DalamudRed))
+            Process.Start(new ProcessStartInfo()
+            {
+                FileName = "https://github.com/sponsors/alyssadev",
+                UseShellExecute = true
+            });
+
+        if (ImGui.IsItemHovered())
+            ImGui.SetTooltip("Sponsor QST development");
     }
 
     private void DrawValidationIssuesButton()
@@ -164,6 +186,6 @@ internal sealed class QuickAccessButtonsComponent
         }
 
         if (button)
-            _questValidationWindow.IsOpenAndUncollapsed = true;
+            _questValidationWindow.ToggleOrUncollapse();
     }
 }

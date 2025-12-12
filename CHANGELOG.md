@@ -1,3 +1,3 @@
 - More daily quests checked
 - Miner quests added
-- Class auto gearset
+- Add sponsor button to quest window with hide config option

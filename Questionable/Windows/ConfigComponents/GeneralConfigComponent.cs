@@ -194,6 +194,13 @@ internal sealed class GeneralConfigComponent : ConfigComponent
                 Configuration.General.ShowIncompleteSeasonalEvents = showIncompleteSeasonalEvents;
                 Save();
             }
+
+            bool hideSponsorButton = Configuration.General.HideSponsorButton;
+            if (ImGui.Checkbox("Hide Sponsor button", ref hideSponsorButton))
+            {
+                Configuration.General.HideSponsorButton = hideSponsorButton;
+                Save();
+            }
         }
 
         ImGui.Separator();

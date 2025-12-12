@@ -47,6 +47,7 @@ internal sealed class Configuration : IPluginConfiguration
         public bool AutoStepRefreshEnabled { get; set; }
         public int AutoStepRefreshDelaySeconds { get; set; } = 30;
         public bool UseTickets { get; set; }
+        public bool HideSponsorButton { get; set; }
     }
 
     internal sealed class StopConfiguration
