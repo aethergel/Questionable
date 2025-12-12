@@ -1,3 +1,3 @@
+- More daily quests checked
 - Miner quests added
 - Class auto gearset
-- More daily quests checked
