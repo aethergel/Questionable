@@ -97,10 +97,10 @@ internal sealed class CreationUtilsComponent(
                     var qid = (uint)(q.CurrentQuest?.Value ?? 0) + 65536;
                     if (simQ != null)
                         qid = (uint)simQ.Id.Value + 65536;
-                    ReadOnlySeString chapter = _redoUtil.GetChapter(qid);
+                    var chapter = _redoUtil.GetChapter(qid);
                     string isSim = simQ != null ? " (sim)" : "";
-                    if (!chapter.IsEmpty)
-                        ImGui.Text($"NG+{isSim}: {chapter}");
+                    if (!chapter.Item1.IsEmpty)
+                        ImGui.Text($"NG+{isSim}: {chapter.Item1} (#{chapter.Item2+1})");
                 }
                 if (_configuration.Advanced.ShowDailies || _configuration.Advanced.ShowTracked)
                 {

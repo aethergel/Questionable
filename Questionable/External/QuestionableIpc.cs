@@ -38,6 +38,7 @@ internal sealed class QuestionableIpc : IDisposable
     private const string IpcStartGatheringComplex = "Questionable.StartGatheringComplex";
     private const string IpcStop = "Questionable.Stop";
     private const string IpcRedoLookup = "Questionable.RedoLookup";
+    private const string IpcRedoLookupIndex = "Questionable.RedoLookupIndex";
 
     private readonly QuestController _questController;
     private readonly QuestRegistry _questRegistry;
@@ -65,6 +66,7 @@ internal sealed class QuestionableIpc : IDisposable
     private readonly ICallGateProvider<uint, uint, byte, int, ushort, bool> _startGatheringComplex;
     private readonly ICallGateProvider<string, bool> _stop;
     private readonly ICallGateProvider<uint, string> _redoLookup;
+    private readonly ICallGateProvider<uint, Tuple<string,int>> _redoLookupIndex;
 
     public QuestionableIpc(
         QuestController questController,
@@ -144,6 +146,9 @@ internal sealed class QuestionableIpc : IDisposable
 
         _redoLookup = pluginInterface.GetIpcProvider<uint, string>(IpcRedoLookup);
         _redoLookup.RegisterFunc(RedoLookup);
+
+        _redoLookupIndex = pluginInterface.GetIpcProvider<uint, Tuple<string,int>>(IpcRedoLookupIndex);
+        _redoLookupIndex.RegisterFunc(RedoLookupIndex);
     }
 
     private bool StartQuest(string questId, bool single)
@@ -304,7 +309,17 @@ internal sealed class QuestionableIpc : IDisposable
             return "";
         if (questId >= 65536)
             questId -= 65536;
-        return _redoUtil.GetChapter(questId).ToString();
+        return _redoUtil.GetChapter(questId).Item1.ToString();
+    }
+
+    private Tuple<string,int> RedoLookupIndex(uint questId)
+    {
+        if (questId >= 131072)
+            return new("",-1);
+        if (questId >= 65536)
+            questId -= 65536;
+        var outp = _redoUtil.GetChapter(questId);
+        return new(outp.Item1.ToString(), outp.Item2);
     }
 
     public void Dispose()

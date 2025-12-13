@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using ECommons;
@@ -17,10 +18,13 @@ internal sealed class RedoUtil
         Last = Generate();
     }
 
-    public ReadOnlySeString GetChapter(uint questId)
+    public Tuple<ReadOnlySeString,int> GetChapter(uint questId)
     {
         var result = Dict.FirstOrDefault(entry => entry.Value.Contains(questId));
-        return GenericHelpers.GetSheet<QuestRedoChapterUI>().GetRow(result.Key).ChapterName;
+        if (result.Value == null)
+            return new((ReadOnlySeString)"", -1);
+        var index = result.Value.IndexOf(questId);
+        return new(GenericHelpers.GetSheet<QuestRedoChapterUI>().GetRow(result.Key).ChapterName, index);
     }
 
     public Stopwatch Generate()
