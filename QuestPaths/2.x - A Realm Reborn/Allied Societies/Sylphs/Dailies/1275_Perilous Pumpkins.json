@@ -1,10 +1,7 @@
 ﻿{
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
   "Author": "liza",
-  "LastChecked": {
-    "Username": "alydev",
-    "Date": "2025-09-14"
-  },
+  "LastChecked":{"Username": "alydev", "Date": "2025-12-14"},
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -50,7 +47,10 @@
             "Z": -257.61804
           },
           "TerritoryId": 152,
-          "InteractionType": "Interact"
+          "InteractionType": "Interact",
+          "RequiredQuestVariables": [null,[
+            {"Low": 1}
+          ],null,null,null,null]
         },
         {
           "DataId": 2003310,
@@ -60,7 +60,36 @@
             "Z": -352.13245
           },
           "TerritoryId": 152,
-          "InteractionType": "Interact"
+          "InteractionType": "Interact",
+          "RequiredQuestVariables": [null,[
+            {"Low": 1}
+          ],null,null,null,null]
+        },
+        {
+          "DataId": 2003474,
+          "Position": {
+            "X": 385.48853,
+            "Y": -15.6710205,
+            "Z": -296.55914
+          },
+          "TerritoryId": 152,
+          "InteractionType": "Interact",
+          "RequiredQuestVariables": [null,[
+            {"Low": 2}
+          ],null,null,null,null]
+        },
+        {
+          "DataId": 2003260,
+          "Position": {
+            "X": 375.11243,
+            "Y": -25.650513,
+            "Z": -469.9016
+          },
+          "TerritoryId": 152,
+          "InteractionType": "Interact",
+          "RequiredQuestVariables": [null,[
+            {"Low": 2}
+          ],null,null,null,null]
         }
       ]
     },

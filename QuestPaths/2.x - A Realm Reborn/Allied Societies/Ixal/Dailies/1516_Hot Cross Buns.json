@@ -4,10 +4,8 @@
     "Censored",
     "alydev"
   ],
-  "LastChecked": {
-    "Username": "alydev",
-    "Date": "2025-11-06"
-  },
+  "LastChecked":{"Username": "alydev", "Date": "2025-12-14"},
+  "Comment": "Requires manual intervention",
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -32,18 +30,28 @@
       "Sequence": 1,
       "Steps": [
         {
-          "DataId": 395,
           "Position": {
             "X": 320.39117,
             "Y": 255.37843,
             "Z": 129.43526
           },
           "TerritoryId": 155,
-          "InteractionType": "Instruction",
+          "InteractionType": "WalkTo",
+          "AetheryteShortcut": "Coerthas Central Highlands - Camp Dragonhead",
+          "Fly": true
+        },
+        {
+          "DataId": 395,
+          "Position": {
+            "X": 326.40576,
+            "Y": 256.4665,
+            "Z": 129.65588
+          },
+          "TerritoryId": 155,
+          "InteractionType": "WaitForManualProgress",
           "Comment": "Manual: Use Shearing Knife on Feral Croc",
           "ItemId": 2001403,
-          "AetheryteShortcut": "Coerthas Central Highlands - Camp Dragonhead",
-          "Fly": true,
+          "Mount": false,
           "CompletionQuestVariablesFlags": [
             {
               "High": 1
@@ -53,14 +61,7 @@
             null,
             null,
             null
-          ],
-          "SkipConditions": {
-            "StepIf": {
-              "Item": {
-                "NotInInventory": true
-              }
-            }
-          }
+          ]
         },
         {
           "DataId": 1006385,

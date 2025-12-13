@@ -1,8 +1,10 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
   "Author": "alydev",
+  "LastChecked":{"Username": "alydev", "Date": "2025-12-14"},
   "Disabled": true,
-  "Comment": "Doesn't seem to work. Item isn't used on spawned mob for some reason",
+  "Comment": "Doesn't work, investigating",
+  "$": "might need some extra checks in UseItem to target the right instance of 740",
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -41,18 +43,9 @@
               "NameId": 2305
             }
           ],
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 4
-              }
-            ],
-            null
-          ]
+          "RequiredQuestVariables": [null,null,null,null,[
+              {"Low": 3},{"Low": 4}
+          ],null]
         },
         {
           "Position": {
@@ -61,38 +54,12 @@
             "Z": 92.454346
           },
           "TerritoryId": 146,
-          "InteractionType": "Combat",
-          "$": "Attempted hacky workaround that didn't bear fruit -alydev",
-          "EnemySpawnType": "AfterItemUse",
-          "ComplexCombatData": [
-            {
-              "DataId": 740,
-              "NameId": 2305
-            }
-          ],
+          "InteractionType": "UseItem",
           "ItemId": 2001196,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 4
-              }
-            ],
-            null
-          ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 8
-            }
-          ]
+          "RequiredQuestVariables": [null,null,null,null,[
+              {"Low": 3},{"Low": 4}
+          ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"High": 8}]
         },
         {
           "DataId": 2003215,
@@ -111,18 +78,9 @@
               "NameId": 2305
             }
           ],
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 2
-              }
-            ],
-            null
-          ]
+          "RequiredQuestVariables": [null,null,null,null,[
+              {"Low": 2},{"Low": 3}
+          ],null]
         },
         {
           "DataId": 740,
@@ -132,37 +90,12 @@
             "Z": -104.44806
           },
           "TerritoryId": 146,
-          "InteractionType": "Combat",
-          "EnemySpawnType": "AfterItemUse",
-          "ComplexCombatData": [
-            {
-              "DataId": 740,
-              "NameId": 2305
-            }
-          ],
+          "InteractionType": "UseItem",
           "ItemId": 2001196,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 2
-              }
-            ],
-            null
-          ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 2
-            }
-          ]
+          "RequiredQuestVariables": [null,null,null,null,[
+              {"Low": 2}
+          ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"High": 2}]
         },
         {
           "DataId": 2003216,
@@ -181,21 +114,11 @@
               "NameId": 2305
             }
           ],
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 4
-              },
-              {
-                "Low": 5
-              }
-            ],
-            null
-          ]
+          "RequiredQuestVariables": [null,null,null,null,[
+              {"Low": 3},
+              {"Low": 4},
+              {"Low": 5}
+            ],null]
         },
         {
           "DataId": 740,
@@ -205,40 +128,13 @@
             "Z": -83.81781
           },
           "TerritoryId": 146,
-          "InteractionType": "Combat",
-          "EnemySpawnType": "AfterItemUse",
-          "ComplexCombatData": [
-            {
-              "DataId": 740,
-              "NameId": 2305
-            }
-          ],
+          "InteractionType": "UseItem",
           "ItemId": 2001196,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 4
-              },
-              {
-                "Low": 5
-              }
-            ],
-            null
-          ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 1
-            }
-          ]
+          "RequiredQuestVariables": [null,null,null,null,[
+              {"Low": 4},
+              {"Low": 5}
+            ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"High": 1}]
         },
         {
           "DataId": 2003219,
@@ -257,24 +153,11 @@
               "NameId": 2305
             }
           ],
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 2
-              },
-              {
-                "Low": 4
-              },
-              {
-                "Low": 5
-              }
-            ],
-            null
-          ]
+          "RequiredQuestVariables": [null,null,null,null,[
+              {"Low": 2},
+              {"Low": 4},
+              {"Low": 5}
+            ],null]
         },
         {
           "DataId": 740,
@@ -284,43 +167,14 @@
             "Z": -138.3841
           },
           "TerritoryId": 146,
-          "InteractionType": "Combat",
-          "EnemySpawnType": "AfterItemUse",
-          "ComplexCombatData": [
-            {
-              "DataId": 740,
-              "NameId": 2305
-            }
-          ],
+          "InteractionType": "UseItem",
           "ItemId": 2001196,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 2
-              },
-              {
-                "Low": 4
-              },
-              {
-                "Low": 5
-              }
-            ],
-            null
-          ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Low": 2
-            }
-          ]
+          "RequiredQuestVariables": [null,null,null,null,[
+              {"Low": 2},
+              {"Low": 4},
+              {"Low": 5}
+            ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"Low": 2}]
         },
         {
           "DataId": 2003217,
@@ -339,18 +193,9 @@
               "NameId": 2305
             }
           ],
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 2
-              }
-            ],
-            null
-          ]
+          "RequiredQuestVariables": [null,null,null,null,[
+              {"Low": 2}
+            ],null]
         },
         {
           "DataId": 740,
@@ -360,37 +205,11 @@
             "Z": -79.30121
           },
           "TerritoryId": 146,
-          "InteractionType": "Combat",
-          "EnemySpawnType": "AfterItemUse",
-          "ComplexCombatData": [
-            {
-              "DataId": 740,
-              "NameId": 2305
-            }
-          ],
+          "InteractionType": "UseItem",
           "ItemId": 2001196,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 2
-              }
-            ],
-            null
-          ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Low": 8
-            }
-          ]
+          "RequiredQuestVariables": [null,null,null,null,[
+              {"Low": 2}
+            ],null]
         }
       ]
     },

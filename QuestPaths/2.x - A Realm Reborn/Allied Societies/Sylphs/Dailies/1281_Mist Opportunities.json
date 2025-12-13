@@ -1,8 +1,7 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
   "Author": "alydev",
-  "Disabled": true,
-  "Comment": "WIP",
+  "LastChecked":{"Username": "alydev", "Date": "2025-12-14"},
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -18,6 +17,97 @@
           "InteractionType": "AcceptQuest",
           "AetheryteShortcut": "East Shroud - Hawthorne Hut",
           "Fly": true
+        }
+      ]
+    },
+    {
+      "Sequence": 1,
+      "Steps": [
+        {
+          "DataId": 1005885,
+          "Position": {
+            "X": 244.40369,
+            "Y": -5.6428905,
+            "Z": -55.161438
+          },
+          "TerritoryId": 152,
+          "InteractionType": "Interact",
+          "AetheryteShortcut": "East Shroud - Hawthorne Hut",
+          "Fly": true
+        }
+      ]
+    },
+    {
+      "Sequence": 2,
+      "Steps": [
+        {
+          "TerritoryId": 152,
+          "InteractionType": "StatusOff",
+          "Status": "Transparent"
+        },
+        {
+          "DataId": 2003280,
+          "Position": {
+            "X": 364.43127,
+            "Y": -16.769714,
+            "Z": -238.48328
+          },
+          "TerritoryId": 152,
+          "InteractionType": "UseItem",
+          "Fly": true,
+          "ItemId": 2001183,
+          "RequiredQuestVariables": [null,null,null,[
+            {"High": 4},{"High": 5}
+          ],null,null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"High": 8}]
+        },
+        {
+          "DataId": 2003281,
+          "Position": {
+            "X": 218.4939,
+            "Y": -19.668945,
+            "Z": -404.77612
+          },
+          "TerritoryId": 152,
+          "InteractionType": "UseItem",
+          "Fly": true,
+          "ItemId": 2001183,
+          "RequiredQuestVariables": [null,null,null,[
+            {"High": 1},{"High": 2},{"High": 4}
+          ],null,null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"High": 4}]
+        },
+        {
+          "DataId": 2003283,
+          "Position": {
+            "X": 144.8844,
+            "Y": -28.305542,
+            "Z": -224.93329
+          },
+          "TerritoryId": 152,
+          "InteractionType": "UseItem",
+          "Fly": true,
+          "ItemId": 2001183,
+          "RequiredQuestVariables": [null,null,null,[
+            {"High": 2},{"High": 3},{"High": 5}
+          ],null,null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"High": 1}]
+        },
+        {
+          "DataId": 2003282,
+          "Position": {
+            "X": 121.29382,
+            "Y": -25.28424,
+            "Z": -348.37878
+          },
+          "TerritoryId": 152,
+          "InteractionType": "UseItem",
+          "Fly": true,
+          "ItemId": 2001183,
+          "RequiredQuestVariables": [null,null,null,[
+            {"High": 1},{"High": 3}
+          ],null,null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"High": 2}]
         }
       ]
     },
