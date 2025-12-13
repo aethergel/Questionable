@@ -3,6 +3,7 @@
   "Author": "alydev",
   "Comment": "Bit glitchy-looking, but it does seem to eventually work",
   "Disabled": true,
+  "LastChecked":{"Username": "alydev", "Date": "2025-12-14"},
   "QuestSequence": [
     {
       "Sequence": 0,
