@@ -1,6 +1,6 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
-  "Author": "liza",
+  "Author": "alydev",
   "LastChecked":{"Username": "alydev", "Date": "2025-12-14"},
   "QuestSequence": [
     {
@@ -22,8 +22,8 @@
           ],
           "SkipConditions": {
             "AetheryteShortcutIf": {
-              "InSameTerritory": true,
               "InTerritory": [
+                132,
                 133
               ]
             }
@@ -32,44 +32,36 @@
       ]
     },
     {
+      "Sequence": 1,
+      "Steps": [
+        {
+          "DataId": 1000776,
+          "Position": {
+            "X": 116.16462,
+            "Y": 286.4557,
+            "Z": 140.45575
+          },
+          "TerritoryId": 155,
+          "StopDistance": 1,
+          "InteractionType": "Interact",
+          "AetheryteShortcut": "Coerthas Central Highlands - Camp Dragonhead",
+          "Fly": true
+        }
+      ]
+    },
+    {
       "Sequence": 255,
       "Steps": [
         {
-          "TerritoryId": 148,
-          "InteractionType": "EquipRecommended"
-        },
-        {
-          "TerritoryId": 148,
-          "InteractionType": "Gather",
-          "ItemsToGather": [
-            {
-              "ItemId": 5352,
-              "ItemCount": 10
-            }
-          ],
-          "SkipConditions": {
-            "StepIf": {
-              "Item": {
-                "NotInInventory": false
-              }
-            }
-          }
-        },
-        {
-          "DataId": 1000295,
+          "DataId": 1013240,
           "Position": {
-            "X": -234.24127,
-            "Y": 8.000092,
-            "Z": -155.169
+            "X": -84.45868,
+            "Y": 8.05915,
+            "Z": 37.125122
           },
-          "TerritoryId": 133,
+          "TerritoryId": 418,
           "InteractionType": "CompleteQuest",
-          "AetheryteShortcut": "Gridania",
-          "AethernetShortcut": [
-            "[Gridania] Aetheryte Plaza",
-            "[Gridania] Botanists' Guild"
-          ],
-          "NextQuestId": 6
+          "AetheryteShortcut": "Ishgard"
         }
       ]
     }

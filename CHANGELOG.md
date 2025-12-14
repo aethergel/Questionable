@@ -1,4 +1,2 @@
-- New IPC: RedoLookupIndex resolves quest ID to chapter name and index in quest list
-- DT msq part 1 checked for bug report
-- Checked dailies
-- Finished checking dailies
+- Gathering wasn't picking actions, now it does
+- BTN arr/hw

@@ -1,0 +1,168 @@
+{
+  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+  "Author": "alydev",
+  "LastChecked": {
+    "Username": "alydev",
+    "Date": "2025-12-14"
+  },
+  "QuestSequence": [
+    {
+      "Sequence": 0,
+      "Steps": [
+        {
+          "DataId": 1013240,
+          "Position": {
+            "X": -84.45868,
+            "Y": 8.05915,
+            "Z": 37.125122
+          },
+          "TerritoryId": 418,
+          "InteractionType": "AcceptQuest",
+          "AetheryteShortcut": "Ishgard"
+        }
+      ]
+    },
+    {
+      "Sequence": 1,
+      "Steps": [
+        {
+          "DataId": 1013241,
+          "Position": {
+            "X": -670.8019,
+            "Y": -127.97377,
+            "Z": 639.9481
+          },
+          "TerritoryId": 401,
+          "InteractionType": "Interact",
+          "AetheryteShortcut": "The Sea of Clouds - Camp Cloudtop",
+          "Fly": true,
+          "DialogueChoices": [
+            {
+              "Prompt": "TEXT_CLSHRV550_02050_Q1_000_000",
+              "Answer": "TEXT_CLSHRV550_02050_A1_000_001",
+              "Type": "List"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Sequence": 2,
+      "Steps": [
+        {
+          "DataId": 1000815,
+          "Position": {
+            "X": -233.9361,
+            "Y": 6.668152,
+            "Z": -171.03839
+          },
+          "TerritoryId": 133,
+          "InteractionType": "Interact",
+          "AetheryteShortcut": "Gridania",
+          "AethernetShortcut": [
+            "[Gridania] Aetheryte Plaza",
+            "[Gridania] Botanists' Guild"
+          ],
+          "SkipConditions": {
+            "AetheryteShortcutIf": {
+              "InTerritory": [
+                132,
+                133
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Sequence": 3,
+      "Steps": [
+        {
+          "DataId": 1013240,
+          "Position": {
+            "X": -84.45868,
+            "Y": 8.05915,
+            "Z": 37.125122
+          },
+          "TerritoryId": 418,
+          "InteractionType": "Interact",
+          "AetheryteShortcut": "Ishgard"
+        }
+      ]
+    },
+    {
+      "Sequence": 4,
+      "Steps": [
+        {
+          "DataId": 1013245,
+          "Position": {
+            "X": -136.91925,
+            "Y": 14.55313,
+            "Z": -150.31665
+          },
+          "TerritoryId": 419,
+          "InteractionType": "Interact",
+          "AethernetShortcut": [
+            "[Ishgard] Aetheryte Plaza",
+            "[Ishgard] Saint Reymanaud's Cathedral"
+          ]
+        }
+      ]
+    },
+    {
+      "Sequence": 5,
+      "Steps": [
+        {
+          "TerritoryId": 419,
+          "InteractionType": "EquipRecommended"
+        },
+        {
+          "TerritoryId": 419,
+          "InteractionType": "Gather",
+          "ItemsToGather": [
+            {
+              "ItemId": 12879,
+              "ItemCount": 10
+            }
+          ],
+          "GatheringPoint": 298,
+          "SkipConditions": {
+            "StepIf": {
+              "Item": {
+                "NotInInventory": false
+              }
+            }
+          }
+        },
+        {
+          "DataId": 1013241,
+          "Position": {
+            "X": -670.8019,
+            "Y": -127.97377,
+            "Z": 639.9481
+          },
+          "TerritoryId": 401,
+          "InteractionType": "Interact",
+          "AetheryteShortcut": "The Sea of Clouds - Camp Cloudtop",
+          "Fly": true
+        }
+      ]
+    },
+    {
+      "Sequence": 255,
+      "Steps": [
+        {
+          "DataId": 1013240,
+          "Position": {
+            "X": -84.45868,
+            "Y": 8.05915,
+            "Z": 37.125122
+          },
+          "TerritoryId": 418,
+          "InteractionType": "CompleteQuest",
+          "AetheryteShortcut": "Ishgard"
+        }
+      ]
+    }
+  ]
+}

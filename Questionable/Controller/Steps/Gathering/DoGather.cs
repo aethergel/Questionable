@@ -80,29 +80,31 @@ internal static class DoGather
                         if (Task.Request.Collectability > 0)
                         {
                             var slot = slots.Single(x => x.ItemId == Task.Request.ItemId);
+                            logger.LogDebug($"Collectible=true, clicking {slot.Index} {slot.ItemId}");
                             addonGathering->FireCallbackInt(slot.Index);
                         }
                         else
                         {
                             NodeCondition nodeCondition = new NodeCondition(
-                                addonGathering->AtkValues[110].UInt,
-                                addonGathering->AtkValues[111].UInt);
+                                addonGathering->AtkValues[109].UInt,
+                                addonGathering->AtkValues[110].UInt);
+                            logger.LogDebug($"NodeCondition: {nodeCondition.CurrentIntegrity}/{nodeCondition.MaxIntegrity}");
 
                             if (_actionQueue != null && _actionQueue.TryPeek(out EAction nextAction))
                             {
                                 if (gameFunctions.UseAction(nextAction))
                                 {
-                                    logger.LogInformation("Used action {Action} on node", nextAction);
+                                    logger.LogDebug($"Action: {nextAction}");
                                     _actionQueue.Dequeue();
                                 }
 
                                 return ETaskResult.StillRunning;
                             }
 
-                            _actionQueue = GetNextActions(nodeCondition, slots, logger);
+                            _actionQueue = GetNextActions(nodeCondition, slots);
                             if (_actionQueue == null)
                             {
-                                logger.LogInformation("Skipping the rest of gathering...");
+                                logger.LogDebug($"No actions returned by GetNextActions");
                                 addonGathering->FireCallbackInt(-1);
                                 return ETaskResult.TaskComplete;
                             }
@@ -117,9 +119,13 @@ internal static class DoGather
                                 }
 
                                 if (slot != null)
+                                {
                                     addonGathering->FireCallbackInt(slot.Index);
+                                }
                                 else
+                                {
                                     addonGathering->FireCallbackInt(-1);
+                                }
                             }
                         }
                     }
@@ -160,12 +166,12 @@ internal static class DoGather
                 slots.Add(slot);
             }
 
-            logger.LogTrace("Slots: {Slots}", string.Join(", ", slots));
+            logger.LogDebug("Slots: {Slots}", string.Join(", ", slots));
             return slots;
         }
 
         [SuppressMessage("ReSharper", "UnusedParameter.Local")]
-        private Queue<EAction>? GetNextActions(NodeCondition nodeCondition, List<SlotInfo> slots, ILogger<GatherExecutor> logger)
+        private Queue<EAction>? GetNextActions(NodeCondition nodeCondition, List<SlotInfo> slots)
         {
             // it's possible the item has disappeared
             if (_slotToGather != null && slots.All(x => x.Index != _slotToGather.Index))
@@ -174,8 +180,8 @@ internal static class DoGather
             //uint gp = objectTable.CurrentGp;
             Queue<EAction> actions = new();
 
-            if (!gameFunctions.HasStatus(EStatus.GatheringRateUp))
-            {
+            //if (!gameFunctions.HasStatus(EStatus.GatheringRateUp))
+            //{
                 // do we have an alternative item? only happens for 'evaluation' leve quests
                 if (Task.Request.AlternativeItemId != 0)
                 {
@@ -271,7 +277,7 @@ internal static class DoGather
                         return actions;
                     }
                 }
-            }
+            //}
 
             return actions;
         }

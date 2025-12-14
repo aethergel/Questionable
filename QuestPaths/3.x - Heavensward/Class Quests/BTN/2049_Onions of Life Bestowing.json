@@ -1,0 +1,102 @@
+{
+  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+  "Author": "alydev",
+  "LastChecked":{"Username": "alydev", "Date": "2025-12-14"},
+  "QuestSequence": [
+    {
+      "Sequence": 0,
+      "Steps": [
+        {
+          "DataId": 1013240,
+          "Position": {
+            "X": -84.45868,
+            "Y": 8.05915,
+            "Z": 37.125122
+          },
+          "TerritoryId": 418,
+          "InteractionType": "AcceptQuest",
+          "AetheryteShortcut": "Ishgard"
+        }
+      ]
+    },
+    {
+      "Sequence": 1,
+      "Steps": [
+        {
+          "DataId": 1013241,
+          "Position": {
+            "X": -670.8019,
+            "Y": -127.97377,
+            "Z": 639.9481
+          },
+          "TerritoryId": 401,
+          "InteractionType": "Interact",
+          "AetheryteShortcut": "The Sea of Clouds - Camp Cloudtop",
+          "Fly": true,
+          "DialogueChoices": [
+            {
+              "Prompt": "TEXT_CLSHRV530_02049_Q1_000_000",
+              "Answer": "TEXT_CLSHRV530_02049_A1_000_001",
+              "Type": "List"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Sequence": 2,
+      "Steps": [
+        {
+          "TerritoryId": 133,
+          "InteractionType": "EquipRecommended"
+        },
+        {
+          "TerritoryId": 133,
+          "InteractionType": "Gather",
+          "ItemsToGather": [
+            {
+              "ItemId": 12878,
+              "ItemCount": 10
+            }
+          ],
+          "GatheringPoint": 297,
+          "SkipConditions": {
+            "StepIf": {
+              "Item": {
+                "NotInInventory": false
+              }
+            }
+          }
+        },
+        {
+          "DataId": 1013241,
+          "Position": {
+            "X": -670.8019,
+            "Y": -127.97377,
+            "Z": 639.9481
+          },
+          "TerritoryId": 401,
+          "InteractionType": "Interact",
+          "AetheryteShortcut": "The Sea of Clouds - Camp Cloudtop",
+          "Fly": true
+        }
+      ]
+    },
+    {
+      "Sequence": 255,
+      "Steps": [
+        {
+          "DataId": 1013240,
+          "Position": {
+            "X": -84.45868,
+            "Y": 8.05915,
+            "Z": 37.125122
+          },
+          "TerritoryId": 418,
+          "InteractionType": "CompleteQuest",
+          "AetheryteShortcut": "Ishgard"
+        }
+      ]
+    }
+  ]
+}
