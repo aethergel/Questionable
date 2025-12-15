@@ -58,32 +58,9 @@
           "TerritoryId": 612,
           "InteractionType": "Interact",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "Low": 4
-              },
-              {
-                "Low": 6
-              },
-              {
-                "Low": 7
-              },
-              {
-                "Low": 8
-              },
-              {
-                "Low": 9
-              },
-              {
-                "Low": 10
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"Low": 4}, {"Low": 6}, {"Low": 7}, {"Low": 8}, {"Low": 9}, {"Low": 10}
+            ],null,null,null,null
           ]
         },
         {
@@ -96,32 +73,9 @@
           "TerritoryId": 612,
           "InteractionType": "Interact",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 2
-              },
-              {
-                "Low": 5
-              },
-              {
-                "Low": 7
-              },
-              {
-                "Low": 8
-              },
-              {
-                "Low": 10
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"Low": 1}, {"Low": 2}, {"Low": 5}, {"Low": 7}, {"Low": 8}, {"Low": 10}
+            ],null,null,null,null
           ]
         },
         {
@@ -134,32 +88,9 @@
           "TerritoryId": 612,
           "InteractionType": "Interact",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 2
-              },
-              {
-                "Low": 3
-              },
-              {
-                "Low": 6
-              },
-              {
-                "Low": 7
-              },
-              {
-                "Low": 9
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"Low": 1}, {"Low": 2}, {"Low": 3}, {"Low": 6}, {"Low": 7}, {"Low": 9}
+            ],null,null,null,null
           ]
         },
         {
@@ -172,32 +103,9 @@
           "TerritoryId": 612,
           "InteractionType": "Interact",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "Low": 2
-              },
-              {
-                "Low": 3
-              },
-              {
-                "Low": 4
-              },
-              {
-                "Low": 5
-              },
-              {
-                "Low": 6
-              },
-              {
-                "Low": 10
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"Low": 2}, {"Low": 3}, {"Low": 4}, {"Low": 5}, {"Low": 6}, {"Low": 10}
+            ],null,null,null,null
           ]
         },
         {
@@ -210,32 +118,9 @@
           "TerritoryId": 612,
           "InteractionType": "Interact",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 3
-              },
-              {
-                "Low": 4
-              },
-              {
-                "Low": 5
-              },
-              {
-                "Low": 8
-              },
-              {
-                "Low": 9
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"Low": 1}, {"Low": 3}, {"Low": 4}, {"Low": 5}, {"Low": 8}, {"Low": 9}
+            ],null,null,null,null
           ]
         }
       ]

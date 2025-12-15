@@ -59,18 +59,9 @@
           "InteractionType": "Action",
           "Action": "Bosom Brook",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
-              {
-                "High": 1
-              }
-            ],
-            null,
-            null,
-            null
-          ]
+          "RequiredQuestVariables": [null,null,[
+            {"High": 1}
+            ],null,null,null]
         },
         {
           "DataId": 1052329,
@@ -83,18 +74,9 @@
           "InteractionType": "Action",
           "Action": "Bosom Brook",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
-              {
-                "High": 2
-              }
-            ],
-            null,
-            null,
-            null
-          ]
+          "RequiredQuestVariables": [null,null,[
+            {"High": 2}
+            ],null,null,null]
         },
         {
           "DataId": 1052327,
@@ -107,18 +89,9 @@
           "InteractionType": "Action",
           "Action": "Bosom Brook",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
-              {
-                "High": 3
-              }
-            ],
-            null,
-            null,
-            null
-          ]
+          "RequiredQuestVariables": [null,null,[
+            {"High": 3}
+            ],null,null,null]
         }
       ]
     },

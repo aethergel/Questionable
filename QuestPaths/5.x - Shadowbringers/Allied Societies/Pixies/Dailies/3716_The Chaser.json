@@ -35,16 +35,9 @@
           "ItemId": 2002943,
           "AetheryteShortcut": "Il Mheg - Pla Enni",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
+          "RequiredQuestVariables": [null,null,[
               1
-            ],
-            null,
-            null,
-            null
-          ]
+            ],null,null,null]
         },
         {
           "DataId": 1032202,
@@ -57,16 +50,9 @@
           "InteractionType": "UseItem",
           "ItemId": 2002943,
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
+          "RequiredQuestVariables": [null,null,[
               2
-            ],
-            null,
-            null,
-            null
-          ]
+            ],null,null,null]
         }
       ]
     },

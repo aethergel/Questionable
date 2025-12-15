@@ -37,7 +37,8 @@
           "InteractionType": "UseItem",
           "ItemId": 2003338,
           "Fly": true,
-          "CompletionQuestVariablesFlags": [null,null,null,null,{"High": 12},null]
+          "CompletionQuestVariablesFlags": [null,null,null,null,{"High": 12},
+          null]
         },
         {
           "DataId": 2012578,

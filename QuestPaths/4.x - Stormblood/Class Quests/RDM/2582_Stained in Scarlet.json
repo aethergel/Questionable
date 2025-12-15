@@ -91,15 +91,8 @@
           ],
           "Fly": true,
           "CompletionQuestVariablesFlags": [
-            {
-              "Low": 2
-            },
-            null,
-            null,
-            null,
-            null,
-            null
-          ]
+            {"Low": 2},
+          null,null,null,null,null]
         },
         {
           "DataId": 1021489,
@@ -131,15 +124,8 @@
           ],
           "Fly": true,
           "CompletionQuestVariablesFlags": [
-            {
-              "Low": 3
-            },
-            null,
-            null,
-            null,
-            null,
-            null
-          ]
+            {"Low": 3},
+          null,null,null,null,null]
         },
         {
           "DataId": 1021490,

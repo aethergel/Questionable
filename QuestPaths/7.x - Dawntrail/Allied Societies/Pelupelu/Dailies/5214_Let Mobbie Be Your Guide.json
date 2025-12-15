@@ -60,17 +60,9 @@
           "TerritoryId": 1188,
           "InteractionType": "Interact",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "High": 2
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"High": 2}
+            ],null,null,null,null
           ]
         },
         {
@@ -83,17 +75,9 @@
           "TerritoryId": 1188,
           "InteractionType": "Interact",
           "AetheryteShortcut": "Kozama'uka - Many Fires",
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "High": 1
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"High": 1}
+            ],null,null,null,null
           ]
         }
       ]

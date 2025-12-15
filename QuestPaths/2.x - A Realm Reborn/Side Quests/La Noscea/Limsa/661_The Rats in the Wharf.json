@@ -78,28 +78,14 @@
             {
               "DataId": 347,
               "CompletionQuestVariablesFlags": [
-                {
-                  "Low": 5
-                },
-                null,
-                null,
-                null,
-                null,
-                null
-              ],
+            {"Low": 5},
+          null,null,null,null,null],
               "MinimumKillCount": 5
             }
           ],
           "CompletionQuestVariablesFlags": [
-            {
-              "Low": 5
-            },
-            null,
-            null,
-            null,
-            null,
-            null
-          ],
+            {"Low": 5},
+          null,null,null,null,null],
           "SkipConditions": {
             "AetheryteShortcutIf": {
               "InTerritory": [

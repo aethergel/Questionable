@@ -35,15 +35,9 @@
           "InteractionType": "Combat",
           "EnemySpawnType": "AfterInteraction",
           "Fly": true,
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 8
-            }
+            {"High": 8}
           ],
           "KillEnemyDataIds": [2843]
         },
@@ -57,15 +51,9 @@
           "TerritoryId": 138,
           "InteractionType": "Combat",
           "EnemySpawnType": "AfterInteraction",
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 4
-            }
+            {"High": 4}
           ],
           "KillEnemyDataIds": [2843]
         },
@@ -79,15 +67,9 @@
           "TerritoryId": 138,
           "InteractionType": "Combat",
           "EnemySpawnType": "AfterInteraction",
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 1
-            }
+            {"High": 1}
           ],
           "KillEnemyDataIds": [2843]
         }

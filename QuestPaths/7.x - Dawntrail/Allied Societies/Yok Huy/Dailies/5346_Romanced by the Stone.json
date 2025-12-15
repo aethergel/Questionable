@@ -85,17 +85,9 @@
           "InteractionType": "Emote",
           "Fly": true,
           "Emote": "poke",
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "High": 3
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"High": 3}
+            ],null,null,null,null
           ]
         },
         {
@@ -109,17 +101,9 @@
           "InteractionType": "Emote",
           "Fly": true,
           "Emote": "poke",
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "High": 1
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"High": 1}
+            ],null,null,null,null
           ]
         },
         {
@@ -133,17 +117,9 @@
           "InteractionType": "Emote",
           "Fly": true,
           "Emote": "poke",
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "High": 4
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"High": 4}
+            ],null,null,null,null
           ]
         },
         {
@@ -157,17 +133,9 @@
           "InteractionType": "Emote",
           "Fly": true,
           "Emote": "poke",
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "High": 2
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"High": 2}
+            ],null,null,null,null
           ]
         }
       ]

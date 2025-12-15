@@ -103,15 +103,8 @@
               "MinimumKillCount": 8,
               "$": "Slay efts",
               "CompletionQuestVariablesFlags": [
-                {
-                  "Low": 8
-                },
-                null,
-                null,
-                null,
-                null,
-                null
-              ]
+            {"Low": 8},
+          null,null,null,null,null]
             }
           ]
         }

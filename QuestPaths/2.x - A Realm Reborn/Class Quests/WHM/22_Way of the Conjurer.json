@@ -92,15 +92,8 @@
             }
           ],
           "CompletionQuestVariablesFlags": [
-            {
-              "Low": 3
-            },
-            null,
-            null,
-            null,
-            null,
-            null
-          ],
+            {"Low": 3},
+          null,null,null,null,null],
           "$": "0 0  0 0  0 0 -> 19 0  0 0  0 0",
           "AethernetShortcut": [
             "[Gridania] Conjurers' Guild",
@@ -124,13 +117,8 @@
           ],
           "CompletionQuestVariablesFlags": [
             null,
-            {
-              "High": 3
-            },
-            null,
-            null,
-            null,
-            null
+            {"High": 3},
+          null,null,null,null
           ],
           "$": "19 0  0 0  0 0 -> 35 48  0 0  0 0"
         },
@@ -151,13 +139,8 @@
           ],
           "CompletionQuestVariablesFlags": [
             null,
-            {
-              "Low": 3
-            },
-            null,
-            null,
-            null,
-            null
+            {"Low": 3},
+          null,null,null,null
           ]
         }
       ]

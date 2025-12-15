@@ -50,21 +50,9 @@
           "InteractionType": "Action",
           "Action": "Siphon Snout",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
-              {
-                "High": 1
-              },
-              {
-                "High": 2
-              }
-            ],
-            null,
-            null,
-            null
-          ]
+          "RequiredQuestVariables": [null,null,[
+            {"High": 1}, {"High": 2}
+            ],null,null,null]
         },
         {
           "DataId": 2010892,
@@ -77,21 +65,9 @@
           "InteractionType": "Action",
           "Action": "Siphon Snout",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
-              {
-                "High": 1
-              },
-              {
-                "High": 3
-              }
-            ],
-            null,
-            null,
-            null
-          ]
+          "RequiredQuestVariables": [null,null,[
+            {"High": 1}, {"High": 3}
+            ],null,null,null]
         },
         {
           "DataId": 2010893,
@@ -104,21 +80,9 @@
           "InteractionType": "Action",
           "Action": "Siphon Snout",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
-              {
-                "High": 2
-              },
-              {
-                "High": 3
-              }
-            ],
-            null,
-            null,
-            null
-          ]
+          "RequiredQuestVariables": [null,null,[
+            {"High": 2}, {"High": 3}
+            ],null,null,null]
         }
       ]
     },

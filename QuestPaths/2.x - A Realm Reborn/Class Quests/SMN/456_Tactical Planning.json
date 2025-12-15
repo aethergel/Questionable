@@ -44,15 +44,8 @@
           ],
           "AetheryteShortcut": "Western La Noscea - Swiftperch",
           "CompletionQuestVariablesFlags": [
-            {
-              "Low": 3
-            },
-            null,
-            null,
-            null,
-            null,
-            null
-          ]
+            {"Low": 3},
+          null,null,null,null,null]
         },
         {
           "Position": {
@@ -68,13 +61,8 @@
           ],
           "CompletionQuestVariablesFlags": [
             null,
-            {
-              "High": 3
-            },
-            null,
-            null,
-            null,
-            null
+            {"High": 3},
+          null,null,null,null
           ]
         }
       ]

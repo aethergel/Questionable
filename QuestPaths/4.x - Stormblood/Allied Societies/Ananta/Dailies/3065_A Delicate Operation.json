@@ -1,6 +1,7 @@
 ﻿{
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
   "Author": "liza",
+  "LastChecked":{"Username": "alydev", "Date": "2025-12-16"},
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -59,24 +60,9 @@
           "InteractionType": "UseItem",
           "ItemId": 2002450,
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
-              {
-                "High": 1
-              },
-              {
-                "High": 3
-              },
-              {
-                "High": 4
-              }
-            ],
-            null,
-            null,
-            null
-          ],
+          "RequiredQuestVariables": [null,null,[
+            {"High": 1}, {"High": 3}, {"High": 4}
+            ],null,null,null],
           "CompletionQuestVariablesFlags": [null,null,null,null,null,8]
         },
         {
@@ -90,21 +76,9 @@
           "InteractionType": "UseItem",
           "ItemId": 2002450,
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
-              {
-                "High": 3
-              },
-              {
-                "High": 5
-              }
-            ],
-            null,
-            null,
-            null
-          ],
+          "RequiredQuestVariables": [null,null,[
+            {"High": 3}, {"High": 5}
+            ],null,null,null],
           "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
         },
         {
@@ -118,27 +92,9 @@
           "InteractionType": "UseItem",
           "ItemId": 2002450,
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
-              {
-                "High": 1
-              },
-              {
-                "High": 2
-              },
-              {
-                "High": 4
-              },
-              {
-                "High": 5
-              }
-            ],
-            null,
-            null,
-            null
-          ],
+          "RequiredQuestVariables": [null,null,[
+            {"High": 1}, {"High": 2}, {"High": 4}, {"High": 5}
+            ],null,null,null],
           "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
@@ -152,24 +108,9 @@
           "InteractionType": "UseItem",
           "ItemId": 2002450,
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
-              {
-                "High": 2
-              },
-              {
-                "High": 4
-              },
-              {
-                "High": 5
-              }
-            ],
-            null,
-            null,
-            null
-          ],
+          "RequiredQuestVariables": [null,null,[
+            {"High": 2}, {"High": 4}, {"High": 5}
+            ],null,null,null],
           "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
         {
@@ -183,24 +124,9 @@
           "InteractionType": "UseItem",
           "ItemId": 2002450,
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
-              {
-                "High": 1
-              },
-              {
-                "High": 2
-              },
-              {
-                "High": 3
-              }
-            ],
-            null,
-            null,
-            null
-          ],
+          "RequiredQuestVariables": [null,null,[
+            {"High": 1}, {"High": 2}, {"High": 3}
+            ],null,null,null],
           "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         }
       ]

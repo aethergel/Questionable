@@ -35,13 +35,7 @@
           "ChatMessage": {
             "Key": "TEXT_BANNAM302_03104_SAYTODO_000_050"
           },
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128
           ]
         },
         {
@@ -57,13 +51,7 @@
           "ChatMessage": {
             "Key": "TEXT_BANNAM302_03104_SAYTODO_000_050"
           },
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64
           ]
         }
       ]

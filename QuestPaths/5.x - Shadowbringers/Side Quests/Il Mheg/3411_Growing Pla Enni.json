@@ -69,15 +69,10 @@
           "TerritoryId": 816,
           "InteractionType": "Combat",
           "EnemySpawnType": "OverworldEnemies",
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,
             null,
-            null,
-            null,
-            {
-              "High": 1
-            },
-            null,
-            null
+            {"High": 1},
+          null,null
           ],
           "ComplexCombatData": [
             {
@@ -96,16 +91,9 @@
           "TerritoryId": 816,
           "InteractionType": "Combat",
           "EnemySpawnType": "OverworldEnemies",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            {
-              "Low": 1
-            },
-            null,
-            null,
-            null
-          ],
+          "CompletionQuestVariablesFlags": [null,null,
+            {"Low": 1},
+          null,null,null],
           "ComplexCombatData": [
             {
               "DataId": 10269,
@@ -124,16 +112,9 @@
           "TerritoryId": 816,
           "InteractionType": "Combat",
           "EnemySpawnType": "OverworldEnemies",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            {
-              "High": 1
-            },
-            null,
-            null,
-            null
-          ],
+          "CompletionQuestVariablesFlags": [null,null,
+            {"High": 1},
+          null,null,null],
           "ComplexCombatData": [
             {
               "DataId": 10252,

@@ -50,15 +50,9 @@
           "StopDistance": 2,
           "Fly": true,
           "Land": true,
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 4
-            }
+            {"High": 4}
           ]
         },
         {
@@ -73,15 +67,9 @@
           "StopDistance": 2,
           "Fly": true,
           "Land": true,
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 8
-            }
+            {"High": 8}
           ]
         },
         {

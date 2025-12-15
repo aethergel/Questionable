@@ -58,15 +58,9 @@
           "InteractionType": "Interact",
           "Fly": true,
           "AetheryteShortcut": "Urqopacha - Worlar's Echo",
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 2
-            }
+            {"High": 2}
           ]
         },
         {
@@ -80,15 +74,9 @@
           "InteractionType": "Interact",
           "Fly": true,
           "AetheryteShortcut": "Urqopacha - Worlar's Echo",
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 1
-            }
+            {"High": 1}
           ]
         },
         {
@@ -102,15 +90,9 @@
           "InteractionType": "Interact",
           "Fly": true,
           "AetheryteShortcut": "Urqopacha - Worlar's Echo",
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 8
-            }
+            {"High": 8}
           ]
         },
         {
@@ -124,15 +106,9 @@
           "InteractionType": "Interact",
           "Fly": true,
           "AetheryteShortcut": "Urqopacha - Worlar's Echo",
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 4
-            }
+            {"High": 4}
           ]
         }
       ]

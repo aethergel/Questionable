@@ -251,17 +251,12 @@
             768
           ],
           "CompletionQuestVariablesFlags": [
-            {
-              "Low": 8
-            },
+            {"Low": 8},
             {
               "High": 8,
               "Low": 8
             },
-            null,
-            null,
-            null,
-            null
+          null,null,null,null
           ],
           "Fly": true
         }

@@ -91,15 +91,8 @@
               "DataId": 347,
               "MinimumKillCount": 3,
               "CompletionQuestVariablesFlags": [
-                {
-                  "Low": 3
-                },
-                null,
-                null,
-                null,
-                null,
-                null
-              ]
+            {"Low": 3},
+          null,null,null,null,null]
             }
           ],
           "AethernetShortcut": [
@@ -107,15 +100,8 @@
             "[Limsa Lominsa] Zephyr Gate (Middle La Noscea)"
           ],
           "CompletionQuestVariablesFlags": [
-            {
-              "Low": 3
-            },
-            null,
-            null,
-            null,
-            null,
-            null
-          ]
+            {"Low": 3},
+          null,null,null,null,null]
         },
         {
           "Position": {
@@ -132,25 +118,15 @@
               "MinimumKillCount": 3,
               "CompletionQuestVariablesFlags": [
                 null,
-                {
-                  "Low": 3
-                },
-                null,
-                null,
-                null,
-                null
+            {"Low": 3},
+          null,null,null,null
               ]
             }
           ],
           "CompletionQuestVariablesFlags": [
             null,
-            {
-              "Low": 3
-            },
-            null,
-            null,
-            null,
-            null
+            {"Low": 3},
+          null,null,null,null
           ]
         },
         {
@@ -168,25 +144,15 @@
               "MinimumKillCount": 3,
               "CompletionQuestVariablesFlags": [
                 null,
-                {
-                  "High": 3
-                },
-                null,
-                null,
-                null,
-                null
+            {"High": 3},
+          null,null,null,null
               ]
             }
           ],
           "CompletionQuestVariablesFlags": [
             null,
-            {
-              "High": 3
-            },
-            null,
-            null,
-            null,
-            null
+            {"High": 3},
+          null,null,null,null
           ]
         }
       ]

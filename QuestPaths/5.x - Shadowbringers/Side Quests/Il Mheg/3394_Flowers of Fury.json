@@ -50,15 +50,9 @@
           "KillEnemyDataIds": [
             11111
           ],
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 4
-            }
+            {"High": 4}
           ]
         },
         {

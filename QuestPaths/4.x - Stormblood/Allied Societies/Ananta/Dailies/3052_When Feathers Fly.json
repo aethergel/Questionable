@@ -60,18 +60,9 @@
           "InteractionType": "Emote",
           "Emote": "rally",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
-              {
-                "High": 1
-              }
-            ],
-            null,
-            null,
-            null
-          ]
+          "RequiredQuestVariables": [null,null,[
+            {"High": 1}
+            ],null,null,null]
         },
         {
           "DataId": 1025064,
@@ -82,17 +73,9 @@
           },
           "TerritoryId": 612,
           "InteractionType": "Emote",
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "Low": 1
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"Low": 1}
+            ],null,null,null,null
           ],
           "Emote": "soothe",
           "Fly": true
@@ -106,17 +89,9 @@
           },
           "TerritoryId": 612,
           "InteractionType": "Emote",
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "Low": 2
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"Low": 2}
+            ],null,null,null,null
           ],
           "Emote": "soothe",
           "Fly": true
@@ -130,18 +105,9 @@
           },
           "TerritoryId": 612,
           "InteractionType": "Emote",
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
-              {
-                "High": 2
-              }
-            ],
-            null,
-            null,
-            null
-          ],
+          "RequiredQuestVariables": [null,null,[
+            {"High": 2}
+            ],null,null,null],
           "Emote": "rally",
           "Fly": true
         }

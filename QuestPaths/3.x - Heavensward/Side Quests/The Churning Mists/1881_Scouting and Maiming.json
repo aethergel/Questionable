@@ -55,15 +55,8 @@
               "DataId": 4469,
               "MinimumKillCount": 3,
               "CompletionQuestVariablesFlags": [
-                {
-                  "Low": 3
-                },
-                null,
-                null,
-                null,
-                null,
-                null
-              ]
+            {"Low": 3},
+          null,null,null,null,null]
             }
           ],
           "Fly": true

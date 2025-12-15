@@ -62,38 +62,9 @@
           "InteractionType": "WalkTo",
           "AetheryteShortcut": "Fringes - Castrum Oriens",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 2
-              },
-              {
-                "Low": 4
-              },
-              {
-                "Low": 5
-              },
-              {
-                "Low": 6
-              },
-              {
-                "Low": 8
-              },
-              {
-                "Low": 9
-              },
-              {
-                "Low": 10
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"Low": 1}, {"Low": 2}, {"Low": 4}, {"Low": 5}, {"Low": 6}, {"Low": 8}, {"Low": 9}, {"Low": 10}
+            ],null,null,null,null
           ],
           "SkipConditions": {
             "StepIf": {
@@ -110,38 +81,9 @@
           },
           "TerritoryId": 612,
           "InteractionType": "Interact",
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 2
-              },
-              {
-                "Low": 4
-              },
-              {
-                "Low": 5
-              },
-              {
-                "Low": 6
-              },
-              {
-                "Low": 8
-              },
-              {
-                "Low": 9
-              },
-              {
-                "Low": 10
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"Low": 1}, {"Low": 2}, {"Low": 4}, {"Low": 5}, {"Low": 6}, {"Low": 8}, {"Low": 9}, {"Low": 10}
+            ],null,null,null,null
           ],
           "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
@@ -154,32 +96,9 @@
           "TerritoryId": 612,
           "InteractionType": "WalkTo",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "Low": 3
-              },
-              {
-                "Low": 4
-              },
-              {
-                "Low": 5
-              },
-              {
-                "Low": 6
-              },
-              {
-                "Low": 7
-              },
-              {
-                "Low": 8
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"Low": 3}, {"Low": 4}, {"Low": 5}, {"Low": 6}, {"Low": 7}, {"Low": 8}
+            ],null,null,null,null
           ],
           "SkipConditions": {
             "StepIf": {
@@ -196,32 +115,9 @@
           },
           "TerritoryId": 612,
           "InteractionType": "Interact",
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "Low": 3
-              },
-              {
-                "Low": 4
-              },
-              {
-                "Low": 5
-              },
-              {
-                "Low": 6
-              },
-              {
-                "Low": 7
-              },
-              {
-                "Low": 8
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"Low": 3}, {"Low": 4}, {"Low": 5}, {"Low": 6}, {"Low": 7}, {"Low": 8}
+            ],null,null,null,null
           ],
           "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
@@ -234,35 +130,9 @@
           "TerritoryId": 612,
           "InteractionType": "WalkTo",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 3
-              },
-              {
-                "Low": 6
-              },
-              {
-                "Low": 7
-              },
-              {
-                "Low": 8
-              },
-              {
-                "Low": 9
-              },
-              {
-                "Low": 10
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"Low": 1}, {"Low": 3}, {"Low": 6}, {"Low": 7}, {"Low": 8}, {"Low": 9}, {"Low": 10}
+            ],null,null,null,null
           ],
           "SkipConditions": {
             "StepIf": {
@@ -279,35 +149,9 @@
           },
           "TerritoryId": 612,
           "InteractionType": "Interact",
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 3
-              },
-              {
-                "Low": 6
-              },
-              {
-                "Low": 7
-              },
-              {
-                "Low": 8
-              },
-              {
-                "Low": 9
-              },
-              {
-                "Low": 10
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"Low": 1}, {"Low": 3}, {"Low": 6}, {"Low": 7}, {"Low": 8}, {"Low": 9}, {"Low": 10}
+            ],null,null,null,null
           ],
           "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
@@ -320,32 +164,9 @@
           "TerritoryId": 612,
           "InteractionType": "WalkTo",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "Low": 2
-              },
-              {
-                "Low": 5
-              },
-              {
-                "Low": 7
-              },
-              {
-                "Low": 8
-              },
-              {
-                "Low": 9
-              },
-              {
-                "Low": 10
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"Low": 2}, {"Low": 5}, {"Low": 7}, {"Low": 8}, {"Low": 9}, {"Low": 10}
+            ],null,null,null,null
           ],
           "SkipConditions": {
             "StepIf": {
@@ -362,32 +183,9 @@
           },
           "TerritoryId": 612,
           "InteractionType": "Interact",
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "Low": 2
-              },
-              {
-                "Low": 5
-              },
-              {
-                "Low": 7
-              },
-              {
-                "Low": 8
-              },
-              {
-                "Low": 9
-              },
-              {
-                "Low": 10
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"Low": 2}, {"Low": 5}, {"Low": 7}, {"Low": 8}, {"Low": 9}, {"Low": 10}
+            ],null,null,null,null
           ],
           "CompletionQuestVariablesFlags": [null,null,null,null,null,4]
         },
@@ -400,32 +198,9 @@
           "TerritoryId": 612,
           "InteractionType": "WalkTo",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 2
-              },
-              {
-                "Low": 3
-              },
-              {
-                "Low": 4
-              },
-              {
-                "Low": 6
-              },
-              {
-                "Low": 9
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"Low": 1}, {"Low": 2}, {"Low": 3}, {"Low": 4}, {"Low": 6}, {"Low": 9}
+            ],null,null,null,null
           ],
           "SkipConditions": {
             "StepIf": {
@@ -442,32 +217,9 @@
           },
           "TerritoryId": 612,
           "InteractionType": "Interact",
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 2
-              },
-              {
-                "Low": 3
-              },
-              {
-                "Low": 4
-              },
-              {
-                "Low": 6
-              },
-              {
-                "Low": 9
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"Low": 1}, {"Low": 2}, {"Low": 3}, {"Low": 4}, {"Low": 6}, {"Low": 9}
+            ],null,null,null,null
           ],
           "CompletionQuestVariablesFlags": [null,null,null,null,null,8]
         },
@@ -480,35 +232,9 @@
           "TerritoryId": 612,
           "InteractionType": "WalkTo",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 2
-              },
-              {
-                "Low": 3
-              },
-              {
-                "Low": 4
-              },
-              {
-                "Low": 5
-              },
-              {
-                "Low": 7
-              },
-              {
-                "Low": 10
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"Low": 1}, {"Low": 2}, {"Low": 3}, {"Low": 4}, {"Low": 5}, {"Low": 7}, {"Low": 10}
+            ],null,null,null,null
           ],
           "SkipConditions": {
             "StepIf": {
@@ -525,35 +251,9 @@
           },
           "TerritoryId": 612,
           "InteractionType": "Interact",
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 2
-              },
-              {
-                "Low": 3
-              },
-              {
-                "Low": 4
-              },
-              {
-                "Low": 5
-              },
-              {
-                "Low": 7
-              },
-              {
-                "Low": 10
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"Low": 1}, {"Low": 2}, {"Low": 3}, {"Low": 4}, {"Low": 5}, {"Low": 7}, {"Low": 10}
+            ],null,null,null,null
           ],
           "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
         }

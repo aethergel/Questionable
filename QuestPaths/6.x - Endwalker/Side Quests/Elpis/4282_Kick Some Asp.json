@@ -42,8 +42,7 @@
             "Condition": "Health%",
             "Value": 49
           },
-          "ComplexCombatData":
-          [
+          "ComplexCombatData":[
             {
               "DataId": 13425,
               "RewardItemId": 2003343,

@@ -32,15 +32,9 @@
           "TerritoryId": 1189,
           "InteractionType": "Interact",
           "AetheryteShortcut": "Yak T'el - Mamook",
-          "RequiredQuestVariables": [
-            null,
-            [
+          "RequiredQuestVariables": [null,[
               1
-            ],
-            null,
-            null,
-            null,
-            null
+            ],null,null,null,null
           ]
         },
         {
@@ -52,15 +46,9 @@
           },
           "TerritoryId": 1189,
           "InteractionType": "Interact",
-          "RequiredQuestVariables": [
-            null,
-            [
+          "RequiredQuestVariables": [null,[
               2
-            ],
-            null,
-            null,
-            null,
-            null
+            ],null,null,null,null
           ]
         }
       ]

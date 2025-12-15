@@ -34,23 +34,9 @@
           "InteractionType": "Interact",
           "AetheryteShortcut":"Lakeland - Ostall Imperative",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            [
-              {
-                "High": 1
-              },
-              {
-                "High": 4
-              },
-              {
-                "High": 5
-              }
-            ],
-            null,
-            null
+          "RequiredQuestVariables": [null,null,null,[
+            {"High": 1}, {"High": 4}, {"High": 5}
+            ],null,null
           ],
           "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
@@ -64,23 +50,9 @@
           "TerritoryId": 813,
           "InteractionType": "Interact",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            [
-              {
-                "High": 1
-              },
-              {
-                "High": 2
-              },
-              {
-                "High": 6
-              }
-            ],
-            null,
-            null
+          "RequiredQuestVariables": [null,null,null,[
+            {"High": 1}, {"High": 2}, {"High": 6}
+            ],null,null
           ],
           "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
@@ -94,23 +66,9 @@
           "TerritoryId": 813,
           "InteractionType": "Interact",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            [
-              {
-                "High": 3
-              },
-              {
-                "High": 5
-              },
-              {
-                "High": 6
-              }
-            ],
-            null,
-            null
+          "RequiredQuestVariables": [null,null,null,[
+            {"High": 3}, {"High": 5}, {"High": 6}
+            ],null,null
           ],
           "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
@@ -124,23 +82,9 @@
           "TerritoryId": 813,
           "InteractionType": "Interact",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            [
-              {
-                "High": 2
-              },
-              {
-                "High": 3
-              },
-              {
-                "High": 4
-              }
-            ],
-            null,
-            null
+          "RequiredQuestVariables": [null,null,null,[
+            {"High": 2}, {"High": 3}, {"High": 4}
+            ],null,null
           ],
           "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
         }

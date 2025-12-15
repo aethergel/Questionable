@@ -47,16 +47,9 @@
             18172
           ],
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
+          "RequiredQuestVariables": [null,null,[
               16
-            ],
-            null,
-            null,
-            null
-          ],
+            ],null,null,null],
           "AetheryteShortcut": "Kozama'uka - Dock Poga"
         },
         {
@@ -73,16 +66,9 @@
             18172
           ],
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
+          "RequiredQuestVariables": [null,null,[
               32
-            ],
-            null,
-            null,
-            null
-          ]
+            ],null,null,null]
         },
         {
           "DataId": 2014480,
@@ -98,16 +84,9 @@
             18172
           ],
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
+          "RequiredQuestVariables": [null,null,[
               48
-            ],
-            null,
-            null,
-            null
-          ]
+            ],null,null,null]
         }
       ]
     },

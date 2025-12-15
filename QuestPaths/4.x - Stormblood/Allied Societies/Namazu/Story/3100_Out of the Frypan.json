@@ -106,19 +106,13 @@
             "Z": 85.28259
           },
           "TerritoryId": 622,
-          "InteractionType": "Interact",
-          "RequiredCurrentJob": [
-            "DoH"
-          ]
+          "InteractionType": "Interact"
         },
         {
           "TerritoryId": 622,
           "InteractionType": "Craft",
           "ItemId": 22723,
-          "ItemCount": 1,
-          "RequiredCurrentJob": [
-            "DoH"
-          ]
+          "ItemCount": 1
         },
         {
           "TerritoryId": 622,

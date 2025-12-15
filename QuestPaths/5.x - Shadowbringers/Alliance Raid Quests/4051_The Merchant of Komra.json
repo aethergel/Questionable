@@ -130,15 +130,9 @@
           "TerritoryId": 928,
           "InteractionType": "Interact",
           "DisableNavmesh": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            [
+          "RequiredQuestVariables": [null,null,null,[
               1
-            ],
-            null,
-            null
+            ],null,null
           ],
           "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },

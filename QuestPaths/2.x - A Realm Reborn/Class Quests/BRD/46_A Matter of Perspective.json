@@ -226,15 +226,8 @@
           ],
           "Fly": true,
           "CompletionQuestVariablesFlags": [
-            {
-              "Low": 8
-            },
-            null,
-            null,
-            null,
-            null,
-            null
-          ]
+            {"Low": 8},
+          null,null,null,null,null]
         },
         {
           "Position": {
@@ -256,13 +249,8 @@
           "Fly": true,
           "CompletionQuestVariablesFlags": [
             null,
-            {
-              "High": 8
-            },
-            null,
-            null,
-            null,
-            null
+            {"High": 8},
+          null,null,null,null
           ]
         }
       ]

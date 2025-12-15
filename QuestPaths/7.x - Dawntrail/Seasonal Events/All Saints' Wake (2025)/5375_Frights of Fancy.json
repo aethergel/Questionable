@@ -188,15 +188,9 @@
           },
           "TerritoryId": 1305,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 4
-            }
+            {"High": 4}
           ]
         },
         {
@@ -209,15 +203,9 @@
           },
           "TerritoryId": 1305,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 8
-            }
+            {"High": 8}
           ]
         }
       ]
@@ -275,15 +263,9 @@
           },
           "TerritoryId": 1305,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 2
-            }
+            {"High": 2}
           ]
         },
         {
@@ -296,15 +278,9 @@
           },
           "TerritoryId": 1305,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 8
-            }
+            {"High": 8}
           ]
         },
         {
@@ -317,15 +293,9 @@
           },
           "TerritoryId": 1305,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 4
-            }
+            {"High": 4}
           ]
         }
       ]
@@ -474,15 +444,9 @@
           },
           "TerritoryId": 133,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 8
-            }
+            {"High": 8}
           ]
         },
         {
@@ -498,15 +462,9 @@
             "[Gridania] Mih Khetto's Amphitheatre",
             "[Gridania] Botanists' Guild"
           ],
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 4
-            }
+            {"High": 4}
           ]
         }
       ]

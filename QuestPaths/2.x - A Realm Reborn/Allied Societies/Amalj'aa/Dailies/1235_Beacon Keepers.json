@@ -36,21 +36,9 @@
           "Fly": true,
           "ItemId": 2001190,
           "CompletionQuestVariablesFlags": [null,null,null,null,null,128],
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 3
-              }
-            ],
-            null
-          ]
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 1}, {"Low": 3}
+            ],null]
         },
         {
           "DataId": 2003325,
@@ -64,21 +52,9 @@
           "Fly": true,
           "ItemId": 2001190,
           "CompletionQuestVariablesFlags": [null,null,null,null,null,32],
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 4
-              },
-              {
-                "Low": 5
-              }
-            ],
-            null
-          ]
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 4}, {"Low": 5}
+            ],null]
         },
         {
           "DataId": 2003329,
@@ -92,24 +68,9 @@
           "Fly": true,
           "ItemId": 2001190,
           "CompletionQuestVariablesFlags": [null,null,null,null,null,2],
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 2
-              },
-              {
-                "Low": 4
-              }
-            ],
-            null
-          ]
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 1}, {"Low": 2}, {"Low": 4}
+            ],null]
         },
         {
           "DataId": 2003324,
@@ -123,27 +84,9 @@
           "Fly": true,
           "ItemId": 2001190,
           "CompletionQuestVariablesFlags": [null,null,null,null,null,64],
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 2
-              },
-              {
-                "Low": 3
-              },
-              {
-                "Low": 4
-              },
-              {
-                "Low": 5
-              }
-            ],
-            null
-          ]
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 2}, {"Low": 3}, {"Low": 4}, {"Low": 5}
+            ],null]
         },
         {
           "DataId": 2003328,
@@ -157,21 +100,9 @@
           "Fly": true,
           "ItemId": 2001190,
           "CompletionQuestVariablesFlags": [null,null,null,null,null,4],
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 3
-              }
-            ],
-            null
-          ]
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 1}, {"Low": 3}
+            ],null]
         },
         {
           "DataId": 2003327,
@@ -185,21 +116,9 @@
           "Fly": true,
           "ItemId": 2001190,
           "CompletionQuestVariablesFlags": [null,null,null,null,null,8],
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 2
-              },
-              {
-                "Low": 5
-              }
-            ],
-            null
-          ]
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 2}, {"Low": 5}
+            ],null]
         },
         {
           "DataId": 2003327,
@@ -216,18 +135,9 @@
           "KillEnemyDataIds": [
             2454
           ],
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 4
-              }
-            ],
-            null
-          ]
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 4}
+            ],null]
         },
         {
           "DataId": 2003326,
@@ -245,27 +155,9 @@
             2454
           ],
           "CompletionQuestVariablesFlags": [null,null,null,null,null,16],
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 2
-              },
-              {
-                "Low": 3
-              },
-              {
-                "Low": 5
-              }
-            ],
-            null
-          ]
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 1}, {"Low": 2}, {"Low": 3}, {"Low": 5}
+            ],null]
         }
       ]
     },

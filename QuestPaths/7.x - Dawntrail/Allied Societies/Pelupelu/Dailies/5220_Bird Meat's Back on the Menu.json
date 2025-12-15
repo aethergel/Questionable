@@ -48,17 +48,9 @@
           ],
           "AetheryteShortcut": "Kozama'uka - Earthenshire",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            [
-              {
-                "High": 1
-              }
-            ],
-            null,
-            null
+          "RequiredQuestVariables": [null,null,null,[
+            {"High": 1}
+            ],null,null
           ]
         },
         {
@@ -76,17 +68,9 @@
             18176
           ],
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            [
-              {
-                "High": 2
-              }
-            ],
-            null,
-            null
+          "RequiredQuestVariables": [null,null,null,[
+            {"High": 2}
+            ],null,null
           ]
         },
         {
@@ -104,17 +88,9 @@
             18176
           ],
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            [
-              {
-                "High": 3
-              }
-            ],
-            null,
-            null
+          "RequiredQuestVariables": [null,null,null,[
+            {"High": 3}
+            ],null,null
           ]
         }
       ]

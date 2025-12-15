@@ -1,6 +1,7 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
   "Author": "plogon_enjoyer",
+  "LastChecked":{"Username": "alydev", "Date": "2025-12-16"},
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -50,21 +51,17 @@
           "TerritoryId": 613,
           "InteractionType": "Combat",
           "EnemySpawnType": "AfterInteraction",
-          "KillEnemyDataIds": [8234],
+          "ComplexCombatData": [{
+            "DataId": 8234
+          }],
           "Fly": true,
-          "RequiredQuestVariables": [null, null, [33,34], null, null, null]
-        },
-        {
-          "DataId": 8234,
-          "Position": {
-            "X": 534.78296,
-            "Y": 1,
-            "Z": -193.164
+          "CombatItemUse": {
+            "Condition": "Incapacitated",
+            "ItemId": 2002398
           },
-          "TerritoryId": 613,
-          "InteractionType": "UseItem",
-          "ItemId": 2002398,
-          "RequiredQuestVariables": [null, null, [33,34], null, null, null]
+          "RequiredQuestVariables": [null, null, [
+            {"Low": 1},{"Low": 2}
+          ], null, null, null]
         },
         {
           "DataId": 2009240,
@@ -76,21 +73,17 @@
           "TerritoryId": 613,
           "InteractionType": "Combat",
           "EnemySpawnType": "AfterInteraction",
-          "KillEnemyDataIds": [8233],
+          "ComplexCombatData": [{
+            "DataId": 8233
+          }],
           "Fly": true,
-          "RequiredQuestVariables": [null, null, [18, 35], null, null, null]
-        },
-        {
-          "DataId": 8233,
-          "Position": {
-            "X": 616.9984,
-            "Y": 0.04129504,
-            "Z": -318.1964
+          "CombatItemUse": {
+            "Condition": "Incapacitated",
+            "ItemId": 2002398
           },
-          "TerritoryId": 613,
-          "InteractionType": "UseItem",
-          "ItemId": 2002398,
-          "RequiredQuestVariables": [null, null, [18, 35], null, null, null]
+          "RequiredQuestVariables": [null, null, [
+            {"Low": 2},{"Low": 3}
+          ], null, null, null]
         },
         {
           "DataId": 2009239,
@@ -102,21 +95,17 @@
           "TerritoryId": 613,
           "InteractionType": "Combat",
           "EnemySpawnType": "AfterInteraction",
-          "KillEnemyDataIds": [8232],
+          "ComplexCombatData": [{
+            "DataId": 8232
+          }],
           "Fly": true,
-          "RequiredQuestVariables": [null, null, [17,19], null, null, null]
-        },
-        {
-          "DataId": 8232,
-          "Position": {
-            "X": 760.98267,
-            "Y": 0.36481446,
-            "Z": -290.0893
+          "CombatItemUse": {
+            "Condition": "Incapacitated",
+            "ItemId": 2002398
           },
-          "TerritoryId": 613,
-          "InteractionType": "UseItem",
-          "ItemId": 2002398,
-          "RequiredQuestVariables": [null, null, [17,19], null, null, null]
+          "RequiredQuestVariables": [null, null, [
+            {"Low": 1},{"Low": 3}
+          ], null, null, null]
         }
       ]
     },

@@ -34,16 +34,9 @@
           "InteractionType": "Interact",
           "Fly": true,
           "AetheryteShortcut": "The Sea of Clouds - Ok' Zundu",
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
+          "RequiredQuestVariables": [null,null,[
               16
-            ],
-            null,
-            null,
-            null
-          ]
+            ],null,null,null]
         },
         {
           "DataId": 2006761,
@@ -55,16 +48,9 @@
           "TerritoryId": 401,
           "InteractionType": "Interact",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
+          "RequiredQuestVariables": [null,null,[
               32
-            ],
-            null,
-            null,
-            null
-          ]
+            ],null,null,null]
         }
       ]
     },
@@ -86,15 +72,9 @@
             5238
           ],
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            [
+          "RequiredQuestVariables": [null,[
               1
-            ],
-            null,
-            null,
-            null,
-            null
+            ],null,null,null,null
           ]
         }
       ]

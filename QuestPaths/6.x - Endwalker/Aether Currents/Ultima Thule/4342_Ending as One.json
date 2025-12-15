@@ -40,13 +40,8 @@
               "MinimumKillCount": 1,
               "CompletionQuestVariablesFlags": [
                 null,
-                {
-                  "High": 3
-                },
-                null,
-                null,
-                null,
-                null
+            {"High": 3},
+          null,null,null,null
               ]
             }
           ],

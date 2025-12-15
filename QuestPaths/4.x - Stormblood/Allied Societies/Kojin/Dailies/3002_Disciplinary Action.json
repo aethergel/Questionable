@@ -1,6 +1,7 @@
 ﻿{
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
   "Author": "pot0to",
+  "LastChecked":{"Username": "alydev", "Date": "2025-12-16"},
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -34,13 +35,18 @@
           "TerritoryId": 613,
           "InteractionType": "Combat",
           "EnemySpawnType": "AutoOnEnterArea",
-          "KillEnemyDataIds": [ 8250 ],
+          "ComplexCombatData": [{
+            "DataId": 8250,
+            "NameId": 6885
+          }],
           "Fly": true,
           "CombatItemUse": {
             "Condition": "Incapacitated",
             "ItemId": 2002424
           },
-          "RequiredQuestVariables": [null,null,null,[ 17, 18, 21, 23, 24, 26, 33, 34, 37, 39, 40, 42, 49, 50, 53, 55, 56, 58 ],null,null]
+          "RequiredQuestVariables": [null,null,null,[
+            {"Low": 1},{"Low": 2},{"Low": 5},{"Low": 7},{"Low": 8},{"Low": 10}
+          ],null,null]
         },
         {
           "DataId": 8250,
@@ -52,13 +58,18 @@
           "TerritoryId": 613,
           "InteractionType": "Combat",
           "EnemySpawnType": "AutoOnEnterArea",
-          "KillEnemyDataIds": [ 8250 ],
+          "ComplexCombatData": [{
+            "DataId": 8250,
+            "NameId": 6885
+          }],
           "Fly": true,
           "CombatItemUse": {
             "Condition": "Incapacitated",
             "ItemId": 2002424
           },
-          "RequiredQuestVariables": [null,null,null,[ 17, 19, 22, 24, 25, 26, 33, 35, 38, 40, 41, 42, 49, 51, 54, 56, 57, 58 ],null,null]
+          "RequiredQuestVariables": [null,null,null,[
+            {"Low": 1},{"Low": 3},{"Low": 6},{"Low": 8},{"Low": 9},{"Low": 10}
+          ],null,null]
         },
         {
           "DataId": 8250,
@@ -70,13 +81,18 @@
           "TerritoryId": 613,
           "InteractionType": "Combat",
           "EnemySpawnType": "AutoOnEnterArea",
-          "KillEnemyDataIds": [ 8250 ],
+          "ComplexCombatData": [{
+            "DataId": 8250,
+            "NameId": 6885
+          }],
           "Fly": true,
           "CombatItemUse": {
             "Condition": "Incapacitated",
             "ItemId": 2002424
           },
-          "RequiredQuestVariables": [null,null,null,[ 18, 19, 20, 21, 22, 24, 34, 35, 36, 37, 38, 40, 50, 51, 52, 53, 54, 56 ],null,null]
+          "RequiredQuestVariables": [null,null,null,[
+            {"Low": 2},{"Low": 3},{"Low": 4},{"Low": 5},{"Low": 6},{"Low": 8}
+          ],null,null]
         },
         {
           "Position": {
@@ -87,13 +103,18 @@
           "TerritoryId": 613,
           "InteractionType": "Combat",
           "EnemySpawnType": "AutoOnEnterArea",
-          "KillEnemyDataIds": [ 8250 ],
+          "ComplexCombatData": [{
+            "DataId": 8250,
+            "NameId": 6885
+          }],
           "Fly": true,
           "CombatItemUse": {
             "Condition": "Incapacitated",
             "ItemId": 2002424
           },
-          "RequiredQuestVariables": [null,null,null,[ 17, 20, 21, 22, 23, 25, 33, 36, 37, 38, 39, 41, 49, 52, 53, 54, 55, 57 ],null,null]
+          "RequiredQuestVariables": [null,null,null,[
+            {"Low": 1},{"Low": 4},{"Low": 5},{"Low": 6},{"Low": 7},{"Low": 9}
+          ],null,null]
         },
         {
           "Position": {
@@ -104,13 +125,18 @@
           "TerritoryId": 613,
           "InteractionType": "Combat",
           "EnemySpawnType": "AutoOnEnterArea",
-          "KillEnemyDataIds": [ 8250 ],
+          "ComplexCombatData": [{
+            "DataId": 8250,
+            "NameId": 6885
+          }],
           "Fly": true,
           "CombatItemUse": {
             "Condition": "Incapacitated",
             "ItemId": 2002424
           },
-          "RequiredQuestVariables": [null,null,null,[ 18, 19, 20, 23, 25, 26, 34, 35, 36, 39, 41, 42, 50, 51, 52, 55, 57, 58 ],null,null]
+          "RequiredQuestVariables": [null,null,null,[
+            {"Low": 2},{"Low": 3},{"Low": 4},{"Low": 7},{"Low": 9},{"Low": 10}
+          ],null,null]
         }
       ]
     },

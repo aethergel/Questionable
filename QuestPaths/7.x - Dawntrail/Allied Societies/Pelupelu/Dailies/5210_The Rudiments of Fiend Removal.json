@@ -62,18 +62,9 @@
           "KillEnemyDataIds": [
             18173
           ],
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
-              {
-                "High": 1
-              }
-            ],
-            null,
-            null,
-            null
-          ]
+          "RequiredQuestVariables": [null,null,[
+            {"High": 1}
+            ],null,null,null]
         },
         {
           "DataId": 2014489,
@@ -88,18 +79,9 @@
           "KillEnemyDataIds": [
             18173
           ],
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
-              {
-                "High": 2
-              }
-            ],
-            null,
-            null,
-            null
-          ]
+          "RequiredQuestVariables": [null,null,[
+            {"High": 2}
+            ],null,null,null]
         },
         {
           "DataId": 2014490,
@@ -114,18 +96,9 @@
           "KillEnemyDataIds": [
             18173
           ],
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
-              {
-                "High": 3
-              }
-            ],
-            null,
-            null,
-            null
-          ]
+          "RequiredQuestVariables": [null,null,[
+            {"High": 3}
+            ],null,null,null]
         }
       ]
     },

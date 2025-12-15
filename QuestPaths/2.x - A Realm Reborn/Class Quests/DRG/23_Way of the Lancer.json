@@ -80,28 +80,14 @@
             {
               "DataId": 37,
               "CompletionQuestVariablesFlags": [
-                {
-                  "Low": 3
-                },
-                null,
-                null,
-                null,
-                null,
-                null
-              ],
+            {"Low": 3},
+          null,null,null,null,null],
               "MinimumKillCount": 3
             }
           ],
           "CompletionQuestVariablesFlags": [
-            {
-              "Low": 3
-            },
-            null,
-            null,
-            null,
-            null,
-            null
-          ],
+            {"Low": 3},
+          null,null,null,null,null],
           "$": "0 0  0 0  0 0 -> 19 0  0 0  0 0",
           "AethernetShortcut": [
             "[Gridania] Lancers' Guild",
@@ -122,26 +108,16 @@
               "DataId": 49,
               "CompletionQuestVariablesFlags": [
                 null,
-                {
-                  "High": 3
-                },
-                null,
-                null,
-                null,
-                null
+            {"High": 3},
+          null,null,null,null
               ],
               "MinimumKillCount": 3
             }
           ],
           "CompletionQuestVariablesFlags": [
             null,
-            {
-              "High": 3
-            },
-            null,
-            null,
-            null,
-            null
+            {"High": 3},
+          null,null,null,null
           ],
           "$": "19 0  0 0  0 0 -> 35 48  0 0  0 0"
         },
@@ -159,26 +135,16 @@
               "DataId": 47,
               "CompletionQuestVariablesFlags": [
                 null,
-                {
-                  "Low": 3
-                },
-                null,
-                null,
-                null,
-                null
+            {"Low": 3},
+          null,null,null,null
               ],
               "MinimumKillCount": 3
             }
           ],
           "CompletionQuestVariablesFlags": [
             null,
-            {
-              "Low": 3
-            },
-            null,
-            null,
-            null,
-            null
+            {"Low": 3},
+          null,null,null,null
           ],
           "$": "35 48  0 0  0 0 -> 35 51  0 0  0 0 // This one automatically went to 0 0 0 0 0 0 so I am not sure about the 51 part"
         }

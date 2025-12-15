@@ -53,15 +53,8 @@
           "ItemId": 2001403,
           "Mount": false,
           "CompletionQuestVariablesFlags": [
-            {
-              "High": 1
-            },
-            null,
-            null,
-            null,
-            null,
-            null
-          ]
+            {"High": 1},
+          null,null,null,null,null]
         },
         {
           "DataId": 1006385,

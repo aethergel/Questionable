@@ -47,13 +47,7 @@
           "InteractionType": "UseItem",
           "ItemId": 2001273,
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            [
+          "RequiredQuestVariables": [null,null,null,null,null,[
               128
             ]
           ]

@@ -34,16 +34,9 @@
           "InteractionType": "Interact",
           "AetheryteShortcut": "Il Mheg - Lydha Lran",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
+          "RequiredQuestVariables": [null,null,[
               3
-            ],
-            null,
-            null,
-            null
-          ]
+            ],null,null,null]
         },
         {
           "DataId": 2010902,
@@ -55,16 +48,9 @@
           "TerritoryId": 816,
           "InteractionType": "Interact",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
+          "RequiredQuestVariables": [null,null,[
               1
-            ],
-            null,
-            null,
-            null
-          ]
+            ],null,null,null]
         },
         {
           "DataId": 2010903,
@@ -76,16 +62,9 @@
           "TerritoryId": 816,
           "InteractionType": "Interact",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
+          "RequiredQuestVariables": [null,null,[
               2
-            ],
-            null,
-            null,
-            null
-          ]
+            ],null,null,null]
         }
       ]
     },

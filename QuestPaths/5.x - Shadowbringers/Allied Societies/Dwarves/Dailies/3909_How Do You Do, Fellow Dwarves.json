@@ -36,16 +36,9 @@
             "Key": "TEXT_BANDWA108_03909_SAYTODO_000_030"
           },
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
+          "RequiredQuestVariables": [null,null,[
               16
-            ],
-            null,
-            null,
-            null
-          ]
+            ],null,null,null]
         },
         {
           "DataId": 1033771,
@@ -60,16 +53,9 @@
             "Key": "TEXT_BANDWA108_03909_SAYTODO_000_030"
           },
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
+          "RequiredQuestVariables": [null,null,[
               32
-            ],
-            null,
-            null,
-            null
-          ]
+            ],null,null,null]
         },
         {
           "DataId": 1033772,
@@ -84,16 +70,9 @@
             "Key": "TEXT_BANDWA108_03909_SAYTODO_000_030"
           },
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
+          "RequiredQuestVariables": [null,null,[
               48
-            ],
-            null,
-            null,
-            null
-          ]
+            ],null,null,null]
         }
       ]
     },

@@ -83,13 +83,7 @@
             14014
           ],
           "Fly": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128
           ]
         },
         {
@@ -106,13 +100,7 @@
             14014
           ],
           "Fly": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64
           ]
         },
         {

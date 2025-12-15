@@ -58,15 +58,9 @@
           "TerritoryId": 1188,
           "InteractionType": "Interact",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            [
+          "RequiredQuestVariables": [null,[
               1
-            ],
-            null,
-            null,
-            null,
-            null
+            ],null,null,null,null
           ],
           "DialogueChoices": [
             {
@@ -86,15 +80,9 @@
           "TerritoryId": 1188,
           "InteractionType": "Interact",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            [
+          "RequiredQuestVariables": [null,[
               2
-            ],
-            null,
-            null,
-            null,
-            null
+            ],null,null,null,null
           ],
           "DialogueChoices": [
             {

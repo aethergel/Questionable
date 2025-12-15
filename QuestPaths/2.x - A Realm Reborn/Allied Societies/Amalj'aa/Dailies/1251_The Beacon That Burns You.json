@@ -39,15 +39,8 @@
             2453
           ],
           "CompletionQuestVariablesFlags": [
-            {
-              "Low": 1
-            },
-            null,
-            null,
-            null,
-            null,
-            null
-          ]
+            {"Low": 1},
+          null,null,null,null,null]
         },
         {
           "Position": {

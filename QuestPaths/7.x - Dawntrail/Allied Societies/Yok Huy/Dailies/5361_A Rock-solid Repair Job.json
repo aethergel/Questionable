@@ -39,8 +39,7 @@
             "Z": 783.0471
           },
           "TerritoryId": 1187,
-          "InteractionType": "AcceptQuest",
-          "RequiredCurrentJob": ["DoH"]
+          "InteractionType": "AcceptQuest"
         }
       ]
     },

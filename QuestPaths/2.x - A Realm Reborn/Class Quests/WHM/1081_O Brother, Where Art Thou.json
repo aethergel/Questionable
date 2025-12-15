@@ -100,15 +100,8 @@
             1939
           ],
           "CompletionQuestVariablesFlags": [
-            {
-              "Low": 4
-            },
-            null,
-            null,
-            null,
-            null,
-            null
-          ]
+            {"Low": 4},
+          null,null,null,null,null]
         },
         {
           "DataId": 2002394,

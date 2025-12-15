@@ -80,15 +80,8 @@
               "MinimumKillCount": 3,
               "$": "Slay star marmots as a thaumaturge",
               "CompletionQuestVariablesFlags": [
-                {
-                  "Low": 3
-                },
-                null,
-                null,
-                null,
-                null,
-                null
-              ]
+            {"Low": 3},
+          null,null,null,null,null]
             },
             {
               "DataId": 385,
@@ -96,13 +89,8 @@
               "$": "Slay huge hornets as a thaumaturge",
               "CompletionQuestVariablesFlags": [
                 null,
-                {
-                  "High": 3
-                },
-                null,
-                null,
-                null,
-                null
+            {"High": 3},
+          null,null,null,null
               ]
             }
           ],
@@ -120,16 +108,8 @@
             }
           },
           "CompletionQuestVariablesFlags": [
-            {
-              "Low": 3
-            },
-            {
-              "High": 3
-            },
-            null,
-            null,
-            null,
-            null
+            {"Low": 3}, {"High": 3},
+          null,null,null,null
           ]
         },
         {
@@ -150,13 +130,8 @@
           ],
           "CompletionQuestVariablesFlags": [
             null,
-            {
-              "Low": 3
-            },
-            null,
-            null,
-            null,
-            null
+            {"Low": 3},
+          null,null,null,null
           ]
         }
       ]

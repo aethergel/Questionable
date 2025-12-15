@@ -62,17 +62,9 @@
           "InteractionType": "Interact",
           "AetheryteShortcut": "Urqopacha - Worlar's Echo",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "Low": 3
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"Low": 3}
+            ],null,null,null,null
           ]
         },
         {
@@ -85,17 +77,9 @@
           "TerritoryId": 1187,
           "InteractionType": "Interact",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "Low": 1
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"Low": 1}
+            ],null,null,null,null
           ]
         },
         {
@@ -108,17 +92,9 @@
           "TerritoryId": 1187,
           "InteractionType": "Interact",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "Low": 2
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"Low": 2}
+            ],null,null,null,null
           ]
         }
       ]

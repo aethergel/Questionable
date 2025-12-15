@@ -68,15 +68,9 @@
           },
           "TerritoryId": 886,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 4
-            }
+            {"High": 4}
           ]
         },
         {
@@ -92,15 +86,9 @@
             "[Firmament] Featherfall",
             "[Firmament] The Mattock"
           ],
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 8
-            }
+            {"High": 8}
           ]
         },
         {
@@ -116,15 +104,9 @@
             "[Firmament] The Mattock",
             "[Firmament] The Mendicant's Court"
           ],
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 2
-            }
+            {"High": 2}
           ]
         }
       ]

@@ -64,20 +64,9 @@
             "[Rhalgr's Reach] Fringes Gate"
           ],
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "Low": 3
-              },
-              {
-                "Low": 4
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"Low": 3}, {"Low": 4}
+            ],null,null,null,null
           ],
           "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
@@ -91,23 +80,9 @@
           "TerritoryId": 612,
           "InteractionType": "Interact",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "Low": 2
-              },
-              {
-                "Low": 4
-              },
-              {
-                "Low": 5
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"Low": 2}, {"Low": 4}, {"Low": 5}
+            ],null,null,null,null
           ],
           "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         },
@@ -121,26 +96,9 @@
           "TerritoryId": 612,
           "InteractionType": "Interact",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 2
-              },
-              {
-                "Low": 3
-              },
-              {
-                "Low": 5
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"Low": 1}, {"Low": 2}, {"Low": 3}, {"Low": 5}
+            ],null,null,null,null
           ],
           "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
@@ -154,26 +112,9 @@
           "TerritoryId": 612,
           "InteractionType": "Interact",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 2
-              },
-              {
-                "Low": 3
-              },
-              {
-                "Low": 4
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"Low": 1}, {"Low": 2}, {"Low": 3}, {"Low": 4}
+            ],null,null,null,null
           ],
           "CompletionQuestVariablesFlags": [null,null,null,null,null,16]
         },
@@ -187,20 +128,9 @@
           "TerritoryId": 612,
           "InteractionType": "Interact",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 5
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"Low": 1}, {"Low": 5}
+            ],null,null,null,null
           ],
           "CompletionQuestVariablesFlags": [null,null,null,null,null,8]
         }

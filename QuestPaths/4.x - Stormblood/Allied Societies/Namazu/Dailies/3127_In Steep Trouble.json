@@ -34,15 +34,9 @@
           "ItemId": 2002479,
           "AetheryteShortcut": "Azim Steppe - Dawn Throne",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            [
+          "RequiredQuestVariables": [null,[
               48
-            ],
-            null,
-            null,
-            null,
-            null
+            ],null,null,null,null
           ]
         },
         {
@@ -56,15 +50,9 @@
           "InteractionType": "UseItem",
           "ItemId": 2002479,
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            [
+          "RequiredQuestVariables": [null,[
               32
-            ],
-            null,
-            null,
-            null,
-            null
+            ],null,null,null,null
           ]
         },
         {
@@ -78,15 +66,9 @@
           "InteractionType": "UseItem",
           "ItemId": 2002479,
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            [
+          "RequiredQuestVariables": [null,[
               16
-            ],
-            null,
-            null,
-            null,
-            null
+            ],null,null,null,null
           ]
         }
       ]

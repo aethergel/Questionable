@@ -63,30 +63,12 @@
           "InteractionType": "UseItem",
           "ItemId": 2001167,
           "Fly": true,
-          "RequiredQuestVariables": [
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 1}, {"Low": 3}
+            ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 3
-              }
-            ],
-            null
-          ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Low": 4
-            }
+            {"Low": 4}
           ]
         },
         {
@@ -100,30 +82,12 @@
           "InteractionType": "UseItem",
           "ItemId": 2001167,
           "Fly": true,
-          "RequiredQuestVariables": [
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 2}, {"Low": 5}
+            ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 2
-              },
-              {
-                "Low": 5
-              }
-            ],
-            null
-          ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 8
-            }
+            {"High": 8}
           ]
         },
         {
@@ -137,30 +101,12 @@
           "InteractionType": "UseItem",
           "ItemId": 2001167,
           "Fly": true,
-          "RequiredQuestVariables": [
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 2}, {"Low": 4}
+            ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 2
-              },
-              {
-                "Low": 4
-              }
-            ],
-            null
-          ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Low": 8
-            }
+            {"Low": 8}
           ]
         },
         {
@@ -174,21 +120,9 @@
           "InteractionType": "UseItem",
           "ItemId": 2001167,
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 5
-              }
-            ],
-            null
-          ],
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 1}, {"Low": 5}
+            ],null],
           "CompletionQuestVariablesFlags": [null,null,null,null,null,null]
         },
         {
@@ -202,30 +136,12 @@
           "InteractionType": "UseItem",
           "ItemId": 2001167,
           "Fly": true,
-          "RequiredQuestVariables": [
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 1}, {"Low": 2}
+            ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 2
-              }
-            ],
-            null
-          ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Low": 2
-            }
+            {"Low": 2}
           ]
         },
         {
@@ -240,30 +156,12 @@
           "StopDistance": 1,
           "ItemId": 2001167,
           "Fly": true,
-          "RequiredQuestVariables": [
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 3}, {"Low": 4}
+            ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 3
-              },
-              {
-                "Low": 4
-              }
-            ],
-            null
-          ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 2
-            }
+            {"High": 2}
           ]
         },
         {
@@ -277,33 +175,12 @@
           "InteractionType": "UseItem",
           "ItemId": 2001167,
           "Fly": true,
-          "RequiredQuestVariables": [
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 3}, {"Low": 4}, {"Low": 5}
+            ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 3
-              },
-              {
-                "Low": 4
-              },
-              {
-                "Low": 5
-              }
-            ],
-            null
-          ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 4
-            }
+            {"High": 4}
           ]
         }
       ]

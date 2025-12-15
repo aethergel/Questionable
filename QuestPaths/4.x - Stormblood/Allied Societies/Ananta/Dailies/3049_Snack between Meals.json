@@ -61,21 +61,9 @@
           "KillEnemyDataIds": [
             8584
           ],
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 2
-              }
-            ],
-            null,
-            null,
-            null
-          ],
+          "RequiredQuestVariables": [null,null,[
+            {"Low": 1}, {"Low": 2}
+            ],null,null,null],
           "Fly": true
         },
         {
@@ -91,21 +79,9 @@
           "KillEnemyDataIds": [
             8584
           ],
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
-              {
-                "Low": 3
-              },
-              {
-                "Low": 1
-              }
-            ],
-            null,
-            null,
-            null
-          ],
+          "RequiredQuestVariables": [null,null,[
+            {"Low": 3}, {"Low": 1}
+            ],null,null,null],
           "Fly": true
         },
         {
@@ -121,21 +97,9 @@
           "KillEnemyDataIds": [
             8584
           ],
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
-              {
-                "Low": 2
-              },
-              {
-                "Low": 3
-              }
-            ],
-            null,
-            null,
-            null
-          ],
+          "RequiredQuestVariables": [null,null,[
+            {"Low": 2}, {"Low": 3}
+            ],null,null,null],
           "Fly": true
         }
       ]

@@ -37,15 +37,9 @@
           "ItemId": 2001264,
           "AetheryteShortcut": "Western La Noscea - Aleport",
           "Fly": true,
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 8
-            }
+            {"High": 8}
           ]
         },
         {
@@ -60,15 +54,9 @@
           "StopDistance": 1,
           "ItemId": 2001264,
           "Fly": true,
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 4
-            }
+            {"High": 4}
           ]
         },
         {
@@ -83,15 +71,9 @@
           "StopDistance": 1,
           "ItemId": 2001264,
           "Fly": true,
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Low": 8
-            }
+            {"Low": 8}
           ]
         },
         {
@@ -106,15 +88,9 @@
           "StopDistance": 1,
           "ItemId": 2001264,
           "Fly": true,
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 2
-            }
+            {"High": 2}
           ]
         },
         {
@@ -133,15 +109,9 @@
           "KillEnemyDataIds": [
             2949
           ],
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 1
-            }
+            {"High": 1}
           ]
         }
       ]

@@ -151,15 +151,8 @@
             1942
           ],
           "CompletionQuestVariablesFlags": [
-            {
-              "Low": 3
-            },
-            null,
-            null,
-            null,
-            null,
-            null
-          ]
+            {"Low": 3},
+          null,null,null,null,null]
         },
         {
           "DataId": 2002403,

@@ -128,15 +128,9 @@
           "InteractionType": "UseItem",
           "Mount": true,
           "ItemId": 2003778,
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 8
-            }
+            {"High": 8}
           ]
         },
         {
@@ -150,15 +144,9 @@
           "InteractionType": "UseItem",
           "Mount": true,
           "ItemId": 2003778,
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 4
-            }
+            {"High": 4}
           ]
         },
         {
@@ -172,15 +160,9 @@
           "InteractionType": "UseItem",
           "Mount": true,
           "ItemId": 2003778,
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 1
-            }
+            {"High": 1}
           ]
         },
         {
@@ -194,15 +176,9 @@
           "InteractionType": "UseItem",
           "Mount": true,
           "ItemId": 2003778,
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 2
-            }
+            {"High": 2}
           ]
         }
       ]

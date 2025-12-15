@@ -34,15 +34,9 @@
           "ItemId": 2003420,
           "Fly": true,
           "AetheryteShortcut": "Thavnair - Palaka's Stand",
-          "RequiredQuestVariables": [
-            null,
-            [
+          "RequiredQuestVariables": [null,[
               19
-            ],
-            null,
-            null,
-            null,
-            null
+            ],null,null,null,null
           ]
         },
         {
@@ -56,15 +50,9 @@
           "InteractionType": "UseItem",
           "ItemId": 2003420,
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            [
+          "RequiredQuestVariables": [null,[
               18
-            ],
-            null,
-            null,
-            null,
-            null
+            ],null,null,null,null
           ]
         },
         {
@@ -78,15 +66,9 @@
           "InteractionType": "UseItem",
           "ItemId": 2003420,
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            [
+          "RequiredQuestVariables": [null,[
               17
-            ],
-            null,
-            null,
-            null,
-            null
+            ],null,null,null,null
           ]
         }
       ]
@@ -103,16 +85,9 @@
           },
           "TerritoryId": 957,
           "InteractionType": "Interact",
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
+          "RequiredQuestVariables": [null,null,[
               0
-            ],
-            null,
-            null,
-            null
-          ]
+            ],null,null,null]
         },
         {
           "DataId": 2012885,
@@ -123,16 +98,9 @@
           },
           "TerritoryId": 957,
           "InteractionType": "Interact",
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
+          "RequiredQuestVariables": [null,null,[
               64
-            ],
-            null,
-            null,
-            null
-          ]
+            ],null,null,null]
         },
         {
           "DataId": 2012886,
@@ -143,16 +111,9 @@
           },
           "TerritoryId": 957,
           "InteractionType": "Interact",
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
+          "RequiredQuestVariables": [null,null,[
               128
-            ],
-            null,
-            null,
-            null
-          ]
+            ],null,null,null]
         }
       ]
     },

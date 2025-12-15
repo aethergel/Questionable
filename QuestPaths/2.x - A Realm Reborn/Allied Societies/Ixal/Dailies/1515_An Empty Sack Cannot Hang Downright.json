@@ -87,10 +87,7 @@
           "TerritoryId": 155,
           "InteractionType": "Craft",
           "ItemId": 8101,
-          "ItemCount": 2,
-          "RequiredCurrentJob": [
-            "DoH"
-          ]
+          "ItemCount": 2
         },
         {
           "DataId": 1009213,

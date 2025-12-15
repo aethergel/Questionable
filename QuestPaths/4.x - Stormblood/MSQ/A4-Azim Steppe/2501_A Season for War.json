@@ -53,13 +53,8 @@
               "RewardItemCount": 2,
               "CompletionQuestVariablesFlags": [
                 null,
-                {
-                  "High": 2
-                },
-                null,
-                null,
-                null,
-                null
+            {"High": 2},
+          null,null,null,null
               ]
             }
           ]

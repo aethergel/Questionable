@@ -67,16 +67,9 @@
           ],
           "AetheryteShortcut": "Fringes - Castrum Oriens",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
+          "RequiredQuestVariables": [null,null,[
               16
-            ],
-            null,
-            null,
-            null
-          ]
+            ],null,null,null]
         },
         {
           "DataId": 1025054,
@@ -87,16 +80,9 @@
           },
           "TerritoryId": 612,
           "InteractionType": "Interact",
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
+          "RequiredQuestVariables": [null,null,[
               16
-            ],
-            null,
-            null,
-            null
-          ]
+            ],null,null,null]
         },
         {
           "Position": {
@@ -116,16 +102,9 @@
           ],
           "AetheryteShortcut": "Fringes - Castrum Oriens",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
+          "RequiredQuestVariables": [null,null,[
               32
-            ],
-            null,
-            null,
-            null
-          ]
+            ],null,null,null]
         },
         {
           "DataId": 1025053,
@@ -136,16 +115,9 @@
           },
           "TerritoryId": 612,
           "InteractionType": "Interact",
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
+          "RequiredQuestVariables": [null,null,[
               32
-            ],
-            null,
-            null,
-            null
-          ]
+            ],null,null,null]
         },
         {
           "Position": {
@@ -163,16 +135,9 @@
             }
           ],
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
+          "RequiredQuestVariables": [null,null,[
               48
-            ],
-            null,
-            null,
-            null
-          ]
+            ],null,null,null]
         },
         {
           "DataId": 1025052,
@@ -183,16 +148,9 @@
           },
           "TerritoryId": 612,
           "InteractionType": "Interact",
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
+          "RequiredQuestVariables": [null,null,[
               48
-            ],
-            null,
-            null,
-            null
-          ]
+            ],null,null,null]
         }
       ]
     },

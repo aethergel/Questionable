@@ -111,15 +111,8 @@
             2880
           ],
           "CompletionQuestVariablesFlags": [
-            {
-              "Low": 1
-            },
-            null,
-            null,
-            null,
-            null,
-            null
-          ]
+            {"Low": 1},
+          null,null,null,null,null]
         },
         {
           "DataId": 2003745,
@@ -135,15 +128,8 @@
             2880
           ],
           "CompletionQuestVariablesFlags": [
-            {
-              "Low": 2
-            },
-            null,
-            null,
-            null,
-            null,
-            null
-          ]
+            {"Low": 2},
+          null,null,null,null,null]
         },
         {
           "DataId": 2003746,
@@ -159,15 +145,8 @@
             2880
           ],
           "CompletionQuestVariablesFlags": [
-            {
-              "Low": 3
-            },
-            null,
-            null,
-            null,
-            null,
-            null
-          ]
+            {"Low": 3},
+          null,null,null,null,null]
         },
         {
           "DataId": 2003745,
@@ -183,15 +162,8 @@
             2880
           ],
           "CompletionQuestVariablesFlags": [
-            {
-              "Low": 4
-            },
-            null,
-            null,
-            null,
-            null,
-            null
-          ]
+            {"Low": 4},
+          null,null,null,null,null]
         }
       ]
     },

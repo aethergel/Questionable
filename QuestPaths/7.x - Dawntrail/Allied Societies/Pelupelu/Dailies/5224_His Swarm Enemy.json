@@ -48,18 +48,9 @@
           ],
           "AetheryteShortcut": "Kozama'uka - Many Fires",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
-              {
-                "High": 1
-              }
-            ],
-            null,
-            null,
-            null
-          ]
+          "RequiredQuestVariables": [null,null,[
+            {"High": 1}
+            ],null,null,null]
         },
         {
           "DataId": 2014509,
@@ -75,18 +66,9 @@
             18177
           ],
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
-              {
-                "High": 2
-              }
-            ],
-            null,
-            null,
-            null
-          ]
+          "RequiredQuestVariables": [null,null,[
+            {"High": 2}
+            ],null,null,null]
         },
         {
           "DataId": 2014507,
@@ -102,18 +84,9 @@
             18177
           ],
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
-              {
-                "High": 3
-              }
-            ],
-            null,
-            null,
-            null
-          ]
+          "RequiredQuestVariables": [null,null,[
+            {"High": 3}
+            ],null,null,null]
         }
       ]
     },

@@ -70,16 +70,9 @@
           "InteractionType": "Interact",
           "AetheryteShortcut": "Mare Lamentorum - Sinus Lacrimarum",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
+          "RequiredQuestVariables": [null,null,[
               16
-            ],
-            null,
-            null,
-            null
-          ],
+            ],null,null,null],
           "SkipConditions": {"AetheryteShortcutIf": {"Never": true}}
         },
         {
@@ -92,16 +85,9 @@
           "TerritoryId": 959,
           "InteractionType": "Interact",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
+          "RequiredQuestVariables": [null,null,[
               32
-            ],
-            null,
-            null,
-            null
-          ]
+            ],null,null,null]
         }
       ]
     },

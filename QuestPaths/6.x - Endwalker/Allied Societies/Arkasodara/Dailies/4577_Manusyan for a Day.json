@@ -53,15 +53,9 @@
             "Key": "TEXT_BANARK127_04577_SAYTODO_000_016"
           },
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            [
+          "RequiredQuestVariables": [null,[
               64
-            ],
-            null,
-            null,
-            null,
-            null
+            ],null,null,null,null
           ],
           "DialogueChoices": [
             {
@@ -84,15 +78,9 @@
             "Key": "TEXT_BANARK127_04577_SAYTODO_000_016"
           },
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            [
+          "RequiredQuestVariables": [null,[
               16
-            ],
-            null,
-            null,
-            null,
-            null
+            ],null,null,null,null
           ],
           "DialogueChoices": [
             {
@@ -115,15 +103,9 @@
             "Key": "TEXT_BANARK127_04577_SAYTODO_000_016"
           },
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            [
+          "RequiredQuestVariables": [null,[
               32
-            ],
-            null,
-            null,
-            null,
-            null
+            ],null,null,null,null
           ],
           "DialogueChoices": [
             {

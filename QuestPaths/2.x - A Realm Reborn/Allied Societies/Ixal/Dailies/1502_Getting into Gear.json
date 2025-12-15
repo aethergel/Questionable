@@ -46,9 +46,6 @@
           "TargetClass": "ConfiguredCombatJob"
         },
         {
-          "RequiredCurrentJob": [
-            "ConfiguredCombatJob"
-          ],
           "DataId": 1009638,
           "Position": {
             "X": 4.7455444,
@@ -66,36 +63,16 @@
             }
           ],
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 3
-              }
-            ],
-            null,
-            null
+          "RequiredQuestVariables": [null,null,null,[
+            {"Low": 1}, {"Low": 3}
+            ],null,null
           ],
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 8
-            }
+            {"High": 8}
           ]
         },
         {
-          "RequiredCurrentJob": [
-            "ConfiguredCombatJob"
-          ],
           "DataId": 1009694,
           "Position": {
             "X": 49.02722,
@@ -113,36 +90,16 @@
             }
           ],
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 2
-              },
-              {
-                "Low": 4
-              }
-            ],
-            null,
-            null
+          "RequiredQuestVariables": [null,null,null,[
+            {"Low": 2}, {"Low": 4}
+            ],null,null
           ],
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 4
-            }
+            {"High": 4}
           ]
         },
         {
-          "RequiredCurrentJob": [
-            "ConfiguredCombatJob"
-          ],
           "DataId": 1009695,
           "Position": {
             "X": 122.78931,
@@ -160,45 +117,16 @@
             }
           ],
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 2
-              },
-              {
-                "Low": 3
-              },
-              {
-                "Low": 4
-              },
-              {
-                "Low": 5
-              }
-            ],
-            null,
-            null
+          "RequiredQuestVariables": [null,null,null,[
+            {"Low": 1}, {"Low": 2}, {"Low": 3}, {"Low": 4}, {"Low": 5}
+            ],null,null
           ],
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 2
-            }
+            {"High": 2}
           ]
         },
         {
-          "RequiredCurrentJob": [
-            "ConfiguredCombatJob"
-          ],
           "DataId": 1009696,
           "Position": {
             "X": 139.23853,
@@ -216,39 +144,16 @@
             }
           ],
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 2
-              },
-              {
-                "Low": 5
-              }
-            ],
-            null,
-            null
+          "RequiredQuestVariables": [null,null,null,[
+            {"Low": 1}, {"Low": 2}, {"Low": 5}
+            ],null,null
           ],
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 1
-            }
+            {"High": 1}
           ]
         },
         {
-          "RequiredCurrentJob": [
-            "ConfiguredCombatJob"
-          ],
           "DataId": 1009697,
           "Position": {
             "X": 160.9741,
@@ -267,33 +172,13 @@
             }
           ],
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 3
-              },
-              {
-                "Low": 4
-              },
-              {
-                "Low": 5
-              }
-            ],
-            null,
-            null
+          "RequiredQuestVariables": [null,null,null,[
+            {"Low": 3}, {"Low": 4}, {"Low": 5}
+            ],null,null
           ],
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "Low": 8
-            }
+            {"Low": 8}
           ]
         }
       ]

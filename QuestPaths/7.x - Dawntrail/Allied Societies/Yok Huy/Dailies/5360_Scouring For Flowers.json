@@ -63,15 +63,9 @@
           "InteractionType": "Interact",
           "Fly": true,
           "AetheryteShortcut": "Urqopacha - Wachunpelo",
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 8
-            }
+            {"High": 8}
           ]
         },
         {
@@ -85,15 +79,9 @@
           "InteractionType": "Interact",
           "Fly": true,
           "AetheryteShortcut": "Urqopacha - Wachunpelo",
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 4
-            }
+            {"High": 4}
           ]
         },
         {
@@ -107,15 +95,9 @@
           "InteractionType": "Interact",
           "Fly": true,
           "AetheryteShortcut": "Urqopacha - Wachunpelo",
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 2
-            }
+            {"High": 2}
           ]
         }
       ]

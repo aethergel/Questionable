@@ -66,21 +66,9 @@
             }
           ],
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
-              {
-                "Low": 2
-              },
-              {
-                "Low": 3
-              }
-            ],
-            null,
-            null,
-            null
-          ],
+          "RequiredQuestVariables": [null,null,[
+            {"Low": 2}, {"Low": 3}
+            ],null,null,null],
           "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
         },
         {
@@ -100,21 +88,9 @@
               "MinimumKillCount": 1
             }
           ],
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 2
-              }
-            ],
-            null,
-            null,
-            null
-          ],
+          "RequiredQuestVariables": [null,null,[
+            {"Low": 1}, {"Low": 2}
+            ],null,null,null],
           "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
         },
         {
@@ -134,21 +110,9 @@
             }
           ],
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 3
-              }
-            ],
-            null,
-            null,
-            null
-          ],
+          "RequiredQuestVariables": [null,null,[
+            {"Low": 1}, {"Low": 3}
+            ],null,null,null],
           "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
         }
       ]

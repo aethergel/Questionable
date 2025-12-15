@@ -44,28 +44,14 @@
               "DataId": 339,
               "MinimumKillCount": 3,
               "CompletionQuestVariablesFlags": [
-                {
-                  "Low": 3
-                },
-                null,
-                null,
-                null,
-                null,
-                null
-              ]
+            {"Low": 3},
+          null,null,null,null,null]
             }
           ],
           "Fly": true,
           "CompletionQuestVariablesFlags": [
-            {
-              "Low": 3
-            },
-            null,
-            null,
-            null,
-            null,
-            null
-          ],
+            {"Low": 3},
+          null,null,null,null,null],
           "AethernetShortcut": [
             "[Limsa Lominsa] Arcanists' Guild",
             "[Limsa Lominsa] Tempest Gate (Lower La Noscea)"
@@ -86,25 +72,15 @@
               "MinimumKillCount": 3,
               "CompletionQuestVariablesFlags": [
                 null,
-                {
-                  "High": 3
-                },
-                null,
-                null,
-                null,
-                null
+            {"High": 3},
+          null,null,null,null
               ]
             }
           ],
           "CompletionQuestVariablesFlags": [
             null,
-            {
-              "High": 3
-            },
-            null,
-            null,
-            null,
-            null
+            {"High": 3},
+          null,null,null,null
           ]
         }
       ]

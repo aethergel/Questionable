@@ -213,15 +213,9 @@
           "TerritoryId": 1305,
           "InteractionType": "Action",
           "Action": "Trickster's Treat",
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 8
-            }
+            {"High": 8}
           ]
         },
         {
@@ -234,15 +228,9 @@
           "TerritoryId": 1305,
           "InteractionType": "Action",
           "Action": "Treater's Trick",
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 4
-            }
+            {"High": 4}
           ]
         }
       ]
@@ -317,15 +305,9 @@
           "TerritoryId": 1305,
           "InteractionType": "Action",
           "Action": "Treater's Trick",
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 2
-            }
+            {"High": 2}
           ]
         },
         {
@@ -338,15 +320,9 @@
           "TerritoryId": 1305,
           "InteractionType": "Action",
           "Action": "Treater's Trick",
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 4
-            }
+            {"High": 4}
           ]
         },
         {
@@ -359,15 +335,9 @@
           "TerritoryId": 1305,
           "InteractionType": "Action",
           "Action": "Trickster's Treat",
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 8
-            }
+            {"High": 8}
           ]
         }
       ]

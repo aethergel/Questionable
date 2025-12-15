@@ -35,21 +35,9 @@
           "InteractionType": "Combat",
           "EnemySpawnType": "AfterItemUse",
           "ItemId": 2001153,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 3
-              }
-            ],
-            null
-          ],
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 1}, {"Low": 3}
+            ],null],
           "GroundTarget": true,
           "KillEnemyDataIds": [
             72
@@ -68,21 +56,9 @@
           "InteractionType": "Combat",
           "EnemySpawnType": "AfterItemUse",
           "ItemId": 2001153,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 5
-              }
-            ],
-            null
-          ],
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 1}, {"Low": 5}
+            ],null],
           "GroundTarget": true,
           "KillEnemyDataIds": [
             72
@@ -101,21 +77,9 @@
           "InteractionType": "Combat",
           "EnemySpawnType": "AfterItemUse",
           "ItemId": 2001153,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 3
-              },
-              {
-                "Low": 4
-              }
-            ],
-            null
-          ],
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 3}, {"Low": 4}
+            ],null],
           "GroundTarget": true,
           "KillEnemyDataIds": [
             72
@@ -152,18 +116,9 @@
           "InteractionType": "Combat",
           "EnemySpawnType": "AfterItemUse",
           "ItemId": 2001153,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 4
-              }
-            ],
-            null
-          ],
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 4}
+            ],null],
           "GroundTarget": true,
           "KillEnemyDataIds": [
             72
@@ -182,18 +137,9 @@
           "InteractionType": "Combat",
           "EnemySpawnType": "AfterItemUse",
           "ItemId": 2001153,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 2
-              }
-            ],
-            null
-          ],
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 2}
+            ],null],
           "GroundTarget": true,
           "KillEnemyDataIds": [
             72
@@ -212,18 +158,9 @@
           "InteractionType": "Combat",
           "EnemySpawnType": "AfterItemUse",
           "ItemId": 2001153,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 2
-              }
-            ],
-            null
-          ],
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 2}
+            ],null],
           "GroundTarget": true,
           "KillEnemyDataIds": [
             72

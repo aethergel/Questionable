@@ -63,31 +63,11 @@
           },
           "TerritoryId": 138,
           "InteractionType": "Interact",
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 2
-              },
-              {
-                "Low": 3
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"Low": 1}, {"Low": 2}, {"Low": 3}
+            ],null,null,null,null
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128
           ]
         },
         {
@@ -99,25 +79,11 @@
           },
           "TerritoryId": 138,
           "InteractionType": "Interact",
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "Low": 1
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"Low": 1}
+            ],null,null,null,null
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            8
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,8
           ]
         },
         {
@@ -129,31 +95,11 @@
           },
           "TerritoryId": 138,
           "InteractionType": "Interact",
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 2
-              },
-              {
-                "Low": 3
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"Low": 1}, {"Low": 2}, {"Low": 3}
+            ],null,null,null,null
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            32
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,32
           ]
         },
         {
@@ -165,25 +111,11 @@
           },
           "TerritoryId": 138,
           "InteractionType": "Interact",
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "Low": 2
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"Low": 2}
+            ],null,null,null,null
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            4
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,4
           ]
         },
         {
@@ -195,31 +127,11 @@
           },
           "TerritoryId": 138,
           "InteractionType": "Interact",
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 2
-              },
-              {
-                "Low": 3
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"Low": 1}, {"Low": 2}, {"Low": 3}
+            ],null,null,null,null
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64
           ]
         },
         {
@@ -231,31 +143,11 @@
           },
           "TerritoryId": 138,
           "InteractionType": "Interact",
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 2
-              },
-              {
-                "Low": 3
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"Low": 1}, {"Low": 2}, {"Low": 3}
+            ],null,null,null,null
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            16
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,16
           ]
         },
         {
@@ -267,25 +159,11 @@
           },
           "TerritoryId": 138,
           "InteractionType": "Interact",
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "Low": 3
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"Low": 3}
+            ],null,null,null,null
           ],
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            2
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,2
           ]
         }
       ]

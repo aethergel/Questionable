@@ -63,21 +63,9 @@
             8581
           ],
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 2
-              }
-            ],
-            null,
-            null,
-            null
-          ]
+          "RequiredQuestVariables": [null,null,[
+            {"Low": 1}, {"Low": 2}
+            ],null,null,null]
         },
         {
           "DataId": 2009328,
@@ -93,21 +81,9 @@
           "KillEnemyDataIds": [
             8581
           ],
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
-              {
-                "Low": 2
-              },
-              {
-                "Low": 3
-              }
-            ],
-            null,
-            null,
-            null
-          ]
+          "RequiredQuestVariables": [null,null,[
+            {"Low": 2}, {"Low": 3}
+            ],null,null,null]
         },
         {
           "Position": {
@@ -118,21 +94,9 @@
           "TerritoryId": 612,
           "InteractionType": "WalkTo",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 3
-              }
-            ],
-            null,
-            null,
-            null
-          ]
+          "RequiredQuestVariables": [null,null,[
+            {"Low": 1}, {"Low": 3}
+            ],null,null,null]
         },
         {
           "DataId": 2009329,
@@ -147,21 +111,9 @@
           "KillEnemyDataIds": [
             8581
           ],
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 3
-              }
-            ],
-            null,
-            null,
-            null
-          ]
+          "RequiredQuestVariables": [null,null,[
+            {"Low": 1}, {"Low": 3}
+            ],null,null,null]
         }
       ]
     },

@@ -130,15 +130,9 @@
           "ItemId": 2003777,
           "StopDistance": 1,
           "$": "QW 0 48 0  0 0 0",
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 4
-            }
+            {"High": 4}
           ]
         },
         {
@@ -153,15 +147,9 @@
           "Mount": true,
           "ItemId": 2003777,
           "StopDistance": 1,
-          "CompletionQuestVariablesFlags": [
+          "CompletionQuestVariablesFlags": [null,null,null,null,
             null,
-            null,
-            null,
-            null,
-            null,
-            {
-              "High": 2
-            }
+            {"High": 2}
           ]
         },
         {

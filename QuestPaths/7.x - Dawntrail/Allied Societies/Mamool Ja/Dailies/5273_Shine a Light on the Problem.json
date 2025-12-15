@@ -50,13 +50,7 @@
           "InteractionType": "Action",
           "Action": "Shrouded Luminescence",
           "Fly": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            128
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,128
           ]
         },
         {
@@ -69,13 +63,7 @@
           "TerritoryId": 1189,
           "InteractionType": "Action",
           "Action": "Shrouded Luminescence",
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            64
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64
           ]
         },
         {

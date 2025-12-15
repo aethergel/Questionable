@@ -33,16 +33,9 @@
           "InteractionType": "Combat",
           "EnemySpawnType": "OverworldEnemies",
           "Fly": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            {
-              "Low": 1
-            },
-            null,
-            null,
-            null
-          ],
+          "CompletionQuestVariablesFlags": [null,null,
+            {"Low": 1},
+          null,null,null],
           "KillEnemyDataIds": [
             24
           ]
@@ -57,16 +50,9 @@
           "InteractionType": "Combat",
           "EnemySpawnType": "OverworldEnemies",
           "Fly": true,
-          "CompletionQuestVariablesFlags": [
-            null,
-            null,
-            {
-              "High": 1
-            },
-            null,
-            null,
-            null
-          ],
+          "CompletionQuestVariablesFlags": [null,null,
+            {"High": 1},
+          null,null,null],
           "KillEnemyDataIds": [
             140
           ]

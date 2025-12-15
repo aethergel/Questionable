@@ -68,15 +68,8 @@
             {
               "DataId": 771,
               "CompletionQuestVariablesFlags": [
-                {
-                  "Low": 4
-                },
-                null,
-                null,
-                null,
-                null,
-                null
-              ]
+            {"Low": 4},
+          null,null,null,null,null]
             }
           ]
         }

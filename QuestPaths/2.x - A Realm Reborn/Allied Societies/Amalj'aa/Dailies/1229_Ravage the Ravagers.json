@@ -37,7 +37,8 @@
               { "High": 3 },
               { "High": 5 }
             ], null ],
-          "CompletionQuestVariablesFlags": [ null, null, null, null, null, { "High": 2 } ],
+          "CompletionQuestVariablesFlags": [ null, null, null, null, null,
+            { "High": 2 } ],
           "EnemySpawnType": "AfterInteraction",
           "ComplexCombatData": [
             {
@@ -60,7 +61,8 @@
               { "High": 4 },
               { "High": 5 }
             ], null ],
-          "CompletionQuestVariablesFlags": [ null, null, null, null, null, { "Low": 8 } ],
+          "CompletionQuestVariablesFlags": [ null, null, null, null, null,
+            { "Low": 8 } ],
           "EnemySpawnType": "AfterInteraction",
           "ComplexCombatData": [
             {
@@ -83,7 +85,8 @@
               { "High": 1 },
               { "High": 2 }
             ], null ],
-          "CompletionQuestVariablesFlags": [ null, null, null, null, null, { "High": 1 } ],
+          "CompletionQuestVariablesFlags": [ null, null, null, null, null,
+            { "High": 1 } ],
           "EnemySpawnType": "AfterInteraction",
           "ComplexCombatData": [
             {
@@ -107,7 +110,8 @@
               { "High": 3 },
               { "High": 4 }
             ], null ],
-          "CompletionQuestVariablesFlags": [ null, null, null, null, null, { "High": 4 } ],
+          "CompletionQuestVariablesFlags": [ null, null, null, null, null,
+            { "High": 4 } ],
           "EnemySpawnType": "AfterInteraction",
           "ComplexCombatData": [
             {
@@ -126,7 +130,8 @@
           "TerritoryId": 146,
           "InteractionType": "Combat",
           "Fly": true,
-          "CompletionQuestVariablesFlags": [ null, null, null, null, null, { "Low": 4 } ],
+          "CompletionQuestVariablesFlags": [ null, null, null, null, null,
+            { "Low": 4 } ],
           "EnemySpawnType": "AfterInteraction",
           "ComplexCombatData": [
             {
@@ -148,7 +153,8 @@
           "RequiredQuestVariables": [ null, null, null, null, [
               { "High": 1 }
             ], null ],
-          "CompletionQuestVariablesFlags": [ null, null, null, null, null, { "High": 8 } ],
+          "CompletionQuestVariablesFlags": [ null, null, null, null, null,
+            { "High": 8 } ],
           "EnemySpawnType": "AfterInteraction",
           "ComplexCombatData": [
             {
@@ -174,7 +180,8 @@
           "RequiredQuestVariables": [null,null,null,null,[
             {"Low": 1},{"Low": 2},{"Low": 3}
           ],null],
-          "CompletionQuestVariablesFlags": [ null, null, null, null, null, { "Low": 2 } ],
+          "CompletionQuestVariablesFlags": [ null, null, null, null, null,
+            { "Low": 2 } ],
           "Fly": true,
           "ItemId": 2001148
         },
@@ -190,7 +197,8 @@
           "RequiredQuestVariables": [null,null,null,null,[
             {"Low": 1},{"Low": 4},{"Low": 5}
             ],null],
-          "CompletionQuestVariablesFlags": [ null, null, null, null, null, { "Low": 8 } ],
+          "CompletionQuestVariablesFlags": [ null, null, null, null, null,
+            { "Low": 8 } ],
           "Fly": true,
           "ItemId": 2001148
         },
@@ -206,7 +214,8 @@
           "RequiredQuestVariables": [null,null,null,null,[
             {"Low": 2},{"Low": 3},{"Low": 5}
             ],null],
-          "CompletionQuestVariablesFlags": [ null, null, null, null, null, { "High": 2 } ],
+          "CompletionQuestVariablesFlags": [ null, null, null, null, null,
+            { "High": 2 } ],
           "Fly": true,
           "ItemId": 2001148
         },
@@ -222,7 +231,8 @@
           "RequiredQuestVariables": [null,null,null,null,[
             {"Low": 3},{"Low": 4},{"Low": 5}
             ],null],
-          "CompletionQuestVariablesFlags": [ null, null, null, null, null, { "High": 1 } ],
+          "CompletionQuestVariablesFlags": [ null, null, null, null, null,
+            { "High": 1 } ],
           "Fly": true,
           "ItemId": 2001148
         },
@@ -238,7 +248,8 @@
           "RequiredQuestVariables": [null,null,null,null,[
             {"Low": 4}
             ],null],
-          "CompletionQuestVariablesFlags": [ null, null, null, null, null, { "High": 8 } ],
+          "CompletionQuestVariablesFlags": [ null, null, null, null, null,
+            { "High": 8 } ],
           "Fly": true,
           "ItemId": 2001148
         },
@@ -254,7 +265,8 @@
           "RequiredQuestVariables": [null,null,null,null,[
             {"Low": 2}
             ],null],
-          "CompletionQuestVariablesFlags": [ null, null, null, null, null, { "High": 4 } ],
+          "CompletionQuestVariablesFlags": [ null, null, null, null, null,
+            { "High": 4 } ],
           "Fly": true,
           "ItemId": 2001148
         },
@@ -270,7 +282,8 @@
           "RequiredQuestVariables": [null,null,null,null,[
             {"Low": 1}
             ],null],
-          "CompletionQuestVariablesFlags": [ null, null, null, null, null, { "Low": 4 } ],
+          "CompletionQuestVariablesFlags": [ null, null, null, null, null,
+            { "Low": 4 } ],
           "Fly": true,
           "ItemId": 2001148
         }

@@ -50,26 +50,16 @@
               "DataId": 48,
               "CompletionQuestVariablesFlags": [
                 null,
-                {
-                  "High": 5
-                },
-                null,
-                null,
-                null,
-                null
+            {"High": 5},
+          null,null,null,null
               ]
             }
           ],
           "Fly": true,
           "CompletionQuestVariablesFlags": [
             null,
-            {
-              "High": 5
-            },
-            null,
-            null,
-            null,
-            null
+            {"High": 5},
+          null,null,null,null
           ]
         }
       ]

@@ -55,15 +55,9 @@
           "TerritoryId": 816,
           "InteractionType": "Interact",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            [
+          "RequiredQuestVariables": [null,null,null,[
               1
-            ],
-            null,
-            null
+            ],null,null
           ]
         },
         {
@@ -76,15 +70,9 @@
           "TerritoryId": 816,
           "InteractionType": "Interact",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            [
+          "RequiredQuestVariables": [null,null,null,[
               2
-            ],
-            null,
-            null
+            ],null,null
           ]
         },
         {
@@ -97,15 +85,9 @@
           "TerritoryId": 816,
           "InteractionType": "Interact",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            [
+          "RequiredQuestVariables": [null,null,null,[
               3
-            ],
-            null,
-            null
+            ],null,null
           ]
         }
       ]

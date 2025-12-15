@@ -39,17 +39,9 @@
           "Fly": true,
           "AetheryteShortcut": "Southern Thanalan - Forgotten Springs",
           "CompletionQuestVariablesFlags": [null,null,null,null,null,2],
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "Low": 1
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"Low": 1}
+            ],null,null,null,null
           ],
           "Mount": true
         },
@@ -65,23 +57,9 @@
           "StopDistance": 1,
           "Fly": true,
           "CompletionQuestVariablesFlags": [null,null,null,null,null,1],
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "Low": 2
-              },
-              {
-                "Low": 3
-              },
-              {
-                "Low": 5
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"Low": 2}, {"Low": 3}, {"Low": 5}
+            ],null,null,null,null
           ],
           "Mount": true
         },
@@ -97,26 +75,9 @@
           "StopDistance": 1,
           "Fly": true,
           "CompletionQuestVariablesFlags": [null,null,null,null,null,8],
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 2
-              },
-              {
-                "Low": 3
-              },
-              {
-                "Low": 4
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"Low": 1}, {"Low": 2}, {"Low": 3}, {"Low": 4}
+            ],null,null,null,null
           ],
           "Mount": true
         },
@@ -132,20 +93,9 @@
           "StopDistance": 1,
           "Fly": true,
           "CompletionQuestVariablesFlags": [null,null,null,null,null,4],
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 5
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"Low": 1}, {"Low": 5}
+            ],null,null,null,null
           ],
           "Mount": true
         },
@@ -161,20 +111,9 @@
           "StopDistance": 1,
           "Fly": true,
           "CompletionQuestVariablesFlags": [null,null,null,null,null,32],
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "Low": 2
-              },
-              {
-                "Low": 4
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"Low": 2}, {"Low": 4}
+            ],null,null,null,null
           ],
           "Mount": true
         },
@@ -190,20 +129,9 @@
           "StopDistance": 1,
           "Fly": true,
           "CompletionQuestVariablesFlags": [null,null,null,null,null,16],
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "Low": 3
-              },
-              {
-                "Low": 5
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"Low": 3}, {"Low": 5}
+            ],null,null,null,null
           ],
           "Mount": true
         },
@@ -219,23 +147,9 @@
           "StopDistance": 1,
           "Fly": true,
           "CompletionQuestVariablesFlags": [null,null,null,null,null,128],
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 3
-              },
-              {
-                "Low": 4
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"Low": 1}, {"Low": 3}, {"Low": 4}
+            ],null,null,null,null
           ]
         },
         {
@@ -250,23 +164,9 @@
           "StopDistance": 1,
           "Fly": true,
           "CompletionQuestVariablesFlags": [null,null,null,null,null,64],
-          "RequiredQuestVariables": [
-            null,
-            [
-              {
-                "Low": 2
-              },
-              {
-                "Low": 4
-              },
-              {
-                "Low": 5
-              }
-            ],
-            null,
-            null,
-            null,
-            null
+          "RequiredQuestVariables": [null,[
+            {"Low": 2}, {"Low": 4}, {"Low": 5}
+            ],null,null,null,null
           ]
         }
       ]

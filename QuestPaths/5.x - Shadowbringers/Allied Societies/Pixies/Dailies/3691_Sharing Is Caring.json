@@ -38,15 +38,9 @@
           },
           "$": "QW: 0 0 0 1 0 0",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            [
+          "RequiredQuestVariables": [null,null,null,[
               1
-            ],
-            null,
-            null
+            ],null,null
           ]
         },
         {
@@ -63,15 +57,9 @@
           },
           "$": "QW: 0 0 0 3 0 0",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            [
+          "RequiredQuestVariables": [null,null,null,[
               3
-            ],
-            null,
-            null
+            ],null,null
           ]
         },
         {
@@ -88,15 +76,9 @@
             "Key": "TEXT_BANPIX103_03691_SAYTODO_000_030"
           },
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            [
+          "RequiredQuestVariables": [null,null,null,[
               2
-            ],
-            null,
-            null
+            ],null,null
           ]
         }
       ]

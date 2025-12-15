@@ -35,21 +35,9 @@
           "GroundTarget": true,
           "Fly": true,
           "ItemId": 2001155,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 3
-              }
-            ],
-            null
-          ],
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 1}, {"Low": 3}
+            ],null],
           "EnemySpawnType": "AfterItemUse",
           "KillEnemyDataIds": [
             762
@@ -67,24 +55,9 @@
           "GroundTarget": true,
           "Fly": true,
           "ItemId": 2001155,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 2
-              },
-              {
-                "Low": 5
-              }
-            ],
-            null
-          ],
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 1}, {"Low": 2}, {"Low": 5}
+            ],null],
           "EnemySpawnType": "AfterItemUse",
           "KillEnemyDataIds": [
             762
@@ -102,21 +75,9 @@
           "GroundTarget": true,
           "Fly": true,
           "ItemId": 2001155,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 3
-              },
-              {
-                "Low": 4
-              }
-            ],
-            null
-          ],
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 3}, {"Low": 4}
+            ],null],
           "EnemySpawnType": "AfterItemUse",
           "KillEnemyDataIds": [
             762
@@ -135,21 +96,9 @@
           "GroundTarget": true,
           "Fly": true,
           "ItemId": 2001155,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 1
-              },
-              {
-                "Low": 4
-              }
-            ],
-            null
-          ],
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 1}, {"Low": 4}
+            ],null],
           "EnemySpawnType": "AfterItemUse",
           "KillEnemyDataIds": [
             762
@@ -167,21 +116,9 @@
           "GroundTarget": true,
           "Fly": true,
           "ItemId": 2001155,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 3
-              },
-              {
-                "Low": 5
-              }
-            ],
-            null
-          ],
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 3}, {"Low": 5}
+            ],null],
           "EnemySpawnType": "AfterItemUse",
           "KillEnemyDataIds": [
             762
@@ -199,21 +136,9 @@
           "GroundTarget": true,
           "Fly": true,
           "ItemId": 2001155,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 2
-              },
-              {
-                "Low": 5
-              }
-            ],
-            null
-          ],
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 2}, {"Low": 5}
+            ],null],
           "EnemySpawnType": "AfterItemUse",
           "KillEnemyDataIds": [
             762
@@ -232,21 +157,9 @@
           "GroundTarget": true,
           "Fly": true,
           "ItemId": 2001155,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            null,
-            null,
-            [
-              {
-                "Low": 2
-              },
-              {
-                "Low": 4
-              }
-            ],
-            null
-          ],
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"Low": 2}, {"Low": 4}
+            ],null],
           "EnemySpawnType": "AfterItemUse",
           "KillEnemyDataIds": [
             762

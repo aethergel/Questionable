@@ -16,8 +16,7 @@
           "TerritoryId": 1189,
           "InteractionType": "AcceptQuest",
           "AetheryteShortcut": "Yak T'el - Mamook",
-          "Fly": true,
-          "RequiredCurrentJob": ["DoL"]
+          "Fly": true
         }
       ]
     },
@@ -35,18 +34,9 @@
           "InteractionType": "Interact",
           "AetheryteShortcut": "Yak T'el - Mamook",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
-              {
-                "Low": 1
-              }
-            ],
-            null,
-            null,
-            null
-          ]
+          "RequiredQuestVariables": [null,null,[
+            {"Low": 1}
+            ],null,null,null]
         },
         {
           "DataId": 1054145,
@@ -58,18 +48,9 @@
           "TerritoryId": 1189,
           "InteractionType": "Interact",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
-              {
-                "Low": 2
-              }
-            ],
-            null,
-            null,
-            null
-          ]
+          "RequiredQuestVariables": [null,null,[
+            {"Low": 2}
+            ],null,null,null]
         },
         {
           "DataId": 1054143,
@@ -81,18 +62,9 @@
           "TerritoryId": 1189,
           "InteractionType": "Interact",
           "Fly": true,
-          "RequiredQuestVariables": [
-            null,
-            null,
-            [
-              {
-                "Low": 3
-              }
-            ],
-            null,
-            null,
-            null
-          ]
+          "RequiredQuestVariables": [null,null,[
+            {"Low": 3}
+            ],null,null,null]
         }
       ]
     },

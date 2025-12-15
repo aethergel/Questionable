@@ -266,13 +266,8 @@
               "$": "Slay northern vultures.",
               "CompletionQuestVariablesFlags": [
                 null,
-                {
-                  "High": 8
-                },
-                null,
-                null,
-                null,
-                null
+            {"High": 8},
+          null,null,null,null
               ]
             },
             {
@@ -280,15 +275,8 @@
               "MinimumKillCount": 8,
               "$": "Slay tree slugs.",
               "CompletionQuestVariablesFlags": [
-                {
-                  "Low": 8
-                },
-                null,
-                null,
-                null,
-                null,
-                null
-              ]
+            {"Low": 8},
+          null,null,null,null,null]
             }
           ],
           "AetheryteShortcut": "East Shroud - Hawthorne Hut",
