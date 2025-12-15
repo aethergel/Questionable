@@ -1,2 +1,4 @@
-- Gathering wasn't picking actions, now it does
-- BTN arr/hw
+- Paths checked
+- Feature: debug auto open editor to streamline quest path checking
+- Compatibility: add parameters to QuestRoot
+- Implement Write for some model converters
