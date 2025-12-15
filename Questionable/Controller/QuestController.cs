@@ -518,6 +518,13 @@ internal sealed class QuestController : MiniTaskController<QuestController>
                         _highlightObject.SetHighlight([]);
                         _logger.LogInformation("New quest: {QuestName}", quest.Info.Name);
                         _startedQuest = new QuestProgress(quest, currentSequence);
+                        #if DEBUG
+                        if (_configuration.Advanced.OpenEditor)
+                        {
+                            var (success, msg) = _questRegistry.OpenEditor(_startedQuest.Quest.Info);
+                            _logger.LogDebug($"OpenEditor {success}: {msg}");
+                        }
+                        #endif
 
                         unsafe
                         {

@@ -462,6 +462,16 @@ internal sealed partial class ActiveQuestComponent
                 if (ImGui.IsItemHovered())
                     ImGui.SetTooltip($"Show information about '{currentQuest.Quest.Info.Name}' in Quest Map plugin.");
             }
+
+            #if DEBUG
+            ImGui.SameLine();
+            if (ImGuiComponents.IconButton(FontAwesomeIcon.Edit))
+            {
+                IQuestInfo info = currentQuest.Quest.Info;
+                var (success, filename) = QuestRegistry.OpenEditor(_questRegistry.AssemblyLocation, $"{info.QuestId}_{info.SimplifiedName}.json");
+                _logger.LogDebug($"OpenEditor {success}: {filename}");
+            }
+            #endif
         }
     }
 

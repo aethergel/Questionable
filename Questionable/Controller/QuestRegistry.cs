@@ -6,9 +6,13 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Nodes;
+using Dalamud.Bindings.ImGui;
 using Dalamud.Plugin;
 using Dalamud.Plugin.Ipc;
 using Dalamud.Plugin.Services;
+using ECommons.Reflection;
+using FFXIVClientStructs.FFXIV.Client.Game;
+using FFXIVClientStructs.FFXIV.Client.Game.UI;
 using LLib.GameData;
 using Microsoft.Extensions.Logging;
 using Questionable.Data;
@@ -17,6 +21,7 @@ using Questionable.Model.Questing;
 using Questionable.QuestPaths;
 using Questionable.Validation;
 using Questionable.Validation.Validators;
+using TerritoryType = Lumina.Excel.Sheets.TerritoryType;
 
 namespace Questionable.Controller;
 
@@ -29,6 +34,7 @@ internal sealed class QuestRegistry
     private readonly ILogger<QuestRegistry> _logger;
     private readonly TerritoryData _territoryData;
     private readonly IChatGui _chatGui;
+    private readonly IDataManager _dataManager;
 
     private readonly ICallGateProvider<object> _reloadDataIpc;
     private readonly Dictionary<ElementId, Quest> _quests = [];
@@ -42,6 +48,7 @@ internal sealed class QuestRegistry
         JsonSchemaValidator jsonSchemaValidator,
         ILogger<QuestRegistry> logger,
         TerritoryData territoryData,
+        IDataManager dataManager,
         IChatGui chatGui)
     {
         _pluginInterface = pluginInterface;
@@ -51,6 +58,7 @@ internal sealed class QuestRegistry
         _logger = logger;
         _territoryData = territoryData;
         _chatGui = chatGui;
+        _dataManager = dataManager;
         _reloadDataIpc = _pluginInterface.GetIpcProvider<object>("Questionable.ReloadData");
     }
 
@@ -184,6 +192,81 @@ internal sealed class QuestRegistry
             }
         }
     }
+
+#if DEBUG
+    internal FileInfo AssemblyLocation => _pluginInterface.AssemblyLocation;
+    public static string GetFilename(IQuestInfo info) => $"{info.QuestId}_{info.SimplifiedName}.json";
+    public (bool, string) OpenEditor(IQuestInfo info)
+    {
+        _logger.LogDebug("OpenEditor IQuestInfo");
+        return OpenEditor(AssemblyLocation, GetFilename(info));
+    }
+    public (bool, string) OpenEditor(ushort questId)
+    {
+        _logger.LogDebug("OpenEditor ushort");
+        if (TryGetQuest(new QuestId(questId), out Quest? quest))
+            return OpenEditor(AssemblyLocation, GetFilename(quest.Info));
+        return (false, $"could not get quest from {questId}");
+    }
+    public unsafe (bool, string) OpenEditor()
+    {
+        _logger.LogDebug("OpenEditor trackedQuests");
+        var questManager = QuestManager.Instance();
+        ushort? questId = null;
+        if (questManager != null)
+        {
+            for (int i = questManager->TrackedQuests.Length - 1; i >= 0; --i)
+            {
+                var trackedQuest = questManager->TrackedQuests[i];
+                switch (trackedQuest.QuestType)
+                {
+                    case 1:
+                        questId = questManager->NormalQuests[trackedQuest.Index].QuestId;
+                        break;
+                    default:
+                        break;
+                    case 2:
+                        break;
+                }
+                if (questId != null)
+                    break;
+            }
+        }
+        if (questId != null)
+            return OpenEditor(questId.Value);
+        return (false, $"could not get tracked quest");
+    }
+
+    public static (bool, string) OpenEditor(FileInfo assemblyLocation, string filename)
+    {
+        DirectoryInfo? targetFolder = new(Path.Combine(assemblyLocation.Directory!.Parent!.Parent!.FullName, "QuestPaths"));
+        if (targetFolder == null)
+            return (false, $"couldn't find QuestPaths folder");
+        FileInfo? file = FindFilenameInDirectory(targetFolder, filename);
+        if (file == null)
+            return (false, $"couldn't find {filename}");
+        Process.Start(new ProcessStartInfo()
+        {
+            FileName = filename,
+            WorkingDirectory = file.DirectoryName,
+            UseShellExecute = true
+        });
+        return (true, file.FullName);
+    }
+
+    public static FileInfo? FindFilenameInDirectory(DirectoryInfo root, string filename)
+    {
+        foreach (var file in root.GetFiles())
+            if (file.Name == filename)
+                return file;
+        foreach (var directory in root.GetDirectories())
+        {
+            if (FindFilenameInDirectory(directory, filename) is FileInfo result)
+                return result;
+        }
+        return null;
+    }
+#endif
 
     private void ValidateQuests()
     {
