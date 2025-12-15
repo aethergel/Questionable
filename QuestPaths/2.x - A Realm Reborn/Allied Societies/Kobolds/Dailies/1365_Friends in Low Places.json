@@ -1,6 +1,7 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
   "Author": "Censored",
+  "LastChecked":{"Username": "alydev", "Date": "2025-12-15"},
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -31,10 +32,27 @@
           "TerritoryId": 180,
           "InteractionType": "Combat",
           "EnemySpawnType": "OverworldEnemies",
-          "KillEnemyDataIds": [
-            756,
-            757,
-            758
+          "ComplexCombatData": [
+            {
+              "DataId": 758,
+              "NameId": 2520,
+              "MinimumKillCount": 2
+            },
+            {
+              "DataId": 757,
+              "NameId": 2521,
+              "MinimumKillCount": 1
+            },
+            {
+              "DataId": 756,
+              "NameId": 2519,
+              "MinimumKillCount": 1
+            },
+            {
+              "DataId": 755,
+              "NameId": 2518,
+              "MinimumKillCount": 1
+            }
           ],
           "Fly": true
         }
