@@ -31,6 +31,11 @@ public sealed class ElementIdListConverter : JsonConverter<List<ElementId>>
 
     public override void Write(Utf8JsonWriter writer, List<ElementId> value, JsonSerializerOptions options)
     {
-        throw new NotImplementedException();
+        writer.WriteStartArray();
+        foreach (ElementId elementId in value)
+        {
+            writer.WriteStringValue(elementId.ToString());
+        }
+        writer.WriteEndArray();
     }
 }
