@@ -1,6 +1,7 @@
 ﻿{
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
   "Author": "liza",
+  "LastChecked":{"Username": "alydev", "Date": "2025-12-15"},
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -78,7 +79,8 @@
             null,
             null,
             null
-          ]
+          ],
+          "SkipConditions": {"AetheryteShortcutIf": {"Never": true}}
         },
         {
           "DataId": 2013260,
