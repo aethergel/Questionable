@@ -1,3 +1,3 @@
 - Namazu choose whether to use craft or gather job
 - Debug command to convert decimal ints to questwork values
-- Daily quests
+- More daily quests
