@@ -1,12 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using Dalamud.Bindings.ImGui;
 using Dalamud.Game.ClientState.Objects;
 using Dalamud.Game.Command;
 using Dalamud.Plugin.Services;
+using ECommons;
 using FFXIVClientStructs.FFXIV.Client.Game;
 using FFXIVClientStructs.FFXIV.Client.Game.UI;
+using Humanizer;
 using Lumina.Excel.Sheets;
+using Questionable.Controller.Utils;
 using Questionable.Functions;
 using Questionable.Model.Questing;
 using Questionable.Windows;
@@ -205,6 +210,22 @@ internal sealed class CommandHandler : IDisposable
                 _questValidationWindow.ToggleOrUncollapse();
                 break;
 
+            case "d2qwh":
+                if (parts.Length < 2)
+                    break;
+                var highOutp = D2QW(parts.Skip(1).ToArray(), true);
+                ImGui.SetClipboardText(highOutp);
+                _chatGui.Print(highOutp);
+                break;
+
+            case "d2qwl":
+                if (parts.Length < 2)
+                    break;
+                var lowOutp = D2QW(parts.Skip(1).ToArray(), false);
+                ImGui.SetClipboardText(lowOutp);
+                _chatGui.Print(lowOutp);
+                break;
+
             //case "abandon-quest":
             //    if (parts.Length > 1)
             //        _questController.AbandonQuest(parts[1]);
@@ -220,6 +241,20 @@ internal sealed class CommandHandler : IDisposable
                 _chatGui.PrintError($"Unknown subcommand {parts[0]}", MessageTag, TagColor);
                 break;
         }
+    }
+
+    private static string D2QW(string[] parts, bool High=false)
+    {
+        List<string> outp = [];
+        foreach (var part in parts)
+        {
+            byte d = byte.Parse(part.RemoveOtherChars("0123456789"), CultureInfo.InvariantCulture);
+            var qw = new QuestWorkValue(d);
+            string value = " {\"" + (High ? "High" : "Low") + "\": " + (High ? qw.High : qw.Low).ToString() + "}";
+            if (!outp.Contains(value))
+                outp.Add(value);
+        }
+        return outp.Join(",");
     }
 
     private void ProcessDebugCommand(string command, string arguments)
