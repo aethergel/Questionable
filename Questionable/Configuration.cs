@@ -111,6 +111,7 @@ internal sealed class Configuration : IPluginConfiguration
         public bool ShowWindowOnStart { get; set; }
         public bool StartMinimized { get; set; }
         public bool OpenEditor { get; set; }
+        public bool NamazuPreferCraft { get; set; }
     }
 
     internal enum ECombatModule

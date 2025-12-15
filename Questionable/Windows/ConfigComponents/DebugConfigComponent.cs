@@ -193,6 +193,16 @@ internal sealed class DebugConfigComponent : ConfigComponent
             ImGui.SameLine();
             ImGuiComponents.HelpMarker("When enabled, Questionable will not attempt to turn-in and complete quests. This will do everything automatically except the final turn-in step.");
 
+            bool namazuPreferCraft = Configuration.Advanced.NamazuPreferCraft;
+            if (ImGui.Checkbox("Namazu: prefer Crafting job over Gatherer", ref namazuPreferCraft))
+            {
+                Configuration.Advanced.NamazuPreferCraft = namazuPreferCraft;
+                Save();
+            }
+
+            ImGui.SameLine();
+            ImGuiComponents.HelpMarker("Namazu tribe quests can be done as either DoH or DoL, this lets you set that preference.");
+
             bool showWindowOnStart = Configuration.Advanced.ShowWindowOnStart;
             if (ImGui.Checkbox("Show window on start", ref showWindowOnStart))
             {

@@ -252,6 +252,13 @@ internal static class Interact
                         acceptableJobs = [.. acceptableJobs.Prepend(configuration.General.CraftingJob)];
                     else if (acceptableJobs[0].IsGatherer())
                         acceptableJobs = [.. acceptableJobs.Prepend(configuration.General.GatheringJob)];
+                    if (Task.Quest.Info.AlliedSociety.Equals(EAlliedSociety.Namazu))
+                    {
+                        if (configuration.Advanced.NamazuPreferCraft && !acceptableJobs[0].IsCrafter())
+                            acceptableJobs = [.. acceptableJobs.Prepend(configuration.General.CraftingJob)];
+                        else if (!configuration.Advanced.NamazuPreferCraft && !acceptableJobs[0].IsGatherer())
+                            acceptableJobs = [.. acceptableJobs.Prepend(configuration.General.GatheringJob)];
+                    }
                     logger.LogInformation($"Current ClassJob {playerJob} not valid for {Task.Quest.Id}, attempting to switch");
                     unsafe
                     {
