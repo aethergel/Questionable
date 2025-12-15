@@ -1,4 +1,3 @@
-- Paths checked (again)
-- Feature: debug auto open editor to streamline quest path checking
-- Compatibility: add parameters to QuestRoot
-- Implement Write for some model converters
+- Namazu choose whether to use craft or gather job
+- Debug command to convert decimal ints to questwork values
+- Daily quests
