@@ -1,6 +1,7 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
   "Author": "Censored",
+  "LastChecked":{"Username": "alydev", "Date": "2025-12-16"},
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -21,6 +22,7 @@
     },
     {
       "Sequence": 1,
+      "Comment": "Doesn't work if the FATE Watch Your Tongue is active,\nas all the normal mob spawns are FATE mobs instead",
       "Steps": [
         {
           "Position": {
@@ -31,6 +33,7 @@
           "TerritoryId": 138,
           "InteractionType": "Combat",
           "EnemySpawnType": "OverworldEnemies",
+          "Fly": true,
           "ComplexCombatData": [
             {
               "DataId": 773,
@@ -39,20 +42,7 @@
             {
               "DataId": 2878,
               "MinimumKillCount": 1
-            }
-          ],
-          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
-        },
-        {
-          "Position": {
-            "X": -423.56384,
-            "Y": -40.76118,
-            "Z": -220.52809
-          },
-          "TerritoryId": 138,
-          "InteractionType": "Combat",
-          "EnemySpawnType": "OverworldEnemies",
-          "ComplexCombatData": [
+            },
             {
               "DataId": 776,
               "MinimumKillCount": 1
@@ -60,20 +50,7 @@
             {
               "DataId": 2879,
               "MinimumKillCount": 1
-            }
-          ],
-          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
-        },
-        {
-          "Position": {
-            "X": -423.56384,
-            "Y": -40.76118,
-            "Z": -220.52809
-          },
-          "TerritoryId": 138,
-          "InteractionType": "Combat",
-          "EnemySpawnType": "OverworldEnemies",
-          "ComplexCombatData": [
+            },
             {
               "DataId": 774,
               "MinimumKillCount": 1
