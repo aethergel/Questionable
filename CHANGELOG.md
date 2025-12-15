@@ -1,4 +1,4 @@
-- Paths checked
+- Paths checked (again)
 - Feature: debug auto open editor to streamline quest path checking
 - Compatibility: add parameters to QuestRoot
 - Implement Write for some model converters
