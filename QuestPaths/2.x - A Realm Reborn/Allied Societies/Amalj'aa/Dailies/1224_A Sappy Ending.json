@@ -4,10 +4,7 @@
     "plogon_enjoyer",
     "alydev"
   ],
-  "LastChecked": {
-    "Username": "alydev",
-    "Date": "2025-09-15"
-  },
+  "LastChecked":{"Username": "alydev", "Date": "2025-12-15"},
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -32,12 +29,13 @@
         {
           "DataId": 2002979,
           "Position": {
-            "X": -180.68213,
-            "Y": 6.301941,
-            "Z": -136.21735
+            "X": -180.87875,
+            "Y": 4.930809,
+            "Z": -137.11769
           },
           "TerritoryId": 146,
           "InteractionType": "Interact",
+          "StopDistance": 1,
           "CompletionQuestVariablesFlags": [null,null,null,null,null,128],
           "RequiredQuestVariables": [
             null,
@@ -60,12 +58,13 @@
         {
           "DataId": 2002980,
           "Position": {
-            "X": -125.93274,
-            "Y": 7.095398,
-            "Z": -104.78375
+            "X": -125.48897,
+            "Y": 6.2902546,
+            "Z": -104.10241
           },
           "TerritoryId": 146,
           "InteractionType": "Interact",
+          "StopDistance": 1,
           "CompletionQuestVariablesFlags": [null,null,null,null,null,64],
           "RequiredQuestVariables": [
             null,
@@ -85,12 +84,13 @@
         {
           "DataId": 2002981,
           "Position": {
-            "X": -30.655396,
-            "Y": 8.651855,
-            "Z": -87.02222
+            "X": -29.262568,
+            "Y": 7.267214,
+            "Z": -88.06441
           },
           "TerritoryId": 146,
           "InteractionType": "Interact",
+          "StopDistance": 1,
           "CompletionQuestVariablesFlags": [null,null,null,null,null,32],
           "RequiredQuestVariables": [
             null,
@@ -119,12 +119,13 @@
         {
           "DataId": 2002982,
           "Position": {
-            "X": -116.44165,
-            "Y": -0.3204956,
-            "Z": -34.40918
+            "X": -115.638596,
+            "Y": -0.8156014,
+            "Z": -33.4657
           },
           "TerritoryId": 146,
           "InteractionType": "Interact",
+          "StopDistance": 1,
           "CompletionQuestVariablesFlags": [null,null,null,null,null,16],
           "RequiredQuestVariables": [
             null,
@@ -159,6 +160,7 @@
           },
           "TerritoryId": 146,
           "InteractionType": "Interact",
+          "StopDistance": 1,
           "CompletionQuestVariablesFlags": [null,null,null,null,null,4],
           "RequiredQuestVariables": [
             null,
@@ -181,12 +183,13 @@
         {
           "DataId": 2002986,
           "Position": {
-            "X": -80.20015,
-            "Y": -1.8261992,
-            "Z": 43.605022
+            "X": -79.28923,
+            "Y": -1.7573476,
+            "Z": 44.50935
           },
           "TerritoryId": 146,
           "InteractionType": "Interact",
+          "StopDistance": 1,
           "CompletionQuestVariablesFlags": [null,null,null,null,null,1],
           "RequiredQuestVariables": [
             null,
@@ -215,12 +218,13 @@
         {
           "DataId": 2002985,
           "Position": {
-            "X": -41.031555,
-            "Y": 0.16778564,
-            "Z": 15.915161
+            "X": -40.605618,
+            "Y": -0.67801464,
+            "Z": 14.870589
           },
           "TerritoryId": 146,
           "InteractionType": "Interact",
+          "StopDistance": 1,
           "CompletionQuestVariablesFlags": [null,null,null,null,null,2],
           "RequiredQuestVariables": [
             null,
