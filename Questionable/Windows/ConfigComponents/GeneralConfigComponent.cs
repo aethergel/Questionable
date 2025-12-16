@@ -6,6 +6,7 @@ using Dalamud.Interface;
 using Dalamud.Interface.Utility.Raii;
 using Dalamud.Plugin;
 using Dalamud.Plugin.Services;
+using ECommons.ImGuiMethods;
 using LLib.GameData;
 using Lumina.Excel.Sheets;
 using Questionable.Controller;
@@ -167,6 +168,13 @@ internal sealed class GeneralConfigComponent : ConfigComponent
         if (ImGui.Combo("Preferred Gathering Job", ref gatherJob, _gatherJobNames, _gatherJobNames.Length))
         {
             Configuration.General.GatheringJob = _gatherJobIds[gatherJob];
+            Save();
+        }
+
+        Configuration.EGearsetUpdateSource gearsetSource = this.Configuration.General.GearsetUpdateSource;
+        if (ImGuiEx.EnumCombo("Preferred Gear Upgrade Source", ref gearsetSource))
+        {
+            Configuration.General.GearsetUpdateSource = gearsetSource;
             Save();
         }
 

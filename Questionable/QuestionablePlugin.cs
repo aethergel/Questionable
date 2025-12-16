@@ -141,6 +141,7 @@ public sealed class QuestionablePlugin : IDalamudPlugin
         serviceCollection.AddSingleton<BossModIpc>();
         serviceCollection.AddSingleton<PandorasBoxIpc>();
         serviceCollection.AddSingleton<YesAlreadyIpc>();
+        serviceCollection.AddSingleton<StylistIpc>();
 
         serviceCollection.AddSingleton<GearStatsCalculator>();
     }
