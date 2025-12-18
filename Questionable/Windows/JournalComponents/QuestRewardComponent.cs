@@ -12,26 +12,18 @@ using Questionable.Windows.QuestComponents;
 
 namespace Questionable.Windows.JournalComponents;
 
-internal sealed class QuestRewardComponent
+internal sealed class QuestRewardComponent(
+    QuestRegistry questRegistry,
+    QuestData questData,
+    QuestTooltipComponent questTooltipComponent,
+    UiUtils uiUtils)
 {
-    private readonly QuestRegistry _questRegistry;
-    private readonly QuestData _questData;
-    private readonly QuestTooltipComponent _questTooltipComponent;
-    private readonly UiUtils _uiUtils;
+    private readonly QuestRegistry _questRegistry = questRegistry;
+    private readonly QuestData _questData = questData;
+    private readonly QuestTooltipComponent _questTooltipComponent = questTooltipComponent;
+    private readonly UiUtils _uiUtils = uiUtils;
 
     private bool _showEventRewards;
-
-    public QuestRewardComponent(
-        QuestRegistry questRegistry,
-        QuestData questData,
-        QuestTooltipComponent questTooltipComponent,
-        UiUtils uiUtils)
-    {
-        _questRegistry = questRegistry;
-        _questData = questData;
-        _questTooltipComponent = questTooltipComponent;
-        _uiUtils = uiUtils;
-    }
 
     public void DrawItemRewards()
     {

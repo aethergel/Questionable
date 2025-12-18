@@ -9,29 +9,17 @@ using Questionable.Model.Questing;
 
 namespace Questionable.External;
 
-internal sealed class AutoDutyIpc
+internal sealed class AutoDutyIpc(IDalamudPluginInterface pluginInterface, Configuration configuration,
+    TerritoryData territoryData, ILogger<AutoDutyIpc> logger)
 {
-    private readonly Configuration _configuration;
-    private readonly TerritoryData _territoryData;
-    private readonly ILogger<AutoDutyIpc> _logger;
-    private readonly ICallGateSubscriber<uint, bool> _contentHasPath;
-    private readonly ICallGateSubscriber<string, string, object> _setConfig;
-    private readonly ICallGateSubscriber<uint, int, bool, object> _run;
-    private readonly ICallGateSubscriber<bool> _isStopped;
-    private readonly ICallGateSubscriber<object> _stop;
-
-    public AutoDutyIpc(IDalamudPluginInterface pluginInterface, Configuration configuration,
-        TerritoryData territoryData, ILogger<AutoDutyIpc> logger)
-    {
-        _configuration = configuration;
-        _territoryData = territoryData;
-        _logger = logger;
-        _contentHasPath = pluginInterface.GetIpcSubscriber<uint, bool>("AutoDuty.ContentHasPath");
-        _setConfig = pluginInterface.GetIpcSubscriber<string, string, object>("AutoDuty.SetConfig");
-        _run = pluginInterface.GetIpcSubscriber<uint, int, bool, object>("AutoDuty.Run");
-        _isStopped = pluginInterface.GetIpcSubscriber<bool>("AutoDuty.IsStopped");
-        _stop = pluginInterface.GetIpcSubscriber<object>("AutoDuty.Stop");
-    }
+    private readonly Configuration _configuration = configuration;
+    private readonly TerritoryData _territoryData = territoryData;
+    private readonly ILogger<AutoDutyIpc> _logger = logger;
+    private readonly ICallGateSubscriber<uint, bool> _contentHasPath = pluginInterface.GetIpcSubscriber<uint, bool>("AutoDuty.ContentHasPath");
+    private readonly ICallGateSubscriber<string, string, object> _setConfig = pluginInterface.GetIpcSubscriber<string, string, object>("AutoDuty.SetConfig");
+    private readonly ICallGateSubscriber<uint, int, bool, object> _run = pluginInterface.GetIpcSubscriber<uint, int, bool, object>("AutoDuty.Run");
+    private readonly ICallGateSubscriber<bool> _isStopped = pluginInterface.GetIpcSubscriber<bool>("AutoDuty.IsStopped");
+    private readonly ICallGateSubscriber<object> _stop = pluginInterface.GetIpcSubscriber<object>("AutoDuty.Stop");
 
     public bool IsConfiguredToRunContent(DutyOptions? dutyOptions)
     {

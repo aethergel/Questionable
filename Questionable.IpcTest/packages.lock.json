@@ -16,9 +16,9 @@
       },
       "ECommons": {
         "type": "Direct",
-        "requested": "[3.0.1.23, )",
-        "resolved": "3.0.1.23",
-        "contentHash": "U3H/XCdSHlKWubXPeenZNDteZQ6nS7vitkFP9hMUkACb456PUwp7ryjhmujhytlFlXHKoCNnvbgQGyFThynf/g=="
+        "requested": "[3.1.0.1, )",
+        "resolved": "3.1.0.1",
+        "contentHash": "FFpTsFd3jZMAX8becFBr/yPlKwkZT0PpuH3KGKPwTMQhtTJfvz4w6exiZmNwk5fuar5FhCDxjpb5BYsq87JsbQ=="
       },
       "JetBrains.Annotations": {
         "type": "Transitive",
@@ -29,7 +29,7 @@
         "type": "Project",
         "dependencies": {
           "DalamudPackager": "[14.0.0, )",
-          "ECommons": "[3.0.1.23, )",
+          "ECommons": "[3.1.0.1, )",
           "JetBrains.Annotations": "[2024.3.0, )"
         }
       }

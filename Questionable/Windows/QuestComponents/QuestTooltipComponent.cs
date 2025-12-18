@@ -11,30 +11,20 @@ using Questionable.Model;
 
 namespace Questionable.Windows.QuestComponents;
 
-internal sealed class QuestTooltipComponent
+internal sealed class QuestTooltipComponent(
+    QuestRegistry questRegistry,
+    QuestData questData,
+    TerritoryData territoryData,
+    QuestFunctions questFunctions,
+    UiUtils uiUtils,
+    Configuration configuration)
 {
-    private readonly QuestRegistry _questRegistry;
-    private readonly QuestData _questData;
-    private readonly TerritoryData _territoryData;
-    private readonly QuestFunctions _questFunctions;
-    private readonly UiUtils _uiUtils;
-    private readonly Configuration _configuration;
-
-    public QuestTooltipComponent(
-        QuestRegistry questRegistry,
-        QuestData questData,
-        TerritoryData territoryData,
-        QuestFunctions questFunctions,
-        UiUtils uiUtils,
-        Configuration configuration)
-    {
-        _questRegistry = questRegistry;
-        _questData = questData;
-        _territoryData = territoryData;
-        _questFunctions = questFunctions;
-        _uiUtils = uiUtils;
-        _configuration = configuration;
-    }
+    private readonly QuestRegistry _questRegistry = questRegistry;
+    private readonly QuestData _questData = questData;
+    private readonly TerritoryData _territoryData = territoryData;
+    private readonly QuestFunctions _questFunctions = questFunctions;
+    private readonly UiUtils _uiUtils = uiUtils;
+    private readonly Configuration _configuration = configuration;
 
     public void Draw(IQuestInfo questInfo)
     {

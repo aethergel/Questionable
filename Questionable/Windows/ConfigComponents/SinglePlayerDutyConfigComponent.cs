@@ -24,7 +24,15 @@ using Questionable.Model.Questing;
 
 namespace Questionable.Windows.ConfigComponents;
 
-internal sealed class SinglePlayerDutyConfigComponent : ConfigComponent
+internal sealed class SinglePlayerDutyConfigComponent(
+    IDalamudPluginInterface pluginInterface,
+    Configuration configuration,
+    TerritoryData territoryData,
+    QuestRegistry questRegistry,
+    QuestData questData,
+    IDataManager dataManager,
+    ClassJobUtils classJobUtils,
+    ILogger<SinglePlayerDutyConfigComponent> logger) : ConfigComponent(pluginInterface, configuration)
 {
     private const string SinglePlayerDutyClipboardPrefix = "qst:single:";
 
@@ -41,12 +49,12 @@ internal sealed class SinglePlayerDutyConfigComponent : ConfigComponent
     private readonly string[] _retryDifficulties = ["Normal", "Easy", "Very Easy"];
 #endif
 
-    private readonly TerritoryData _territoryData;
-    private readonly QuestRegistry _questRegistry;
-    private readonly QuestData _questData;
-    private readonly IDataManager _dataManager;
-    private readonly ClassJobUtils _classJobUtils;
-    private readonly ILogger<SinglePlayerDutyConfigComponent> _logger;
+    private readonly TerritoryData _territoryData = territoryData;
+    private readonly QuestRegistry _questRegistry = questRegistry;
+    private readonly QuestData _questData = questData;
+    private readonly IDataManager _dataManager = dataManager;
+    private readonly ClassJobUtils _classJobUtils = classJobUtils;
+    private readonly ILogger<SinglePlayerDutyConfigComponent> _logger = logger;
 
     private ImmutableDictionary<EAetheryteLocation, List<SinglePlayerDutyInfo>> _startingCityBattles =
         ImmutableDictionary<EAetheryteLocation, List<SinglePlayerDutyInfo>>.Empty;
@@ -64,25 +72,6 @@ internal sealed class SinglePlayerDutyConfigComponent : ConfigComponent
 
     private ImmutableList<(string Label, List<SinglePlayerDutyInfo>)> _otherQuestBattles =
         ImmutableList<(string Label, List<SinglePlayerDutyInfo>)>.Empty;
-
-    public SinglePlayerDutyConfigComponent(
-        IDalamudPluginInterface pluginInterface,
-        Configuration configuration,
-        TerritoryData territoryData,
-        QuestRegistry questRegistry,
-        QuestData questData,
-        IDataManager dataManager,
-        ClassJobUtils classJobUtils,
-        ILogger<SinglePlayerDutyConfigComponent> logger)
-        : base(pluginInterface, configuration)
-    {
-        _territoryData = territoryData;
-        _questRegistry = questRegistry;
-        _questData = questData;
-        _dataManager = dataManager;
-        _classJobUtils = classJobUtils;
-        _logger = logger;
-    }
 
     public void Reload()
     {

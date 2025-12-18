@@ -11,7 +11,11 @@ using Questionable.Model.Questing;
 
 namespace Questionable.External;
 
-internal sealed class BossModIpc
+internal sealed class BossModIpc(
+    IDalamudPluginInterface pluginInterface,
+    Configuration configuration,
+    ICommandManager commandManager,
+    TerritoryData territoryData)
 {
     private const string PluginName = "BossMod";
 
@@ -21,29 +25,13 @@ internal sealed class BossModIpc
             { EPreset.QuestBattle, new PresetDefinition("Questionable - Quest Battles", "QuestBattle") },
         }.AsReadOnly();
 
-    private readonly Configuration _configuration;
-    private readonly ICommandManager _commandManager;
-    private readonly TerritoryData _territoryData;
-    private readonly ICallGateSubscriber<string, string?> _getPreset;
-    private readonly ICallGateSubscriber<string, bool, bool> _createPreset;
-    private readonly ICallGateSubscriber<string, bool> _setPreset;
-    private readonly ICallGateSubscriber<bool> _clearPreset;
-
-    public BossModIpc(
-        IDalamudPluginInterface pluginInterface,
-        Configuration configuration,
-        ICommandManager commandManager,
-        TerritoryData territoryData)
-    {
-        _configuration = configuration;
-        _commandManager = commandManager;
-        _territoryData = territoryData;
-
-        _getPreset = pluginInterface.GetIpcSubscriber<string, string?>($"{PluginName}.Presets.Get");
-        _createPreset = pluginInterface.GetIpcSubscriber<string, bool, bool>($"{PluginName}.Presets.Create");
-        _setPreset = pluginInterface.GetIpcSubscriber<string, bool>($"{PluginName}.Presets.SetActive");
-        _clearPreset = pluginInterface.GetIpcSubscriber<bool>($"{PluginName}.Presets.ClearActive");
-    }
+    private readonly Configuration _configuration = configuration;
+    private readonly ICommandManager _commandManager = commandManager;
+    private readonly TerritoryData _territoryData = territoryData;
+    private readonly ICallGateSubscriber<string, string?> _getPreset = pluginInterface.GetIpcSubscriber<string, string?>($"{PluginName}.Presets.Get");
+    private readonly ICallGateSubscriber<string, bool, bool> _createPreset = pluginInterface.GetIpcSubscriber<string, bool, bool>($"{PluginName}.Presets.Create");
+    private readonly ICallGateSubscriber<string, bool> _setPreset = pluginInterface.GetIpcSubscriber<string, bool>($"{PluginName}.Presets.SetActive");
+    private readonly ICallGateSubscriber<bool> _clearPreset = pluginInterface.GetIpcSubscriber<bool>($"{PluginName}.Presets.ClearActive");
 
     public bool IsSupported()
     {

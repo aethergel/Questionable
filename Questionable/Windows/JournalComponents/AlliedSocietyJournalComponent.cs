@@ -17,39 +17,27 @@ using Questionable.Windows.QuestComponents;
 
 namespace Questionable.Windows.JournalComponents;
 
-internal sealed class AlliedSocietyJournalComponent
+internal sealed class AlliedSocietyJournalComponent(
+    QuestFunctions questFunctions,
+    QuestController questController,
+    AlliedSocietyQuestFunctions alliedSocietyQuestFunctions,
+    QuestData questData,
+    QuestRegistry questRegistry,
+    QuestJournalUtils questJournalUtils,
+    QuestTooltipComponent questTooltipComponent,
+    UiUtils uiUtils)
 {
     private static readonly string[] RankNames =
         ["Neutral", "Recognized", "Friendly", "Trusted", "Respected", "Honored", "Sworn", "Allied"];
 
-    private readonly QuestFunctions _questFunctions;
-    private readonly QuestController _questController;
-    private readonly AlliedSocietyQuestFunctions _alliedSocietyQuestFunctions;
-    private readonly QuestData _questData;
-    private readonly QuestRegistry _questRegistry;
-    private readonly QuestJournalUtils _questJournalUtils;
-    private readonly QuestTooltipComponent _questTooltipComponent;
-    private readonly UiUtils _uiUtils;
-
-    public AlliedSocietyJournalComponent(
-        QuestFunctions questFunctions,
-        QuestController questController,
-        AlliedSocietyQuestFunctions alliedSocietyQuestFunctions,
-        QuestData questData,
-        QuestRegistry questRegistry,
-        QuestJournalUtils questJournalUtils,
-        QuestTooltipComponent questTooltipComponent,
-        UiUtils uiUtils)
-    {
-        _questFunctions = questFunctions;
-        _questController = questController;
-        _alliedSocietyQuestFunctions = alliedSocietyQuestFunctions;
-        _questData = questData;
-        _questRegistry = questRegistry;
-        _questJournalUtils = questJournalUtils;
-        _questTooltipComponent = questTooltipComponent;
-        _uiUtils = uiUtils;
-    }
+    private readonly QuestFunctions _questFunctions = questFunctions;
+    private readonly QuestController _questController = questController;
+    private readonly AlliedSocietyQuestFunctions _alliedSocietyQuestFunctions = alliedSocietyQuestFunctions;
+    private readonly QuestData _questData = questData;
+    private readonly QuestRegistry _questRegistry = questRegistry;
+    private readonly QuestJournalUtils _questJournalUtils = questJournalUtils;
+    private readonly QuestTooltipComponent _questTooltipComponent = questTooltipComponent;
+    private readonly UiUtils _uiUtils = uiUtils;
 
     public void DrawAlliedSocietyQuests()
     {

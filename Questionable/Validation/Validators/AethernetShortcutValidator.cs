@@ -7,14 +7,9 @@ using Questionable.Model.Questing;
 
 namespace Questionable.Validation.Validators;
 
-internal sealed class AethernetShortcutValidator : IQuestValidator
+internal sealed class AethernetShortcutValidator(AetheryteData aetheryteData) : IQuestValidator
 {
-    private readonly AetheryteData _aetheryteData;
-
-    public AethernetShortcutValidator(AetheryteData aetheryteData)
-    {
-        _aetheryteData = aetheryteData;
-    }
+    private readonly AetheryteData _aetheryteData = aetheryteData;
 
     public IEnumerable<ValidationIssue> Validate(Quest quest)
     {

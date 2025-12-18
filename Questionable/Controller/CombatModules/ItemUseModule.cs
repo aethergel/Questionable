@@ -14,23 +14,16 @@ using Questionable.Model.Questing;
 
 namespace Questionable.Controller.CombatModules;
 
-internal sealed class ItemUseModule : ICombatModule
+internal sealed class ItemUseModule(IServiceProvider serviceProvider, ICondition condition, ILogger<ItemUseModule> logger) : ICombatModule
 {
-    private readonly IServiceProvider _serviceProvider;
-    private readonly ICondition _condition;
-    private readonly ILogger<ItemUseModule> _logger;
+    private readonly IServiceProvider _serviceProvider = serviceProvider;
+    private readonly ICondition _condition = condition;
+    private readonly ILogger<ItemUseModule> _logger = logger;
 
     private ICombatModule? _delegate;
     private CombatController.CombatData? _combatData;
     private bool _isDoingRotation;
     private DateTime _continueAt;
-
-    public ItemUseModule(IServiceProvider serviceProvider, ICondition condition, ILogger<ItemUseModule> logger)
-    {
-        _serviceProvider = serviceProvider;
-        _condition = condition;
-        _logger = logger;
-    }
 
     public bool CanHandleFight(CombatController.CombatData combatData)
     {

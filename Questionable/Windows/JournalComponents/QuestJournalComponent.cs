@@ -18,36 +18,24 @@ using Questionable.Windows.QuestComponents;
 
 namespace Questionable.Windows.JournalComponents;
 
-internal sealed class QuestJournalComponent
+internal sealed class QuestJournalComponent(JournalData journalData, QuestRegistry questRegistry, QuestFunctions questFunctions,
+    UiUtils uiUtils, QuestTooltipComponent questTooltipComponent, IDalamudPluginInterface pluginInterface,
+    QuestJournalUtils questJournalUtils, QuestValidator questValidator)
 {
     private readonly Dictionary<JournalData.Genre, JournalCounts> _genreCounts = [];
     private readonly Dictionary<JournalData.Category, JournalCounts> _categoryCounts = [];
     private readonly Dictionary<JournalData.Section, JournalCounts> _sectionCounts = [];
 
-    private readonly JournalData _journalData;
-    private readonly QuestRegistry _questRegistry;
-    private readonly QuestFunctions _questFunctions;
-    private readonly UiUtils _uiUtils;
-    private readonly QuestTooltipComponent _questTooltipComponent;
-    private readonly IDalamudPluginInterface _pluginInterface;
-    private readonly QuestJournalUtils _questJournalUtils;
-    private readonly QuestValidator _questValidator;
+    private readonly JournalData _journalData = journalData;
+    private readonly QuestRegistry _questRegistry = questRegistry;
+    private readonly QuestFunctions _questFunctions = questFunctions;
+    private readonly UiUtils _uiUtils = uiUtils;
+    private readonly QuestTooltipComponent _questTooltipComponent = questTooltipComponent;
+    private readonly IDalamudPluginInterface _pluginInterface = pluginInterface;
+    private readonly QuestJournalUtils _questJournalUtils = questJournalUtils;
+    private readonly QuestValidator _questValidator = questValidator;
 
     private List<FilteredSection> _filteredSections = [];
-
-    public QuestJournalComponent(JournalData journalData, QuestRegistry questRegistry, QuestFunctions questFunctions,
-        UiUtils uiUtils, QuestTooltipComponent questTooltipComponent, IDalamudPluginInterface pluginInterface,
-        QuestJournalUtils questJournalUtils, QuestValidator questValidator)
-    {
-        _journalData = journalData;
-        _questRegistry = questRegistry;
-        _questFunctions = questFunctions;
-        _uiUtils = uiUtils;
-        _questTooltipComponent = questTooltipComponent;
-        _pluginInterface = pluginInterface;
-        _questJournalUtils = questJournalUtils;
-        _questValidator = questValidator;
-    }
 
     internal FilterConfiguration Filter { get; } = new();
 

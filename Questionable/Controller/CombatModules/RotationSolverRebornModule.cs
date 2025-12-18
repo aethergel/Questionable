@@ -8,24 +8,16 @@ using Microsoft.Extensions.Logging;
 
 namespace Questionable.Controller.CombatModules;
 
-internal sealed class RotationSolverRebornModule : ICombatModule, IDisposable
+internal sealed class RotationSolverRebornModule(
+    ILogger<RotationSolverRebornModule> logger,
+    IDalamudPluginInterface pluginInterface,
+    Configuration configuration) : ICombatModule, IDisposable
 {
-    private readonly ILogger<RotationSolverRebornModule> _logger;
-    private readonly Configuration _configuration;
-    private readonly ICallGateSubscriber<string, object> _test;
-    private readonly ICallGateSubscriber<StateCommandType, object> _changeOperationMode;
-
-    public RotationSolverRebornModule(
-        ILogger<RotationSolverRebornModule> logger,
-        IDalamudPluginInterface pluginInterface,
-        Configuration configuration)
-    {
-        _logger = logger;
-        _configuration = configuration;
-        _test = pluginInterface.GetIpcSubscriber<string, object>("RotationSolverReborn.Test");
-        _changeOperationMode =
+    private readonly ILogger<RotationSolverRebornModule> _logger = logger;
+    private readonly Configuration _configuration = configuration;
+    private readonly ICallGateSubscriber<string, object> _test = pluginInterface.GetIpcSubscriber<string, object>("RotationSolverReborn.Test");
+    private readonly ICallGateSubscriber<StateCommandType, object> _changeOperationMode =
             pluginInterface.GetIpcSubscriber<StateCommandType, object>("RotationSolverReborn.ChangeOperatingMode");
-    }
 
     public bool CanHandleFight(CombatController.CombatData combatData)
     {

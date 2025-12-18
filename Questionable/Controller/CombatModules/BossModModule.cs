@@ -6,21 +6,14 @@ using Questionable.External;
 
 namespace Questionable.Controller.CombatModules;
 
-internal sealed class BossModModule : ICombatModule, IDisposable
+internal sealed class BossModModule(
+    ILogger<BossModModule> logger,
+    BossModIpc bossModIpc,
+    Configuration configuration) : ICombatModule, IDisposable
 {
-    private readonly ILogger<BossModModule> _logger;
-    private readonly BossModIpc _bossModIpc;
-    private readonly Configuration _configuration;
-
-    public BossModModule(
-        ILogger<BossModModule> logger,
-        BossModIpc bossModIpc,
-        Configuration configuration)
-    {
-        _logger = logger;
-        _bossModIpc = bossModIpc;
-        _configuration = configuration;
-    }
+    private readonly ILogger<BossModModule> _logger = logger;
+    private readonly BossModIpc _bossModIpc = bossModIpc;
+    private readonly Configuration _configuration = configuration;
 
     public bool CanHandleFight(CombatController.CombatData combatData)
     {

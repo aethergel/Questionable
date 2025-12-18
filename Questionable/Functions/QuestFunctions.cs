@@ -25,52 +25,35 @@ using Quest = Questionable.Model.Quest;
 
 namespace Questionable.Functions;
 
-internal sealed unsafe class QuestFunctions
+internal sealed unsafe class QuestFunctions(
+    QuestRegistry questRegistry,
+    QuestData questData,
+    AetheryteFunctions aetheryteFunctions,
+    AlliedSocietyQuestFunctions alliedSocietyQuestFunctions,
+    AlliedSocietyData alliedSocietyData,
+    Configuration configuration,
+    IDataManager dataManager,
+    IClientState clientState,
+    IObjectTable objectTable,
+    //IPlayerState playerState,
+    IGameGui gameGui,
+    IChatGui chatGui,
+    IAetheryteList aetheryteList)
 {
-    private readonly QuestRegistry _questRegistry;
-    private readonly QuestData _questData;
-    private readonly AetheryteFunctions _aetheryteFunctions;
-    private readonly AlliedSocietyQuestFunctions _alliedSocietyQuestFunctions;
-    private readonly AlliedSocietyData _alliedSocietyData;
-    private readonly Configuration _configuration;
-    private readonly IDataManager _dataManager;
-    private readonly IClientState _clientState;
-    private readonly IObjectTable _objectTable;
+    private readonly QuestRegistry _questRegistry = questRegistry;
+    private readonly QuestData _questData = questData;
+    private readonly AetheryteFunctions _aetheryteFunctions = aetheryteFunctions;
+    private readonly AlliedSocietyQuestFunctions _alliedSocietyQuestFunctions = alliedSocietyQuestFunctions;
+    private readonly AlliedSocietyData _alliedSocietyData = alliedSocietyData;
+    private readonly Configuration _configuration = configuration;
+    private readonly IDataManager _dataManager = dataManager;
+    private readonly IClientState _clientState = clientState;
+    private readonly IObjectTable _objectTable = objectTable;
     //private readonly IPlayerState _playerState;
-    private readonly IGameGui _gameGui;
-    private readonly IChatGui _chatGui;
-    private readonly IAetheryteList _aetheryteList;
+    private readonly IGameGui _gameGui = gameGui;
+    private readonly IChatGui _chatGui = chatGui;
+    private readonly IAetheryteList _aetheryteList = aetheryteList;
     internal static readonly int[] questsThatUseWhiteWolfGate = [439, 1080, 3870, 33];
-
-    public QuestFunctions(
-        QuestRegistry questRegistry,
-        QuestData questData,
-        AetheryteFunctions aetheryteFunctions,
-        AlliedSocietyQuestFunctions alliedSocietyQuestFunctions,
-        AlliedSocietyData alliedSocietyData,
-        Configuration configuration,
-        IDataManager dataManager,
-        IClientState clientState,
-        IObjectTable objectTable,
-        //IPlayerState playerState,
-        IGameGui gameGui,
-        IChatGui chatGui,
-        IAetheryteList aetheryteList)
-    {
-        _questRegistry = questRegistry;
-        _questData = questData;
-        _aetheryteFunctions = aetheryteFunctions;
-        _alliedSocietyQuestFunctions = alliedSocietyQuestFunctions;
-        _alliedSocietyData = alliedSocietyData;
-        _configuration = configuration;
-        _dataManager = dataManager;
-        _clientState = clientState;
-        _objectTable = objectTable;
-        //_playerState = playerState;
-        _gameGui = gameGui;
-        _chatGui = chatGui;
-        _aetheryteList = aetheryteList;
-    }
 
     public QuestReference GetCurrentQuest(bool allowNewMsq = true)
     {

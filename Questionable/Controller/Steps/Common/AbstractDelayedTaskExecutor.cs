@@ -2,7 +2,7 @@
 
 namespace Questionable.Controller.Steps.Common;
 
-internal abstract class AbstractDelayedTaskExecutor<T> : TaskExecutor<T>
+internal abstract class AbstractDelayedTaskExecutor<T>(TimeSpan delay) : TaskExecutor<T>
     where T : class, ITask
 {
     private DateTime _continueAt;
@@ -12,12 +12,7 @@ internal abstract class AbstractDelayedTaskExecutor<T> : TaskExecutor<T>
     {
     }
 
-    protected AbstractDelayedTaskExecutor(TimeSpan delay)
-    {
-        Delay = delay;
-    }
-
-    protected TimeSpan Delay { get; set; }
+    protected TimeSpan Delay { get; set; } = delay;
 
     protected sealed override bool Start()
     {

@@ -1,0 +1,89 @@
+{
+  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+  "Author": "alydev",
+  "QuestSequence": [
+    {
+      "Sequence": 0,
+      "Steps": [
+        {
+          "DataId": 1056126,
+          "Position": {
+            "X": 132.6466,
+            "Y": -15.89986,
+            "Z": 176.01282
+          },
+          "TerritoryId": 1185,
+          "InteractionType": "AcceptQuest",
+          "AetheryteShortcut": "Tuliyollal",
+          "AethernetShortcut": [
+            "[Tuliyollal] Aetheryte Plaza",
+            "[Tuliyollal] Bayside Bevy Marketplace"
+          ]
+        }
+      ]
+    },
+    {
+      "Sequence": 1,
+      "Steps": [
+        {
+          "DataId": 1056131,
+          "Position": {
+            "X": 14.663879,
+            "Y": -19.587986,
+            "Z": 195.11707
+          },
+          "TerritoryId": 1185,
+          "InteractionType": "Interact"
+        }
+      ]
+    },
+    {
+      "Sequence": 2,
+      "Steps": [
+        {
+          "DataId": 1056136,
+          "Position": {
+            "X": 6.3324585,
+            "Y": 50.700012,
+            "Z": 725.6428
+          },
+          "TerritoryId": 1192,
+          "InteractionType": "Interact",
+          "AetheryteShortcut": "Living Memory - Leynode Mnemo",
+          "Fly": true
+        }
+      ]
+    },
+    {
+      "Sequence": 3,
+      "Steps": [
+        {
+          "DataId": 1056140,
+          "Position": {
+            "X": 7.7057495,
+            "Y": 50.700012,
+            "Z": 723.781
+          },
+          "TerritoryId": 1192,
+          "InteractionType": "Interact",
+          "StopDistance": 4
+        }
+      ]
+    },
+    {
+      "Sequence": 255,
+      "Steps": [
+        {
+          "DataId": 1056141,
+          "Position": {
+            "X": -7.5532227,
+            "Y": -0.003462526,
+            "Z": -7.950012
+          },
+          "TerritoryId": 1334,
+          "InteractionType": "CompleteQuest"
+        }
+      ]
+    }
+  ]
+}

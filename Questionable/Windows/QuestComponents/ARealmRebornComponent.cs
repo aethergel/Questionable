@@ -11,28 +11,19 @@ using Questionable.Model.Questing;
 
 namespace Questionable.Windows.QuestComponents;
 
-internal sealed class ARealmRebornComponent
+internal sealed class ARealmRebornComponent(QuestFunctions questFunctions, QuestData questData, TerritoryData territoryData,
+    UiUtils uiUtils, Configuration configuration)
 {
     private static readonly QuestId ATimeForEveryPurpose = new(425);
     private static readonly QuestId TheUltimateWeapon = new(524);
     private static readonly QuestId GoodIntentions = new(363);
     private static readonly ushort[] RequiredPrimalInstances = [20004, 20006, 20005];
 
-    private readonly QuestFunctions _questFunctions;
-    private readonly QuestData _questData;
-    private readonly TerritoryData _territoryData;
-    private readonly UiUtils _uiUtils;
-    private readonly Configuration _configuration;
-
-    public ARealmRebornComponent(QuestFunctions questFunctions, QuestData questData, TerritoryData territoryData,
-        UiUtils uiUtils, Configuration configuration)
-    {
-        _questFunctions = questFunctions;
-        _questData = questData;
-        _territoryData = territoryData;
-        _uiUtils = uiUtils;
-        _configuration = configuration;
-    }
+    private readonly QuestFunctions _questFunctions = questFunctions;
+    private readonly QuestData _questData = questData;
+    private readonly TerritoryData _territoryData = territoryData;
+    private readonly UiUtils _uiUtils = uiUtils;
+    private readonly Configuration _configuration = configuration;
 
     public bool ShouldDraw => !_questFunctions.IsQuestAcceptedOrComplete(ATimeForEveryPurpose) &&
                               _questFunctions.IsQuestComplete(TheUltimateWeapon);

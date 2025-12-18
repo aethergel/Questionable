@@ -5,16 +5,10 @@ using Questionable.Model.Questing;
 
 namespace Questionable.Controller.Steps.Shared;
 
-internal sealed class ExtraConditionUtils
+internal sealed class ExtraConditionUtils(IClientState clientState, IObjectTable objectTable)
 {
-    private readonly IClientState _clientState;
-    private readonly IObjectTable _objectTable;
-
-    public ExtraConditionUtils(IClientState clientState, IObjectTable objectTable)
-    {
-        _clientState = clientState;
-        _objectTable = objectTable;
-    }
+    private readonly IClientState _clientState = clientState;
+    private readonly IObjectTable _objectTable = objectTable;
 
     public bool MatchesExtraCondition(EExtraSkipCondition skipCondition)
     {

@@ -10,18 +10,12 @@ using Questionable.External;
 
 namespace Questionable.Windows.ConfigComponents;
 
-internal sealed class NotificationConfigComponent : ConfigComponent
+internal sealed class NotificationConfigComponent(
+    IDalamudPluginInterface pluginInterface,
+    Configuration configuration,
+    NotificationMasterIpc notificationMasterIpc) : ConfigComponent(pluginInterface, configuration)
 {
-    private readonly NotificationMasterIpc _notificationMasterIpc;
-
-    public NotificationConfigComponent(
-        IDalamudPluginInterface pluginInterface,
-        Configuration configuration,
-        NotificationMasterIpc notificationMasterIpc)
-        : base(pluginInterface, configuration)
-    {
-        _notificationMasterIpc = notificationMasterIpc;
-    }
+    private readonly NotificationMasterIpc _notificationMasterIpc = notificationMasterIpc;
 
     public override void DrawTab()
     {

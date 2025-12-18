@@ -19,34 +19,24 @@ using Questionable.Model.Questing;
 
 namespace Questionable.Functions;
 
-internal sealed unsafe class ChatFunctions
+internal sealed unsafe class ChatFunctions(ISigScanner sigScanner, IDataManager dataManager, GameFunctions gameFunctions,
+    ITargetManager targetManager, ILogger<ChatFunctions> logger)
 {
     private delegate void ProcessChatBoxDelegate(IntPtr uiModule, IntPtr message, IntPtr unused, byte a4);
 
-    private readonly ReadOnlyDictionary<EEmote, string> _emoteCommands;
-
-    private readonly GameFunctions _gameFunctions;
-    private readonly ITargetManager _targetManager;
-    private readonly ILogger<ChatFunctions> _logger;
-    private readonly ProcessChatBoxDelegate _processChatBox;
-
-    public ChatFunctions(ISigScanner sigScanner, IDataManager dataManager, GameFunctions gameFunctions,
-        ITargetManager targetManager, ILogger<ChatFunctions> logger)
-    {
-        _gameFunctions = gameFunctions;
-        _targetManager = targetManager;
-        _logger = logger;
-        _processChatBox =
-            Marshal.GetDelegateForFunctionPointer<ProcessChatBoxDelegate>(UIModule.Addresses.ProcessChatBoxEntry.Value);
-
-        _emoteCommands = dataManager.GetExcelSheet<Emote>()
+    private readonly ReadOnlyDictionary<EEmote, string> _emoteCommands = dataManager.GetExcelSheet<Emote>()
             .Where(x => x.RowId > 0)
             .Where(x => x.TextCommand.IsValid)
             .Select(x => (x.RowId, Command: x.TextCommand.Value.Command.ToString()))
             .Where(x => !string.IsNullOrEmpty(x.Command) && x.Command.StartsWith('/'))
             .ToDictionary(x => (EEmote)x.RowId, x => x.Command)
             .AsReadOnly();
-    }
+
+    private readonly GameFunctions _gameFunctions = gameFunctions;
+    private readonly ITargetManager _targetManager = targetManager;
+    private readonly ILogger<ChatFunctions> _logger = logger;
+    private readonly ProcessChatBoxDelegate _processChatBox =
+            Marshal.GetDelegateForFunctionPointer<ProcessChatBoxDelegate>(UIModule.Addresses.ProcessChatBoxEntry.Value);
 
     /// <summary>
     /// <para>

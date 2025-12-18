@@ -12,6 +12,7 @@ using Dalamud.Game.ClientState.Objects.SubKinds;
 using Dalamud.Game.ClientState.Objects.Types;
 using Dalamud.Plugin.Ipc.Exceptions;
 using Dalamud.Plugin.Services;
+using FFXIVClientStructs.FFXIV.Client.Enums;
 using FFXIVClientStructs.FFXIV.Client.Game;
 using FFXIVClientStructs.FFXIV.Client.Game.Control;
 using Microsoft.Extensions.Logging;
@@ -26,38 +27,24 @@ using Questionable.Model.Questing;
 
 namespace Questionable.Controller;
 
-internal sealed class MovementController : IDisposable
+internal sealed class MovementController(NavmeshIpc navmeshIpc, IClientState clientState, GameFunctions gameFunctions,
+    ChatFunctions chatFunctions, ICondition condition, MovementOverrideController movementOverrideController,
+    IObjectTable objectTable, AetheryteData aetheryteData, ICommandManager commandManager, ILogger<MovementController> logger) : IDisposable
 {
     public const float DefaultVerticalInteractionDistance = 1.95f;
 
-    private readonly NavmeshIpc _navmeshIpc;
-    private readonly IClientState _clientState;
-    private readonly IObjectTable _objectTable;
-    private readonly ICommandManager _commandManager;
-    private readonly GameFunctions _gameFunctions;
-    private readonly ChatFunctions _chatFunctions;
-    private readonly ICondition _condition;
-    private readonly MovementOverrideController _movementOverrideController;
-    private readonly AetheryteData _aetheryteData;
-    private readonly ILogger<MovementController> _logger;
+    private readonly NavmeshIpc _navmeshIpc = navmeshIpc;
+    private readonly IClientState _clientState = clientState;
+    private readonly IObjectTable _objectTable = objectTable;
+    private readonly ICommandManager _commandManager = commandManager;
+    private readonly GameFunctions _gameFunctions = gameFunctions;
+    private readonly ChatFunctions _chatFunctions = chatFunctions;
+    private readonly ICondition _condition = condition;
+    private readonly MovementOverrideController _movementOverrideController = movementOverrideController;
+    private readonly AetheryteData _aetheryteData = aetheryteData;
+    private readonly ILogger<MovementController> _logger = logger;
     private CancellationTokenSource? _cancellationTokenSource;
     private Task<List<Vector3>>? _pathfindTask;
-
-    public MovementController(NavmeshIpc navmeshIpc, IClientState clientState, GameFunctions gameFunctions,
-        ChatFunctions chatFunctions, ICondition condition, MovementOverrideController movementOverrideController,
-        IObjectTable objectTable, AetheryteData aetheryteData, ICommandManager commandManager, ILogger<MovementController> logger)
-    {
-        _navmeshIpc = navmeshIpc;
-        _clientState = clientState;
-        _objectTable = objectTable;
-        _commandManager = commandManager;
-        _gameFunctions = gameFunctions;
-        _chatFunctions = chatFunctions;
-        _condition = condition;
-        _movementOverrideController = movementOverrideController;
-        _aetheryteData = aetheryteData;
-        _logger = logger;
-    }
 
     public bool IsNavmeshReady
     {
@@ -436,7 +423,7 @@ internal sealed class MovementController : IDisposable
             // if we're in towns/event areas, jog is a neat fallback (if we're not already jogging,
             // if we're too close then sprinting will barely benefit us)
             if (!_gameFunctions.HasStatus(EStatus.Jog) &&
-                GameMain.Instance()->CurrentTerritoryIntendedUseId is 0 or 7 or 13 or 14 or 15 or 19 or 23 or 29)
+                ((int)GameMain.Instance()->CurrentTerritoryIntendedUseId) is 0 or 7 or 13 or 14 or 15 or 19 or 23 or 29)
                 sprintDistance = 30f;
 
             if (actualDistance > sprintDistance &&

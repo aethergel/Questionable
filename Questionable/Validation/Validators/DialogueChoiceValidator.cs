@@ -5,14 +5,9 @@ using Questionable.Model.Questing;
 
 namespace Questionable.Validation.Validators;
 
-internal sealed class DialogueChoiceValidator : IQuestValidator
+internal sealed class DialogueChoiceValidator(ExcelFunctions excelFunctions) : IQuestValidator
 {
-    private readonly ExcelFunctions _excelFunctions;
-
-    public DialogueChoiceValidator(ExcelFunctions excelFunctions)
-    {
-        _excelFunctions = excelFunctions;
-    }
+    private readonly ExcelFunctions _excelFunctions = excelFunctions;
 
     public IEnumerable<ValidationIssue> Validate(Quest quest)
     {

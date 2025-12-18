@@ -13,27 +13,18 @@ using Questionable.Model.Questing;
 
 namespace Questionable.Controller.Steps;
 
-internal sealed class TaskCreator
+internal sealed class TaskCreator(
+    IServiceProvider serviceProvider,
+    TerritoryData territoryData,
+    IClientState clientState,
+    IChatGui chatGui,
+    ILogger<TaskCreator> logger)
 {
-    private readonly IServiceProvider _serviceProvider;
-    private readonly TerritoryData _territoryData;
-    private readonly IClientState _clientState;
-    private readonly IChatGui _chatGui;
-    private readonly ILogger<TaskCreator> _logger;
-
-    public TaskCreator(
-        IServiceProvider serviceProvider,
-        TerritoryData territoryData,
-        IClientState clientState,
-        IChatGui chatGui,
-        ILogger<TaskCreator> logger)
-    {
-        _serviceProvider = serviceProvider;
-        _territoryData = territoryData;
-        _clientState = clientState;
-        _chatGui = chatGui;
-        _logger = logger;
-    }
+    private readonly IServiceProvider _serviceProvider = serviceProvider;
+    private readonly TerritoryData _territoryData = territoryData;
+    private readonly IClientState _clientState = clientState;
+    private readonly IChatGui _chatGui = chatGui;
+    private readonly ILogger<TaskCreator> _logger = logger;
 
     public IReadOnlyList<ITask> CreateTasks(Quest quest, byte sequenceNumber, QuestSequence? sequence, QuestStep? step)
     {

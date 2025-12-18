@@ -8,7 +8,7 @@ using Dalamud.Plugin;
 
 namespace Questionable.Windows.ConfigComponents;
 
-internal abstract class ConfigComponent
+internal abstract class ConfigComponent(IDalamudPluginInterface pluginInterface, Configuration configuration)
 {
     protected const string DutyClipboardSeparator = ";";
     protected const string DutyWhitelistPrefix = "+";
@@ -28,15 +28,9 @@ internal abstract class ConfigComponent
         $"{SeIconChar.Cross.ToIconChar()} Disabled"
     ];
 
-    private readonly IDalamudPluginInterface _pluginInterface;
+    private readonly IDalamudPluginInterface _pluginInterface = pluginInterface;
 
-    protected ConfigComponent(IDalamudPluginInterface pluginInterface, Configuration configuration)
-    {
-        _pluginInterface = pluginInterface;
-        Configuration = configuration;
-    }
-
-    protected Configuration Configuration { get; }
+    protected Configuration Configuration { get; } = configuration;
 
     public abstract void DrawTab();
 

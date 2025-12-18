@@ -4,16 +4,10 @@ using Questionable.Controller;
 
 namespace Questionable.Windows.QuestComponents;
 
-internal sealed class RemainingTasksComponent
+internal sealed class RemainingTasksComponent(QuestController questController, GatheringController gatheringController)
 {
-    private readonly QuestController _questController;
-    private readonly GatheringController _gatheringController;
-
-    public RemainingTasksComponent(QuestController questController, GatheringController gatheringController)
-    {
-        _questController = questController;
-        _gatheringController = gatheringController;
-    }
+    private readonly QuestController _questController = questController;
+    private readonly GatheringController _gatheringController = gatheringController;
 
     public void Draw()
     {

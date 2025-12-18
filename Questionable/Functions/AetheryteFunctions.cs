@@ -10,24 +10,16 @@ using Action = Lumina.Excel.Sheets.Action;
 
 namespace Questionable.Functions;
 
-internal sealed unsafe class AetheryteFunctions
+internal sealed unsafe class AetheryteFunctions(IServiceProvider serviceProvider, ILogger<AetheryteFunctions> logger,
+    IDataManager dataManager, IClientState clientState)
 {
     private const uint TeleportAction = 5;
     private const uint ReturnAction = 6;
 
-    private readonly IServiceProvider _serviceProvider;
-    private readonly ILogger<AetheryteFunctions> _logger;
-    private readonly IDataManager _dataManager;
-    private readonly IClientState _clientState;
-
-    public AetheryteFunctions(IServiceProvider serviceProvider, ILogger<AetheryteFunctions> logger,
-        IDataManager dataManager, IClientState clientState)
-    {
-        _serviceProvider = serviceProvider;
-        _logger = logger;
-        _dataManager = dataManager;
-        _clientState = clientState;
-    }
+    private readonly IServiceProvider _serviceProvider = serviceProvider;
+    private readonly ILogger<AetheryteFunctions> _logger = logger;
+    private readonly IDataManager _dataManager = dataManager;
+    private readonly IClientState _clientState = clientState;
 
     public DateTime ReturnRequestedAt { get; set; } = DateTime.MinValue;
 

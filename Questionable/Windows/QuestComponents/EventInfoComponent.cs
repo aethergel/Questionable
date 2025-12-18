@@ -17,7 +17,13 @@ using Questionable.Model.Questing;
 
 namespace Questionable.Windows.QuestComponents;
 
-internal sealed class EventInfoComponent
+internal sealed class EventInfoComponent(QuestData questData,
+    QuestRegistry questRegistry,
+    QuestFunctions questFunctions,
+    UiUtils uiUtils,
+    QuestController questController,
+    QuestTooltipComponent questTooltipComponent,
+    Configuration configuration)
 {
     [SuppressMessage("ReSharper", "CollectionNeverUpdated.Local")]
     private readonly List<EventQuest> _eventQuests =
@@ -28,30 +34,13 @@ internal sealed class EventInfoComponent
         new EventQuest("The Rising 2025", [new QuestId(5297), new QuestId(5298)], AtDailyReset(new DateOnly(2025, 9, 11))) // 11 September 2025 at 14:59 (GMT)
     ];
 
-    private readonly QuestData _questData;
-    private readonly QuestRegistry _questRegistry;
-    private readonly QuestFunctions _questFunctions;
-    private readonly UiUtils _uiUtils;
-    private readonly QuestController _questController;
-    private readonly QuestTooltipComponent _questTooltipComponent;
-    private readonly Configuration _configuration;
-
-    public EventInfoComponent(QuestData questData,
-        QuestRegistry questRegistry,
-        QuestFunctions questFunctions,
-        UiUtils uiUtils,
-        QuestController questController,
-        QuestTooltipComponent questTooltipComponent,
-        Configuration configuration)
-    {
-        _questData = questData;
-        _questRegistry = questRegistry;
-        _questFunctions = questFunctions;
-        _uiUtils = uiUtils;
-        _questController = questController;
-        _questTooltipComponent = questTooltipComponent;
-        _configuration = configuration;
-    }
+    private readonly QuestData _questData = questData;
+    private readonly QuestRegistry _questRegistry = questRegistry;
+    private readonly QuestFunctions _questFunctions = questFunctions;
+    private readonly UiUtils _uiUtils = uiUtils;
+    private readonly QuestController _questController = questController;
+    private readonly QuestTooltipComponent _questTooltipComponent = questTooltipComponent;
+    private readonly Configuration _configuration = configuration;
 
     [SuppressMessage("ReSharper", "UnusedMember.Local")]
     private static DateTime AtDailyReset(DateOnly date)

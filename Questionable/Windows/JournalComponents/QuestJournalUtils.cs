@@ -11,19 +11,12 @@ using Questionable.Model.Questing;
 
 namespace Questionable.Windows.JournalComponents;
 
-internal sealed class QuestJournalUtils
+internal sealed class QuestJournalUtils(QuestController questController, QuestFunctions questFunctions,
+    ICommandManager commandManager)
 {
-    private readonly QuestController _questController;
-    private readonly QuestFunctions _questFunctions;
-    private readonly ICommandManager _commandManager;
-
-    public QuestJournalUtils(QuestController questController, QuestFunctions questFunctions,
-        ICommandManager commandManager)
-    {
-        _questController = questController;
-        _questFunctions = questFunctions;
-        _commandManager = commandManager;
-    }
+    private readonly QuestController _questController = questController;
+    private readonly QuestFunctions _questFunctions = questFunctions;
+    private readonly ICommandManager _commandManager = commandManager;
 
     public void ShowContextMenu(IQuestInfo questInfo, Quest? quest, string label)
     {

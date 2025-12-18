@@ -5,13 +5,9 @@ using Lumina.Excel.Sheets;
 
 namespace Questionable.Data;
 
-internal sealed class AetherCurrentData
+internal sealed class AetherCurrentData(IDataManager dataManager)
 {
-    private readonly ImmutableDictionary<ushort, ImmutableList<uint>> _overworldCurrents;
-
-    public AetherCurrentData(IDataManager dataManager)
-    {
-        _overworldCurrents = dataManager.GetExcelSheet<AetherCurrentCompFlgSet>()
+    private readonly ImmutableDictionary<ushort, ImmutableList<uint>> _overworldCurrents = dataManager.GetExcelSheet<AetherCurrentCompFlgSet>()
             .Where(x => x.RowId > 0)
             .Where(x => x.Territory.IsValid)
             .ToImmutableDictionary(
@@ -20,7 +16,6 @@ internal sealed class AetherCurrentData
                     .Where(y => y.RowId > 0 && y.Value.Quest.RowId == 0)
                     .Select(y => y.RowId)
                     .ToImmutableList());
-    }
 
     public bool IsValidAetherCurrent(ushort territoryId, uint aetherCurrentId)
     {

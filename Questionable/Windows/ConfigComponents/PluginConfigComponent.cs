@@ -15,7 +15,14 @@ using Questionable.External;
 
 namespace Questionable.Windows.ConfigComponents;
 
-internal sealed class PluginConfigComponent : ConfigComponent
+internal sealed class PluginConfigComponent(
+    IDalamudPluginInterface pluginInterface,
+    Configuration configuration,
+    CombatController combatController,
+    UiUtils uiUtils,
+    ICommandManager commandManager,
+    AutomatonIpc automatonIpc,
+    PandorasBoxIpc pandorasBoxIpc) : ConfigComponent(pluginInterface, configuration)
 {
     private static readonly IReadOnlyList<PluginInfo> RequiredPlugins =
     [
@@ -74,30 +81,7 @@ internal sealed class PluginConfigComponent : ConfigComponent
             },
         }.AsReadOnly();
 
-    private readonly IReadOnlyList<PluginInfo> _recommendedPlugins;
-
-    private readonly Configuration _configuration;
-    private readonly CombatController _combatController;
-    private readonly IDalamudPluginInterface _pluginInterface;
-    private readonly UiUtils _uiUtils;
-    private readonly ICommandManager _commandManager;
-
-    public PluginConfigComponent(
-        IDalamudPluginInterface pluginInterface,
-        Configuration configuration,
-        CombatController combatController,
-        UiUtils uiUtils,
-        ICommandManager commandManager,
-        AutomatonIpc automatonIpc,
-        PandorasBoxIpc pandorasBoxIpc)
-        : base(pluginInterface, configuration)
-    {
-        _configuration = configuration;
-        _combatController = combatController;
-        _pluginInterface = pluginInterface;
-        _uiUtils = uiUtils;
-        _commandManager = commandManager;
-        _recommendedPlugins =
+    private readonly IReadOnlyList<PluginInfo> _recommendedPlugins =
         [
             new PluginInfo("CBT (formerly known as Automaton)",
                 "Automaton",
@@ -145,7 +129,12 @@ internal sealed class PluginConfigComponent : ConfigComponent
                 new Uri("https://puni.sh/api/plugins"),
                 "/artisan"),
         ];
-    }
+
+    private readonly Configuration _configuration = configuration;
+    private readonly CombatController _combatController = combatController;
+    private readonly IDalamudPluginInterface _pluginInterface = pluginInterface;
+    private readonly UiUtils _uiUtils = uiUtils;
+    private readonly ICommandManager _commandManager = commandManager;
 
     public override void DrawTab()
     {

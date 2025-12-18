@@ -6,29 +6,19 @@ using Questionable.Model.Common;
 
 namespace Questionable.External;
 
-internal sealed class LifestreamIpc
+internal sealed class LifestreamIpc(IDalamudPluginInterface pluginInterface, ILogger<LifestreamIpc> logger)
 {
-    private readonly ILogger<LifestreamIpc> _logger;
-    private readonly ICallGateSubscriber<uint, bool> _aethernetTeleportByPlaceNameId;
-    private readonly ICallGateSubscriber<uint, bool> _aethernetTeleportById;
-    private readonly ICallGateSubscriber<bool> _aethernetTeleportToFirmament;
-    private readonly ICallGateSubscriber<bool> _isBusy;
-    private readonly ICallGateSubscriber<string, bool> _aethernetTeleport;
-
-    public LifestreamIpc(IDalamudPluginInterface pluginInterface, ILogger<LifestreamIpc> logger)
-    {
-        _logger = logger;
-        _aethernetTeleportByPlaceNameId =
+    private readonly ILogger<LifestreamIpc> _logger = logger;
+    private readonly ICallGateSubscriber<uint, bool> _aethernetTeleportByPlaceNameId =
             pluginInterface.GetIpcSubscriber<uint, bool>("Lifestream.AethernetTeleportByPlaceNameId");
-        _aethernetTeleportById =
+    private readonly ICallGateSubscriber<uint, bool> _aethernetTeleportById =
             pluginInterface.GetIpcSubscriber<uint, bool>("Lifestream.AethernetTeleportById");
-        _aethernetTeleportToFirmament =
+    private readonly ICallGateSubscriber<bool> _aethernetTeleportToFirmament =
             pluginInterface.GetIpcSubscriber<bool>("Lifestream.AethernetTeleportToFirmament");
-        _isBusy =
+    private readonly ICallGateSubscriber<bool> _isBusy =
             pluginInterface.GetIpcSubscriber<bool>("Lifestream.IsBusy");
-        _aethernetTeleport = 
+    private readonly ICallGateSubscriber<string, bool> _aethernetTeleport =
             pluginInterface.GetIpcSubscriber<string, bool>("Lifestream.AethernetTeleport");
-    }
 
     public bool IsBusy => _isBusy.InvokeFunc();
 

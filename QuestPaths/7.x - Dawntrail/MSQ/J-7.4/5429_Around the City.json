@@ -1,0 +1,93 @@
+{
+  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+  "Author": "alydev",
+  "QuestSequence": [
+    {
+      "Sequence": 0,
+      "Steps": [
+        {
+          "DataId": 1056149,
+          "Position": {
+            "X": 274.6471,
+            "Y": -115.97899,
+            "Z": -460.83777
+          },
+          "TerritoryId": 1332,
+          "InteractionType": "AcceptQuest"
+        }
+      ]
+    },
+    {
+      "Sequence": 1,
+      "Steps": [
+        {
+          "DataId": 1056159,
+          "Position": {
+            "X": 273.67053,
+            "Y": -115.97899,
+            "Z": -458.3963
+          },
+          "TerritoryId": 1332,
+          "InteractionType": "Interact",
+          "DialogueChoices": [
+            {
+              "Prompt": "TEXT_KINGMJ104_05429_Q1_000_032",
+              "Answer": "TEXT_KINGMJ104_05429_A1_000_001",
+              "Type": "List"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Sequence": 2,
+      "Steps": [
+        {
+          "DataId": 1056152,
+          "Position": {
+            "X": 246.3263,
+            "Y": -115.9987,
+            "Z": -389.57812
+          },
+          "TerritoryId": 1332,
+          "InteractionType": "Interact"
+        },
+        {
+          "DataId": 1056153,
+          "Position": {
+            "X": 219.25684,
+            "Y": -115.53908,
+            "Z": -402.7619
+          },
+          "TerritoryId": 1332,
+          "InteractionType": "Interact"
+        },
+        {
+          "DataId": 1056154,
+          "Position": {
+            "X": 193.86584,
+            "Y": -115.92868,
+            "Z": -388.99823
+          },
+          "TerritoryId": 1332,
+          "InteractionType": "Interact"
+        }
+      ]
+    },
+    {
+      "Sequence": 255,
+      "Steps": [
+        {
+          "DataId": 1056159,
+          "Position": {
+            "X": 273.67053,
+            "Y": -115.97899,
+            "Z": -458.3963
+          },
+          "TerritoryId": 1332,
+          "InteractionType": "CompleteQuest"
+        }
+      ]
+    }
+  ]
+}

@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Questionable.Controller.NavigationOverrides;
 
-internal sealed class MovementOverrideController
+internal sealed class MovementOverrideController(IClientState clientState, ILogger<MovementOverrideController> logger)
 {
     private static readonly List<IBlacklistedLocation> BlacklistedLocations =
     [
@@ -90,14 +90,8 @@ internal sealed class MovementOverrideController
         new BlacklistedPoint(1186, new(287.75f, 51.25f, 172f), new(288.875f, 50.75f, 166.25f)),
     ];
 
-    private readonly IClientState _clientState;
-    private readonly ILogger<MovementOverrideController> _logger;
-
-    public MovementOverrideController(IClientState clientState, ILogger<MovementOverrideController> logger)
-    {
-        _clientState = clientState;
-        _logger = logger;
-    }
+    private readonly IClientState _clientState = clientState;
+    private readonly ILogger<MovementOverrideController> _logger = logger;
 
     /// <summary>
     /// Certain areas shouldn't have navmesh points in them, e.g. the aetheryte in HF Outskirts can't be

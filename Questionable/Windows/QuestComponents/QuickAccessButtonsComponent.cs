@@ -14,33 +14,22 @@ using Questionable.Controller;
 
 namespace Questionable.Windows.QuestComponents;
 
-internal sealed class QuickAccessButtonsComponent
+internal sealed class QuickAccessButtonsComponent(
+    QuestRegistry questRegistry,
+    QuestValidationWindow questValidationWindow,
+    JournalProgressWindow journalProgressWindow,
+    PriorityWindow priorityWindow,
+    Configuration configuration,
+    ICommandManager commandManager,
+    IDalamudPluginInterface pluginInterface)
 {
-    private readonly QuestRegistry _questRegistry;
-    private readonly QuestValidationWindow _questValidationWindow;
-    private readonly JournalProgressWindow _journalProgressWindow;
-    private readonly PriorityWindow _priorityWindow;
-    private readonly ICommandManager _commandManager;
-    private readonly IDalamudPluginInterface _pluginInterface;
-    private readonly Configuration _configuration;
-
-    public QuickAccessButtonsComponent(
-        QuestRegistry questRegistry,
-        QuestValidationWindow questValidationWindow,
-        JournalProgressWindow journalProgressWindow,
-        PriorityWindow priorityWindow,
-        Configuration configuration,
-        ICommandManager commandManager,
-        IDalamudPluginInterface pluginInterface)
-    {
-        _questRegistry = questRegistry;
-        _questValidationWindow = questValidationWindow;
-        _journalProgressWindow = journalProgressWindow;
-        _priorityWindow = priorityWindow;
-        _commandManager = commandManager;
-        _configuration = configuration;
-        _pluginInterface = pluginInterface;
-    }
+    private readonly QuestRegistry _questRegistry = questRegistry;
+    private readonly QuestValidationWindow _questValidationWindow = questValidationWindow;
+    private readonly JournalProgressWindow _journalProgressWindow = journalProgressWindow;
+    private readonly PriorityWindow _priorityWindow = priorityWindow;
+    private readonly ICommandManager _commandManager = commandManager;
+    private readonly IDalamudPluginInterface _pluginInterface = pluginInterface;
+    private readonly Configuration _configuration = configuration;
 
     public event EventHandler? Reload;
 

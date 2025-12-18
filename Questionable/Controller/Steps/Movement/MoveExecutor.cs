@@ -15,17 +15,26 @@ using Mount = Questionable.Controller.Steps.Common.Mount;
 
 namespace Questionable.Controller.Steps.Movement;
 
-internal sealed class MoveExecutor : TaskExecutor<MoveTask>, IToastAware
+internal sealed class MoveExecutor(
+    MovementController movementController,
+    GameFunctions gameFunctions,
+    ILogger<MoveExecutor> logger,
+    IClientState clientState,
+    IObjectTable objectTable,
+    ICondition condition,
+    IDataManager dataManager,
+    Mount.MountEvaluator mountEvaluator,
+    IServiceProvider serviceProvider) : TaskExecutor<MoveTask>, IToastAware
 {
-    private readonly string _cannotExecuteAtThisTime;
-    private readonly MovementController _movementController;
-    private readonly GameFunctions _gameFunctions;
-    private readonly ILogger<MoveExecutor> _logger;
-    private readonly IClientState _clientState;
-    private readonly IObjectTable _objectTable;
-    private readonly ICondition _condition;
-    private readonly Mount.MountEvaluator _mountEvaluator;
-    private readonly IServiceProvider _serviceProvider;
+    private readonly string _cannotExecuteAtThisTime = dataManager.GetString<LogMessage>(579, x => x.Text)!;
+    private readonly MovementController _movementController = movementController;
+    private readonly GameFunctions _gameFunctions = gameFunctions;
+    private readonly ILogger<MoveExecutor> _logger = logger;
+    private readonly IClientState _clientState = clientState;
+    private readonly IObjectTable _objectTable = objectTable;
+    private readonly ICondition _condition = condition;
+    private readonly Mount.MountEvaluator _mountEvaluator = mountEvaluator;
+    private readonly IServiceProvider _serviceProvider = serviceProvider;
 
     private Action? _startAction;
     private Vector3 _destination;
@@ -34,28 +43,6 @@ internal sealed class MoveExecutor : TaskExecutor<MoveTask>, IToastAware
     private (Mount.MountExecutor Executor, Mount.MountTask Task)? _mountBeforeMovement;
     private (Mount.UnmountExecutor Executor, Mount.UnmountTask Task)? _unmountBeforeMovement;
     private (Mount.MountExecutor Executor, Mount.MountTask Task)? _mountDuringMovement;
-
-    public MoveExecutor(
-        MovementController movementController,
-        GameFunctions gameFunctions,
-        ILogger<MoveExecutor> logger,
-        IClientState clientState,
-        IObjectTable objectTable,
-        ICondition condition,
-        IDataManager dataManager,
-        Mount.MountEvaluator mountEvaluator,
-        IServiceProvider serviceProvider)
-    {
-        _movementController = movementController;
-        _gameFunctions = gameFunctions;
-        _logger = logger;
-        _clientState = clientState;
-        _objectTable = objectTable;
-        _condition = condition;
-        _serviceProvider = serviceProvider;
-        _mountEvaluator = mountEvaluator;
-        _cannotExecuteAtThisTime = dataManager.GetString<LogMessage>(579, x => x.Text)!;
-    }
 
     private void PrepareMovementIfNeeded()
     {

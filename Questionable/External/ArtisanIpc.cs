@@ -5,18 +5,11 @@ using Microsoft.Extensions.Logging;
 
 namespace Questionable.External;
 
-internal sealed class ArtisanIpc
+internal sealed class ArtisanIpc(IDalamudPluginInterface pluginInterface, ILogger<ArtisanIpc> logger)
 {
-    private readonly ILogger<ArtisanIpc> _logger;
-    private readonly ICallGateSubscriber<ushort, int, object> _craftItem;
-    private readonly ICallGateSubscriber<bool> _getEnduranceStatus;
-
-    public ArtisanIpc(IDalamudPluginInterface pluginInterface, ILogger<ArtisanIpc> logger)
-    {
-        _logger = logger;
-        _craftItem = pluginInterface.GetIpcSubscriber<ushort, int, object>("Artisan.CraftItem");
-        _getEnduranceStatus = pluginInterface.GetIpcSubscriber<bool>("Artisan.GetEnduranceStatus");
-    }
+    private readonly ILogger<ArtisanIpc> _logger = logger;
+    private readonly ICallGateSubscriber<ushort, int, object> _craftItem = pluginInterface.GetIpcSubscriber<ushort, int, object>("Artisan.CraftItem");
+    private readonly ICallGateSubscriber<bool> _getEnduranceStatus = pluginInterface.GetIpcSubscriber<bool>("Artisan.GetEnduranceStatus");
 
     public bool CraftItem(ushort recipeId, int quantity)
     {

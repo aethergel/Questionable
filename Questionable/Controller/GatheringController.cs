@@ -25,45 +25,31 @@ using Mount = Questionable.Controller.Steps.Common.Mount;
 
 namespace Questionable.Controller;
 
-internal sealed unsafe class GatheringController : MiniTaskController<GatheringController>
+internal sealed unsafe class GatheringController(
+    MovementController movementController,
+    GatheringPointRegistry gatheringPointRegistry,
+    GameFunctions gameFunctions,
+    NavmeshIpc navmeshIpc,
+    IObjectTable objectTable,
+    IChatGui chatGui,
+    ILogger<GatheringController> logger,
+    ICondition condition,
+    IServiceProvider serviceProvider,
+    InterruptHandler interruptHandler,
+    IDataManager dataManager,
+    IPluginLog pluginLog) : MiniTaskController<GatheringController>(chatGui, condition, serviceProvider, interruptHandler, dataManager, logger)
 {
-    private readonly MovementController _movementController;
-    private readonly GatheringPointRegistry _gatheringPointRegistry;
-    private readonly GameFunctions _gameFunctions;
-    private readonly NavmeshIpc _navmeshIpc;
-    private readonly IObjectTable _objectTable;
-    private readonly ICondition _condition;
-    private readonly ILogger<GatheringController> _logger;
-    private readonly Regex _revisitRegex;
+    private readonly MovementController _movementController = movementController;
+    private readonly GatheringPointRegistry _gatheringPointRegistry = gatheringPointRegistry;
+    private readonly GameFunctions _gameFunctions = gameFunctions;
+    private readonly NavmeshIpc _navmeshIpc = navmeshIpc;
+    private readonly IObjectTable _objectTable = objectTable;
+    private readonly ICondition _condition = condition;
+    private readonly ILogger<GatheringController> _logger = logger;
+    private readonly Regex _revisitRegex = dataManager.GetRegex<LogMessage>(5574, x => x.Text, pluginLog)
+                        ?? throw new InvalidDataException("No regex found for revisit message");
 
     private CurrentRequest? _currentRequest;
-
-    public GatheringController(
-        MovementController movementController,
-        GatheringPointRegistry gatheringPointRegistry,
-        GameFunctions gameFunctions,
-        NavmeshIpc navmeshIpc,
-        IObjectTable objectTable,
-        IChatGui chatGui,
-        ILogger<GatheringController> logger,
-        ICondition condition,
-        IServiceProvider serviceProvider,
-        InterruptHandler interruptHandler,
-        IDataManager dataManager,
-        IPluginLog pluginLog)
-        : base(chatGui, condition, serviceProvider, interruptHandler, dataManager, logger)
-    {
-        _movementController = movementController;
-        _gatheringPointRegistry = gatheringPointRegistry;
-        _gameFunctions = gameFunctions;
-        _navmeshIpc = navmeshIpc;
-        _objectTable = objectTable;
-        _condition = condition;
-        _logger = logger;
-
-        _revisitRegex = dataManager.GetRegex<LogMessage>(5574, x => x.Text, pluginLog)
-                        ?? throw new InvalidDataException("No regex found for revisit message");
-    }
 
     public bool Start(GatheringRequest gatheringRequest)
     {
@@ -124,6 +110,13 @@ internal sealed unsafe class GatheringController : MiniTaskController<GatheringC
     {
         _currentRequest = null;
         _taskQueue.Reset();
+    }
+
+    public override void Dispose()
+    {
+        base.Dispose();
+        _movementController.Dispose();
+        _gatheringPointRegistry.Dispose();
     }
 
     private void GoToNextNode()

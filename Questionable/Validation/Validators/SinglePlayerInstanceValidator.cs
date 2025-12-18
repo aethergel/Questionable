@@ -6,16 +6,11 @@ using Questionable.Model.Questing;
 
 namespace Questionable.Validation.Validators;
 
-internal sealed class SinglePlayerInstanceValidator : IQuestValidator
+internal sealed class SinglePlayerInstanceValidator(TerritoryData territoryData) : IQuestValidator
 {
-    private readonly Dictionary<ElementId, List<byte>> _questIdToDutyIndexes;
-
-    public SinglePlayerInstanceValidator(TerritoryData territoryData)
-    {
-        _questIdToDutyIndexes = territoryData.GetAllQuestsWithQuestBattles()
+    private readonly Dictionary<ElementId, List<byte>> _questIdToDutyIndexes = territoryData.GetAllQuestsWithQuestBattles()
             .GroupBy(x => x.QuestId)
             .ToDictionary(x => x.Key, x => x.Select(y => y.Index).ToList());
-    }
 
     public IEnumerable<ValidationIssue> Validate(Quest quest)
     {

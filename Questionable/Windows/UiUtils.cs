@@ -9,16 +9,10 @@ using Questionable.Model.Questing;
 
 namespace Questionable.Windows;
 
-internal sealed class UiUtils
+internal sealed class UiUtils(QuestFunctions questFunctions, IDalamudPluginInterface pluginInterface)
 {
-    private readonly QuestFunctions _questFunctions;
-    private readonly IDalamudPluginInterface _pluginInterface;
-
-    public UiUtils(QuestFunctions questFunctions, IDalamudPluginInterface pluginInterface)
-    {
-        _questFunctions = questFunctions;
-        _pluginInterface = pluginInterface;
-    }
+    private readonly QuestFunctions _questFunctions = questFunctions;
+    private readonly IDalamudPluginInterface _pluginInterface = pluginInterface;
 
     public (Vector4 Color, FontAwesomeIcon Icon, string Status) GetQuestStyle(ElementId elementId)
     {

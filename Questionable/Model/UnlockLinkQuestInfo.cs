@@ -5,18 +5,11 @@ using Questionable.Model.Questing;
 
 namespace Questionable.Model;
 
-internal sealed class UnlockLinkQuestInfo : IQuestInfo
+internal sealed class UnlockLinkQuestInfo(UnlockLinkId unlockLinkId, string name, uint issuerDataId) : IQuestInfo
 {
-    public UnlockLinkQuestInfo(UnlockLinkId unlockLinkId, string name, uint issuerDataId)
-    {
-        QuestId = unlockLinkId;
-        Name = name;
-        IssuerDataId = issuerDataId;
-    }
-
-    public ElementId QuestId { get; }
-    public string Name { get; }
-    public uint IssuerDataId { get; }
+    public ElementId QuestId { get; } = unlockLinkId;
+    public string Name { get; } = name;
+    public uint IssuerDataId { get; } = issuerDataId;
     public bool IsRepeatable => false;
     public ImmutableList<PreviousQuestInfo> PreviousQuests => [];
     public EQuestJoin PreviousQuestJoin => EQuestJoin.All;

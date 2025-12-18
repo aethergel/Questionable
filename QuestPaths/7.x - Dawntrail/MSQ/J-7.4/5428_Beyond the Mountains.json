@@ -1,0 +1,94 @@
+{
+  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+  "Author": "alydev",
+  "QuestSequence": [
+    {
+      "Sequence": 0,
+      "Steps": [
+        {
+          "DataId": 1056141,
+          "Position": {
+            "X": -7.5532227,
+            "Y": -0.003462526,
+            "Z": -7.950012
+          },
+          "TerritoryId": 1334,
+          "InteractionType": "AcceptQuest"
+        }
+      ]
+    },
+    {
+      "Sequence": 1,
+      "Steps": [
+        {
+          "DataId": 1056145,
+          "Position": {
+            "X": -2.1210327,
+            "Y": 4.3585896E-07,
+            "Z": -43.808716
+          },
+          "TerritoryId": 1334,
+          "InteractionType": "Interact"
+        }
+      ]
+    },
+    {
+      "Sequence": 2,
+      "Steps": [
+        {
+          "TerritoryId": 1334,
+          "InteractionType": "Duty",
+          "DutyOptions": {
+            "ContentFinderConditionId": 1064,
+            "Enabled": false
+          }
+        }
+      ]
+    },
+    {
+      "Sequence": 3,
+      "Steps": [
+        {
+          "DataId": 1056149,
+          "Position": {
+            "X": 274.6471,
+            "Y": -115.97899,
+            "Z": -460.83777
+          },
+          "TerritoryId": 1332,
+          "InteractionType": "Interact"
+        }
+      ]
+    },
+    {
+      "Sequence": 4,
+      "Steps": [
+        {
+          "Position": {
+            "X": 274.6471,
+            "Y": -115.97899,
+            "Z": -460.83777
+          },
+          "InteractionType": "UseItem",
+          "TerritoryId": 1332,
+          "ItemId": 2003793
+        }
+      ]
+    },
+    {
+      "Sequence": 255,
+      "Steps": [
+        {
+          "DataId": 1056149,
+          "Position": {
+            "X": 274.6471,
+            "Y": -115.97899,
+            "Z": -460.83777
+          },
+          "TerritoryId": 1332,
+          "InteractionType": "CompleteQuest"
+        }
+      ]
+    }
+  ]
+}

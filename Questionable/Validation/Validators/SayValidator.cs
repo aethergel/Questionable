@@ -7,14 +7,9 @@ using Questionable.Model.Questing;
 
 namespace Questionable.Validation.Validators;
 
-internal sealed class SayValidator : IQuestValidator
+internal sealed class SayValidator(ExcelFunctions excelFunctions) : IQuestValidator
 {
-    private readonly ExcelFunctions _excelFunctions;
-
-    public SayValidator(ExcelFunctions excelFunctions)
-    {
-        _excelFunctions = excelFunctions;
-    }
+    private readonly ExcelFunctions _excelFunctions = excelFunctions;
 
     public IEnumerable<ValidationIssue> Validate(Quest quest)
     {

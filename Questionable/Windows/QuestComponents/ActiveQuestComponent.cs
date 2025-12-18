@@ -20,57 +20,39 @@ using Questionable.Model.Questing;
 
 namespace Questionable.Windows.QuestComponents;
 
-internal sealed partial class ActiveQuestComponent
+internal sealed partial class ActiveQuestComponent(
+    QuestController questController,
+    MovementController movementController,
+    CombatController combatController,
+    GatheringController gatheringController,
+    QuestFunctions questFunctions,
+    ICommandManager commandManager,
+    Configuration configuration,
+    QuestRegistry questRegistry,
+    PriorityWindow priorityWindow,
+    UiUtils uiUtils,
+    IClientState clientState,
+    //IPlayerState playerState,
+    IChatGui chatGui,
+    ILogger<ActiveQuestComponent> logger)
 {
     [GeneratedRegex(@"\s\s+", RegexOptions.IgnoreCase, "en-US")]
     private static partial Regex MultipleWhitespaceRegex();
 
-    private readonly QuestController _questController;
-    private readonly MovementController _movementController;
-    private readonly CombatController _combatController;
-    private readonly GatheringController _gatheringController;
-    private readonly QuestFunctions _questFunctions;
-    private readonly ICommandManager _commandManager;
-    private readonly Configuration _configuration;
-    private readonly QuestRegistry _questRegistry;
-    private readonly PriorityWindow _priorityWindow;
-    private readonly UiUtils _uiUtils;
-    private readonly IClientState _clientState;
+    private readonly QuestController _questController = questController;
+    private readonly MovementController _movementController = movementController;
+    private readonly CombatController _combatController = combatController;
+    private readonly GatheringController _gatheringController = gatheringController;
+    private readonly QuestFunctions _questFunctions = questFunctions;
+    private readonly ICommandManager _commandManager = commandManager;
+    private readonly Configuration _configuration = configuration;
+    private readonly QuestRegistry _questRegistry = questRegistry;
+    private readonly PriorityWindow _priorityWindow = priorityWindow;
+    private readonly UiUtils _uiUtils = uiUtils;
+    private readonly IClientState _clientState = clientState;
     //private readonly IPlayerState _playerState;
-    private readonly IChatGui _chatGui;
-    private readonly ILogger<ActiveQuestComponent> _logger;
-
-    public ActiveQuestComponent(
-        QuestController questController,
-        MovementController movementController,
-        CombatController combatController,
-        GatheringController gatheringController,
-        QuestFunctions questFunctions,
-        ICommandManager commandManager,
-        Configuration configuration,
-        QuestRegistry questRegistry,
-        PriorityWindow priorityWindow,
-        UiUtils uiUtils,
-        IClientState clientState,
-        //IPlayerState playerState,
-        IChatGui chatGui,
-        ILogger<ActiveQuestComponent> logger)
-    {
-        _questController = questController;
-        _movementController = movementController;
-        _combatController = combatController;
-        _gatheringController = gatheringController;
-        _questFunctions = questFunctions;
-        _commandManager = commandManager;
-        _configuration = configuration;
-        _questRegistry = questRegistry;
-        _priorityWindow = priorityWindow;
-        _uiUtils = uiUtils;
-        _clientState = clientState;
-        //_playerState = playerState;
-        _chatGui = chatGui;
-        _logger = logger;
-    }
+    private readonly IChatGui _chatGui = chatGui;
+    private readonly ILogger<ActiveQuestComponent> _logger = logger;
 
     public event EventHandler? Reload;
 

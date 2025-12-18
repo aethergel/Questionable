@@ -8,13 +8,8 @@ using FFXIVClientStructs.FFXIV.Client.Game.Object;
 
 namespace Questionable.Windows.ConfigComponents;
 
-internal sealed class DebugConfigComponent : ConfigComponent
+internal sealed class DebugConfigComponent(IDalamudPluginInterface pluginInterface, Configuration configuration) : ConfigComponent(pluginInterface, configuration)
 {
-    public DebugConfigComponent(IDalamudPluginInterface pluginInterface, Configuration configuration)
-        : base(pluginInterface, configuration)
-    {
-    }
-
     public override void DrawTab()
     {
         using var tab = ImRaii.TabItem("Advanced###Debug");

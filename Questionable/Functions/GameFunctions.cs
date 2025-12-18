@@ -8,6 +8,7 @@ using Dalamud.Game.ClientState.Conditions;
 using Dalamud.Game.ClientState.Objects;
 using Dalamud.Game.ClientState.Objects.Types;
 using Dalamud.Plugin.Services;
+using ECommons;
 using FFXIVClientStructs.FFXIV.Client.Game;
 using FFXIVClientStructs.FFXIV.Client.Game.Control;
 using FFXIVClientStructs.FFXIV.Client.Game.Event;
@@ -30,61 +31,43 @@ using Quest = Questionable.Model.Quest;
 
 namespace Questionable.Functions;
 
-internal sealed unsafe class GameFunctions
+internal sealed unsafe class GameFunctions(
+    QuestFunctions questFunctions,
+    IDataManager dataManager,
+    IObjectTable objectTable,
+    ITargetManager targetManager,
+    ICondition condition,
+    IClientState clientState,
+    IGameGui gameGui,
+    Configuration configuration,
+    ISigScanner sigScanner,
+    ILogger<GameFunctions> logger,
+    HighlightObject highlightObject)
 {
     private delegate void AbandonDutyDelegate(bool a1);
 
-    private readonly QuestFunctions _questFunctions;
-    private readonly IDataManager _dataManager;
-    private readonly IObjectTable _objectTable;
-    private readonly ITargetManager _targetManager;
-    private readonly ICondition _condition;
-    private readonly IClientState _clientState;
-    private readonly IGameGui _gameGui;
-    private readonly Configuration _configuration;
-    private readonly ILogger<GameFunctions> _logger;
-    private readonly HighlightObject _highlightObject;
-    private readonly AbandonDutyDelegate _abandonDuty;
-
-    private readonly ReadOnlyDictionary<ushort, uint> _territoryToAetherCurrentCompFlgSet;
-    private readonly ReadOnlyDictionary<uint, uint> _contentFinderConditionToContentId;
-
-    public GameFunctions(
-        QuestFunctions questFunctions,
-        IDataManager dataManager,
-        IObjectTable objectTable,
-        ITargetManager targetManager,
-        ICondition condition,
-        IClientState clientState,
-        IGameGui gameGui,
-        Configuration configuration,
-        ISigScanner sigScanner,
-        ILogger<GameFunctions> logger,
-        HighlightObject highlightObject)
-    {
-        _questFunctions = questFunctions;
-        _dataManager = dataManager;
-        _objectTable = objectTable;
-        _targetManager = targetManager;
-        _condition = condition;
-        _clientState = clientState;
-        _gameGui = gameGui;
-        _configuration = configuration;
-        _logger = logger;
-        _highlightObject = highlightObject;
-        _abandonDuty =
+    private readonly QuestFunctions _questFunctions = questFunctions;
+    private readonly IDataManager _dataManager = dataManager;
+    private readonly IObjectTable _objectTable = objectTable;
+    private readonly ITargetManager _targetManager = targetManager;
+    private readonly ICondition _condition = condition;
+    private readonly IClientState _clientState = clientState;
+    private readonly IGameGui _gameGui = gameGui;
+    private readonly Configuration _configuration = configuration;
+    private readonly ILogger<GameFunctions> _logger = logger;
+    private readonly HighlightObject _highlightObject = highlightObject;
+    private readonly AbandonDutyDelegate _abandonDuty =
             Marshal.GetDelegateForFunctionPointer<AbandonDutyDelegate>(EventFramework.Addresses.LeaveCurrentContent.Value);
 
-        _territoryToAetherCurrentCompFlgSet = dataManager.GetExcelSheet<TerritoryType>()
+    private readonly ReadOnlyDictionary<ushort, uint> _territoryToAetherCurrentCompFlgSet = dataManager.GetExcelSheet<TerritoryType>()
             .Where(x => x.RowId > 0)
             .Where(x => x.AetherCurrentCompFlgSet.RowId > 0)
             .ToDictionary(x => (ushort)x.RowId, x => x.AetherCurrentCompFlgSet.RowId)
             .AsReadOnly();
-        _contentFinderConditionToContentId = dataManager.GetExcelSheet<ContentFinderCondition>()
+    private readonly ReadOnlyDictionary<uint, uint> _contentFinderConditionToContentId = dataManager.GetExcelSheet<ContentFinderCondition>()
             .Where(x => x.RowId > 0 && x.Content.RowId > 0)
             .ToDictionary(x => x.RowId, x => x.Content.RowId)
             .AsReadOnly();
-    }
 
     public bool IsFlyingUnlocked(ushort territoryId)
     {
@@ -207,7 +190,7 @@ internal sealed unsafe class GameFunctions
         if (gameObject != null)
         {
             Vector3 position = gameObject.Position;
-            return ActionManager.Instance()->UseActionLocation(ActionType.KeyItem, itemId, location: &position);
+            return ActionManager.Instance()->UseActionLocation(ActionType.EventItem, itemId, location: &position);
         }
 
         return false;
@@ -215,7 +198,7 @@ internal sealed unsafe class GameFunctions
 
     public bool UseItemOnPosition(Vector3 position, uint itemId)
     {
-        return ActionManager.Instance()->UseActionLocation(ActionType.KeyItem, itemId, location: &position);
+        return ActionManager.Instance()->UseActionLocation(ActionType.EventItem, itemId, location: &position);
     }
 
     public bool UseAction(EAction action)
@@ -557,26 +540,12 @@ internal sealed unsafe class GameFunctions
         }
 
         List<uint> unlockedUnlockLinks = [];
-        for (uint unlockLink = 0; unlockLink < uiState->UnlockLinkBitmask.Length * 8; ++unlockLink)
-        {
-            if (uiState->IsUnlockLinkUnlocked(unlockLink))
-                unlockedUnlockLinks.Add(unlockLink);
-        }
+        foreach ((int index, bool isUnlocked) in uiState->UnlockLinksBitArray)
+            if (isUnlocked)
+                unlockedUnlockLinks.Add((uint)index);
 
         _logger.LogInformation("Unlocked unlock links: {UnlockedUnlockLinks}", string.Join(", ", unlockedUnlockLinks));
         return unlockedUnlockLinks;
     }
-
-#if false
-    private byte ExecuteCommand(int id, int a, int b, int c, int d)
-    {
-        // Initiate Leve:    804 1794 [1]  0 0 // with [1] = extra difficulty levels
-        //                   705 2    1794 0 0
-        //                   801 0    0    0 0
-        // Abandon:          805 1794 0    0 0
-        // Retry button:     803 1794 0 0 0
-        return 0;
-    }
-#endif
 
 }

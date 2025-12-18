@@ -7,17 +7,12 @@ namespace Questionable.Controller.CombatModules;
 /// <summary>
 /// Commandeered Magitek Armor; used in 'Magiteknical Failure' quest.
 /// </summary>
-internal sealed class Mount128Module : ICombatModule
+internal sealed class Mount128Module(GameFunctions gameFunctions) : ICombatModule
 {
     public const ushort MountId = 128;
     private readonly EAction[] _actions = [EAction.MagitekThunder, EAction.MagitekPulse];
 
-    private readonly GameFunctions _gameFunctions;
-
-    public Mount128Module(GameFunctions gameFunctions)
-    {
-        _gameFunctions = gameFunctions;
-    }
+    private readonly GameFunctions _gameFunctions = gameFunctions;
 
     public bool CanHandleFight(CombatController.CombatData combatData) => _gameFunctions.GetMountId() == MountId;
 
