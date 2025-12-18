@@ -1,0 +1,307 @@
+{
+  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+  "Author": "alydev",
+  "QuestSequence": [
+    {
+      "Sequence": 0,
+      "Steps": [
+        {
+          "DataId": 1054361,
+          "Position": {
+            "X": -50.06488,
+            "Y": 6.4999995,
+            "Z": -89.58569
+          },
+          "TerritoryId": 133,
+          "InteractionType": "AcceptQuest",
+          "AetheryteShortcut": "Gridania",
+          "AethernetShortcut": [
+            "[Gridania] Aetheryte Plaza",
+            "[Gridania] Mih Khetto's Amphitheatre"
+          ]
+        }
+      ]
+    },
+    {
+      "Sequence": 1,
+      "Steps": [
+        {
+          "DataId": 1054363,
+          "Position": {
+            "X": -53.97119,
+            "Y": 5.798081,
+            "Z": -100.93848
+          },
+          "TerritoryId": 133,
+          "TargetTerritoryId": 1309,
+          "InteractionType": "Interact"
+        }
+      ]
+    },
+    {
+      "Sequence": 2,
+      "Steps": [
+        {
+          "DataId": 1054362,
+          "Position": {
+            "X": 15.182739,
+            "Y": 0.0017376093,
+            "Z": -24.643372
+          },
+          "TerritoryId": 1309,
+          "InteractionType": "Interact"
+        }
+      ]
+    },
+    {
+      "Sequence": 3,
+      "Steps": [
+        {
+          "DataId": 1054367,
+          "Position": {
+            "X": 86.045654,
+            "Y": 5.995377,
+            "Z": -91.844055
+          },
+          "TerritoryId": 133,
+          "InteractionType": "Interact",
+          "AetheryteShortcut": "Gridania",
+          "AethernetShortcut": [
+            "[Gridania] Aetheryte Plaza",
+            "[Gridania] Leatherworkers' Guild & Shaded Bower"
+          ],
+          "CompletionQuestVariablesFlags": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "High": 2
+            }
+          ]
+        },
+        {
+          "DataId": 1054366,
+          "Position": {
+            "X": 159.2279,
+            "Y": 15.699927,
+            "Z": -117.93707
+          },
+          "TerritoryId": 133,
+          "InteractionType": "Interact",
+          "CompletionQuestVariablesFlags": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "High": 4
+            }
+          ]
+        },
+        {
+          "DataId": 1054365,
+          "Position": {
+            "X": 161.6388,
+            "Y": 15.499999,
+            "Z": -61.997437
+          },
+          "TerritoryId": 133,
+          "InteractionType": "Interact",
+          "CompletionQuestVariablesFlags": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "High": 8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Sequence": 4,
+      "Steps": [
+        {
+          "DataId": 1054361,
+          "Position": {
+            "X": -50.06488,
+            "Y": 6.4999995,
+            "Z": -89.58569
+          },
+          "TerritoryId": 133,
+          "InteractionType": "Interact",
+          "AethernetShortcut": [
+            "[Gridania] Leatherworkers' Guild & Shaded Bower",
+            "[Gridania] Mih Khetto's Amphitheatre"
+          ]
+        }
+      ]
+    },
+    {
+      "Sequence": 5,
+      "Steps": [
+        {
+          "DataId": 1054363,
+          "Position": {
+            "X": -53.97119,
+            "Y": 5.798081,
+            "Z": -100.93848
+          },
+          "TerritoryId": 133,
+          "TargetTerritoryId": 1309,
+          "InteractionType": "Interact",
+          "SkipConditions": {
+            "StepIf": {
+              "InTerritory": [
+                1309
+              ]
+            }
+          }
+        },
+        {
+          "DataId": 1054370,
+          "Position": {
+            "X": -13.01593,
+            "Y": 0.0015269257,
+            "Z": 24.429688
+          },
+          "TerritoryId": 1309,
+          "InteractionType": "Interact",
+          "CompletionQuestVariablesFlags": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "High": 4
+            }
+          ]
+        },
+        {
+          "DataId": 1054369,
+          "Position": {
+            "X": 7.7973022,
+            "Y": 0.0028544795,
+            "Z": -15.701599
+          },
+          "TerritoryId": 1309,
+          "InteractionType": "Interact",
+          "CompletionQuestVariablesFlags": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "High": 8
+            }
+          ]
+        },
+        {
+          "DataId": 1054371,
+          "Position": {
+            "X": 18.661804,
+            "Y": 2.0028546,
+            "Z": -93.0343
+          },
+          "TerritoryId": 1309,
+          "InteractionType": "Interact",
+          "CompletionQuestVariablesFlags": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            {
+              "High": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Sequence": 6,
+      "Steps": [
+        {
+          "DataId": 1054374,
+          "Position": {
+            "X": 11.48999,
+            "Y": 0.0028544795,
+            "Z": -12.64978
+          },
+          "TerritoryId": 1309,
+          "InteractionType": "Interact",
+          "DialogueChoices": [
+            {
+              "Prompt": "TEXT_FESXMX101_05231_Q2_000_000",
+              "Answer": "TEXT_FESXMX101_05231_A2_000_001",
+              "Type": "List"
+            },
+            {
+              "Prompt": "TEXT_FESXMX101_05231_SYSTEM_000_124",
+              "Type": "YesNo",
+              "Yes": true
+            }
+          ]
+        },
+        {
+          "InteractionType": "None",
+          "TerritoryId": 1309,
+          "DialogueChoices": [
+            {
+              "Prompt": "TEXT_FESXMX101_05231_Q3_000_000",
+              "Answer": "TEXT_FESXMX101_05231_A3_000_003",
+              "Type": "List"
+            },
+            {
+              "Prompt": "TEXT_FESXMX101_05231_Q4_000_000",
+              "Answer": "TEXT_FESXMX101_05231_A4_000_002",
+              "Type": "List"
+            },
+            {
+              "Prompt": "TEXT_FESXMX101_05231_Q5_000_000",
+              "Answer": "TEXT_FESXMX101_05231_A5_000_003",
+              "Type": "List"
+            },
+            {
+              "Prompt": "TEXT_FESXMX101_05231_Q6_000_000",
+              "Answer": "TEXT_FESXMX101_05231_A6_000_001",
+              "Type": "List"
+            },
+            {
+              "Prompt": "TEXT_FESXMX101_05231_Q7_000_000",
+              "Answer": "TEXT_FESXMX101_05231_A7_000_002",
+              "Type": "List"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Sequence": 255,
+      "Steps": [
+        {
+          "DataId": 1054361,
+          "Position": {
+            "X": -50.06488,
+            "Y": 6.4999995,
+            "Z": -89.58569
+          },
+          "TerritoryId": 133,
+          "InteractionType": "CompleteQuest",
+          "AetheryteShortcut": "Gridania",
+          "AethernetShortcut": [
+            "[Gridania] Aetheryte Plaza",
+            "[Gridania] Mih Khetto's Amphitheatre"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -29,9 +29,7 @@ internal sealed class EventInfoComponent(QuestData questData,
     private readonly List<EventQuest> _eventQuests =
     [
         new EventQuest("Limited Time Items", [new UnlockLinkId(568)], DateTime.MaxValue),
-        new EventQuest("Blunderville", [new QuestId(4801)], AtDailyReset(new DateOnly(2025,11,27))),
-        new EventQuest("All Saints' Wake 2025", [new QuestId(5375), new QuestId(5376)], AtDailyReset(new DateOnly(2025,11,4))),
-        new EventQuest("The Rising 2025", [new QuestId(5297), new QuestId(5298)], AtDailyReset(new DateOnly(2025, 9, 11))) // 11 September 2025 at 14:59 (GMT)
+        new EventQuest("Starlight Celebration 2025", [new QuestId(5231)], AtDailyReset(new DateOnly(2026,1,1)))
     ];
 
     private readonly QuestData _questData = questData;
