@@ -1,3 +1,2 @@
-- Namazu choose whether to use craft or gather job
-- Debug command to convert decimal ints to questwork values
-- More daily quests checked by alydev and Lumi
+- api14
+- a lot of stuff is broken

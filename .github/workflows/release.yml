@@ -93,9 +93,7 @@ jobs:
 
   build-and-release:
     needs: detect-version-change
-    if: false
-    #temp disable
-    # needs.detect-version-change.outputs.should-release == 'true'
+    if: needs.detect-version-change.outputs.should-release == 'true'
     runs-on: ubuntu-latest
     env:
       VERSION: ${{ needs.detect-version-change.outputs.version }}
@@ -108,7 +106,7 @@ jobs:
       - name: Set up .NET
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: 9.0.x
+          dotnet-version: 10.0.x
 
       - name: Generate changelog
         id: changelog
@@ -126,7 +124,7 @@ jobs:
       - name: Download and setup Dalamud
         run: |
           echo "Downloading Dalamud..."
-          wget -q https://goatcorp.github.io/dalamud-distrib/latest.zip -O dalamud.zip
+          wget -q https://goatcorp.github.io/dalamud-distrib/stg/latest.zip -O dalamud.zip
           unzip -q dalamud.zip -d .dalamud
           echo "DALAMUD_HOME=$PWD/.dalamud/" >> $GITHUB_ENV
 
@@ -213,7 +211,7 @@ jobs:
           version_number: ${{ env.VERSION }}
           path: 'release/latest.zip'
           type: ${{ needs.detect-version-change.outputs.branch }}
-          dalamud_version: '13'
+          dalamud_version: '14'
           changelog: ${{ steps.changelog.outputs.changelog }}
         env:
           PUBLISHER_KEY: ${{ secrets.PUBLISHER_KEY }}

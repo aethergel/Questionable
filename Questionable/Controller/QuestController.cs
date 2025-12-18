@@ -484,7 +484,7 @@ internal sealed class QuestController : MiniTaskController<QuestController>
                     {
                         if (msqState == MainScenarioQuestState.Unavailable)
                         {
-                            _logger.LogWarning("MSQ information not available, doing nothing");
+                            //_logger.LogWarning("MSQ information not available, doing nothing");
                             return;
                         }
                         else if (msqState == MainScenarioQuestState.LoadingScreen)

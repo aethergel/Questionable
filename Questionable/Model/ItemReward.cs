@@ -27,20 +27,22 @@ public abstract record ItemReward(ItemRewardDetails Item)
 {
     internal static ItemReward? CreateFromItem(Item item, ElementId elementId)
     {
-        if (item.ItemAction.ValueNullable?.Type is 1322)
-            return new MountReward(new ItemRewardDetails(item, elementId), item.ItemAction.Value.Data[0]);
+        if (item.ItemAction.Value is { } itemAction &&
+            itemAction.Action.Value is { } action)
+        {
+            if (action.RowId is 1322)
+                return new MountReward(new ItemRewardDetails(item, elementId), item.ItemAction.Value.Data[0]);
 
-        if (item.ItemAction.ValueNullable?.Type is 853)
-            return new MinionReward(new ItemRewardDetails(item, elementId), item.ItemAction.Value.Data[0]);
+            if (action.RowId is 853)
+                return new MinionReward(new ItemRewardDetails(item, elementId), item.ItemAction.Value.Data[0]);
 
-        if (item.AdditionalData.GetValueOrDefault<Orchestrion>() is { } orchestrionRoll)
+            if (action.RowId is 20086)
+                return new FashionAccessoryReward(new ItemRewardDetails(item, elementId), item.ItemAction.Value.Data[0]);
+        }
+        else if (item.AdditionalData.GetValueOrDefault<Orchestrion>() is { } orchestrionRoll)
             return new OrchestrionRollReward(new ItemRewardDetails(item, elementId), orchestrionRoll.RowId);
-
-        if (item.AdditionalData.GetValueOrDefault<TripleTriadCard>() is { } tripleTriadCard)
+        else if (item.AdditionalData.GetValueOrDefault<TripleTriadCard>() is { } tripleTriadCard)
             return new TripleTriadCardReward(new ItemRewardDetails(item, elementId), (ushort)tripleTriadCard.RowId);
-
-        if (item.ItemAction.ValueNullable?.Type is 20086)
-            return new FashionAccessoryReward(new ItemRewardDetails(item, elementId), item.ItemAction.Value.Data[0]);
 
         return null;
     }

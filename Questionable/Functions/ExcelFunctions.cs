@@ -93,7 +93,7 @@ internal sealed class ExcelFunctions(IDataManager dataManager, ILogger<ExcelFunc
         else if (excelSheet == "GimmickYesNo")
         {
             var questRow = _dataManager.GetExcelSheet<GimmickYesNo>().GetRowOrDefault(rowId);
-            return questRow?.Unknown0;
+            return questRow?.YesButton;
         }
         else if (excelSheet == "Warp")
         {
