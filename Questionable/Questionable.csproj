@@ -3,6 +3,7 @@
         <OutputPath>dist</OutputPath>
         <PathMap Condition="$(SolutionDir) != ''">$(SolutionDir)=X:\</PathMap>
         <Platforms>x64</Platforms>
+		<TargetFramework>net10.0-windows7.0</TargetFramework>
     </PropertyGroup>
 
     <Import Project="..\LLib\LLib.targets" />
