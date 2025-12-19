@@ -150,7 +150,7 @@ internal sealed class QuestWindow : LWindow, IPersistableWindowConfig
             {
                 ImGui.Separator();
 
-                if (true) // TODO add tests
+                if (false) // TODO add tests
                 {
                     ImGui.TextColoredWrapped(
                         ImGuiColors.DalamudRed,

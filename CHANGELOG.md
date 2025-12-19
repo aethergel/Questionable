@@ -2,3 +2,4 @@
 - a lot of stuff is broken
 - but i added the starlight quest
 - and a note saying that stuff is broken
+- Taurenkey fixed the journal
