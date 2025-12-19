@@ -118,7 +118,7 @@
       "gatheringpaths": {
         "type": "Project",
         "dependencies": {
-          "Questionable.Model": "[14.197.0, )"
+          "Questionable.Model": "[14.200.1.1, )"
         }
       },
       "llib": {
@@ -141,7 +141,7 @@
       "questpaths": {
         "type": "Project",
         "dependencies": {
-          "Questionable.Model": "[14.197.0, )"
+          "Questionable.Model": "[14.200.1.1, )"
         }
       }
     }
