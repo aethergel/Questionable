@@ -8,5 +8,6 @@
     "msq"
   ],
   "RepoUrl": "https://github.com/PunishXIV/Questionable",
-  "IconUrl": "https://qstxiv.github.io/icons/Questionable.png"
+  "IconUrl": "https://qstxiv.github.io/icons/Questionable.png",
+  "DalamudApiLevel": 14
 }
