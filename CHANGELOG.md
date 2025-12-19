@@ -1,5 +1,3 @@
-- api14
-- a lot of stuff is broken
-- but i added the starlight quest
-- and a note saying that stuff is broken
-- Taurenkey fixed the journal
+A lot of things are broken by upstream inaccuracies in the data sheets. We're working to resolve this ASAP.
+- Fix oob list access in ClassJobs
+- Paths checked

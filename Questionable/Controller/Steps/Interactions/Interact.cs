@@ -244,7 +244,7 @@ internal static class Interact
             {
                 List<EClassJob> acceptableJobs = [.. Task.Quest.Info.ClassJobs];
                 var playerJob = (EClassJob)player.ClassJob.Value.RowId;
-                if (!acceptableJobs.Contains(playerJob))
+                if (acceptableJobs.Count >= 1 && !acceptableJobs.Contains(playerJob))
                 {
                     if (!acceptableJobs[0].IsCrafter() && !acceptableJobs[0].IsGatherer())
                         acceptableJobs = [.. acceptableJobs.Prepend(configuration.General.CombatJob)];
