@@ -29,7 +29,15 @@
           },
           "TerritoryId": 1332,
           "InteractionType": "Interact",
-          "TargetTerritoryId": 1338
+          "TargetTerritoryId": 1338,
+		  "DialogueChoices":
+			[
+			{
+				"Prompt": "TEXT_KINGMJ108_05433_SYSTEM_000_032",
+				"Type": "YesNo",
+				"Yes": true
+			}
+			]
         }
       ]
     },
@@ -49,6 +57,38 @@
         }
       ]
     },
-    {"Sequence":255}
+	{
+      "Sequence": 4
+    },
+	{
+      "Sequence": 5,
+      "Steps": [
+        {
+          "DataId": 1056268,
+          "Position": {
+            "X": 264.7898,
+            "Y": -115,
+            "Z": -630.7317
+          },
+          "TerritoryId": 1332,
+          "InteractionType": "Interact"
+        }
+      ]
+    },
+    {
+      "Sequence": 255,
+      "Steps": [
+        {
+          "DataId": 1056175,
+          "Position": {
+            "X": 280.59814,
+            "Y": -115.97899,
+            "Z": -422.78174
+          },
+          "TerritoryId": 1332,
+          "InteractionType": "CompleteQuest"
+        }
+      ]
+    }
   ]
 }
