@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
+using ECommons.DalamudServices;
 using LLib.GameData;
 using Lumina.Excel.Sheets;
 using Questionable.Model.Questing;
@@ -13,8 +14,9 @@ namespace Questionable.Model;
 
 internal sealed class QuestInfo : IQuestInfo
 {
-    public QuestInfo(ExcelQuest quest, uint newGamePlusChapter, byte startingCity, JournalGenreOverrides journalGenreOverrides)
+    public QuestInfo(ExcelQuest ogquest, uint newGamePlusChapter, byte startingCity, JournalGenreOverrides journalGenreOverrides)
     {
+        var quest = Svc.Data.GetExcelSheet<TempQuest>().GetRow(ogquest.RowId);
         QuestId = QQuestId.FromRowId(quest.RowId);
 
         string suffix = QuestId.Value switch
