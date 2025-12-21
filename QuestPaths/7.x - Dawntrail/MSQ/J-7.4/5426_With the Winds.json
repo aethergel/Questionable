@@ -37,7 +37,7 @@
           "TargetTerritoryId": 1207,
           "AetheryteShortcut": "Solution Nine",
           "AethernetShortcut": [
-            "[Solution Nine] Resolution",
+            "[Solution Nine] Aetheryte Plaza",
             "[Solution Nine] Neon Stein"
           ],
           "SkipConditions": {
@@ -90,7 +90,7 @@
       "Sequence": 3,
       "Steps": [
         {
-          "DataId": 1056119,
+          "DataId": 2014993,
           "Position": {
             "X": 129.9068,
             "Y": -16.56085,
