@@ -1,6 +1,8 @@
 ﻿{
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
   "Author": "liza",
+  "Disabled": true,
+  "Comment": "Repeatable EX daily quest",
   "QuestSequence": [
     {
       "Sequence": 0,

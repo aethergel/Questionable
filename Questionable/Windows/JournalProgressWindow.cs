@@ -41,7 +41,7 @@ internal sealed class JournalProgressWindow : LWindow, IDisposable
 
         SizeConstraints = new WindowSizeConstraints
         {
-            MinimumSize = new Vector2(700, 500)
+            MinimumSize = new Vector2(200, 100)
         };
     }
 

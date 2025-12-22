@@ -74,8 +74,8 @@ internal sealed class QuestJournalComponent(JournalData journalData, QuestRegist
                 return;
 
             ImGui.TableSetupColumn("Name", ImGuiTableColumnFlags.NoHide);
-            ImGui.TableSetupColumn("Supported", ImGuiTableColumnFlags.WidthFixed, 120 * ImGui.GetIO().FontGlobalScale);
-            ImGui.TableSetupColumn("Completed", ImGuiTableColumnFlags.WidthFixed, 120 * ImGui.GetIO().FontGlobalScale);
+            ImGui.TableSetupColumn("Supported", ImGuiTableColumnFlags.WidthFixed, 100 * ImGui.GetIO().FontGlobalScale);
+            ImGui.TableSetupColumn("Completed", ImGuiTableColumnFlags.WidthFixed, 100 * ImGui.GetIO().FontGlobalScale);
             ImGui.TableHeadersRow();
 
             foreach (var section in _filteredSections)
@@ -173,6 +173,7 @@ internal sealed class QuestJournalComponent(JournalData journalData, QuestRegist
     {
         Quest? quest;
         bool fate = false;
+        bool repeatable = false;
         string lastChecked = "";
         string lastCheckedLong = "";
         string questDescription = $"{questInfo.Name} ({questInfo.QuestId})";
@@ -190,6 +191,10 @@ internal sealed class QuestJournalComponent(JournalData journalData, QuestRegist
             if ((quest.Root.Comment ?? "").Contains("FATE"))
             {
                 fate = true;
+            }
+            if ((quest.Root.Comment ?? "").Contains("Repeatable"))
+            {
+                repeatable = true;
             }
         }
 

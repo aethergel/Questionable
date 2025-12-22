@@ -1,7 +1,7 @@
 {
   "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
   "Author": "Censored",
-  "Comment": "Needs more testing and edge case handling",
+  "LastChecked":{"Username": "alydev", "Date": "2025-12-22"},
   "QuestSequence": [
     {
       "Sequence": 0,
@@ -24,6 +24,7 @@
       "Sequence": 1,
       "Steps": [
         {
+          "$": "1 thrall",
           "DataId": 1008810,
           "Position": {
             "X": -374.62427,
@@ -33,13 +34,51 @@
           "TerritoryId": 138,
           "InteractionType": "Combat",
           "EnemySpawnType": "AfterInteraction",
+          "AetheryteShortcut": "Western La Noscea - Aleport",
+          "StopDistance": 1,
           "Fly": true,
           "KillEnemyDataIds": [
             2844
           ],
-          "CompletionQuestVariablesFlags": [null,null,null,null,null,32]
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"High": 1},{"High": 2},{"High": 3},{"High": 5},{"High": 6}
+          ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"High": 2}]
         },
         {
+          "$": "1 normal",
+          "Position": {
+            "X": -374.62427,
+            "Y": -39.424538,
+            "Z": -351.46106
+          },
+          "TerritoryId": 138,
+          "InteractionType": "None",
+          "StopDistance": 1,
+          "Fly": true
+        },
+        {
+          "$": "2 thrall",
+          "DataId": 1008809,
+          "Position": {
+            "X": -368.58167,
+            "Y": -39.582714,
+            "Z": -356.71014
+          },
+          "TerritoryId": 138,
+          "InteractionType": "Combat",
+          "EnemySpawnType": "AfterInteraction",
+          "Fly": true,
+          "KillEnemyDataIds": [
+            2844
+          ],
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"High": 1},{"High": 2}
+          ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"High": 4}]
+        },
+        {
+          "$": "2 normal",
           "DataId": 1008814,
           "Position": {
             "X": -368.58167,
@@ -48,9 +87,13 @@
           },
           "TerritoryId": 138,
           "InteractionType": "Interact",
-          "CompletionQuestVariablesFlags": [null,null,null,null,null,2]
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"High": 3},{"High": 5},{"High": 6}
+          ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"Low": 2}]
         },
         {
+          "$": "3 thrall",
           "DataId": 1008812,
           "Position": {
             "X": -363.42413,
@@ -63,9 +106,23 @@
           "KillEnemyDataIds": [
             2844
           ],
-          "CompletionQuestVariablesFlags": [null,null,null,null,null,8]
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"High": 1},{"High": 2},{"High": 3},{"High": 5},{"High": 6}
+          ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"Low": 8}]
         },
         {
+          "$": "3 normal",
+          "Position": {
+            "X": -363.42413,
+            "Y": -39.34171,
+            "Z": -362.75275
+          },
+          "TerritoryId": 138,
+          "InteractionType": "None"
+        },
+        {
+          "$": "4 thrall",
           "DataId": 1008808,
           "Position": {
             "X": -360.28082,
@@ -78,9 +135,28 @@
           "KillEnemyDataIds": [
             2844
           ],
-          "CompletionQuestVariablesFlags": [null,null,null,null,null,128]
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"High": 1},{"High": 3},{"High": 5}
+          ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"High": 8}]
         },
         {
+          "$": "4 normal",
+          "DataId": 1008813,
+          "Position": {
+            "X": -360.28082,
+            "Y": -39.216816,
+            "Z": -369.28363
+          },
+          "TerritoryId": 138,
+          "InteractionType": "Interact",
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"High": 2},{"High": 6}
+          ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"Low": 4}]
+        },
+        {
+          "$": "5 thrall",
           "DataId": 1008811,
           "Position": {
             "X": -355.3979,
@@ -92,7 +168,21 @@
           "EnemySpawnType": "AfterInteraction",
           "KillEnemyDataIds": [
             2844
-          ]
+          ],
+          "RequiredQuestVariables": [null,null,null,null,[
+            {"High": 1},{"High": 2},{"High": 3},{"High": 5},{"High": 6}
+          ],null],
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,{"High": 1}]
+        },
+        {
+          "$": "5 normal",
+          "Position": {
+            "X": -355.3979,
+            "Y": -38.487797,
+            "Z": -378.62213
+          },
+          "TerritoryId": 138,
+          "InteractionType": "None"
         }
       ]
     },

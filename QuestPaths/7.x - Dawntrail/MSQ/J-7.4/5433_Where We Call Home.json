@@ -72,6 +72,10 @@
           },
           "TerritoryId": 1332,
           "InteractionType": "Interact"
+        },
+        {
+          "TerritoryId": 1332,
+          "InteractionType": "SinglePlayerDuty"
         }
       ]
     },
