@@ -5,4 +5,3 @@ Fixes applied for quest sheet check (most things back to normal again)
 - Fix 7.4 MSQ quests -Gezah
 - Dailies -alydev
 - Arcadion feral fandom -erdelf
-
