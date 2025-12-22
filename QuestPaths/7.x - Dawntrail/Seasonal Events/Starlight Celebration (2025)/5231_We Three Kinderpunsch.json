@@ -247,13 +247,7 @@
               "Prompt": "TEXT_FESXMX101_05231_SYSTEM_000_124",
               "Type": "YesNo",
               "Yes": true
-            }
-          ]
-        },
-        {
-          "InteractionType": "None",
-          "TerritoryId": 1309,
-          "DialogueChoices": [
+            },
             {
               "Prompt": "TEXT_FESXMX101_05231_Q3_000_000",
               "Answer": "TEXT_FESXMX101_05231_A3_000_003",
