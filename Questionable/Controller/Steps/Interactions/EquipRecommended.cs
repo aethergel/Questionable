@@ -1,11 +1,13 @@
-﻿using System;
-using Dalamud.Game.ClientState.Conditions;
+﻿using Dalamud.Game.ClientState.Conditions;
 using Dalamud.Plugin.Services;
+using ECommons.Configuration;
 using FFXIVClientStructs.FFXIV.Client.Game;
 using FFXIVClientStructs.FFXIV.Client.Game.UI;
 using FFXIVClientStructs.FFXIV.Client.UI.Misc;
 using Questionable.Model;
 using Questionable.Model.Questing;
+using System;
+using Questionable.External;
 
 namespace Questionable.Controller.Steps.Interactions;
 
@@ -40,7 +42,7 @@ internal static class EquipRecommended
         public override string ToString() => "EquipRecommended";
     }
 
-    internal sealed unsafe class DoEquipRecommended(IChatGui chatGui, ICondition condition)
+    internal sealed unsafe class DoEquipRecommended(IChatGui chatGui, ICondition condition, Configuration config, StylistIpc stylist)
         : TaskExecutor<EquipTask>
     {
         private bool _checkedOrTriggeredEquipmentUpdate;
@@ -51,27 +53,51 @@ internal static class EquipRecommended
             if (condition[ConditionFlag.InCombat])
                 return false;
 
-            RecommendEquipModule.Instance()->SetupForClassJob((byte)PlayerState.Instance()->CurrentClassJobId);
+            switch (config.General.GearsetUpdateSource)
+            {
+                case Configuration.EGearsetUpdateSource.Vanilla:
+                    RecommendEquipModule.Instance()->SetupForClassJob((byte)PlayerState.Instance()->CurrentClassJobId);
+                    break;
+                case Configuration.EGearsetUpdateSource.Stylist:
+                    RaptureGearsetModule.Instance()->UpdateGearset(RaptureGearsetModule.Instance()->CurrentGearsetIndex);
+                    break;
+            }
             return true;
         }
 
         public override ETaskResult Update()
         {
-            var recommendedEquipModule = RecommendEquipModule.Instance();
-            if (recommendedEquipModule->IsUpdating)
-                return ETaskResult.StillRunning;
-
-            if (!_checkedOrTriggeredEquipmentUpdate)
+            switch (config.General.GearsetUpdateSource)
             {
-                if (!IsAllRecommendeGearEquipped())
-                {
-                    chatGui.Print("Equipping recommended gear.", CommandHandler.MessageTag, CommandHandler.TagColor);
-                    recommendedEquipModule->EquipRecommendedGear();
-                    _continueAt = DateTime.Now.AddSeconds(1);
-                }
+                case Configuration.EGearsetUpdateSource.Vanilla:
+                    var recommendedEquipModule = RecommendEquipModule.Instance();
+                    if (recommendedEquipModule->IsUpdating)
+                        return ETaskResult.StillRunning;
 
-                _checkedOrTriggeredEquipmentUpdate = true;
-                return ETaskResult.StillRunning;
+                    if (!_checkedOrTriggeredEquipmentUpdate)
+                    {
+                        if (!IsAllRecommendeGearEquipped())
+                        {
+                            chatGui.Print("Equipping recommended gear.", CommandHandler.MessageTag, CommandHandler.TagColor);
+                            recommendedEquipModule->EquipRecommendedGear();
+                            _continueAt = DateTime.Now.AddSeconds(1);
+                        }
+
+                        _checkedOrTriggeredEquipmentUpdate = true;
+                        return ETaskResult.StillRunning;
+                    }
+                    break;
+                case Configuration.EGearsetUpdateSource.Stylist:
+                    if (stylist.IsBusy)
+                        return ETaskResult.StillRunning;
+                    else if (!_checkedOrTriggeredEquipmentUpdate)
+                    {
+                        stylist.UpdateGearset();
+                        _checkedOrTriggeredEquipmentUpdate = true;
+                        _continueAt = DateTime.Now.AddSeconds(1);
+                        return ETaskResult.StillRunning;
+                    }
+                    break;
             }
 
             return DateTime.Now >= _continueAt ? ETaskResult.TaskComplete : ETaskResult.StillRunning;

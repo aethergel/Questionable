@@ -39,6 +39,7 @@ internal sealed class Configuration : IPluginConfiguration
         public EClassJob CombatJob { get; set; } = EClassJob.Adventurer;
         public EClassJob CraftingJob { get; set; } = EClassJob.Carpenter;
         public EClassJob GatheringJob { get; set; } = EClassJob.Miner;
+        public EGearsetUpdateSource GearsetUpdateSource { get; set;} = EGearsetUpdateSource.Vanilla;
         public bool HideInAllInstances { get; set; } = true;
         public bool UseEscToCancelQuesting { get; set; } = true;
         public bool ShowIncompleteSeasonalEvents { get; set; } = true;
@@ -114,6 +115,11 @@ internal sealed class Configuration : IPluginConfiguration
         public bool NamazuPreferCraft { get; set; }
     }
 
+    internal enum EGearsetUpdateSource
+    {
+        Vanilla,
+        Stylist
+    }
     internal enum ECombatModule
     {
         None,
