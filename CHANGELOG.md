@@ -1,3 +1,4 @@
 - Fix: Dive -Deckerz
+  - Change diving to native calls -Taurenkey
 - Feature: Don't skip cutscenes -alydev
 - Dailies checked
