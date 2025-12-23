@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using Dalamud.Game.ClientState.Conditions;
+﻿using Dalamud.Game.ClientState.Conditions;
 using Dalamud.Plugin.Services;
+using ECommons.DalamudServices;
+using FFXIVClientStructs.FFXIV.Client.Game;
+using FFXIVClientStructs.FFXIV.Client.Game.Control;
 using FFXIVClientStructs.FFXIV.Client.Graphics.Kernel;
 using FFXIVClientStructs.FFXIV.Client.System.Input;
 using FFXIVClientStructs.FFXIV.Client.System.String;
@@ -12,11 +11,21 @@ using Microsoft.Extensions.Logging;
 using Questionable.Controller.Steps.Common;
 using Questionable.Model;
 using Questionable.Model.Questing;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection.Metadata.Ecma335;
+using System.Runtime.InteropServices;
 
 namespace Questionable.Controller.Steps.Interactions;
 
 internal static class Dive
 {
+    private unsafe delegate byte DiveDelegate(void* control);
+    private static unsafe DiveDelegate DiveFunc = Marshal.GetDelegateForFunctionPointer<DiveDelegate>(Svc.SigScanner.ScanText("48 89 5C 24 ?? 57 48 81 EC ?? ?? ?? ?? 48 8B 05 ?? ?? ?? ?? 48 33 C4 48 89 84 24 ?? ?? ?? ?? 48 8B 1D ?? ?? ?? ?? 48 8D 54 24"));
+    public static unsafe void ExecuteDive() => DiveFunc(Control.Instance());
+    private static unsafe void Dismount() => ActionManager.Instance()->UseAction(ActionType.GeneralAction, 23);
+
     internal sealed class Factory : SimpleTaskFactory
     {
         public override ITask? CreateTask(Quest quest, QuestSequence sequence, QuestStep step)
@@ -35,7 +44,7 @@ internal static class Dive
     }
 
     internal sealed class DoDive(ICondition condition, ILogger<DoDive> logger)
-        : AbstractDelayedTaskExecutor<Task>(TimeSpan.FromSeconds(5))
+        : AbstractDelayedTaskExecutor<Task>(TimeSpan.FromSeconds(1))
     {
         private readonly Queue<(uint Type, nint Key)> _keysToPress = [];
         private int _attempts;
@@ -45,30 +54,39 @@ internal static class Dive
             if (condition[ConditionFlag.Diving])
                 return false;
 
-            if (condition[ConditionFlag.Mounted] || condition[ConditionFlag.Swimming])
-            {
-                Descend();
+            if (PerformDive())
                 return true;
-            }
 
             throw new TaskException("You aren't swimming, so we can't dive.");
         }
 
-        public override unsafe ETaskResult Update()
+        private bool PerformDive()
         {
-            if (_keysToPress.TryDequeue(out var definition))
+            if (condition[ConditionFlag.Swimming] || condition[ConditionFlag.Mounted])
             {
-                if (definition.Type == 0)
-                    return ETaskResult.StillRunning;
-
-                logger.LogDebug("{Action} key {KeyCode:X2}",
-                    definition.Type == NativeMethods.WM_KEYDOWN ? "Pressing" : "Releasing", definition.Key);
-                NativeMethods.SendMessage((nint)Device.Instance()->hWnd, definition.Type, definition.Key, nint.Zero);
-                return ETaskResult.StillRunning;
+                ExecuteDive();
+                Dismount();
+                return true;
             }
 
-            return base.Update();
+            return false;
         }
+
+        //public override unsafe ETaskResult Update()
+        //{
+        //    if (_keysToPress.TryDequeue(out var definition))
+        //    {
+        //        if (definition.Type == 0)
+        //            return ETaskResult.StillRunning;
+
+        //        logger.LogDebug("{Action} key {KeyCode:X2}",
+        //            definition.Type == NativeMethods.WM_KEYDOWN ? "Pressing" : "Releasing", definition.Key);
+        //        NativeMethods.SendMessage((nint)Device.Instance()->hWnd, definition.Type, definition.Key, nint.Zero);
+        //        return ETaskResult.StillRunning;
+        //    }
+
+        //    return base.Update();
+        //}
 
         public override bool ShouldInterruptOnDamage() => false;
 
@@ -80,78 +98,78 @@ internal static class Dive
             if (_attempts >= 3)
                 throw new TaskException("Please dive manually.");
 
-            Descend();
+            PerformDive();
             _attempts++;
             return ETaskResult.StillRunning;
         }
 
-        private unsafe void Descend()
-        {
-            var keyName = Utf8String.FromString("MOVE_DESCENT");
-            var inputData = UIInputData.Instance();
-            Keybind* keybind = inputData->GetKeybind(InputId.MOVE_DESCENT);
+        //private unsafe void Descend()
+        //{
+        //    var keyName = Utf8String.FromString("MOVE_DESCENT");
+        //    var inputData = UIInputData.Instance();
+        //    Keybind* keybind = inputData->GetKeybind(InputId.MOVE_DESCENT);
 
-            if (keybind == null)
-                throw new TaskException("No keybind data found for diving");
+        //    if (keybind == null)
+        //        throw new TaskException("No keybind data found for diving");
 
-            if (keybind->KeySettings.Length == 0)
-                throw new TaskException("No keybind found for diving");
-            
-            foreach(var bind in keybind->KeySettings)
-            {
-                logger.LogDebug("Dive keybind option: Key={Key}, Modifier={Modifier}", bind.Key, bind.KeyModifier);
-            }
+        //    if (keybind->KeySettings.Length == 0)
+        //        throw new TaskException("No keybind found for diving");
 
-            List<List<nint>?> availableKeys = [GetKeysToPress(keybind->KeySettings[0].Key, keybind->KeySettings[0].KeyModifier)]; // Primary keybind
+        //    foreach (var bind in keybind->KeySettings)
+        //    {
+        //        logger.LogDebug("Dive keybind option: Key={Key}, Modifier={Modifier}", bind.Key, bind.KeyModifier);
+        //    }
 
-            if (keybind->KeySettings.Length > 1)
-                availableKeys.Add(GetKeysToPress(keybind->KeySettings[1].Key, keybind->KeySettings[1].KeyModifier)); // Add secondary keybind if it exists
+        //    List<List<nint>?> availableKeys = [GetKeysToPress(keybind->KeySettings[0].Key, keybind->KeySettings[0].KeyModifier)]; // Primary keybind
 
-            List<nint>? realKeys = availableKeys.Where(x => x != null).Select(x => x!).MinBy(x => x.Count);
-            if (realKeys == null || realKeys.Count == 0)
-                throw new TaskException("No useable keybind found for diving");
+        //    if (keybind->KeySettings.Length > 1)
+        //        availableKeys.Add(GetKeysToPress(keybind->KeySettings[1].Key, keybind->KeySettings[1].KeyModifier)); // Add secondary keybind if it exists
 
-            foreach (var key in realKeys)
-            {
-                _keysToPress.Enqueue((NativeMethods.WM_KEYDOWN, key));
-                _keysToPress.Enqueue((0, 0));
-                _keysToPress.Enqueue((0, 0));
-            }
+        //    List<nint>? realKeys = availableKeys.Where(x => x != null).Select(x => x!).MinBy(x => x.Count);
+        //    if (realKeys == null || realKeys.Count == 0)
+        //        throw new TaskException("No useable keybind found for diving");
 
-            for (int i = 0; i < 5; ++i)
-                _keysToPress.Enqueue((0, 0)); // do nothing
+        //    foreach (var key in realKeys)
+        //    {
+        //        _keysToPress.Enqueue((NativeMethods.WM_KEYDOWN, key));
+        //        _keysToPress.Enqueue((0, 0));
+        //        _keysToPress.Enqueue((0, 0));
+        //    }
 
-            realKeys.Reverse();
-            foreach (var key in realKeys)
-                _keysToPress.Enqueue((NativeMethods.WM_KEYUP, key));
-        }
+        //    for (int i = 0; i < 5; ++i)
+        //        _keysToPress.Enqueue((0, 0)); // do nothing
+
+        //    realKeys.Reverse();
+        //    foreach (var key in realKeys)
+        //        _keysToPress.Enqueue((NativeMethods.WM_KEYUP, key));
+        //}
     }
 
-    private static List<nint>? GetKeysToPress(SeVirtualKey key, KeyModifierFlag modifier)
-    {
-        List<nint> keys = [];
-        if (modifier.HasFlag(KeyModifierFlag.Ctrl))
-            keys.Add(0x11); // VK_CONTROL
-        if (modifier.HasFlag(KeyModifierFlag.Shift))
-            keys.Add(0x10); // VK_SHIFT
-        if (modifier.HasFlag(KeyModifierFlag.Alt))
-            keys.Add(0x12); // VK_MENU
+    //private static List<nint>? GetKeysToPress(SeVirtualKey key, KeyModifierFlag modifier)
+    //{
+    //    List<nint> keys = [];
+    //    if (modifier.HasFlag(KeyModifierFlag.Ctrl))
+    //        keys.Add(0x11); // VK_CONTROL
+    //    if (modifier.HasFlag(KeyModifierFlag.Shift))
+    //        keys.Add(0x10); // VK_SHIFT
+    //    if (modifier.HasFlag(KeyModifierFlag.Alt))
+    //        keys.Add(0x12); // VK_MENU
 
-        nint mappedKey = (nint)key;
-        if (mappedKey == 0)
-            return null;
+    //    nint mappedKey = (nint)key;
+    //    if (mappedKey == 0)
+    //        return null;
 
-        keys.Add(mappedKey);
-        return keys;
-    }
+    //    keys.Add(mappedKey);
+    //    return keys;
+    //}
 
-    private static class NativeMethods
-    {
-        public const uint WM_KEYUP = 0x101;
-        public const uint WM_KEYDOWN = 0x100;
+    //private static class NativeMethods
+    //{
+    //    public const uint WM_KEYUP = 0x101;
+    //    public const uint WM_KEYDOWN = 0x100;
 
-        [DllImport("user32.dll", CharSet = CharSet.Auto)]
-        [DefaultDllImportSearchPaths(DllImportSearchPath.System32)]
-        public static extern IntPtr SendMessage(IntPtr hWnd, uint Msg, nint wParam, nint lParam);
-    }
+    //    [DllImport("user32.dll", CharSet = CharSet.Auto)]
+    //    [DefaultDllImportSearchPaths(DllImportSearchPath.System32)]
+    //    public static extern IntPtr SendMessage(IntPtr hWnd, uint Msg, nint wParam, nint lParam);
+    //}
 }
