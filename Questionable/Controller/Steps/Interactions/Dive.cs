@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Text.Json;
 using Dalamud.Game.ClientState.Conditions;
 using Dalamud.Plugin.Services;
+using ECommons.DalamudServices;
 using FFXIVClientStructs.FFXIV.Client.Graphics.Kernel;
 using FFXIVClientStructs.FFXIV.Client.System.Input;
 using FFXIVClientStructs.FFXIV.Client.System.String;
@@ -39,7 +41,7 @@ internal static class Dive
         : AbstractDelayedTaskExecutor<Task>(TimeSpan.FromSeconds(5))
     {
         private readonly Queue<(uint Type, nint Key)> _keysToPress = [];
-        //private int _attempts;
+        private int _attempts;
 
         protected override bool StartInternal()
         {
@@ -48,9 +50,8 @@ internal static class Dive
 
             if (condition[ConditionFlag.Mounted] || condition[ConditionFlag.Swimming])
             {
-                //Descend();
-                //return true;
-                throw new TaskException("Please dive manually.");
+                Descend();
+                return true;
             }
 
             throw new TaskException("You aren't swimming, so we can't dive.");
@@ -79,55 +80,64 @@ internal static class Dive
             if (condition[ConditionFlag.Diving])
                 return ETaskResult.TaskComplete;
 
-            //if (_attempts >= 3)
+            if (_attempts >= 3)
                 throw new TaskException("Please dive manually.");
 
-            //Descend();
-            //_attempts++;
-            //return ETaskResult.StillRunning;
+            Descend();
+            _attempts++;
+            return ETaskResult.StillRunning;
         }
 
-        //private unsafe void Descend()
-        //{
-        //    var keybind = new UIInputData.Keybind();
-        //    var keyName = Utf8String.FromString("MOVE_DESCENT");
-        //    var inputData = UIInputData.Instance();
-        //    inputData->GetKeybindByName(keyName, (Keybind*)&keybind);
+        private unsafe void Descend()
+        {
+            var keyName = Utf8String.FromString("MOVE_DESCENT");
+            var inputData = UIInputData.Instance();
+            Keybind* keybind = inputData->GetKeybind(InputId.MOVE_DESCENT);
 
-        //    logger.LogInformation("Dive keybind: {Key1} + {Modifier1}, {Key2} + {Modifier2}", keybind.Key,
-        //        keybind.Modifier, keybind.AltKey, keybind.AltModifier);
+            if (keybind == null)
+                throw new TaskException("No keybind data found for diving");
 
-        //    // find the shortest of the two key combinations to press
-        //    List<List<nint>?> availableKeys =
-        //        [GetKeysToPress(keybind.Key, keybind.Modifier), GetKeysToPress(keybind.AltKey, keybind.AltModifier)];
-        //    List<nint>? realKeys = availableKeys.Where(x => x != null).Select(x => x!).MinBy(x => x.Count);
-        //    if (realKeys == null || realKeys.Count == 0)
-        //        throw new TaskException("No useable keybind found for diving");
+            if (keybind->KeySettings.Length == 0)
+                throw new TaskException("No keybind found for diving");
+            
+            foreach(var bind in keybind->KeySettings)
+            {
+                logger.LogDebug("Dive keybind option: Key={Key}, Modifier={Modifier}", bind.Key, bind.KeyModifier);
+            }
 
-        //    foreach (var key in realKeys)
-        //    {
-        //        _keysToPress.Enqueue((NativeMethods.WM_KEYDOWN, key));
-        //        _keysToPress.Enqueue((0, 0));
-        //        _keysToPress.Enqueue((0, 0));
-        //    }
+            List<List<nint>?> availableKeys = [GetKeysToPress(keybind->KeySettings[0].Key, keybind->KeySettings[0].KeyModifier)]; // Primary keybind
 
-        //    for (int i = 0; i < 5; ++i)
-        //        _keysToPress.Enqueue((0, 0)); // do nothing
+            if (keybind->KeySettings.Length > 1)
+                availableKeys.Add(GetKeysToPress(keybind->KeySettings[1].Key, keybind->KeySettings[1].KeyModifier)); // Add secondary keybind if it exists
 
-        //    realKeys.Reverse();
-        //    foreach (var key in realKeys)
-        //        _keysToPress.Enqueue((NativeMethods.WM_KEYUP, key));
-        //}
+            List<nint>? realKeys = availableKeys.Where(x => x != null).Select(x => x!).MinBy(x => x.Count);
+            if (realKeys == null || realKeys.Count == 0)
+                throw new TaskException("No useable keybind found for diving");
+
+            foreach (var key in realKeys)
+            {
+                _keysToPress.Enqueue((NativeMethods.WM_KEYDOWN, key));
+                _keysToPress.Enqueue((0, 0));
+                _keysToPress.Enqueue((0, 0));
+            }
+
+            for (int i = 0; i < 5; ++i)
+                _keysToPress.Enqueue((0, 0)); // do nothing
+
+            realKeys.Reverse();
+            foreach (var key in realKeys)
+                _keysToPress.Enqueue((NativeMethods.WM_KEYUP, key));
+        }
     }
 
-    private static List<nint>? GetKeysToPress(SeVirtualKey key, ModifierFlag modifier)
+    private static List<nint>? GetKeysToPress(SeVirtualKey key, KeyModifierFlag modifier)
     {
         List<nint> keys = [];
-        if (modifier.HasFlag(ModifierFlag.Ctrl))
+        if (modifier.HasFlag(KeyModifierFlag.Ctrl))
             keys.Add(0x11); // VK_CONTROL
-        if (modifier.HasFlag(ModifierFlag.Shift))
+        if (modifier.HasFlag(KeyModifierFlag.Shift))
             keys.Add(0x10); // VK_SHIFT
-        if (modifier.HasFlag(ModifierFlag.Alt))
+        if (modifier.HasFlag(KeyModifierFlag.Alt))
             keys.Add(0x12); // VK_MENU
 
         nint mappedKey = (nint)key;
