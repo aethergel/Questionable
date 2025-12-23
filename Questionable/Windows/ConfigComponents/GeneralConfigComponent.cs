@@ -222,6 +222,18 @@ internal sealed class GeneralConfigComponent : ConfigComponent
                 Configuration.General.ConfigureTextAdvance = configureTextAdvance;
                 Save();
             }
+            if (configureTextAdvance)
+            {
+                using (ImRaii.PushIndent())
+                {
+                    bool dontSkipCutscenes = Configuration.General.DontSkipCutscenes;
+                    if (ImGui.Checkbox("but don't skip cutscenes!", ref dontSkipCutscenes))
+                    {
+                        Configuration.General.DontSkipCutscenes = dontSkipCutscenes;
+                        Save();
+                    }
+                }
+            }
 
             bool skipLowPriorityInstances = Configuration.General.SkipLowPriorityDuties;
             if (ImGui.Checkbox("Unlock certain optional dungeons and raids (instead of waiting for completion)", ref skipLowPriorityInstances))
