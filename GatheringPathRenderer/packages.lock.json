@@ -2,12 +2,6 @@
   "version": 1,
   "dependencies": {
     "net10.0-windows7.0": {
-      "DalamudPackager": {
-        "type": "Direct",
-        "requested": "[13.1.0, )",
-        "resolved": "13.1.0",
-        "contentHash": "XdoNhJGyFby5M/sdcRhnc5xTop9PHy+H50PTWpzLhJugjB19EDBiHD/AsiDF66RETM+0qKUdJBZrNuebn7qswQ=="
-      },
       "DotNet.ReproducibleBuilds": {
         "type": "Direct",
         "requested": "[1.2.39, )",
@@ -22,9 +16,9 @@
       },
       "Pictomancy": {
         "type": "Direct",
-        "requested": "[0.0.1, )",
-        "resolved": "0.0.1",
-        "contentHash": "o40yKEYUsUmHLGEyfi2dzrPJBaiYGAL6Jwc32NOZUx9znXvwL0RS2A3AOGzi4wHhTEfTesLuU5yNIs60hT4ayg==",
+        "requested": "[0.0.2, )",
+        "resolved": "0.0.2",
+        "contentHash": "th7LcwtMgGWbhfZu7cyKYQKIOpRHzC/O9YvbWy5FSEs0zs1rgC/jgFg1MuX6F4XireR3XJgmg+RcHY+TCKBpsw==",
         "dependencies": {
           "SharpDX.D3DCompiler": "4.2.0",
           "SharpDX.Direct2D1": "4.2.0",
