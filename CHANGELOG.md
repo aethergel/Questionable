@@ -1,2 +1,2 @@
-- Dailies checked
 - Update sponsor URL
+- Fix bug in 2315 moogle quest
