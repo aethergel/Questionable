@@ -18,6 +18,12 @@ internal sealed class DialogueChoiceValidator(ExcelFunctions excelFunctions) : I
 
             foreach (var dialogueChoice in x.Step.DialogueChoices)
             {
+                // Skip Excel validation entirely if it's a YesNo with null prompt
+                if (dialogueChoice.Type == EDialogChoiceType.YesNo && 
+                    dialogueChoice.Answer != null &&
+                    dialogueChoice.Prompt == null)
+                    continue;
+
                 ExcelRef? prompt = dialogueChoice.Prompt;
                 if (prompt != null)
                 {
