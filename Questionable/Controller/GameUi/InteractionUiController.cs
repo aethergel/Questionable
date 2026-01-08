@@ -593,11 +593,7 @@ internal sealed class InteractionUiController : IDisposable
 
         string? actualPrompt = addonSelectYesno->AtkUnitBase.AtkValues[0].ReadAtkString();
         if (actualPrompt == null)
-        {
-            //force Yes if prompt is set to `null` while an answer is still given - basically means no key is available for this said prompt yet
-            addonSelectYesno->AtkUnitBase.FireCallbackInt(0);
             return;
-        }
 
         _logger.LogTrace("Prompt: '{Prompt}'", actualPrompt);
         if (_shopController.IsAwaitingYesNo && _purchaseItemRegex.IsMatch(actualPrompt))
