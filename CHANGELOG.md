@@ -1,2 +1,2 @@
-- Update sponsor URL
-- Fix bug in 2315 moogle quest
+- Dailies checked
+- Fixed bug with loporrit dailies where they wouldn't get close enough to the Hopers Hold interact
