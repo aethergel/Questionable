@@ -1,2 +1,2 @@
+- AAC Heavyweight M1-M4 Raid Quests -Akechi
 - Dailies checked
-- Fixed bug with loporrit dailies where they wouldn't get close enough to the Hopers Hold interact
