@@ -78,16 +78,10 @@
           },
           "TerritoryId": 1186,
           "InteractionType": "Interact",
+          "TargetTerritoryId": 1224,
           "AethernetShortcut": [
             "[Solution Nine] True Vue",
             "[Solution Nine] The Arcadion"
-          ],
-          "DialogueChoices": [
-            {
-              "Type": "YesNo",
-              "Prompt": null,
-              "Yes": true
-            }
           ]
         },
         {

@@ -44,14 +44,8 @@
             "Z": 10.5759
           },
           "TerritoryId": 1344,
-          "InteractionType": "Interact",
-          "DialogueChoices": [
-            {
-              "Type": "YesNo",
-              "Prompt": null,
-              "Yes": true
-            }
-          ]
+          "TargetTerritoryId": 1224,
+          "InteractionType": "Interact"
         },
         {
           "DataId": 1056308,
