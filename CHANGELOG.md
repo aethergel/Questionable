@@ -1,3 +1,1 @@
-- AAC Heavyweight M1-M4 Raid Quests -Akechi
-- Dailies checked again
-- Add aetheryteshortcut for ARR central thanalan quest
+- Dailies checked
