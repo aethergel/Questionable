@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
 using System.Numerics;
@@ -169,11 +170,12 @@ internal sealed class QuestJournalComponent(JournalData journalData, QuestRegist
         DrawQuest((QuestInfo)questInfo);
     }
 
+    [SuppressMessage("ReSharper", "RedundantAssignment")]
     private void DrawQuest(QuestInfo questInfo)
     {
         Quest? quest;
         bool fate = false;
-        bool repeatable = false;
+        //bool repeatable = false;
         string lastChecked = "";
         string lastCheckedLong = "";
         string questDescription = $"{questInfo.Name} ({questInfo.QuestId})";
@@ -192,10 +194,10 @@ internal sealed class QuestJournalComponent(JournalData journalData, QuestRegist
             {
                 fate = true;
             }
-            if ((quest.Root.Comment ?? "").Contains("Repeatable"))
+            /*if ((quest.Root.Comment ?? "").Contains("Repeatable"))
             {
                 repeatable = true;
-            }
+            }*/
         }
 
         ImGui.TableNextRow();
