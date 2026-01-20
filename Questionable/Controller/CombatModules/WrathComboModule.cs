@@ -146,6 +146,10 @@ internal sealed class WrathComboModule : ICombatModule, IDisposable
                 .SetAutoRotationConfigState(_lease.Value,
                     AutoRotationConfigOption.DPSAoETargets,       
                     2);
+            SetResult rezNonParty = WrathIPCWrapper
+                .SetAutoRotationConfigState(_lease.Value,
+                    AutoRotationConfigOption.AutoRezOutOfParty,       
+                    false);
 
             if (!WrathResultExtensions.AllSuccessful(out string failed,
                     ("HealerRotationMode", healerRotationMode),
@@ -158,7 +162,8 @@ internal sealed class WrathComboModule : ICombatModule, IDisposable
                     ("AutoCleanse", cleanse),
                     ("HealerAlwaysHardTarget", healerMagicTargeting),
                     ("ManageKardia", kardia),
-                    ("DPSAoETargets", aoeTargetThreshold)))
+                    ("DPSAoETargets", aoeTargetThreshold),
+                    ("AutoRezOutOfParty", rezNonParty)))
             {
                 _logger.LogError("Unable to configure Wrath Auto Rotation " +
                                  "settings: {Result}",
