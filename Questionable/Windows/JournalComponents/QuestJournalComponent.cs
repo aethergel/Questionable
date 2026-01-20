@@ -170,7 +170,6 @@ internal sealed class QuestJournalComponent(JournalData journalData, QuestRegist
         DrawQuest((QuestInfo)questInfo);
     }
 
-    [SuppressMessage("ReSharper", "RedundantAssignment")]
     private void DrawQuest(QuestInfo questInfo)
     {
         Quest? quest;
