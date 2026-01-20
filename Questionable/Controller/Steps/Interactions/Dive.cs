@@ -46,7 +46,7 @@ internal static class Dive
     internal sealed class DoDive(ICondition condition)
         : AbstractDelayedTaskExecutor<Task>(TimeSpan.FromSeconds(5))
     {
-        private readonly Queue<(uint Type, nint Key)> _keysToPress = [];
+        //private readonly Queue<(uint Type, nint Key)> _keysToPress = [];
         private int _attempts;
 
         protected override bool StartInternal()
