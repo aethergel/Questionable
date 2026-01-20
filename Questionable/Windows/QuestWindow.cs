@@ -150,12 +150,9 @@ internal sealed class QuestWindow : LWindow, IPersistableWindowConfig
             {
                 ImGui.Separator();
 
-                if (false) // TODO add tests
+                if (false)
                 {
-                    ImGui.TextColoredWrapped(
-                        ImGuiColors.DalamudRed,
-                        "Questionable was not able to load all components. Some functionality may be disabled."
-                    );
+                    // TODO add tests
                 }
 
                 if (_aRealmRebornComponent.ShouldDraw)
