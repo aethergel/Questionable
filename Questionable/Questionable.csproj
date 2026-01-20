@@ -1,8 +1,9 @@
-﻿<Project Sdk="Dalamud.NET.Sdk/14.0.0">
+﻿<Project Sdk="Dalamud.NET.Sdk/14.0.1">
     <PropertyGroup>
         <OutputPath>dist</OutputPath>
         <PathMap Condition="$(SolutionDir) != ''">$(SolutionDir)=X:\</PathMap>
         <Platforms>x64</Platforms>
+        <NoWarn>NU1510</NoWarn>
     </PropertyGroup>
 
     <Import Project="..\LLib\LLib.targets" />
