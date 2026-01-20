@@ -145,7 +145,7 @@ internal sealed class WrathComboModule : ICombatModule, IDisposable
             SetResult aoeTargetThreshold = WrathIPCWrapper
                 .SetAutoRotationConfigState(_lease.Value,
                     AutoRotationConfigOption.DPSAoETargets,       
-                    2);
+                    3);
             SetResult rezNonParty = WrathIPCWrapper
                 .SetAutoRotationConfigState(_lease.Value,
                     AutoRotationConfigOption.AutoRezOutOfParty,       
