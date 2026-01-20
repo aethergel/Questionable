@@ -4,6 +4,7 @@
         <OutputPath>dist</OutputPath>
         <PathMap Condition="$(SolutionDir) != ''">$(SolutionDir)=X:\</PathMap>
         <Platforms>x64</Platforms>
+        <NoWarn>NU1510</NoWarn>
     </PropertyGroup>
 
     <ItemGroup>
