@@ -1,2 +1,1 @@
-- Update C# version again -zbee
-- Dailies
+- Minor fix to 5379(DT Hildi) -Kiarra
