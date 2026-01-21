@@ -1,1 +1,2 @@
-- Minor fix to 5379(DT Hildi) -Kiarra
+- Hotfix nullpointerexception -alydev
+- Dailies -alydev

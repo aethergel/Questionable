@@ -19,8 +19,8 @@ internal sealed class YesAlreadyIpc : IDisposable
     private readonly ILogger<YesAlreadyIpc> _logger;
 
     private readonly static EzIPCDisposalToken[] _disposalTokens = EzIPC.Init(typeof(YesAlreadyIpc), "YesAlready", SafeWrapper.IPCException);
-    [EzIPC("IsPluginEnabled")] public static readonly Func<bool> IsPluginEnabled = null!;
-    [EzIPC("SetPluginEnabled")] private static readonly Action<bool> SetPluginEnabled = null!;
+    [EzIPC("IsPluginEnabled")] public static readonly Func<bool> IsPluginEnabled;
+    [EzIPC("SetPluginEnabled")] private static readonly Action<bool> SetPluginEnabled;
 
     private bool _wasEnabled;
 
