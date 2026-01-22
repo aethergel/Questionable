@@ -130,6 +130,20 @@ internal sealed partial class ActiveQuestComponent(
             if (ImGuiComponents.IconButton(FontAwesomeIcon.SortAmountDown))
                 _priorityWindow.ToggleOrUncollapse();
         }
+
+        #if REPORTING
+        if (!_configuration.General.ReportsDisabled)
+        {
+            Vector4? reportButtonColor = _configuration.General.DismissedReportWarning ? null : ImGuiColors.DalamudRed;
+            ImGui.SameLine();
+            if (ImGuiComponents.IconButton(FontAwesomeIcon.ExclamationCircle, reportButtonColor))
+            {
+                // TODO report
+            }
+            if (ImGui.IsItemHovered())
+                ImGui.SetTooltip("Report issue to QST developers");
+        }
+        #endif
     }
 
     private void DrawQuestNames(QuestController.QuestProgress currentQuest,

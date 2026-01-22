@@ -50,6 +50,9 @@ internal sealed class Configuration : IPluginConfiguration
         public int AutoStepRefreshDelaySeconds { get; set; } = 30;
         public bool UseTickets { get; set; }
         public bool HideSponsorButton { get; set; }
+        public bool DismissedReportWarning { get; set; }
+        public bool ReportsDisabled { get; set; }
+        public string ReportMessage { get; set; } = "";
     }
 
     internal sealed class StopConfiguration
