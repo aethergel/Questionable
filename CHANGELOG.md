@@ -1,2 +1,1 @@
-- Hotfix nullpointerexception -alydev
-- Dailies -alydev
+- minor fix 1590 aethernet -Kiarra
