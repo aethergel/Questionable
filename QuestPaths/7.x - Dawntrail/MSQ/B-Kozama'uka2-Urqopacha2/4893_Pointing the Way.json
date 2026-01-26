@@ -52,8 +52,7 @@
           },
           "TerritoryId": 1187,
           "InteractionType": "WaitForNpcAtPosition",
-          "Mount": true,
-          "DelaySecondsAtStart": 2
+          "Mount": true
         },
         {
           "DataId": 1046885,
@@ -63,8 +62,7 @@
             "Z": 613.08606
           },
           "TerritoryId": 1187,
-          "InteractionType": "WaitForNpcAtPosition",
-          "DelaySecondsAtStart": 2
+          "InteractionType": "WaitForNpcAtPosition"
         },
         {
           "DataId": 1046885,
