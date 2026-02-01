@@ -1,1 +1,2 @@
-- 7.41 cosmic intro quest -alydev
+- 2946 fix landing spot -alydev
+- Dailies -alydev
