@@ -1,3 +1,2 @@
 - 4063 minor aetheryte fix -Kiarra
-- 2946 fix landing spot -alydev
-- Dailies -alydev
+- 2348 add shortcut to little ala mhigo -Kiarra
