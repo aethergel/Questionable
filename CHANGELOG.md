@@ -1,2 +1,3 @@
+- 4063 minor aetheryte fix -Kiarra
 - 2946 fix landing spot -alydev
 - Dailies -alydev
