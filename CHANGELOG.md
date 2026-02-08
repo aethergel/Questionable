@@ -1,1 +1,1 @@
-- Dailies checked -alydev
+- 2626(SMN) slight delay last combat interact -Kiarra
