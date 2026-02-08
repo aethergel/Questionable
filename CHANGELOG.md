@@ -1,2 +1,3 @@
 - 2626(SMN) slight delay last combat interact -Kiarra
 - Dailies -alydev
+- Changed "don't skip cutscenes" checkbox to also turn off text skip -alydev
