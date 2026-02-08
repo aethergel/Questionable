@@ -1,1 +1,2 @@
 - 2626(SMN) slight delay last combat interact -Kiarra
+- Dailies -alydev
