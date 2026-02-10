@@ -59,7 +59,7 @@
           "InteractionType": "SinglePlayerDuty",
           "SinglePlayerDutyOptions": {
             "Enabled": true,
-            "TestedBossModVersion": "0.4.21.2"
+            "TestedBossModVersion": "0.4.21.3"
           },
           "DialogueChoices": [
             {
