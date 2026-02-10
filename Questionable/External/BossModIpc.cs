@@ -83,6 +83,9 @@ internal sealed class BossModIpc(
         if (!_configuration.SinglePlayerDuties.RunSoloInstancesWithBossMod)
             return false;
 
+        if (questId.Value.Equals(5325)) // Valentiones 2026
+            return true;
+
         dutyOptions ??= new();
         if (!_territoryData.TryGetContentFinderConditionForSoloInstance(questId, dutyOptions.Index, out var cfcData))
             return false;

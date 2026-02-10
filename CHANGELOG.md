@@ -1,3 +1,2 @@
+- Valentiones 2026 support, huge thanks to Jaksuhn for contributing to Boss Mod -alydev
 - Changed "don't skip cutscenes" checkbox to also turn off text skip -alydev
-- Dailies -alydev
-- Checked gld start -alydev

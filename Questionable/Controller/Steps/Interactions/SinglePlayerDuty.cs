@@ -25,6 +25,7 @@ internal static class SinglePlayerDuty
         public const ushort Lahabrea = 1052;
         public const ushort ItsProbablyATrap = 665;
         public const ushort Naadam = 688;
+        public const ushort Patisserie = 1298;
     }
 
     internal sealed class Factory(
@@ -86,6 +87,10 @@ internal static class SinglePlayerDuty
                 yield return new WaitSinglePlayerDuty(cfcData.ContentFinderConditionId);
                 yield return new DisableAi();
                 yield return new WaitAtEnd.WaitNextStepOrSequence();
+            }
+            else
+            {
+                throw new TaskException($"Bossmod not configured for {quest.Id}");
             }
         }
 
