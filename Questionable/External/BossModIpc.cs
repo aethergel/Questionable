@@ -23,6 +23,7 @@ internal sealed class BossModIpc(
         {
             { EPreset.Overworld, new PresetDefinition("Questionable", "Overworld") },
             { EPreset.QuestBattle, new PresetDefinition("Questionable - Quest Battles", "QuestBattle") },
+            { EPreset.NormalMovement, new PresetDefinition("Questionable - Normal Movement", "NormalMovement") },
         }.AsReadOnly();
 
     private readonly Configuration _configuration = configuration;
@@ -105,6 +106,7 @@ internal sealed class BossModIpc(
     {
         Overworld,
         QuestBattle,
+        NormalMovement,
     }
 
     private sealed class PresetDefinition(string name, string fileName)

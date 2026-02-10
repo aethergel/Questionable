@@ -1,2 +1,2 @@
-- Valentiones 2026 support, huge thanks to Jaksuhn for contributing to Boss Mod -alydev
+- Valentiones 2026 instance support, huge thanks to Jaksuhn and the rest of the Punish team -alydev
 - Changed "don't skip cutscenes" checkbox to also turn off text skip -alydev

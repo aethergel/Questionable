@@ -56,7 +56,11 @@
             "Z": -125.32239
           },
           "TerritoryId": 133,
-          "InteractionType": "Interact",
+          "InteractionType": "SinglePlayerDuty",
+          "SinglePlayerDutyOptions": {
+            "Enabled": true,
+            "TestedBossModVersion": "0.4.21.2"
+          },
           "DialogueChoices": [
             {
               "Type": "List",
@@ -77,13 +81,6 @@
               "Yes": true
             }
           ]
-        },
-        {
-          "InteractionType": "SinglePlayerDuty",
-          "SinglePlayerDutyOptions": {
-            "Enabled": true
-          },
-          "TerritoryId": 1298
         }
       ]
     },
