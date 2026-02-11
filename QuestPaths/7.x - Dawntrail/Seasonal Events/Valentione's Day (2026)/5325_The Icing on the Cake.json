@@ -57,10 +57,9 @@
           },
           "TerritoryId": 133,
           "InteractionType": "SinglePlayerDuty",
-          "Comment": "Leave the instance manually after completion",
           "SinglePlayerDutyOptions": {
             "Enabled": true,
-            "TestedBossModVersion": "0.4.21.2"
+            "TestedBossModVersion": "0.4.21.3"
           },
           "DialogueChoices": [
             {

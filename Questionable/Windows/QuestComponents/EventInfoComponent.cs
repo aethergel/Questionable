@@ -29,7 +29,7 @@ internal sealed class EventInfoComponent(QuestData questData,
     private readonly List<EventQuest> _eventQuests =
     [
         new EventQuest("Limited Time Items", [new UnlockLinkId(568)], DateTime.MaxValue),
-        //new EventQuest("Valentione's Day 2026", [new QuestId(5325)], AtDailyReset(new DateOnly(2026,2,16))) // January 15, 2026 at 6:59 a.m. (PST) 
+        new EventQuest("Valentione's Day 2026", [new QuestId(5325)], AtDailyReset(new DateOnly(2026,2,16))) // January 15, 2026 at 6:59 a.m. (PST) 
     ];
 
     private readonly QuestData _questData = questData;

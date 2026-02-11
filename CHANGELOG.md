@@ -1,3 +1,3 @@
 - Valentiones 2026 instance support, huge thanks to Jaksuhn and the rest of the Punish team -alydev
-  - temp disable seasonal event until new vbm version -alydev
+  - ok it works now -alydev
 - Changed "don't skip cutscenes" checkbox to also turn off text skip -alydev

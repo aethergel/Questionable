@@ -6,6 +6,9 @@ using Dalamud.Game.ClientState.Conditions;
 using Dalamud.Game.ClientState.Objects;
 using Dalamud.Game.ClientState.Objects.Types;
 using Dalamud.Plugin.Services;
+using ECommons;
+using ECommons.Throttlers;
+using ECommons.UIHelpers.AddonMasterImplementations;
 using FFXIVClientStructs.FFXIV.Client.Game;
 using FFXIVClientStructs.FFXIV.Client.UI.Misc;
 using Questionable.Controller.Steps.Common;
@@ -59,9 +62,12 @@ internal static class SinglePlayerDuty
                 }
 
                 yield return new Mount.UnmountTask();
+                if (tId == SpecialTerritories.Patisserie)
+                {
+                    yield return new Commence(cfcId);
+                }
                 yield return new StartSinglePlayerDuty(cfcId);
                 yield return new WaitAtStart.WaitDelay(TimeSpan.FromSeconds(2)); // maybe a delay will work here too, needs investigation
-                yield return new EnableAi(tId == SpecialTerritories.Naadam);
                 if (tId == SpecialTerritories.Lahabrea)
                 {
                     yield return new SetTarget(14643);
@@ -95,9 +101,13 @@ internal static class SinglePlayerDuty
                     yield return new Mount.UnmountTask();
                     yield return new EnableAi();
                 }
-                else if (tId is SpecialTerritories.Patisserie)
+                else if (tId == SpecialTerritories.Patisserie)
                 {
                     yield return new SetPreset(BossModIpc.EPreset.NormalMovement);
+                }
+                else
+                {
+                    yield return new EnableAi(tId == SpecialTerritories.Naadam);
                 }
 
                 yield return new WaitSinglePlayerDuty(cfcId);
@@ -257,6 +267,43 @@ internal static class SinglePlayerDuty
 
             targetManager.Target = gameObject;
             return ETaskResult.StillRunning;
+        }
+
+        public override bool ShouldInterruptOnDamage() => false;
+    }
+
+    // TODO valentiones hack
+    internal sealed record Commence(uint ContentFinderConditionId) : ITask
+    {
+        public override string ToString() => $"Commence({ContentFinderConditionId})";
+    }
+
+    internal sealed class CommenceExecutor(ICondition condition) : TaskExecutor<Commence>
+    {
+        private DateTime _enteredAt = DateTime.MinValue;
+        protected override bool Start() => true;
+
+        public unsafe override ETaskResult Update()
+        {
+            if (GenericHelpers.TryGetAddonMaster<AddonMaster.ContentsFinderConfirm>(out var m) && m.IsAddonReady)
+            {
+                if(EzThrottler.Throttle("Confirm", 2000))
+                {
+                    m.Commence();
+                }
+            }
+            var gameMain = GameMain.Instance();
+            if (gameMain->CurrentContentFinderConditionId != Task.ContentFinderConditionId)
+                return ETaskResult.StillRunning;
+
+            if (!condition[ConditionFlag.BoundByDuty])
+                return ETaskResult.StillRunning;
+            if (_enteredAt == DateTime.MinValue)
+                _enteredAt = DateTime.Now;
+
+            return DateTime.Now - _enteredAt >= TimeSpan.FromSeconds(2)
+                ? ETaskResult.TaskComplete
+                : ETaskResult.StillRunning;
         }
 
         public override bool ShouldInterruptOnDamage() => false;
