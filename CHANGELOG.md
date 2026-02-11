@@ -1,5 +1,5 @@
 - Valentiones 2026 instance support, huge thanks to Jaksuhn and the rest of the Punish team -alydev
   - ok it works now -alydev
-- Miner quest just buy copper for 20gil -Kiarra
-- Miner lv 5 just buy bonechip for 50gil -Kiarra
+- Miner 1,5 just buy 20/50gil -Kiarra
 - BTN lv 1 buy if uldah available 70gil -Kiarra
+- BTN 5 buy sap for 30gil -Kiarra
