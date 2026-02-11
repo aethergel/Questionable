@@ -1,4 +1,4 @@
 - Valentiones 2026 instance support, huge thanks to Jaksuhn and the rest of the Punish team -alydev
   - ok it works now -alydev
-- Changed "don't skip cutscenes" checkbox to also turn off text skip -alydev
 - Miner quest just buy copper for 20gil -Kiarra
+- Miner lv 5 just buy bonechip for 50gil -Kiarra
