@@ -1,4 +1,6 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Data;
 using System.Linq;
 using Dalamud.Game.ClientState.Objects.Types;
@@ -11,31 +13,37 @@ using WrathCombo.API.Enum;
 using WrathCombo.API.Extension;
 using WrathError = WrathCombo.API.Error;
 
+#endregion
+
 namespace Questionable.Controller.CombatModules;
 
 internal sealed class WrathComboModule : ICombatModule, IDisposable
 {
-    private const string CallbackPrefix = "Questionable$Wrath";
+    private const    string CallbackPrefix = "Questionable$Wrath";
+    private readonly ICallGateProvider<int, string, object> _callback;
+    private readonly Configuration _configuration;
 
     private readonly ILogger<WrathComboModule> _logger;
-    private readonly Configuration _configuration;
-    private readonly ICallGateProvider<int, string, object> _callback;
 
     private Guid? _lease;
 
-    public WrathComboModule(ILogger<WrathComboModule> logger, Configuration configuration,
+    public WrathComboModule(ILogger<WrathComboModule> logger,
+        Configuration configuration,
         IDalamudPluginInterface pluginInterface)
     {
-        _logger = logger;
+        _logger        = logger;
         _configuration = configuration;
 
-        _callback = pluginInterface.GetIpcProvider<int, string, object>($"{CallbackPrefix}.WrathComboCallback");
+        _callback =
+            pluginInterface.GetIpcProvider<int, string, object>(
+                $"{CallbackPrefix}.WrathComboCallback");
         _callback.RegisterAction(Callback);
     }
 
     public bool CanHandleFight(CombatController.CombatData combatData)
     {
-        if (_configuration.General.CombatModule != Configuration.ECombatModule.WrathCombo)
+        if (_configuration.General.CombatModule !=
+            Configuration.ECombatModule.WrathCombo)
             return false;
 
         try
@@ -46,15 +54,15 @@ internal sealed class WrathComboModule : ICombatModule, IDisposable
             return true;
         }
         catch (WrathError.Exception e) when (e is WrathError.APIBehindException or
-                                                  WrathError.UninitializedException)
+                                                 WrathError.UninitializedException)
         {
             _logger.LogWarning(e, "Problem with WrathCombo.API usage. " +
-                                   "Please report to Questionable or Wrath team.");
+                                  "Please report to Questionable or Wrath team.");
         }
         catch (EvaluateException e)
         {
             _logger.LogWarning(e, "Problem with WrathCombo usage. " +
-                                   "Please report to Wrath team.");
+                                  "Please report to Wrath team.");
         }
         catch (Exception)
         {
@@ -69,7 +77,7 @@ internal sealed class WrathComboModule : ICombatModule, IDisposable
         try
         {
             _lease = WrathIPCWrapper.RegisterForLeaseWithCallback(
-                "Questionable", 
+                "Questionable",
                 "Questionable",
                 CallbackPrefix);
 
@@ -113,42 +121,43 @@ internal sealed class WrathComboModule : ICombatModule, IDisposable
                     false);
             SetResult combatOnly = WrathIPCWrapper
                 .SetAutoRotationConfigState(_lease.Value,
-                    AutoRotationConfigOption.InCombatOnly,false);
+                    AutoRotationConfigOption.InCombatOnly,
+                    false);
 
             // Make Wrath Work well
             SetResult includeNPCs = WrathIPCWrapper
                 .SetAutoRotationConfigState(_lease.Value,
-                AutoRotationConfigOption.IncludeNPCs,       
-                true);
+                    AutoRotationConfigOption.IncludeNPCs,
+                    true);
             SetResult targetCombatOnly = WrathIPCWrapper
                 .SetAutoRotationConfigState(_lease.Value,
-                AutoRotationConfigOption.OnlyAttackInCombat,
-                false);
+                    AutoRotationConfigOption.OnlyAttackInCombat,
+                    false);
             SetResult cleanse = WrathIPCWrapper
                 .SetAutoRotationConfigState(_lease.Value,
-                AutoRotationConfigOption.AutoCleanse,       
-                true);
+                    AutoRotationConfigOption.AutoCleanse,
+                    true);
 
             // Nice-to-haves
             SetResult rez = WrathIPCWrapper
                 .SetAutoRotationConfigState(_lease.Value,
-                    AutoRotationConfigOption.AutoRez,       
+                    AutoRotationConfigOption.AutoRez,
                     true);
             SetResult rezAsDPS = WrathIPCWrapper
                 .SetAutoRotationConfigState(_lease.Value,
-                    AutoRotationConfigOption.AutoRezDPSJobs,       
+                    AutoRotationConfigOption.AutoRezDPSJobs,
                     true);
             SetResult kardia = WrathIPCWrapper
                 .SetAutoRotationConfigState(_lease.Value,
-                    AutoRotationConfigOption.ManageKardia,       
+                    AutoRotationConfigOption.ManageKardia,
                     true);
             SetResult aoeTargetThreshold = WrathIPCWrapper
                 .SetAutoRotationConfigState(_lease.Value,
-                    AutoRotationConfigOption.DPSAoETargets,       
+                    AutoRotationConfigOption.DPSAoETargets,
                     3);
             SetResult rezNonParty = WrathIPCWrapper
                 .SetAutoRotationConfigState(_lease.Value,
-                    AutoRotationConfigOption.AutoRezOutOfParty,       
+                    AutoRotationConfigOption.AutoRezOutOfParty,
                     false);
 
             if (!WrathResultExtensions.AllSuccessful(out string failed,
@@ -220,19 +229,19 @@ internal sealed class WrathComboModule : ICombatModule, IDisposable
 
     public bool CanAttack(IBattleNpc target) => true;
 
-    private void Callback(int reason, string additionalInfo)
-    {
-        CancellationReason realReason = (CancellationReason)reason;
-        _logger.LogWarning("WrathCombo IPC Lease Cancelled: {ReasonDescription} " +
-                           "({Reason}); for: {Info})",
-            realReason.Description, realReason.ToString(), additionalInfo);
-        _lease = null;
-    }
-
     public void Dispose()
     {
         Stop();
         _callback.UnregisterAction();
+    }
+
+    private void Callback(int reason, string additionalInfo)
+    {
+        CancellationReason realReason = (CancellationReason)reason;
+        _logger.LogWarning("WrathCombo IPC Lease Cancelled: {ReasonDescription} " +
+                           "({Reason}; for: {Info})",
+            realReason.Description, realReason.ToString(), additionalInfo);
+        _lease = null;
     }
 }
 
