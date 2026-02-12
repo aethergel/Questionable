@@ -210,6 +210,37 @@ internal sealed class GeneralConfigComponent : ConfigComponent
                 Save();
             }
         }
+        
+        #if REPORTING
+        ImGui.Separator();
+        ImGui.Text("Bug Report");
+        using (ImRaii.PushIndent())
+        {
+            bool reportOptOut = Configuration.General.ReportsDisabled;
+            if (ImGui.Checkbox("Opt out of bug reports", ref reportOptOut))
+            {
+                Configuration.General.ReportsDisabled = reportOptOut;
+                Configuration.General.DismissedReportWarning = true;
+                Save();
+            }
+            bool dismissedReportWarning = Configuration.General.DismissedReportWarning;
+            if (ImGui.Checkbox("Hide Report warning", ref dismissedReportWarning))
+            {
+                Configuration.General.DismissedReportWarning = dismissedReportWarning;
+                Save();
+            }
+            if (!reportOptOut)
+            {
+                string reportMessage = Configuration.General.ReportMessage;
+                if (ImGui.InputText("Report message", ref reportMessage, 256))
+                {
+                    Configuration.General.ReportMessage = reportMessage;
+                    Save();
+                }
+            }
+
+        }
+        #endif
 
         ImGui.Separator();
         ImGui.Text("Questing");
@@ -227,7 +258,7 @@ internal sealed class GeneralConfigComponent : ConfigComponent
                 using (ImRaii.PushIndent())
                 {
                     bool dontSkipCutscenes = Configuration.General.DontSkipCutscenes;
-                    if (ImGui.Checkbox("but don't skip cutscenes!", ref dontSkipCutscenes))
+                    if (ImGui.Checkbox("but don't skip cutscenes or dialogue", ref dontSkipCutscenes))
                     {
                         Configuration.General.DontSkipCutscenes = dontSkipCutscenes;
                         Save();

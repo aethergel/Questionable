@@ -31,8 +31,6 @@ internal sealed partial class ActiveQuestComponent(
     QuestRegistry questRegistry,
     PriorityWindow priorityWindow,
     UiUtils uiUtils,
-    IClientState clientState,
-    //IPlayerState playerState,
     IChatGui chatGui,
     ILogger<ActiveQuestComponent> logger)
 {
@@ -49,7 +47,6 @@ internal sealed partial class ActiveQuestComponent(
     private readonly QuestRegistry _questRegistry = questRegistry;
     private readonly PriorityWindow _priorityWindow = priorityWindow;
     private readonly UiUtils _uiUtils = uiUtils;
-    private readonly IClientState _clientState = clientState;
     //private readonly IPlayerState _playerState;
     private readonly IChatGui _chatGui = chatGui;
     private readonly ILogger<ActiveQuestComponent> _logger = logger;
@@ -133,6 +130,20 @@ internal sealed partial class ActiveQuestComponent(
             if (ImGuiComponents.IconButton(FontAwesomeIcon.SortAmountDown))
                 _priorityWindow.ToggleOrUncollapse();
         }
+
+        #if REPORTING
+        if (!_configuration.General.ReportsDisabled)
+        {
+            Vector4? reportButtonColor = _configuration.General.DismissedReportWarning ? null : ImGuiColors.DalamudRed;
+            ImGui.SameLine();
+            if (ImGuiComponents.IconButton(FontAwesomeIcon.ExclamationCircle, reportButtonColor))
+            {
+                // TODO report
+            }
+            if (ImGui.IsItemHovered())
+                ImGui.SetTooltip("Report issue to QST developers");
+        }
+        #endif
     }
 
     private void DrawQuestNames(QuestController.QuestProgress currentQuest,

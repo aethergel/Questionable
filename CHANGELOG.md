@@ -1,1 +1,3 @@
-- Update C# version again -zbee
+- Valentiones 2026 instance support, huge thanks to Jaksuhn and the rest of the Punish team -alydev
+- changes to btn/min 1/5 to buy instead of gather -Kiarra
+- small timing fix to SMN 2626 -Kiarra

@@ -41,7 +41,11 @@
             "Z": -11.738641
           },
           "TerritoryId": 419,
-          "InteractionType": "WalkTo"
+          "InteractionType": "WalkTo",
+          "AethernetShortcut": [
+            "[Ishgard] The Last Vigil",
+            "[Ishgard] Athenaeum Astrologicum"
+          ]
         },
         {
           "DataId": 1012353,
@@ -53,10 +57,6 @@
               "Prompt": "TEXT_HEAVNA111_01590_SCENE00007_EVENTAREA_WARP_YESNO_TITLE",
               "Yes": true
             }
-          ],
-          "AethernetShortcut": [
-            "[Ishgard] The Last Vigil",
-            "[Ishgard] Athenaeum Astrologicum"
           ]
         }
       ]
