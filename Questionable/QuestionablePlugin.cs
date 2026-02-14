@@ -31,6 +31,8 @@ using Questionable.Windows.ConfigComponents;
 using Questionable.Windows.JournalComponents;
 using Questionable.Windows.QuestComponents;
 using Questionable.Windows.Utils;
+using WrathCombo.API;
+using WrathError = WrathCombo.API.WrathIPCWrapper.ErrorType;
 using Action = Questionable.Controller.Steps.Interactions.Action;
 
 namespace Questionable;
@@ -62,6 +64,7 @@ public sealed class QuestionablePlugin : IDalamudPlugin
         ArgumentNullException.ThrowIfNull(pluginInterface);
         ArgumentNullException.ThrowIfNull(chatGui);
         ECommonsMain.Init(pluginInterface, this, Module.DalamudReflector);
+        WrathIPCWrapper.Init(pluginInterface, WrathError.IPCNotReady | WrathError.Unexpected);
 
         try
         {
