@@ -115,7 +115,6 @@
             "Z": -393.54547
           },
           "TerritoryId": 401,
-          "SkipConditions": {"AetheryteShortcutIf": {"Never": false}},
           "InteractionType": "Action",
           "Action": "Buffet (Sanuwa)",
           "Fly": true,
@@ -129,7 +128,6 @@
             "Z": -434.1955
           },
           "TerritoryId": 401,
-          "SkipConditions": {"AetheryteShortcutIf": {"Never": false}},
           "InteractionType": "Action",
           "Action": "Buffet (Sanuwa)",
           "Fly": true,
@@ -143,7 +141,6 @@
             "Z": -378.34747
           },
           "TerritoryId": 401,
-          "SkipConditions": {"AetheryteShortcutIf": {"Never": false}},
           "InteractionType": "Action",
           "Action": "Buffet (Sanuwa)",
           "Fly": true,

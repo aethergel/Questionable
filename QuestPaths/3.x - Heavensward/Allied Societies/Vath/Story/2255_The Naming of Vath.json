@@ -172,7 +172,6 @@
             "Z": 217.94458
           },
           "TerritoryId": 398,
-          "SkipConditions": {"AetheryteShortcutIf": {"Never": false}},
           "InteractionType": "Action",
           "Action": "Fumigate",
           "Fly": true
