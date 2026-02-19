@@ -1,1 +1,1 @@
-- Dailies -alydev
+- Fix for vath/vanu allied society mount -alydev, Kiarra
