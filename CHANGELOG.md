@@ -1,2 +1,3 @@
 - Fix for vath/vanu allied society mount -alydev, Kiarra
 - add south shroud minion q Occupational Hazards 730 -Kiarra
+- add shortcut TreasureMap quest 1211 -Kiarra
