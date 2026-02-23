@@ -1,2 +1,1 @@
-- Dailies -alydev
-- fix miner 603 (cinnibar) -Kiarra
+- 15 CUL (258) -Kiarra
