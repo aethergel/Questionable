@@ -1,2 +1,2 @@
--  1-55 CUL Quests -Kiarra
-55->65 CUL (Manipulation) -Kiarra
+-  1-65 CUL Quests -Kiarra
+- 3018 Emp New Clothes/prism book unlock -Kiarra
