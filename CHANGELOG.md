@@ -1,3 +1,4 @@
 - 1-65 CUL Quests -Kiarra
 - 3018 Emp New Clothes/prism book unlock -Kiarra
-- path around Sui in StB MSQ 2486
+- path around Sui in StB MSQ 2486 -Kiarra
+- add lands to 3 interacts in 4709 Spacial Cleanse -Kiarra
