@@ -81,7 +81,6 @@
       "Sequence": 4,
       "Steps": [
         {
-          "Comment": "WIP,should be correct",
           "DataId": 1043777,
           "Position": {
             "X": 66.20886,
@@ -102,7 +101,6 @@
       "Sequence": 255,
       "Steps": [
         {
-          "Comment": "WIP,should be correct",
           "DataId": 1043624,
           "Position": {
             "X": 41.031494,
