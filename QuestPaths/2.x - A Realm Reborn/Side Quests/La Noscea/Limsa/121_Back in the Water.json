@@ -22,9 +22,6 @@
           "SkipConditions": {
             "AetheryteShortcutIf": {
               "InSameTerritory": true
-            },
-            "AethernetShortcutIf": {
-              "InSameTerritory": true
             }
           }
         }
