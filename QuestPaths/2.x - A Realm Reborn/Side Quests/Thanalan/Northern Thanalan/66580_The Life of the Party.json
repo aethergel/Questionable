@@ -1,0 +1,96 @@
+﻿{
+  "$schema": "https://qstxiv.github.io/schema/quest-v1.json",
+  "Author": "epinephren@github",
+  "QuestSequence": [
+    {
+      "Sequence": 0,
+      "Steps": [
+        {
+          "DataId": 1006643,
+          "Position": {
+            "X": 22.049255,
+            "Y": 48.638203,
+            "Z": -15.823608
+          },
+          "TerritoryId": 147,
+          "InteractionType": "AcceptQuest",
+          "Fly": true
+        }
+      ]
+    },
+    {
+      "Sequence": 1,
+      "Steps": [
+        {
+          "DataId": 1006653,
+          "Position": {
+            "X": -176.53168,
+            "Y": 58.349014,
+            "Z": -69.93213
+          },
+          "TerritoryId": 147,
+          "InteractionType": "UseItem",
+          "ItemId": 2000789,
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
+        },
+
+        {
+          "DataId": 1006656,
+          "Position": {
+            "X": -193.40814,
+            "Y": 70.47306,
+            "Z": -123.52179
+          },
+          "TerritoryId": 147,
+          "InteractionType": "UseItem",
+          "ItemId": 2000789,
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
+        },
+
+        {
+          "DataId": 1006655,
+          "Position": {
+            "X": -147.87524,
+            "Y": 74.84546,
+            "Z": -190.60046
+          },
+          "TerritoryId": 147,
+          "InteractionType": "UseItem",
+          "ItemId": 2000789,
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
+        },
+
+        {
+          "DataId": 1006654,
+          "Position": {
+            "X": -88.822815,
+            "Y": 67.87925,
+            "Z": -174.02917
+          },
+          "TerritoryId": 147,
+          "InteractionType": "UseItem",
+          "ItemId": 2000789,
+          "CompletionQuestVariablesFlags": [null,null,null,null,null,64]
+        }
+      ]
+    },
+
+        {
+        "Sequence": 255,
+        "Steps": [
+        {
+        "DataId": 1006643,
+        "Position": {
+        "X": 22.049255,
+        "Y": 48.638203,
+        "Z": -15.823608
+        },
+        "TerritoryId": 147,
+        "InteractionType": "CompleteQuest",
+        "NextQuestId": 66581
+        }
+              ]
+
+        }
+    ]
+}
