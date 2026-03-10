@@ -1,4 +1,4 @@
-Little Ladies Day 2026 (requires manual fate completion) -Kiarra
-Splatoon script for this must be disabled until the point
-the quest wants it or things will break because of the transform
-effect. -Kiarra
+Little Ladies Day 2026 (requires manual fate completion,or Splatoon script) -K
+DT Hildibrand 7.45 -Kiarra
+Tenative add remaining dailies to parallel system, this may break things -K
+Second round of Stepskips for Omicron instance -K
