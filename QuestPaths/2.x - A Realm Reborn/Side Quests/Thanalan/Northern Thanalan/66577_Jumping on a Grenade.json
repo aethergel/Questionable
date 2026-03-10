@@ -41,7 +41,7 @@
           "TerritoryId": 147,
 
           "InteractionType": "Combat",
-          "EnemySpawnType": "OverworldEnemies",
+          "EnemySpawnType": "AfterInteraction",
           "KillEnemyDataIds": [
             2092
           ],
