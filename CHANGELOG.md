@@ -1,4 +1,1 @@
-Little Ladies Day 2026 (requires manual fate completion,or Splatoon script) -K
-DT Hildibrand 7.45 -Kiarra
-Tenative add remaining dailies to parallel system, this may break things -K
-Second round of Stepskips for Omicron instance -K
+Merge Northern Thanalan sidequest line by epinephren -alydev
