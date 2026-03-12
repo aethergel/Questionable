@@ -14,6 +14,7 @@
           },
           "TerritoryId": 147,
           "InteractionType": "AcceptQuest",
+          "AetheryteShortcut": "Northern Thanalan - Camp Bluefog",
           "Fly": true
         }
       ]
@@ -29,17 +30,6 @@
             "Z": 20.126648
           },
           "TerritoryId": 147,
-          "InteractionType": "Interact",
-          "Fly": true
-        },
-        {
-          "Position": {
-            "X": 137.01062,
-            "Y": 31.387753,
-            "Z": 22.262878
-          },
-          "TerritoryId": 147,
-
           "InteractionType": "Combat",
           "EnemySpawnType": "AfterInteraction",
           "KillEnemyDataIds": [
@@ -47,12 +37,32 @@
           ],
           "Fly": true
         }
-              ]
+      ]
     },
-
     {
       "Sequence": 255,
       "Steps": [
+        {
+          "Position": {
+            "X": 18.51536,
+            "Y": 47.760452,
+            "Z": -5.466947
+          },
+          "TerritoryId": 147,
+          "InteractionType": "WalkTo",
+          "AetheryteShortcut": "Northern Thanalan - Ceruleum Processing Plant",
+          "Fly": true
+        },
+        {
+          "Position": {
+            "X": 23.080175,
+            "Y": 48.187943,
+            "Z": -15.44315
+          },
+          "TerritoryId": 147,
+          "InteractionType": "WalkTo",
+          "DisableNavmesh": true
+        },
         {
           "DataId": 1006643,
           "Position": {
@@ -61,7 +71,8 @@
             "Z": -15.823608
           },
           "TerritoryId": 147,
-          "InteractionType": "CompleteQuest"
+          "InteractionType": "CompleteQuest",
+          "NextQuestId": 1044
         }
       ]
     }
