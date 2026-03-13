@@ -20,12 +20,12 @@ internal sealed class AlliedSocietyData
             { 147, new([1024777,1024912], EAetheryteLocation.FringesPeeringStones) }, //ananta
             { 165, new([1025610], EAetheryteLocation.AzimSteppeDhoroIloh) }, //namazu Half
 
-            { 210, new([1031811], EAetheryteLocation.IlMhegLydhaLran) }, //Pixie Half
+            { 210, new([1031811], EAetheryteLocation.IlMhegLydhaLran) }, //Pixie
             { 221, new([1032663], EAetheryteLocation.RaktikaFanow) }, //Qitari Done
 
 
             { 307, new([1044066], EAetheryteLocation.UltimaThuleBaseOmicron) }, //Omicron Oneof3
-
+            { 309, new([1044403], EAetheryteLocation.MareLamentorumBestwaysBurrow) }, //Loporitts half
             { 369, new([1051798], EAetheryteLocation.KozamaukaDockPoga) },//pelu
             { 391, new([1052562], EAetheryteLocation.YakTelMamook) }, //mamook
             { 24, new([1052562, 1008332], EAetheryteLocation.EastShroudHawthorneHut) }
