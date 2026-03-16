@@ -19,13 +19,13 @@ internal sealed class AlliedSocietyData
             { 89, new([1017322], EAetheryteLocation.ChurningMistsZenith) }, //moogle
             { 147, new([1024777, 1024912], EAetheryteLocation.FringesPeeringStones) }, //ananta
             { 165, new([1025610], EAetheryteLocation.AzimSteppeDhoroIloh) }, //namazu
-
+            { 137, new([1024218], EAetheryteLocation.RubySeaTamamizu) }, //Kojin  
             { 210, new([1031811], EAetheryteLocation.IlMhegLydhaLran) }, //Pixie
             { 221, new([1032663], EAetheryteLocation.RaktikaFanow) }, //Qitari Done
-
-
+            { 227, new([1033715], EAetheryteLocation.LakelandOstallImperative) }, //Dwarf
+            { 296, new([1042302], EAetheryteLocation.ThavnairYedlihmad) }, //Arkadosa
             { 307, new([1044060, 1044072, 1044066], EAetheryteLocation.UltimaThuleBaseOmicron) }, //Omicron
-            { 309, new([1044408, 1044403], EAetheryteLocation.MareLamentorumBestwaysBurrow) }, //
+            { 309, new([1044408, 1044403], EAetheryteLocation.MareLamentorumBestwaysBurrow) }, // rabbits
             { 369, new([1051798], EAetheryteLocation.KozamaukaDockPoga) },//pelu
             { 391, new([1052562], EAetheryteLocation.YakTelMamook) }, //mamook
             { 24, new([1052562, 1008332], EAetheryteLocation.EastShroudHawthorneHut) }
